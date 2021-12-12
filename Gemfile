@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'pg', '~> 1.1'
 
+gem "bulma-rails", "~> 0.9.2"
+
 
 
 group :development, :test do
