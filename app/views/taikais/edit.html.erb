@@ -1,0 +1,37 @@
+<div class="container">
+    <h1 class="title">Edit Taikai</h1>
+
+    <%= form_with model: @taikai do |form| %>
+    <div class="field">
+      <label class="label">Short Name</label>
+      <div class="control">
+        <%= form.text_field :shortname, class: "input", placeholder: "Taikai short name", maxlength: 20, size: 20, disabled: "" %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <%= form.text_field :name, class: "input", placeholder: "Taikai name" %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Description</label>
+      <div class="control">
+        <%= form.text_area :description, class: "textarea", placeholder: "Taikai description", rows: 5 %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Start Date</label>
+      <div class="control">
+        <%= form.text_field :start_date, class: "input", placeholder: "Start date" %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">End Date</label>
+      <div class="control">
+        <%= form.text_field :end_date, class: "input", placeholder: "End date" %>
+      </div>
+    </div>
+    <%= form.submit "Save", class: "button is-link" %>
+    <% end %>
+</div>

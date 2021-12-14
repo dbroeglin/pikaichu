@@ -25,8 +25,8 @@
 
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="TBD">
-            Tournaments
+          <a class="navbar-item" href="<%= taikais_path %>">
+            Taikai
           </a>
         </div>
 
@@ -50,11 +50,21 @@
     </nav>
 
     <section class="section">
-      <div class="content">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
+      <div class="container">
+        <% if notice %>
+        <div class="notification is-warning">
+          <button class="delete"></button>
+          <%= notice %>
+        </div>
+        <% end %>
+        <% if alert %>
+        <div class="notification is-alert">
+          <button class="delete"></button>
+          <%= alert %>
+        </div>
+        <% end %>
       </div>
+      <%= yield %>
     </section>
   </body>
 </html>

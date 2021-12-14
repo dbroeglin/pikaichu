@@ -1,0 +1,3 @@
+class Taikai < ApplicationRecord
+
+end

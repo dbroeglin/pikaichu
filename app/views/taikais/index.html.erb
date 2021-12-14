@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="title">Taikais</h1>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @taikais.each do |taikai| %>
+      <tr>
+        <td><%= link_to taikai.shortname, edit_taikai_path(taikai) %></td>
+        <td><%= taikai.name %></td>
+        <td><%= l taikai.start_date, format: :long %></td>
+        <td><%= l taikai.end_date, format: :short %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
