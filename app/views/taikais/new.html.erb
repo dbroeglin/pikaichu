@@ -1,2 +1,5 @@
-<h1>Taikais#new</h1>
-<p>Find me in app/views/taikais/new.html.erb</p>
+<div class="container">
+    <h1 class="title">Create New Taikai</h1>
+
+    <%= render "form", taikai: @taikai, is_new: true %>
+</div>

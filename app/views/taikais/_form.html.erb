@@ -1,0 +1,13 @@
+
+<%= simple_form_for taikai do |f| %>
+  <% if taikai.errors.any? %>
+    <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this taikai from being saved:</h2>
+  <% end %>
+
+  <%= f.input :shortname %>
+  <%= f.input :name %>
+  <%= f.input :description, input_html: { rows: 5 }, as: :text %>
+  <%= f.input :start_date, html5: true %>
+  <%= f.input :end_date, html5: true %>
+  <%= f.button :submit %>
+<% end %>

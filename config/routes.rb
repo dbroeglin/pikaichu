@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :taikais
+  resources :taikais, only: [:index, :new, :create, :edit, :update, :destroy]
   get 'leader_board', to: 'leader_board#index'
 
   root to: 'home#index'
