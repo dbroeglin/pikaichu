@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_173711) do
     t.text "description"
     t.date "start_date"
     t.date "end_date"
+    t.boolean "distributed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

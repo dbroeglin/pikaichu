@@ -13,7 +13,7 @@ SimpleForm.setup do |config|
   config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
 
   # Define the way to render check boxes / radio buttons with labels.
-  config.boolean_style = :inline
+  config.boolean_style = :nested
 
   # You can wrap each item in a collection of radio/check boxes with a tag
   config.item_wrapper_tag = :div
@@ -64,17 +64,11 @@ SimpleForm.setup do |config|
   end
 
   # bulma extension vertical input for boolean
-  config.wrappers :vertical_boolean, tag: "div", class: "field" do |b|
+  config.wrappers :vertical_boolean, tag: "div", class: "field", inline_label: true do |b|
     b.use :html5
     b.optional :readonly
-    b.use :input, class: "is-checkradio is-info"
-    b.use :label
-    #b.wrapper :form_check_wrapper, tag: "div", class: "control" do |bb|
-      #bb.use :input, wrap_with: { tag: "label", class: "checkbox" }
-      #bb.use :label, class: "checkbox"
-      #bb.use :full_error, wrap_with: { tag: "div", class: "help is-danger" }
-      #bb.use :hint, wrap_with: { tag: "small", class: "form-text text-muted" }
-    #end
+    b.use :label_input
+    b.use :full_error, wrap_with: { tag: "div", class: "help is-danger" }
   end
 
   config.wrappers :vertical_text, tag: "div", class: "field" do |b|
@@ -90,8 +84,6 @@ SimpleForm.setup do |config|
     b.use :full_error, wrap_with: { tag: "div", class: "help is-danger" }
     #b.use :hint, wrap_with: { tag: "small", class: "form-text text-muted" }
   end
-
-
 
   ## vertical input for radio buttons and check boxes
   #config.wrappers :vertical_collection, item_wrapper_class: "form-check", tag: "fieldset", class: "form-group", error_class: "form-group-invalid", valid_class: "form-group-valid" do |b|
@@ -287,16 +279,16 @@ SimpleForm.setup do |config|
   ## bootstrap custom forms
   ##
   ## custom input for boolean
-  #config.wrappers :custom_boolean, tag: "fieldset", class: "form-group", error_class: "form-group-invalid", valid_class: "form-group-valid" do |b|
-    #b.use :html5
-    #b.optional :readonly
-    #b.wrapper :form_check_wrapper, tag: "div", class: "custom-control custom-checkbox" do |bb|
-      #bb.use :input, class: "custom-control-input", error_class: "is-invalid", valid_class: "is-valid"
-      #bb.use :label, class: "custom-control-label"
-      #bb.use :full_error, wrap_with: { tag: "div", class: "invalid-feedback" }
-      #bb.use :hint, wrap_with: { tag: "small", class: "form-text text-muted" }
-    #end
-  #end
+  config.wrappers :custom_boolean, tag: "fieldset", class: "form-group", error_class: "form-group-invalid", valid_class: "form-group-valid" do |b|
+    b.use :html5
+    b.optional :readonly
+    b.wrapper :form_check_wrapper, tag: "div", class: "custom-control custom-checkbox" do |bb|
+      bb.use :input, class: "custom-control-input", error_class: "is-invalid", valid_class: "is-valid"
+      bb.use :label, class: "custom-control-label"
+      bb.use :full_error, wrap_with: { tag: "div", class: "invalid-feedback" }
+      bb.use :hint, wrap_with: { tag: "small", class: "form-text text-muted" }
+    end
+  end
 
   ## custom input for boolean
   #config.wrappers :custom_boolean_switch, tag: "fieldset", class: "form-group", error_class: "form-group-invalid", valid_class: "form-group-valid" do |b|

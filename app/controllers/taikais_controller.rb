@@ -36,6 +36,6 @@ class TaikaisController < ApplicationController
 
   private
   def taikai_params
-    params.require(:taikai).permit(:shortname, :name, :description, :start_date, :end_date)
+    params.require(:taikai).permit(:shortname, :name, :description, :start_date, :end_date, :distributed)
   end
 end
