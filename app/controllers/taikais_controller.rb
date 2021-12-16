@@ -31,7 +31,11 @@ class TaikaisController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @taikai = Taikai.find(params[:id])
+    @taikai.destroy
+
+    redirect_to action: 'index'
   end
 
   private

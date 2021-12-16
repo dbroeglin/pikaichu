@@ -1,9 +1,16 @@
 FactoryBot.define do
-  factory :taikai do
-    shortname { "MyString" }
-    name { "MyString" }
-    description { "MyText" }
-    start_date { "2021-12-12" }
-    end_date { "2021-12-12" }
+    sequence :taikai_name do |n|
+      "takai-#{n}"
+    end
+
+    sequence :taikai_title do |n|
+      "Taikai #{n}"
+    end
+
+    factory :taikai do
+      shortname { generate(:taikai_name) }
+      name { generate(:taikai_title) }
+      start_date { 5.days.from_now }
+      end_date { 5.days.from_now }
+    end
   end
-end

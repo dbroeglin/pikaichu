@@ -15,6 +15,8 @@ if Rails.env.development? || Rails.env.test?
           start_date: '2021-12-18',
           end_date: '2021-12-18'
         )
+
+        create_list(:taikai, 10)
       end
     end
   end

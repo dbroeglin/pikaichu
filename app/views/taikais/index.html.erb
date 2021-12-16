@@ -13,16 +13,9 @@
         <th>Name</th>
         <th>Start Date</th>
         <th>End Date</th>
+        <th>Actions</th>
       </tr>
     </thead>
-    <tfoot>
-      <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-      </tr>
-    </tfoot>
     <tbody>
       <% @taikais.each do |taikai| %>
       <tr>
@@ -30,6 +23,18 @@
         <td><%= taikai.name %></td>
         <td><%= l taikai.start_date, format: :long %></td>
         <td><%= l taikai.end_date, format: :short %></td>
+        <td>
+          <%= link_to edit_taikai_path(taikai), class: "button is-small is-outlined" do %>
+            <span class="icon is-small">
+              <i class="fas fa-pen"></i>
+            </span>
+          <% end %>
+          <%= link_to taikai, method: :delete, class: "button is-small is-outlined" do %>
+            <span class="icon is-small">
+              <i class="fas fa-times"></i>
+            </span>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
