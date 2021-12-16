@@ -1,5 +1,14 @@
 <div class="container">
-    <h1 class="title">Edit Taikai</h1>
-
-    <%= render "form", taikai: @taikai, is_new: false %>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+          Edit Taikai
+          </p>
+          <%= render "form", taikai: @taikai, is_new: false %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
