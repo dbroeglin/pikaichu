@@ -1,0 +1,20 @@
+    <%= simple_form_for dojo do |f| %>
+      <% if dojo.errors.any? %>
+        <h2><%= pluralize(dojo.errors.count, "error") %> prohibited this dojo from being saved:</h2>
+      <% end %>
+
+      <%= f.input :shortname %>
+      <%= f.input :name %>
+      <%= f.input :country_code %>
+
+      <%= f.input :toto, collection: [1, 2, 3] %>
+
+      <br/>
+ <br/>
+ <br/>
+ <br/>
+
+      <%= f.button :submit, class: "is-primary" %>
+    <% end %>
+  </div>
+</div>

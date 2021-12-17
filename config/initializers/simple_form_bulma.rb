@@ -119,11 +119,11 @@ SimpleForm.setup do |config|
   end
 
   ## bulma vertical multi select
-  config.wrappers :vertical_multi_select, tag: "div", class: "field" do |b|
+  config.wrappers :vertical_multi_select, tag: "div", class: "field coucou" do |b|
     b.use :html5
     b.optional :readonly
     b.use :label, class: "label"
-    b.wrapper tag: "div", class: "control" do |ba|
+    b.wrapper tag: "div", class: "select coucou" do |ba|
       ba.use :input, class: "input", error_class: "is-danger", valid_class: "is-success"
     end
     b.use :full_error, wrap_with: { tag: "div", class: "is-danger" }
@@ -430,7 +430,8 @@ SimpleForm.setup do |config|
     radio_buttons: :vertical_collection,
     range:         :vertical_range,
     time:          :vertical_multi_select,
-    text:          :vertical_text
+    text:          :vertical_text,
+    collection:    :vertical_multi_select
   }
 
   # enable custom form wrappers

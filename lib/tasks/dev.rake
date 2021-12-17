@@ -17,6 +17,7 @@ if Rails.env.development? || Rails.env.test?
         )
 
         create_list(:taikai, 10)
+        create_list(:dojo, 10)
       end
     end
   end

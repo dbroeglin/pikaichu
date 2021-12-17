@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="title">Dojos</h1>
+
+    <div class="buttons">
+      <%= link_to "New", new_dojo_path, class: "button is-primary" %>
+    </div>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Shortname</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dojos.each do |dojo| %>
+      <tr>
+        <td><%= link_to dojo.shortname, edit_dojo_path(dojo) %></td>
+        <td><%= dojo.name %></td>
+        <td><%= dojo.country_name %></td>
+        <td>
+          <%= link_to edit_dojo_path(dojo), class: "button is-small is-outlined" do %>
+            <span class="icon is-small">
+              <i class="fas fa-pen"></i>
+            </span>
+          <% end %>
+          <%= link_to dojo, method: :delete, class: "button is-small is-outlined" do %>
+            <span class="icon is-small">
+              <i class="fas fa-times"></i>
+            </span>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

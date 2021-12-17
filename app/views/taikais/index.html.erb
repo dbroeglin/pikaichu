@@ -9,7 +9,7 @@
     <table class="table">
     <thead>
       <tr>
-        <th>Code</th>
+        <th>Short Name</th>
         <th>Name</th>
         <th>Start Date</th>
         <th>End Date</th>
@@ -19,7 +19,7 @@
     <tbody>
       <% @taikais.each do |taikai| %>
       <tr>
-        <td><%= link_to taikai.shortname, edit_taikai_path(taikai) %></td>
+        <td><%= taikai.shortname %></td>
         <td><%= taikai.name %></td>
         <td><%= l taikai.start_date, format: :long %></td>
         <td><%= l taikai.end_date, format: :short %></td>
