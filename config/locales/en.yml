@@ -32,7 +32,7 @@
 en:
   activerecord:
     models:
-      taikai: Tournoi
+      taikai: Taikai
     attributes:
       taikai:
         shortname: Code

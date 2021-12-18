@@ -33,8 +33,6 @@ module ApplicationHelper
       end
     end
 
-    def select_input(method, options = {}); end
-
     def string_input(method, options = {})
       field_div(method, options) do
         safe_join [
