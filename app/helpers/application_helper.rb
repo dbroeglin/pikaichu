@@ -36,7 +36,7 @@ module ApplicationHelper
     def enum_input(method, options = {})
       field_div(method, options) do
         collection = @object.class.send(method.to_s.pluralize).map do |key, value|
-          [key, Result.human_enum_name(method, key)]
+          [key, @object.class.human_enum_name(method, key)]
         end
         safe_join [
                     label(method, options[:label]),
