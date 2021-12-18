@@ -1,14 +1,12 @@
-    <%= bulma_form_with model: dojo do |f| %>
-      <% if dojo.errors.any? %>
-        <h2><%= pluralize(dojo.errors.count, "error") %> prohibited this dojo from being saved:</h2>
-      <% end %>
+<%= bulma_form_with model: dojo do |f| %>
+  <% if dojo.errors.any? %>
+    <h2><%= pluralize(dojo.errors.count, "error") %> prohibited this dojo from being saved:</h2>
+  <% end %>
 
-      <%= f.input :shortname %>
-      <%= f.input :name %>
-      <%= f.input :country_code, collection: ISO3166::Country.all,
-                  value_method: :alpha2, text_method: :name %>
+  <%= f.input :shortname %>
+  <%= f.input :name %>
+  <%= f.input :country_code, collection: ISO3166::Country.all,
+              value_method: :alpha2, text_method: :name %>
 
-      <%= f.button "Save", class: "button is-primary" %>
-    <% end %>
-  </div>
-</div>
+  <%= f.button "Save", class: "button is-primary" %>
+<% end %>

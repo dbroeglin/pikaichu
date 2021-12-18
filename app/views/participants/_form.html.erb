@@ -1,0 +1,12 @@
+<%= bulma_form_with model: [taikai, participating_dojo, participant] do |f| %>
+  <% if taikai.errors.any? %>
+    <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this dojo from being saved:</h2>
+  <% end %>
+
+  <%= f.input :firstname %>
+  <%= f.input :lastname %>
+  <%= f.input :title %>
+  <%= f.input :level %>
+
+  <%= f.button "Save", class: "button is-primary" %>
+<% end %>

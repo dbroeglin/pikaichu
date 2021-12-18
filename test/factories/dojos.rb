@@ -1,15 +1,11 @@
 FactoryBot.define do
-  sequence :dojo_shortname do |n|
-    "dojo-#{n}"
-  end
-
-  sequence :dojo_name do |n|
-    "Dojo #{n}"
-  end
+  sequence(:shortname) { |n| "dojo-#{n}" }
+  sequence(:name) { |n| "Dojo #{n}" }
+  sequence :country_code, ["DE", "FR", "HK", "JP"].cycle
 
   factory :dojo do
-    shortname { generate(:dojo_shortname) }
-    name { generate(:dojo_name) }
-    country_code { "FR" }
+    shortname
+    name
+    country_code
   end
 end

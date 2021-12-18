@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :taikais, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :dojos, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :taikais, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :participating_dojos do
+      resources :participants
+    end
+  end
+
 
   get 'leader_board', to: 'leader_board#index'
 

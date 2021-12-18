@@ -33,6 +33,11 @@ en:
   activerecord:
     models:
       taikai: Taikai
+    enums:
     attributes:
+      dojo:
+        shortname: Code
+        name: Name
+        country_code: Country
       taikai:
         shortname: Code

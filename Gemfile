@@ -29,10 +29,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 
 gem 'pg', '~> 1.1'
+gem 'activerecord-postgres_enum'
 
 gem "bulma-rails", "~> 0.9.2"
 
-gem "simple_form"
 gem 'country_select'
 
 group :development, :test do

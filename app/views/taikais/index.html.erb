@@ -29,7 +29,8 @@
               <i class="fas fa-pen"></i>
             </span>
           <% end %>
-          <%= link_to taikai, method: :delete, class: "button is-small is-outlined" do %>
+          <%= link_to taikai, method: :delete,
+                      class: "button is-small is-outlined", data: { confirm: "Are you sure?" } do %>
             <span class="icon is-small">
               <i class="fas fa-times"></i>
             </span>

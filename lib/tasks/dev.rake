@@ -6,9 +6,12 @@ if Rails.env.development? || Rails.env.test?
       task prime: "db:setup" do
         include FactoryBot::Syntax::Methods
 
-        create(:user, email: "jean.bon@example.org", password: "password")
+        create(:user, email: "jean.bon@example.org")
+        create_list(:user, 5)
 
-        create(:taikai,
+        create_list(:dojo, 4)
+
+        create(:factory_taikai_with_structure,
           shortname: "chablais-2021",
           name: "Tournoi du Chablais 2021",
           description: "",
@@ -16,8 +19,7 @@ if Rails.env.development? || Rails.env.test?
           end_date: '2021-12-18'
         )
 
-        create_list(:taikai, 10)
-        create_list(:dojo, 10)
+        create_list(:factory_taikai_with_structure, 3)
       end
     end
   end

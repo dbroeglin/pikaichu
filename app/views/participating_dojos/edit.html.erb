@@ -3,16 +3,16 @@
     <div class="column is-one-third is-offset-one-third">
       <div class="card">
         <div class="card-content">
-          <p class="title">Edit Taikai</p>
-          <%= render "form", taikai: @taikai %>
+          <p class="title">Edit Participating Dojo</p>
+          <%= render "form", taikai: @taikai, participating_dojo: @participating_dojo %>
         </div>
       </div>
     </div>
     <div class="column is-one-third">
       <div class="card">
         <div class="card-content">
-          <p class="subtitle">Participating Dojos</p>
-          <%= render "participating_dojos/list", taikai: @taikai %>
+          <p class="subtitle">Participants</p>
+          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo %>
         </div>
       </div>
     </div>

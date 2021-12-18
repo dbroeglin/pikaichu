@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_17_062049) do
+ActiveRecord::Schema.define(version: 2021_12_18_162658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_enum :result_status, [
+    "hit",
+    "miss",
+  ], force: :cascade
 
   create_table "dojos", force: :cascade do |t|
     t.string "shortname"
@@ -21,6 +26,37 @@ ActiveRecord::Schema.define(version: 2021_12_17_062049) do
     t.string "country_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "title"
+    t.string "level"
+    t.bigint "participating_dojo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["participating_dojo_id"], name: "index_participants_on_participating_dojo_id"
+  end
+
+  create_table "participating_dojos", force: :cascade do |t|
+    t.string "display_name"
+    t.bigint "taikai_id", null: false
+    t.bigint "dojo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dojo_id"], name: "index_participating_dojos_on_dojo_id"
+    t.index ["taikai_id"], name: "index_participating_dojos_on_taikai_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.bigint "participant_id", null: false
+    t.integer "round"
+    t.integer "arrow_nb"
+    t.enum "status", null: false, enum_name: "result_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["participant_id"], name: "index_results_on_participant_id"
   end
 
   create_table "taikais", force: :cascade do |t|
@@ -55,4 +91,8 @@ ActiveRecord::Schema.define(version: 2021_12_17_062049) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "participants", "participating_dojos"
+  add_foreign_key "participating_dojos", "dojos"
+  add_foreign_key "participating_dojos", "taikais"
+  add_foreign_key "results", "participants"
 end

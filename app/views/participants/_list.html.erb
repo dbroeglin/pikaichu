@@ -1,0 +1,32 @@
+<table class="table is-narrow is-hoverable">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% participating_dojo.participants.each do |participant| %>
+    <tr>
+      <td><%= participant.firstname %></td>
+      <td><%= participant.lastname %></td>
+      <td><%= participant.title %></td>
+      <td>
+        <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small" do %>
+          <span class="icon is-small">
+            <i class="fas fa-pen"></i>
+          </span>
+        <% end %>
+        <%= link_to [taikai, participating_dojo, participant], method: :delete,
+                    class: "button is-small", data: { confirm: "Are you sure?" } do %>
+          <span class="icon is-small is-small">
+            <i class="fas fa-times"></i>
+          </span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
