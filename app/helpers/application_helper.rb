@@ -33,6 +33,35 @@ module ApplicationHelper
       end
     end
 
+    def enum_input(method, options = {})
+      field_div(method, options) do
+        collection = @object.class.send(method.pluralize).map do |key, value|
+          [key, Result.human_enum_name(method, key)]
+        end
+        safe_join [
+                    label(method, options[:label]),
+                    (
+                      tag.div class: 'select' do
+                        collection_select(
+                          method,
+                          collection,
+                          :first,
+                          :last,
+                          options,
+                          merge_input_options(
+                            {
+                              class:
+                                "#{'select' unless multiple} #{'is-invalid' if has_error?(method)}",
+                            },
+                            options[:input_html],
+                          ),
+                        )
+                                      end
+                    ),
+                  ]
+      end
+    end
+
     def string_input(method, options = {})
       field_div(method, options) do
         safe_join [
@@ -76,7 +105,7 @@ module ApplicationHelper
           merge_input_options(
             {
               class:
-                "#{'select' unless multiple} form-control #{'is-invalid' if has_error?(method)}",
+                "#{'select' unless multiple} #{'is-invalid' if has_error?(method)}",
             },
             options[:input_html],
           ),
