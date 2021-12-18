@@ -21,21 +21,22 @@ module ApplicationHelper
     private
 
     def collection_input(method, options, &block)
-      form_field(method, options) do
+      field_div(method, options) do
         safe_join [
-          label(method, options[:label]),
-          (tag.div class: 'select' do
-            block.call
-          end)]
+                    label(method, options[:label]),
+                    (
+                      tag.div class: 'select' do
+                        block.call
+                      end
+                    ),
+                  ]
       end
     end
 
-    def select_input(method, options = {})
-
-    end
+    def select_input(method, options = {}); end
 
     def string_input(method, options = {})
-      form_field(method, options) do
+      field_div(method, options) do
         safe_join [
                     (
                       unless options[:label] == false
@@ -44,7 +45,7 @@ module ApplicationHelper
                     ),
                     (
                       tag.div class: 'control' do
-                        string_field(
+                        string_control(
                           method,
                           merge_input_options(
                             {
@@ -86,50 +87,52 @@ module ApplicationHelper
     end
 
     def boolean_input(method, options = {})
-      form_field(method, options) do
+      field_div(method, options) do
         label(method, options) do
           safe_join [
-            check_box(method, merge_input_options({class: "checkbox"}, options[:input_html])),
-            " #{object.class.human_attribute_name(method).html_safe}",
-          ]
+                      check_box(
+                        method,
+                        merge_input_options(
+                          { class: 'checkbox' },
+                          options[:input_html],
+                        ),
+                      ),
+                      " #{object.class.human_attribute_name(method).html_safe}",
+                    ]
         end
       end
     end
 
     def text_input(method, options = {})
-      form_field(method, options) do
+      field_div(method, options) do
         safe_join [
-          (label(method, options[:label]) unless options[:label] == false),
-          text_area(method, merge_input_options({class: "textarea #{"is-invalid" if has_error?(method)}"}, options[:input_html])),
-        ]
+                    (
+                      unless options[:label] == false
+                        label(method, options[:label])
+                      end
+                    ),
+                    text_area(
+                      method,
+                      merge_input_options(
+                        {
+                          class:
+                            "textarea #{'is-invalid' if has_error?(method)}",
+                        },
+                        options[:input_html],
+                      ),
+                    ),
+                  ]
       end
     end
 
-    def string_field(method, options = {})
+    def string_control(method, options = {})
       case object_type_for_method(method)
       when :date
         birthday = method.to_s =~ /birth/
-        safe_join [
-                    date_field(
-                      method,
-                      merge_input_options(
-                        options,
-                        { data: { datepicker: true } },
-                      ),
-                    ),
-                    tag.div {
-                      date_select(
-                        method,
-                        {
-                          order: %i[month day year],
-                          start_year: birthday ? 1900 : Date.today.year - 5,
-                          end_year:
-                            birthday ? Date.today.year : Date.today.year + 5,
-                        },
-                        { data: { date_select: true } },
-                      )
-                    },
-                  ]
+        date_field(
+          method,
+          merge_input_options(options, { data: { datepicker: true } }),
+        )
       when :integer
         number_field(method, options)
       when :string
@@ -185,7 +188,7 @@ module ApplicationHelper
       end
     end
 
-    def form_field(method, options = {}, &block)
+    def field_div(method, options = {}, &block)
       tag.div class: 'field' do
         safe_join [
                     block.call,
