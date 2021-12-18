@@ -1,6 +1,6 @@
-    <%= simple_form_for taikai do |f| %>
+    <%= bulma_form_with model: taikai do |f| %>
       <% if taikai.errors.any? %>
-        <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this taikai from being saved:</h2>
+        <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this dojo from being saved:</h2>
       <% end %>
 
       <%= f.input :shortname %>
@@ -10,7 +10,7 @@
       <%= f.input :end_date, html5: true %>
       <%= f.input :distributed %>
 
-      <%= f.button :submit, class: "is-primary" %>
+      <%= f.button "Save", class: "button is-primary" %>
     <% end %>
   </div>
 </div>
