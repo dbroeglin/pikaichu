@@ -16,7 +16,8 @@ if Rails.env.development? || Rails.env.test?
           name: "Tournoi du Chablais 2021",
           description: "",
           start_date: '2021-12-18',
-          end_date: '2021-12-18'
+          end_date: '2021-12-18',
+          distributed: false
         )
 
         create_list(:factory_taikai_with_structure, 3)

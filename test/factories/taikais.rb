@@ -12,6 +12,7 @@ FactoryBot.define do
       name { generate(:taikai_name) }
       start_date { 5.days.from_now }
       end_date { 5.days.from_now }
+      distributed { true }
 
       factory :factory_taikai_with_structure do
         after(:create) do |taikai, evaluator|
