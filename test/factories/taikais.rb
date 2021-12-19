@@ -1,6 +1,6 @@
 FactoryBot.define do
     sequence :taikai_short_name do |n|
-      "takai-#{n}"
+      "taikai-#{n}"
     end
 
     sequence :taikai_name do |n|
@@ -14,10 +14,10 @@ FactoryBot.define do
       end_date { 5.days.from_now }
       distributed { true }
 
-      factory :factory_taikai_with_structure do
+      factory :taikai_with_participating_dojo do
         after(:create) do |taikai, evaluator|
           Dojo.all.each do |dojo|
-            create(:factory_participating_dojo_with_structure, dojo: dojo, taikai: taikai)
+            create(:participating_dojo_with_participants, dojo: dojo, taikai: taikai)
           end
 
           taikai.reload

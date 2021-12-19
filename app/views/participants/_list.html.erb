@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% participating_dojo.participants.order(lastname: :asc, firstname: :asc).each do |participant| %>
+    <% participating_dojo.participants.each do |participant| %>
     <tr>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>

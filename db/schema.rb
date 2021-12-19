@@ -46,16 +46,18 @@ ActiveRecord::Schema.define(version: 2021_12_18_162658) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dojo_id"], name: "index_participating_dojos_on_dojo_id"
+    t.index ["taikai_id", "dojo_id"], name: "by_taikai_dojo", unique: true
     t.index ["taikai_id"], name: "index_participating_dojos_on_taikai_id"
   end
 
   create_table "results", force: :cascade do |t|
     t.bigint "participant_id", null: false
     t.integer "round"
-    t.integer "arrow_nb"
-    t.enum "status", null: false, enum_name: "result_status"
+    t.integer "index"
+    t.enum "status", enum_name: "result_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["participant_id", "round", "index"], name: "by_participant_round_index", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"
   end
 

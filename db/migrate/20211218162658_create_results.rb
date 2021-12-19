@@ -5,10 +5,12 @@ class CreateResults < ActiveRecord::Migration[6.1]
     create_table :results do |t|
       t.references :participant, null: false, foreign_key: true
       t.integer :round
-      t.integer :arrow_nb
-      t.enum :status, enum_name: :result_status, null: false
+      t.integer :index
+      t.enum :status, enum_name: :result_status, null: true
 
       t.timestamps
     end
+
+    add_index :results, [:participant_id, :round, :index], unique: true, name: "by_participant_round_index"
   end
 end

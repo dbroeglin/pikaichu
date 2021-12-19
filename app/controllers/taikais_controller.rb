@@ -39,8 +39,8 @@ class TaikaisController < ApplicationController
   end
 
   def judging
-    @taikai = Taikai.find(params[:id])
-    @participating_dojos = @taikai.participating_dojos.order(display_name: :asc)
+    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
+    @participating_dojos = @taikai.participating_dojos
   end
 
   private

@@ -7,5 +7,10 @@ FactoryBot.define do
     lastname { Faker::Name.last_name }
     title
     level
+
+    after(:create) do |participant, evaluator|
+      participant.generate_empty_results
+      participant.reload
+    end
   end
 end

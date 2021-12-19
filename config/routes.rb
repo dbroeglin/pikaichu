@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/taikais/:id/judging', to: 'taikais#judging', as: :taikai_judging
 
   get 'leader_board', to: 'leader_board#index'
 

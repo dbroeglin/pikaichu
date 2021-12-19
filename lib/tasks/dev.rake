@@ -6,12 +6,14 @@ if Rails.env.development? || Rails.env.test?
       task prime: "db:setup" do
         include FactoryBot::Syntax::Methods
 
+        Faker::Config.random = Random.new(42)
+
         create(:user, email: "jean.bon@example.org")
         create_list(:user, 5)
 
         create_list(:dojo, 4)
 
-        create(:factory_taikai_with_structure,
+        create(:taikai_with_participating_dojo,
           shortname: "chablais-2021",
           name: "Tournoi du Chablais 2021",
           description: "",
@@ -20,7 +22,14 @@ if Rails.env.development? || Rails.env.test?
           distributed: false
         )
 
-        create_list(:factory_taikai_with_structure, 3)
+        create_list(:taikai_with_participating_dojo, 3)
+
+        Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
+          participant.results.each_with_index do |result, index|
+            result.status = Faker::Boolean.boolean(true_ratio: 0.3) ? :hit : :miss
+            result.save
+          end
+        end
       end
     end
   end

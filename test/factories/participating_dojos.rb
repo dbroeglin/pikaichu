@@ -4,7 +4,7 @@ FactoryBot.define do
     dojo { nil }
     display_name { dojo.name }
 
-    factory :factory_participating_dojo_with_structure do
+    factory :participating_dojo_with_participants do
       transient do
         participant_count { 3 }
       end
