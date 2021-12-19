@@ -1,6 +1,8 @@
 <div class="container">
   <div class="columns">
     <div class="column is-two-third is-offset-2">
+      <h1 class="title">Judjing board - <%= @taikai.name %></h1>
+
       <table class="table is-narrow is-striped is-bordered is-fullwidth">
         <thead>
           <tr class="has-text-centered">
@@ -18,9 +20,9 @@
           <% dojo.participants.each_with_index do |participant, index| %>
           <tr class="has-text-centered">
             <% if index == 0 %>
-            <td rowspan="<%= dojo.participants.size %>">
+            <th rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
-            </td>
+            </th>
             <% end %>
             <td class="has-text-left"><%= participant.display_name %></td>
             <td>
@@ -66,7 +68,7 @@
                 </a>
               </td>
             <% end %>
-            <td><%= participant.total %></td>
+            <th><%= participant.total %></th>
           </tr>
           <% end %>
           <% end %>

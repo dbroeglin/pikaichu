@@ -14,8 +14,8 @@ if Rails.env.development? || Rails.env.test?
         create_list(:dojo, 4)
 
         create(:taikai_with_participating_dojo,
-          shortname: "chablais-2021",
-          name: "Tournoi du Chablais 2021",
+          shortname: "c-2021",
+          name: "Tournoi du C. 2021",
           description: "",
           start_date: '2021-12-18',
           end_date: '2021-12-18',

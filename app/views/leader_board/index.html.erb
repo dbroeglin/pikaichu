@@ -1,2 +1,32 @@
-<h1>LeaderBoard#index</h1>
-<p>Find me in app/views/leader_board/index.html.erb</p>
+<div class="container">
+  <div class="columns">
+    <div class="column is-two-third is-offset-2">
+      <h1 class="title">Leader board - <%= @taikai.name %></h1>
+
+      <table class="table is-narrow is-striped">
+        <thead>
+          <tr class="has-text-centered">
+            <th>Position</th>
+            <th>Score</th>
+            <th>Total</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @results.each_with_index do |result, position| %>
+          <%   result.last.each_with_index do |participant, index| %>
+            <tr>
+              <% if index == 0 %>
+              <th rowspan="<%= result.last.size %>" class="has-text-centered"><%= position + 1 %></th>
+              <td rowspan="<%= result.last.size %>" class="has-text-centered"><%= result.first %></td>
+              <% end %>
+              <td><%= participant.firstname %></td>
+              <td><%= participant.lastname %></td>
+            </tr>
+          <%   end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

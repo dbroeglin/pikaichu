@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/taikais/:id/judging',                          to: 'judging#index',   as: :judging_index
-  post '/taikais/:id/judging/:participant_id/update',  to: 'judging#update',  as: :judging_update
+  get '/taikais/:id/judging',                          to: 'judging#index',         as: :judging_index
+  post '/taikais/:id/judging/:participant_id/update',  to: 'judging#update',        as: :judging_update
 
-  get 'leader_board',                                  to: 'leader_board#index'
+  get '/taikais/:id/leaderboard',                      to: 'leader_board#index',    as: :leaderboard_index
 
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
