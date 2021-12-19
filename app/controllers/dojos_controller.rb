@@ -1,6 +1,6 @@
 class DojosController < ApplicationController
   def index
-    @dojos = Dojo.all
+    @dojos = Dojo.all.order(shortname: :asc)
   end
 
   def new

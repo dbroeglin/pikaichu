@@ -3,16 +3,16 @@
     <tr>
       <th>Firstname</th>
       <th>Lastname</th>
-      <th>Title</th>
+      <th>T./L.</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% participating_dojo.participants.each do |participant| %>
+    <% participating_dojo.participants.order(lastname: :asc, firstname: :asc).each do |participant| %>
     <tr>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
-      <td><%= participant.title %></td>
+      <td><%= [participant.title, participant.level].compact.join "/" %></td>
       <td>
         <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small" do %>
           <span class="icon is-small">

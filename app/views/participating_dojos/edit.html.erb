@@ -1,17 +1,38 @@
 <div class="container">
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li><%= link_to @taikai.shortname, edit_taikai_path(@taikai) %></li>
+      <li class=is-active><%= link_to @participating_dojo.display_name,
+                      edit_taikai_participating_dojo_path(@taikai, @participating_dojo),
+                      "aria-current": "page" %></li>
+    </ul>
+  </nav>
   <div class="columns">
-    <div class="column is-one-third is-offset-one-third">
+    <div class="column is-one-third is-offset-2">
       <div class="card">
         <div class="card-content">
           <p class="title">Edit Participating Dojo</p>
+
           <%= render "form", taikai: @taikai, participating_dojo: @participating_dojo %>
         </div>
       </div>
     </div>
     <div class="column is-one-third">
       <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Dojo Information
+          </p>
+        </header>
         <div class="card-content">
-          <p class="subtitle">Participants</p>
+          <%= @participating_dojo.dojo.name %> / <%= @participating_dojo.dojo.country_name %>
+        </div>
+      </div>
+      <div class="card mt-5">
+        <header class="card-header">
+          <p class="card-header-title">Participants</p>
+        </header>
+        <div class="card-content">
           <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo %>
         </div>
       </div>

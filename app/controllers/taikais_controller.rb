@@ -1,6 +1,6 @@
 class TaikaisController < ApplicationController
   def index
-    @taikais = Taikai.all
+    @taikais = Taikai.all.order(start_date: :asc, end_date: :asc, shortname: :asc)
   end
 
   def new
@@ -38,7 +38,13 @@ class TaikaisController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def judging
+    @taikai = Taikai.find(params[:id])
+    @participating_dojos = @taikai.participating_dojos.order(display_name: :asc)
+  end
+
   private
+
   def taikai_params
     params.require(:taikai).permit(:shortname, :name, :description, :start_date, :end_date, :distributed)
   end

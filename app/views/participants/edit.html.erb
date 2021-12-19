@@ -1,6 +1,16 @@
 <div class="container">
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li><%= link_to @taikai.shortname, edit_taikai_path(@taikai) %></li>
+      <li><%= link_to @participating_dojo.display_name,
+                      edit_taikai_participating_dojo_path(@taikai, @participating_dojo) %></li>
+      <li class=is-active><%= link_to @participant.display_name,
+                      edit_taikai_participating_dojo_participant_path(@taikai, @participating_dojo, @participant),
+                      "aria-current": "page" %></li>
+    </ul>
+  </nav>
   <div class="columns">
-    <div class="column is-one-third is-offset-one-third">
+    <div class="column is-one-third is-offset-2">
       <div class="card">
         <div class="card-content">
           <p class="title">Edit Participant</p>
