@@ -1,2 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+
+  <div class="tile is-ancestor">
+    <div class="tile is-4 is-vertical is-parent">
+      <div class="tile is-child box">
+        <p class="title">Taikais</p>
+        <p>We currently have <%= @num_taikais %> active taikais.</p>
+        <div class="buttons mt-4">
+          <%= link_to "Manage Taikais", taikais_path, class: "button is-outlined" %>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-4 is-parent">
+      <div class="tile is-child box">
+        <p class="title">Dojos</p>
+        <p>We currently have <%= @num_dojos %> active dojos.</p>
+        <div class="buttons mt-4">
+          <%= link_to "Manage Dojos", dojos_path, class: "button is-outlined" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
