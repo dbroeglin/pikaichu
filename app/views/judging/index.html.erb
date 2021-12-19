@@ -1,10 +1,9 @@
 <div class="container">
   <div class="columns">
     <div class="column is-two-third is-offset-2">
-
       <table class="table is-narrow is-striped is-bordered is-fullwidth">
         <thead>
-          <tr>
+          <tr class="has-text-centered">
             <th>Dojo</th>
             <th>Name</th>
             <th>Choice</th>
@@ -17,23 +16,40 @@
         <tbody>
           <% @participating_dojos.each_with_index do |dojo| %>
           <% dojo.participants.each_with_index do |participant, index| %>
-          <tr>
+          <tr class="has-text-centered">
             <% if index == 0 %>
             <td rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </td>
             <% end %>
-            <td><%= participant.display_name %></td>
+            <td class="has-text-left"><%= participant.display_name %></td>
             <td>
-              <span class="icon is-small">
-                <i class="far fa-circle"></i>
-              </span>
-              <span class="icon is-small ml-3">
-                <i class="fas fa-xmark"></i>
-              </span>
+              <div class="columns is-mobile is-centered is-gapless">
+                <div class="column is-half">
+                  <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
+                    <%= form.hidden_field :status, value: "hit" %>
+                    <%= form.button class: "button is-small is-outlined" do %>
+                      <span class="icon is-small">
+                        <i class="far fa-circle"></i>
+                      </span>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="column is-half">
+                  <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
+                    <%= form.hidden_field :status, value: "miss" %>
+                    <%= form.button class: "button is-small is-outlined" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-xmark"></i>
+                      </span>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
             </td>
             <% participant.results.each do |result| %>
               <td>
+                <a href="#" class="button is-small is-text">
                 <% if result.status_hit? %>
                 <span class="icon is-small">
                   <i class="far fa-circle"></i>
@@ -44,9 +60,10 @@
                 </span>
                 <% else %>
                 <span class="icon is-small">
-                  <i class="fat fa-question"></i>
+                  <i class="fas fa-minus"></i>
                 </span>
                 <% end %>
+                </a>
               </td>
             <% end %>
             <td><%= participant.total %></td>

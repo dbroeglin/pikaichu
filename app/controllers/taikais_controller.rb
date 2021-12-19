@@ -38,11 +38,6 @@ class TaikaisController < ApplicationController
     redirect_to action: 'index'
   end
 
-  def judging
-    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
-    @participating_dojos = @taikai.participating_dojos
-  end
-
   private
 
   def taikai_params

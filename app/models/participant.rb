@@ -14,9 +14,13 @@ class Participant < ApplicationRecord
     results.select {|r| r.status == 'hit' }.size
   end
 
+  def find_undefined_results
+    results.where("status IS NULL")
+  end
+
   def generate_empty_results
     if results.where("status IS NOT NULL").any?
-      throw "Non empty results already exist for #{id} (#{display_name})"
+      throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
     results.destroy_all
 
