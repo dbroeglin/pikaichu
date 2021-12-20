@@ -38,6 +38,12 @@ class TaikaisController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def export
+    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
+
+    render xlsx: "export", filename: "Taikai - #{@taikai.shortname}.xlsx"
+  end
+
   private
 
   def taikai_params

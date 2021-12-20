@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/taikais/:id/leaderboard',                      to: 'leader_board#index',    as: :leaderboard_index
 
+  get '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
+
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

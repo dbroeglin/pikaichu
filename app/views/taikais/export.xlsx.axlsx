@@ -1,0 +1,131 @@
+
+header_row_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :center, wrap_text: true },
+  border: { style: :thin, color: 'FF000000' },
+  b: true, sz: 14
+)
+
+info_data_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12
+)
+
+info_label_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12, b: true
+)
+
+description_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left, wrap_text: true },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12
+)
+
+date_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left },
+  border: { style: :thin, color: 'FF000000' },
+  format_code: 'dd.mm.yyyy',
+  sz: 12
+)
+
+table_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12
+)
+
+result_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :center },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12
+)
+
+total_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :center },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12, b: true
+)
+
+xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
+  sheet.add_row ["Informations"],                     style: [ header_row_style ], height: 30
+  #sheet.merge_cells('A1:B1')
+
+  sheet.add_row ["Shortname", @taikai.shortname],     style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row ["Name", @taikai.name],               style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row ["Start Date", @taikai.start_date],   style: [info_label_cell_style, date_style], height: 20
+  sheet.add_row ["End Date", @taikai.end_date],       style: [info_label_cell_style, date_style], height: 20
+  sheet.add_row ["Description", @taikai.description], style: [info_label_cell_style, description_style], height: 20
+
+  sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
+end
+
+xlsx_package.workbook.add_worksheet(name: "Participants") do |sheet|
+
+  sheet.add_row [
+    "Dojo",
+    "Name",
+    "Title",
+    "Level"
+  ], style: header_row_style
+  @taikai.participating_dojos.each do |dojo|
+    dojo.participants.each do |participant|
+      row = [
+        dojo.display_name,
+        participant.display_name,
+        participant.title,
+        participant.level,
+      ]
+
+      sheet.add_row row, style: [ table_cell_style, table_cell_style, table_cell_style, table_cell_style ]
+    end
+  end
+  sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
+end
+
+row_styles = [ table_cell_style, table_cell_style ] +
+             [ result_cell_style ] * 12 +
+             [ total_cell_style ]
+
+
+xlsx_package.use_autowidth = false
+
+xlsx_package.workbook.add_worksheet(name: "Results") do |sheet|
+  sheet.add_row [
+    "Dojo",
+    "Name",
+    "R1", '', '', '',
+    "R2", '', '', '',
+    "R3", '', '', '',
+    "Total"
+  ], style: header_row_style
+  sheet.column_widths *([20, 40 ] + [ 5 ] * 12 + [8])
+  sheet.merge_cells('C1:F1')
+  sheet.merge_cells('G1:J1')
+  sheet.merge_cells('K1:N1')
+
+  rows = @taikai.participating_dojos.map do |dojo|
+    dojo.participants.map do |participant|
+      [
+        dojo.display_name,
+        participant.display_name,
+      ] + (participant.results.map { |result|
+          case result.status
+          when 'hit'
+            'O'
+          when 'miss'
+            'X'
+          else
+            ''
+          end
+      } + [ participant.results.map(&:status).tally['hit'].to_i || 0 ])
+    end
+  end.flatten(1).sort_by { |row| row.last }.reverse
+
+  rows.each do |row|
+    sheet.add_row row, style: row_styles
+  end
+
+  sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
+end
