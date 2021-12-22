@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable
+
+
+  audited
+  self.non_audited_columns = [:encrypted_password]
 end
