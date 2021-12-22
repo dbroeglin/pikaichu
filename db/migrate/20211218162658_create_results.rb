@@ -6,7 +6,7 @@ class CreateResults < ActiveRecord::Migration[6.1]
       t.references :participant, null: false, foreign_key: true
       t.integer :round
       t.integer :index
-      t.enum :status, enum_name: :result_status, null: true
+      t.enum :status, enum_type: :result_status, null: true
 
       t.timestamps
     end

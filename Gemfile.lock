@@ -48,8 +48,8 @@ GEM
     activerecord (7.0.0)
       activemodel (= 7.0.0)
       activesupport (= 7.0.0)
-    activerecord-postgres_enum (2.0.0)
-      activerecord (>= 5.2)
+    activerecord-postgres_enum (1.7.0)
+      activerecord (>= 5)
       pg
     activestorage (7.0.0)
       actionpack (= 7.0.0)
@@ -256,7 +256,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord-postgres_enum
+  activerecord-postgres_enum (= 1.7.0)
   bootsnap (>= 1.4.4)
   bulma-rails (~> 0.9.2)
   byebug
