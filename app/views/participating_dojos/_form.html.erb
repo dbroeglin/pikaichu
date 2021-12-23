@@ -5,5 +5,6 @@
 
   <%= f.input :display_name %>
 
-  <%= f.button "Save", class: "button is-primary" %>
+  <%= f.button "Save", class: "button has-background-light mr-3" %>
+  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button is-outlined" %>
 <% end %>

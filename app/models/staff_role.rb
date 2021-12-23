@@ -1,0 +1,2 @@
+class StaffRole < ApplicationRecord
+end

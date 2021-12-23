@@ -1,13 +1,10 @@
 class Participant < ApplicationRecord
   belongs_to :participating_dojo
   has_many :results, -> { order(round: :asc, index: :asc) }, dependent: :destroy
+  has_one :taikai, through: :participating_dojo
 
   def display_name
     "#{firstname} #{lastname}"
-  end
-
-  def taikai
-    participating_dojo.taikai
   end
 
   def total

@@ -8,5 +8,6 @@
   <%= f.input :country_code, collection: ISO3166::Country.all,
               value_method: :alpha2, text_method: :name %>
 
-  <%= f.button "Save", class: "button is-primary" %>
+  <%= f.button "Save", class: "button has-background-light mr-3" %>
+  <%= link_to "Cancel", dojos_path, class: "button is-outlined" %>
 <% end %>

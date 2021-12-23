@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-one-third is-offset-2">
+      <div class="card">
+        <div class="card-content">
+          <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+            <ul>
+              <li><%= link_to @taikai.shortname, edit_taikai_path(@taikai) %></li>
+              <li class=is-active><%= link_to @staff.display_name,
+                              edit_taikai_staff_path(@taikai, @staff),
+                              "aria-current": "page" %></li>
+            </ul>
+          </nav>
+          <p class="title">Edit Staff</p>
+
+          <%= render "form", taikai: @taikai, staff: @staff %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+    </div>
+  </div>
+</div>

@@ -14,13 +14,13 @@
       <td><%= participant.lastname %></td>
       <td><%= [participant.title, participant.level].compact.join "/" %></td>
       <td>
-        <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small" do %>
+        <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small has-background-light" do %>
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to [taikai, participating_dojo, participant], method: :delete,
-                    class: "button is-small", data: { confirm: "Are you sure?" } do %>
+                    class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
           <span class="icon is-small is-small">
             <i class="far fa-trash-can"></i>
           </span>

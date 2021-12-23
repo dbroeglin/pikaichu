@@ -1,13 +1,12 @@
-<%= bulma_form_with model: [taikai, participating_dojo, participant] do |f| %>
+<%= bulma_form_with model: [taikai, staff] do |f| %>
   <% if taikai.errors.any? %>
     <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this dojo from being saved:</h2>
   <% end %>
 
   <%= f.input :firstname %>
   <%= f.input :lastname %>
-  <%= f.input :title %>
-  <%= f.input :level %>
+  <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
 
   <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", edit_taikai_participating_dojo_path(taikai, participating_dojo), class: "button is-outlined" %>
+  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button is-outlined" %>
 <% end %>

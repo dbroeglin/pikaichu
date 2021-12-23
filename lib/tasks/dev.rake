@@ -11,6 +11,12 @@ if Rails.env.development? || Rails.env.test?
         create(:user, email: "jean.bon@example.org")
         create_list(:user, 5)
 
+        create(:staff_role, code: :chairman,        label: 'Chairman')
+        create(:staff_role, code: :marking_referee, label: 'Marking Referee')
+        create(:staff_role, code: :shajo_referee,   label: 'Shajo Referee')
+        create(:staff_role, code: :yatori,          label: 'Yatori')
+        # Add other staff roles
+
         create_list(:dojo, 4)
 
         create(:taikai_with_participating_dojo,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_220558) do
+ActiveRecord::Schema.define(version: 2021_12_23_182808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,27 @@ ActiveRecord::Schema.define(version: 2021_12_22_220558) do
     t.index ["participant_id"], name: "index_results_on_participant_id"
   end
 
+  create_table "staff_roles", force: :cascade do |t|
+    t.string "code"
+    t.string "label"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.bigint "taikai_id", null: false
+    t.bigint "role_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["role_id"], name: "index_staffs_on_role_id"
+    t.index ["taikai_id"], name: "index_staffs_on_taikai_id"
+    t.index ["user_id"], name: "index_staffs_on_user_id"
+  end
+
   create_table "taikais", force: :cascade do |t|
     t.string "shortname"
     t.string "name"
@@ -100,15 +121,15 @@ ActiveRecord::Schema.define(version: 2021_12_22_220558) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "confirmation_token"
-    t.datetime "confirmed_at", precision: 6
-    t.datetime "confirmation_sent_at", precision: 6
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
-    t.datetime "locked_at", precision: 6
+    t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
@@ -121,4 +142,7 @@ ActiveRecord::Schema.define(version: 2021_12_22_220558) do
   add_foreign_key "participating_dojos", "dojos"
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "participants"
+  add_foreign_key "staffs", "staff_roles", column: "role_id"
+  add_foreign_key "staffs", "taikais"
+  add_foreign_key "staffs", "users"
 end

@@ -20,6 +20,9 @@ FactoryBot.define do
             create(:participating_dojo_with_participants, dojo: dojo, taikai: taikai)
           end
 
+          create(:staff, taikai: taikai, role: StaffRole.find_by_code(:chairman), user: User.first)
+          create(:staff, taikai: taikai, role: StaffRole.find_by_code(:yatori))
+
           taikai.reload
         end
       end

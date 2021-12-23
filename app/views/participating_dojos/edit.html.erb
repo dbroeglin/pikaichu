@@ -2,6 +2,9 @@
   <div class="columns">
     <div class="column is-one-third is-offset-2">
       <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Edit Participating Dojo</p>
+        </header>
         <div class="card-content">
           <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
             <ul>
@@ -11,8 +14,6 @@
                               "aria-current": "page" %></li>
             </ul>
           </nav>
-          <p class="title">Edit Participating Dojo</p>
-
           <%= render "form", taikai: @taikai, participating_dojo: @participating_dojo %>
         </div>
       </div>
@@ -20,9 +21,7 @@
     <div class="column is-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">
-            Dojo Information
-          </p>
+          <p class="card-header-title">Dojo Information</p>
         </header>
         <div class="card-content">
           <%= @participating_dojo.dojo.name %> / <%= @participating_dojo.dojo.country_name %>

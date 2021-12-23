@@ -2,17 +2,29 @@
   <div class="columns">
     <div class="column is-one-third is-offset-2">
       <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Edit Taikai</p>
+        </header>
         <div class="card-content">
-          <p class="title">Edit Taikai</p>
           <%= render "form", taikai: @taikai %>
         </div>
       </div>
     </div>
-    <div class="column is-one-third">
+    <div class="column is-one-half">
       <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Participating Dojo</p>
+        </header>
         <div class="card-content">
-          <p class="subtitle">Participating Dojos</p>
           <%= render "participating_dojos/list", taikai: @taikai %>
+        </div>
+      </div>
+      <div class="card mt-5">
+        <header class="card-header">
+          <p class="card-header-title">Staffs</p>
+        </header>
+        <div class="card-content">
+          <%= render "staffs/list", taikai: @taikai %>
         </div>
       </div>
     </div>

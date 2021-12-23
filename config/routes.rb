@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :participating_dojos do
       resources :participants
     end
+    resources :staffs
   end
 
   get '/taikais/:id/judging',                          to: 'judging#index',         as: :judging_index

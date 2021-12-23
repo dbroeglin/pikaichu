@@ -3,17 +3,20 @@
     <div class="column is-two-third is-offset-2">
       <h1 class="title">Dojos</h1>
 
-      <div class="buttons">
-        <%= link_to "New", new_dojo_path, class: "button is-primary" %>
-      </div>
-
       <table class="table">
         <thead>
           <tr class="has-text-centered">
             <th>Shortname</th>
             <th>Name</th>
             <th>Country</th>
-            <th>Actions</th>
+            <th>
+              <%= link_to new_dojo_path, class: "button is-small is-outlined has-background-light" do %>
+                <span class="icon is-right is-small">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <span>New</span>
+              <% end %>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -23,13 +26,13 @@
             <td><%= dojo.name %></td>
             <td><%= dojo.country_name %></td>
             <td>
-              <%= link_to edit_dojo_path(dojo), class: "button is-small is-outlined" do %>
+              <%= link_to edit_dojo_path(dojo), class: "button is-small has-background-light" do %>
                 <span class="icon is-small">
                   <i class="fas fa-pen"></i>
                 </span>
               <% end %>
               <%= link_to dojo, method: :delete,
-                          class: "button is-small is-outlined", data: { confirm: "Are you sure?" } do %>
+                          class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
                 <span class="icon is-small">
                   <i class="far fa-trash-can"></i>
                 </span>
