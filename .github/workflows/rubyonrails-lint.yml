@@ -24,6 +24,7 @@ jobs:
       # Add or Replace any other security checks here
       - name: Run security checks
         run: |
+          gem install bundler-audit
           bundle audit update
           bundle audit check
           bin/brakeman -q -w2
