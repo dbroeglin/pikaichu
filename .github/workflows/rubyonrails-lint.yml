@@ -31,5 +31,4 @@ jobs:
       # Add or Replace any other Linters here
       - name: Run linters
         run: |
-          gem install rubocop
-          rubocop --parallel
+          bin/rails rubocop
