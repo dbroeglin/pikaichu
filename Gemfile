@@ -28,11 +28,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
-gem 'bundler-audit', require: false
-gem 'brakeman', require: false
-gem 'rubocop', require: false
-gem 'rubocop-rails', require: false
-
 gem 'pg', '~> 1.1'
 gem 'activerecord-postgres_enum', '1.7.0' # version 2.0 causes error in schema.rb
 
@@ -62,6 +57,11 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'bundler-audit', require: false
+  gem 'brakeman', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :test do
