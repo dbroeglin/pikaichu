@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable
 
-
   audited
   self.non_audited_columns = [:encrypted_password]
 end

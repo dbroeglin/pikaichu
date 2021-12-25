@@ -7,6 +7,36 @@
   <%= f.input :lastname %>
   <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
 
+  <div class="field">
+    <label class=" label" for="user">
+    <div class="columns">
+      <div class="column">
+        User
+      </div>
+      <div class="column has-text-right">
+        <%= link_to new_taikai_path, class: "button is-small" do %>
+          <% if staff.user %>
+            <span class="icon is-small">
+              <i class="fas fa-pen"></i>
+            </span>
+            <span>Change</span>
+          <% else %>
+            <span class="icon is-small">
+              <i class="fas fa-plus"></i>
+            </span>
+            <span>Select</span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    </label>
+
+    <div class="control">
+      <%= text_field_tag :user, staff.user&.email, class: "input", disabled: true %>
+    </div>
+  </div>
+
   <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button is-outlined" %>
+  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>
 <% end %>

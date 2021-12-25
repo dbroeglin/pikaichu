@@ -30,7 +30,7 @@
                 <div class="column is-half">
                   <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
                     <%= form.hidden_field :status, value: "hit" %>
-                    <%= form.button class: "button is-small is-outlined" do %>
+                    <%= form.button class: "button is-small" do %>
                       <span class="icon is-small">
                         <i class="far fa-circle"></i>
                       </span>
@@ -40,7 +40,7 @@
                 <div class="column is-half">
                   <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
                     <%= form.hidden_field :status, value: "miss" %>
-                    <%= form.button class: "button is-small is-outlined" do %>
+                    <%= form.button class: "button is-small" do %>
                       <span class="icon is-small">
                         <i class="fas fa-xmark"></i>
                       </span>

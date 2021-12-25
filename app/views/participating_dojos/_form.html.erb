@@ -1,10 +1,40 @@
 <%= bulma_form_with model: [taikai, participating_dojo] do |f| %>
-  <% if taikai.errors.any? %>
-    <h2><%= pluralize(taikai.errors.count, "error") %> prohibited this dojo from being saved:</h2>
+  <% if participating_dojo.errors.any? %>
+    <h2><%= pluralize(participating_dojo.errors.count, "error") %> prohibited this dojo from being saved</h2>
   <% end %>
 
   <%= f.input :display_name %>
 
+  <div class="field">
+    <label class=" label" for="dojo">
+    <div class="columns">
+      <div class="column">
+        Dojo
+      </div>
+      <div class="column has-text-right">
+        <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
+          <% if participating_dojo.dojo %>
+            <span class="icon is-right is-small">
+              <i class="fas fa-pen"></i>
+            </span>
+            <span>Change</span>
+          <% else %>
+            <span class="icon is-right is-small">
+              <i class="fas fa-plus"></i>
+            </span>
+            <span>Select</span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    </label>
+
+    <div class="control">
+      <%= text_field_tag :user, participating_dojo.dojo&.name, class: "input", disabled: true %>
+    </div>
+  </div>
+
   <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button is-outlined" %>
+  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>
 <% end %>

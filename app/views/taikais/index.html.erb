@@ -12,7 +12,7 @@
             <th>Start Date</th>
             <th>End Date</th>
             <th class="has-text-right">
-              <%= link_to new_taikai_path, class: "button is-small is-outlined has-background-light" do %>
+              <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
                 <span class="icon is-right is-small">
                   <i class="fas fa-plus"></i>
                 </span>
@@ -36,28 +36,28 @@
             <td><%= l taikai.start_date, format: :long %></td>
             <td><%= l taikai.end_date, format: :short %></td>
             <td class="has-text-right">
-              <%= link_to edit_taikai_path(taikai), class: "button is-small is-outlined has-background-light" do %>
+              <%= link_to edit_taikai_path(taikai), class: "button is-small has-background-light" do %>
                 <span class="icon is-small">
                   <i class="fas fa-pen"></i>
                 </span>
               <% end %>
               <%= link_to taikai, method: :delete,
-                          class: "button is-small is-outlined has-background-light", data: { confirm: "Are you sure?" } do %>
+                          class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
                 <span class="icon is-small">
                   <i class="far fa-trash-can"></i>
                 </span>
               <% end %>
-              <%= link_to judging_index_path(taikai), class: "button is-small is-outlined has-background-light ml-3" do %>
+              <%= link_to judging_index_path(taikai), class: "button is-small has-background-light ml-3" do %>
                 <span class="icon is-small">
                   <i class="far fa-circle-dot"></i>
                 </span>
               <% end %>
-              <%= link_to leaderboard_index_path(taikai), class: "button is-small is-outlined has-background-light" do %>
+              <%= link_to leaderboard_index_path(taikai), class: "button is-small has-background-light" do %>
                 <span class="icon is-small">
                   <i class="fas fa-medal"></i>
                 </span>
               <% end %>
-              <%= link_to taikai_export_path(taikai), class: "button is-small is-outlined has-background-light" do %>
+              <%= link_to taikai_export_path(taikai), class: "button is-small has-background-light" do %>
                 <span class="icon is-small">
                   <i class="fas fa-file-excel"></i>
                 </span>

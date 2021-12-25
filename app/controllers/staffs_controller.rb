@@ -1,6 +1,19 @@
 class StaffsController < ApplicationController
   before_action :set_taikai
 
+  def new
+    @staff = @taikai.staffs.build
+  end
+
+  def create
+    @staff = @taikai.staffs.build(staff_params)
+
+    if @staff.save
+      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+    else
+      render :new
+    end
+  end
 
   def edit
     @staff = @taikai.staffs.find(params[:id])
@@ -16,21 +29,6 @@ class StaffsController < ApplicationController
     end
   end
 
-  def new
-    @staff = @taikai.staffs.build
-  end
-
-  def create
-    @staff = @taikai.staffs.build(staff_params)
-
-    if @staff.save
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
-    else
-      render :new
-    end
-  end
-
-
   def destroy
     @staff = @taikai.staffs.find(params[:id])
 
@@ -40,19 +38,19 @@ class StaffsController < ApplicationController
 
   private
 
-  def set_taikai
-    @taikai = Taikai.find(params[:taikai_id])
-  end
-
   def staff_params
     params
-      .require(:staff)
-      .permit(
-        :taikai_id,
-        :user_id,
-        :role_id,
-        :firstname,
-        :lastname,
-      )
+    .require(:staff)
+    .permit(
+      :taikai_id,
+      :user_id,
+      :role_id,
+      :firstname,
+      :lastname,
+    )
+  end
+
+  def set_taikai
+    @taikai = Taikai.find(params[:taikai_id])
   end
 end
