@@ -160,7 +160,7 @@ module ApplicationHelper
           method,
           merge_input_options(options, { data: { datepicker: true } }),
         )
-      when :integer
+      when :integer, :decimal
         number_field(method, options)
       when :string
         case method.to_s
@@ -200,7 +200,7 @@ module ApplicationHelper
         case object_type
         when :date
           :string
-        when :integer
+        when :integer, :decimal
           :string
         else
           object_type
