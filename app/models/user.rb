@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   audited
   self.non_audited_columns = [:encrypted_password]
+
+  scope :containing, -> (query) { where <<~SQL, "%#{query}%" }
+    email ILIKE ?
+  SQL
 end

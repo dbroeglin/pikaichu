@@ -8,6 +8,9 @@ class ParticipatingDojosController < ApplicationController
   def create
     @participating_dojo = @taikai.participating_dojos.build(participating_dojo_params)
 
+    if @participating_dojo.display_name.blank?
+      @participating_dojo.display_name = dojo_params[:name]
+    end
     if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
@@ -44,6 +47,10 @@ class ParticipatingDojosController < ApplicationController
       :dojo_id,
       :display_name
     )
+  end
+
+  def dojo_params
+    params.require(:dojo).permit(:name)
   end
 
   def set_taikai

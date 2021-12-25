@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= user.id %>">
+    <p><%= user.email %></p>
+  </div>
+<% end %>

@@ -4,9 +4,10 @@
     <tr class="has-text-centered">
       <th>Name</th>
       <th>Role</th>
+      <th>User</th>
       <th class="has-text-right">
         <%= link_to new_taikai_staff_path(@taikai), class: "button is-small has-background-light" do %>
-          <span class="icon is-right is-small">
+          <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
           <span>New</span>
@@ -19,6 +20,7 @@
     <tr>
       <td><%= staff.display_name %></td>
       <td><%= staff.role.label %></td>
+      <td><%= staff.user&.email %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_staff_path(taikai, staff),
                     class: "button is-small has-background-light" do %>
@@ -28,7 +30,7 @@
         <% end %>
         <%= link_to [taikai, staff], method: :delete,
                     class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
-          <span class="icon is-small is-small">
+          <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
         <% end %>

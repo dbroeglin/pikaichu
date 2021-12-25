@@ -3,37 +3,23 @@
     <h2><%= pluralize(participating_dojo.errors.count, "error") %> prohibited this dojo from being saved</h2>
   <% end %>
 
-  <%= f.input :display_name %>
-
   <div class="field">
-    <label class=" label" for="dojo">
-    <div class="columns">
-      <div class="column">
-        Dojo
-      </div>
-      <div class="column has-text-right">
-        <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
-          <% if participating_dojo.dojo %>
-            <span class="icon is-right is-small">
-              <i class="fas fa-pen"></i>
-            </span>
-            <span>Change</span>
-          <% else %>
-            <span class="icon is-right is-small">
-              <i class="fas fa-plus"></i>
-            </span>
-            <span>Select</span>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    </label>
-
+    <label class=" label" for="dojo_name">Associated Dojo</label>
     <div class="control">
-      <%= text_field_tag :user, participating_dojo.dojo&.name, class: "input", disabled: true %>
+      <div class="dropdown is-active" data-controller="autocomplete"
+           data-autocomplete-url-value="<%= taikai_participating_dojo_available_dojos_path(taikai, participating_dojo) %>">
+        <div class="dropdown-trigger">
+          <%= f.hidden_field :dojo_id, "data-autocomplete-target": "hidden" %>
+          <%= text_field_tag "dojo[name]", participating_dojo.dojo&.name, class: "input", autocomplete: "off", "data-autocomplete-target": "input" %>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+          <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <%= f.input :display_name, input_html: { placeholder: "Leave empty or override the dojo's name" } %>
 
   <%= f.button "Save", class: "button has-background-light mr-3" %>
   <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>

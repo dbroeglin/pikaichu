@@ -8,32 +8,18 @@
   <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
 
   <div class="field">
-    <label class=" label" for="user">
-    <div class="columns">
-      <div class="column">
-        User
-      </div>
-      <div class="column has-text-right">
-        <%= link_to new_taikai_path, class: "button is-small" do %>
-          <% if staff.user %>
-            <span class="icon is-small">
-              <i class="fas fa-pen"></i>
-            </span>
-            <span>Change</span>
-          <% else %>
-            <span class="icon is-small">
-              <i class="fas fa-plus"></i>
-            </span>
-            <span>Select</span>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    </label>
-
+    <label class=" label" for="user">User</label>
     <div class="control">
-      <%= text_field_tag :user, staff.user&.email, class: "input", disabled: true %>
+      <div class="dropdown is-active" data-controller="autocomplete"
+           data-autocomplete-url-value="<%= taikai_staff_available_users_path(taikai, staff) %>">
+        <div class="dropdown-trigger">
+          <%= f.hidden_field :user_id, "data-autocomplete-target": "hidden" %>
+          <%= text_field_tag :user, staff.user&.email, class: "input", autocomplete: "off", "data-autocomplete-target": "input" %>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+          <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
+        </div>
+      </div>
     </div>
   </div>
 
