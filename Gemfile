@@ -53,7 +53,7 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
-gem 'activerecord-postgres_enum', '1.7.0' # version 2.0 causes error in schema.rb
+gem 'activerecord-postgres_enum', "~> 2.0"
 
 gem "bulma-rails", "~> 0.9.2"
 
