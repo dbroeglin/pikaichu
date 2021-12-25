@@ -4,9 +4,11 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.0",
+    "@rails/ujs": "^7.0.0",
     "bulma": "^0.9.3",
     "esbuild": "^0.14.8",
-    "sass": "^1.45.1"
+    "sass": "^1.45.1",
+    "stimulus-autocomplete": "^3.0.0-rc.5"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
