@@ -1,13 +1,26 @@
 class ParticipantsController < ApplicationController
   before_action :set_taikai
+  before_action :set_participating_dojo
+
+  def new
+    @participant = @participating_dojo.participants.build
+  end
+
+  def create
+    @participant = @participating_dojo.participants.build(participant_params)
+
+    if @participant.save
+      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+    else
+      render :new
+    end
+  end
 
   def edit
-    @participating_dojo = @taikai.participating_dojos.find(params[:participating_dojo_id])
     @participant = @participating_dojo.participants.find(params[:id])
   end
 
   def update
-    @participating_dojo = @taikai.participating_dojos.find(params[:participating_dojo_id])
     @participant = @participating_dojo.participants.find(params[:id])
 
     if @participant.update(participant_params)
@@ -19,7 +32,6 @@ class ParticipantsController < ApplicationController
   end
 
   def destroy
-    @participating_dojo = @taikai.participating_dojos.find(params[:participating_dojo_id])
     @participant = @participating_dojo.participants.find(params[:id])
 
     @participant.destroy
@@ -44,5 +56,9 @@ class ParticipantsController < ApplicationController
 
   def set_taikai
     @taikai = Taikai.find(params[:taikai_id])
+  end
+
+  def set_participating_dojo
+    @participating_dojo = @taikai.participating_dojos.find(params[:participating_dojo_id])
   end
 end

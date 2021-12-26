@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-one-third is-offset-2">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">New Participant</p>
+        </header>
+        <div class="card-content">
+          <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+            <ul>
+              <li><%= link_to @taikai.shortname, edit_taikai_path(@taikai) %></li>
+              <li><%= link_to @participating_dojo.display_name,
+                              edit_taikai_participating_dojo_path(@taikai, @participating_dojo) %></li>
+              <li class=is-active><a>New</a></li>
+            </ul>
+          </nav>
+          <%= render "form", taikai: @taikai,
+                     participating_dojo: @participating_dojo, participant: @participant %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

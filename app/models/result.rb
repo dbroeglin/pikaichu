@@ -6,4 +6,5 @@ class Result < ApplicationRecord
     miss: 'miss',
   }, _prefix: :status
 
+  human_enum :status
 end

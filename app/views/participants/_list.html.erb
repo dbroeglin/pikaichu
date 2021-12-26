@@ -4,7 +4,14 @@
       <th>Firstname</th>
       <th>Lastname</th>
       <th>T./L.</th>
-      <th>Actions</th>
+      <th class="has-text-right">
+        <%= link_to new_taikai_participating_dojo_participant_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>New</span>
+        <% end %>
+      </th>
     </tr>
   </thead>
   <tbody>
