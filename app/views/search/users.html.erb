@@ -1,3 +1,8 @@
+<% if @users.empty? %>
+  <div class="dropdown-item" class="list-group-item" role="option" aria-disabled="true">
+    <p>No users matching your criteria</p>
+  </div>
+<% end %>
 <% @users.each do |user| %>
   <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= user.id %>">
     <p><%= user.email %></p>

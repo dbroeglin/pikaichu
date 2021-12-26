@@ -10,7 +10,7 @@
            data-autocomplete-url-value="<%= taikai_participating_dojo_available_dojos_path(taikai, participating_dojo) %>">
         <div class="dropdown-trigger">
           <%= f.hidden_field :dojo_id, "data-autocomplete-target": "hidden" %>
-          <%= text_field_tag "dojo[name]", participating_dojo.dojo&.name, class: "input", autocomplete: "off", "data-autocomplete-target": "input" %>
+          <%= text_field_tag "dojo[name]", participating_dojo.dojo&.name, class: "input", autocomplete: "off", "data-autocomplete-target": "input", placeholder: "Start typing a name..." %>
         </div>
         <div class="dropdown-menu" id="dropdown-menu3" role="menu">
           <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
