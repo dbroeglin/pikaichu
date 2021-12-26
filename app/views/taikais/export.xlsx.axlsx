@@ -66,16 +66,12 @@ xlsx_package.workbook.add_worksheet(name: "Participants") do |sheet|
   sheet.add_row [
     "Dojo",
     "Name",
-    "Title",
-    "Level"
   ], style: header_row_style
   @taikai.participating_dojos.each do |dojo|
     dojo.participants.each do |participant|
       row = [
         dojo.display_name,
         participant.display_name,
-        participant.title,
-        participant.level,
       ]
 
       sheet.add_row row, style: [ table_cell_style, table_cell_style, table_cell_style, table_cell_style ]

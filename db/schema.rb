@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 2021_12_23_182808) do
   create_table "participants", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
-    t.string "title"
-    t.string "level"
     t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

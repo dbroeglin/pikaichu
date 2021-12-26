@@ -3,7 +3,6 @@
     <tr class="has-text-centered">
       <th>Firstname</th>
       <th>Lastname</th>
-      <th>T./L.</th>
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_participant_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
           <span class="icon is-small">
@@ -19,7 +18,6 @@
     <tr>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
-      <td><%= [participant.title, participant.level].compact.join "/" %></td>
       <td>
         <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small has-background-light" do %>
           <span class="icon is-small">

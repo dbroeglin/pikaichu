@@ -10,7 +10,8 @@ class ParticipantsController < ApplicationController
     @participant = @participating_dojo.participants.build(participant_params)
 
     if @participant.save
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+      redirect_to controller: 'participating_dojos', action: 'edit',
+      taikai_id: @taikai, id: @participating_dojo
     else
       render :new
     end
@@ -36,7 +37,7 @@ class ParticipantsController < ApplicationController
 
     @participant.destroy
     redirect_to controller: 'participating_dojos', action: 'edit',
-    taikai_id: @taikai, id: @participating_dojo
+                taikai_id: @taikai, id: @participating_dojo
   end
 
   private
@@ -49,8 +50,6 @@ class ParticipantsController < ApplicationController
         :participating_dojo_id,
         :firstname,
         :lastname,
-        :title,
-        :level,
       )
   end
 
