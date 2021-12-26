@@ -5,6 +5,7 @@
 
   <%= f.input :shortname %>
   <%= f.input :name %>
+  <%= f.input :city %>
   <%= f.input :country_code, collection: ISO3166::Country.all,
               value_method: :alpha2, text_method: :name %>
 

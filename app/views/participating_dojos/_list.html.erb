@@ -2,6 +2,7 @@
   <thead>
     <tr class="has-text-centered">
       <th>Name</th>
+      <th>City</th>
       <th>Country</th>
       <th>#</th>
       <th class="has-text-right">
@@ -18,6 +19,7 @@
     <% @taikai.participating_dojos.each do |participating_dojo| %>
     <tr>
       <td><%= participating_dojo.display_name %></td>
+      <td><%= participating_dojo.dojo.city %></td>
       <td><%= participating_dojo.dojo.country_name %></td>
       <td><%= participating_dojo.participants.count %></td>
       <td class="has-text-right">

@@ -8,6 +8,7 @@
           <tr class="has-text-centered">
             <th>Shortname</th>
             <th>Name</th>
+            <th>City</th>
             <th>Country</th>
             <th>
               <%= link_to new_dojo_path, class: "button is-small has-background-light" do %>
@@ -24,6 +25,7 @@
           <tr>
             <td><%= link_to dojo.shortname, edit_dojo_path(dojo) %></td>
             <td><%= dojo.name %></td>
+            <td><%= dojo.city %></td>
             <td><%= dojo.country_name %></td>
             <td>
               <%= link_to edit_dojo_path(dojo), class: "button is-small has-background-light" do %>

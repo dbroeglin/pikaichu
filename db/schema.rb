@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_12_23_182808) do
   create_table "dojos", force: :cascade do |t|
     t.string "shortname"
     t.string "name"
+    t.string "city"
     t.string "country_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

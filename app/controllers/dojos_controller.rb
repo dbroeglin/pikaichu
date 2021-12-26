@@ -46,6 +46,7 @@ class DojosController < ApplicationController
       .permit(
         :shortname,
         :name,
+        :city,
         :country_code
       )
   end
