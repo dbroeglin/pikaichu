@@ -1,16 +1,24 @@
-<h2>Resend confirmation instructions</h2>
+<div class="container">
+  <div class="columns">
+    <div class="column is-half is-offset-2">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Resend confirmation instructions</p>
+        </header>
+        <div class="card-content">
+          <%= bulma_form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { "data-turbo":  false, method: :post } do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.input :email, autofocus: true, autocomplete: :email, input_html: { value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1} %>
+            <%# TODO: The value part does not work%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+            <%= f.button "Resend confirmation instructions", class: "button has-background-light" %>
+          <% end %>
+        </div>
+        <footer class="card-content">
+          <%= render "devise/shared/links" %>
+        </footer>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

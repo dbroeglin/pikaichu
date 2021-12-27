@@ -15,7 +15,11 @@ module ApplicationHelper
     def label(method, options = {})
       options = {} if options.nil?
       options[:class] = [options[:class], 'label'].join ' '
-      super
+      if options[:label]
+        super method, options[:label], options
+      else
+        super
+      end
     end
 
     private
@@ -221,6 +225,7 @@ module ApplicationHelper
                     block.call,
                     #hint_text(options[:hint]),
                     error_text(method),
+                    options[:help] ? tag.div(options[:help], class: 'help') : nil
                   ].compact
       end
     end

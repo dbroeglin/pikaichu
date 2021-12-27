@@ -1,6 +1,4 @@
 class LeaderBoardController < ApplicationController
-  #before_action :authenticate_user!
-
   def index
     @taikai = Taikai.find(params[:id])
     @results = {}

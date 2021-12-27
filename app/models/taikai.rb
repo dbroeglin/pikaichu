@@ -1,7 +1,7 @@
 class Taikai < ApplicationRecord
   has_many :participating_dojos, -> { order display_name: :asc }, dependent: :destroy
   has_many :participants, through: :participating_dojos
-  has_many :staffs
+  has_many :staffs, dependent: :destroy
 
   validates :shortname, presence: true, length: { minimum: 3, maximum: 32 }
   validates :name, presence: true

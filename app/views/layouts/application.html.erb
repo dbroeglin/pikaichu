@@ -14,53 +14,17 @@
   </head>
 
   <body>
-    <nav class="navbar is-transparent">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="<%= root_path %>">
-          <img src="/logo_cnkyudo-archers_72dpi.webp" alt="CNKyudo">
-        </a>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item is-large is-size-3" href="<%= taikais_path %>">Taikais</a>
-          <a class="navbar-item is-large is-size-3" href="<%= dojos_path %>">Dojos</a>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://kyudo.fr" target="_blank" href="https://twitter.com/intent/tweet?text=Kyudo%20tournament%20TBD&amp;hashtags=kyudo&amp;url=https://kyudo.fr&amp;via=TBD">
-                  <span class="icon">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-                  <span>
-                    Tweet
-                  </span>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    <%= render "nav" %>
     <section class="section">
       <div class="container">
         <% if notice %>
-        <div class="notification is-warning">
+        <div class="notification is-warning mb-5">
           <button class="delete"></button>
           <%= notice %>
         </div>
         <% end %>
         <% if alert %>
-        <div class="notification is-alert">
+        <div class="notification is-alert mb-5">
           <button class="delete"></button>
           <%= alert %>
         </div>
