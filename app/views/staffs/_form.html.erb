@@ -1,16 +1,12 @@
-<%= bulma_form_with model: [taikai, staff] do |f| %>
+<%= bulma_form_with model: [taikai, staff], class: "participant" do |f| %>
   <% if staff.errors.any? %>
     <h2><%= pluralize(staff.errors.count, "error") %> prohibited this dojo from being saved:</h2>
   <% end %>
 
-  <%= f.input :firstname %>
-  <%= f.input :lastname %>
-  <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
-
   <div class="field">
     <label class=" label" for="user">User</label>
     <div class="control">
-      <div class="dropdown is-active" data-controller="autocomplete"
+      <div class="dropdown is-full-width is-active" data-controller="autocomplete participant_complete"
            data-autocomplete-url-value="<%= taikai_staff_available_users_path(taikai, staff) %>">
         <div class="dropdown-trigger">
           <%= f.hidden_field :user_id, "data-autocomplete-target": "hidden" %>
@@ -22,6 +18,10 @@
       </div>
     </div>
   </div>
+
+  <%= f.input :firstname, input_html: { placeholder: "Leave blank to complete from user..." } %>
+  <%= f.input :lastname, input_html: { placeholder: "Leave blank to complete from user..." } %>
+  <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
 
   <%= f.button "Save", class: "button has-background-light mr-3" %>
   <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>

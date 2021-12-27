@@ -1,10 +1,8 @@
 FactoryBot.define do
-  sequence :email do |n|
-    "user-#{n}@example.org"
-  end
-
   factory :user do
-    email { generate(:email) }
+    firstname { Faker::Name.first_name  }
+    lastname { Faker::Name.last_name }
+    email { "#{firstname}.#{lastname}@example.org".downcase }
     password { "password" }
     confirmed_at { DateTime.now }
   end

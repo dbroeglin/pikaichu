@@ -11,4 +11,8 @@ class User < ApplicationRecord
   scope :containing, -> (query) { where <<~SQL, "%#{query}%" }
     email ILIKE ?
   SQL
+
+  def display_name
+    "#{firstname} #{lastname}"
+  end
 end

@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import ParticipantCompleteController from "./participant_complete_controller.js"
+application.register("participant-complete", ParticipantCompleteController)

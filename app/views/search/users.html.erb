@@ -4,7 +4,7 @@
   </div>
 <% end %>
 <% @users.each do |user| %>
-  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= user.id %>">
-    <p><%= user.email %></p>
+  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= user.id %>" data-autocomplete-label="<%= user.display_name %>">
+    <p><%= "#{user.display_name} (#{user.email})" %></p>
   </div>
 <% end %>
