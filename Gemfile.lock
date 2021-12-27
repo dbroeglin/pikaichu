@@ -240,9 +240,6 @@ GEM
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     thor (1.1.0)
-    turbo-rails (1.0.0)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -263,7 +260,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.2)
 
 PLATFORMS
   x86_64-darwin-20
@@ -296,7 +293,6 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
-  turbo-rails
   tzinfo-data
   web-console
   webdrivers
