@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-one-third is-offset-2">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Edit Team</p>
+        </header>
+        <div class="card-content">
+          <%= render "form", taikai: @taikai, participating_dojo: @participating_dojo, team: @team %>
+        </div>
+      </div>
+    </div>
+    <div class="column is-one-third">
+      <div class="card mt-5">
+        <header class="card-header">
+          <p class="card-header-title">Participants</p>
+        </header>
+        <div class="card-content">
+          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: @team %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

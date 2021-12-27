@@ -1,10 +1,17 @@
+<%
+  if team
+    new_path = new_taikai_participating_dojo_team_participant_path(taikai, participating_dojo, team)
+  else
+    new_path = new_taikai_participating_dojo_participant_path(taikai, participating_dojo)
+  end
+%>
 <table class="table is-narrow is-hoverable">
   <thead>
     <tr class="has-text-centered">
       <th>Firstname</th>
       <th>Lastname</th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_participant_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
+        <%= link_to new_path, class: "button is-small has-background-light" do %>
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
@@ -14,17 +21,34 @@
     </tr>
   </thead>
   <tbody>
-    <% participating_dojo.participants.each do |participant| %>
+    <%
+      participants = team ? team.participants : participating_dojo.participants
+      participants.each do |participant|
+        if team
+          edit_path = edit_taikai_participating_dojo_team_participant_path(taikai, participating_dojo, team, participant)
+          delete_path = [taikai, participating_dojo, team, participant]
+        else
+          edit_path = edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant)
+          delete_path = [taikai, participating_dojo, participant]
+        end
+    %>
     <tr>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
       <td>
-        <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant), class: "button is-small has-background-light" do %>
+        <%
+          if team
+            path = edit_taikai_participating_dojo_team_participant_path(taikai, participating_dojo, team, participant)
+          else
+            path = edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant)
+          end
+        %>
+        <%= link_to edit_path, class: "button is-small has-background-light" do %>
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
-        <%= link_to [taikai, participating_dojo, participant], method: :delete,
+        <%= link_to delete_path, method: :delete,
                     class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_23_182808) do
+ActiveRecord::Schema.define(version: 2021_12_26_203249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,9 @@ ActiveRecord::Schema.define(version: 2021_12_23_182808) do
     t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id"
     t.index ["participating_dojo_id"], name: "index_participants_on_participating_dojo_id"
+    t.index ["team_id"], name: "index_participants_on_team_id"
   end
 
   create_table "participating_dojos", force: :cascade do |t|
@@ -112,6 +114,16 @@ ActiveRecord::Schema.define(version: 2021_12_23_182808) do
     t.boolean "distributed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "individual", default: true
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer "index"
+    t.bigint "participating_dojo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["participating_dojo_id", "index"], name: "by_participating_dojo_index", unique: true
+    t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -136,10 +148,12 @@ ActiveRecord::Schema.define(version: 2021_12_23_182808) do
   end
 
   add_foreign_key "participants", "participating_dojos"
+  add_foreign_key "participants", "teams"
   add_foreign_key "participating_dojos", "dojos"
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "participants"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
+  add_foreign_key "teams", "participating_dojos"
 end

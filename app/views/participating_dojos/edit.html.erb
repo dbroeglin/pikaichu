@@ -27,14 +27,25 @@
           <%= @participating_dojo.dojo.name %> / <%= @participating_dojo.dojo.country_name %>
         </div>
       </div>
+      <% if @taikai.individual %>
       <div class="card mt-5">
         <header class="card-header">
           <p class="card-header-title">Participants</p>
         </header>
         <div class="card-content">
-          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo %>
+          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: nil %>
         </div>
       </div>
+      <% else %>
+      <div class="card mt-5">
+        <header class="card-header">
+          <p class="card-header-title">Teams</p>
+        </header>
+        <div class="card-content">
+          <%= render "teams/list", taikai: @taikai, participating_dojo: @participating_dojo %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

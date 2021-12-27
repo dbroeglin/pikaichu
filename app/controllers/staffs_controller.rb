@@ -11,7 +11,7 @@ class StaffsController < ApplicationController
     if @staff.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class StaffsController < ApplicationController
     if @staff.update(staff_params)
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

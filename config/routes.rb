@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :taikais, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :participating_dojos do
       resources :participants
+      resources :teams do
+        resources :participants
+      end
     end
     resources :staffs
   end

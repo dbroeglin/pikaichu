@@ -14,7 +14,7 @@ class ParticipatingDojosController < ApplicationController
     if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class ParticipatingDojosController < ApplicationController
     if @participating_dojo.update(participating_dojo_params)
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -1,0 +1,37 @@
+<table class="table is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr class="has-text-centered">
+      <th>#</th>
+      <th class="has-text-right">
+        <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>New</span>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% participating_dojo.teams.each do |team| %>
+    <tr>
+      <td>Team n. <%= team.index %></td>
+      <td class="has-text-right">
+        <%= link_to edit_taikai_participating_dojo_team_path(taikai, participating_dojo, team),
+                    class: "button is-small has-background-light" do %>
+          <span class="icon is-small">
+            <i class="fas fa-pen"></i>
+          </span>
+        <% end %>
+        <%= link_to [taikai, participating_dojo, team], method: :delete,
+                    class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
+          <span class="icon is-small">
+            <i class="far fa-trash-can"></i>
+          </span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

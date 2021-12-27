@@ -13,7 +13,7 @@ class DojosController < ApplicationController
     if @dojo.save
       redirect_to action: 'index'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class DojosController < ApplicationController
     if @dojo.update(dojo_params)
       redirect_to action: 'index'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

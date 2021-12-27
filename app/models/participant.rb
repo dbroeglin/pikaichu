@@ -1,5 +1,6 @@
 class Participant < ApplicationRecord
   belongs_to :participating_dojo
+  belongs_to :team, optional: true
   has_many :results, -> { order(round: :asc, index: :asc) }, dependent: :destroy
   has_one :taikai, through: :participating_dojo
 

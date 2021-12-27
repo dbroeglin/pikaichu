@@ -13,7 +13,7 @@ class TaikaisController < ApplicationController
     if @taikai.save
       redirect_to action: 'index'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class TaikaisController < ApplicationController
     if @taikai.update(taikai_params)
       redirect_to action: 'index'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -47,6 +47,14 @@ class TaikaisController < ApplicationController
   private
 
   def taikai_params
-    params.require(:taikai).permit(:shortname, :name, :description, :start_date, :end_date, :distributed)
+    params.require(:taikai).permit(
+      :shortname,
+      :name,
+      :description,
+      :start_date,
+      :end_date,
+      :distributed,
+      :individual,
+    )
   end
 end

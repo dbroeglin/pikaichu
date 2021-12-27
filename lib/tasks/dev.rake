@@ -1,10 +1,11 @@
 if Rails.env.development? || Rails.env.test?
     require "factory_bot"
-
     namespace :dev do
       desc "Sample data for local development environment"
       task prime: "db:setup" do
         include FactoryBot::Syntax::Methods
+
+        Rails.logger.level = 0
 
         Faker::Config.random = Random.new(42)
 
@@ -17,7 +18,7 @@ if Rails.env.development? || Rails.env.test?
         create(:staff_role, code: :yatori,          label: 'Yatori')
         # Add other staff roles
 
-        create_list(:dojo, 4)
+        create_list(:dojo, 3)
 
         create(:taikai_with_participating_dojo,
           shortname: "c-2021",
@@ -28,7 +29,8 @@ if Rails.env.development? || Rails.env.test?
           distributed: false
         )
 
-        create_list(:taikai_with_participating_dojo, 3)
+        create_list(:taikai_with_participating_dojo, 2)
+        create_list(:taikai_with_participating_dojo, 2, is_individual: false)
 
         Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
           participant.results.each_with_index do |result, index|

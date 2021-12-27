@@ -8,16 +8,22 @@ FactoryBot.define do
     end
 
     factory :taikai do
+      transient do
+        is_individual { true }
+      end
+
       shortname { generate(:taikai_short_name) }
       name { generate(:taikai_name) }
       start_date { 5.days.from_now }
       end_date { 5.days.from_now }
       distributed { true }
+      individual { is_individual }
 
       factory :taikai_with_participating_dojo do
         after(:create) do |taikai, evaluator|
           Dojo.all.each do |dojo|
-            create(:participating_dojo_with_participants, dojo: dojo, taikai: taikai)
+            create(:participating_dojo_with_participants, dojo: dojo, taikai: taikai,
+                   is_individual: evaluator.is_individual)
           end
 
           create(:staff, taikai: taikai, role: StaffRole.find_by_code(:chairman), user: User.first)

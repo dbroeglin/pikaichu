@@ -14,7 +14,6 @@ class LeaderBoardController < ApplicationController
       WHERE "participating_dojos"."taikai_id" = $1 GROUP BY participants.id
       ORDER BY score DESC, participants.lastname, participants.firstname], nil, [@taikai.id]).to_a.map do |hash|
         score = hash.delete 'score'
-        puts hash.inspect
         (@results[score] ||= []) << Participant.new(hash)
       end
   end
