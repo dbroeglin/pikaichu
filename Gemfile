@@ -53,6 +53,8 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+gem "pundit"
+
 gem 'activerecord-postgres_enum', "~> 2.0"
 
 gem "bulma-rails", "~> 0.9.2"

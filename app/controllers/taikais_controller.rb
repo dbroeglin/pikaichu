@@ -23,7 +23,7 @@ class TaikaisController < ApplicationController
   end
 
   def update
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id])
 
     if @taikai.update(taikai_params)
       redirect_to action: 'index'

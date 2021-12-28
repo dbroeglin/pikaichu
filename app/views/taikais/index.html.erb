@@ -42,7 +42,7 @@
                 <span class="icon is-small">
                   <i class="fas fa-pen"></i>
                 </span>
-              <% end %>
+              <% end if policy(taikai).update? %>
               <%= link_to taikai, method: :delete,
                           class: "button is-small has-background-light",
                           data: { confirm: "Are you sure?" },
@@ -50,7 +50,7 @@
                 <span class="icon is-small">
                   <i class="far fa-trash-can"></i>
                 </span>
-              <% end %>
+              <% end if policy(taikai).update? %>
               <%= link_to judging_index_path(taikai),
                           class: "button is-small has-background-light ml-3",
                           title: "Judging" do %>
