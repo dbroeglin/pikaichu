@@ -33,7 +33,7 @@ if Rails.env.development? || Rails.env.test?
         )
 
         create_list(:taikai_with_participating_dojo, 2, current_user: User.first)
-        create_list(:taikai_with_participating_dojo, 2, individual: false, current_user: User.first)
+        create_list(:taikai_with_participating_dojo, 2, individual: true, current_user: User.first)
 
         Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
           participant.results.each_with_index do |result, index|

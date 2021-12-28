@@ -3,6 +3,10 @@ class TaikaisController < ApplicationController
     @taikais = Taikai.all.order(start_date: :asc, end_date: :asc, shortname: :asc)
   end
 
+  def show
+    @taikai = Taikai.find(params[:id])
+  end
+
   def new
     @taikai = Taikai.new
   end
@@ -33,7 +37,7 @@ class TaikaisController < ApplicationController
   end
 
   def destroy
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id])
     @taikai.destroy
 
     redirect_to action: 'index'

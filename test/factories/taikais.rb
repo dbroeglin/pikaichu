@@ -16,6 +16,7 @@ FactoryBot.define do
       name { generate(:taikai_name) }
       start_date { 5.days.from_now }
       end_date { 5.days.from_now }
+      description { Faker::Lorem.paragraph }
       distributed { true }
       individual { false }
       current_user { user }
@@ -26,8 +27,17 @@ FactoryBot.define do
             create(:participating_dojo_with_participants, dojo: dojo, taikai: taikai)
           end
 
-          create(:staff, taikai: taikai, role: StaffRole.find_by_code(:marking_referee), user: User.last)
-          create(:staff, taikai: taikai, role: StaffRole.find_by_code(:yatori))
+          create(:staff, taikai: taikai,
+                        role: StaffRole.find_by_code(:chairman),
+                        user: User.last,
+                        participating_dojo: taikai.participating_dojos.first)
+          create(:staff, taikai: taikai,
+                        role: StaffRole.find_by_code(:marking_referee),
+                        user: User.last,
+                        participating_dojo: taikai.participating_dojos.first)
+          create(:staff, taikai: taikai,
+                        role: StaffRole.find_by_code(:yatori),
+                        participating_dojo: taikai.participating_dojos.second)
 
           taikai.reload
         end

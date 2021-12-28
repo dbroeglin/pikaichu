@@ -1,6 +1,7 @@
 class Staff < ApplicationRecord
   belongs_to :role, class_name: "StaffRole"
   belongs_to :taikai
+  belongs_to :participating_dojo, optional: true
   belongs_to :user, optional: true
 
   validate do

@@ -7,6 +7,16 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def update?
+    check
+  end
+
+  def destroy?
+    check
+  end
+
+  private
+
+  def check
     taikai.staffs.joins(:role).where(user: user).where('role.code': StaffRole::ADMIN_CODE).any?
   end
 end

@@ -3,6 +3,7 @@
   <thead>
     <tr class="has-text-centered">
       <th>Name</th>
+      <th>Dojo</th>
       <th>Role</th>
       <th>User</th>
       <th class="has-text-right">
@@ -19,8 +20,9 @@
     <% @taikai.staffs.each do |staff| %>
     <tr>
       <td><%= staff.display_name %></td>
+      <td><%= staff.participating_dojo&.display_name %></td>
       <td><%= staff.role.label %></td>
-      <td><%= staff.user&.email %></td>
+      <td><%= staff.user&.display_name %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_staff_path(taikai, staff),
                     class: "button is-small has-background-light" do %>

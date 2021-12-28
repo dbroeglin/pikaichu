@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4"><%= @taikai.name %> (<%= @taikai.shortname %>)</p>
+        <p class="subtitle is-6"><%= l @taikai.start_date, format: :shorter %> - <%= l @taikai.end_date, format: :shorter %></p>
+        <p><%= @taikai.description %></p>
+
+      </div>
+      <div class="media-right">
+        <%= render "icons", taikai: @taikai, size: "is-large" %>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Participants
+          </p>
+        </header>
+        <div class="content">
+          <table class="table is-fullwidth">
+            <thead>
+              <tr class="has-text-centered">
+                <th>Dojo</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%
+                rows = @taikai.participating_dojos.map do |dojo|
+                  idx = -1
+                  dojo.participants.map do |participant|
+                    idx += 1
+                    [dojo, participant, idx]
+                  end
+                end
+                rows.flatten(1).each do |row|
+                  dojo, participant, idx = *row
+              %>
+              <tr>
+                <% if idx == 0 %>
+                <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                <% end %>
+                <td><%= participant.display_name %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

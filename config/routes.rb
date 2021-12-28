@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get  '/taikais/:id/leaderboard',                      to: 'leader_board#index',    as: :leaderboard_index
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 
-  get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos', as: :taikai_participating_dojo_available_dojos
-  get '/taikais/:taikai_id/staffs/(:staff_id)/available_users', to: 'search#users', as: :taikai_staff_available_users
+  get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',
+      as: :taikai_participating_dojo_available_dojos
+  get '/taikais/:taikai_id/staffs/(:staff_id)/available_users', to: 'search#users',
+      as: :taikai_staff_available_users
 
-  resources :taikais, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :participating_dojos do
       resources :participants
       resources :teams do
