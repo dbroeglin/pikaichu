@@ -7,7 +7,6 @@ class StaffsController < ApplicationController
 
   def create
     @staff = @taikai.staffs.build(staff_params)
-    complete_staff
 
     if @staff.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
@@ -22,10 +21,8 @@ class StaffsController < ApplicationController
 
   def update
     @staff = @taikai.staffs.find(params[:id])
-    @staff.assign_attributes(staff_params)
-    complete_staff
 
-    if @staff.save
+    if @staff.update(staff_params)
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
       render :edit, status: :unprocessable_entity
@@ -35,7 +32,9 @@ class StaffsController < ApplicationController
   def destroy
     @staff = @taikai.staffs.find(params[:id])
 
-    @staff.destroy
+    if !@staff.destroy
+      flash[:alert] = "Unable to remove Staff #{@staff.display_name}"
+    end
     redirect_to controller: 'taikais', action: 'edit', id: @taikai
   end
 
@@ -51,13 +50,6 @@ class StaffsController < ApplicationController
       :firstname,
       :lastname,
     )
-  end
-
-  def complete_staff
-    if @staff.user
-      @staff.firstname = @staff.user.firstname
-      @staff.lastname = @staff.user.lastname
-    end
   end
 
   def set_taikai

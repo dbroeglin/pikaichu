@@ -9,9 +9,10 @@ if Rails.env.development? || Rails.env.test?
 
         Faker::Config.random = Random.new(42)
 
-        create(:user, email: "jean.bon@example.org")
+        create(:user, firstname: "Jean", lastname: "Bon")
         create_list(:user, 5)
 
+        create(:staff_role, code: :admin,           label: 'Administrator')
         create(:staff_role, code: :chairman,        label: 'Chairman')
         create(:staff_role, code: :marking_referee, label: 'Marking Referee')
         create(:staff_role, code: :shajo_referee,   label: 'Shajo Referee')
@@ -26,11 +27,12 @@ if Rails.env.development? || Rails.env.test?
           description: "",
           start_date: '2021-12-18',
           end_date: '2021-12-18',
-          distributed: false
+          distributed: false,
+          user: User.first
         )
 
-        create_list(:taikai_with_participating_dojo, 2)
-        create_list(:taikai_with_participating_dojo, 2, is_individual: false)
+        create_list(:taikai_with_participating_dojo, 2, current_user: User.first)
+        create_list(:taikai_with_participating_dojo, 2, is_individual: false, current_user: User.first)
 
         Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
           participant.results.each_with_index do |result, index|

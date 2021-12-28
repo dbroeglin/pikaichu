@@ -9,6 +9,7 @@ class TaikaisController < ApplicationController
 
   def create
     @taikai = Taikai.new(taikai_params)
+    @taikai.current_user = current_user
 
     if @taikai.save
       redirect_to action: 'index'
