@@ -23,11 +23,15 @@ class Participant < ApplicationRecord
     results.destroy_all
 
     now = DateTime::now
-    num_arrows = taikai.num_arrows
     hashes = (1..taikai.num_rounds).map do |round_index|
-      (1..num_arrows).map do |index|
-        { participant_id: id, round: round_index, index: index,
-          created_at: now, updated_at: now }
+      (1..taikai.num_arrows).map do |index|
+        {
+          participant_id: id,
+          round: round_index,
+          index: index,
+          created_at: now,
+          updated_at: now
+        }
       end
     end.flatten
     results.insert_all hashes

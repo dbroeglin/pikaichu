@@ -7,10 +7,9 @@
         <thead>
           <tr class="has-text-centered">
             <th></th>
-            <th>Short Name</th>
+            <th>Code</th>
             <th>Name</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Dates</th>
             <th class="has-text-right">
               <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
                 <span class="icon is-small">
@@ -35,8 +34,7 @@
             </td>
             <td><%= taikai.shortname %></td>
             <td><%= taikai.name %></td>
-            <td><%= l taikai.start_date, format: :long %></td>
-            <td><%= l taikai.end_date, format: :short %></td>
+            <td><%= l taikai.start_date, format: :shorter %> - <%= l taikai.end_date, format: :shorter %></td>
             <td class="has-text-right">
               <%= link_to edit_taikai_path(taikai), class: "button is-small has-background-light", title: "Edit" do %>
                 <span class="icon is-small">

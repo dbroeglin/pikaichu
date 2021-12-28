@@ -28,11 +28,12 @@ if Rails.env.development? || Rails.env.test?
           start_date: '2021-12-18',
           end_date: '2021-12-18',
           distributed: false,
+          individual: true,
           user: User.first
         )
 
         create_list(:taikai_with_participating_dojo, 2, current_user: User.first)
-        create_list(:taikai_with_participating_dojo, 2, is_individual: false, current_user: User.first)
+        create_list(:taikai_with_participating_dojo, 2, individual: false, current_user: User.first)
 
         Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
           participant.results.each_with_index do |result, index|

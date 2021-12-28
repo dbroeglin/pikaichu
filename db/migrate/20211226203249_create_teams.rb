@@ -9,6 +9,5 @@ class CreateTeams < ActiveRecord::Migration[7.0]
     add_index :teams, [:participating_dojo_id, :index], unique: true, name: "by_participating_dojo_index"
 
     add_reference :participants, :team, foreign_key: true
-    add_column :taikais, :individual, :boolean, default: true
   end
 end

@@ -30,6 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  date:
+    formats:
+      shorter: '%m/%d/%y'
   activerecord:
     models:
       taikai: Taikai
