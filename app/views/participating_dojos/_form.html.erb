@@ -1,6 +1,6 @@
 <%= bulma_form_with model: [taikai, participating_dojo] do |f| %>
   <% if participating_dojo.errors.any? %>
-    <h2><%= pluralize(participating_dojo.errors.count, "error") %> prohibited this dojo from being saved</h2>
+    <h2><%= pluralize(participating_dojo.errors.count, "error") %> prohibited this participating_dojo from being saved</h2>
   <% end %>
 
   <div class="field">

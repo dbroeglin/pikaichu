@@ -4,6 +4,7 @@ FactoryBot.define do
     lastname { Faker::Name.last_name }
     participating_dojo { nil }
     team { nil }
+    index_in_team { (team.participants.maximum(:index_in_team) || 0) + 1 if team }
 
     after(:create) do |participant, evaluator|
       participant.generate_empty_results

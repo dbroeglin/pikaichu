@@ -52,13 +52,17 @@ ActiveRecord::Schema.define(version: 2021_12_27_210142) do
   end
 
   create_table "participants", force: :cascade do |t|
+    t.integer "index"
     t.string "firstname"
     t.string "lastname"
     t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "team_id"
+    t.integer "index_in_team"
+    t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id"], name: "index_participants_on_participating_dojo_id"
+    t.index ["team_id", "index_in_team"], name: "teams_by_team_index_in_team", unique: true
     t.index ["team_id"], name: "index_participants_on_team_id"
   end
 
@@ -124,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_210142) do
     t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["participating_dojo_id", "index"], name: "by_participating_dojo_index", unique: true
+    t.index ["participating_dojo_id", "index"], name: "teams_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"
   end
 

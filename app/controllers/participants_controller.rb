@@ -5,7 +5,10 @@ class ParticipantsController < ApplicationController
   before_action :set_parent_association
 
   def new
-    @participant = @parent_association.build
+
+    @participant = @parent_association.build(
+      index_in_team: (@parent_association.maximum(:index_in_team) || 0) + 1
+    )
   end
 
   def create
@@ -46,11 +49,13 @@ class ParticipantsController < ApplicationController
     params
       .require(:participant)
       .permit(
+        :index,
+        :index_in_team,
+        :firstname,
+        :lastname,
         :taikai_id,
         :participating_dojo_id,
         :team_id,
-        :firstname,
-        :lastname,
       )
   end
 

@@ -1,9 +1,14 @@
 class Team < ApplicationRecord
   belongs_to :participating_dojo
-  has_many :participants, dependent: :destroy
+  has_many :participants,
+           -> { order index_in_team: :asc, lastname: :asc, firstname: :asc },
+           dependent: :destroy
 
-  validates :index, uniqueness: { scope: :participating_dojo,
-    message: "Should be unique" }, presence: true
+  validates :index,
+            uniqueness: {
+              scope: :participating_dojo,
+            },
+            presence: true
 
   def ensure_next_index
     if self.index.blank?

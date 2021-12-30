@@ -8,8 +8,10 @@
 <table class="table is-narrow is-hoverable">
   <thead>
     <tr class="has-text-centered">
+      <th>Ord.</th>
       <th>Firstname</th>
       <th>Lastname</th>
+      <th>#</th>
       <th class="has-text-right">
         <%= link_to new_path, class: "button is-small has-background-light" do %>
           <span class="icon is-small">
@@ -33,8 +35,10 @@
         end
     %>
     <tr>
+      <td><%= participant.index_in_team %></td>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
+      <td><%= participant.index %></td>
       <td>
         <%
           if team

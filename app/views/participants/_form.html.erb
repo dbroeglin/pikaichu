@@ -10,11 +10,15 @@
 
 <%= bulma_form_with model: form_path do |f| %>
   <% if participant.errors.any? %>
-    <h2><%= pluralize(participant.errors.count, "error") %> prohibited this dojo from being saved:</h2>
+    <h2><%= pluralize(participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
   <% end %>
 
+  <%= f.input :index %>
   <%= f.input :firstname %>
   <%= f.input :lastname %>
+  <% if !@taikai.individual %>
+  <%= f.input :index_in_team %>
+  <% end %>
 
   <%= f.button "Save", class: "button has-background-light mr-3" %>
   <%= link_to "Cancel", cancel_path, class: "button" %>

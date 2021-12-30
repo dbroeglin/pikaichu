@@ -44,3 +44,10 @@ en:
         country_code: Country
       taikai:
         shortname: Code
+    errors:
+      models:
+        participant:
+          attributes:
+            index_in_team:
+              blank: must be defined when member of a team
+              take: must be unique within a team
