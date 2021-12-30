@@ -8,46 +8,109 @@
 
       </div>
       <div class="media-right">
-        <%= render "icons", taikai: @taikai, size: "is-large" %>
+        <%= render "icons", taikai: @taikai, size: "" %>
       </div>
     </div>
 
+
     <div class="content">
-      <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-            Participants
-          </p>
-        </header>
-        <div class="content">
-          <table class="table is-fullwidth">
-            <thead>
-              <tr class="has-text-centered">
-                <th>Dojo</th>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <%
-                rows = @taikai.participating_dojos.map do |dojo|
-                  idx = -1
-                  dojo.participants.map do |participant|
-                    idx += 1
-                    [dojo, participant, idx]
-                  end
-                end
-                rows.flatten(1).each do |row|
-                  dojo, participant, idx = *row
-              %>
-              <tr>
-                <% if idx == 0 %>
-                <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
-                <% end %>
-                <td><%= participant.display_name %></td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Participants
+              </p>
+            </header>
+            <div class="card-content">
+              <table class="table is-narrow">
+                <thead>
+                  <tr class="has-text-centered">
+                    <th>Dojo</th>
+                    <% if !@taikai.individual %>
+                    <th>Team</th>
+                    <% end %>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if @taikai.individual %>
+                  <%
+                    @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
+                      dojo.participants.each_with_index do |participant, participant_index|
+                  %>
+                  <tr>
+                    <% if participant_index == 0 %>
+                    <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                    <% end %>
+                    <td><%= participant.display_name %></td>
+                  </tr>
+                  <%
+                      end
+                    end
+                  %>
+                  <% else %>
+                  <%
+                    @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
+                      dojo.teams.each_with_index do |team, team_index|
+                        team.participants.each_with_index do |participant, participant_index|
+                  %>
+                  <tr>
+                    <% if team_index == 0 && participant_index == 0 %>
+                    <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                    <% end %>
+                    <% if participant_index == 0 %>
+                    <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
+                    <% end %>
+                    <td><%= participant.display_name %></td>
+                  </tr>
+                  <%
+                        end
+                      end
+                    end
+                  %>
+                  <% end %>
+                  <tr>
+                    <td></td>
+                    <% if !@taikai.individual %>
+                    <td></td>
+                    <% end %>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Staffs
+              </p>
+            </header>
+            <div class="card-content">
+              <table class="table is-narrow">
+                <thead>
+                  <tr class="has-text-centered">
+                    <th>Role</th>
+                    <th>Dojo</th>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @staffs.each do |staff| %>
+                  <tr>
+                    <td><%= staff.role.label %></td>
+                    <td><%= staff.participating_dojo&.display_name %></td>
+                    <td><%= staff.display_name %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,8 @@ class TaikaisController < ApplicationController
   end
 
   def show
-    @taikai = Taikai.find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: [:teams, :participants]).find(params[:id])
+    @staffs = @taikai.staffs.joins(:role).left_outer_joins(:participating_dojo).order("staff_roles.label": :asc, "participating_dojos.display_name": :asc)
   end
 
   def new
