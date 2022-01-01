@@ -19,11 +19,11 @@ class ParticipatingDojosController < ApplicationController
   end
 
   def edit
-    @participating_dojo = @taikai.participating_dojos.find(params[:id])
+    @participating_dojo = authorize @taikai.participating_dojos.find(params[:id])
   end
 
   def update
-    @participating_dojo = @taikai.participating_dojos.find(params[:id])
+    @participating_dojo = authorize @taikai.participating_dojos.find(params[:id])
 
     if @participating_dojo.update(participating_dojo_params)
       redirect_to controller: 'taikais', action: 'edit', id: @taikai

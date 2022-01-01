@@ -2,7 +2,7 @@
   <span class="icon <%= size %>">
     <i class="fas fa-pen"></i>
   </span>
-<% end if policy(taikai).update? %>
+<% end if policy(taikai).edit? %>
 
 <%= link_to taikai, method: :delete,
             class: "button #{size} has-background-light",

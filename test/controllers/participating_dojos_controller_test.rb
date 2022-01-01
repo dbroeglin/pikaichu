@@ -5,6 +5,7 @@ class Participating_dojosControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai_1)
     @participating_dojo = participating_dojos(:participating_dojo_1_taikai_1)
+    @other_participating_dojo = participating_dojos(:participating_dojo_2_taikai_1)
   end
 
   test "should get new" do
@@ -28,6 +29,20 @@ class Participating_dojosControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_taikai_participating_dojo_url @taikai, @participating_dojo
     assert_response :success
+  end
+
+  test "should get edit if dojo_admin" do
+    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo, 'role.code': :dojo_admin).first.user
+    sign_in user
+    get edit_taikai_participating_dojo_url @taikai, @participating_dojo
+    assert_response :success
+  end
+
+  test "should not get edit if not dojo_admin" do
+    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo, 'role.code': :dojo_admin).first.user
+    sign_in user
+    get edit_taikai_participating_dojo_url @taikai, @other_participating_dojo
+    assert_unauthorized
   end
 
   test "should patch update" do

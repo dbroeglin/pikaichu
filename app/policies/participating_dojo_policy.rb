@@ -3,21 +3,17 @@ class ParticipatingDojoPolicy < ApplicationPolicy
 
   def initialize(user, participating_dojo)
     @user = user
-    @taikai = participating_dojo
+    @participating_dojo = participating_dojo
   end
 
-  class Scope
-    def initialize(user, scope)
-      @user  = user
-      @scope = scope
-    end
+  def update?
+    # TODO: optimize?
+    @participating_dojo.staffs.joins(:role).where(user: @user, 'role.code': :dojo_admin).any? ||
+      @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
+  end
 
+  class Scope < Scope
     def resolve
-      scope.joins()
     end
-
-    private
-
-    attr_reader :user, :scope
   end
 end

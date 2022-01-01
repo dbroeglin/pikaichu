@@ -14,6 +14,8 @@ end
 
 module SignInHelper
   def sign_in_as(user)
+    throw "Sign-in helper needs a user" if user.nil?
+
     post user_session_path(user: { email: user.email, password: 'password' })
 
     assert_response :redirect

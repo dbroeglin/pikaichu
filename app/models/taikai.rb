@@ -14,7 +14,7 @@ class Taikai < ApplicationRecord
   attr_accessor :current_user
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
-    self.staffs.create!(user: self.current_user, role: StaffRole.find_by_code(:admin))
+    self.staffs.create!(user: self.current_user, role: StaffRole.find_by_code(:taikai_admin))
   end
 
   def num_arrows
@@ -27,5 +27,13 @@ class Taikai < ApplicationRecord
 
   def num_rounds
     total_num_arrows / num_arrows
+  end
+
+  def taikai_admin?(user)
+    staffs.joins(:role).where(user: user, 'role.code': :taikai_admin).any?
+  end
+
+  def dojo_admin?(user)
+    staffs.joins(:role).where(user: user, 'role.code': :dojo_admin).any?
   end
 end

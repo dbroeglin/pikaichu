@@ -40,11 +40,6 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should not be able to edit taikai he is not admin of' do
-    get edit_taikai_url @other_taikai
-    assert_unauthorized
-  end
-
   test 'should patch update' do
     patch taikai_url @taikai, params: { taikai: @taikai.attributes }
     assert_redirected_to taikais_url

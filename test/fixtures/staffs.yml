@@ -2,33 +2,41 @@ staff_1_taikai_1:
   firstname: Jean
   lastname: Bon
   taikai: taikai_1
-  role: admin
+  role: taikai_admin
   user: jean_bon
+
+staff_2_taikai_1:
+  firstname: Alain
+  lastname: Terieur
+  taikai: taikai_1
+  role: dojo_admin
+  participating_dojo: participating_dojo_1_taikai_1
+  user: alain_terieur
 
 staff_1_taikai_2:
   firstname: Alain
   lastname: Térieur
   taikai: taikai_2
-  role: admin
+  role: taikai_admin
   user: alain_terieur
 
 staff_1_taikai_3:
   firstname: Jean
   lastname: Bon
   taikai: taikai_3
-  role: admin
+  role: taikai_admin
   user: jean_bon
 
 staff_1_taikai_4:
   firstname: Jean
   lastname: Bon
   taikai: taikai_4
-  role: admin
+  role: taikai_admin
   user: jean_bon
 
 staff_1_taikai_5:
   firstname: Alain
   lastname: Térieur
   taikai: taikai_5
-  role: admin
+  role: taikai_admin
   user: alain_terieur

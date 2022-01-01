@@ -2,6 +2,10 @@ participating_dojo_1_taikai_1:
   taikai: taikai_1
   dojo: dojo_fr
 
+participating_dojo_2_taikai_1:
+  taikai: taikai_1
+  dojo: dojo_hk
+
 participating_dojo_1_taikai_2:
   taikai: taikai_2
   dojo: dojo_fr

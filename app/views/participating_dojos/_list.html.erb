@@ -28,13 +28,13 @@
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
-        <% end %>
+        <% end if policy(participating_dojo).update? %>
         <%= link_to [taikai, participating_dojo], method: :delete,
                     class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
-        <% end %>
+        <% end if policy(participating_dojo).update? %>
       </td>
     </tr>
     <% end %>

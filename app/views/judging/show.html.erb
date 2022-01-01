@@ -7,6 +7,9 @@
         <thead>
           <tr class="has-text-centered">
             <th>Dojo</th>
+            <% unless @taikai.individual? %>
+            <th>Team</th>
+            <% end %>
             <th>Name</th>
             <th>Choice</th>
             <th colspan="4">Round 1</th>
@@ -16,8 +19,9 @@
           </tr>
         </thead>
         <tbody>
-          <% @participating_dojos.each_with_index do |dojo| %>
-          <% dojo.participants.each_with_index do |participant, index| %>
+          <% if @taikai.individual? %>
+          <%   @participating_dojos.each_with_index do |dojo| %>
+          <%     dojo.participants.each_with_index do |participant, index| %>
           <tr class="has-text-centered">
             <% if index == 0 %>
             <th rowspan="<%= dojo.participants.size %>">
@@ -25,52 +29,31 @@
             </th>
             <% end %>
             <td class="has-text-left"><%= participant.display_name %></td>
-            <td>
-              <div class="columns is-mobile is-centered is-gapless">
-                <div class="column is-half">
-                  <%= bulma_form_with url: update_judging_path(@taikai, participant) do |form| %>
-                    <%= form.hidden_field :status, value: "hit" %>
-                    <%= form.button class: "button is-small" do %>
-                      <span class="icon is-small">
-                        <i class="far fa-circle"></i>
-                      </span>
-                    <% end %>
-                  <% end %>
-                </div>
-                <div class="column is-half">
-                  <%= bulma_form_with url: update_judging_path(@taikai, participant) do |form| %>
-                    <%= form.hidden_field :status, value: "miss" %>
-                    <%= form.button class: "button is-small" do %>
-                      <span class="icon is-small">
-                        <i class="fas fa-xmark"></i>
-                      </span>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-            </td>
-            <% participant.results.each do |result| %>
-              <td>
-                <a href="#" class="button is-small is-text">
-                <% if result.status_hit? %>
-                <span class="icon is-small">
-                  <i class="far fa-circle"></i>
-                </span>
-                <% elsif result.status_miss? %>
-                <span class="icon is-small">
-                  <i class="fas fa-xmark"></i>
-                </span>
-                <% else %>
-                <span class="icon is-small">
-                  <i class="fas fa-minus"></i>
-                </span>
-                <% end %>
-                </a>
-              </td>
-            <% end %>
-            <th><%= participant.total %></th>
+            <%= render "participant_line", participant: participant %>
           </tr>
-          <% end %>
+          <%     end %>
+          <%   end %>
+          <% else %>
+          <%   @participating_dojos.each_with_index do |dojo| %>
+          <%     dojo.teams.each_with_index do |team, team_index| %>
+          <%       team.participants.each_with_index do |participant, participant_index| %>
+          <tr class="has-text-centered">
+            <% if team_index == 0 and participant_index == 0 %>
+            <th rowspan="<%= dojo.participants.size %>">
+              <%= dojo.display_name %>
+            </th>
+            <% end %>
+            <% if participant_index == 0 %>
+            <th rowspan="<%= team.participants.size %>">
+              <%= team.index %>
+            </th>
+            <% end %>
+            <td class="has-text-left"><%= participant.display_name %></td>
+            <%= render "participant_line", participant: participant %>
+          </tr>
+          <%       end %>
+          <%     end %>
+          <%   end %>
           <% end %>
         </tbody>
       </table>

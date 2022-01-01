@@ -32,7 +32,7 @@ class StaffsController < ApplicationController
   def destroy
     @staff = @taikai.staffs.find(params[:id])
 
-    if @staff.last_admin?
+    if @staff.last_taikai_admin?
       flash[:alert] = "Unable to remove Staff '#{@staff.display_name}', he is the last admin for taikai '#{@staff.taikai.shortname}'"
     elsif !@staff.destroy
       flash[:alert] = "Unable to remove Staff #{@staff.display_name}"

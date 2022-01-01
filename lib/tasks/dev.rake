@@ -11,9 +11,10 @@ if Rails.env.development? || Rails.env.test?
         Faker::Config.random = Random.new(42)
 
         create(:user, firstname: "Jean", lastname: "Bon")
-        create_list(:user, 5)
+        create_list(:user, 15)
 
-        create(:staff_role, code: :admin,           label: 'Administrator')
+        create(:staff_role, code: :taikai_admin,    label: 'Administrator')
+        create(:staff_role, code: :dojo_admin,      label: 'Dojo Administrator')
         create(:staff_role, code: :chairman,        label: 'Chairman')
         create(:staff_role, code: :marking_referee, label: 'Marking Referee')
         create(:staff_role, code: :shajo_referee,   label: 'Shajo Referee')
@@ -30,7 +31,8 @@ if Rails.env.development? || Rails.env.test?
           end_date: '2021-12-18',
           distributed: false,
           individual: true,
-          user: User.second
+          user: User.second,
+          with_staff: false, # Do not generate additional staff
         )
 
         create_list(:taikai_with_participating_dojo, 2, current_user: User.first)

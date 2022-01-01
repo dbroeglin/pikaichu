@@ -5,7 +5,9 @@ class Staff < ApplicationRecord
   belongs_to :user, optional: true
 
   validate do
-    errors.add(:user, "is mandatory for an admin staff") if role.code == 'admin' && user.nil?
+    if (role.taikai_admin? || role.dojo_admin?) && user.nil?
+      errors.add(:user, "is mandatory for an administrator staff")
+    end
   end
 
   before_validation do
@@ -19,7 +21,7 @@ class Staff < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
-  def last_admin?
-    role.code == 'admin' && taikai.staffs.where(role: self.role).count == 1
+  def last_taikai_admin?
+    role.taikai_admin? && taikai.staffs.where(role: self.role).count == 1
   end
 end

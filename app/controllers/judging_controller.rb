@@ -1,7 +1,15 @@
 class JudgingController < ApplicationController
   def show
     @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
-    @participating_dojos = @taikai.participating_dojos
+
+    if @taikai.taikai_admin?(current_user)
+      @participating_dojos = @taikai.participating_dojos
+    elsif @taikai.dojo_admin?(current_user)
+      @participating_dojos = @taikai.participating_dojos.joins(staffs: [:role])
+        .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
+    else
+      raise Pundit::NotAuthorizedError, "not allowed to show judging board for  #{@taikai.inspect}"
+    end
   end
 
   def update
