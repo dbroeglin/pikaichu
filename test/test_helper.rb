@@ -22,7 +22,15 @@ module SignInHelper
   end
 end
 
+module AuthorizationHelpers
+  def assert_unauthorized
+    assert_equal "You are not permitted to execute this action.", flash[:alert]
+    assert_redirected_to root_url
+  end
+end
+
 class ActionDispatch::IntegrationTest
+  include AuthorizationHelpers
   include SignInHelper
   include Devise::Test::IntegrationHelpers
 end

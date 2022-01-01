@@ -30,7 +30,7 @@ if Rails.env.development? || Rails.env.test?
           end_date: '2021-12-18',
           distributed: false,
           individual: true,
-          user: User.first
+          user: User.second
         )
 
         create_list(:taikai_with_participating_dojo, 2, current_user: User.first)

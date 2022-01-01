@@ -8,13 +8,25 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
     @participant = participants(:participant_1_participating_dojo_1_taikai_1)
   end
 
-  test "should get edit" do
-    get edit_taikai_participating_dojo_participant_url @taikai, @participating_dojo, @participant
+  test "should get new" do
+    get new_taikai_participating_dojo_participant_url @taikai, @participating_dojo
     assert_response :success
   end
 
-  test "should get new" do
-    get new_taikai_participating_dojo_participant_url @taikai, @participating_dojo
+  test 'should post create' do
+    assert_difference '@participating_dojo.participants.count' do
+      post taikai_participating_dojo_participants_url @taikai, @participating_dojo, params: {
+        participant: {
+          firstname: "Dan",
+          lastname: "Brown"
+        }
+      }
+    end
+    assert_redirected_to edit_taikai_participating_dojo_url @taikai, @participating_dojo
+  end
+
+  test "should get edit" do
+    get edit_taikai_participating_dojo_participant_url @taikai, @participating_dojo, @participant
     assert_response :success
   end
 

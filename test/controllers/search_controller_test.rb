@@ -17,5 +17,4 @@ class SearchControllerTest < ActionDispatch::IntegrationTest
     get taikai_staff_available_users_url @taikai, @staff
     assert_response :success
   end
-
 end

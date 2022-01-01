@@ -11,13 +11,27 @@ class DojosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_dojo_url @dojo
+  test "should get new" do
+    get new_dojo_url
     assert_response :success
   end
 
-  test "should get new" do
-    get new_dojo_url
+  test 'should post create' do
+    assert_difference 'Dojo.count' do
+      post dojos_url params: {
+        dojo: {
+          shortname: "new-dojo",
+          name: "New Dojo",
+          city: "Mexico City",
+          country_code: "MX"
+        }
+      }
+    end
+    assert_redirected_to dojos_url
+  end
+
+  test "should get edit" do
+    get edit_dojo_url @dojo
     assert_response :success
   end
 

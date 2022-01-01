@@ -34,10 +34,8 @@ class StaffsController < ApplicationController
 
     if @staff.last_admin?
       flash[:alert] = "Unable to remove Staff '#{@staff.display_name}', he is the last admin for taikai '#{@staff.taikai.shortname}'"
-    else
-      if !@staff.destroy
-        flash[:alert] = "Unable to remove Staff #{@staff.display_name}"
-      end
+    elsif !@staff.destroy
+      flash[:alert] = "Unable to remove Staff #{@staff.display_name}"
     end
     redirect_to controller: 'taikais', action: 'edit', id: @taikai
   end

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     # Here I've got the exception with :policy, :record and :query,
     # also I can access :current_user so I could go for a condition,
     # but that would include duplicated code from  ItemPolicy#show?.
-    flash[:alert] = "You are not permitted to execute this action"
+    flash[:alert] = "You are not permitted to execute this action."
     redirect_to root_path
   end
 end

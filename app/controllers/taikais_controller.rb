@@ -36,7 +36,7 @@ class TaikaisController < ApplicationController
   end
 
   def edit
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id])
   end
 
   def update

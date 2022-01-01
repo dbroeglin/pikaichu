@@ -6,11 +6,11 @@ staff_1_taikai_1:
   user: jean_bon
 
 staff_1_taikai_2:
-  firstname: Jean
-  lastname: Bon
+  firstname: Alain
+  lastname: Térieur
   taikai: taikai_2
   role: admin
-  user: jean_bon
+  user: alain_terieur
 
 staff_1_taikai_3:
   firstname: Jean
