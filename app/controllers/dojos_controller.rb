@@ -27,7 +27,6 @@ class DojosController < ApplicationController
     if @dojo.update(dojo_params)
       redirect_to action: 'index'
     else
-      render :edit, status: :unprocessable_entity
     end
   end
 

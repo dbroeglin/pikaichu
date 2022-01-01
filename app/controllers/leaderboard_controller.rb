@@ -1,5 +1,5 @@
-class LeaderBoardController < ApplicationController
-  def index
+class LeaderboardController < ApplicationController
+  def show
     @taikai = Taikai.find(params[:id])
     @results = {}
     Participant.connection.select_all(%[

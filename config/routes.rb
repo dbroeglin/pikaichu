@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   resources :dojos, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  get  '/taikais/:id/judging',                          to: 'judging#index',         as: :judging_index
-  post '/taikais/:id/judging/:participant_id/update',   to: 'judging#update',        as: :judging_update
-  get  '/taikais/:id/leaderboard',                      to: 'leader_board#index',    as: :leaderboard_index
+  get  '/taikais/:id/judging',                          to: 'judging#show',          as: :show_judging
+  post '/taikais/:id/judging/:participant_id/update',   to: 'judging#update',        as: :update_judging
+  get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',     as: :show_leaderboard
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 
   get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',

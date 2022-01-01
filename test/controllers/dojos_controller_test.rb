@@ -1,28 +1,33 @@
 require "test_helper"
 
 class DojosControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    sign_in users(:jean_bon)
+    @dojo = dojos(:dojo_jp)
+  end
+
   test "should get index" do
-    get dojos_index_url
+    get dojos_url
     assert_response :success
   end
 
   test "should get edit" do
-    get dojos_edit_url
+    get edit_dojo_url @dojo
     assert_response :success
   end
 
   test "should get new" do
-    get dojos_new_url
+    get new_dojo_url
     assert_response :success
   end
 
-  test "should get update" do
-    get dojos_update_url
-    assert_response :success
+  test "should patch update" do
+    patch dojo_url @dojo, params: { dojo: @dojo.attributes }
+    assert_redirected_to dojos_url
   end
 
   test "should get destroy" do
-    get dojos_destroy_url
-    assert_response :success
+    delete dojo_url dojos(:dojo_to_delete)
+    assert_redirected_to dojos_url
   end
 end

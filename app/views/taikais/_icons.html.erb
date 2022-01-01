@@ -13,7 +13,7 @@
   </span>
 <% end if policy(taikai).destroy? %>
 
-<%= link_to judging_index_path(taikai),
+<%= link_to show_judging_path(taikai),
             class: "button #{size} has-background-light ml-3",
             title: "Judging" do %>
   <span class="icon <%= size %>">
@@ -21,7 +21,7 @@
   </span>
 <% end %>
 
-<%= link_to leaderboard_index_path(taikai),
+<%= link_to show_leaderboard_path(taikai),
             class: "button #{size} has-background-light",
             title: "Leader board" do %>
   <span class="icon <%= size %>">

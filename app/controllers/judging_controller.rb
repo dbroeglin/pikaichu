@@ -1,5 +1,5 @@
 class JudgingController < ApplicationController
-  def index
+  def show
     @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
     @participating_dojos = @taikai.participating_dojos
   end
@@ -16,7 +16,7 @@ class JudgingController < ApplicationController
     else
       flash.now[:alert] = "There is no more empty result to be set!" # TODO
     end
-    redirect_to action: 'index'
+    redirect_to action: 'show'
   end
 
   private

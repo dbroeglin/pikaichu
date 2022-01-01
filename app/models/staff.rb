@@ -15,14 +15,11 @@ class Staff < ApplicationRecord
     end
   end
 
-  before_destroy do
-    if self.role.code == 'admin' && taikai.staffs.where(role: self.role).count == 1
-      logger.warn("Unable to destroy Staff #{self.id}, he is the last admin for Taikai #{self.taikai.id}")
-      throw :abort
-    end
-  end
-
   def display_name
     "#{firstname} #{lastname}"
+  end
+
+  def last_admin?
+    role.code == 'admin' && taikai.staffs.where(role: self.role).count == 1
   end
 end

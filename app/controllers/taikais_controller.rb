@@ -1,11 +1,23 @@
 class TaikaisController < ApplicationController
   def index
-    @taikais = Taikai.all.order(start_date: :asc, end_date: :asc, shortname: :asc)
+    @taikais =
+      Taikai.all.order(start_date: :asc, end_date: :asc, shortname: :asc)
   end
 
   def show
-    @taikai = Taikai.includes(participating_dojos: [:teams, :participants]).find(params[:id])
-    @staffs = @taikai.staffs.joins(:role).left_outer_joins(:participating_dojo).order("staff_roles.label": :asc, "participating_dojos.display_name": :asc)
+    @taikai =
+      Taikai
+        .includes(participating_dojos: %i[teams participants])
+        .find(params[:id])
+    @staffs =
+      @taikai
+        .staffs
+        .joins(:role)
+        .left_outer_joins(:participating_dojo)
+        .order(
+          'staff_roles.label': :asc,
+          'participating_dojos.display_name': :asc,
+        )
   end
 
   def new
@@ -45,22 +57,27 @@ class TaikaisController < ApplicationController
   end
 
   def export
-    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
+    @taikai =
+      Taikai
+        .includes(participating_dojos: { participants: [:results] })
+        .find(params[:id])
 
-    render xlsx: "export", filename: "Taikai - #{@taikai.shortname}.xlsx"
+    render xlsx: 'export', filename: "Taikai - #{@taikai.shortname}.xlsx"
   end
 
   private
 
   def taikai_params
-    params.require(:taikai).permit(
-      :shortname,
-      :name,
-      :description,
-      :start_date,
-      :end_date,
-      :distributed,
-      :individual,
-    )
+    params
+      .require(:taikai)
+      .permit(
+        :shortname,
+        :name,
+        :description,
+        :start_date,
+        :end_date,
+        :distributed,
+        :individual,
+      )
   end
 end

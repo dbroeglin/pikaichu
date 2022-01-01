@@ -1,0 +1,34 @@
+staff_1_taikai_1:
+  firstname: Jean
+  lastname: Bon
+  taikai: taikai_1
+  role: admin
+  user: jean_bon
+
+staff_1_taikai_2:
+  firstname: Jean
+  lastname: Bon
+  taikai: taikai_2
+  role: admin
+  user: jean_bon
+
+staff_1_taikai_3:
+  firstname: Jean
+  lastname: Bon
+  taikai: taikai_3
+  role: admin
+  user: jean_bon
+
+staff_1_taikai_4:
+  firstname: Jean
+  lastname: Bon
+  taikai: taikai_4
+  role: admin
+  user: jean_bon
+
+staff_1_taikai_5:
+  firstname: Alain
+  lastname: Térieur
+  taikai: taikai_5
+  role: admin
+  user: alain_terieur

@@ -9,14 +9,12 @@ class Participant < ApplicationRecord
             uniqueness: {
               scope: :participating_dojo,
               allow_blank: true,
-              message: 'should be unique within an dojo',
             }
 
   validates :index_in_team,
             uniqueness: {
               scope: :team_id,
               allow_blank: true,
-              message: 'should be unique within a team',
             },
             presence: {
               unless: -> { team_id.blank? }

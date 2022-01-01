@@ -1,0 +1,19 @@
+admin:
+  code: admin
+  label: Administrator
+  description: "Taikai administrator"
+
+chairman:
+  code: chairman
+  label: Chairman
+  description: "Taikai chairman"
+
+marking_referee:
+  code: marking_referee
+  label: Marking Referee
+  description: "Marking Referee"
+
+yatori:
+  code: yatori
+  label: Yatori
+  description: "Yatori"

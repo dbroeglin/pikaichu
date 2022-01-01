@@ -46,8 +46,12 @@ en:
         shortname: Code
     errors:
       models:
+        team:
+          attributes:
+            index:
+              taken: must be unique within a participating dojo
         participant:
           attributes:
             index_in_team:
-              blank: must be defined when member of a team
-              take: must be unique within a team
+              blank: must be defined if participant is a team member
+              taken: must be unique within a team

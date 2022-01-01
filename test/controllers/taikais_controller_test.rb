@@ -1,33 +1,33 @@
 require "test_helper"
 
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get taikais_index_url
-    assert_response :success
+  setup do
+    sign_in users(:jean_bon)
+    @taikai = taikais(:taikai_1)
   end
 
-  test "should get show" do
-    get taikais_show_url
+  test "should get index" do
+    get taikais_url
     assert_response :success
   end
 
   test "should get edit" do
-    get taikais_edit_url
+    get edit_taikai_url @taikai
     assert_response :success
   end
 
   test "should get new" do
-    get taikais_new_url
+    get new_taikai_url
     assert_response :success
   end
 
-  test "should get update" do
-    get taikais_update_url
-    assert_response :success
+  test "should patch update" do
+    patch taikai_url @taikai, params: { taikai: @taikai.attributes }
+    assert_redirected_to taikais_url
   end
 
-  test "should get delete" do
-    get taikais_delete_url
-    assert_response :success
+  test "should get destroy" do
+    delete taikai_url @taikai
+    assert_redirected_to taikais_url
   end
 end

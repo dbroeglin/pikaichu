@@ -1,0 +1,39 @@
+taikai_1:
+  shortname: taikai-1
+  name: Taikai 2
+  start_date: <%= 5.days.from_now %>
+  end_date: <%= 6.days.from_now %>
+  distributed: true
+  individual: true
+
+taikai_2:
+  shortname: taikai-2
+  name: Taikai 2
+  start_date: <%= 10.days.from_now %>
+  end_date: <%= 12.days.from_now %>
+  distributed: true
+  individual: false
+
+taikai_3:
+  shortname: taikai-3
+  name: Taikai 3
+  start_date: <%= 16.days.from_now %>
+  end_date: <%= 18.days.from_now %>
+  distributed: false
+  individual: true
+
+taikai_4:
+  shortname: taikai-4
+  name: Taikai 4
+  start_date: <%= 20.days.from_now %>
+  end_date: <%= 24.days.from_now %>
+  distributed: false
+  individual: false
+
+taikai_5: # Admin is Alain Térieur
+  shortname: taikai-5
+  name: Taikai 5
+  start_date: <%= 20.days.from_now %>
+  end_date: <%= 24.days.from_now %>
+  distributed: true
+  individual: false

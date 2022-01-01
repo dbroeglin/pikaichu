@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @taikai.participating_dojos.each do |participating_dojo| %>
+    <% taikai.participating_dojos.each do |participating_dojo| %>
     <tr>
       <td><%= participating_dojo.display_name %></td>
       <td><%= participating_dojo.dojo.city %></td>

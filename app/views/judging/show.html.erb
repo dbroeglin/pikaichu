@@ -28,7 +28,7 @@
             <td>
               <div class="columns is-mobile is-centered is-gapless">
                 <div class="column is-half">
-                  <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
+                  <%= bulma_form_with url: update_judging_path(@taikai, participant) do |form| %>
                     <%= form.hidden_field :status, value: "hit" %>
                     <%= form.button class: "button is-small" do %>
                       <span class="icon is-small">
@@ -38,7 +38,7 @@
                   <% end %>
                 </div>
                 <div class="column is-half">
-                  <%= bulma_form_with url: judging_update_path(@taikai, participant) do |form| %>
+                  <%= bulma_form_with url: update_judging_path(@taikai, participant) do |form| %>
                     <%= form.hidden_field :status, value: "miss" %>
                     <%= form.button class: "button is-small" do %>
                       <span class="icon is-small">

@@ -1,0 +1,23 @@
+dojo_fr:
+  shortname: dojo-1
+  name: Dojo 1
+  city: "Montpellier"
+  country_code: FR
+
+dojo_hk:
+  shortname: dojo-2
+  name: Dojo 2
+  city: "Hong-Kong"
+  country_code: HK
+
+dojo_jp:
+  shortname: dojo-3
+  name: Dojo 3
+  city: "Kyoto"
+  country_code: JP
+
+dojo_to_delete:
+  shortname: dojo-to-delete
+  name: Dojo To Delete
+  city: "Kyotoo"
+  country_code: JP

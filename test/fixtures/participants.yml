@@ -1,0 +1,7 @@
+<% 3.times do |index| %>
+participant_<%= index %>_participating_dojo_1_taikai_1:
+  index: <%= index + 1 %>
+  participating_dojo: participating_dojo_1_taikai_1
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+<% end %>
