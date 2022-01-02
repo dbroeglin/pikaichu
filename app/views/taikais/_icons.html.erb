@@ -1,13 +1,15 @@
-<%= link_to edit_taikai_path(taikai), class: "button #{size} has-background-light", title: "Edit" do %>
+<%= link_to edit_taikai_path(taikai),
+      class: "button #{size} has-background-light",
+      title: "Edit" do %>
   <span class="icon <%= size %>">
     <i class="fas fa-pen"></i>
   </span>
 <% end if policy(taikai).edit? %>
 
-<%= link_to taikai, method: :delete,
-            class: "button #{size} has-background-light",
-            data: { confirm: "Are you sure?" },
-            title: "Delete" do %>
+<%= link_to taikai,
+      class: "button #{size} has-background-light",
+      data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
+      title: "Delete" do %>
   <span class="icon <%= size %>">
     <i class="far fa-trash-can"></i>
   </span>

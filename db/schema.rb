@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_210142) do
   create_enum :result_status, [
     "hit",
     "miss",
+    "unknown",
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|

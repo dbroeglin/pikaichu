@@ -1,6 +1,6 @@
 class CreateResults < ActiveRecord::Migration[6.1]
   def change
-    create_enum :result_status, ["hit", "miss"]
+    create_enum :result_status, ["hit", "miss", "unknown"]
 
     create_table :results do |t|
       t.references :participant, null: false, foreign_key: true

@@ -23,8 +23,9 @@
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
-        <%= link_to [taikai, participating_dojo, team], method: :delete,
-                    class: "button is-small has-background-light", data: { confirm: "Are you sure?" } do %>
+        <%= link_to [taikai, participating_dojo, team],
+              class: "button is-small has-background-light",
+              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
