@@ -3,16 +3,14 @@
               @participating_dojos.each_with_index do |dojo|
                 dojo.participants.each_with_index do |participant, index|
           %>
-          <%= turbo_frame_tag "participant_#{participant.id}" do %>
-          <tr class="has-text-centered" >
+          <tr class="has-text-centered" id="<%= dom_id(participant) %>">
             <% if index == 0 %>
             <th rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
-            <%= render "participant_result", participant: participant %>
+            <%= render "participant_results", participant: participant %>
           </tr>
-          <% end%>
           <%
                 end
               end
@@ -21,8 +19,7 @@
                  dojo.teams.each_with_index do |team, team_index|
                    team.participants.each_with_index do |participant, participant_index|
           %>
-          <%= turbo_frame_tag "participant_#{participant.id}" do %>
-          <tr class="has-text-centered" >
+          <tr class="has-text-centered" id="<%= dom_id(participant) %>">
             <% if team_index == 0 && participant_index == 0 %>
             <th rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
@@ -33,9 +30,8 @@
               <%= team.index %>
             </th>
             <% end %>
-            <%= render "participant_result", participant: participant %>
+            <%= render "participant_results", participant: participant %>
           </tr>
-          <% end %>
           <%
                    end
                  end

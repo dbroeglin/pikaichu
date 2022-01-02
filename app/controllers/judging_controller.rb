@@ -27,12 +27,17 @@ class JudgingController < ApplicationController
 
     results = @participant.find_undefined_results
     if results.any?
-      results.first.update!(status: params[:status])
-      @participant.reload
+      @result = results.first
+      @result.update!(status: params[:status])
     else
       flash.now[:alert] = "There is no more empty result to be set!" # TODO
     end
-    redirect_to action: 'show'#, only_participant_id: @participant.id
+    respond_to do |format|
+      format.html { redirect_to action: :show }
+      format.turbo_stream {
+        @results = @participant.results.round @result.round
+      }
+    end
   end
 
   private

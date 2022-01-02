@@ -1,0 +1,23 @@
+<div id="<%= dom_id participant, results.first.round %>">
+  <% results.each do |result| %>
+    <a href="#" class="button is-small is-text">
+    <% if result.status_hit? %>
+    <span class="icon is-small">
+      <i class="far fa-circle"></i>
+    </span>
+    <% elsif result.status_miss? %>
+    <span class="icon is-small">
+      <i class="fas fa-xmark"></i>
+    </span>
+    <% elsif result.status_unknown? %>
+    <span class="icon is-small">
+      <i class="fas fa-question"></i>
+    </span>
+    <% else %>
+    <span class="icon is-small">
+
+    </span>
+    <% end %>
+    </a>
+  <% end %>
+</div>
