@@ -9,15 +9,7 @@ class TaikaisController < ApplicationController
       Taikai
         .includes(participating_dojos: %i[teams participants])
         .find(params[:id])
-    @staffs =
-      @taikai
-        .staffs
-        .joins(:role)
-        .left_outer_joins(:participating_dojo)
-        .order(
-          'staff_roles.label': :asc,
-          'participating_dojos.display_name': :asc,
-        )
+    @staffs = @taikai.staffs.ordered
   end
 
   def new

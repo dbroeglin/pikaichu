@@ -1,5 +1,14 @@
 class Taikai < ApplicationRecord
-  has_many :staffs, dependent: :destroy
+  has_many :staffs, dependent: :destroy do
+    def ordered
+      joins(:role)
+        .left_outer_joins(:participating_dojo)
+        .order(
+          'staff_roles.label': :asc,
+          'participating_dojos.display_name': :asc,
+        )
+    end
+  end
   has_many :participating_dojos, -> { order display_name: :asc }, dependent: :destroy
   has_many :participants, through: :participating_dojos
 

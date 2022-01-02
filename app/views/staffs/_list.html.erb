@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @taikai.staffs.each do |staff| %>
+    <% @taikai.staffs.ordered.each do |staff| %>
     <tr>
       <td><%= staff.display_name %></td>
       <td><%= staff.participating_dojo&.display_name %></td>
