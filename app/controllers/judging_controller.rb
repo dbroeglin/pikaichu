@@ -9,6 +9,7 @@ class JudgingController < ApplicationController
     if @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
         .includes({participants: :results}, teams: [participants: :results])
+        #.where('participants.id': 81)
     elsif @taikai.dojo_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
         .includes({participants: :results}, teams: [participants: :results])
@@ -31,7 +32,7 @@ class JudgingController < ApplicationController
     else
       flash.now[:alert] = "There is no more empty result to be set!" # TODO
     end
-    redirect_to action: 'show'
+    redirect_to action: 'show'#, only_participant_id: @participant.id
   end
 
   private

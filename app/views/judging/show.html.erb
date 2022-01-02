@@ -11,55 +11,14 @@
             <% end %>
             <th>Name</th>
             <th>Choice</th>
-            <th colspan="4">Round 1</th>
-            <th colspan="4">Round 2</th>
-            <th colspan="4">Round 3</th>
+            <% @taikai.num_rounds.times do |index| %>
+              <th colspan="4">Round <%= index + 1 %></th>
+            <% end %>
             <th>Total</th>
           </tr>
         </thead>
         <tbody>
-          <%
-            if @taikai.individual?
-              @participating_dojos.each_with_index do |dojo|
-                dojo.participants.each_with_index do |participant, index|
-          %>
-          <tr class="has-text-centered" >
-            <% if index == 0 %>
-            <th rowspan="<%= dojo.participants.size %>">
-              <%= dojo.display_name %>
-            </th>
-            <% end %>
-            <td class="has-text-left"><%= participant.display_name %></td>
-            <%= render "participant_line", participant: participant %>
-          </tr>
-          <%
-                end
-              end
-            else
-              @participating_dojos.each_with_index do |dojo|
-                 dojo.teams.each_with_index do |team, team_index|
-                   team.participants.each_with_index do |participant, participant_index|
-          %>
-          <tr class="has-text-centered">
-            <% if team_index == 0 && participant_index == 0 %>
-            <th rowspan="<%= dojo.participants.size %>">
-              <%= dojo.display_name %>
-            </th>
-            <% end %>
-            <% if participant_index == 0 %>
-            <th rowspan="<%= team.participants.size %>">
-              <%= team.index %>
-            </th>
-            <% end %>
-            <td class="has-text-left"><%= participant.display_name %></td>
-            <%= render "participant_line", participant: participant %>
-          </tr>
-          <%
-                   end
-                 end
-               end
-             end
-          %>
+          <%= render "participant_lines" %>
         </tbody>
       </table>
     </div>

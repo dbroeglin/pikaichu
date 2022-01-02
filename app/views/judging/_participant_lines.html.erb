@@ -1,0 +1,44 @@
+          <%
+            if @taikai.individual?
+              @participating_dojos.each_with_index do |dojo|
+                dojo.participants.each_with_index do |participant, index|
+          %>
+          <%= turbo_frame_tag "participant_#{participant.id}" do %>
+          <tr class="has-text-centered" >
+            <% if index == 0 %>
+            <th rowspan="<%= dojo.participants.size %>">
+              <%= dojo.display_name %>
+            </th>
+            <% end %>
+            <%= render "participant_result", participant: participant %>
+          </tr>
+          <% end%>
+          <%
+                end
+              end
+            else
+              @participating_dojos.each_with_index do |dojo|
+                 dojo.teams.each_with_index do |team, team_index|
+                   team.participants.each_with_index do |participant, participant_index|
+          %>
+          <%= turbo_frame_tag "participant_#{participant.id}" do %>
+          <tr class="has-text-centered" >
+            <% if team_index == 0 && participant_index == 0 %>
+            <th rowspan="<%= dojo.participants.size %>">
+              <%= dojo.display_name %>
+            </th>
+            <% end %>
+            <% if participant_index == 0 %>
+            <th rowspan="<%= team.participants.size %>">
+              <%= team.index %>
+            </th>
+            <% end %>
+            <%= render "participant_result", participant: participant %>
+          </tr>
+          <% end %>
+          <%
+                   end
+                 end
+               end
+             end
+          %>
