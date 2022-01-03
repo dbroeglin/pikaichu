@@ -8,4 +8,8 @@ class Result < ApplicationRecord
   }, _prefix: :status
 
   human_enum :status
+
+  def known?
+    status_hit? || status_miss?
+  end
 end

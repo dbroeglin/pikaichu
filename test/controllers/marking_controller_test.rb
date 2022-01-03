@@ -1,6 +1,6 @@
 require "test_helper"
 
-class JudgingControllerTest < ActionDispatch::IntegrationTest
+class MarkingControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai_1)
@@ -8,12 +8,12 @@ class JudgingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get show_judging_url @taikai
+    get show_marking_url @taikai
     assert_response :success
   end
 
   test "should post update" do
-    post update_judging_url @taikai, @participant, params: { status: 'hit' }
-    assert_redirected_to show_judging_url @taikai
+    post update_marking_url @taikai, @participant, params: { status: 'hit' }
+    assert_redirected_to show_marking_url @taikai
   end
 end

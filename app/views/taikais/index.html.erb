@@ -12,7 +12,7 @@
             <th>Dates</th>
             <th class="has-text-right">
               <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
-                <span class="icon is-small">
+                <span class="icon is-small" title="New Taikai">
                   <i class="fas fa-plus"></i>
                 </span>
                 <span>New</span>
@@ -25,9 +25,9 @@
           <tr>
             <td>
               <% if taikai.distributed %>
-                <span class="icon is-small">
+                <span class="icon is-small" title="Distributed taikai">
                   <i class="fas fa-globe"></i>
-                </span><% end %>&nbsp;<% if !taikai.individual %><span class="icon is-small">
+                </span><% end %>&nbsp;<% if !taikai.individual %><span class="icon is-small" title="Team taikai">
                   <i class="fas fa-users"></i>
                 </span>
               <% end %>

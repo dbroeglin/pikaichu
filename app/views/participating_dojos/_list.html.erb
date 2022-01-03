@@ -7,7 +7,7 @@
       <th>#</th>
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_path(taikai), class: "button is-small has-background-light" do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="New participating dojo">
             <i class="fas fa-plus"></i>
           </span>
           <span>New</span>
@@ -25,14 +25,14 @@
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_path(taikai, participating_dojo),
                     class: "button is-small has-background-light" do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="Edit participating dojo">
             <i class="fas fa-pen"></i>
           </span>
         <% end if policy(participating_dojo).update? %>
         <%= link_to [taikai, participating_dojo],
               class: "button is-small has-background-light",
               data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="Delete participating dojo">
             <i class="far fa-trash-can"></i>
           </span>
         <% end if policy(participating_dojo).update? %>

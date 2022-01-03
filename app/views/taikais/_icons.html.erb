@@ -1,7 +1,7 @@
 <%= link_to edit_taikai_path(taikai),
       class: "button #{size} has-background-light",
       title: "Edit" do %>
-  <span class="icon <%= size %>">
+  <span class="icon <%= size %>" title="Edit taikai">
     <i class="fas fa-pen"></i>
   </span>
 <% end if policy(taikai).edit? %>
@@ -10,15 +10,15 @@
       class: "button #{size} has-background-light",
       data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
       title: "Delete" do %>
-  <span class="icon <%= size %>">
+  <span class="icon <%= size %>" title="Delete taikai">
     <i class="far fa-trash-can"></i>
   </span>
 <% end if policy(taikai).destroy? %>
 
-<%= link_to show_judging_path(taikai),
+<%= link_to show_marking_path(taikai),
             class: "button #{size} has-background-light ml-3",
-            title: "Judging" do %>
-  <span class="icon <%= size %>">
+            title: "Marking" do %>
+  <span class="icon <%= size %>" title="Marking sheet">
     <i class="far fa-circle-dot"></i>
   </span>
 <% end %>
@@ -26,7 +26,7 @@
 <%= link_to show_leaderboard_path(taikai),
             class: "button #{size} has-background-light",
             title: "Leader board" do %>
-  <span class="icon <%= size %>">
+  <span class="icon <%= size %>" title="Leaderboard">
     <i class="fas fa-medal"></i>
   </span>
 <% end %>
@@ -34,7 +34,7 @@
 <%= link_to taikai_export_path(taikai),
             class: "button #{size} has-background-light",
             title: "Export to Excel" do %>
-  <span class="icon <%= size %>">
+  <span class="icon <%= size %>" title="Export to Excel">
     <i class="fas fa-file-excel"></i>
   </span>
 <% end %>

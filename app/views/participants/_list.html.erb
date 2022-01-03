@@ -14,7 +14,7 @@
       <th>#</th>
       <th class="has-text-right">
         <%= link_to new_path, class: "button is-small has-background-light" do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="New participant">
             <i class="fas fa-plus"></i>
           </span>
           <span>New</span>
@@ -48,14 +48,14 @@
           end
         %>
         <%= link_to edit_path, class: "button is-small has-background-light" do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="Edit participant">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to delete_path,
               class: "button is-small has-background-light",
               data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small">
+          <span class="icon is-small" title="Delete participant">
             <i class="far fa-trash-can"></i>
           </span>
         <% end %>

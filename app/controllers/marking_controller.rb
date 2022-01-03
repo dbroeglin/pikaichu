@@ -1,6 +1,6 @@
-class JudgingController < ApplicationController
+class MarkingController < ApplicationController
   before_action do
-    @page_title = "Judging"
+    @page_title = "Marking"
   end
 
   def show
@@ -16,7 +16,7 @@ class JudgingController < ApplicationController
         .joins(staffs: [:role])
         .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
     else
-      raise Pundit::NotAuthorizedError, "not allowed to show judging board for  #{@taikai.inspect}"
+      raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
     end
   end
 
