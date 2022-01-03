@@ -1,5 +1,5 @@
 <td class="has-text-left"><%= participant.display_name %></td>
-<td>
+<td class="has-text-centered">
   <div class="columns is-mobile is-centered is-gapless">
     <div class="column is-third">
       <%= link_to update_marking_path(@taikai, participant, status: 'hit'),
@@ -38,4 +38,4 @@
     <%= render "round_results", participant: participant, round_index: round_index, results: results %>
   </td>
 <% end %>
-<th><%= render "individual_total", participant: participant %></th>
+<td class="has-text-centered has-text-weight-semibold"><%= render "individual_total", participant: participant %></td>

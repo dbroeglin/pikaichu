@@ -5,6 +5,12 @@ Rails.application.routes.draw do
 
   get  '/taikais/:id/marking',                          to: 'marking#show',          as: :show_marking
   post '/taikais/:id/marking/:participant_id/update',   to: 'marking#update',        as: :update_marking
+  patch '/taikais/:id/marking/:participant_id/result/:result_id',
+    to: 'marking#rotate',
+    as: :rotate_marking
+  patch '/taikais/:id/marking/:participant_id/finalize',
+    to: 'marking#finalize',
+    as: :finalize_round_marking
   get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',     as: :show_leaderboard
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 

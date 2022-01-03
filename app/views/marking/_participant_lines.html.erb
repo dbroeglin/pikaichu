@@ -19,20 +19,20 @@
                  dojo.teams.each_with_index do |team, team_index|
                    team.participants.each_with_index do |participant, participant_index|
           %>
-          <tr class="has-text-centered" id="<%= dom_id(participant) %>">
+          <tr class="has-text-left" id="<%= dom_id(participant) %>">
             <% if team_index == 0 && participant_index == 0 %>
-            <th  class="is-vcentered" rowspan="<%= dojo.participants.size %>">
+            <th  class="is-vcentered has-text-centered" rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
             <% if participant_index == 0 %>
-            <th  class="is-vcentered" rowspan="<%= team.participants.size %>">
+            <th  class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>">
               <%= team.index %>
             </th>
             <% end %>
             <%= render "participant_results", participant: participant %>
             <% if participant_index == 0 %>
-            <th class="is-vcentered" rowspan="<%= team.participants.size %>"><%= render "team_total", team: team %></th>
+            <th class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>"><%= render "team_total", team: team %></th>
             <% end %>
           </tr>
           <%

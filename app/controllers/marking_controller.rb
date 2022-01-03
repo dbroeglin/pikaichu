@@ -9,7 +9,6 @@ class MarkingController < ApplicationController
     if @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
         .includes({participants: :results}, teams: [participants: :results])
-        #.where('participants.id': 81)
     elsif @taikai.dojo_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
         .includes({participants: :results}, teams: [participants: :results])
@@ -20,7 +19,7 @@ class MarkingController < ApplicationController
     end
   end
 
-  def update
+  def update # TODO: Optimize?
     @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
@@ -39,6 +38,41 @@ class MarkingController < ApplicationController
       }
     end
   end
+
+  def rotate
+    @taikai = Taikai.find(params[:id])
+    @participant = @taikai.participants.find(params[:participant_id])
+    @result = @participant.results.find(params[:result_id])
+
+    @result.status = case @result.status
+    when 'hit' then 'miss'
+    when 'miss' then 'hit'
+    when 'unknown' then 'hit'
+    else raise "Cannot change value of a result that has not been marked yet"
+    end
+    @result.save!
+    respond_to do |format|
+      format.turbo_stream {
+        @results = @participant.results.round @result.round
+        render action: :update
+      }
+    end
+  end
+
+  def finalize
+    @taikai = Taikai.find(params[:id])
+    @participant = @taikai.participants.find(params[:participant_id])
+    @results = @participant.results.round(params[:round])
+
+    @results.update_all(final: true)
+    respond_to do |format|
+      format.turbo_stream {
+        @results = @participant.results.round params[:round]
+        render action: :update
+      }
+    end
+  end
+
 
   private
 

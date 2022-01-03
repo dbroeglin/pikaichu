@@ -1,31 +1,28 @@
 <div id="<%= dom_id participant, results.first.round %>">
   <% results.each do |result| %>
-    <a href="#" class="button is-small is-text">
-    <% if result.status_hit? %>
-    <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
-      <i class="far fa-circle"></i>
-    </span>
-    <% elsif result.status_miss? %>
-    <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
-      <i class="fas fa-xmark"></i>
-    </span>
-    <% elsif result.status_unknown? %>
-    <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
-      <i class="fas fa-question"></i>
-    </span>
+    <% if result.status %>
+      <%= link_to rotate_marking_path(@taikai, participant, result, status: result.status),
+                  class: "button is-small is-text #{result.final ? "is-primary" : ""}",
+                  data: { turbo_method: 'patch' },
+                  title: Result.human_enum_value(:status, result.status) do %>
+        <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
+          <%= icon_from(result) %>
+        </span>
+      <% end %>
     <% else %>
-    <span class="icon is-small" title="Not yet defined">
-
-    </span>
+      <span class="icon is-small" title="Not yet defined">
+      </span>
     <% end %>
     </a>
   <% end %>
-  <% if results.count {|r| r.known? } == 4 %>
-    <a href="#" class="button is-small is-text">
-      <span class="icon is-small" title="Validate round of results">
+  <% if !results.first.final && results.count {|r| r.known? } == 4 %>
+    <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round),
+                class: "button is-small has-background-danger-light ml-2",
+                data: { turbo_method: 'patch' },
+                title: "Finalize round #{results.first.round}" do %>
+      <span class="icon is-small">
         <i class="fas fa-check"></i>
       </span>
-    </a>
+    <% end %>
   <% end %>
-
 </div>
