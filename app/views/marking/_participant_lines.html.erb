@@ -5,7 +5,7 @@
           %>
           <tr class="has-text-centered" id="<%= dom_id(participant) %>">
             <% if index == 0 %>
-            <th rowspan="<%= dojo.participants.size %>">
+            <th class="is-vcentered" rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
@@ -21,16 +21,19 @@
           %>
           <tr class="has-text-centered" id="<%= dom_id(participant) %>">
             <% if team_index == 0 && participant_index == 0 %>
-            <th rowspan="<%= dojo.participants.size %>">
+            <th  class="is-vcentered" rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
             <% if participant_index == 0 %>
-            <th rowspan="<%= team.participants.size %>">
+            <th  class="is-vcentered" rowspan="<%= team.participants.size %>">
               <%= team.index %>
             </th>
             <% end %>
             <%= render "participant_results", participant: participant %>
+            <% if participant_index == 0 %>
+            <th class="is-vcentered" rowspan="<%= team.participants.size %>"><%= render "team_total", team: team %></th>
+            <% end %>
           </tr>
           <%
                    end

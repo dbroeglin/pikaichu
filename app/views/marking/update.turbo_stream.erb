@@ -2,5 +2,10 @@
 <%= render "round_results", participant: @participant, results: @results, formats: [:html] %>
 <% end %>
 <%= turbo_stream.replace dom_id @participant, 'total' do %>
-<%= render "total", participant: @participant, formats: [:html] %>
+<%= render "individual_total", participant: @participant, formats: [:html] %>
+<% end %>
+<% unless @taikai.individual? %>
+<%= turbo_stream.replace dom_id @participant.team, 'total' do %>
+<%= render "team_total", team: @participant.team, formats: [:html] %>
+<% end %>
 <% end %>

@@ -3,12 +3,17 @@ class Team < ApplicationRecord
   has_many :participants,
            -> { order index_in_team: :asc, lastname: :asc, firstname: :asc },
            dependent: :destroy
+  has_many :results, through: :participants
 
   validates :index,
             uniqueness: {
               scope: :participating_dojo,
             },
             presence: true
+
+  def total
+    results.select { |r| r.status == 'hit' }.size
+  end
 
   def ensure_next_index
     if self.index.blank?
