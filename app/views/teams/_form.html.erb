@@ -3,7 +3,8 @@
     <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
   <% end %>
 
-  <%= f.input :index, input_html: {placeholder: "Automatically set if blank" }%>
+  <%= f.input :index, input_html: {placeholder: "Automatically set if blank" } %>
+  <%= f.input :shortname %>
 
   <%= f.button "Save", class: "button has-background-light mr-3" %>
   <%= link_to "Cancel", edit_taikai_participating_dojo_path(taikai, participating_dojo), class: "button" %>

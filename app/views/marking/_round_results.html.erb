@@ -1,4 +1,4 @@
-<div id="<%= dom_id participant, results.first.round %>" class="<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : "has-background-info-light mx-0" %>">
+<div id="<%= dom_id participant, results.first.round %>" class="level is-mobile<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : " has-background-info-light mx-0" %>">
   <% results.each do |result| %>
     <% if result.status %>
       <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status),
@@ -10,8 +10,7 @@
         </span>
       <% end %>
     <% else %>
-      <span class="icon is-small" title="Not yet defined">
-      </span>
+      <span class="icon is-small" title="Not yet defined">&nbsp;</span>
     <% end %>
     </a>
   <% end %>

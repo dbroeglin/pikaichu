@@ -7,6 +7,13 @@ class Team < ApplicationRecord
            dependent: :destroy
   has_many :results, through: :participants
 
+  validates :shortname,
+            presence: true,
+            uniqueness: {
+              scope: :participating_dojo,
+              case_sensitive: false,
+            }
+
   validates :index,
             uniqueness: {
               scope: :participating_dojo,

@@ -1,7 +1,8 @@
 <table class="table is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr class="has-text-centered">
-      <th>Team</th>
+      <th>#</th>
+      <th>Name</th>
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
           <span class="icon is-small" title="New team">
@@ -15,7 +16,8 @@
   <tbody>
     <% participating_dojo.teams.each do |team| %>
     <tr>
-      <td>Team n. <%= team.index %></td>
+      <td><%= team.index %></td>
+      <td><%= team.shortname %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_team_path(taikai, participating_dojo, team),
                     class: "button is-small has-background-light" do %>

@@ -24,9 +24,9 @@ if Rails.env.development? || Rails.env.test?
         create_list(:dojo, 3)
 
         create(:taikai_with_participating_dojo,
-          shortname: "c-2021",
-          name: "Tournoi du C. 2021",
-          description: "",
+          shortname: "5WKT",
+          name: "第五世界 九堂大会",
+          description: "Fifth World Kyudo Taikai (Annecy)",
           start_date: '2021-12-18',
           end_date: '2021-12-18',
           distributed: false,

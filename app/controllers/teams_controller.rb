@@ -45,7 +45,8 @@ class TeamsController < ApplicationController
     params
       .require(:team)
       .permit(
-        :index
+        :index,
+        :shortname
       )
   end
 

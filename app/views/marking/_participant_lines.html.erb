@@ -27,7 +27,7 @@
             <% end %>
             <% if participant_index == 0 %>
             <th  class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>">
-              <%= team.index %>
+              <%= team.index %> - <%= team.shortname %>
             </th>
             <% end %>
             <%= render "participant_results", taikai: @taikai, participant: participant %>
