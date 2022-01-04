@@ -1,3 +1,6 @@
+<% if taikai.individual? %>
+<td class="has-text-left"><%= participant.index %></td>
+<% end %>
 <td class="has-text-left"><%= participant.display_name %></td>
 <td class="has-text-centered">
   <%= render "choice", taikai: @taikai, participant: participant %>

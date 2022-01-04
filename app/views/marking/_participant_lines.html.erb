@@ -9,7 +9,7 @@
               <%= dojo.display_name %>
             </th>
             <% end %>
-            <%= render "participant_results", participant: participant, taikai: @taikai %>
+            <%= render "participant_results", taikai: @taikai, participant: participant %>
           </tr>
           <%
                 end
@@ -30,7 +30,7 @@
               <%= team.index %>
             </th>
             <% end %>
-            <%= render "participant_results", participant: participant %>
+            <%= render "participant_results", taikai: @taikai, participant: participant %>
             <% if participant_index == 0 %>
             <th class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>"><%= render "team_total", team: team %></th>
             <% end %>

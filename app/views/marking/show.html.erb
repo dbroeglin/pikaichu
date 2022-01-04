@@ -4,7 +4,9 @@
     <thead>
       <tr class="has-text-centered">
         <th>Dojo</th>
-        <% unless @taikai.individual? %>
+        <% if @taikai.individual? %>
+        <th>#</th>
+        <% else %>
         <th>Team</th>
         <% end %>
         <th>Name</th>
