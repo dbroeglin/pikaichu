@@ -6,6 +6,7 @@ FactoryBot.define do
   factory :dojo do
     shortname
     name
+    city { Faker::Address.city }
     country_code
   end
 end
