@@ -22,7 +22,8 @@
         <div class="buttons">
           <% if user_signed_in? %>
             <%= link_to "Account", edit_user_registration_path, class: "button is-light" %>
-            <%= link_to "Log out", destroy_user_session_path, class: "button is-light",  method: :delete, data: { turbo: false } %>
+            <%= link_to "Log out", destroy_user_session_path, class: "button is-light",
+                  data: { turbo_method: :delete } %>
           <% else %>
             <%- if controller_name != 'sessions' %>
               <%= link_to "Log in", new_session_path(:user), class: "button is-dark" %><br />

@@ -7,9 +7,10 @@ class ParticipatingDojosController < ApplicationController
 
   def create
     @participating_dojo = @taikai.participating_dojos.build(participating_dojo_params)
+    @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
 
     if @participating_dojo.display_name.blank?
-      @participating_dojo.display_name = dojo_params[:name]
+      @participating_dojo.display_name = @dojo.shortname
     end
     if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
@@ -24,8 +25,14 @@ class ParticipatingDojosController < ApplicationController
 
   def update
     @participating_dojo = authorize @taikai.participating_dojos.find(params[:id])
+    @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
 
-    if @participating_dojo.update(participating_dojo_params)
+    @participating_dojo.assign_attributes(participating_dojo_params)
+    if @participating_dojo.display_name.blank?
+      @participating_dojo.display_name = @dojo.shortname
+    end
+
+    if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
       render :edit, status: :unprocessable_entity

@@ -6,7 +6,9 @@
           <p class="card-header-title">Update your account</p>
         </header>
         <div class="card-content">
-          <%= bulma_form_for resource, as: resource_name, url: registration_path(resource_name), html: { "data-turbo":  false, method: :put } do |f| %>
+          <%= bulma_form_for resource, as: resource_name, url: registration_path(resource_name), data: {
+                  turbo_method: :put
+                } do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <%
@@ -42,11 +44,15 @@
         </header>
         <div class="card-content">
           <%= bulma_form_for resource,
+                html: { id: "cancel_account"},
                 as: resource_name,
                 url: registration_path(resource_name),
-                method: :delete,
-                data: { turbo_confirm: "Are you sure?" } do |f| %>
+                data: { turbo_method: 'delete', turbo_confirm: "Are you sure?"} do |f| %>
             <p class="subtitle">Unhappy? </p>
+            <%= f.input :current_password, autocomplete: "current-password",
+                        help: "(We need your current password to confirm your changes)",
+                        input_html: { id: "current_password_cancel" } %>
+
             <%= f.button "Cancel my account", class: "button has-background-light" %>
           <% end %>
         </div>

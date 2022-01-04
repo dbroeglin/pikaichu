@@ -4,7 +4,7 @@
   </div>
 <% end %>
 <% @dojos.each do |dojo| %>
-  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= dojo.id %>" data-autocomplete-label="<%= dojo.name %>">
-    <p><%= dojo.name %> / <%= dojo.country_name %></p>
+  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= dojo.id %>" data-autocomplete-label="<%= dojo.shortname %>">
+    <p><%= dojo.shortname %> | <%= dojo.name %> | <%= dojo.country_name %></p>
   </div>
 <% end %>
