@@ -44,9 +44,11 @@ class MarkingController < ApplicationController
     @participant = @taikai.participants.find(params[:participant_id])
     @result = @participant.results.find(params[:result_id])
 
+    num_marked_results_in_round = @participant.results.round(@result.round).count &:marked?
+
     @result.status = case @result.status
     when 'hit' then 'miss'
-    when 'miss' then 'hit'
+    when 'miss' then num_marked_results_in_round == 4 ? 'hit' : 'unknown'
     when 'unknown' then 'hit'
     else raise "Cannot change value of a result that has not been marked yet"
     end
