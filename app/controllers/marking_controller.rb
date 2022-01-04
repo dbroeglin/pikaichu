@@ -28,14 +28,14 @@ class MarkingController < ApplicationController
     if results.any?
       @result = results.first
       @result.update!(status: params[:status])
+      respond_to do |format|
+        format.html { redirect_to action: :show }
+        format.turbo_stream {
+          @results = @participant.results.round @result.round
+        }
+      end
     else
-      flash.now[:alert] = "There is no more empty result to be set!" # TODO
-    end
-    respond_to do |format|
-      format.html { redirect_to action: :show }
-      format.turbo_stream {
-        @results = @participant.results.round @result.round
-      }
+      render plain: "", status: :unprocessable_entity
     end
   end
 

@@ -1,4 +1,6 @@
 class Taikai < ApplicationRecord
+  audited
+
   has_many :staffs, dependent: :destroy do
     def ordered
       joins(:role)

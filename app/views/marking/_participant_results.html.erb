@@ -1,37 +1,6 @@
 <td class="has-text-left"><%= participant.display_name %></td>
 <td class="has-text-centered">
-  <div class="columns is-mobile is-centered is-gapless">
-    <div class="column is-third">
-      <%= link_to update_marking_path(@taikai, participant, status: 'hit'),
-                  class: "button is-small",
-                  data: { turbo_method: 'post' },
-                  title: "Hit" do %>
-        <span class="icon is-small" title="Mark Hit">
-          <i class="far fa-circle"></i>
-        </span>
-      <% end %>
-    </div>
-    <div class="column is-third">
-      <%= link_to update_marking_path(@taikai, participant, status: 'miss'),
-                  class: "button is-small ml-1",
-                  data: { turbo_method: 'post' },
-                  title: "Miss" do %>
-        <span class="icon is-small" title="Mark Missed">
-          <i class="fas fa-xmark"></i>
-        </span>
-      <% end %>
-    </div>
-    <div class="column is-third ">
-      <%= link_to update_marking_path(@taikai, participant, status: 'unknown'),
-                  class: "button is-small ml-1",
-                  data: { turbo_method: 'post' },
-                  title: "Unknown" do %>
-        <span class="icon is-small" title="Mark Unknown">
-          <i class="fas fa-question"></i>
-        </span>
-      <% end %>
-    </div>
-  </div>
+  <%= render "choice", taikai: @taikai, participant: participant %>
 </td>
 <% participant.results.group_by(&:round).each_pair do |round_index, results| %>
   <td>

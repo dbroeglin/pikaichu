@@ -1,4 +1,5 @@
 class StaffRole < ApplicationRecord
+  audited
 
   def taikai_admin?
     code == 'taikai_admin'

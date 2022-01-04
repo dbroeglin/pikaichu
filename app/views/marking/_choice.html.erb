@@ -1,0 +1,36 @@
+<% marking = participant.marking? %>
+<div class="columns is-mobile is-centered is-gapless" id="<%= dom_id(participant, :choice) %>">
+  <div class="column is-third">
+    <%= link_to update_marking_path(taikai, participant, status: 'hit'),
+                class: "button is-small",
+                data: { turbo_method: 'post' },
+                title: "Hit",
+                disabled: !marking do %>
+      <span class="icon is-small" title="Mark Hit">
+        <i class="far fa-circle"></i>
+      </span>
+    <% end %>
+  </div>
+  <div class="column is-third">
+    <%= link_to update_marking_path(taikai, participant, status: 'miss'),
+                class: "button is-small ml-1",
+                data: { turbo_method: 'post' },
+                title: "Miss",
+                disabled: !marking do %>
+      <span class="icon is-small" title="Mark Missed">
+        <i class="fas fa-xmark"></i>
+      </span>
+    <% end %>
+  </div>
+  <div class="column is-third ">
+    <%= link_to update_marking_path(taikai, participant, status: 'unknown'),
+                class: "button is-small ml-1",
+                data: { turbo_method: 'post' },
+                title: "Unknown",
+                disabled: !marking do %>
+      <span class="icon is-small" title="Mark Unknown">
+        <i class="fas fa-question"></i>
+      </span>
+    <% end %>
+  </div>
+</div>

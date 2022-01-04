@@ -1,4 +1,6 @@
 class Staff < ApplicationRecord
+  audited
+
   belongs_to :role, class_name: "StaffRole"
   belongs_to :taikai
   belongs_to :participating_dojo, optional: true

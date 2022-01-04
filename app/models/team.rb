@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  audited
+
   belongs_to :participating_dojo
   has_many :participants,
            -> { order index_in_team: :asc, lastname: :asc, firstname: :asc },

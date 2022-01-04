@@ -1,8 +1,8 @@
-<div id="<%= dom_id participant, results.first.round %>">
+<div id="<%= dom_id participant, results.first.round %>" class="<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : "has-background-info-light mx-0" %>">
   <% results.each do |result| %>
     <% if result.status %>
-      <%= link_to rotate_marking_path(@taikai, participant, result, status: result.status),
-                  class: "button is-small is-text #{result.final ? "is-primary" : ""}",
+      <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status),
+                  class: "button is-small is-text",
                   data: { turbo_method: 'patch' },
                   title: Result.human_enum_value(:status, result.status) do %>
         <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
@@ -17,7 +17,7 @@
   <% end %>
   <% if !results.first.final && results.count {|r| r.known? } == 4 %>
     <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round),
-                class: "button is-small has-background-danger-light ml-2",
+                class: "button is-small has-background-info ml-2",
                 data: { turbo_method: 'patch' },
                 title: "Finalize round #{results.first.round}" do %>
       <span class="icon is-small">

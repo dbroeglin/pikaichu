@@ -1,4 +1,6 @@
 class Participant < ApplicationRecord
+  audited
+
   belongs_to :participating_dojo
   belongs_to :team, optional: true
   has_many :results, -> {
@@ -36,6 +38,16 @@ class Participant < ApplicationRecord
 
   def find_undefined_results
     results.where('status IS NULL')
+  end
+
+  def marking?
+    num_marked = results.count &:marked?
+    num_finalized = results.count &:final?
+
+    num_marked != participating_dojo.taikai.total_num_arrows &&
+      (num_marked == 0 ||
+        num_finalized == num_marked ||
+          (num_marked % participating_dojo.taikai.num_arrows != 0))
   end
 
   def generate_empty_results
