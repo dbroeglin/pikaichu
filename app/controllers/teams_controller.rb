@@ -8,7 +8,6 @@ class TeamsController < ApplicationController
 
   def create
     @team = @participating_dojo.teams.build(team_params)
-    @team.ensure_next_index
 
     if @team.save
       redirect_to controller: :participating_dojos, action: :edit, taikai_id: @taikai, id: @participating_dojo
@@ -23,7 +22,6 @@ class TeamsController < ApplicationController
 
   def update
     @team = @participating_dojo.teams.find(params[:id])
-    @team.ensure_next_index
 
     if @team.update(team_params)
       redirect_to controller: 'participating_dojos', action: 'edit', taikai_id: @taikai, id: @participating_dojo

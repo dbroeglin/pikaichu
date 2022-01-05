@@ -14,7 +14,7 @@
         <% @taikai.num_rounds.times do |index| %>
           <th>Round <%= index + 1 %></th>
         <% end %>
-        <th colspan="<%= @taikai.individual? ? 1 : 2 %>">Total</th>
+        <th colspan="<%= @taikai.individual? ? 1 : 2 %>">Score</th>
       </tr>
     </thead>
     <tbody>

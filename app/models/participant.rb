@@ -32,7 +32,7 @@ class Participant < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
-  def total
+  def score
     results.select { |r| r.status == 'hit' }.size
   end
 

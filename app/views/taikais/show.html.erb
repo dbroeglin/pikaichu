@@ -28,10 +28,13 @@
                   <tr class="has-text-centered">
                     <th>Dojo</th>
                     <% unless @taikai.individual? %>
+                    <th>#</th>
                     <th>Team</th>
                     <% end %>
-                    <th>Name</th>
+                    <% if @taikai.individual? %>
                     <th>#</th>
+                    <% end %>
+                    <th>Name</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -44,6 +47,7 @@
                     <% if participant_index == 0 %>
                     <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
                     <% end %>
+                    <td><%= participant.index %></td>
                     <td><%= participant.display_name %></td>
                   </tr>
                   <%
@@ -62,9 +66,9 @@
                     <% end %>
                     <% if participant_index == 0 %>
                     <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
+                    <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
                     <% end %>
                     <td><%= participant.display_name %></td>
-                    <td><%= participant.index %></td>
                   </tr>
                   <%
                         end

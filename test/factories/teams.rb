@@ -6,7 +6,7 @@ FactoryBot.define do
       transient do
         participant_count { 3 }
       end
-      index { (instance.participating_dojo.teams.maximum(:index) || 0) + 1 }
+      index { nil }
       shortname { Faker::Team.creature.capitalize }
 
       after(:create) do |team, evaluator|

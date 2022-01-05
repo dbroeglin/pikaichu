@@ -48,6 +48,35 @@ class TaikaisController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def draw
+    @taikai =
+      Taikai
+        .includes(participating_dojos: :participants)
+        .find(params[:id])
+
+      if @taikai.individual?
+        @taikai.participating_dojos.each do |participating_dojo|
+          participating_dojo.participants.update_all(index: nil)
+          participating_dojo.participants.shuffle.each_with_index do |participant, index|
+            participant.index = index + 1
+          end
+          participating_dojo.participants.each do |participant|
+            participant.save!
+          end
+        end
+      else
+        @taikai.participating_dojos.each do |participating_dojo|
+          participating_dojo.teams.update_all(index: nil)
+          participating_dojo.teams.shuffle.each_with_index do |team, index|
+            team.index = index + 1
+          end
+          participating_dojo.teams.each do |team|
+            team.save!
+          end
+        end
+    end
+  end
+
   def export
     @taikai =
       Taikai

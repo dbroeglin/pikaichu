@@ -13,10 +13,11 @@
     <h2><%= pluralize(participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
   <% end %>
 
-  <%= f.input :index %>
   <%= f.input :firstname %>
   <%= f.input :lastname %>
-  <% if !@taikai.individual %>
+  <% if @taikai.individual %>
+  <%= f.input :index %>
+  <% else %>
   <%= f.input :index_in_team %>
   <% end %>
 

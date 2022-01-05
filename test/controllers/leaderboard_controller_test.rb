@@ -7,7 +7,7 @@ class LeaderboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get show_leaderboard_url @taikai
+    get show_taikai_leaderboard_url @taikai
     assert_response :success
   end
 end

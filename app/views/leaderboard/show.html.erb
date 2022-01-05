@@ -3,27 +3,74 @@
     <div class="column is-two-third is-offset-2">
       <h1 class="title">Leader board - <%= @taikai.name %></h1>
 
-      <table class="table is-narrow is-striped">
+      <table class="table is-narrow is-bordered is-striped has-text-centered">
         <thead>
-          <tr class="has-text-centered">
-            <th>Position</th>
-            <th>Score</th>
-            <th>Total</th>
-            <th>Name</th>
+          <tr>
+            <th rowspan="2">Rank</th>
+            <th rowspan="2" colspan="3">Name</th>
+            <% @taikai.num_rounds.times do |index| %>
+            <th colspan="<%= @taikai.num_arrows %>">Round <%= index + 1 %></th>
+            <% end %>
+            <th rowspan="2">Score</th>
+          </tr>
+          <tr>
+            <% @taikai.total_num_arrows.times do |index| %>
+              <th><%= index + 1 %></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
-          <% @results.each_with_index do |result, position| %>
-          <%   result.last.each_with_index do |participant, index| %>
-            <tr>
-              <% if index == 0 %>
-              <th rowspan="<%= result.last.size %>" class="has-text-centered"><%= position + 1 %></th>
-              <td rowspan="<%= result.last.size %>" class="has-text-centered"><%= result.first %></td>
-              <% end %>
-              <td><%= participant.firstname %></td>
-              <td><%= participant.lastname %></td>
-            </tr>
-          <%   end %>
+          <% if @taikai.individual? %>
+
+            <% rank = 0 %>
+            <% @participants_by_score.each_pair do |pair| %>
+            <%   pair.last.each_with_index do |participant, index| %>
+            <%     rank += 1 %>
+              <tr>
+                <% if index == 0 %>
+                <th rowspan="<%= pair.last.size %>" class="has-text-centered"><%= rank %></th>
+                <% end %>
+                <td class="has-text-left"><%= participant.participating_dojo.display_name %></td>
+                <td><%= participant.index %></td>
+                <td class="has-text-left"><%= participant.display_name %></td>
+                <% participant.results.each do |result| %>
+                <td><%= icon_from(result) %></td>
+                <% end %>
+                <% if index == 0 %>
+                <th rowspan="<%= pair.last.size %>"><%= pair.first %></th>
+                <% end %>
+              </tr>
+            <%   end %>
+            <% end %>
+
+          <% else %>
+
+            <% rank = 0 %>
+            <% @teams_by_score.each_pair do |pair| %>
+            <%   score, teams = pair %>
+            <%   teams.each_with_index do |team, team_index| %>
+              <tr>
+                <% team.participants.each_with_index do |participant, participant_index| %>
+                  <% rank += 1 %>
+                  <% if team_index == 0 && participant_index == 0 %>
+                    <th rowspan="<%= teams.sum {|t| t.participants.size } %>" class="has-text-centered"><%= rank %></th>
+                  <% end %>
+                  <% if participant_index == 0 %>
+                    <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
+                    <td rowspan="<%= team.participants.size %>" class="has-text-left"><%= team.participating_dojo.display_name %> - <%= team.shortname %></td>
+                  <% end %>
+                  <td class="has-text-left"><%= participant.display_name %></td>
+                  <% participant.results.each do |result| %>
+                  <td><%= icon_from(result) %></td>
+                  <% end %>
+                  <% if team_index == 0 && participant_index == 0 %>
+                    <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= score %></th>
+                  <% end %>
+              </tr>
+            <%     end %>
+            <%   end %>
+            <% end %>
+
           <% end %>
         </tbody>
       </table>

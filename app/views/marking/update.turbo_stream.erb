@@ -1,12 +1,12 @@
 <%= turbo_stream.replace dom_id @participant, @results.first.round do %>
   <%= render "round_results", participant: @participant, results: @results, formats: [:html] %>
 <% end %>
-<%= turbo_stream.replace dom_id @participant, 'total' do %>
-  <%= render "individual_total", participant: @participant, formats: [:html] %>
+<%= turbo_stream.replace dom_id @participant, :score do %>
+  <%= render "individual_score", participant: @participant, formats: [:html] %>
 <% end %>
 <% unless @taikai.individual? %>
-  <%= turbo_stream.replace dom_id @participant.team, 'total' do %>
-    <%= render "team_total", team: @participant.team, formats: [:html] %>
+  <%= turbo_stream.replace dom_id @participant.team, :score do %>
+    <%= render "team_score", team: @participant.team, formats: [:html] %>
   <% end %>
 <% end %>
 <%= turbo_stream.replace dom_id @participant, 'choice' do %>

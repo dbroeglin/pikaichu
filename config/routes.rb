@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   patch '/taikais/:id/marking/:participant_id/finalize',
     to: 'marking#finalize',
     as: :finalize_round_marking
-  get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',     as: :show_leaderboard
+  get  '/taikais/:id/draw',                             to: 'taikais#draw',          as: :draw_taikai
+  get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',      as: :show_taikai_leaderboard
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 
   get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',
