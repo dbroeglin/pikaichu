@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_03_211302) do
+ActiveRecord::Schema.define(version: 2022_01_06_210213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2022_01_03_211302) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "kyudojins", force: :cascade do |t|
+    t.string "lastname"
+    t.string "firstname"
+    t.string "federation_id"
+    t.string "federation_country_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "participants", force: :cascade do |t|
     t.integer "index"
     t.string "firstname"
@@ -61,6 +70,8 @@ ActiveRecord::Schema.define(version: 2022_01_03_211302) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "team_id"
     t.integer "index_in_team"
+    t.bigint "kyudojin_id"
+    t.index ["kyudojin_id"], name: "index_participants_on_kyudojin_id"
     t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id"], name: "index_participants_on_participating_dojo_id"
     t.index ["team_id", "index_in_team"], name: "teams_by_team_index_in_team", unique: true
@@ -158,6 +169,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_211302) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "participants", "kyudojins"
   add_foreign_key "participants", "participating_dojos"
   add_foreign_key "participants", "teams"
   add_foreign_key "participating_dojos", "dojos"

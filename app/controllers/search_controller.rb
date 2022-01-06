@@ -1,7 +1,14 @@
 class SearchController < ApplicationController
-  before_action :set_taikai
+
+  def kyudojins
+    @kyudojins = Kyudojin.containing(params[:q]&.strip)
+
+    render layout: false
+  end
+
 
   def users
+    set_taikai
     @staff = @taikai.staffs.find_by_id(params[:staff_id])
     @users = User.containing(params[:q]&.strip).
               where.not(id: (@taikai.staffs.joins(:user).pluck("users.id") - [@staff&.user_id]))
@@ -10,6 +17,7 @@ class SearchController < ApplicationController
   end
 
   def dojos
+    set_taikai
     @participating_dojo = @taikai.participating_dojos.find_by_id(params[:participating_dojo_id])
 
     @dojos = Dojo.containing(params[:q]&.strip).

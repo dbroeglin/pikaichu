@@ -13,6 +13,7 @@
         <th>Choice</th>
         <% @taikai.num_rounds.times do |index| %>
           <th>Round <%= index + 1 %></th>
+          <th></th>
         <% end %>
         <th colspan="<%= @taikai.individual? ? 1 : 2 %>">Score</th>
       </tr>

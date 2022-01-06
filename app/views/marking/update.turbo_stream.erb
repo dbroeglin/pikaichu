@@ -1,6 +1,9 @@
 <%= turbo_stream.replace dom_id @participant, @results.first.round do %>
   <%= render "round_results", participant: @participant, results: @results, formats: [:html] %>
 <% end %>
+<%= turbo_stream.replace dom_id @participant, "tally_#{@results.first.round}" do %>
+  <%= render "round_tally", participant: @participant, results: @results, formats: [:html] %>
+<% end %>
 <%= turbo_stream.replace dom_id @participant, :score do %>
   <%= render "individual_score", participant: @participant, formats: [:html] %>
 <% end %>

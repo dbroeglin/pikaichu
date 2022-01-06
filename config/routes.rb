@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/taikais/:taikai_id/staffs/(:staff_id)/available_users', to: 'search#users',
       as: :taikai_staff_available_users
 
+  get '/kyudojins/available', to: 'search#kyudojins',
+      as: :search_kyudojins
+
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :participating_dojos do
       resources :participants

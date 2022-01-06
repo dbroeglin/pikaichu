@@ -57,7 +57,7 @@ class TaikaisController < ApplicationController
     unless @taikai.draw
       flash.alert("An error occured while drawing participants")
     end
-    redirect_to action: :edit, id: @taikai
+    redirect_to action: :show, id: @taikai
   end
 
   def export

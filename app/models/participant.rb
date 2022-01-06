@@ -11,6 +11,7 @@ class Participant < ApplicationRecord
     end
   end
   has_one :taikai, through: :participating_dojo
+  belongs_to :kyudojin, optional: true
 
   validates :firstname, :lastname, presence: true
   validates :index,

@@ -1,0 +1,10 @@
+<% if @kyudojins.empty? %>
+  <div class="dropdown-item" class="list-group-item" role="option" aria-disabled="true">
+    <p>Unable to find matching Kyudojin.</p>
+  </div>
+<% end %>
+<% @kyudojins.each do |kyudojin| %>
+  <div class="dropdown-item" class="list-group-item" role="option" data-autocomplete-value="<%= kyudojin.id %>" data-autocomplete-label="<%= kyudojin.display_name %>">
+    <p><%= "#{kyudojin.display_name}" %></p>
+  </div>
+<% end %>

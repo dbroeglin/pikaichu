@@ -15,6 +15,11 @@ class ParticipantsController < ApplicationController
     @participant = @parent_association.build(participant_params)
     @participant.participating_dojo = @participating_dojo if @team
 
+    if @participant.kyudojin
+      @participant.firstname = @participant.kyudojin.firstname
+      @participant.lastname = @participant.kyudojin.lastname
+    end
+
     if @participant.save && @participant.generate_empty_results
       redirect_to_edit
     else
@@ -29,7 +34,13 @@ class ParticipantsController < ApplicationController
   def update
     @participant = @parent_association.find(params[:id])
 
-    if @participant.update(participant_params)
+    @participant.assign_attributes(participant_params)
+    if @participant.kyudojin
+      @participant.firstname = @participant.kyudojin.firstname
+      @participant.lastname = @participant.kyudojin.lastname
+    end
+
+    if @participant.save
       redirect_to_edit
     else
       render :edit, status: :unprocessable_entity
@@ -56,6 +67,7 @@ class ParticipantsController < ApplicationController
         :taikai_id,
         :participating_dojo_id,
         :team_id,
+        :kyudojin_id
       )
   end
 

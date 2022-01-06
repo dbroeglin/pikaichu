@@ -13,8 +13,27 @@
     <h2><%= pluralize(participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
   <% end %>
 
-  <%= f.input :firstname %>
-  <%= f.input :lastname %>
+  <div class="field">
+    <label class=" label" for="user">Kyudojin</label>
+    <div class="control">
+      <div class="dropdown is-full-width is-active" data-controller="autocomplete participant_complete"
+           data-autocomplete-url-value="<%= search_kyudojins_path %>">
+        <div class="dropdown-trigger">
+          <%= f.hidden_field :kyudojin_id, "data-autocomplete-target": "hidden" %>
+          <%= text_field_tag :kyudojin_name, participant.kyudojin&.display_name, class: "input#{participant.errors.where(:kyudojin).any? ? " is-danger" : ""}", autocomplete: "off", "data-autocomplete-target": "input", placeholder: "Start typing a part of the name..." %>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+          <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
+        </div>
+      </div>
+      <% participant.errors.where(:kyudojin).map do |error| %>
+        <p class="help is-danger"><%= error.full_message %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.input :firstname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
+  <%= f.input :lastname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
   <% if @taikai.individual %>
   <%= f.input :index %>
   <% else %>

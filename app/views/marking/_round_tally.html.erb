@@ -1,0 +1,3 @@
+  <div id="<%= dom_id participant, "tally_#{results.first.round}" %>">
+    <%= results.map(&:status).tally['hit'] %>
+  </div>

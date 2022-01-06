@@ -15,6 +15,14 @@
   </span>
 <% end if policy(taikai).destroy? %>
 
+<%= link_to draw_taikai_path(taikai),
+            class: "button #{size} has-background-light ml-3",
+            title: "Draw participants/teams" do %>
+  <span class="icon <%= size %>" title="Draw participants/teams">
+    <i class="fas fa-shuffle"></i>
+  </span>
+<% end %>
+
 <%= link_to show_marking_path(taikai),
             class: "button #{size} has-background-light ml-3",
             title: "Marking" do %>
