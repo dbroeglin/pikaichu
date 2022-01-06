@@ -47,4 +47,22 @@ class Taikai < ApplicationRecord
   def dojo_admin?(user)
     staffs.joins(:role).where(user: user, 'role.code': :dojo_admin).any?
   end
+
+  def draw
+    if individual?
+      participating_dojos.each do |participating_dojo|
+        participating_dojo.participants.update_all(index: nil)
+        participating_dojo.participants.shuffle.each_with_index do |participant, index|
+          participant.update!(index: index + 1)
+        end
+      end
+    else
+      participating_dojos.each do |participating_dojo|
+        participating_dojo.teams.update_all(index: nil)
+        participating_dojo.teams.shuffle.each_with_index do |team, index|
+          team.update!(index: index + 1)
+        end
+      end
+    end
+  end
 end

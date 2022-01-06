@@ -22,7 +22,6 @@ class LeaderboardController < ApplicationController
           hash['id']
         end.each_pair do |id, lines|
           first_hash = lines[0]
-          puts first_hash.inspect
           participant = Participant.new(first_hash.slice('firstname', 'lastname', 'index'))
           participant.results = lines.map do |hash|
             Result::new(hash.slice('round', 'index', 'status'))
@@ -36,10 +35,10 @@ class LeaderboardController < ApplicationController
         .includes(participating_dojos: {teams: [{participants: :results}]})
           .find(params[:id])
 
-
-
-      @teams_by_score = @taikai.participating_dojos.map(&:teams).flatten.sort_by(&:score).reverse.group_by(&:score)
-
+      @teams_by_score = @taikai.participating_dojos
+        .map(&:teams).flatten
+        .sort_by(&:score).reverse
+        .group_by(&:score)
     end
   end
 end

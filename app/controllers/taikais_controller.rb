@@ -54,33 +54,16 @@ class TaikaisController < ApplicationController
         .includes(participating_dojos: :participants)
         .find(params[:id])
 
-      if @taikai.individual?
-        @taikai.participating_dojos.each do |participating_dojo|
-          participating_dojo.participants.update_all(index: nil)
-          participating_dojo.participants.shuffle.each_with_index do |participant, index|
-            participant.index = index + 1
-          end
-          participating_dojo.participants.each do |participant|
-            participant.save!
-          end
-        end
-      else
-        @taikai.participating_dojos.each do |participating_dojo|
-          participating_dojo.teams.update_all(index: nil)
-          participating_dojo.teams.shuffle.each_with_index do |team, index|
-            team.index = index + 1
-          end
-          participating_dojo.teams.each do |team|
-            team.save!
-          end
-        end
+    unless @taikai.draw
+      flash.alert("An error occured while drawing participants")
     end
+    redirect_to action: :edit, id: @taikai
   end
 
   def export
     @taikai =
       Taikai
-        .includes(participating_dojos: { participants: [:results] })
+        .includes({participating_dojos: [{teams: {participants: :results}}, { participants: [:results] }]}, :staffs)
         .find(params[:id])
 
     render xlsx: 'export', filename: "Taikai - #{@taikai.shortname}.xlsx"
