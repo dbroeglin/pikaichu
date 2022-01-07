@@ -1,15 +1,15 @@
 <div class="container">
   <div class="columns">
     <div class="column is-three-fifths is-offset-one-fifth">
-      <h1 class="title">Taikais</h1>
+      <h1 class="title"><%= Taikai.model_name.human %></h1>
 
       <table class="table is-fullwidth">
         <thead>
           <tr class="has-text-centered">
             <th></th>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Dates</th>
+            <th><%= Taikai.human_attribute_name :shortname %></th>
+            <th><%= Taikai.human_attribute_name :name %></th>
+            <th><%= t '.dates' %></th>
             <th class="has-text-right">
               <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
                 <span class="icon is-small" title="New Taikai">
@@ -25,9 +25,9 @@
           <tr>
             <td>
               <% if taikai.distributed %>
-                <span class="icon is-small" title="Distributed taikai">
+                <span class="icon is-small" title="<%= t '.distributed' %>">
                   <i class="fas fa-globe"></i>
-                </span><% end %>&nbsp;<% if !taikai.individual %><span class="icon is-small" title="Team taikai">
+                </span><% end %>&nbsp;<% if !taikai.individual %><span class="icon is-small" title="<%= t '.teams' %>">
                   <i class="fas fa-users"></i>
                 </span>
               <% end %>

@@ -3,7 +3,7 @@
     <div class="media">
       <div class="media-content">
         <p class="title is-4"><%= @taikai.name %> (<%= @taikai.shortname %>)</p>
-        <p class="subtitle is-6"><%= l @taikai.start_date, format: :shorter %> - <%= l @taikai.end_date, format: :shorter %></p>
+        <p class="subtitle is-6"><%= l @taikai.start_date %> - <%= l @taikai.end_date %></p>
         <p><%= @taikai.description %></p>
 
       </div>
@@ -19,22 +19,22 @@
           <div class="card">
             <header class="card-header">
               <p class="card-header-title">
-                Participants
+                <%= Participant.model_name.human.pluralize %>
               </p>
             </header>
             <div class="card-content">
               <table class="table is-narrow">
                 <thead>
                   <tr class="has-text-centered">
-                    <th>Dojo</th>
+                    <th><%= Dojo.model_name.human %></th>
                     <% unless @taikai.individual? %>
                     <th>#</th>
-                    <th>Team</th>
+                    <th><%= Team.model_name.human %></th>
                     <% end %>
                     <% if @taikai.individual? %>
                     <th>#</th>
                     <% end %>
-                    <th>Name</th>
+                    <th><%= Participant.human_attribute_name :display_name %></th>
                   </tr>
                 </thead>
                 <tbody>

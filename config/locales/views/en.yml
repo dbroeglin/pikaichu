@@ -1,1 +1,5 @@
 en:
+  home:
+    index:
+      dojos_summary: We currently have %{nb} active dojos.
+      taikai_summary: We currently have %{nb} active taikais.

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title">Marking board - <%= @taikai.name %></h1>
+  <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
   <table class="table is-narrow is-striped is-bordered">
     <thead>
       <tr class="has-text-centered">

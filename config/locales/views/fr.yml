@@ -1,11 +1,27 @@
 fr:
+  confirm_html: Êtes-vous certain&nbsp;?
+  edit: Modifier
+  delete: Effacer
+
   base:
     sign_in: Connexion
     sign_out: Déconnexion
     sign_up: Inscription
+  home:
+    index:
+      dojos_summary: "%{nb} Dojos gérés."
+      taikais_summary: "%{nb} Taikais gérés."
+      manage_taikais: "Gérer les Taikais"
+      manage_dojos: "Gérer les Taikais"
   taikais:
+    draw: Tirage au sort
+    marking_sheet: Feuille de marque
+    leaderboard: Tableau des résultats
+    export: Export Excel
     index:
       dates: Dates
+      distributed: À distance
+      teams: En équipe
   marking:
     show:
       title: "Feuille de marque - %{taikai}"

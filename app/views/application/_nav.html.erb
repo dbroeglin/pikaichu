@@ -34,7 +34,13 @@
               <span class="icon is-medium">
                 <i class="fas fa-sign-in-alt"></i>
               </span>
-              <span>Connexion</span>
+              <span><%= t 'base.sign_in' %></span>
+            <% end%>
+            <%= link_to new_user_registration_path, class: "button is-warning" do %>
+              <span class="icon is-medium">
+                <i class="fas fa-user-plus"></i>
+              </span>
+              <span><%= t 'base.sign_up' %></span>
             <% end%>
           <% else %>
             <%= link_to destroy_user_session_path,
@@ -43,7 +49,7 @@
               <span class="icon is-medium">
                 <i class="fas fa-power-off"></i>
               </span>
-              <span>Deconnexion</span>
+              <span><%= t 'base.sign_out' %></span>
             <% end %>
           <% end %>
         </div>

@@ -1,8 +1,10 @@
 fr:
   activerecord:
     models:
-      taikai: Taikai
       dojo: Dojo
+      participant: Participant
+      taikai: Taikai
+      team: Équipe
     enums:
       result:
         status:
@@ -14,13 +16,18 @@ fr:
         shortname: Nom court
         name: Nom long
         country_code: Pays
+      participant:
+        display_name: Nom
+        firstname: Prénom
+        lastname: Nom
       taikai:
         shortname: Nom court
         name: Nom long
         start_date: Date de début
         end_date: Date de fin
-        distributed: À distsance
+        distributed: À distance
         individual: Individuel
+
     errors:
       models:
         team:

@@ -35,7 +35,7 @@ class MarkingController < ApplicationController
         }
       end
     else
-      render plain: "", status: :unprocessable_entity
+      render plain: "Unable to find undefined results", status: :unprocessable_entity
     end
   end
 
