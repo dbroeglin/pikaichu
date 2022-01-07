@@ -1,0 +1,34 @@
+fr:
+  activerecord:
+    models:
+      taikai: Taikai
+      dojo: Dojo
+    enums:
+      result:
+        status:
+          hit: Touché
+          miss: Manqué
+          unknown: Inconnu
+    attributes:
+      dojo:
+        shortname: Nom court
+        name: Nom long
+        country_code: Pays
+      taikai:
+        shortname: Nom court
+        name: Nom long
+        start_date: Date de début
+        end_date: Date de fin
+        distributed: À distsance
+        individual: Individuel
+    errors:
+      models:
+        team:
+          attributes:
+            index:
+              taken: doit être unique pour un dojo participant.
+        participant:
+          attributes:
+            index_in_team:
+              blank: doit être défini si le participant fait partie d'une équipe.
+              taken: doit être unique au sein d'une équipe.

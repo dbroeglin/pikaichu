@@ -1,0 +1,11 @@
+fr:
+  base:
+    sign_in: Connexion
+    sign_out: Déconnexion
+    sign_up: Inscription
+  taikais:
+    index:
+      dates: Dates
+  marking:
+    show:
+      title: "Feuille de marque - %{taikai}"

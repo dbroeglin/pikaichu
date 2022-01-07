@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      taikai: Taikai
+    enums:
+    attributes:
+      dojo:
+        shortname: Code
+        name: Name
+        country_code: Country
+      taikai:
+        shortname: Code
+    errors:
+      models:
+        team:
+          attributes:
+            index:
+              taken: must be unique within a participating dojo
+        participant:
+          attributes:
+            index_in_team:
+              blank: must be defined if participant is a team member
+              taken: must be unique within a team
