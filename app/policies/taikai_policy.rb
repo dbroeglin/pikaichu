@@ -14,6 +14,10 @@ class TaikaiPolicy < ApplicationPolicy
     taikai.taikai_admin?(user)
   end
 
+  def draw?
+    update?
+  end
+
   def destroy?
     update?
   end

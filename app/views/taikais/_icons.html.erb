@@ -21,7 +21,7 @@
   <span class="icon <%= size %>" title="Draw participants/teams">
     <i class="fas fa-shuffle"></i>
   </span>
-<% end %>
+<% end if policy(taikai).draw? %>
 
 <%= link_to show_marking_path(taikai),
             class: "button #{size} has-background-light ml-3",

@@ -49,8 +49,7 @@ class TaikaisController < ApplicationController
   end
 
   def draw
-    @taikai =
-      Taikai
+    @taikai = authorize Taikai
         .includes(participating_dojos: :participants)
         .find(params[:id])
 
