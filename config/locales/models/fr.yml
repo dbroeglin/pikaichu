@@ -3,6 +3,7 @@ fr:
     models:
       dojo: Dojo
       participant: Participant
+      participating_dojo: Dojo Participant
       taikai: Taikai
       team: Équipe
     enums:
@@ -19,7 +20,21 @@ fr:
       participant:
         display_name: Nom
         firstname: Prénom
+        index: Num.
         lastname: Nom
+        participating_dojo: Dojo participant
+        team: Équipe
+      participating_dojo:
+        display_name: Nom
+        city: Ville
+        country: Pays
+        num_participants: Nb.
+      staff:
+        display_name: Nom
+        name: Nom
+        participating_dojo: Dojo participant
+        role: Rôle
+        user: Utilisateur
       taikai:
         shortname: Nom court
         name: Nom long
@@ -27,7 +42,8 @@ fr:
         end_date: Date de fin
         distributed: À distance
         individual: Individuel
-
+      team:
+        index: Num.
     errors:
       models:
         team:

@@ -2,16 +2,18 @@
 <table class="table is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr class="has-text-centered">
-      <th>Name</th>
-      <th>Dojo</th>
-      <th>Role</th>
-      <th>User</th>
+      <th><%= Staff.human_attribute_name :display_name %></th>
+      <th><%= Staff.human_attribute_name :participating_dojo %></th>
+      <th><%= Staff.human_attribute_name :role %></th>
+      <th><%= Staff.human_attribute_name :user %></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_staff_path(taikai), class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="New staff">
+        <%= link_to new_taikai_staff_path(taikai),
+          class: "button is-small has-background-light",
+          title: t('staffs.new') do %>
+          <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
-          <span>New</span>
+          <span><%= t 'new' %></span>
         <% end %>
       </th>
     </tr>
@@ -25,15 +27,17 @@
       <td><%= staff.user&.display_name %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_staff_path(taikai, staff),
-                    class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="Edit staff">
+          class: "button is-small has-background-light",
+          title: t('staffs.edit') do %>
+          <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to [taikai, staff],
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small" title="Delete staff">
+              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
+              title: t('staffs.delete') do %>
+          <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
         <% end %>

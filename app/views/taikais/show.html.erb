@@ -26,13 +26,12 @@
               <table class="table is-narrow">
                 <thead>
                   <tr class="has-text-centered">
-                    <th><%= Dojo.model_name.human %></th>
-                    <% unless @taikai.individual? %>
-                    <th>#</th>
-                    <th><%= Team.model_name.human %></th>
-                    <% end %>
+                    <th><%= Participant.human_attribute_name :participating_dojo %></th>
                     <% if @taikai.individual? %>
-                    <th>#</th>
+                    <th><%= Team.human_attribute_name :index %></th>
+                    <% else %>
+                    <th><%= Participant.human_attribute_name :index %></th>
+                    <th><%= Participant.human_attribute_name :team %></th>
                     <% end %>
                     <th><%= Participant.human_attribute_name :display_name %></th>
                   </tr>
@@ -92,17 +91,15 @@
         <div class="column">
           <div class="card">
             <header class="card-header">
-              <p class="card-header-title">
-                Staffs
-              </p>
+              <p class="card-header-title"><%= Staff.model_name.human.pluralize %></p>
             </header>
             <div class="card-content">
               <table class="table is-narrow">
                 <thead>
                   <tr class="has-text-centered">
-                    <th>Role</th>
-                    <th>Dojo</th>
-                    <th>Name</th>
+                    <th><%= Staff.human_attribute_name :role %></th>
+                    <th><%= Staff.human_attribute_name :participating_dojo %></th>
+                    <th><%= Staff.human_attribute_name :name %></th>
                   </tr>
                 </thead>
                 <tbody>

@@ -12,6 +12,10 @@ class ParticipatingDojoPolicy < ApplicationPolicy
       @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
   end
 
+  def delete?
+    update?
+  end
+
   class Scope < Scope
     def resolve
     end

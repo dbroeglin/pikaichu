@@ -11,11 +11,13 @@
             <th><%= Taikai.human_attribute_name :name %></th>
             <th><%= t '.dates' %></th>
             <th class="has-text-right">
-              <%= link_to new_taikai_path, class: "button is-small has-background-light" do %>
-                <span class="icon is-small" title="New Taikai">
+              <%= link_to new_taikai_path,
+                class: "button is-small has-background-light",
+                title: t('new') do %>
+                <span class="icon is-small">
                   <i class="fas fa-plus"></i>
                 </span>
-                <span>New</span>
+                <span><%= t :new %></span>
               <% end %>
             </th>
           </tr>

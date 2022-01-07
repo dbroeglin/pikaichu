@@ -3,7 +3,7 @@
     <div class="column is-one-third is-offset-2">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Edit Taikai</p>
+          <p class="card-header-title"><%= t '.title' %></p>
         </header>
         <div class="card-content">
           <%= render "form", taikai: @taikai %>
@@ -13,7 +13,7 @@
     <div class="column is-one-half">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Participating Dojos</p>
+          <p class="card-header-title"><%= ParticipatingDojo.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
           <%= render "participating_dojos/list", taikai: @taikai %>
@@ -21,7 +21,7 @@
       </div>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title">Staffs</p>
+          <p class="card-header-title"><%= Staff.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
           <%= render "staffs/list", taikai: @taikai %>

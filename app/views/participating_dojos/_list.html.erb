@@ -1,16 +1,18 @@
 <table class="table is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr class="has-text-centered">
-      <th>Name</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>#</th>
+      <th><%= ParticipatingDojo.human_attribute_name :display_name %></th>
+      <th><%= ParticipatingDojo.human_attribute_name :city %></th>
+      <th><%= ParticipatingDojo.human_attribute_name :country %></th>
+      <th><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_path(taikai), class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="New participating dojo">
+        <%= link_to new_taikai_participating_dojo_path(taikai),
+          class: "button is-small has-background-light",
+          title: t('participating_dojos.new') do %>
+          <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
-          <span>New</span>
+          <span><%= t 'new' %></span>
         <% end %>
       </th>
     </tr>
@@ -24,18 +26,20 @@
       <td><%= participating_dojo.participants.count %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_path(taikai, participating_dojo),
-                    class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="Edit participating dojo">
+              class: "button is-small has-background-light",
+              title: t('participating_dojos.edit') do %>
+          <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end if policy(participating_dojo).update? %>
         <%= link_to [taikai, participating_dojo],
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small" title="Delete participating dojo">
+              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
+              title: t('participating_dojos.delete') do %>
+          <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
-        <% end if policy(participating_dojo).update? %>
+        <% end if policy(participating_dojo).delete? %>
       </td>
     </tr>
     <% end %>

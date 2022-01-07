@@ -2,17 +2,19 @@ fr:
   confirm_html: Êtes-vous certain&nbsp;?
   edit: Modifier
   delete: Effacer
+  new: Ajouter
 
   base:
     sign_in: Connexion
     sign_out: Déconnexion
     sign_up: Inscription
+
   home:
     index:
       dojos_summary: "%{nb} Dojos gérés."
       taikais_summary: "%{nb} Taikais gérés."
       manage_taikais: "Gérer les Taikais"
-      manage_dojos: "Gérer les Taikais"
+      manage_dojos: "Gérer les Dojos"
   taikais:
     draw: Tirage au sort
     marking_sheet: Feuille de marque
@@ -22,6 +24,16 @@ fr:
       dates: Dates
       distributed: À distance
       teams: En équipe
+    edit:
+      title: Modification du Taikai
   marking:
     show:
       title: "Feuille de marque - %{taikai}"
+  participating_dojos:
+    new: Ajouter un dojo participant
+    delete: Effacer un dojo participant
+    edit: Modifier un dojo participant
+  staffs:
+    new: Ajouter un staff
+    delete: Effacer un staff
+    edit: Modifier un staff
