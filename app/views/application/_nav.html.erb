@@ -34,22 +34,31 @@
               <span class="icon is-medium">
                 <i class="fas fa-sign-in-alt"></i>
               </span>
-              <span><%= t 'base.sign_in' %></span>
+              <span><%= t 'devise.sessions.new.sign_in' %></span>
             <% end%>
             <%= link_to new_user_registration_path, class: "button is-warning" do %>
               <span class="icon is-medium">
                 <i class="fas fa-user-plus"></i>
               </span>
-              <span><%= t 'base.sign_up' %></span>
+              <span><%= t 'devise.registrations.new.sign_up' %></span>
             <% end%>
           <% else %>
+
+
+            <%= link_to edit_user_registration_path,
+              class: "button is-info" do %>
+              <span class="icon is-medium">
+                <i class="fas fa-gear"></i>
+              </span>
+              <span><%= t 'devise.registrations.edit.my_account' %></span>
+            <% end %>
             <%= link_to destroy_user_session_path,
               class: "button is-danger",
               data: { turbo_method: :delete } do %>
               <span class="icon is-medium">
                 <i class="fas fa-power-off"></i>
               </span>
-              <span><%= t 'base.sign_out' %></span>
+              <span><%= t 'devise.sessions.sign_out' %></span>
             <% end %>
           <% end %>
         </div>

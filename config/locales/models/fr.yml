@@ -15,11 +15,14 @@ fr:
           miss: Manqué
           unknown: Inconnu
     attributes:
+      user:
+        firstname: Prénom
+        lastname: Nom
       dojo:
         city: Ville
         country_code: Pays
         country_name: Pays
-        name: Nom long
+        name: Nom entier
         shortname: Nom court
       participant:
         display_name: Nom
@@ -43,7 +46,7 @@ fr:
         user: Utilisateur
       taikai:
         shortname: Nom court
-        name: Nom long
+        name: Nom entier
         start_date: Date de début
         end_date: Date de fin
         distributed: À distance

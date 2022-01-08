@@ -1,9 +1,9 @@
 <div class="container">
   <div class="columns">
-    <div class="column is-one-third is-offset-one-third">
+    <div class="column is-half is-offset-one-quarter">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Forgot your password?</p>
+          <p class="card-header-title"><%= t('.forgot_your_password') %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: password_path(resource_name), html: { "data-turbo":  false, method: :post } do |f| %>
@@ -11,7 +11,7 @@
 
             <%= f.input :email, autofocus: true, autocomplete: :email %>
 
-            <%= f.button "Send me reset password instructions", class: "button has-background-light" %>
+            <%= f.button t('.send_me_reset_password_instructions'), class: "button has-background-light" %>
           <% end %>
         </div>
         <footer class="card-content">

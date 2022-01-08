@@ -33,3 +33,9 @@ fr:
   date:
     formats:
       shorter: '%d/%m/%y'
+  devise:
+    sessions:
+      sign_out: Déconnexion
+    registrations:
+      edit:
+        my_account: Mon compte

@@ -1,9 +1,9 @@
 <div class="container">
   <div class="columns">
-    <div class="column is-half is-offset-2">
+    <div class="column is-half is-offset-one-quarter">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Resend unlock instructions</p>
+          <p class="card-header-title"><%= t('.resend_unlock_instructions') %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: unlock_path(resource_name), html: { "data-turbo":  false, method: :post } do |f| %>
@@ -12,7 +12,7 @@
             <%= f.input :email, autofocus: true, autocomplete: :email, input_html: { value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1} %>
             <%# TODO: The value part does not work%>
 
-            <%= f.button "Resend unlock instructions", class: "button has-background-light" %>
+            <%= f.button t('.resend_unlock_instructions'), class: "button has-background-light" %>
           <% end %>
         </div>
         <footer class="card-content">

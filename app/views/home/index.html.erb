@@ -3,7 +3,7 @@
     <div class="tile is-4 is-vertical is-parent">
       <div class="tile is-child box">
         <p class="title"><%= Taikai.model_name.human.pluralize %></p>
-        <p><%= t '.taikais_summary', nb: @num_dojos %></p>
+        <p><%= t '.taikais_summary', nb: @num_taikais %></p>
         <div class="buttons mt-4">
           <%= link_to t('.manage_taikais'), taikais_path, class: "button" %>
         </div>

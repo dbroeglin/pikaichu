@@ -3,16 +3,19 @@
     <div class="column is-one-third is-offset-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Resend confirmation instructions</p>
+          <p class="card-header-title"><%= t('.resend_confirmation_instructions') %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { "data-turbo":  false, method: :post } do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.input :email, autofocus: true, autocomplete: :email, input_html: { value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1} %>
+            <%= f.input :email,
+                  autofocus: true,
+                  autocomplete: :email,
+                  input_html: { value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1} %>
             <%# TODO: The value part does not work%>
 
-            <%= f.button "Resend confirmation instructions", class: "button has-background-light" %>
+            <%= f.button t('.resend_confirmation_instructions'), class: "button has-background-light" %>
           <% end %>
         </div>
         <footer class="card-content">

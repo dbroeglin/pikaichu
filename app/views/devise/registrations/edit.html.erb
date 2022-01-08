@@ -3,7 +3,7 @@
     <div class="column is-one-third is-offset-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Update your account</p>
+          <p class="card-header-title"><%= t('.title', resource: resource.model_name.human) %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: registration_path(resource_name), data: {
@@ -13,7 +13,7 @@
 
             <%
               if devise_mapping.confirmable? && resource.pending_reconfirmation?
-                help = "Currently waiting confirmation for: #{resource.unconfirmed_email}"
+                help = t('.currently_waiting_confirmation_for_email')
               end
             %>
             <%= f.input :email, autofocus: true, autocomplete: :email, help: help %>
@@ -21,15 +21,15 @@
             <%= f.input :lastname %>
 
             <%= f.input :password, autocomplete: "new-password",
-                        placeholder: "Leave blank if you don't want to change it",
+                        placeholder: t('.leave_blank_if_you_don_t_want_to_change_it'),
                         help: (@minimum_password_length ? "#{@minimum_password_length} characters minimum)" : nil) %>
 
             <%= f.input :password_confirmation, autocomplete: "new-password" %>
 
             <%= f.input :current_password, autocomplete: "current-password",
-                        help: "(we need your current password to confirm your changes)" %>
+                        help: t('.we_need_your_current_password_to_confirm_your_changes') %>
 
-            <%= f.button "Update", class: "button has-background-light" %>
+            <%= f.button t('.update'), class: "button has-background-light" %>
           <% end %>
         </div>
         <footer class="card-content">
@@ -40,7 +40,7 @@
     <div class="column is-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Cancel my account</p>
+          <p class="card-header-title"><%= t('.cancel_my_account') %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource,
@@ -48,12 +48,12 @@
                 as: resource_name,
                 url: registration_path(resource_name),
                 data: { turbo_method: 'delete', turbo_confirm: t('confirm_html')} do |f| %>
-            <p class="subtitle">Unhappy? </p>
+            <p class="subtitle"><%= t('.unhappy') %></p>
             <%= f.input :current_password, autocomplete: "current-password",
-                        help: "(We need your current password to confirm your changes)",
+                        help: t('.we_need_your_current_password_to_confirm_your_changes'),
                         input_html: { id: "current_password_cancel" } %>
 
-            <%= f.button "Cancel my account", class: "button has-background-light" %>
+            <%= f.button t('.cancel_my_account'), class: "button has-background-light" %>
           <% end %>
         </div>
       </div>

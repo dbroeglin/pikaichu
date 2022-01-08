@@ -6,11 +6,6 @@ fr:
   save: Sauver
   cancel: Retour
 
-  base:
-    sign_in: Connexion
-    sign_out: Déconnexion
-    sign_up: Inscription
-
   home:
     index:
       dojos_summary: "%{nb} Dojos gérés."

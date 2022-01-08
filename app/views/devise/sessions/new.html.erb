@@ -3,7 +3,7 @@
     <div class="column is-one-third is-offset-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Log in</p>
+          <p class="card-header-title"><%= t('.sign_in') %></p>
         </header>
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: session_path(resource_name), html: { "data-turbo":  false } do |f| %>
@@ -15,7 +15,7 @@
               <%= f.input :remember_me, as: :boolean %>
             <% end %>
 
-            <%= f.button "Log in", class: "button has-background-light" %>
+            <%= f.button t('.sign_in'), class: "button has-background-light" %>
           <% end %>
         </div>
         <footer class="card-content">
