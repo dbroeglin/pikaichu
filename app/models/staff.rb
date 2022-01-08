@@ -6,11 +6,12 @@ class Staff < ApplicationRecord
   belongs_to :participating_dojo, optional: true
   belongs_to :user, optional: true
 
-  validate do
-    if (role.taikai_admin? || role.dojo_admin?) && user.nil?
-      errors.add(:user, "is mandatory for an administrator staff")
-    end
-  end
+  validates :firstname, :lastname, presence: true
+  validates :user,
+    presence: {
+      if: -> { role.taikai_admin? || role.dojo_admin? || role.marking_referee? }
+    }
+
 
   before_validation do
     if self.user

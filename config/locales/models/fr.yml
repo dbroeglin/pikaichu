@@ -68,3 +68,7 @@ fr:
             index_in_team:
               blank: doit être défini si le participant fait partie d'une équipe.
               taken: doit être unique au sein d'une équipe.
+        staff:
+          attributes:
+            user:
+              blank: doit être défini si son rôle nécessite l'utilisation de PiKaichu.
