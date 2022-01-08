@@ -5,13 +5,11 @@
         <p class="title is-4"><%= @taikai.name %> (<%= @taikai.shortname %>)</p>
         <p class="subtitle is-6"><%= l @taikai.start_date %> - <%= l @taikai.end_date %></p>
         <p><%= @taikai.description %></p>
-
       </div>
       <div class="media-right">
         <%= render "icons", taikai: @taikai, size: "" %>
       </div>
     </div>
-
 
     <div class="content">
       <div class="columns">

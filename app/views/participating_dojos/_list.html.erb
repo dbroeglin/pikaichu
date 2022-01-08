@@ -8,7 +8,7 @@
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_path(taikai),
           class: "button is-small has-background-light",
-          title: t('participating_dojos.new') do %>
+          title: t('participating_dojos.new.title') do %>
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
@@ -27,15 +27,15 @@
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_path(taikai, participating_dojo),
               class: "button is-small has-background-light",
-              title: t('participating_dojos.edit') do %>
+              title: t('participating_dojos.edit.title') do %>
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end if policy(participating_dojo).update? %>
         <%= link_to [taikai, participating_dojo],
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
-              title: t('participating_dojos.delete') do %>
+              data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+              title: t('participating_dojos.delete.title') do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>

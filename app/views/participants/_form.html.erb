@@ -14,13 +14,17 @@
   <% end %>
 
   <div class="field">
-    <label class=" label" for="user">Kyudojin</label>
+    <label class=" label" for="user"><%= Participant.human_attribute_name :kyudojin %></label>
     <div class="control">
-      <div class="dropdown is-full-width is-active" data-controller="autocomplete participant_complete"
+      <div class="dropdown is-active" data-controller="autocomplete participant_complete"
            data-autocomplete-url-value="<%= search_kyudojins_path %>">
         <div class="dropdown-trigger">
           <%= f.hidden_field :kyudojin_id, "data-autocomplete-target": "hidden" %>
-          <%= text_field_tag :kyudojin_name, participant.kyudojin&.display_name, class: "input#{participant.errors.where(:kyudojin).any? ? " is-danger" : ""}", autocomplete: "off", "data-autocomplete-target": "input", placeholder: "Start typing a part of the name..." %>
+          <%= text_field_tag :kyudojin_name, participant.kyudojin&.display_name,
+                class: "input#{participant.errors.where(:kyudojin).any? ? " is-danger" : ""}",
+                autocomplete: "off",
+                "data-autocomplete-target": "input",
+                placeholder: t('.placeholders.kyudojin') %>
         </div>
         <div class="dropdown-menu" id="dropdown-menu3" role="menu">
           <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
@@ -40,6 +44,6 @@
   <%= f.input :index_in_team %>
   <% end %>
 
-  <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", cancel_path, class: "button" %>
+  <%= f.button t('save'), class: "button has-background-light mr-3" %>
+  <%= link_to t('cancel'), cancel_path, class: "button" %>
 <% end %>

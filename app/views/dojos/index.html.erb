@@ -1,21 +1,23 @@
 <div class="container">
   <div class="columns">
     <div class="column is-two-third is-offset-2">
-      <h1 class="title">Dojos</h1>
+      <h1 class="title"><%= t '.title' %></h1>
 
       <table class="table">
         <thead>
           <tr class="has-text-centered">
-            <th>Shortname</th>
-            <th>Name</th>
-            <th>City</th>
-            <th>Country</th>
+            <th><%= Dojo.human_attribute_name :shortname %></th>
+            <th><%= Dojo.human_attribute_name :name %></th>
+            <th><%= Dojo.human_attribute_name :city %></th>
+            <th><%= Dojo.human_attribute_name :country_name %></th>
             <th>
-              <%= link_to new_dojo_path, class: "button is-small has-background-light" do %>
-                <span class="icon is-small" title="New dojo">
+              <%= link_to new_dojo_path,
+                    class: "button is-small has-background-light",
+                    title: t('dojos.new.title') do %>
+                <span class="icon is-small">
                   <i class="fas fa-plus"></i>
                 </span>
-                <span>New</span>
+                <span><%= t :new %></span>
               <% end %>
             </th>
           </tr>
@@ -28,15 +30,18 @@
             <td><%= dojo.city %></td>
             <td><%= dojo.country_name %></td>
             <td>
-              <%= link_to edit_dojo_path(dojo), class: "button is-small has-background-light" do %>
-                <span class="icon is-small" title="Edit dojo">
+              <%= link_to edit_dojo_path(dojo),
+                    class: "button is-small has-background-light",
+                    title: t('dojos.edit.title') do %>
+                <span class="icon is-small">
                   <i class="fas fa-pen"></i>
                 </span>
               <% end %>
               <%= link_to dojo,
                     class: "button is-small has-background-light",
-                    data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-                <span class="icon is-small" title="Delete dojo">
+                    data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+                    title: t('dojos.delete.title') do %>
+                <span class="icon is-small">
                   <i class="far fa-trash-can"></i>
                 </span>
               <% end %>

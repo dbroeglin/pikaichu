@@ -3,13 +3,13 @@
     <div class="column is-one-third is-offset-2">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Add Participating Dojo</p>
+          <p class="card-header-title"><%= t '.title' %></p>
         </header>
         <div class="card-content">
           <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
             <ul>
               <li><%= link_to @taikai.shortname, edit_taikai_path(@taikai) %></li>
-              <li class=is-active><%= link_to "New",
+              <li class=is-active><%= link_to t('new'),
                               new_taikai_participating_dojo_path(@taikai),
                               "aria-current": "page" %></li>            </ul>
           </nav>

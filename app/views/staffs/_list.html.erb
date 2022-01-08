@@ -9,7 +9,7 @@
       <th class="has-text-right">
         <%= link_to new_taikai_staff_path(taikai),
           class: "button is-small has-background-light",
-          title: t('staffs.new') do %>
+          title: t('staffs.new.title') do %>
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
@@ -28,15 +28,15 @@
       <td class="has-text-right">
         <%= link_to edit_taikai_staff_path(taikai, staff),
           class: "button is-small has-background-light",
-          title: t('staffs.edit') do %>
+          title: t('staffs.edit.title') do %>
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to [taikai, staff],
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" },
-              title: t('staffs.delete') do %>
+              data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+              title: t('staffs.delete.title') do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>

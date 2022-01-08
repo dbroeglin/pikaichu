@@ -8,15 +8,16 @@
 <table class="table is-narrow is-hoverable">
   <thead>
     <tr class="has-text-centered">
-      <th>#</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th><%= Participant.human_attribute_name :index %></th>
+      <th><%= Participant.human_attribute_name :firstname %></th>
+      <th><%= Participant.human_attribute_name :lastname %></th>
       <th class="has-text-right">
-        <%= link_to new_path, class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="New participant">
+        <%= link_to new_path, class: "button is-small has-background-light",
+              title: t('participants.new.title') do %>
+          <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
-          <span>New</span>
+          <span><%= t :new %></span>
         <% end %>
       </th>
     </tr>
@@ -49,15 +50,17 @@
             path = edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant)
           end
         %>
-        <%= link_to edit_path, class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="Edit participant">
+        <%= link_to edit_path, class: "button is-small has-background-light",
+              title: t('participants.edit.title') do %>
+          <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to delete_path,
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small" title="Delete participant">
+              data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+              title: t('participants.delete.title') do %>
+          <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
         <% end %>

@@ -5,7 +5,8 @@ class DojosController < ApplicationController
 
   def new
     @dojo = Dojo.new
-  end
+    @countries = ISO3166::Country.pluck(:alpha2, :name)
+end
 
   def create
     @dojo = Dojo.new(dojo_params)
@@ -19,6 +20,7 @@ class DojosController < ApplicationController
 
   def edit
     @dojo = Dojo.find(params[:id])
+    @countries = ISO3166::Country.pluck(:alpha2, :name)
   end
 
   def update

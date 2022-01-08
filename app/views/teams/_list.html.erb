@@ -1,14 +1,16 @@
 <table class="table is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr class="has-text-centered">
-      <th>#</th>
-      <th>Name</th>
+      <th><%= Team.human_attribute_name :index %></th>
+      <th><%= Team.human_attribute_name :name %></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo), class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="New team">
+        <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo),
+              class: "button is-small has-background-light",
+              title: t('teams.new.title') do %>
+          <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
-          <span>New</span>
+          <span><%= t :new %></span>
         <% end %>
       </th>
     </tr>
@@ -20,15 +22,17 @@
       <td><%= team.shortname %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_team_path(taikai, participating_dojo, team),
-                    class: "button is-small has-background-light" do %>
-          <span class="icon is-small" title="Edit team">
+              class: "button is-small has-background-light",
+              title: t('teams.edit.title') do %>
+          <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
         <%= link_to [taikai, participating_dojo, team],
               class: "button is-small has-background-light",
-              data: { turbo_method: 'delete', turbo_confirm: "Are you sure?" } do %>
-          <span class="icon is-small" title="Delete team">
+              data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+              title: t('teams.delete.title') do %>
+          <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>
         <% end %>

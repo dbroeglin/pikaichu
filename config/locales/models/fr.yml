@@ -3,7 +3,9 @@ fr:
     models:
       dojo: Dojo
       participant: Participant
-      participating_dojo: Dojo Participant
+      participating_dojo:
+        one: Dojo Participant
+        other: Dojos Participants
       taikai: Taikai
       team: Équipe
     enums:
@@ -14,24 +16,28 @@ fr:
           unknown: Inconnu
     attributes:
       dojo:
-        shortname: Nom court
-        name: Nom long
+        city: Ville
         country_code: Pays
+        country_name: Pays
+        name: Nom long
+        shortname: Nom court
       participant:
         display_name: Nom
         firstname: Prénom
         index: Num.
+        index_in_team: Ordre dans l'équipe
+        kyudojin: kyudojin
         lastname: Nom
         participating_dojo: Dojo participant
         team: Équipe
       participating_dojo:
-        display_name: Nom
-        city: Ville
-        country: Pays
+        display_name: Nom court
+        dojo: Dojo/Club
         num_participants: Nb.
       staff:
         display_name: Nom
-        name: Nom
+        firstname: Prénom
+        lastname: Nom
         participating_dojo: Dojo participant
         role: Rôle
         user: Utilisateur
@@ -42,8 +48,10 @@ fr:
         end_date: Date de fin
         distributed: À distance
         individual: Individuel
+        num_arrows: Nombre de flèches
       team:
-        index: Num.
+        index: Numéro
+        shortname: Nom court
     errors:
       models:
         team:

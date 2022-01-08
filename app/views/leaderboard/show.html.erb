@@ -1,17 +1,17 @@
 <div class="container">
   <div class="columns">
     <div class="column is-two-third is-offset-2">
-      <h1 class="title">Leader board - <%= @taikai.name %></h1>
+      <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
       <table class="table is-narrow is-bordered is-striped has-text-centered">
         <thead>
           <tr>
-            <th rowspan="2">Rank</th>
-            <th rowspan="2" colspan="3">Name</th>
+            <th rowspan="2"><%= t '.rang' %></th>
+            <th rowspan="2" colspan="3"><%= t '.name' %></th>
             <% @taikai.num_rounds.times do |index| %>
-            <th colspan="<%= @taikai.num_arrows %>">Round <%= index + 1 %></th>
+            <th colspan="<%= @taikai.num_arrows %>"><%= t '.round', index: index + 1 %></th>
             <% end %>
-            <th rowspan="2">Score</th>
+            <th rowspan="2"><%= t '.score' %></th>
           </tr>
           <tr>
             <% @taikai.total_num_arrows.times do |index| %>

@@ -3,6 +3,8 @@ fr:
   edit: Modifier
   delete: Effacer
   new: Ajouter
+  save: Sauver
+  cancel: Retour
 
   base:
     sign_in: Connexion
@@ -15,25 +17,86 @@ fr:
       taikais_summary: "%{nb} Taikais gérés."
       manage_taikais: "Gérer les Taikais"
       manage_dojos: "Gérer les Dojos"
+  dojos:
+    index:
+      title: Liste des Dojos
+    delete:
+      title: Effacer un dojo
+    edit:
+      title: Modifier un dojo
+    new:
+      title: AJouter un dojo
+  leaderboard:
+    show:
+      title: "Tableau des résultats intermédiaires - %{taikai}"
+      name: Nom
+      round: Tir %{index}
+      score: Score
+  marking:
+    show:
+      input: Saisie
+      rank: Rang
+      round: Tir %{index}
+      score: Score
+      title: "Feuille de marque - %{taikai}"
+  participants:
+    edit:
+      title: Modifier un participant
+    form:
+      placeholders:
+        kyudojin: Commencez à saisir un nom...
+  participating_dojos:
+    delete:
+      title: Effacer un dojo participant
+    edit:
+      title: Modifier un dojo participant
+    new:
+      title: Ajouter un dojo participant
+    form:
+      placeholders:
+        dojo: Commencez à saisir un nom...
+        display: Leave empty or override the dojo's name
   taikais:
     draw: Tirage au sort
-    marking_sheet: Feuille de marque
-    leaderboard: Tableau des résultats
-    export: Export Excel
+    marking_sheet:
+      title: Feuille de marque
+    leaderboard:
+      title: Tableau des résultats
+    export:
+      title: Export Excel
+      summary: Résumé
+      infos: Informations
+      individual:
+        'true': Individuel
+        'false': En équipe
+      results: Résulats
+      staff: Staff
+      participants: Participants
     index:
       dates: Dates
       distributed: À distance
       teams: En équipe
+      title: Liste des Taikais
     edit:
       title: Modification du Taikai
-  marking:
-    show:
-      title: "Feuille de marque - %{taikai}"
-  participating_dojos:
-    new: Ajouter un dojo participant
-    delete: Effacer un dojo participant
-    edit: Modifier un dojo participant
+  teams:
+    delete:
+      title: Effacer une équipe
+    edit:
+      title: Modifier une équipe
+    new:
+      title: Ajouter une équipe
+    form:
+      placeholders:
+        index: Laisser blanc pour un choix par défaut...
   staffs:
-    new: Ajouter un staff
     delete: Effacer un staff
-    edit: Modifier un staff
+    edit:
+      title: Modifier un staff
+    new:
+      title: Ajouter un staff
+    form:
+      placeholders:
+        user: Commencez à saisir un nom/prénom...
+        firstname: Laisser à blanc pour copier le prénom de l'utilisateur
+        lastname: Laisser à blanc pour copier le nom de l'utilisateur

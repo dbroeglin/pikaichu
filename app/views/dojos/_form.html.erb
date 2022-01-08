@@ -6,9 +6,9 @@
   <%= f.input :shortname %>
   <%= f.input :name %>
   <%= f.input :city %>
-  <%= f.input :country_code, collection: ISO3166::Country.pluck(:alpha2, :name),
+  <%= f.input :country_code, collection: @countries,
               value_method: :first, text_method: :last %>
 
-  <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", dojos_path, class: "button" %>
+  <%= f.button t('save'), class: "button has-background-light mr-3" %>
+  <%= link_to t('cancel'), dojos_path, class: "button" %>
 <% end %>

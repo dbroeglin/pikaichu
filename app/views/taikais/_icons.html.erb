@@ -25,7 +25,7 @@
 
 <%= link_to show_marking_path(taikai),
             class: "button #{size} has-background-light ml-3",
-            title: t('taikais.marking_sheet') do %>
+            title: t('taikais.marking_sheet.title') do %>
   <span class="icon <%= size %>">
     <i class="far fa-circle-dot"></i>
   </span>
@@ -33,7 +33,7 @@
 
 <%= link_to show_taikai_leaderboard_path(taikai),
             class: "button #{size} has-background-light",
-            title: t('taikais.leaderboard') do %>
+            title: t('taikais.leaderboard.title') do %>
   <span class="icon <%= size %>">
     <i class="fas fa-medal"></i>
   </span>
@@ -41,7 +41,7 @@
 
 <%= link_to taikai_export_path(taikai),
             class: "button #{size} has-background-light",
-            title: t('taikais.export') do %>
+            title: t('taikais.export.title') do %>
   <span class="icon <%= size %>">
     <i class="fas fa-file-excel"></i>
   </span>

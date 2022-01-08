@@ -4,13 +4,16 @@
   <% end %>
 
   <div class="field">
-    <label class=" label" for="user">User</label>
+    <label class=" label" for="user"><%= Staff.human_attribute_name :user %></label>
     <div class="control">
       <div class="dropdown is-full-width is-active" data-controller="autocomplete participant_complete"
            data-autocomplete-url-value="<%= taikai_staff_available_users_path(taikai, staff) %>">
         <div class="dropdown-trigger">
           <%= f.hidden_field :user_id, "data-autocomplete-target": "hidden" %>
-          <%= text_field_tag :user, staff.user&.email, class: "input#{staff.errors.where(:user).any? ? " is-danger" : ""}", autocomplete: "off", "data-autocomplete-target": "input", placeholder: "Start typing an email..." %>
+          <%= text_field_tag :user, staff.user&.email,
+                class: "input#{staff.errors.where(:user).any? ? " is-danger" : ""}",
+                autocomplete: "off", "data-autocomplete-target": "input",
+                placeholder: t('.placeholders.user') %>
         </div>
         <div class="dropdown-menu" id="dropdown-menu3" role="menu">
           <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
@@ -22,10 +25,10 @@
     </div>
   </div>
 
-  <%= f.input :firstname, input_html: { placeholder: "Leave blank to complete from user..." } %>
-  <%= f.input :lastname, input_html: { placeholder: "Leave blank to complete from user..." } %>
+  <%= f.input :firstname, input_html: { placeholder: t('.placeholders.firstname') } %>
+  <%= f.input :lastname, input_html: { placeholder: t('.placeholders.lastname') } %>
   <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
 
-  <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>
+  <%= f.button t('save'), class: "button has-background-light mr-3" %>
+  <%= link_to t('cancel'), edit_taikai_path(taikai), class: "button" %>
 <% end %>

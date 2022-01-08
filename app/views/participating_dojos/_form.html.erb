@@ -4,13 +4,17 @@
   <% end %>
 
   <div class="field">
-    <label class=" label" for="dojo_name">Associated Dojo</label>
+    <label class=" label" for="dojo_name"><%= ParticipatingDojo.human_attribute_name :dojo %></label>
     <div class="control">
       <div class="dropdown is-active" data-controller="autocomplete"
            data-autocomplete-url-value="<%= taikai_participating_dojo_available_dojos_path(taikai, participating_dojo) %>">
         <div class="dropdown-trigger">
           <%= f.hidden_field :dojo_id, "data-autocomplete-target": "hidden" %>
-          <%= text_field_tag "dojo[name]", participating_dojo.dojo&.name, class: "input", autocomplete: "off", "data-autocomplete-target": "input", placeholder: "Start typing a name..." %>
+          <%= text_field_tag "dojo[name]", participating_dojo.dojo&.name,
+                class: "input",
+                autocomplete: "off",
+                "data-autocomplete-target": "input",
+                placeholder: t('.placeholders.dojo') %>
         </div>
         <div class="dropdown-menu" id="dropdown-menu3" role="menu">
           <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
@@ -19,8 +23,8 @@
     </div>
   </div>
 
-  <%= f.input :display_name, input_html: { placeholder: "Leave empty or override the dojo's name" } %>
+  <%= f.input :display_name, input_html: { placeholder: t('.placeholders.display_name') } %>
 
-  <%= f.button "Save", class: "button has-background-light mr-3" %>
-  <%= link_to "Cancel", edit_taikai_path(taikai), class: "button" %>
+  <%= f.button t('save'), class: "button has-background-light mr-3" %>
+  <%= link_to t('cancel'), edit_taikai_path(taikai), class: "button" %>
 <% end %>

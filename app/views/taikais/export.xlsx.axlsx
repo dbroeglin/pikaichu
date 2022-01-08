@@ -56,19 +56,19 @@ total_cell_style = xlsx_package.workbook.styles.add_style(
 
 xlsx_package.use_autowidth = false
 
-xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
+xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
   sheet.column_widths 20, 50
   sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
-  sheet.add_row ["Informations", ""],                 style: [ header_row_style, header_row_style ], height: 30
+  sheet.add_row [t('.infos'), ""],                 style: [ header_row_style, header_row_style ], height: 30
   sheet.merge_cells('A1:B1')
 
-  sheet.add_row ["Shortname", @taikai.shortname],     style: [info_label_cell_style, info_data_cell_style], height: 20
-  sheet.add_row ["Name", @taikai.name],               style: [info_label_cell_style, info_data_cell_style], height: 20
-  sheet.add_row ["Start Date", @taikai.start_date],   style: [info_label_cell_style, date_style], height: 20
-  sheet.add_row ["End Date", @taikai.end_date],       style: [info_label_cell_style, date_style], height: 20
-  sheet.add_row ["Description", @taikai.description], style: [info_label_cell_style, description_style], height: 60
-  sheet.add_row ["Type", @taikai.individual? ? "Individual" : "Teams"], style: [info_label_cell_style, info_data_cell_style], height: 20
-  sheet.add_row ["Number of arrows", @taikai.total_num_arrows], style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:shortname), @taikai.shortname],     style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:name), @taikai.name],               style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:start_date), @taikai.start_date],   style: [info_label_cell_style, date_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:end_date), @taikai.end_date],       style: [info_label_cell_style, date_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:description), @taikai.description], style: [info_label_cell_style, description_style], height: 60
+  sheet.add_row [Taikai.human_attribute_name(:type), @taikai.individual? ? t('.individual.true') : t('.individual.false')], style: [info_label_cell_style, info_data_cell_style], height: 20
+  sheet.add_row [Taikai.human_attribute_name(:num_arrows), @taikai.total_num_arrows], style: [info_label_cell_style, info_data_cell_style], height: 20
 
   sheet.add_row []
   sheet.add_row []
@@ -76,7 +76,7 @@ xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
 
   # line 10
 
-  sheet.add_row ["Participating Dojos", " "],          style: [ header_row_style, header_row_style ], height: 30
+  sheet.add_row [ParticipatingDojo.model_name.human(count: 2), " "],          style: [ header_row_style, header_row_style ], height: 30
   sheet.merge_cells('A12:B12')
 
   @taikai.participating_dojos.each do |participating_dojo|
@@ -88,7 +88,7 @@ xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
 end
 
 
-xlsx_package.workbook.add_worksheet(name: "Staff") do |sheet|
+xlsx_package.workbook.add_worksheet(name: t('.staff')) do |sheet|
   sheet.column_widths 23, 20, 20, 17
 
   sheet.add_row [
@@ -112,7 +112,7 @@ xlsx_package.workbook.add_worksheet(name: "Staff") do |sheet|
 end
 
 if @taikai.individual?
-  xlsx_package.workbook.add_worksheet(name: "Participants") do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.participants')) do |sheet|
     sheet.column_widths 20, 3, 30
 
     sheet.add_row [
@@ -139,7 +139,7 @@ if @taikai.individual?
     sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
   end
 else
-  xlsx_package.workbook.add_worksheet(name: "Participants") do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.participants')) do |sheet|
     sheet.column_widths 20, 3, 20, 30
 
     sheet.add_row [
@@ -187,7 +187,7 @@ if @taikai.individual?
     [ result_cell_style ] * 12 +
     [ total_cell_style ]
 
-  xlsx_package.workbook.add_worksheet(name: "Results") do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.results')) do |sheet|
     sheet.add_row [
       "Rank",
       "#",

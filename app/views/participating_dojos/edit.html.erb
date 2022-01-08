@@ -3,7 +3,7 @@
     <div class="column is-one-third is-offset-2">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Edit Participating Dojo</p>
+          <p class="card-header-title"><%= t '.title' %></p>
         </header>
         <div class="card-content">
           <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
@@ -21,16 +21,31 @@
     <div class="column is-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">Dojo Information</p>
+          <p class="card-header-title"><%= ParticipatingDojo.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
-          <%= @participating_dojo.dojo.name %> / <%= @participating_dojo.dojo.country_name %>
+          <p>
+            <b><%= Dojo.human_attribute_name :shortname %></b>:
+            <%= @participating_dojo.dojo.shortname %>
+          </p>
+          <p>
+            <b><%= Dojo.human_attribute_name :name %></b>:
+            <%= @participating_dojo.dojo.name %>
+          </p>
+          <% unless @participating_dojo.dojo.city.blank? %>
+            <b><%= Dojo.human_attribute_name :city %></b>:
+            <%= @participating_dojo.dojo.city %>
+          <% end %>
+          <p>
+            <b><%= Dojo.human_attribute_name :country %></b>:
+            <%= @participating_dojo.dojo.country_name %>
+          </p>
         </div>
       </div>
       <% if @taikai.individual %>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title">Participants</p>
+          <p class="card-header-title"><%= Participant.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
           <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: nil %>
@@ -39,7 +54,7 @@
       <% else %>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title">Teams</p>
+          <p class="card-header-title"><%= Team.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
           <%= render "teams/list", taikai: @taikai, participating_dojo: @participating_dojo %>
