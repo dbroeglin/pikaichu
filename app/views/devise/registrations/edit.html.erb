@@ -16,7 +16,7 @@
                 help = t('.currently_waiting_confirmation_for_email')
               end
             %>
-            <%= f.input :email, autofocus: true, autocomplete: :email, help: help %>
+            <%= f.input :email, input_html: { autofocus: true }, autocomplete: :email, help: help %>
             <%= f.input :firstname %>
             <%= f.input :lastname %>
 

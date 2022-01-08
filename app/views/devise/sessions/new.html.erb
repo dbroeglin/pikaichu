@@ -8,7 +8,7 @@
         <div class="card-content">
           <%= bulma_form_for resource, as: resource_name, url: session_path(resource_name), html: { "data-turbo":  false } do |f| %>
 
-            <%= f.input :email, autofocus: true, autocomplete: :email %>
+            <%= f.input :email, input_html: { autofocus: true }, autocomplete: :email %>
             <%= f.input :password, autocomplete: "current-password" %>
 
             <% if devise_mapping.rememberable? %>

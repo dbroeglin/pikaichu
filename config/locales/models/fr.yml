@@ -28,6 +28,7 @@ fr:
         display_name: Nom
         firstname: Prénom
         index: Num.
+        index_title: Numéro de participant
         index_in_team: Ordre dans l'équipe
         kyudojin: kyudojin
         lastname: Nom
@@ -37,12 +38,13 @@ fr:
         display_name: Nom court
         dojo: Dojo/Club
         num_participants: Nb.
+        num_participants_title: Nombre de participants
       staff:
         display_name: Nom
         firstname: Prénom
         lastname: Nom
         participating_dojo: Dojo participant
-        role: Rôle
+        role_id: Rôle
         user: Utilisateur
       taikai:
         shortname: Nom court

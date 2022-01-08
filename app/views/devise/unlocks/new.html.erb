@@ -9,7 +9,10 @@
           <%= bulma_form_for resource, as: resource_name, url: unlock_path(resource_name), html: { "data-turbo":  false, method: :post } do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.input :email, autofocus: true, autocomplete: :email, input_html: { value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1} %>
+            <%= f.input :email, input_html: {  }, autocomplete: :email, input_html: {
+                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) || 1,
+                    autofocus: true
+                  } %>
             <%# TODO: The value part does not work%>
 
             <%= f.button t('.resend_unlock_instructions'), class: "button has-background-light" %>

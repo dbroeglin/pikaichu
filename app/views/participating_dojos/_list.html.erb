@@ -4,7 +4,7 @@
       <th><%= ParticipatingDojo.human_attribute_name :display_name %></th>
       <th><%= ParticipatingDojo.human_attribute_name :city %></th>
       <th><%= ParticipatingDojo.human_attribute_name :country %></th>
-      <th><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
+      <th title="<%= t('activerecord.attributes.participating_dojo.num_participants_title') %>"><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_path(taikai),
           class: "button is-small has-background-light",

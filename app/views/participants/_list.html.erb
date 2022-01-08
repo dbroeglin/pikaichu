@@ -8,7 +8,7 @@
 <table class="table is-narrow is-hoverable">
   <thead>
     <tr class="has-text-centered">
-      <th><%= Participant.human_attribute_name :index %></th>
+      <th title="<%= t('activerecord.attributes.participant.index_title') %>"><%= Participant.human_attribute_name :index %></th>
       <th><%= Participant.human_attribute_name :firstname %></th>
       <th><%= Participant.human_attribute_name :lastname %></th>
       <th class="has-text-right">

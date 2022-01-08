@@ -13,7 +13,7 @@
 
             <%= render "devise/shared/error_messages", resource: resource %>
 
-            <%= f.input :password, autofocus: true, autocomplete: "new-password",
+            <%= f.input :password, input_html: { autofocus: true }, autocomplete: "new-password",
                         help: t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
 
             <%= f.input :password_confirmation, autocomplete: "new-password" %>

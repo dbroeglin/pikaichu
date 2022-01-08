@@ -3,7 +3,7 @@ fr:
   edit: Modifier
   delete: Effacer
   new: Ajouter
-  save: Sauver
+  save: Sauvegarder
   cancel: Retour
 
   home:
@@ -25,13 +25,13 @@ fr:
     show:
       title: "Tableau des résultats intermédiaires - %{taikai}"
       name: Nom
-      round: Tir %{index}
+      round: Série %{index}
       score: Score
   marking:
     show:
       input: Saisie
       rank: Rang
-      round: Tir %{index}
+      round: Série %{index}
       score: Score
       title: "Feuille de marque - %{taikai}"
   participants:
