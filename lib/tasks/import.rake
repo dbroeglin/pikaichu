@@ -13,7 +13,13 @@ task :import => :environment do
       headers: true,
       col_sep: ';'
   ) do |row|
-    Kyudojin.create!(lastname: row['IDE_NOM_IDENTIF'], firstname: row['IDE_PRENOM'], federation_id: row['IDE_CODE'], federation_country_code: 'FR')
+    Kyudojin.create!(
+      lastname: row['IDE_NOM_IDENTIF'],
+      firstname: row['IDE_PRENOM'],
+      federation_id: row['IDE_CODE'],
+      federation_country_code: 'FR',
+      federation_club: row['dbo_T_CLUB_CLUB_DESIGNATION'],
+    )
 
     lines += 1
   end

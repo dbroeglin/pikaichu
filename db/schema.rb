@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_210213) do
     t.string "firstname"
     t.string "federation_id"
     t.string "federation_country_code"
+    t.string "federation_club"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
