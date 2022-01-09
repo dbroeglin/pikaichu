@@ -18,7 +18,7 @@
     <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round),
                 class: "button is-small has-background-info ml-2",
                 data: { turbo_method: 'patch' },
-                title: "Finalize round #{results.first.round}" do %>
+                title: t('.finalize_round', index: results.first.round) do %>
       <span class="icon is-small">
         <i class="fas fa-check"></i>
       </span>

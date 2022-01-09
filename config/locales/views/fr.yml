@@ -34,6 +34,12 @@ fr:
       round: Série %{index}
       score: Score
       title: "Feuille de marque - %{taikai}"
+    round_results:
+      finalize_round: "Valider la série %{index}"
+    choice:
+      mark_hit: Marquer "Touché"
+      mark_missed: Marquer "Manqué"
+      mark_unknown: Marquer "Incertain"
   participants:
     edit:
       title: Modifier un participant
