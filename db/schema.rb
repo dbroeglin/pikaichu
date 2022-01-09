@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_210213) do
     t.string "federation_club"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["federation_id"], name: "by_federation_id", unique: true
   end
 
   create_table "participants", force: :cascade do |t|
