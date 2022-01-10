@@ -43,7 +43,7 @@ fr:
         display_name: Nom
         firstname: Prénom
         lastname: Nom
-        participating_dojo: Dojo participant
+        participating_dojo_id: Dojo participant
         role_id: Rôle
         user: Utilisateur
       taikai:

@@ -28,6 +28,7 @@
   <%= f.input :firstname, input_html: { placeholder: t('.placeholders.firstname') } %>
   <%= f.input :lastname, input_html: { placeholder: t('.placeholders.lastname') } %>
   <%= f.input :role_id, collection: StaffRole.all, value_method: :id, text_method: :label %>
+  <%= f.input :participating_dojo_id, collection: taikai.participating_dojos, value_method: :id, text_method: :display_name, include_blank: true %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3" %>
   <%= link_to t('cancel'), edit_taikai_path(taikai), class: "button" %>

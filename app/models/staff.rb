@@ -11,6 +11,10 @@ class Staff < ApplicationRecord
     presence: {
       if: -> { role.taikai_admin? || role.dojo_admin? || role.marking_referee? }
     }
+  validates :participating_dojo_id,
+    presence: {
+      if: -> { role.dojo_admin? || role.marking_referee? || role.yatori? }
+    }
 
 
   before_validation do

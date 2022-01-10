@@ -12,4 +12,8 @@ class StaffRole < ApplicationRecord
   def marking_referee?
     code == 'marking_referee'
   end
+
+  def yatori?
+    code == 'yatori'
+  end
 end

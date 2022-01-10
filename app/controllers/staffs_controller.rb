@@ -51,6 +51,7 @@ class StaffsController < ApplicationController
       :role_id,
       :firstname,
       :lastname,
+      :participating_dojo_id,
     )
   end
 
