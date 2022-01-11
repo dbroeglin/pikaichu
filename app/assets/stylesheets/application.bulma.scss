@@ -7,7 +7,7 @@
 // $purple: #8A4D76;
 // $pink: #FA7C91;
 // $brown: #757763;
-// $beige-light: #D0D1CD;
+$beige-light: #D0D1CD;
 // $beige-lighter: #EFF0EB;
 
 // Update Bulma's global variables
@@ -27,6 +27,9 @@
 
 // $shadow: 0 0.125em 0.25em rgba(235, 14, 14, 0.726);
 
+
+$card-header-background-color: $beige-light;
+
 // Import only what you need from Bulma
 // @import "bulma/sass/utilities/_all.sass";
 // @import "bulma/sass/base/_all.sass";
@@ -37,6 +40,8 @@
 // @import "bulma/sass/components/navbar.sass";
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
+
+
 
 @import 'bulma/bulma';
 @import 'participant'

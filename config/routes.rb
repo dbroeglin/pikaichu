@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     as: :finalize_round_marking
   get  '/taikais/:id/draw',                             to: 'taikais#draw',          as: :draw_taikai
   get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',      as: :show_taikai_leaderboard
+  get  '/taikais/:id/leaderboard/public',               to: 'leaderboard#public',    as: :show_taikai_leaderboard_public
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 
   get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',

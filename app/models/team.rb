@@ -20,7 +20,11 @@ class Team < ApplicationRecord
               allow_blank: true,
             }
 
-  def score
-    results.select { |r| r.status == 'hit' }.size
+  def score(final = true)
+    if final
+      results.select { |r| r.final? && r.status_hit? }.size
+    else
+      results.select { |r| r.status_hit? }.size
+    end
   end
 end

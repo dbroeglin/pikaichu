@@ -39,7 +39,7 @@
                 <td><%= participant.index %></td>
                 <td class="has-text-left"><%= participant.display_name %></td>
                 <% participant.results.each do |result| %>
-                <td><%= icon_from(result) %></td>
+                <td><%= final_icon_from(result) %></td>
                 <% end %>
                 <% if index == 0 %>
                 <th rowspan="<%= participants.size %>"><%= score %></th>
@@ -66,9 +66,9 @@
                   <% end %>
                   <td class="has-text-left"><%= participant.display_name %></td>
                   <% participant.results.each do |result| %>
-                  <td><%= icon_from(result) %></td>
+                  <td><%= final_icon_from(result) %></td>
                   <% end %>
-                  <td><%= participant.score(@final) %></td>
+                  <td><%= participant.score %></td>
                   <% if team_index == 0 && participant_index == 0 %>
                     <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= score %></th>
                   <% end %>

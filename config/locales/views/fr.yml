@@ -20,13 +20,14 @@ fr:
     edit:
       title: Modifier un dojo
     new:
-      title: AJouter un dojo
+      title: Ajouter un dojo
   leaderboard:
     show:
       title: "Tableau des résultats intermédiaires - %{taikai}"
       name: Nom
       round: Série %{index}
       score: Score
+      team_score: Total
   marking:
     show:
       input: Saisie
