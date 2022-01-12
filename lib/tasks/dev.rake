@@ -10,7 +10,7 @@ if Rails.env.development? || Rails.env.test?
 
         Faker::Config.random = Random.new(42)
 
-        create(:user, firstname: "Jean", lastname: "Bon")
+        create(:user, firstname: "Jean", lastname: "Bon", admin: true)
         create_list(:user, 15)
 
         create(:staff_role, code: :taikai_admin,    label: 'Administrator')

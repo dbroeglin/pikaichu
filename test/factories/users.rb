@@ -7,5 +7,6 @@ FactoryBot.define do
     }
     password { "password" }
     confirmed_at { DateTime.now }
+    admin { false }
   end
 end

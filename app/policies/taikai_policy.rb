@@ -7,11 +7,13 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def edit?
-    taikai.staffs.joins(:role).where(user: user, 'role.code': [:taikai_admin, :dojo_admin]).any?
+    user.admin? ||
+      taikai.staffs.joins(:role).where(user: user, 'role.code': [:taikai_admin, :dojo_admin]).any?
   end
 
   def update?
-    taikai.taikai_admin?(user)
+    user.admin? ||
+      taikai.taikai_admin?(user)
   end
 
   def draw?
