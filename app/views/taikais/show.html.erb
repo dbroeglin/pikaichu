@@ -65,7 +65,7 @@
                     <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
                     <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
                     <% end %>
-                    <td><%= participant.display_name %></td>
+                    <td><%= participant.display_name %><%= participant.kyudojin ? " (#{participant.kyudojin.federation_club})" : "" %></td>
                   </tr>
                   <%
                         end

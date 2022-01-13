@@ -81,6 +81,8 @@ fr:
       title: Liste des Taikais
     edit:
       title: Modification du Taikai
+    new:
+      title: Ajouter un Taikai
   teams:
     delete:
       title: Effacer une équipe

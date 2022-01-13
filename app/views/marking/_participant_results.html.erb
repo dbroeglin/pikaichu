@@ -1,16 +1,16 @@
 <% if taikai.individual? %>
-<td class="has-text-left"><%= participant.index %></td>
+<td class="has-text-left <%= first %>"><%= participant.index %></td>
 <% end %>
-<td class="has-text-left"><%= participant.display_name %></td>
-<td class="has-text-centered">
+<td class="has-text-left <%= first %>"><%= participant.display_name %></td>
+<td class="has-text-centered <%= first %>">
   <%= render "choice", taikai: @taikai, participant: participant %>
 </td>
 <% participant.results.group_by(&:round).each_pair do |round_index, results| %>
-  <td class="has-text-left">
+  <td class="has-text-left <%= first %>">
     <%= render "round_results", participant: participant, round_index: round_index, results: results %>
   </td>
-  <td>
+  <td class="<%= first %>">
     <%= render "round_tally",   participant: participant, round_index: round_index, results: results %>
   </td>
 <% end %>
-<td class="has-text-centered has-text-weight-semibold"><%= render "individual_score", participant: participant %></td>
+<td class="has-text-centered has-text-weight-semibold <%= first %>"><%= render "individual_score", participant: participant %></td>

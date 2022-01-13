@@ -1,15 +1,15 @@
           <%
             if @taikai.individual?
               @participating_dojos.each_with_index do |dojo|
-                dojo.participants.each_with_index do |participant, index|
+                dojo.participants.each_with_index do |participant, participant_index|
           %>
           <tr class="has-text-centered" id="<%= dom_id(participant) %>">
-            <% if index == 0 %>
-            <th class="is-vcentered" rowspan="<%= dojo.participants.size %>">
+            <% if participant_index == 0 %>
+            <th class="is-vcentered first" rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
-            <%= render "participant_results", taikai: @taikai, participant: participant %>
+            <%= render "participant_results", taikai: @taikai, participant: participant, first: (participant_index == 0 ? "first" : "") %>
           </tr>
           <%
                 end
@@ -21,18 +21,18 @@
           %>
           <tr class="has-text-left" id="<%= dom_id(participant) %>">
             <% if team_index == 0 && participant_index == 0 %>
-            <th  class="is-vcentered has-text-centered" rowspan="<%= dojo.participants.size %>">
+            <th  class="is-vcentered has-text-centered first" rowspan="<%= dojo.participants.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>
             <% if participant_index == 0 %>
-            <th  class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>">
+            <th  class="is-vcentered has-text-centered first" rowspan="<%= team.participants.size %>">
               <%= team.index %> - <%= team.shortname %>
             </th>
             <% end %>
-            <%= render "participant_results", taikai: @taikai, participant: participant %>
+            <%= render "participant_results", taikai: @taikai, participant: participant, first: (participant_index == 0 ? "first" : "") %>
             <% if participant_index == 0 %>
-            <th class="is-vcentered has-text-centered" rowspan="<%= team.participants.size %>"><%= render "team_score", team: team %></th>
+            <th class="is-vcentered has-text-centered first" rowspan="<%= team.participants.size %>"><%= render "team_score", team: team %></th>
             <% end %>
           </tr>
           <%

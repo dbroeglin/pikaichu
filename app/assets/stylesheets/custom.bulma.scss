@@ -1,3 +1,8 @@
+.table.is-bordered th.first, .table.is-bordered td.first {
+  border-top-style: double;
+  border-top-width: 3pt;
+}
+
 form .dropdown {
   width: 100%;
 

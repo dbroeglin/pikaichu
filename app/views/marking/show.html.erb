@@ -12,10 +12,9 @@
         <th><%= Participant.human_attribute_name :display_name %></th>
         <th><%= t '.input' %></th>
         <% @taikai.num_rounds.times do |index| %>
-          <th><%= t '.round', index: index + 1 %></th>
-          <th></th>
+          <th colspan="2"><%= t '.round', index: index + 1 %></th>
         <% end %>
-        <th colspan="<%= @taikai.individual? ? 1 : 2 %>"><%= t '.scope' %></th>
+        <th colspan="<%= @taikai.individual? ? 1 : 2 %>"><%= t '.score' %></th>
       </tr>
     </thead>
     <tbody>
