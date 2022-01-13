@@ -21,7 +21,7 @@
     <div class="column is-one-third">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title"><%= ParticipatingDojo.model_name.human.pluralize %></p>
+          <p class="card-header-title"><%= ParticipatingDojo.model_name.human count: 2 %></p>
         </header>
         <div class="card-content">
           <p>
@@ -45,7 +45,7 @@
       <% if @taikai.individual %>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title"><%= Participant.model_name.human.pluralize %></p>
+          <p class="card-header-title"><%= Participant.model_name.human count: 2 %></p>
         </header>
         <div class="card-content">
           <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: nil %>
@@ -54,7 +54,7 @@
       <% else %>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title"><%= Team.model_name.human.pluralize %></p>
+          <p class="card-header-title"><%= Team.model_name.human count: 2 %></p>
         </header>
         <div class="card-content">
           <%= render "teams/list", taikai: @taikai, participating_dojo: @participating_dojo %>

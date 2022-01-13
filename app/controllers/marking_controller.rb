@@ -6,7 +6,7 @@ class MarkingController < ApplicationController
   def show
     @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
 
-    if @taikai.taikai_admin?(current_user)
+    if current_user.admin? || @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
         .includes({participants: :results}, teams: [participants: :results])
     elsif @taikai.dojo_admin?(current_user)

@@ -1,13 +1,24 @@
 fr:
   activerecord:
     models:
-      dojo: Dojo
-      participant: Participant
+      dojo:
+        one: Club
+        other: Clubs
+      participant:
+        one: Participant
+        other: Participants
       participating_dojo:
-        one: Dojo Participant
-        other: Dojos Participants
-      taikai: Taikai
-      team: Équipe
+        one: Club hôte
+        other: Clubs hôtes
+      taikai:
+        one: Taikai
+        other: Taikais
+      team:
+        one: Équipe
+        other: Équipes
+      staff:
+        one: Staff
+        other: Staffs
     enums:
       result:
         status:
@@ -30,20 +41,20 @@ fr:
         index: Num.
         index_title: Numéro de participant
         index_in_team: Ordre dans l'équipe
-        kyudojin: kyudojin
+        kyudojin: Kyudojin
         lastname: Nom
-        participating_dojo: Dojo participant
+        participating_dojo: Club hôte
         team: Équipe
       participating_dojo:
         display_name: Nom court
-        dojo: Dojo/Club
+        dojo: Club
         num_participants: Nb.
         num_participants_title: Nombre de participants
       staff:
         display_name: Nom
         firstname: Prénom
         lastname: Nom
-        participating_dojo_id: Dojo participant
+        participating_dojo_id: Club hôte
         role_id: Rôle
         user: Utilisateur
       taikai:
@@ -62,7 +73,7 @@ fr:
         team:
           attributes:
             index:
-              taken: doit être unique pour un dojo participant.
+              taken: doit être unique pour un club hôte.
         participant:
           attributes:
             index_in_team:

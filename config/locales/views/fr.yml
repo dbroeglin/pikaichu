@@ -8,19 +8,19 @@ fr:
 
   home:
     index:
-      dojos_summary: "%{nb} Dojos gérés."
+      dojos_summary: "%{nb} Clubs gérés."
       taikais_summary: "%{nb} Taikais gérés."
       manage_taikais: "Gérer les Taikais"
-      manage_dojos: "Gérer les Dojos"
+      manage_dojos: "Gérer les Clubs"
   dojos:
     index:
-      title: Liste des Dojos
+      title: Liste des Clubs
     delete:
-      title: Effacer un dojo
+      title: Effacer un club
     edit:
-      title: Modifier un dojo
+      title: Modifier un club
     new:
-      title: Ajouter un dojo
+      title: Ajouter un club
   leaderboard:
     show:
       title: "Tableau des résultats intermédiaires - %{taikai}"
@@ -49,15 +49,15 @@ fr:
         kyudojin: Commencez à saisir un nom...
   participating_dojos:
     delete:
-      title: Effacer un dojo participant
+      title: Effacer un club hôte
     edit:
-      title: Modifier un dojo participant
+      title: Modifier un club hôte
     new:
-      title: Ajouter un dojo participant
+      title: Ajouter un club hôte
     form:
       placeholders:
         dojo: Commencez à saisir un nom...
-        display: Leave empty or override the dojo's name
+        display_name: Laisser blanc pour utiliser le nom du club
   taikais:
     draw: Tirage au sort
     marking_sheet:

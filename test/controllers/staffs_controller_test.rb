@@ -5,6 +5,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai_1)
     @staff = staffs(:staff_1_taikai_1)
+
   end
 
   test 'should get new' do
@@ -19,7 +20,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
           lastname: "Brown",
           taikai_id: @taikai.id,
           role_id: staff_roles(:chairman),
-          participating_dojo_id: dojos(:dojo_fr)
+          participating_dojo_id: participating_dojos(:participating_dojo_1_taikai_1)
         }
       }
     end

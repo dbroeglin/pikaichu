@@ -13,7 +13,7 @@
     <div class="column is-one-half">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title"><%= ParticipatingDojo.model_name.human.pluralize %></p>
+          <p class="card-header-title"><%= ParticipatingDojo.model_name.human count: 2 %></p>
         </header>
         <div class="card-content">
           <%= render "participating_dojos/list", taikai: @taikai %>
@@ -21,7 +21,7 @@
       </div>
       <div class="card mt-5">
         <header class="card-header">
-          <p class="card-header-title"><%= Staff.model_name.human.pluralize %></p>
+          <p class="card-header-title"><%= Staff.model_name.human count: 2 %></p>
         </header>
         <div class="card-content">
           <%= render "staffs/list", taikai: @taikai %>

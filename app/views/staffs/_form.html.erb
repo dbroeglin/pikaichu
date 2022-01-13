@@ -15,8 +15,8 @@
                 autocomplete: "off", "data-autocomplete-target": "input",
                 placeholder: t('.placeholders.user') %>
         </div>
-        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-          <div class="dropdown-content list-group" data-autocomplete-target="results"></div>
+        <div class="dropdown-menu" id="dropdown-menu3">
+          <div class="dropdown-content list-group" role="option" title="<%= t 'search_results' %>" data-autocomplete-target="results"></div>
         </div>
       </div>
       <% staff.errors.where(:user).map do |error| %>

@@ -53,9 +53,12 @@ class TaikaisController < ApplicationController
         .includes(participating_dojos: :participants)
         .find(params[:id])
 
-    unless @taikai.draw
-      flash.alert("An error occured while drawing participants")
+    if @taikai.draw
+      flas.alert t :draw_ok
+    else
+      flash.alert t :draw_error
     end
+
     redirect_to action: :show, id: @taikai
   end
 

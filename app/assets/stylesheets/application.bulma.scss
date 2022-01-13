@@ -28,7 +28,6 @@ $beige-light: #D0D1CD;
 // $shadow: 0 0.125em 0.25em rgba(235, 14, 14, 0.726);
 
 
-$card-header-background-color: $beige-light;
 
 // Import only what you need from Bulma
 // @import "bulma/sass/utilities/_all.sass";
@@ -43,5 +42,9 @@ $card-header-background-color: $beige-light;
 
 
 
+$info: #3478b1;
+$card-header-background-color: #EFF5FA;
 @import 'bulma/bulma';
-@import 'participant'
+
+@import 'custom.bulma';
+

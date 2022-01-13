@@ -1,5 +1,4 @@
-
-<nav class="navbar has-background-danger-light" role="navigation" aria-label="main navigation">
+<nav class="navbar has-background-info-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="">
       <img src="/logo_cnkyudo-archers_72dpi.webp" alt="Comité National du Kyudo">
@@ -16,13 +15,13 @@
     <div class="navbar-start">
       <%= link_to taikais_path, class: "navbar-item #{controller_name == "taikais" ? "is-active" : "" }" do %>
         <span class="icon is-medium mr-2">大会</span>
-        <span>Taikais</span>
+        <span><%= Taikai.model_name.human count: 2 %></span>
       <% end %>
       <%= link_to dojos_path, class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
         <span class="icon is-medium">
           <span class="icon level is-medium mr-2" style="white-space:nowrap">道場</span><%# TODO: fix style %>
         </span>
-        <span>Dojos</span>
+        <span><%= Dojo.model_name.human count: 2 %></span>
       <% end %>
     </div>
 
@@ -30,13 +29,13 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if (!user_signed_in?) %>
-            <%= link_to new_user_session_path, class: "button is-danger" do %>
+            <%= link_to new_user_session_path, class: "button is-normal" do %>
               <span class="icon is-medium">
                 <i class="fas fa-sign-in-alt"></i>
               </span>
               <span><%= t 'devise.sessions.new.sign_in' %></span>
             <% end%>
-            <%= link_to new_user_registration_path, class: "button is-warning" do %>
+            <%= link_to new_user_registration_path, class: "button" do %>
               <span class="icon is-medium">
                 <i class="fas fa-user-plus"></i>
               </span>
@@ -53,7 +52,7 @@
               <span><%= t 'devise.registrations.edit.my_account' %></span>
             <% end %>
             <%= link_to destroy_user_session_path,
-              class: "button is-danger",
+              class: "button",
               data: { turbo_method: :delete } do %>
               <span class="icon is-medium">
                 <i class="fas fa-power-off"></i>
