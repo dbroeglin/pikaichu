@@ -9,7 +9,7 @@ task :import => :environment do
   num_lines = 0
   num_inserted = 0
 
-  Kyudojin.delete_all
+  #Kyudojin.delete_all
   CSV.parse(data,
       headers: true,
       col_sep: ';'
@@ -19,7 +19,7 @@ task :import => :environment do
       firstname: row['IDE_PRENOM'],
       federation_id: row['IDE_CODE'],
       federation_country_code: 'FR',
-      federation_club: row['dbo_T_CLUB_CLUB_DESIGNATION']
+      federation_club: row['acronyme']
     }
     Kyudojin.upsert(attrs, unique_by: :federation_id)
     num_lines += 1
