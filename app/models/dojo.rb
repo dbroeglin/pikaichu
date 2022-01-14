@@ -1,6 +1,8 @@
 class Dojo < ApplicationRecord
   audited
 
+  has_many :participating_dojos, dependent: :restrict_with_error
+
   validates :shortname, presence: true, length: { minimum: 3, maximum: 32 }
   validates :name, presence: true
   validates :country_code, presence: true

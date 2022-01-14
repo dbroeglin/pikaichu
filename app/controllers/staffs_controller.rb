@@ -33,6 +33,7 @@ class StaffsController < ApplicationController
     @staff = @taikai.staffs.find(params[:id])
 
     if @staff.last_taikai_admin?
+      # TODO: I18n
       flash[:alert] = "Unable to remove Staff '#{@staff.display_name}', he is the last admin for taikai '#{@staff.taikai.shortname}'"
     elsif !@staff.destroy
       flash[:alert] = "Unable to remove Staff #{@staff.display_name}"

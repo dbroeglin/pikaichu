@@ -34,9 +34,14 @@ end
 
   def destroy
     @dojo = Dojo.find(params[:id])
-    @dojo.destroy
 
-    redirect_to action: 'index'
+    if @dojo.destroy
+      redirect_to action: 'index'
+    else
+      # TODO: I18n
+      flash[:alert] = "Unable to remove dojo '#{@dojo.shortname}', it probably still has an associated Taikai"
+      redirect_to action: 'index'
+    end
   end
 
   private
