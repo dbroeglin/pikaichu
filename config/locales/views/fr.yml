@@ -29,6 +29,12 @@ fr:
       round: Série %{index}
       score: Score
       team_score: Total
+    public:
+      title: "Tableau des résultats - %{taikai}"
+      name: Nom
+      round: Série %{index}
+      score: Score
+      team_score: Total
   marking:
     show:
       input: Saisie
