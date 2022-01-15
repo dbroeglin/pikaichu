@@ -88,14 +88,14 @@ xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
 end
 
 
-xlsx_package.workbook.add_worksheet(name: t('.staff')) do |sheet|
+xlsx_package.workbook.add_worksheet(name: t('.staff.title')) do |sheet|
   sheet.column_widths 23, 20, 20, 17
 
   sheet.add_row [
-    "Lastname",
-    "Firstname",
-    "Role",
-    "Dojo"
+    t('.staff.lastname'),
+    t('.staff.firstname'),
+    t('.staff.role'),
+    t('.staff.participating_dojo'),
   ], style: header_row_style
 
   @taikai.staffs.each do |staff|
@@ -112,13 +112,13 @@ xlsx_package.workbook.add_worksheet(name: t('.staff')) do |sheet|
 end
 
 if @taikai.individual?
-  xlsx_package.workbook.add_worksheet(name: t('.participants')) do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
     sheet.column_widths 20, 3, 30
 
     sheet.add_row [
-      "Dojo",
-      "#",
-      "Name",
+      t('.participants.participating_dojo'),
+      t('.participants.index'),
+      t('.participants.display_name'),
     ], style: header_row_style
 
     dojo_start_line = 2
@@ -139,14 +139,14 @@ if @taikai.individual?
     sheet.page_setup.set paper_width: "210mm", paper_size: 10,  paper_height: "297mm", orientation: :portrait
   end
 else
-  xlsx_package.workbook.add_worksheet(name: t('.participants')) do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
     sheet.column_widths 20, 3, 20, 30
 
     sheet.add_row [
-      "Dojo",
-      "#",
-      "Team",
-      "Name",
+      t('.participants.participating_dojo'),
+      t('.participants.index'),
+      t('.participants.team'),
+      t('.participants.display_name'),
     ], style: header_row_style
 
     dojo_start_line = 2
@@ -187,16 +187,16 @@ if @taikai.individual?
     [ result_cell_style ] * 12 +
     [ total_cell_style ]
 
-  xlsx_package.workbook.add_worksheet(name: t('.results')) do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
     sheet.add_row [
-      "Rank",
-      "#",
-      "Dojo",
-      "Name",
-      "R1", '', '', '',
-      "R2", '', '', '',
-      "R3", '', '', '',
-      "Score",
+      t('.results.rank'),
+      t('.results.index'),
+      t('.results.participating_dojo'),
+      t('.results.display_name'),
+      t('.results.round', count: 1), '', '', '',
+      t('.results.round', count: 2), '', '', '',
+      t('.results.round', count: 3), '', '', '',
+      t('.results.score'),
     ], style: [vert_header_row_style] + [ header_row_style ] * 15 + [ vert_header_row_style ], height: 50
     sheet.column_widths *([5, 5, 20, 20 ] + [ 5 ] * 12 + [8])
     sheet.merge_cells('E1:H1')
@@ -253,18 +253,18 @@ else
     [ result_cell_style ] * 12 +
     [ total_cell_style, total_cell_style ]
 
-  xlsx_package.workbook.add_worksheet(name: "Results") do |sheet|
+  xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
     sheet.add_row [
-      "Rank",
-      "#",
-      "Team",
-      "Dojo",
-      "Name",
-      "Round 1", '', '', '',
-      "Round 2", '', '', '',
-      "Round 3", '', '', '',
-      "Score",
-      "T. S."
+      t('.results.rank'),
+      t('.results.index'),
+      t('.results.team'),
+      t('.results.participating_dojo'),
+      t('.results.display_name'),
+      t('.results.round', count: 1), '', '', '',
+      t('.results.round', count: 2), '', '', '',
+      t('.results.round', count: 3), '', '', '',
+      t('.results.score'),
+      t('.results.team_score'),
     ], style: [vert_header_row_style] + [ header_row_style ] * 16 + [ vert_header_row_style, vert_header_row_style ], height: 50
     sheet.column_widths *([3, 3, 20, 15, 20 ] + [ 4 ] * 12 + [4, 4])
     sheet.merge_cells('F1:I1')

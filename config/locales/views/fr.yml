@@ -78,9 +78,28 @@ fr:
       individual:
         'true': Individuel
         'false': En équipe
-      results: Résulats
-      staff: Staff
-      participants: Participants
+      results:
+        display_name: Nom
+        index: "#"
+        participating_dojo: Club Org.
+        rank: Rang
+        round: Série %{count}
+        score: Score
+        team: Équipe
+        team_score: Total
+        title: Résultats
+      staff:
+        firstname: Prénom
+        lastname: Nom
+        role: Rôle
+        participating_dojo: Club Org.
+        title: Staff
+      participants:
+        title: Participants
+        index: "#"
+        participating_dojo: Club Org.
+        team: Équipe
+        display_name: Nom
     index:
       dates: Dates
       distributed: À distance
