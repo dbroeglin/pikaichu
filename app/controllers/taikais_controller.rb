@@ -54,9 +54,9 @@ class TaikaisController < ApplicationController
         .find(params[:id])
 
     if @taikai.draw
-      flas.alert t :draw_ok
+      flash[:notice] = t :draw_ok
     else
-      flash.alert t :draw_error
+      flash[:alert] = t :draw_error
     end
 
     redirect_to action: :show, id: @taikai
