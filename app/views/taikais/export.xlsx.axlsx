@@ -1,3 +1,17 @@
+def result_mark(result)
+  if result.final?
+    case result.status
+    when 'hit'
+      'O'
+    when 'miss'
+      'X'
+    else
+      ''
+    end
+  else
+    ''
+  end
+end
 
 header_row_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true },
@@ -230,15 +244,8 @@ if @taikai.individual?
         participant.participating_dojo.display_name,
         participant.display_name,
       ] + (participant.results.map { |result|
-          case result.status
-          when 'hit'
-            'O'
-          when 'miss'
-            'X'
-          else
-            ''
-          end
-      } + [ participant.results.map(&:status).tally['hit'].to_i || 0])
+        result_mark(result)
+      } + [ participant.score || 0])
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
 
@@ -307,17 +314,10 @@ else
           team.participating_dojo.display_name,
           participant.display_name,
         ] + (participant.results.map { |result|
-            case result.status
-            when 'hit'
-              'O'
-            when 'miss'
-              'X'
-            else
-              ''
-            end
+          result_mark(result)
         } + [
-          participant.results.map(&:status).tally['hit'].to_i || 0,
-          participant.team.results.map(&:status).tally['hit'].to_i || 0,
+          participant.score || 0,
+          participant.team.score || 0,
         ])
       end
     end.flatten(1)
