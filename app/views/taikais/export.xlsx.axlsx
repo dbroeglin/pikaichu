@@ -320,13 +320,13 @@ else
           team.shortname,
           team.participating_dojo.display_name,
           participant.display_name,
-          ] + (participant.results.map do |result|
-            result_mark(result)
-          end + [
-            participant.score || 0,
-            participant.team.score || 0,
-            ])
-          end
+        ] + (participant.results.map do |result|
+          result_mark(result)
+        end + [
+          participant.score || 0,
+          participant.team.score || 0,
+        ])
+      end
     end.flatten(1)
     sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
     sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
