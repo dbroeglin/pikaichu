@@ -22,7 +22,6 @@ class TaikaiFlowTest < ActionDispatch::IntegrationTest
     assert_select "p.title", text: "Dojos"
   end
 
-
   # called after every single test
   teardown do
     # when controller is using cache it may be a good idea to reset it afterwards

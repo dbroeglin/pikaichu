@@ -1,5 +1,5 @@
 class Kyudojin < ApplicationRecord
-  scope :containing, -> (query) {
+  scope :containing, ->(query) {
     where("lastname ILIKE ? OR firstname ILIKE ?", "%#{query}%", "%#{query}%").order(:lastname, :firstname)
   }
 

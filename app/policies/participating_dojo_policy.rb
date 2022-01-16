@@ -10,7 +10,7 @@ class ParticipatingDojoPolicy < ApplicationPolicy
     # TODO: optimize?
     user.admin? ||
       @participating_dojo.staffs.joins(:role).where(user: @user, 'role.code': :dojo_admin).any? ||
-        @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
+      @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
   end
 
   def delete?

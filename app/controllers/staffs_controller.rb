@@ -34,7 +34,8 @@ class StaffsController < ApplicationController
 
     if @staff.last_taikai_admin?
       # TODO: I18n
-      flash[:alert] = "Unable to remove Staff '#{@staff.display_name}', he is the last admin for taikai '#{@staff.taikai.shortname}'"
+      flash[:alert] =
+        "Unable to remove Staff '#{@staff.display_name}', he is the last admin for taikai '#{@staff.taikai.shortname}'"
     elsif !@staff.destroy
       flash[:alert] = "Unable to remove Staff #{@staff.display_name}"
     end
@@ -45,15 +46,15 @@ class StaffsController < ApplicationController
 
   def staff_params
     params
-    .require(:staff)
-    .permit(
-      :taikai_id,
-      :user_id,
-      :role_id,
-      :firstname,
-      :lastname,
-      :participating_dojo_id,
-    )
+      .require(:staff)
+      .permit(
+        :taikai_id,
+        :user_id,
+        :role_id,
+        :firstname,
+        :lastname,
+        :participating_dojo_id,
+      )
   end
 
   def set_taikai

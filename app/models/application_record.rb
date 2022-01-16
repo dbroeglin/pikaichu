@@ -6,7 +6,7 @@ class ApplicationRecord < ActiveRecord::Base
       nil
     else
       I18n.t("activerecord.enums.#{model_name.i18n_key}.#{enum_name}.#{enum_value}",
-            default: enum_value.humanize)
+             default: enum_value.humanize)
     end
   end
 

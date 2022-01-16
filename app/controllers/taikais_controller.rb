@@ -7,8 +7,8 @@ class TaikaisController < ApplicationController
   def show
     @taikai =
       Taikai
-        .includes(participating_dojos: %i[teams participants])
-        .find(params[:id])
+      .includes(participating_dojos: %i[teams participants])
+      .find(params[:id])
     @staffs = @taikai.staffs.ordered
   end
 
@@ -50,8 +50,8 @@ class TaikaisController < ApplicationController
 
   def draw
     @taikai = authorize Taikai
-        .includes(participating_dojos: :participants)
-        .find(params[:id])
+              .includes(participating_dojos: :participants)
+              .find(params[:id])
 
     if @taikai.draw
       flash[:notice] = t :draw_ok
@@ -65,8 +65,8 @@ class TaikaisController < ApplicationController
   def export
     @taikai =
       Taikai
-        .includes({participating_dojos: [{teams: {participants: :results}}, { participants: [:results] }]}, :staffs)
-        .find(params[:id])
+      .includes({ participating_dojos: [{ teams: { participants: :results } }, { participants: [:results] }] }, :staffs)
+      .find(params[:id])
 
     render xlsx: 'export', filename: "Taikai - #{@taikai.shortname}.xlsx"
   end

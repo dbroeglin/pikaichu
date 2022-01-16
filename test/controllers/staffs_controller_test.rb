@@ -15,13 +15,12 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
   test 'should post create' do
     assert_difference '@taikai.staffs.count' do
       post taikai_staffs_url @taikai, params: { staff: {
-          firstname: "Dan",
-          lastname: "Brown",
-          taikai_id: @taikai.id,
-          role_id: staff_roles(:chairman),
-          participating_dojo_id: participating_dojos(:participating_dojo_1_taikai_1)
-        }
-      }
+        firstname: "Dan",
+        lastname: "Brown",
+        taikai_id: @taikai.id,
+        role_id: staff_roles(:chairman),
+        participating_dojo_id: participating_dojos(:participating_dojo_1_taikai_1)
+      } }
     end
     assert_redirected_to edit_taikai_url @taikai
   end
@@ -31,7 +30,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
- test 'should patch update' do
+  test 'should patch update' do
     patch taikai_staff_url @taikai, @staff, params: { staff: @staff.attributes }
     assert_redirected_to edit_taikai_url @taikai
   end

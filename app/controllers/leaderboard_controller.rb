@@ -1,5 +1,4 @@
 class LeaderboardController < ApplicationController
-
   def show
     @final = false
     compute_leaderboard(@final)
@@ -17,23 +16,22 @@ class LeaderboardController < ApplicationController
 
     if @taikai.individual?
       @taikai = Taikai
-        .includes(participating_dojos: {participants: :results})
-          .find(params[:id])
+                .includes(participating_dojos: { participants: :results })
+                .find(params[:id])
 
       @participants_by_score = @taikai.participating_dojos
-        .map(&:participants).flatten
-        .sort_by { |participant| participant.score(final) }.reverse
-        .group_by { |participant| participant.score(final) }
+                                      .map(&:participants).flatten
+                                      .sort_by { |participant| participant.score(final) }.reverse
+                                      .group_by { |participant| participant.score(final) }
     else
       @taikai = Taikai
-        .includes(participating_dojos: {teams: [{participants: :results}]})
-          .find(params[:id])
+                .includes(participating_dojos: { teams: [{ participants: :results }] })
+                .find(params[:id])
 
       @teams_by_score = @taikai.participating_dojos
-        .map(&:teams).flatten
-        .sort_by { |participant| participant.score(final) }.reverse
-        .group_by { |participant| participant.score(final) }
+                               .map(&:teams).flatten
+                               .sort_by { |participant| participant.score(final) }.reverse
+                               .group_by { |participant| participant.score(final) }
     end
-
   end
 end

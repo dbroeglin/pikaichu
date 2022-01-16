@@ -1,5 +1,4 @@
 module MarkingHelper
-
   def icon_from(result)
     case result.status
     when 'hit' then '<i class="far fa-circle"></i>'

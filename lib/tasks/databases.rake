@@ -18,5 +18,5 @@ if Rails.env.development? || Rails.env.test?
         sh "pg_dump -cO #{url} > ../backups/pikaichu_#{DateTime.now.strftime('%Y-%m-%d_%H-%M-%S')}.sql"
       end
     end
- end
+  end
 end

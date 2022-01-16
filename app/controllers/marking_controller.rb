@@ -4,23 +4,23 @@ class MarkingController < ApplicationController
   end
 
   def show
-    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
 
     if current_user.admin? || @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
-        .includes({participants: :results}, teams: [participants: :results])
+                                    .includes({ participants: :results }, teams: [participants: :results])
     elsif @taikai.dojo_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
-        .includes({participants: :results}, teams: [participants: :results])
-        .joins(staffs: [:role])
-        .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
+                                    .includes({ participants: :results }, teams: [participants: :results])
+                                    .joins(staffs: [:role])
+                                    .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
     else
       raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
     end
   end
 
   def update # TODO: Optimize?
-    @taikai = Taikai.includes(participating_dojos: { participants: [ :results ]}).find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
 
@@ -47,11 +47,11 @@ class MarkingController < ApplicationController
     num_marked_results_in_round = @participant.results.round(@result.round).count &:marked?
 
     @result.status = case @result.status
-    when 'hit' then 'miss'
-    when 'miss' then num_marked_results_in_round == 4 ? 'hit' : 'unknown'
-    when 'unknown' then 'hit'
-    else raise "Cannot change value of a result that has not been marked yet"
-    end
+                     when 'hit' then 'miss'
+                     when 'miss' then num_marked_results_in_round == 4 ? 'hit' : 'unknown'
+                     when 'unknown' then 'hit'
+                     else raise "Cannot change value of a result that has not been marked yet"
+                     end
     @result.save!
     respond_to do |format|
       format.turbo_stream {
@@ -74,7 +74,6 @@ class MarkingController < ApplicationController
       }
     end
   end
-
 
   private
 

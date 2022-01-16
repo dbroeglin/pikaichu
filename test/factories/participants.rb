@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :participant do
-    firstname { Faker::Name.first_name  }
+    firstname { Faker::Name.first_name }
     lastname { Faker::Name.last_name }
     participating_dojo { nil }
     team { nil }

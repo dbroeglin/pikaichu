@@ -15,7 +15,6 @@ if Rails.env.development? || Rails.env.test?
       sh 'pg_dump -cO pikaichu_development | heroku psql -a pikaichu-staging'
     end
 
-
     desc "Deploy Azure"
     task azure: :environment do
       raise "Please PG_ADMIN_PASSWORD environment variable" unless ENV['PG_ADMIN_PASSWORD']

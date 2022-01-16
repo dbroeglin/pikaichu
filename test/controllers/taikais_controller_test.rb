@@ -20,17 +20,17 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   test 'should post create' do
     assert_difference 'Taikai.count' do
       post taikais_url @taikai,
-                      params: {
-                        'taikai' => {
-                          'shortname' => 'taikai-to-create',
-                          'name' => 'Taikai to be created',
-                          'description' => "Let's create a new taikai",
-                          'start_date' => '2022-01-06',
-                          'end_date' => '2022-01-07',
-                          'individual' => 'true',
-                          'distributed' => 'true',
-                        },
-                      }
+                       params: {
+                         'taikai' => {
+                           'shortname' => 'taikai-to-create',
+                           'name' => 'Taikai to be created',
+                           'description' => "Let's create a new taikai",
+                           'start_date' => '2022-01-06',
+                           'end_date' => '2022-01-07',
+                           'individual' => 'true',
+                           'distributed' => 'true',
+                         },
+                       }
     end
     assert_redirected_to taikais_url
   end

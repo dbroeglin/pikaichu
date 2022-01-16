@@ -5,7 +5,6 @@ class ParticipantsController < ApplicationController
   before_action :set_parent_association
 
   def new
-
     @participant = @parent_association.build(
       index_in_team: (@parent_association.maximum(:index_in_team) || 0) + 1
     )

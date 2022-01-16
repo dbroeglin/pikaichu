@@ -32,21 +32,24 @@ class Participating_dojosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit if dojo_admin" do
-    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo, 'role.code': :dojo_admin).first.user
+    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo,
+                                             'role.code': :dojo_admin).first.user
     sign_in user
     get edit_taikai_participating_dojo_url @taikai, @participating_dojo
     assert_response :success
   end
 
   test "should not get edit if not dojo_admin" do
-    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo, 'role.code': :dojo_admin).first.user
+    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo,
+                                             'role.code': :dojo_admin).first.user
     sign_in user
     get edit_taikai_participating_dojo_url @taikai, @other_participating_dojo
     assert_unauthorized
   end
 
   test "should patch update" do
-    patch taikai_participating_dojo_url @taikai, @participating_dojo, params: { participating_dojo: @participating_dojo.attributes }
+    patch taikai_participating_dojo_url @taikai, @participating_dojo,
+                                        params: { participating_dojo: @participating_dojo.attributes }
     assert_redirected_to edit_taikai_url @taikai
   end
 

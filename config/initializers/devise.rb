@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # https://gorails.com/episodes/devise-hotwire-turbo
 
 class TurboFailureApp < Devise::FailureApp

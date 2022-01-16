@@ -6,7 +6,7 @@ class DojosController < ApplicationController
   def new
     @dojo = Dojo.new
     @countries = ISO3166::Country.pluck(:alpha2, :name)
-end
+  end
 
   def create
     @dojo = Dojo.new(dojo_params)

@@ -6,18 +6,16 @@ task :import => :environment do
   raise "Please define KYUDOJINS_CSV_FILE" unless ENV['KYUDOJINS_CSV_FILE']
   raise "Please define DOJOS_CSV_FILE" unless ENV['DOJOS_CSV_FILE']
 
-
   kyudojins_data = File.read(ENV['KYUDOJINS_CSV_FILE'], encoding: 'bom|utf-8')
   dojos_data = File.read(ENV['DOJOS_CSV_FILE'], encoding: 'bom|utf-8')
 
   num_lines = 0
   num_inserted = 0
 
-  #Kyudojin.delete_all
+  # Kyudojin.delete_all
   CSV.parse(kyudojins_data,
-      headers: true,
-      col_sep: ';'
-  ) do |row|
+            headers: true,
+            col_sep: ';') do |row|
     attrs = {
       lastname: row['IDE_NOM_IDENTIF'],
       firstname: row['IDE_PRENOM'],
@@ -35,9 +33,8 @@ task :import => :environment do
   num_inserted = 0
 
   CSV.parse(dojos_data,
-      headers: true,
-      col_sep: ';'
-  ) do |row|
+            headers: true,
+            col_sep: ';') do |row|
     attrs = {
       shortname: row['sigle'],
       name: row['designation'],

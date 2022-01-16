@@ -23,6 +23,7 @@ class Taikai < ApplicationRecord
   validates :end_date, presence: true
 
   attr_accessor :current_user
+
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
     self.staffs.create!(user: self.current_user, role: StaffRole.find_by_code(:taikai_admin))

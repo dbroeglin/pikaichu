@@ -32,7 +32,7 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should patch update" do
     patch taikai_participating_dojo_participant_url @taikai, @participating_dojo, @participant,
-      params: { participant: @participant.attributes }
+                                                    params: { participant: @participant.attributes }
     assert_redirected_to edit_taikai_participating_dojo_url @taikai, @participating_dojo
   end
 

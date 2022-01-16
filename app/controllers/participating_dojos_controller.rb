@@ -43,7 +43,8 @@ class ParticipatingDojosController < ApplicationController
     @participating_dojo = @taikai.participating_dojos.find(params[:id])
 
     if @participating_dojo.staffs.any?
-      flash[:alert] = "Unable to remove participating dojo '#{@participating_dojo.display_name}' because it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ", "}"
+      flash[:alert] =
+        "Unable to remove participating dojo '#{@participating_dojo.display_name}' because it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ", "}"
     elsif !@participating_dojo.destroy
       flash[:alert] = "Unable to remove participating dojo #{@participating_dojo.display_name}"
     end
