@@ -298,7 +298,6 @@ else
       sheet.merge_cells("B#{team_start_line}:B#{line}")
       sheet.merge_cells("C#{team_start_line}:C#{line}")
       sheet.merge_cells("D#{team_start_line}:D#{line}")
-      sheet.merge_cells("S#{team_start_line}:S#{line}")
       team_start_line = line + 1
 
       if previous_score != team.score
