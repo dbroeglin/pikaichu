@@ -2,7 +2,7 @@ require "test_helper"
 
 class TaikaiFlowTest < ActionDispatch::IntegrationTest
   setup do
-    #@article = articles(:one)
+    # @article = articles(:one)
   end
 
   test "redirected to sign in page" do

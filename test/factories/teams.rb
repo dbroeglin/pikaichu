@@ -13,7 +13,7 @@ FactoryBot.define do
         create_list(:participant, evaluator.participant_count,
                     participating_dojo: team.participating_dojo,
                     team: team
-                  )
+        )
         team.reload
       end
     end

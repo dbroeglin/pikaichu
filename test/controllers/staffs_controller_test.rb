@@ -5,7 +5,6 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai_1)
     @staff = staffs(:staff_1_taikai_1)
-
   end
 
   test 'should get new' do

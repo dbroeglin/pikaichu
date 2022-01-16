@@ -98,7 +98,6 @@ xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
     sheet.add_row [participating_dojo.display_name, "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? "" : ", #{dojo.city}"}, #{dojo.country_name}"],
       style: [info_label_cell_style, description_style], height: 20
   end
-
 end
 
 
@@ -227,7 +226,6 @@ if @taikai.individual?
     exaequo_start_line = current_line =  2
     previous_score = participants.first&.score
     rows = participants.map do |participant|
-
       if previous_score != participant.score
         previous_score = participant.score
         current_rank = rank

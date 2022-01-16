@@ -31,7 +31,6 @@ task :import => :environment do
 
   puts "Processed #{num_lines} lines, #{Kyudojin.count} kyudojins in database"
 
-
   num_lines = 0
   num_inserted = 0
 
@@ -50,5 +49,4 @@ task :import => :environment do
   end
 
   puts "Processed #{num_lines} lines, #{Dojos.count} dojos in database"
-
 end
