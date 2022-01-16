@@ -227,7 +227,7 @@ if @taikai.individual?
     sheet.merge_cells('M1:P1')
 
     # Order participants by reverse score
-    participants = @taikai.participating_dojos.map(&participants).flatten.sort_by(&:score).reverse
+    participants = @taikai.participating_dojos.map(&:participants).flatten.sort_by(&:score).reverse
 
     current_rank = rank = 1
     exaequo_start_line = current_line = 2
@@ -238,6 +238,7 @@ if @taikai.individual?
         current_rank = rank
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+        sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
         exaequo_start_line = current_line
       end
       rank += 1
@@ -253,6 +254,7 @@ if @taikai.individual?
       end + [participant.score || 0])
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+    sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
 
     rows.each do |row|
       sheet.add_row row, style: row_styles
@@ -304,6 +306,7 @@ else
         current_rank = rank
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+        sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
         exaequo_start_line = current_line
       end
       rank += 1
@@ -317,15 +320,16 @@ else
           team.shortname,
           team.participating_dojo.display_name,
           participant.display_name,
-        ] + (participant.results.map do |result|
-          result_mark(result)
-        end + [
-          participant.score || 0,
-          participant.team.score || 0,
-        ])
-      end
+          ] + (participant.results.map do |result|
+            result_mark(result)
+          end + [
+            participant.score || 0,
+            participant.team.score || 0,
+            ])
+          end
     end.flatten(1)
     sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+    sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
 
     rows.each do |row|
       sheet.add_row row, style: row_styles
