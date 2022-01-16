@@ -5,7 +5,7 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai1)
     @participating_dojo = participating_dojos(:participating_dojo1_taikai1)
-    @other_participating_dojo = participating_dojos(:participating_dojo1_taikai1)
+    @other_participating_dojo = participating_dojos(:participating_dojo2_taikai1)
   end
 
   test "should get new" do

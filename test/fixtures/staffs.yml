@@ -13,6 +13,14 @@ staff2_taikai1:
   participating_dojo: participating_dojo1_taikai1
   user: alain_terieur
 
+staff3_taikai1:
+  firstname: Alex
+  lastname: Terieur
+  taikai: taikai1
+  role: dojo_admin
+  participating_dojo: participating_dojo2_taikai1
+  user: alex_terieur
+
 staff1_taikai2:
   firstname: Alain
   lastname: Térieur

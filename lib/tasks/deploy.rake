@@ -11,6 +11,7 @@ if Rails.env.development? || Rails.env.test?
       sh 'bin/rails dev:prime'
 
       sh 'bin/rails test test/controllers'
+      sh 'bin/rails rubocop'
 
       sh 'git push staging'
 
