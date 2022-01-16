@@ -32,13 +32,13 @@ if Rails.env.development? || Rails.env.test?
              distributed: false,
              individual: true,
              user: User.second,
-             with_staff: false,) # Do not generate additional staff
+             with_staff: false) # Do not generate additional staff
 
       create_list(:taikai_with_participating_dojo, 2, current_user: User.first)
       create_list(:taikai_with_participating_dojo, 2, individual: true, current_user: User.first)
 
       Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
-        participant.results.each_with_index do |result, index|
+        participant.results.each do |result|
           result.status = Faker::Boolean.boolean(true_ratio: 0.3) ? :hit : :miss
           result.save
         end

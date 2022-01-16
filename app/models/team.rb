@@ -4,7 +4,8 @@ class Team < ApplicationRecord
   belongs_to :participating_dojo
   has_many :participants,
            -> { order index_in_team: :asc, lastname: :asc, firstname: :asc },
-           dependent: :destroy
+           dependent: :destroy,
+           inverse_of: :team
   has_many :results, through: :participants
 
   validates :shortname,
@@ -24,7 +25,7 @@ class Team < ApplicationRecord
     if final
       results.select { |r| r.final? && r.status_hit? }.size
     else
-      results.select { |r| r.status_hit? }.size
+      results.select(&:status_hit?).size
     end
   end
 end

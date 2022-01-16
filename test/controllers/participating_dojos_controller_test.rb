@@ -1,11 +1,11 @@
 require "test_helper"
 
-class Participating_dojosControllerTest < ActionDispatch::IntegrationTest
+class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:taikai_1)
-    @participating_dojo = participating_dojos(:participating_dojo_1_taikai_1)
-    @other_participating_dojo = participating_dojos(:participating_dojo_2_taikai_1)
+    @taikai = taikais(:taikai1)
+    @participating_dojo = participating_dojos(:participating_dojo1_taikai1)
+    @other_participating_dojo = participating_dojos(:participating_dojo1_taikai1)
   end
 
   test "should get new" do

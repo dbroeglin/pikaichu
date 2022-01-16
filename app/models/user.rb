@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   self.non_audited_columns = [:encrypted_password]
 
-  scope :confirmed, -> () { where.not("confirmed_at IS NULL") }
+  scope :confirmed, -> { where.not("confirmed_at IS NULL") }
   scope :containing, ->(query) { confirmed.where <<~SQL, "%#{query}%", "%#{query}%", "%#{query}%" }
     email ILIKE ? OR firstname ILIKE ? OR lastname ILIKE ?
   SQL

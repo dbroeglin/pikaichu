@@ -1,3 +1,5 @@
+# rubocop:disable Layout/LineLength
+
 def result_mark(result)
   if result.final?
     case result.status
@@ -103,7 +105,7 @@ xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
 
   @taikai.participating_dojos.each do |participating_dojo|
     dojo = participating_dojo.dojo
-    sheet.add_row [participating_dojo.display_name, "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? "" : ", #{dojo.city}"}, #{dojo.country_name}"],
+    sheet.add_row [participating_dojo.display_name, "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? '' : ", #{dojo.city}"}, #{dojo.country_name}"],
                   style: [info_label_cell_style, description_style], height: 20
   end
 end
@@ -143,7 +145,7 @@ if @taikai.individual?
 
     dojo_start_line = 2
     @taikai.participating_dojos.each do |participating_dojo|
-      participating_dojo.participants.each_with_index do |participant, participant_index|
+      participating_dojo.participants.each do |participant|
         row = [
           "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
           participant.index,
@@ -182,17 +184,19 @@ else
           ]
 
           sheet.add_row row, style: [table_cell_style, table_cell_style, table_cell_style, table_cell_style]
-          if participant_index == 0
-            line = team_start_line + team.participants.size - 1
-            sheet.merge_cells("B#{team_start_line}:B#{line}")
-            sheet.merge_cells("C#{team_start_line}:C#{line}")
-            team_start_line = line + 1
-            if team_index == 0
-              line = dojo_start_line + participating_dojo.participants.size - 1
-              sheet.merge_cells("A#{dojo_start_line}:A#{line}")
-              dojo_start_line = line + 1
-            end
-          end
+
+          next if participant_index.zero?
+
+          line = team_start_line + team.participants.size - 1
+          sheet.merge_cells("B#{team_start_line}:B#{line}")
+          sheet.merge_cells("C#{team_start_line}:C#{line}")
+          team_start_line = line + 1
+
+          next if team_index.zero?
+
+          line = dojo_start_line + participating_dojo.participants.size - 1
+          sheet.merge_cells("A#{dojo_start_line}:A#{line}")
+          dojo_start_line = line + 1
         end
       end
     end
@@ -217,15 +221,13 @@ if @taikai.individual?
       t('.results.round', count: 3), '', '', '',
       t('.results.score'),
     ], style: [vert_header_row_style] + [header_row_style] * 15 + [vert_header_row_style], height: 50
-    sheet.column_widths *([5, 5, 20, 25] + [4] * 12 + [8])
+    sheet.column_widths(*([5, 5, 20, 25] + [4] * 12 + [8]))
     sheet.merge_cells('E1:H1')
     sheet.merge_cells('I1:L1')
     sheet.merge_cells('M1:P1')
 
     # Order participants by reverse score
-    participants = @taikai.participating_dojos.map do |participating_dojo|
-      participating_dojo.participants
-    end.flatten.sort_by(&:score).reverse
+    participants = @taikai.participating_dojos.map(&participants).flatten.sort_by(&:score).reverse
 
     current_rank = rank = 1
     exaequo_start_line = current_line = 2
@@ -246,9 +248,9 @@ if @taikai.individual?
         participant.index,
         participant.participating_dojo.display_name,
         participant.display_name,
-      ] + (participant.results.map { |result|
+      ] + (participant.results.map do |result|
         result_mark(result)
-      } + [participant.score || 0])
+      end + [participant.score || 0])
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
 
@@ -275,16 +277,15 @@ else
       t('.results.round', count: 3), '', '', '',
       t('.results.score'),
       t('.results.team_score'),
-    ], style: [vert_header_row_style] + [header_row_style] * 16 + [vert_header_row_style, vert_header_row_style], height: 50
-    sheet.column_widths *([3, 3, 15, 15, 25] + [4] * 12 + [4, 4])
+    ], style: [vert_header_row_style] + [header_row_style] * 16 +
+              [vert_header_row_style, vert_header_row_style], height: 50
+    sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * 12 + [4, 4]))
     sheet.merge_cells('F1:I1')
     sheet.merge_cells('J1:M1')
     sheet.merge_cells('N1:Q1')
 
     # Order teams by reverse score
-    teams = @taikai.participating_dojos.map do |participating_dojo|
-      participating_dojo.teams
-    end.flatten.sort_by(&:score).reverse
+    teams = @taikai.participating_dojos.map(&:teams).flatten.sort_by(&:score).reverse
 
     current_rank = rank = 1
     team_start_line = exaequo_start_line = current_line = 2
@@ -316,9 +317,9 @@ else
           team.shortname,
           team.participating_dojo.display_name,
           participant.display_name,
-        ] + (participant.results.map { |result|
+        ] + (participant.results.map do |result|
           result_mark(result)
-        } + [
+        end + [
           participant.score || 0,
           participant.team.score || 0,
         ])

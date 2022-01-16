@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :email])
   end
 
-  def user_not_authorized(exception)
+  def user_not_authorized(_)
     # Here I've got the exception with :policy, :record and :query,
     # also I can access :current_user so I could go for a condition,
     # but that would include duplicated code from  ItemPolicy#show?.

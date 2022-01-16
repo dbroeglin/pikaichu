@@ -1,6 +1,6 @@
 require 'csv'
 
-task :import => :environment do
+task import: :environment do
   Rails.logger.level = 0
 
   raise "Please define KYUDOJINS_CSV_FILE" unless ENV['KYUDOJINS_CSV_FILE']
@@ -10,7 +10,6 @@ task :import => :environment do
   dojos_data = File.read(ENV['DOJOS_CSV_FILE'], encoding: 'bom|utf-8')
 
   num_lines = 0
-  num_inserted = 0
 
   # Kyudojin.delete_all
   CSV.parse(kyudojins_data,
@@ -30,7 +29,6 @@ task :import => :environment do
   puts "Processed #{num_lines} lines, #{Kyudojin.count} kyudojins in database"
 
   num_lines = 0
-  num_inserted = 0
 
   CSV.parse(dojos_data,
             headers: true,

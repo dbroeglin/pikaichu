@@ -3,9 +3,7 @@ class Participant < ApplicationRecord
 
   belongs_to :participating_dojo
   belongs_to :team, optional: true
-  has_many :results, -> {
-    order(round: :asc, index: :asc)
-  }, dependent: :destroy do
+  has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :participant, dependent: :destroy do
     def round(index)
       where(round: index)
     end
@@ -37,7 +35,7 @@ class Participant < ApplicationRecord
     if final
       results.select { |r| r.final? && r.status_hit? }.size
     else
-      results.select { |r| r.status_hit? }.size
+      results.select(&:status_hit?).size
     end
   end
 
@@ -50,11 +48,11 @@ class Participant < ApplicationRecord
   end
 
   def marking?
-    num_marked = results.count &:marked?
-    num_finalized = results.count &:final?
+    num_marked = results.count(&:marked?)
+    num_finalized = results.count(&:final?)
 
     num_marked != participating_dojo.taikai.total_num_arrows &&
-      (num_marked == 0 ||
+      (num_marked.zero? ||
         num_finalized == num_marked ||
           (num_marked % participating_dojo.taikai.num_arrows != 0))
   end

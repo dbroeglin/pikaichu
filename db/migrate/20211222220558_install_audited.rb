@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/CreateTableWithTimestamps
+
 class InstallAudited < ActiveRecord::Migration[7.0]
   def self.up
     create_table :audits, :force => true do |t|

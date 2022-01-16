@@ -89,9 +89,7 @@ class ParticipantsController < ApplicationController
   end
 
   def set_team
-    if params[:team_id]
-      @team = @participating_dojo.teams.find(params[:team_id])
-    end
+    @team = @participating_dojo.teams.find(params[:team_id]) if params[:team_id]
   end
 
   def set_parent_association

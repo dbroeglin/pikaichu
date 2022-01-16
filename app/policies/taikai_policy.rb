@@ -2,6 +2,7 @@ class TaikaiPolicy < ApplicationPolicy
   attr_reader :user, :taikai
 
   def initialize(user, taikai)
+    super
     @user = user
     @taikai = taikai
   end

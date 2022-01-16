@@ -152,4 +152,51 @@ Rails/DynamicFindBy:
   Enabled: false
 Style/TrailingCommaInHashLiteral:
   Enabled: false
-
+Metrics/BlockLength:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Lint/MissingCopEnableDirective:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+Naming/BlockForwarding: # new in 1.24
+  Enabled: true
+Style/FileRead: # new in 1.24
+  Enabled: true
+Style/FileWrite: # new in 1.24
+  Enabled: true
+Style/MapToHash: # new in 1.24
+  Enabled: true
+Rails/CompactBlank: # new in 2.13
+  Enabled: true
+Rails/DurationArithmetic: # new in 2.13
+  Enabled: true
+Rails/RedundantPresenceValidationOnBelongsTo: # new in 2.13
+  Enabled: true
+Rails/RootJoinChain: # new in 2.13
+  Enabled: true
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
+Style/RedundantSelf:
+  Enabled: false
+Rails/OutputSafety:
+  Enabled: false

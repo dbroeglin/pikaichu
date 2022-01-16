@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/ClassLength
+
 module ApplicationHelper
   class BulmaFormBuilder < ActionView::Helpers::FormBuilder
     delegate :tag, :safe_join, to: :@template
@@ -39,7 +41,7 @@ module ApplicationHelper
 
     def enum_input(method, options = {})
       field_div(method, options) do
-        collection = @object.class.send(method.to_s.pluralize).map do |key, value|
+        collection = @object.class.send(method.to_s.pluralize).map do |key, _|
           [key, @object.class.human_enum_value(method, key)]
         end
         safe_join [
@@ -55,7 +57,7 @@ module ApplicationHelper
                 merge_input_options(
                   {
                     class:
-                      "select #{'is-invalid' if has_error?(method)}",
+                      "select #{'is-invalid' if error?(method)}",
                   },
                   options[:input_html],
                 ),
@@ -70,9 +72,7 @@ module ApplicationHelper
       field_div(method, options) do
         safe_join [
           (
-            unless options[:label] == false
-              label(method, options[:label])
-            end
+            label(method, options[:label]) unless options[:label] == false
           ),
           (
             tag.div class: 'control' do
@@ -81,7 +81,7 @@ module ApplicationHelper
                 merge_input_options(
                   {
                     class:
-                      "input #{'is-danger' if has_error?(method)}",
+                      "input #{'is-danger' if error?(method)}",
                   },
                   options[:input_html],
                 ),
@@ -109,7 +109,7 @@ module ApplicationHelper
           merge_input_options(
             {
               class:
-                "#{'select' unless multiple} #{'is-invalid' if has_error?(method)}",
+                "#{'select' unless multiple} #{'is-invalid' if error?(method)}",
             },
             options[:input_html],
           ),
@@ -138,16 +138,14 @@ module ApplicationHelper
       field_div(method, options) do
         safe_join [
           (
-            unless options[:label] == false
-              label(method, options[:label])
-            end
+            label(method, options[:label]) unless options[:label] == false
           ),
           text_area(
             method,
             merge_input_options(
               {
                 class:
-                  "textarea #{'is-invalid' if has_error?(method)}",
+                  "textarea #{'is-invalid' if error?(method)}",
               },
               options[:input_html],
             ),
@@ -159,7 +157,7 @@ module ApplicationHelper
     def string_control(method, options = {})
       case object_type_for_method(method)
       when :date
-        birthday = method.to_s =~ /birth/
+        # birthday = method.to_s =~ /birth/
         date_field(
           method,
           merge_input_options(options, { data: { datepicker: true } }),
@@ -242,7 +240,7 @@ module ApplicationHelper
         .map { |error| tag.div error.full_message, class: 'help is-danger' }
     end
 
-    def has_error?(method)
+    def error?(method)
       return false unless @object.respond_to?(:errors)
 
       @object.errors.key?(method)
@@ -251,7 +249,7 @@ module ApplicationHelper
     def merge_input_options(options, user_options)
       return options if user_options.nil?
 
-      # TODO handle class merging here
+      # TODO: handle class merging here
       options.merge(user_options)
     end
   end

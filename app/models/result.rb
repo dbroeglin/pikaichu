@@ -24,8 +24,8 @@ class Result < ApplicationRecord
   def cannot_update_if_finalized
     #  Make sure once final is true the object cannot be changed anymore,
     #  even the final boolean
-    if final? && changes['final'].nil? || !final? && changes['final']&.first
-      errors.add(:result_id, "is already finalized")
-    end
+    finalized = final? && changes['final'].nil? || !final? && changes['final']&.first
+
+    errors.add(:result_id, "is already finalized") if finalized
   end
 end

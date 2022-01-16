@@ -12,8 +12,8 @@ class ApplicationRecord < ActiveRecord::Base
 
   class << self
     def human_enum(enum_name)
-      self.send(:define_method, "human_#{enum_name}") do
-        self.class.human_enum_value(enum_name, self.send(enum_name))
+      send(:define_method, "human_#{enum_name}") do
+        self.class.human_enum_value(enum_name, send(enum_name))
       end
     end
   end

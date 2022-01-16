@@ -5,7 +5,7 @@ class DojosController < ApplicationController
 
   def new
     @dojo = Dojo.new
-    @countries = ISO3166::Country.pluck(:alpha2, :name)
+    @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
   def create
@@ -20,7 +20,7 @@ class DojosController < ApplicationController
 
   def edit
     @dojo = Dojo.find(params[:id])
-    @countries = ISO3166::Country.pluck(:alpha2, :name)
+    @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
   def update
@@ -29,19 +29,18 @@ class DojosController < ApplicationController
     if @dojo.update(dojo_params)
       redirect_to action: 'index'
     else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @dojo = Dojo.find(params[:id])
 
-    if @dojo.destroy
-      redirect_to action: 'index'
-    else
+    unless @dojo.destroy
       # TODO: I18n
       flash[:alert] = "Unable to remove dojo '#{@dojo.shortname}', it probably still has an associated Taikai"
-      redirect_to action: 'index'
     end
+    redirect_to action: 'index'
   end
 
   private

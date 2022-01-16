@@ -9,9 +9,7 @@ class ParticipatingDojosController < ApplicationController
     @participating_dojo = @taikai.participating_dojos.build(participating_dojo_params)
     @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
 
-    if @participating_dojo.display_name.blank?
-      @participating_dojo.display_name = @dojo.shortname
-    end
+    @participating_dojo.display_name = @dojo.shortname if @participating_dojo.display_name.blank?
     if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
     else
@@ -28,9 +26,7 @@ class ParticipatingDojosController < ApplicationController
     @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
 
     @participating_dojo.assign_attributes(participating_dojo_params)
-    if @participating_dojo.display_name.blank?
-      @participating_dojo.display_name = @dojo.shortname
-    end
+    @participating_dojo.display_name = @dojo.shortname if @participating_dojo.display_name.blank?
 
     if @participating_dojo.save
       redirect_to controller: 'taikais', action: 'edit', id: @taikai
@@ -44,7 +40,8 @@ class ParticipatingDojosController < ApplicationController
 
     if @participating_dojo.staffs.any?
       flash[:alert] =
-        "Unable to remove participating dojo '#{@participating_dojo.display_name}' because it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ", "}"
+        "Unable to remove participating dojo '#{@participating_dojo.display_name}' because" \
+        " it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ', '}"
     elsif !@participating_dojo.destroy
       flash[:alert] = "Unable to remove participating dojo #{@participating_dojo.display_name}"
     end

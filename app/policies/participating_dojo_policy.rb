@@ -2,6 +2,7 @@ class ParticipatingDojoPolicy < ApplicationPolicy
   attr_reader :user, :participating_dojo
 
   def initialize(user, participating_dojo)
+    super
     @user = user
     @participating_dojo = participating_dojo
   end
@@ -18,7 +19,6 @@ class ParticipatingDojoPolicy < ApplicationPolicy
   end
 
   class Scope < Scope
-    def resolve
-    end
+    def resolve; end
   end
 end

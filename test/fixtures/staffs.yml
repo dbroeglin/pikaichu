@@ -1,42 +1,42 @@
-staff_1_taikai_1:
+staff1_taikai1:
   firstname: Jean
   lastname: Bon
-  taikai: taikai_1
+  taikai: taikai1
   role: taikai_admin
   user: jean_bon
 
-staff_2_taikai_1:
+staff2_taikai1:
   firstname: Alain
   lastname: Terieur
-  taikai: taikai_1
+  taikai: taikai1
   role: dojo_admin
-  participating_dojo: participating_dojo_1_taikai_1
+  participating_dojo: participating_dojo1_taikai1
   user: alain_terieur
 
-staff_1_taikai_2:
+staff1_taikai2:
   firstname: Alain
   lastname: Térieur
-  taikai: taikai_2
+  taikai: taikai2
   role: taikai_admin
   user: alain_terieur
 
-staff_1_taikai_3:
+staff1_taikai3:
   firstname: Jean
   lastname: Bon
-  taikai: taikai_3
+  taikai: taikai3
   role: taikai_admin
   user: jean_bon
 
-staff_1_taikai_4:
+staff1_taikai4:
   firstname: Jean
   lastname: Bon
-  taikai: taikai_4
+  taikai: taikai4
   role: taikai_admin
   user: jean_bon
 
-staff_1_taikai_5:
+staff1_taikai5:
   firstname: Alain
   lastname: Térieur
-  taikai: taikai_5
+  taikai: taikai5
   role: taikai_admin
   user: alain_terieur

@@ -1,3 +1,5 @@
+# rubocop:disable Layout/LineLength
+
 if Rails.env.development? || Rails.env.test?
 
   namespace :deploy do
@@ -43,8 +45,6 @@ if Rails.env.development? || Rails.env.test?
         docker tag pikaichu_production #{acr_server}/pikaichu:production
         docker push #{acr_server}/pikaichu:production
       )
-
-      exit
 
       sh %(
        # az postgres flexible-server create --resource-group #{rg_name} --name #{pg_name} --public 185.39.141.109-185.39.141.109 --admin-user pikaichu --admin-password #{ENV['PG_ADMIN_PASSWORD']} --output json

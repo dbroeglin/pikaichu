@@ -3,8 +3,8 @@ require 'test_helper'
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:taikai_1)
-    @other_taikai = taikais(:taikai_2)
+    @taikai = taikais(:taikai1)
+    @other_taikai = taikais(:taikai2)
   end
 
   test 'should get index' do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_203736) do
+ActiveRecord::Schema.define(version: 2022_01_16_155707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_203736) do
     t.boolean "individual", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 
   create_table "teams", force: :cascade do |t|
@@ -146,6 +147,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_203736) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["participating_dojo_id", "index"], name: "teams_by_participating_dojo_index", unique: true
+    t.index ["participating_dojo_id", "shortname"], name: "by_teams_shortname", unique: true
     t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"
   end
 
