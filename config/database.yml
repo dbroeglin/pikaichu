@@ -82,5 +82,4 @@ test:
 production:
   <<: *default
   database: pikaichu_production
-  username: pikaichu
   password: <%= ENV['PIKAICHU_DATABASE_PASSWORD'] %>
