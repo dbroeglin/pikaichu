@@ -1,10 +1,11 @@
 FROM ruby:3.0.3-slim-bullseye
 
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
     postgresql-client \
-    nodejs npm \
+   nodejs npm \
     git \
     && npm install -g yarn \
     && gem update --system \
@@ -25,13 +26,20 @@ ENV PORT=80
 # make 'docker logs' work
 ENV RAILS_LOG_TO_STDOUT=true
 
-# copy the source
 WORKDIR /app
+
+COPY Gemfile Gemfile.lock /app/
+RUN bundle install -j4
+
+COPY package.json yarn.lock /app/
+RUN yarn install
+
 COPY . /app
 RUN rm -f tmp/pids/server.pid
 RUN mkdir -p tmp/pids
-RUN bundle install -j4
 RUN bin/rails assets:precompile
 
-# build and start
+ARG BUILD_VERSION
+ENV APP_VERSION="v$BUILD_VERSION"
+
 CMD bundle exec puma -C config/puma.rb
