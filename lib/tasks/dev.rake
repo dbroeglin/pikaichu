@@ -13,12 +13,12 @@ if Rails.env.development? || Rails.env.test?
       create(:user, firstname: "Jean", lastname: "Bon", admin: true)
       create_list(:user, 15)
 
-      create(:staff_role, code: :taikai_admin,    label: 'Administrator')
-      create(:staff_role, code: :dojo_admin,      label: 'Dojo Administrator')
-      create(:staff_role, code: :chairman,        label: 'Chairman')
-      create(:staff_role, code: :marking_referee, label: 'Marking Referee')
-      create(:staff_role, code: :shajo_referee,   label: 'Shajo Referee')
-      create(:staff_role, code: :yatori,          label: 'Yatori')
+      create(:staff_role, code: :taikai_admin,    label_fr: 'Administrateur',         label_en: 'Administrator')
+      create(:staff_role, code: :dojo_admin,      label_fr: 'Administrateur de club', label_en: 'Dojo Administrator')
+      create(:staff_role, code: :chairman,        label_fr: 'Directeur du tournoi',   label_en: 'Chairman')
+      create(:staff_role, code: :marking_referee, label_fr: 'Enregistreur',           label_en: 'Marking Referee')
+      create(:staff_role, code: :shajo_referee,   label_fr: 'Juge de shajo',          label_en: 'Shajo Referee')
+      create(:staff_role, code: :yatori,          label_fr: 'Assistant Yatori',       label_en: 'Yatori')
       # Add other staff roles
 
       create_list(:dojo, 3)

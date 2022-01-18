@@ -158,6 +158,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    mobility (1.2.5)
+      i18n (>= 0.6.10, < 2)
+      request_store (~> 1.0)
     msgpack (1.4.2)
     net-imap (0.2.3)
       digest
@@ -224,6 +227,8 @@ GEM
     regexp_parser (2.2.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -315,6 +320,7 @@ DEPENDENCIES
   faker
   jbuilder
   jsbundling-rails
+  mobility (~> 1.2.5)
   pg (~> 1.1)
   puma (~> 5.0)
   pundit

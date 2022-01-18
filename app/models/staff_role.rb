@@ -1,5 +1,7 @@
 class StaffRole < ApplicationRecord
+  extend Mobility
   audited
+  translates :label, :description
 
   def taikai_admin?
     code == 'taikai_admin'

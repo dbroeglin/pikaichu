@@ -6,7 +6,7 @@ class Taikai < ApplicationRecord
       joins(:role)
         .left_outer_joins(:participating_dojo)
         .order(
-          'staff_roles.label': :asc,
+          Arel.sql("staff_roles.label->>#{ActiveRecord::Base.connection.quote(I18n.locale)} ASC"),
           'participating_dojos.display_name': :asc,
         )
     end

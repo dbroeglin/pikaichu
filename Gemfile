@@ -64,9 +64,12 @@ gem "bulma-rails", "~> 0.9.2"
 gem 'country_select'
 
 gem 'caxlsx', "3.1.0"
+
 gem 'caxlsx_rails'
 
 gem 'audited'
+
+gem 'mobility', '~> 1.2.5'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
