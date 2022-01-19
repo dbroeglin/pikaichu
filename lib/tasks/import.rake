@@ -7,7 +7,7 @@ namespace :import do
     StaffRole.find_by(code: :chairman).update(label_fr: 'Directeur du tournoi', label_en: 'Chairman')
     StaffRole.find_by(code: :marking_referee).update(label_fr: 'Enregistreur', label_en: 'Marking Referee')
     StaffRole.find_by(code: :shajo_referee).update(label_fr: 'Juge de shajo', label_en: 'Shajo Referee')
-    StaffRole.find_by(code: :yatori).update(label_fr: 'Assistant Yatori', label_en: 'Yatori')
+    StaffRole.find_by(code: :yatori).update(label_fr: 'Yatori', label_en: 'Yatori')
   end
 
   task fr: :environment do
