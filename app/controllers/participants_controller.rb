@@ -93,8 +93,8 @@ class ParticipantsController < ApplicationController
           alerts << "#{row['Prénom']} #{row['Nom']}"
         end
       end
-      flash[:notice] = t :import_notices, names: notices.join(', '), count: notices.size
-      flash[:alert] = t :import_alerts, names: alerts.join(', '), count: alerts.size
+      flash[:notice] = t :import_notices, names: notices.join(', '), count: notices.size if notices.any?
+      flash[:alert] = t :import_alerts, names: alerts.join(', '), count: alerts.size if alerts.any?
     else
       flash[:alert] = t :file_missing
     end
