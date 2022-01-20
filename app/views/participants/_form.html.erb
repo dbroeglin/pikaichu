@@ -14,7 +14,7 @@
   <% end %>
 
   <div class="field">
-    <label class=" label" for="user"><%= Participant.human_attribute_name :kyudojin %></label>
+    <label class=" label" for="user"><%= t('.search_kyudojin') %></label>
     <div class="control">
       <div class="dropdown is-active" data-controller="autocomplete participant_complete"
            data-autocomplete-url-value="<%= search_kyudojins_path %>">
@@ -36,12 +36,12 @@
     </div>
   </div>
 
+  <div class="is-divider" data-content="<%= t 'or_divider' %>"></div>
+
   <%= f.input :firstname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
   <%= f.input :lastname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
   <% if @taikai.individual %>
   <%= f.input :index %>
-  <% else %>
-  <%= f.input :index_in_team %>
   <% end %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3" %>

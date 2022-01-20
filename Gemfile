@@ -73,6 +73,8 @@ gem 'mobility', '~> 1.2.5'
 
 gem "roo", "~> 2.8.0"
 
+gem 'acts_as_list'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]

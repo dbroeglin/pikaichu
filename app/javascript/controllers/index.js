@@ -4,5 +4,11 @@
 
 import { application } from "./application"
 
+import DragController from "./drag_controller.js"
+application.register("drag", DragController)
+
+import DragTeamsController from "./drag_teams_controller.js"
+application.register("drag-teams", DragTeamsController)
+
 import ParticipantCompleteController from "./participant_complete_controller.js"
 application.register("participant-complete", ParticipantCompleteController)

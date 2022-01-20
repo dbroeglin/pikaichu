@@ -1,12 +1,11 @@
 <table class="table is-narrow is-hoverable">
   <thead>
     <tr class="has-text-centered">
-      <th title="<%= t('activerecord.attributes.participant.index_title') %>"><%= Participant.human_attribute_name :index %></th>
       <th><%= Participant.human_attribute_name :firstname %></th>
       <th><%= Participant.human_attribute_name :lastname %></th>
       <th></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_participant_path(taikai, participating_dojo),
+        <%= link_to new_taikai_participating_dojo_team_participant_path(taikai, participating_dojo, team),
                     class: "button is-small has-background-light",
                     title: t('participants.new.title') do %>
           <span class="icon is-small">
@@ -17,24 +16,24 @@
       </th>
     </tr>
   </thead>
-  <tbody>
-    <% participating_dojo.participants.each do |participant| %>
-    <tr>
-      <td><%= participant.index %></td>
+  <tbody data-controller="drag"
+         data-drag-url="<%= reorder_taikai_participating_dojo_team_participant_path taikai, participating_dojo, team, ':id' %>">
+    <% team.participants.each do |participant| %>
+    <tr data-id="<%= participant.id %>">
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
       <td>
         <% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %>
       </td>
       <td>
-        <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant),
+        <%= link_to edit_taikai_participating_dojo_team_participant_path(taikai, participating_dojo, team, participant),
                     class: "button is-small has-background-light",
                     title: t('participants.edit.title') do %>
           <span class="icon is-small">
             <i class="fas fa-pen"></i>
           </span>
         <% end %>
-        <%= link_to [taikai, participating_dojo, participant],
+        <%= link_to [taikai, participating_dojo, team, participant],
                     class: "button is-small has-background-light",
                     data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
                     title: t('participants.delete.title') do %>

@@ -1,6 +1,8 @@
 class Participant < ApplicationRecord
   audited
 
+  acts_as_list column: :index_in_team, scope: :team
+
   belongs_to :participating_dojo
   belongs_to :team, optional: true
   has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :participant, dependent: :destroy do

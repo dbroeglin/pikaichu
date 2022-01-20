@@ -52,6 +52,7 @@ fr:
     edit:
       title: Modifier un participant
     form:
+      search_kyudojin: Rechercher dans la base de la fédération
       placeholders:
         kyudojin: Commencez à saisir un nom...
   participating_dojos:

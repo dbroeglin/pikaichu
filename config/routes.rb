@@ -34,7 +34,11 @@ Rails.application.routes.draw do
         end
       end
       resources :teams do
-        resources :participants
+        resources :participants do
+          member do
+            patch 'reorder'
+          end
+        end
       end
     end
     resources :staffs

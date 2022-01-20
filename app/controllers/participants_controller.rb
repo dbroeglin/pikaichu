@@ -55,6 +55,14 @@ class ParticipantsController < ApplicationController
     redirect_to_edit
   end
 
+  def reorder
+    @participant = @parent_association.find(params[:id])
+
+    @participant.insert_at(params[:index].to_i)
+
+    head :ok
+  end
+
   def import
     if params[:excel]
       # TODO: minimal file validation here

@@ -7,6 +7,7 @@
     "bulma": "^0.9.3",
     "esbuild": "^0.14.8",
     "sass": "^1.45.1",
+    "sortablejs": "^1.14.0",
     "stimulus-autocomplete": "^3.0.0-rc.5"
   },
   "scripts": {

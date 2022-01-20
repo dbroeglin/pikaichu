@@ -16,7 +16,7 @@
           <p class="card-header-title"><%= Participant.model_name.human.pluralize %></p>
         </header>
         <div class="card-content">
-          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: @team %>
+          <%= render "participants/list_in_team", taikai: @taikai, participating_dojo: @participating_dojo, team: @team %>
         </div>
       </div>
     </div>
