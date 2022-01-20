@@ -1,9 +1,10 @@
-<table class="table is-narrow is-hoverable">
+<table class="table is-narrow is-hoverable is-fullwidth is-size-6">
   <thead>
     <tr class="has-text-centered">
       <th title="<%= t('activerecord.attributes.participant.index_title') %>"><%= Participant.human_attribute_name :index %></th>
       <th><%= Participant.human_attribute_name :firstname %></th>
       <th><%= Participant.human_attribute_name :lastname %></th>
+      <th><%= Participant.human_attribute_name :club %></th>
       <th></th>
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_participant_path(taikai, participating_dojo),
@@ -23,9 +24,8 @@
       <td><%= participant.index %></td>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
-      <td>
-        <% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %>
-      </td>
+      <td><%= participant.club %></td>
+      <td><% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %></td>
       <td>
         <%= link_to edit_taikai_participating_dojo_participant_path(taikai, participating_dojo, participant),
                     class: "button is-small has-background-light",
@@ -37,7 +37,7 @@
         <%= link_to [taikai, participating_dojo, participant],
                     class: "button is-small has-background-light",
                     data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
-                    title: t('participants.delete.title') do %>
+                    title: t('participants.destroy.title') do %>
           <span class="icon is-small">
             <i class="far fa-trash-can"></i>
           </span>

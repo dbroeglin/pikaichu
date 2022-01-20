@@ -25,15 +25,6 @@ class Participant < ApplicationRecord
               allow_blank: true,
             }
 
-  validates :index_in_team,
-            uniqueness: {
-              scope: :team_id,
-              allow_blank: true,
-            },
-            presence: {
-              unless: -> { team_id.blank? }
-            }
-
   def display_name
     "#{firstname} #{lastname}"
   end

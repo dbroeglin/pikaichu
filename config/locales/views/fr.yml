@@ -1,7 +1,7 @@
 fr:
   confirm_html: Êtes-vous certain&nbsp;?
   edit: Modifier
-  delete: Effacer
+  destroy: Effacer
   new: Ajouter
   save: Sauvegarder
   cancel: Retour
@@ -51,12 +51,18 @@ fr:
   participants:
     edit:
       title: Modifier un participant
+    destroy:
+      title: Retirer un participant
+    new:
+      title: Ajouter un participant
     form:
       search_kyudojin: Rechercher dans la base de la fédération
       placeholders:
         kyudojin: Commencez à saisir un nom...
+      help:
+        kyudojin: Tapez une partie de nom ou de prénom pour effectuer une recherche dans la base de la fédération. Si vous sélectionnez un.e kyudojin inscrit à la fédération il est inutile de remplir les champs ci-dessous.
   participating_dojos:
-    delete:
+    destroy:
       title: Effacer un club hôte
     edit:
       title: Modifier un club hôte
@@ -113,7 +119,7 @@ fr:
     new:
       title: Ajouter un Taikai
   teams:
-    delete:
+    destroy:
       title: Effacer une équipe
     edit:
       title: Modifier une équipe
@@ -123,7 +129,7 @@ fr:
       placeholders:
         index: Laisser blanc pour un choix par défaut...
   staffs:
-    delete: Effacer un staff
+    destroy: Effacer un staff
     edit:
       title: Modifier un staff
     new:

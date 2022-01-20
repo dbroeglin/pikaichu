@@ -19,11 +19,13 @@ class ParticipantsController < ApplicationController
     if @participant.kyudojin
       @participant.firstname = @participant.kyudojin.firstname
       @participant.lastname = @participant.kyudojin.lastname
+      @participant.club = @participant.kyudojin.federation_club
     end
 
     if @participant.save && @participant.generate_empty_results
       redirect_to_edit
     else
+      p @participant.errors
       render :new, status: :unprocessable_entity
     end
   end
@@ -39,6 +41,7 @@ class ParticipantsController < ApplicationController
     if @participant.kyudojin
       @participant.firstname = @participant.kyudojin.firstname
       @participant.lastname = @participant.kyudojin.lastname
+      @participant.club = @participant.kyudojin.federation_club
     end
 
     if @participant.save
@@ -115,12 +118,10 @@ class ParticipantsController < ApplicationController
     params
       .require(:participant)
       .permit(
-        :excel,
         :index,
-        :index_in_team,
         :firstname,
         :lastname,
-        :taikai_id,
+        :club,
         :participating_dojo_id,
         :team_id,
         :kyudojin_id

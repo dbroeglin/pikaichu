@@ -33,13 +33,15 @@
       <% participant.errors.where(:kyudojin).map do |error| %>
         <p class="help is-danger"><%= error.full_message %></p>
       <% end %>
+      <p class="help"><%= t '.help.kyudojin' %></p>
     </div>
   </div>
 
   <div class="is-divider" data-content="<%= t 'or_divider' %>"></div>
 
-  <%= f.input :firstname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
-  <%= f.input :lastname, input_html: { placeholder: "Leave blank to complete from federation data..." } %>
+  <%= f.input :firstname %>
+  <%= f.input :lastname %>
+  <%= f.input :club %>
   <% if @taikai.individual %>
   <%= f.input :index %>
   <% end %>

@@ -36,9 +36,10 @@ fr:
         name: Nom entier
         shortname: Nom court
       participant:
+        club: Club
         display_name: Nom
         firstname: Prénom
-        index: Num.
+        index: Nb
         index_title: Numéro de participant
         index_in_team: Ordre dans l'équipe
         kyudojin: Kyudojin
