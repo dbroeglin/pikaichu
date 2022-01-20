@@ -25,7 +25,6 @@ class ParticipantsController < ApplicationController
     if @participant.save && @participant.generate_empty_results
       redirect_to_edit
     else
-      p @participant.errors
       render :new, status: :unprocessable_entity
     end
   end
