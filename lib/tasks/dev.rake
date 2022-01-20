@@ -18,7 +18,7 @@ if Rails.env.development? || Rails.env.test?
       create(:staff_role, code: :chairman,        label_fr: 'Directeur du tournoi',   label_en: 'Chairman')
       create(:staff_role, code: :marking_referee, label_fr: 'Enregistreur',           label_en: 'Marking Referee')
       create(:staff_role, code: :shajo_referee,   label_fr: 'Juge de shajo',          label_en: 'Shajo Referee')
-      create(:staff_role, code: :yatori,          label_fr: 'Assistant Yatori',       label_en: 'Yatori')
+      create(:staff_role, code: :yatori,          label_fr: 'Yatori',                 label_en: 'Yatori')
       # Add other staff roles
 
       create_list(:dojo, 3)
