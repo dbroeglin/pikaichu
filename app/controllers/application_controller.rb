@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     # also I can access :current_user so I could go for a condition,
     # but that would include duplicated code from  ItemPolicy#show?.
     flash[:alert] = "You are not permitted to execute this action."
-    redirect_to root_path
+    redirect_to root_path, method: :get
   end
 end

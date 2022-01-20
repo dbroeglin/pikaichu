@@ -42,3 +42,10 @@ fr:
   draw_error: Un erreur est survenue pendant le tirage au sort. Contactez l'administrateur.
   draw_ok: Le tirage au sort a été effectué.
   search_results: Résultats de la recherche
+  file_missing: Aucun fichier importé.
+  import_alerts:
+    one: "%{names} n'a pas pu être importé."
+    other: "Les kyudojin suivants n'ont pas pu être importés : %{names}."
+  import_notices:
+    one: "%{names} n'a pas été trouvé dans la base FFJDA."
+    other: "Les kyudojin suivants n'ont pas été trouvés dans la base FFJDA : %{names}."

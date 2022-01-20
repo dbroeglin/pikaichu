@@ -1,6 +1,7 @@
 require 'csv'
 
 namespace :import do
+  desc "Import internationalized Staff Roles"
   task staff_roles: :environment do
     StaffRole.find_by(code: :taikai_admin).update(label_fr: 'Administrateur', label_en: 'Administrator')
     StaffRole.find_by(code: :dojo_admin).update(label_fr: 'Administrateur de club', label_en: 'Dojo Administrator')
@@ -10,6 +11,7 @@ namespace :import do
     StaffRole.find_by(code: :yatori).update(label_fr: 'Yatori', label_en: 'Yatori')
   end
 
+  desc "Import France federation data"
   task fr: :environment do
     Rails.logger.level = 0
 
@@ -53,6 +55,6 @@ namespace :import do
       num_lines += 1
     end
 
-    puts "Processed #{num_lines} lines, #{Dojos.count} dojos in database"
+    puts "Processed #{num_lines} lines, #{Dojo.count} dojos in database"
   end
 end

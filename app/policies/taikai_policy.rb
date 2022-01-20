@@ -21,6 +21,10 @@ class TaikaiPolicy < ApplicationPolicy
     update?
   end
 
+  def import_participants?
+    update?
+  end
+
   def destroy?
     update?
   end

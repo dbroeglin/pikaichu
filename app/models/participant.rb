@@ -12,6 +12,11 @@ class Participant < ApplicationRecord
   belongs_to :kyudojin, optional: true
 
   validates :firstname, :lastname, presence: true
+  validates :kyudojin,
+            uniqueness: {
+              scope: :participating_dojo,
+              allow_blank: true,
+            }
   validates :index,
             uniqueness: {
               scope: :participating_dojo,

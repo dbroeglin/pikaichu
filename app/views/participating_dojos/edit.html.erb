@@ -43,14 +43,44 @@
         </div>
       </div>
       <% if @taikai.individual %>
-      <div class="card mt-5">
-        <header class="card-header">
-          <p class="card-header-title"><%= Participant.model_name.human count: 2 %></p>
-        </header>
-        <div class="card-content">
-          <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: nil %>
+        <div class="card mt-5">
+          <header class="card-header">
+            <p class="card-header-title"><%= Participant.model_name.human count: 2 %></p>
+          </header>
+          <div class="card-content">
+            <%= render "participants/list", taikai: @taikai, participating_dojo: @participating_dojo, team: nil %>
+          </div>
         </div>
-      </div>
+        <% if @participating_dojo.id && policy(@participating_dojo).import? %>
+          <div class="card mt-5">
+            <header class="card-header">
+              <p class="card-header-title"><%= t('.import') %></p>
+            </header>
+            <div class="card-content">
+              <%= form_with url: import_taikai_participating_dojo_participants_path(@taikai, @participating_dojo) do |f| %>
+                <div class="field">
+                  <label class=" label" for="user"><%= t('.file') %></label>
+                  <div class="control">
+                    <div class="file is-warning">
+                      <label class="file-label">
+                        <%= f.file_field :excel, class: "file-input" %>
+                        <span class="file-cta">
+                          <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                          </span>
+                          <span class="file-label">
+                            Choose a file…
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <%= f.button t('save'), class: "button has-background-light mr-3" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       <% else %>
       <div class="card mt-5">
         <header class="card-header">

@@ -28,7 +28,7 @@ class TaikaisController < ApplicationController
   end
 
   def edit
-    @taikai = Taikai.find(params[:id])
+    @taikai = Taikai.includes([participating_dojos: :dojo], { staffs: [:role, :user] }).find(params[:id])
   end
 
   def update

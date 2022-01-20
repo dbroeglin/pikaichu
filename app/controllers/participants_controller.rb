@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/ClassLength
+
 class ParticipantsController < ApplicationController
   before_action :set_taikai
   before_action :set_participating_dojo
@@ -53,12 +55,59 @@ class ParticipantsController < ApplicationController
     redirect_to_edit
   end
 
+  def import
+    if params[:excel]
+      # TODO: minimal file validation here
+      xlsx = Roo::Spreadsheet.open(params[:excel])
+      csv_data = xlsx.sheet(0).to_csv
+
+      notices = []
+      alerts = []
+      CSV.parse(
+        csv_data,
+        headers: true,
+        col_sep: ',',
+        skip_lines: /CNKyudo - Interface de gestion/
+      ) do |row|
+        attrs = {
+          federation_country_code: 'FR',
+          federation_club: row['Club'],
+          firstname: I18n.transliterate(row['Prénom']).upcase,
+          lastname: I18n.transliterate(row['Nom']).upcase,
+        }
+        kyudojin = Kyudojin.find_by(**attrs)
+
+        @participant = @participating_dojo.participants.build(
+          firstname: row['Prénom'],
+          lastname: row['Nom'],
+        )
+        if kyudojin
+          @participant.kyudojin = kyudojin
+        else
+          notices << "#{row['Prénom']} #{row['Nom']}"
+        end
+
+        if @participant.save
+          @participant.generate_empty_results
+        else
+          alerts << "#{row['Prénom']} #{row['Nom']}"
+        end
+      end
+      flash[:notice] = t :import_notices, names: notices.join(', '), count: notices.size
+      flash[:alert] = t :import_alerts, names: alerts.join(', '), count: alerts.size
+    else
+      flash[:alert] = t :file_missing
+    end
+    redirect_to_edit
+  end
+
   private
 
   def participant_params
     params
       .require(:participant)
       .permit(
+        :excel,
         :index,
         :index_in_team,
         :firstname,

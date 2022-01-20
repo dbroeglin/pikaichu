@@ -18,7 +18,11 @@ class ParticipatingDojoPolicy < ApplicationPolicy
       @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
   end
 
-  def delete?
+  def import?
+    update?
+  end
+
+  def destroy?
     update?
   end
 

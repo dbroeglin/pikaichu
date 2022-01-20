@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_221253) do
+ActiveRecord::Schema.define(version: 2022_01_19_232916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_221253) do
     t.bigint "kyudojin_id"
     t.index ["kyudojin_id"], name: "index_participants_on_kyudojin_id"
     t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
+    t.index ["participating_dojo_id", "kyudojin_id"], name: "by_participants_participating_dojo_kyudojin", unique: true
     t.index ["participating_dojo_id"], name: "index_participants_on_participating_dojo_id"
     t.index ["team_id", "index_in_team"], name: "teams_by_team_index_in_team", unique: true
     t.index ["team_id"], name: "index_participants_on_team_id"

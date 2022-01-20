@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :dojos, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  get  '/taikais/:id/marking',                          to: 'marking#show',          as: :show_marking
-  post '/taikais/:id/marking/:participant_id/update',   to: 'marking#update',        as: :update_marking
+  get  '/taikais/:id/marking',                          to: 'marking#show',                as: :show_marking
+  post '/taikais/:id/marking/:participant_id/update',   to: 'marking#update',              as: :update_marking
   patch '/taikais/:id/marking/:participant_id/result/:result_id',
         to: 'marking#rotate',
         as: :rotate_marking
@@ -28,7 +28,11 @@ Rails.application.routes.draw do
 
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :participating_dojos do
-      resources :participants
+      resources :participants do
+        collection do
+          post 'import'
+        end
+      end
       resources :teams do
         resources :participants
       end

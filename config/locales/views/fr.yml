@@ -107,6 +107,8 @@ fr:
       title: Liste des Taikais
     edit:
       title: Modification du Taikai
+      import: Importer la liste des participants
+      file: Fichier Excel CNKyudo
     new:
       title: Ajouter un Taikai
   teams:

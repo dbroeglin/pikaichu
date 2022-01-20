@@ -11,6 +11,7 @@
       <th title="<%= t('activerecord.attributes.participant.index_title') %>"><%= Participant.human_attribute_name :index %></th>
       <th><%= Participant.human_attribute_name :firstname %></th>
       <th><%= Participant.human_attribute_name :lastname %></th>
+      <th></th>
       <th class="has-text-right">
         <%= link_to new_path, class: "button is-small has-background-light",
               title: t('participants.new.title') do %>
@@ -42,6 +43,9 @@
       <% end %>
       <td><%= participant.firstname %></td>
       <td><%= participant.lastname %></td>
+      <td>
+        <% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %>
+      </td>
       <td>
         <%
           if team
