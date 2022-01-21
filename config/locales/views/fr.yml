@@ -16,7 +16,7 @@ fr:
   dojos:
     index:
       title: Liste des Clubs
-    delete:
+    destroy:
       title: Effacer un club
     edit:
       title: Modifier un club
@@ -129,7 +129,8 @@ fr:
       placeholders:
         index: Laisser blanc pour un choix par défaut...
   staffs:
-    destroy: Effacer un staff
+    destroy:
+      title: Effacer un staff
     edit:
       title: Modifier un staff
     new:

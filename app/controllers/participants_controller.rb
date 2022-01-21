@@ -65,6 +65,10 @@ class ParticipantsController < ApplicationController
     head :ok
   end
 
+  def roster
+    @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
+  end
+
   def import
     if params[:excel]
       # TODO: minimal file validation here

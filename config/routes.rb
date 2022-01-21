@@ -30,7 +30,8 @@ Rails.application.routes.draw do
     resources :participating_dojos do
       resources :participants do
         collection do
-          post 'import'
+            get 'roster'
+            post 'import'
         end
       end
       resources :teams do

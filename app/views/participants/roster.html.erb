@@ -1,0 +1,11 @@
+<ul class="block-list is-small is-outlined is-success is-centered" data-controller="drag">
+  <% @teams.each do |team| %>
+    <li class="block-list is-small is-outlined is-success is-centered">
+      <ul>
+      <% team.participants.each do |participant| %>
+        <li><%= participant.display_name %></li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

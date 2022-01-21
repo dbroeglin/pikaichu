@@ -27,8 +27,6 @@ $beige-light: #D0D1CD;
 
 // $shadow: 0 0.125em 0.25em rgba(235, 14, 14, 0.726);
 
-
-
 // Import only what you need from Bulma
 // @import "bulma/sass/utilities/_all.sass";
 // @import "bulma/sass/base/_all.sass";
@@ -40,13 +38,12 @@ $beige-light: #D0D1CD;
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
 
-
-
 $info: #3478b1;
 $card-header-background-color: #EFF5FA;
 @import 'bulma/bulma';
 @import 'bulma-list';
 @import 'bulma-divider';
+@import 'bulma-block-lists';
 
 
 @import 'custom.bulma';
