@@ -161,6 +161,7 @@ if @taikai.individual?
     sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
   end
 else
+  # Team Taikai Participants
   xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
     sheet.column_widths 20, 3, 20, 30
 
@@ -185,14 +186,14 @@ else
 
           sheet.add_row row, style: [table_cell_style, table_cell_style, table_cell_style, table_cell_style]
 
-          next if participant_index.zero?
+          if participant_index.zero?
+            line = team_start_line + team.participants.size - 1
+            sheet.merge_cells("B#{team_start_line}:B#{line}")
+            sheet.merge_cells("C#{team_start_line}:C#{line}")
+            team_start_line = line + 1
+          end
 
-          line = team_start_line + team.participants.size - 1
-          sheet.merge_cells("B#{team_start_line}:B#{line}")
-          sheet.merge_cells("C#{team_start_line}:C#{line}")
-          team_start_line = line + 1
-
-          next if team_index.zero?
+          next unless team_index.zero?
 
           line = dojo_start_line + participating_dojo.participants.size - 1
           sheet.merge_cells("A#{dojo_start_line}:A#{line}")
