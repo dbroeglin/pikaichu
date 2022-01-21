@@ -94,6 +94,7 @@ class ParticipantsController < ApplicationController
         @participant = @participating_dojo.participants.build(
           firstname: row['Prénom'],
           lastname: row['Nom'],
+          club: row['Club']
         )
         if kyudojin
           @participant.kyudojin = kyudojin
