@@ -7,8 +7,8 @@ class Dojo < ApplicationRecord
   validates :name, presence: true
   validates :country_code, presence: true
 
-  scope :containing, ->(query) { where <<~SQL, "%#{query}%", "%#{query}%" }
-    name ILIKE ? OR country_code ILIKE ?
+  scope :containing, ->(query) { where <<~SQL, "%#{query}%", "%#{query}%", "%#{query}%" }
+    shortname ILIKE ? OR name ILIKE ? OR country_code ILIKE ?
   SQL
 
   def country_name
