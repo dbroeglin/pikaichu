@@ -48,9 +48,11 @@ fr:
         team: Équipe
       participating_dojo:
         display_name: Nom court
+        city: Ville
         dojo: Club
         num_participants: Nb.
         num_participants_title: Nombre de participants
+        pays: Pays
       staff:
         display_name: Nom
         firstname: Prénom
