@@ -3,10 +3,14 @@
     <div class="column is-two-third is-offset-2">
       <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
+      <p class="mb-3">
+        <%= link_to t('back'), taikai_path(@taikai), class: "button is-light" %>
+      </p>
+
       <table class="table is-narrow is-bordered is-striped has-text-centered">
         <thead>
           <tr>
-            <th rowspan="2"><%= t '.rang' %></th>
+            <th rowspan="2"><%= t '.rank' %></th>
             <th rowspan="2" colspan="3"><%= t '.name' %></th>
             <% @taikai.num_rounds.times do |index| %>
             <th colspan="<%= @taikai.num_arrows %>"><%= t '.round', index: index + 1 %></th>

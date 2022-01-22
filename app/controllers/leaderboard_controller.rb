@@ -23,6 +23,7 @@ class LeaderboardController < ApplicationController
                                       .map(&:participants).flatten
                                       .sort_by { |participant| participant.score(final) }.reverse
                                       .group_by { |participant| participant.score(final) }
+                                      .each { |_, participants| participants.sort_by!(&:index) }
     else
       @taikai = Taikai
                 .includes(participating_dojos: { teams: [{ participants: :results }] })
@@ -32,6 +33,7 @@ class LeaderboardController < ApplicationController
                                .map(&:teams).flatten
                                .sort_by { |participant| participant.score(final) }.reverse
                                .group_by { |participant| participant.score(final) }
+                               .each { |_, participants| participants.sort_by!(&:index) }
     end
   end
 end

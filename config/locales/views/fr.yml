@@ -26,6 +26,7 @@ fr:
   leaderboard:
     show:
       title: "Tableau des résultats intermédiaires - %{taikai}"
+      rank: Rang
       name: Nom
       round: Série %{index}
       score: Score
