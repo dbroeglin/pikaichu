@@ -16,3 +16,9 @@ form .dropdown {
     justify-content: space-between;
   }
 }
+
+.team-title {
+  font-size: $size-medium;
+  border-bottom: 1px solid $grey-light;
+  margin-bottom: $size-6;
+}

@@ -28,10 +28,15 @@ Rails.application.routes.draw do
 
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :participating_dojos do
+      member do
+        get 'teaming/edit'
+        post 'teaming/apply'
+        delete 'teaming/clear'
+        patch 'teaming/move'
+      end
       resources :participants do
         collection do
-            get 'roster'
-            post 'import'
+          post 'import'
         end
       end
       resources :teams do

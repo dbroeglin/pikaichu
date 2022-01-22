@@ -1,0 +1,38 @@
+<div class="container mb-3">
+  <%= link_to teaming_clear_taikai_participating_dojo_path(@taikai, @participating_dojo),
+        class: "button is-danger",
+        data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+        title: t('destroy') do %>
+    <span class="icon">
+      <i class="far fa-trash-can"></i>
+    </span>
+    <span>TODO: CLEAR</span>
+  <% end %>
+</div>
+<div class="columns is-mobile" data-controller="drag-teams" data-drag-teams-url="<%= teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo %>">
+  <div class="column is-narrow" data-drag-teams-target="right">
+    <% @participating_dojo.participants.each do |participant| %>
+      <p data-id="<%= participant.id %>">
+        <span class="tag"><%= participant.display_name %> (<%= participant.club %>)</span>
+      </p>
+    <% end %>
+  </div>
+  <div class="column">
+    <div class="columns is-multiline">
+    <% @teams.each do |team| %>
+      <div class="column is-4">
+        <div class="box">
+          <p class="team-title" ><%= team.shortname %></p>
+          <div class="container" data-drag-teams-target="left">
+            <% team.participants.each do |participant| %>
+              <p data-id="<%= participant.id %>">
+                <span class="tag"><%= participant.display_name %> (<%= participant.club %>)</span>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

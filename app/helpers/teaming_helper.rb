@@ -1,0 +1,2 @@
+module TeamingHelper
+end
