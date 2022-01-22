@@ -48,7 +48,7 @@ class ParticipatingDojosController < ApplicationController
     elsif !@participating_dojo.destroy
       flash[:alert] = "Unable to remove participating dojo #{@participating_dojo.display_name}"
     end
-    redirect_to controller: 'taikais', action: 'edit', id: @taikai
+    redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: 303
   end
 
   private

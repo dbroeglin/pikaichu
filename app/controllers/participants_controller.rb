@@ -54,7 +54,7 @@ class ParticipantsController < ApplicationController
     @participant = @parent_association.find(params[:id])
 
     @participant.destroy
-    redirect_to_edit
+    redirect_to_edit(303)
   end
 
   def reorder
@@ -63,10 +63,6 @@ class ParticipantsController < ApplicationController
     @participant.insert_at(params[:index].to_i)
 
     head :ok
-  end
-
-  def roster
-    @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
   end
 
   def import
@@ -132,13 +128,15 @@ class ParticipantsController < ApplicationController
       )
   end
 
-  def redirect_to_edit
+  def redirect_to_edit(status = 307)
     if @team
       redirect_to controller: 'teams', action: 'edit',
-                  taikai_id: @taikai, participating_dojo: @participating_dojo, id: @team
+                  taikai_id: @taikai, participating_dojo: @participating_dojo, id: @team,
+                  status: status
     else
       redirect_to controller: 'participating_dojos', action: 'edit',
-                  taikai_id: @taikai, id: @participating_dojo
+                  taikai_id: @taikai, id: @participating_dojo,
+                  status: status
     end
   end
 
