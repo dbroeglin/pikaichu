@@ -1,6 +1,6 @@
 taikai_admin:
   code: taikai_admin
-  label: Taikai Administrator
+  label: '{"fr":"Administrateur","en":"Administrator"}"'
   description: "Administrator of an entire Taikai"
 
 dojo_admin:

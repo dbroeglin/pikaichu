@@ -1,8 +1,8 @@
 require "test_helper"
 
-class TaikaiFlowTest < ActionDispatch::IntegrationTest
+class UsersFlowTest < ActionDispatch::IntegrationTest
   setup do
-    # @article = articles(:one)
+    @user = users(:jean_bon)
   end
 
   test "redirected to sign in page" do
@@ -15,10 +15,11 @@ class TaikaiFlowTest < ActionDispatch::IntegrationTest
     assert_select "p.card-header-title", "Connexion"
   end
 
-  test "taikai list" do
+  test "disconnect" do
     sign_in_as(:jean_bon)
 
-    get taikais_path
+    delete destroy_user_session_path
+    assert_response :redirect
   end
 
   # called after every single test

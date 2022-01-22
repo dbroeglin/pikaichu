@@ -1,6 +1,6 @@
 taikai1:
   shortname: taikai-1
-  name: Taikai 2
+  name: Taikai 1
   start_date: <%= 5.days.from_now %>
   end_date: <%= 6.days.from_now %>
   distributed: true
