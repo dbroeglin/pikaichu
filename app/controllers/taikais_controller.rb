@@ -45,7 +45,7 @@ class TaikaisController < ApplicationController
     @taikai = authorize Taikai.find(params[:id])
     @taikai.destroy
 
-    redirect_to action: 'index', status: 303
+    redirect_to action: 'index', status: :see_other
   end
 
   def draw

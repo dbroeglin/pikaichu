@@ -1,4 +1,8 @@
 class Taikai < ApplicationRecord
+  attribute :total_num_arrows, default: 12
+  attribute :num_targets, default: 6
+  attribute :tachi_size, default: 3
+
   audited
 
   has_many :staffs, dependent: :destroy do

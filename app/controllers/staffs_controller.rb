@@ -39,7 +39,7 @@ class StaffsController < ApplicationController
     elsif !@staff.destroy
       flash[:alert] = "Unable to remove Staff #{@staff.display_name}"
     end
-    redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: 303
+    redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: :see_other
   end
 
   private

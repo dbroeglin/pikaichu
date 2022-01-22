@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_214259) do
+ActiveRecord::Schema.define(version: 2022_01_22_122251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,9 @@ ActiveRecord::Schema.define(version: 2022_01_20_214259) do
     t.boolean "individual", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "num_targets", limit: 2, default: 6, null: false
+    t.integer "total_num_arrows", limit: 2, default: 12, null: false
+    t.integer "tachi_size", limit: 2, default: 3, null: false
     t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 

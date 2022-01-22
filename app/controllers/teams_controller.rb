@@ -34,7 +34,11 @@ class TeamsController < ApplicationController
     @team = @participating_dojo.teams.find(params[:id])
 
     @team.destroy!
-    redirect_to controller: :participating_dojos, action: :edit, taikai_id: @taikai, id: @participating_dojo, status: 303
+    redirect_to controller: :participating_dojos,
+                action: :edit,
+                taikai_id: @taikai,
+                id: @participating_dojo,
+                status: :see_other
   end
 
   private

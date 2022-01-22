@@ -9,16 +9,15 @@ class TeamingController < ApplicationController
   def clear
     @participating_dojo.participants.update_all(team_id: nil)
 
-    redirect_to action: :edit, status: 303
+    redirect_to action: :edit, status: :see_other
   end
 
   def apply
     @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
 
-    @participating_dojo.participants.group_by(&:club)
-      .each_slice()
+    # @participating_dojo.participants.group_by(&:club)
 
-    redirect_to action: :edit, status: 303
+    redirect_to action: :edit, status: :see_other
   end
 
   private

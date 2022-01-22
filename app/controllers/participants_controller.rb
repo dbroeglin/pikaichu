@@ -54,7 +54,7 @@ class ParticipantsController < ApplicationController
     @participant = @parent_association.find(params[:id])
 
     @participant.destroy
-    redirect_to_edit(303)
+    redirect_to_edit(:see_other)
   end
 
   def reorder

@@ -40,7 +40,7 @@ class DojosController < ApplicationController
       # TODO: I18n
       flash[:alert] = "Unable to remove dojo '#{@dojo.shortname}', it probably still has an associated Taikai"
     end
-    redirect_to action: 'index', status: 303
+    redirect_to action: 'index', status: :see_other
   end
 
   private
