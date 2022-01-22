@@ -1,5 +1,6 @@
 fr:
   confirm_html: Êtes-vous certain&nbsp;?
+  confirm_draw_html: Êtes-vous certain de vouloir effectuer le tirage au sort&nbsp;?
   edit: Modifier
   destroy: Effacer
   new: Ajouter

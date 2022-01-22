@@ -17,6 +17,7 @@
 
 <%= link_to draw_taikai_path(taikai),
             class: "button #{size} has-background-light ml-3",
+            data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
             title: t('taikais.draw') do %>
   <span class="icon <%= size %>">
     <i class="fas fa-shuffle"></i>
