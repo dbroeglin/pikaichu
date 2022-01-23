@@ -28,6 +28,21 @@ class Taikai < ApplicationRecord
   validates :name, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :total_num_arrows,
+            presence: true,
+            inclusion: {
+              in: [12, 20]
+            }
+  validates :tachi_size,
+            presence: true,
+            inclusion: {
+              in: [3, 5]
+            }
+  validates :num_targets,
+            presence: true,
+            inclusion: {
+              in: [3, 6, 5, 10]
+            }
 
   attr_accessor :current_user
 
@@ -38,10 +53,6 @@ class Taikai < ApplicationRecord
 
   def num_arrows
     @num_arrows ||= 4
-  end
-
-  def total_num_arrows
-    @total_num_arrows ||= 12
   end
 
   def num_rounds

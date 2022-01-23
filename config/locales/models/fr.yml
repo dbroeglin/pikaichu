@@ -67,10 +67,10 @@ fr:
         end_date: Date de fin
         distributed: À distance
         individual: Individuel
-        num_arrows: Nombre de flèches
-        num_targets: Nombre de cibles
-        total_num_arrows: Nombre total de flèches
-        tachi_size: Taille de Tachi
+        num_arrows: Nb de flèches
+        num_targets: Nb de cibles
+        total_num_arrows: Nb total de flèches
+        tachi_size: Taille des tachi
       team:
         index: Numéro
         shortname: Nom court
@@ -89,3 +89,11 @@ fr:
           attributes:
             user:
               blank: doit être défini si son rôle nécessite l'utilisation de PiKaichu.
+        taikai:
+          attributes:
+            total_num_arrows:
+              inclusion: doit être 12 ou 15.
+            tachi_size:
+              inclusion: doit être 3 ou 6.
+            num_targets:
+              inclusion: doit être 3, 5, 6 ou 10.

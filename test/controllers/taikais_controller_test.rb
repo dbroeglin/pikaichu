@@ -3,10 +3,10 @@ require 'test_helper'
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:taikai1)
+    @taikai1 = taikais(:taikai1)
     @other_taikai = taikais(:taikai2)
 
-    generic_params = {
+    @generic_params = {
       'shortname' => 'taikai-to-create',
       'name' => 'Taikai to be created',
       'description' => "Let's create a new taikai",
@@ -29,36 +29,33 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
 
   test 'should post create' do
     assert_difference 'Taikai.count' do
-      post taikais_url @taikai,
-                       params: {
-                         'taikai' => generic_params,
-                       }
+      post taikais_url,
+           params: {
+             'taikai' => @generic_params,
+           }
     end
     assert_redirected_to taikais_url
   end
 
-  test 'should post create' do
-    assert_difference 'Taikai.count' do
-      post taikais_url @taikai,
-                       params: {
-                         'taikai' => generic_params.merge {
-                           num_total_arrows: 13,
-                           num_targets: 7
-                           tachi_size: 3
-                         },
-                       }
+  test 'should validate target/arrow/tachi sizes' do
+    assert_no_changes 'Taikai.count' do
+      post taikais_url @taikai1, params: {
+        'taikai' => @generic_params.merge(total_num_arrows: 13, num_targets: 7, tachi_size: 3)
+      }
     end
+    assert taikai.errors.where(:total_num_arrows).any?
+    assert taikai.errors.where(:num_targets).any?
+    assert_empty taikai.errors.where(:tachi_size)
     assert_response :unprocessable_entity
   end
 
-
   test 'should get edit' do
-    get edit_taikai_url @taikai
+    get edit_taikai_url @taikai1
     assert_response :success
   end
 
   test 'should patch update' do
-    patch taikai_url @taikai, params: { taikai: @taikai.attributes }
+    patch taikai_url @taikai1, params: { taikai: @taikai1.attributes }
     assert_redirected_to taikais_url
   end
 
@@ -68,12 +65,16 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get destroy' do
-    delete taikai_url @taikai
+    delete taikai_url @taikai1
     assert_redirected_to taikais_url
   end
 
   test 'should not be able to delete taikai he is not admin of' do
     delete taikai_url @other_taikai
     assert_unauthorized
+  end
+
+  def taikai
+    @controller.instance_variable_get :@taikai
   end
 end

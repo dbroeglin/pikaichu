@@ -1,10 +1,25 @@
+# rubocop:disable
 module TaikaisHelper
+  def result_mark(result)
+    if result.final?
+      case result.status
+      when 'hit'
+        'O'
+      when 'miss'
+        'X'
+      else
+        ''
+      end
+    else
+      ''
+    end
+  end
 
   def export_summary_sheet (xlsx_package)
     xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
       sheet.column_widths 20, 50
       sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
-      sheet.add_row [t('.infos'), ""],                 style: [@header_row_style, @header_row_style], height: 30
+      sheet.add_row [t('.infos'), ""], style: [@header_row_style, @header_row_style], height: 30
       sheet.merge_cells('A1:B1')
 
       sheet.add_row [Taikai.human_attribute_name(:shortname), @taikai.shortname],
@@ -17,9 +32,13 @@ module TaikaisHelper
                     style: [@info_label_cell_style, @date_style], height: 20
       sheet.add_row [Taikai.human_attribute_name(:description), @taikai.description],
                     style: [@info_label_cell_style, @description_style], height: 60
-      sheet.add_row [Taikai.human_attribute_name(:type), @taikai.individual? ? t('.individual.true') : t('.individual.false')],
+      sheet.add_row [
+        Taikai.human_attribute_name(:type),
+        "#{@taikai.individual? ? t('.individual.true') : t('.individual.false')}#{" (#{t('.distributed')})" if @taikai.distributed? }"
+      ], style: [@info_label_cell_style, @info_data_cell_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:total_num_arrows), @taikai.total_num_arrows],
                     style: [@info_label_cell_style, @info_data_cell_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:num_arrows), @taikai.total_num_arrows],
+      sheet.add_row [Taikai.human_attribute_name(:tachi_size), @taikai.tachi_size],
                     style: [@info_label_cell_style, @info_data_cell_style], height: 20
 
       sheet.add_row []
@@ -68,13 +87,14 @@ module TaikaisHelper
   def export_participants_sheet(xlsx_package)
     if @taikai.individual?
       xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
-        sheet.column_widths 20, 3, 30
+        sheet.column_widths 20, 4, 40, 12
 
         sheet.add_row [
           t('.participants.participating_dojo'),
           t('.participants.index'),
           t('.participants.display_name'),
-        ], style: @header_row_style
+          t('.participants.club'),
+          ], style: @header_row_style
 
         dojo_start_line = 2
         @taikai.participating_dojos.each do |participating_dojo|
@@ -83,9 +103,10 @@ module TaikaisHelper
               "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
               participant.index,
               participant.display_name,
+              participant.club,
             ]
 
-            sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+            sheet.add_row row, style: [@table_cell_style] * row.size
           end
           line = dojo_start_line + participating_dojo.participants.size - 1
           sheet.merge_cells("A#{dojo_start_line}:A#{line}")
@@ -96,13 +117,14 @@ module TaikaisHelper
     else
       # Team Taikai Participants
       xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
-        sheet.column_widths 20, 3, 20, 30
+        sheet.column_widths 20, 4, 20, 40, 12
 
         sheet.add_row [
           t('.participants.participating_dojo'),
           t('.participants.index'),
           t('.participants.team'),
           t('.participants.display_name'),
+          t('.participants.club'),
         ], style: @header_row_style
 
         dojo_start_line = 2
@@ -115,9 +137,10 @@ module TaikaisHelper
                 team.index,
                 team.shortname,
                 participant.display_name,
+                participant.club,
               ]
 
-              sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+              sheet.add_row row, style: [@table_cell_style] * row.size
 
               if participant_index.zero?
                 line = team_start_line + team.participants.size - 1
@@ -143,27 +166,35 @@ module TaikaisHelper
   def export_results_sheet(xlsx_package)
     if @taikai.individual?
       row_styles = [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
-                  [@result_cell_style] * 12 +
-                  [@total_cell_style]
+                   [@result_cell_style] * @taikai.total_num_arrows +
+                   [@total_cell_style]
 
       xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
         sheet.add_row [
           t('.results.rank'),
           t('.results.index'),
           @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
-          t('.results.display_name'),
-          t('.results.round', count: 1), '', '', '',
-          t('.results.round', count: 2), '', '', '',
-          t('.results.round', count: 3), '', '', '',
+          t('.results.display_name')
+        ] + (
+          (1..(@taikai.num_rounds)).map do |index|
+            [t('.results.round', count: index), '', '', '']
+          end
+        ).flatten + [
           t('.results.score'),
-        ], style: [@vert_header_row_style] + [@header_row_style] * 15 + [@vert_header_row_style], height: 50
-        sheet.column_widths(*([5, 5, 20, 25] + [4] * 12 + [8]))
-        sheet.merge_cells('E1:H1')
-        sheet.merge_cells('I1:L1')
-        sheet.merge_cells('M1:P1')
+        ], style: [@vert_header_row_style] + [@header_row_style] * (3 + @taikai.total_num_arrows) + [@vert_header_row_style], height: 50
+        sheet.column_widths(*([5, 5, 20, 25] + [4] * @taikai.total_num_arrows + [8]))
 
-        # Order participants by reverse score
-        participants = @taikai.participating_dojos.map(&:participants).flatten.sort_by(&:score).reverse
+        columns = ('E'..'Z').to_a # TODO: this does not work for more than 20 arrows!!!
+        @taikai.num_rounds.times do |index|
+          sheet.merge_cells("#{columns[4 * index]}1:#{columns[4 * index + 3]}1")
+        end
+        last_column = columns[@taikai.total_num_arrows]
+
+        # Order participants by reverse score and index
+        participants = @taikai
+          .participating_dojos
+          .map(&:participants).flatten
+          .sort_by { |participant| [-participant.score, participant.index]}
 
         current_rank = rank = 1
         exaequo_start_line = current_line = 2
@@ -174,7 +205,7 @@ module TaikaisHelper
             current_rank = rank
 
             sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-            sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
+            sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
             exaequo_start_line = current_line
           end
           rank += 1
@@ -190,7 +221,7 @@ module TaikaisHelper
           end + [participant.score || 0])
         end
         sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-        sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
+        sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
 
         rows.each do |row|
           sheet.add_row row, style: row_styles
@@ -199,9 +230,10 @@ module TaikaisHelper
         sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
       end
     else
-      row_styles = [@total_cell_style, @table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
-                  [@result_cell_style] * 12 +
-                  [@total_cell_style, @total_cell_style]
+      row_styles = [@total_cell_style] +
+                   [@table_cell_style] * 4 +
+                   [@result_cell_style] * @taikai.total_num_arrows +
+                   [@total_cell_style, @total_cell_style]
 
       xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
         sheet.add_row [
@@ -210,20 +242,28 @@ module TaikaisHelper
           t('.results.team'),
           @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
           t('.results.display_name'),
-          t('.results.round', count: 1), '', '', '',
-          t('.results.round', count: 2), '', '', '',
-          t('.results.round', count: 3), '', '', '',
+        ] + (
+          (1..(@taikai.num_rounds)).map do |index|
+            [t('.results.round', count: index), '', '', '']
+          end
+        ).flatten + [
           t('.results.score'),
           t('.results.team_score'),
-        ], style: [@vert_header_row_style] + [@header_row_style] * 16 +
+        ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
                   [@vert_header_row_style, @vert_header_row_style], height: 50
-        sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * 12 + [4, 4]))
-        sheet.merge_cells('F1:I1')
-        sheet.merge_cells('J1:M1')
-        sheet.merge_cells('N1:Q1')
+        sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
 
-        # Order teams by reverse score
-        teams = @taikai.participating_dojos.map(&:teams).flatten.sort_by(&:score).reverse
+        columns = ('F'..'Z').to_a + ['AA'] # TODO: this does not work for more than 20 arrows!!!
+        @taikai.num_rounds.times do |index|
+          sheet.merge_cells("#{columns[4 * index]}1:#{columns[4 * index + 3]}1")
+        end
+        last_column = columns[@taikai.total_num_arrows + 1]
+
+        # Order teams by reverse score and index
+        teams = @taikai
+          .participating_dojos
+          .map(&:teams).flatten
+          .sort_by { |participant| [-participant.score, participant.index]}
 
         current_rank = rank = 1
         team_start_line = exaequo_start_line = current_line = 2
@@ -241,7 +281,7 @@ module TaikaisHelper
             current_rank = rank
 
             sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-            sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
+            sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
             exaequo_start_line = current_line
           end
           rank += 1
@@ -264,7 +304,7 @@ module TaikaisHelper
           end
         end.flatten(1)
         sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-        sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
+        sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
 
         rows.each do |row|
           sheet.add_row row, style: row_styles

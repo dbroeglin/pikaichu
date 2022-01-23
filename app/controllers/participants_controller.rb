@@ -130,13 +130,11 @@ class ParticipantsController < ApplicationController
 
   def redirect_to_edit(status = 307)
     if @team
-      redirect_to controller: 'teams', action: 'edit',
-                  taikai_id: @taikai, participating_dojo: @participating_dojo, id: @team,
-                  status: status
+      redirect_to edit_taikai_participating_dojo_team_path(@taikai, @participating_dojo, @team),
+                  status: 303
     else
-      redirect_to controller: 'participating_dojos', action: 'edit',
-                  taikai_id: @taikai, id: @participating_dojo,
-                  status: status
+      redirect_to edit_taikai_participating_dojo_path(@taikai, @participating_dojo),
+                  status: 303
     end
   end
 

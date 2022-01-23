@@ -25,18 +25,19 @@ fr:
       title: Ajouter un club
   leaderboard:
     show:
-      title: "Tableau des résultats intermédiaires - %{taikai}"
+      name: Nom
       rank: Rang
-      name: Nom
       round: Série %{index}
       score: Score
       team_score: Total
+      title: "Tableau des résultats intermédiaires - %{taikai}"
     public:
-      title: "Tableau des résultats - %{taikai}"
       name: Nom
+      rank: Rang
       round: Série %{index}
       score: Score
       team_score: Total
+      title: "Tableau des résultats - %{taikai}"
   marking:
     show:
       input: Saisie
@@ -83,12 +84,18 @@ fr:
     leaderboard:
       title: Tableau des résultats
     export:
-      title: Export Excel
-      summary: Résumé
-      infos: Informations
+      distributed: À distance
       individual:
         'true': Individuel
         'false': En équipe
+      infos: Informations
+      participants:
+        club: Club
+        display_name: Nom
+        index: "#"
+        participating_dojo: Club Org.
+        team: Équipe
+        title: Participants
       results:
         club: Club
         display_name: Nom
@@ -106,12 +113,9 @@ fr:
         role: Rôle
         participating_dojo: Club Org.
         title: Staff
-      participants:
-        title: Participants
-        index: "#"
-        participating_dojo: Club Org.
-        team: Équipe
-        display_name: Nom
+      summary: Résumé
+      title: Export Excel
+      total_num_arrows: Nb total de flèches
     index:
       dates: Dates
       distributed: À distance

@@ -84,6 +84,9 @@ class TaikaisController < ApplicationController
         :end_date,
         :distributed,
         :individual,
+        :total_num_arrows,
+        :num_targets,
+        :tachi_size,
       )
   end
 end

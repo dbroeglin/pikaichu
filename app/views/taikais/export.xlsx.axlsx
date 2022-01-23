@@ -1,20 +1,3 @@
-# rubocop:disable Layout/LineLength
-
-def result_mark(result)
-  if result.final?
-    case result.status
-    when 'hit'
-      'O'
-    when 'miss'
-      'X'
-    else
-      ''
-    end
-  else
-    ''
-  end
-end
-
 @header_row_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true },
   border: { style: :thin, color: 'FF000000' },
