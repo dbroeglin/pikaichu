@@ -39,7 +39,7 @@
                 <% if index == 0 %>
                 <th rowspan="<%= participants.size %>" class="has-text-centered"><%= rank %></th>
                 <% end %>
-                <td class="has-text-left"><%= participant.participating_dojo.display_name %></td>
+                <td class="has-text-left"><%= @taikai.distributed? ? participant.participating_dojo.display_name : participant.club %></td>
                 <td><%= participant.index %></td>
                 <td class="has-text-left"><%= participant.display_name %></td>
                 <% participant.results.each do |result| %>
