@@ -6,11 +6,29 @@
   <%= f.input :shortname %>
   <%= f.input :name %>
   <%= f.input :description, input_html: { rows: 5 }, as: :text %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.input :end_date, html5: true %>
 
-  <%= f.input :distributed %>
-  <%= f.input :individual %>
+  <div class="columns">
+    <div class="column one-half">
+      <%= f.input :start_date, html5: true %>
+    </div>
+    <div class="column one-half">
+      <%= f.input :end_date, html5: true %>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column one-third">
+      <%= f.input :total_num_arrows %>
+      <%= f.input :distributed %>
+    </div>
+    <div class="column one-third">
+      <%= f.input :num_targets %>
+      <%= f.input :individual %>
+    </div>
+    <div class="column one-third">
+      <%= f.input :tachi_size %>
+    </div>
+  </div>
 
   <%= f.button t('save'), class: "button has-background-light mr-3", disabled: taikai.id && !policy(taikai).update? %>
   <%= link_to t('cancel'), root_path, class: "button" %>

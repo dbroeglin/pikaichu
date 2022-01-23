@@ -68,6 +68,9 @@ fr:
         distributed: À distance
         individual: Individuel
         num_arrows: Nombre de flèches
+        num_targets: Nombre de cibles
+        total_num_arrows: Nombre total de flèches
+        tachi_size: Taille de Tachi
       team:
         index: Numéro
         shortname: Nom court

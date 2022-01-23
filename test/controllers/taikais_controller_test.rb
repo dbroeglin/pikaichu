@@ -5,6 +5,16 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai1)
     @other_taikai = taikais(:taikai2)
+
+    generic_params = {
+      'shortname' => 'taikai-to-create',
+      'name' => 'Taikai to be created',
+      'description' => "Let's create a new taikai",
+      'start_date' => '2022-01-06',
+      'end_date' => '2022-01-07',
+      'individual' => 'true',
+      'distributed' => 'true',
+    }
   end
 
   test 'should get index' do
@@ -21,19 +31,26 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'Taikai.count' do
       post taikais_url @taikai,
                        params: {
-                         'taikai' => {
-                           'shortname' => 'taikai-to-create',
-                           'name' => 'Taikai to be created',
-                           'description' => "Let's create a new taikai",
-                           'start_date' => '2022-01-06',
-                           'end_date' => '2022-01-07',
-                           'individual' => 'true',
-                           'distributed' => 'true',
-                         },
+                         'taikai' => generic_params,
                        }
     end
     assert_redirected_to taikais_url
   end
+
+  test 'should post create' do
+    assert_difference 'Taikai.count' do
+      post taikais_url @taikai,
+                       params: {
+                         'taikai' => generic_params.merge {
+                           num_total_arrows: 13,
+                           num_targets: 7
+                           tachi_size: 3
+                         },
+                       }
+    end
+    assert_response :unprocessable_entity
+  end
+
 
   test 'should get edit' do
     get edit_taikai_url @taikai
