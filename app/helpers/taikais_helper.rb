@@ -1,2 +1,277 @@
 module TaikaisHelper
+
+  def export_summary_sheet (xlsx_package)
+    xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
+      sheet.column_widths 20, 50
+      sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
+      sheet.add_row [t('.infos'), ""],                 style: [@header_row_style, @header_row_style], height: 30
+      sheet.merge_cells('A1:B1')
+
+      sheet.add_row [Taikai.human_attribute_name(:shortname), @taikai.shortname],
+                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:name), @taikai.name],
+                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:start_date), @taikai.start_date],
+                    style: [@info_label_cell_style, @date_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:end_date), @taikai.end_date],
+                    style: [@info_label_cell_style, @date_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:description), @taikai.description],
+                    style: [@info_label_cell_style, @description_style], height: 60
+      sheet.add_row [Taikai.human_attribute_name(:type), @taikai.individual? ? t('.individual.true') : t('.individual.false')],
+                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
+      sheet.add_row [Taikai.human_attribute_name(:num_arrows), @taikai.total_num_arrows],
+                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
+
+      sheet.add_row []
+      sheet.add_row []
+      sheet.add_row []
+
+      # line 10
+
+      sheet.add_row [ParticipatingDojo.model_name.human(count: 2), " "],
+                    style: [@header_row_style, @header_row_style], height: 30
+      sheet.merge_cells('A12:B12')
+
+      @taikai.participating_dojos.each do |participating_dojo|
+        dojo = participating_dojo.dojo
+        sheet.add_row [participating_dojo.display_name, "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? '' : ", #{dojo.city}"}, #{dojo.country_name}"],
+                      style: [@info_label_cell_style, @description_style], height: 20
+      end
+    end
+  end
+
+  def export_staff_sheet(xlsx_package)
+    xlsx_package.workbook.add_worksheet(name: t('.staff.title')) do |sheet|
+      sheet.column_widths 23, 20, 20, 17
+
+      sheet.add_row [
+        t('.staff.lastname'),
+        t('.staff.firstname'),
+        t('.staff.role'),
+        t('.staff.participating_dojo'),
+      ], style: @header_row_style
+
+      @taikai.staffs.each do |staff|
+        row = [
+          staff.lastname,
+          staff.firstname,
+          staff.role.label,
+          staff.participating_dojo.nil? ? "" : "#{staff.participating_dojo.display_name} (#{staff.participating_dojo.dojo.shortname})"
+        ]
+
+        sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+      end
+      sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
+    end
+  end
+
+  def export_participants_sheet(xlsx_package)
+    if @taikai.individual?
+      xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
+        sheet.column_widths 20, 3, 30
+
+        sheet.add_row [
+          t('.participants.participating_dojo'),
+          t('.participants.index'),
+          t('.participants.display_name'),
+        ], style: @header_row_style
+
+        dojo_start_line = 2
+        @taikai.participating_dojos.each do |participating_dojo|
+          participating_dojo.participants.each do |participant|
+            row = [
+              "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
+              participant.index,
+              participant.display_name,
+            ]
+
+            sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+          end
+          line = dojo_start_line + participating_dojo.participants.size - 1
+          sheet.merge_cells("A#{dojo_start_line}:A#{line}")
+          dojo_start_line = line + 1
+        end
+        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
+      end
+    else
+      # Team Taikai Participants
+      xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
+        sheet.column_widths 20, 3, 20, 30
+
+        sheet.add_row [
+          t('.participants.participating_dojo'),
+          t('.participants.index'),
+          t('.participants.team'),
+          t('.participants.display_name'),
+        ], style: @header_row_style
+
+        dojo_start_line = 2
+        team_start_line = 2
+        @taikai.participating_dojos.each do |participating_dojo|
+          participating_dojo.teams.each_with_index do |team, team_index|
+            team.participants.each_with_index do |participant, participant_index|
+              row = [
+                "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
+                team.index,
+                team.shortname,
+                participant.display_name,
+              ]
+
+              sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+
+              if participant_index.zero?
+                line = team_start_line + team.participants.size - 1
+                sheet.merge_cells("B#{team_start_line}:B#{line}")
+                sheet.merge_cells("C#{team_start_line}:C#{line}")
+                team_start_line = line + 1
+              end
+
+              next unless team_index.zero?
+
+              line = dojo_start_line + participating_dojo.participants.size - 1
+              sheet.merge_cells("A#{dojo_start_line}:A#{line}")
+              dojo_start_line = line + 1
+            end
+          end
+        end
+
+        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
+      end
+    end
+  end
+
+  def export_results_sheet(xlsx_package)
+    if @taikai.individual?
+      row_styles = [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
+                  [@result_cell_style] * 12 +
+                  [@total_cell_style]
+
+      xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
+        sheet.add_row [
+          t('.results.rank'),
+          t('.results.index'),
+          @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
+          t('.results.display_name'),
+          t('.results.round', count: 1), '', '', '',
+          t('.results.round', count: 2), '', '', '',
+          t('.results.round', count: 3), '', '', '',
+          t('.results.score'),
+        ], style: [@vert_header_row_style] + [@header_row_style] * 15 + [@vert_header_row_style], height: 50
+        sheet.column_widths(*([5, 5, 20, 25] + [4] * 12 + [8]))
+        sheet.merge_cells('E1:H1')
+        sheet.merge_cells('I1:L1')
+        sheet.merge_cells('M1:P1')
+
+        # Order participants by reverse score
+        participants = @taikai.participating_dojos.map(&:participants).flatten.sort_by(&:score).reverse
+
+        current_rank = rank = 1
+        exaequo_start_line = current_line = 2
+        previous_score = participants.first&.score
+        rows = participants.map do |participant|
+          if previous_score != participant.score
+            previous_score = participant.score
+            current_rank = rank
+
+            sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+            sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
+            exaequo_start_line = current_line
+          end
+          rank += 1
+          current_line += 1
+
+          [
+            current_rank,
+            participant.index,
+            @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
+            participant.display_name,
+          ] + (participant.results.map do |result|
+            result_mark(result)
+          end + [participant.score || 0])
+        end
+        sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+        sheet.merge_cells("Q#{exaequo_start_line}:Q#{current_line - 1}")
+
+        rows.each do |row|
+          sheet.add_row row, style: row_styles
+        end
+
+        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+      end
+    else
+      row_styles = [@total_cell_style, @table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
+                  [@result_cell_style] * 12 +
+                  [@total_cell_style, @total_cell_style]
+
+      xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
+        sheet.add_row [
+          t('.results.rank'),
+          t('.results.index'),
+          t('.results.team'),
+          @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
+          t('.results.display_name'),
+          t('.results.round', count: 1), '', '', '',
+          t('.results.round', count: 2), '', '', '',
+          t('.results.round', count: 3), '', '', '',
+          t('.results.score'),
+          t('.results.team_score'),
+        ], style: [@vert_header_row_style] + [@header_row_style] * 16 +
+                  [@vert_header_row_style, @vert_header_row_style], height: 50
+        sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * 12 + [4, 4]))
+        sheet.merge_cells('F1:I1')
+        sheet.merge_cells('J1:M1')
+        sheet.merge_cells('N1:Q1')
+
+        # Order teams by reverse score
+        teams = @taikai.participating_dojos.map(&:teams).flatten.sort_by(&:score).reverse
+
+        current_rank = rank = 1
+        team_start_line = exaequo_start_line = current_line = 2
+        previous_score = teams.first&.score
+        rows = teams.map do |team|
+          # merge team cells
+          line = team_start_line + team.participants.size - 1
+          sheet.merge_cells("B#{team_start_line}:B#{line}")
+          sheet.merge_cells("C#{team_start_line}:C#{line}")
+          sheet.merge_cells("D#{team_start_line}:D#{line}")
+          team_start_line = line + 1
+
+          if previous_score != team.score
+            previous_score = team.score
+            current_rank = rank
+
+            sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+            sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
+            exaequo_start_line = current_line
+          end
+          rank += 1
+
+          team.participants.map do |participant|
+            current_line += 1
+
+            [
+              current_rank,
+              team.index,
+              team.shortname,
+              @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
+              participant.display_name,
+            ] + (participant.results.map do |result|
+              result_mark(result)
+            end + [
+              participant.score || 0,
+              participant.team.score || 0,
+            ])
+          end
+        end.flatten(1)
+        sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+        sheet.merge_cells("S#{exaequo_start_line}:S#{current_line - 1}")
+
+        rows.each do |row|
+          sheet.add_row row, style: row_styles
+        end
+
+        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+      end
+    end
+  end
 end

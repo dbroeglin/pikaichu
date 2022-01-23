@@ -90,6 +90,7 @@ fr:
         'true': Individuel
         'false': En équipe
       results:
+        club: Club
         display_name: Nom
         index: "#"
         participating_dojo: Club Org.
