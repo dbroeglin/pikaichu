@@ -3,6 +3,9 @@ taikai1:
   name: Taikai 1
   start_date: <%= 5.days.from_now %>
   end_date: <%= 6.days.from_now %>
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
   distributed: true
   individual: true
 
@@ -11,6 +14,9 @@ taikai2:
   name: Taikai 2
   start_date: <%= 10.days.from_now %>
   end_date: <%= 12.days.from_now %>
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
   distributed: true
   individual: false
 
@@ -19,6 +25,9 @@ taikai3:
   name: Taikai 3
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
   distributed: false
   individual: true
 
@@ -27,6 +36,9 @@ taikai4:
   name: Taikai 4
   start_date: <%= 20.days.from_now %>
   end_date: <%= 24.days.from_now %>
+  num_targets: 10
+  total_num_arrows: 12
+  tachi_size: 5
   distributed: false
   individual: false
 
@@ -35,5 +47,8 @@ taikai5: # Admin is Alain Térieur
   name: Taikai 5
   start_date: <%= 20.days.from_now %>
   end_date: <%= 24.days.from_now %>
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
   distributed: true
   individual: false

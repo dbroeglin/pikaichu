@@ -9,6 +9,10 @@ class Participant < ApplicationRecord
     def round(index)
       where(round: index)
     end
+
+    def first_empty
+      self.find(&:empty?)
+    end
   end
   has_one :taikai, through: :participating_dojo
   belongs_to :kyudojin, optional: true
@@ -41,8 +45,12 @@ class Participant < ApplicationRecord
     results.select { |r| r.final? && r.status == 'hit' }.size
   end
 
-  def find_undefined_results
-    results.where('status IS NULL')
+  def previous_round_finalized?(result)
+    if result.round == 1
+      true
+    else
+      results.round(result.round - 1).all?(&:final?)
+    end
   end
 
   def marking?
@@ -55,7 +63,7 @@ class Participant < ApplicationRecord
           (num_marked % participating_dojo.taikai.num_arrows != 0))
   end
 
-  def generate_empty_results
+  def create_empty_results
     if results.where('status IS NOT NULL').any?
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
@@ -75,5 +83,6 @@ class Participant < ApplicationRecord
         end
       end.flatten
     results.insert_all hashes
+    results.reload
   end
 end

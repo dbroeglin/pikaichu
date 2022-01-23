@@ -5,6 +5,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
     @taikai = taikais(:taikai1)
     @participant = participants(:participant1_participating_dojo1_taikai1)
+    @participant.create_empty_results
   end
 
   test "should get show" do

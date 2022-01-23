@@ -21,6 +21,10 @@ class Result < ApplicationRecord
     !status.nil?
   end
 
+  def empty?
+    status.nil?
+  end
+
   def cannot_update_if_finalized
     #  Make sure once final is true the object cannot be changed anymore,
     #  even the final boolean

@@ -25,14 +25,22 @@ class MarkingController < ApplicationController
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
 
-    results = @participant.find_undefined_results
-    if results.any?
-      @result = results.first
-      @result.update!(status: params[:status])
-      respond_to do |format|
-        format.html { redirect_to action: :show }
-        format.turbo_stream do
-          @results = @participant.results.round @result.round
+    @result = @participant.results.first_empty
+    if @result
+      if @participant.previous_round_finalized?(@result)
+        @result.update!(status: params[:status])
+        respond_to do |format|
+          format.html { redirect_to action: :show }
+          format.turbo_stream do
+            @results = @participant.results.round @result.round
+          end
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to action: :show }
+          format.turbo_stream do
+            @results = @participant.results.round(@result.round - 1)
+          end
         end
       end
     else

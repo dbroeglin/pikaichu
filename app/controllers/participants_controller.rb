@@ -22,7 +22,7 @@ class ParticipantsController < ApplicationController
       @participant.club = @participant.kyudojin.federation_club
     end
 
-    if @participant.save && @participant.generate_empty_results
+    if @participant.save && @participant.create_empty_results
       redirect_to_edit
     else
       render :new, status: :unprocessable_entity
@@ -99,7 +99,7 @@ class ParticipantsController < ApplicationController
         end
 
         if @participant.save
-          @participant.generate_empty_results
+          @participant.create_empty_results
         else
           alerts << "#{row['Prénom']} #{row['Nom']}"
         end
