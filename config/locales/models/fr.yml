@@ -98,4 +98,4 @@ fr:
             num_targets:
               inclusion: doit être 3, 5, 6 ou 10.
             shortname:
-              format: ne peut contenir que des lettres alphabétiques, des chiffres et des tirets.
+              invalid: ne peut contenir que des lettres alphabétiques, des chiffres et des tirets.
