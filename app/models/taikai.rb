@@ -23,8 +23,9 @@ class Taikai < ApplicationRecord
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
             uniqueness: { case_sensitive: false },
-            format: { with: /\A(?![0-9]+$)(?!-)[a-zA-Z0-9-]{,63}(?<!-)\z/,
-                      message: "only allows letters, numbers and dashes in the middle" }
+            format: { with: /\A(?![0-9]+$)(?!-)[a-zA-Z0-9-]{,63}(?<!-)\z/
+          }
+
   validates :name, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true

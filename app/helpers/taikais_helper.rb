@@ -1,4 +1,4 @@
-# rubocop:disable
+# rubocop:disable all
 module TaikaisHelper
   def result_mark(result)
     if result.final?

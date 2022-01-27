@@ -92,8 +92,10 @@ fr:
         taikai:
           attributes:
             total_num_arrows:
-              inclusion: doit être 12 ou 15.
+              inclusion: doit être 12 ou 20.
             tachi_size:
               inclusion: doit être 3 ou 6.
             num_targets:
               inclusion: doit être 3, 5, 6 ou 10.
+            shortname:
+              format: ne peut contenir que des lettres alphabétiques, des chiffres et des tirets.
