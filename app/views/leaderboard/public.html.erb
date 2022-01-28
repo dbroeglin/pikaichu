@@ -10,7 +10,7 @@
         <th colspan="<%= @taikai.num_arrows %>"><%= t '.round', index: index + 1 %></th>
         <% end %>
         <th rowspan="2"><%= t '.score' %></th>
-        <% unless @taikai.individual? %>
+        <% unless @taikai.form_individual? %>
           <th rowspan="2"><%= t '.team_score' %></th>
         <% end %>
       </tr>
@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <% if @taikai.individual? %>
+      <% if @taikai.form_individual? %>
 
         <% rank = 0 %>
         <% @participants_by_score.each_pair do |pair| %>

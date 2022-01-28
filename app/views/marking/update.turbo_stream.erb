@@ -7,7 +7,7 @@
 <%= turbo_stream.replace dom_id @participant, :score do %>
   <%= render "individual_score", participant: @participant, formats: [:html] %>
 <% end %>
-<% unless @taikai.individual? %>
+<% unless @taikai.form_individual? %>
   <%= turbo_stream.replace dom_id @participant.team, :score do %>
     <%= render "team_score", team: @participant.team, formats: [:html] %>
   <% end %>

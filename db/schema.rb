@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_22_122251) do
+ActiveRecord::Schema.define(version: 2022_01_28_173751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 2022_01_22_122251) do
     "hit",
     "miss",
     "unknown",
+  ], force: :cascade
+
+  create_enum :taikai_form, [
+    "individual",
+    "team",
+    "2in1part1",
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|
@@ -137,12 +143,12 @@ ActiveRecord::Schema.define(version: 2022_01_22_122251) do
     t.date "start_date"
     t.date "end_date"
     t.boolean "distributed", default: true, null: false
-    t.boolean "individual", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "num_targets", limit: 2, default: 6, null: false
     t.integer "total_num_arrows", limit: 2, default: 12, null: false
     t.integer "tachi_size", limit: 2, default: 3, null: false
+    t.enum "form", enum_type: "taikai_form"
     t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 

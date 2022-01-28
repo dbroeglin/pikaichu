@@ -2,6 +2,11 @@ class Taikai < ApplicationRecord
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6
   attribute :tachi_size, default: 3
+  enum form: {
+    individual: 'individual',
+    team: 'team',
+    '2in1part1': '2in1part1'
+  }, _prefix: :form
 
   audited
 
@@ -26,7 +31,7 @@ class Taikai < ApplicationRecord
             format: { with: /\A(?![0-9]+$)(?!-)[a-zA-Z0-9-]{,63}(?<!-)\z/
           }
 
-  validates :name, presence: true
+  validates :name, :start_date, :end_date, :form, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :total_num_arrows,
@@ -69,7 +74,7 @@ class Taikai < ApplicationRecord
   end
 
   def draw
-    if individual?
+    if form_individual?
       participating_dojos.each do |participating_dojo|
         participating_dojo.participants.update_all(index: nil)
         participating_dojo.participants.shuffle.each_with_index do |participant, index|

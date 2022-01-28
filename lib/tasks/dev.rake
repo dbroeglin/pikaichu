@@ -30,12 +30,12 @@ if Rails.env.development? || Rails.env.test?
              start_date: '2021-12-18',
              end_date: '2021-12-18',
              distributed: false,
-             individual: true,
+             form: 'individual',
              user: User.second,
              with_staff: false) # Do not generate additional staff
 
       create_list(:taikai_with_participating_dojo, 2, current_user: User.first)
-      create_list(:taikai_with_participating_dojo, 2, individual: true, current_user: User.first)
+      create_list(:taikai_with_participating_dojo, 2, form: 'individual', current_user: User.first)
 
       Taikai.find_by_shortname("taikai-1").participating_dojos.first.participants.each do |participant|
         participant.results.each do |result|

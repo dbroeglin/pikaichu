@@ -21,7 +21,7 @@ FactoryBot.define do
     end_date { 5.days.from_now }
     description { Faker::Lorem.paragraph }
     distributed { true }
-    individual { false }
+    form { 'team' }
     current_user { user }
 
     factory :taikai_with_participating_dojo do

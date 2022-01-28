@@ -34,7 +34,7 @@ module TaikaisHelper
                     style: [@info_label_cell_style, @description_style], height: 60
       sheet.add_row [
         Taikai.human_attribute_name(:type),
-        "#{@taikai.individual? ? t('.individual.true') : t('.individual.false')}#{" (#{t('.distributed')})" if @taikai.distributed? }"
+        "#{@taikai.form_individual? ? t('.individual.true') : t('.individual.false')}#{" (#{t('.distributed')})" if @taikai.distributed? }"
       ], style: [@info_label_cell_style, @info_data_cell_style], height: 20
       sheet.add_row [Taikai.human_attribute_name(:total_num_arrows), @taikai.total_num_arrows],
                     style: [@info_label_cell_style, @info_data_cell_style], height: 20
@@ -85,7 +85,7 @@ module TaikaisHelper
   end
 
   def export_participants_sheet(xlsx_package)
-    if @taikai.individual?
+    if @taikai.form_individual?
       xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
         sheet.column_widths 20, 4, 40, 12
 
@@ -164,7 +164,7 @@ module TaikaisHelper
   end
 
   def export_results_sheet(xlsx_package)
-    if @taikai.individual?
+    if @taikai.form_individual?
       row_styles = [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
                    [@result_cell_style] * @taikai.total_num_arrows +
                    [@total_cell_style]

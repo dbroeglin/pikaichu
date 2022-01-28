@@ -29,7 +29,7 @@
               <% if taikai.distributed %>
                 <span class="icon is-small" title="<%= t '.distributed' %>">
                   <i class="fas fa-globe"></i>
-                </span><% end %>&nbsp;<% if !taikai.individual %><span class="icon is-small" title="<%= t '.teams' %>">
+                </span><% end %>&nbsp;<% if !taikai.form_individual? %><span class="icon is-small" title="<%= t '.teams' %>">
                   <i class="fas fa-users"></i>
                 </span>
               <% end %>

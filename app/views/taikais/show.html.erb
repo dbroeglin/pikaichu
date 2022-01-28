@@ -25,7 +25,7 @@
                 <thead>
                   <tr class="has-text-centered">
                     <th><%= Participant.human_attribute_name :participating_dojo %></th>
-                    <% if @taikai.individual? %>
+                    <% if @taikai.form_individual? %>
                     <th><%= Team.human_attribute_name :index %></th>
                     <% else %>
                     <th><%= Participant.human_attribute_name :index %></th>
@@ -35,7 +35,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% if @taikai.individual? %>
+                  <% if @taikai.form_individual? %>
                   <%
                     @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
                       dojo.participants.each_with_index do |participant, participant_index|
@@ -76,7 +76,7 @@
                   <% end %>
                   <tr>
                     <td></td>
-                    <% unless @taikai.individual? %>
+                    <% unless @taikai.form_individual? %>
                     <td></td>
                     <% end %>
                     <td></td>

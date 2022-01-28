@@ -42,7 +42,7 @@
   <%= f.input :firstname %>
   <%= f.input :lastname %>
   <%= f.input :club %>
-  <% if @taikai.individual %>
+  <% if @taikai.form_individual? %>
   <%= f.input :index %>
   <% end %>
 

@@ -1,5 +1,5 @@
           <%
-            if @taikai.individual?
+            if @taikai.form_individual?
               @participating_dojos.each_with_index do |dojo|
                 dojo.participants.each_with_index do |participant, participant_index|
           %>

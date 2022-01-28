@@ -9,7 +9,7 @@
     <thead>
       <tr class="has-text-centered">
         <th><%= Dojo.model_name.human %></th>
-        <% if @taikai.individual? %>
+        <% if @taikai.form_individual? %>
         <th><%= Participant.human_attribute_name :index %></th>
         <% else %>
         <th><%= Team.model_name.human %></th>
@@ -19,7 +19,7 @@
         <% @taikai.num_rounds.times do |index| %>
           <th colspan="2"><%= t '.round', index: index + 1 %></th>
         <% end %>
-        <th colspan="<%= @taikai.individual? ? 1 : 2 %>"><%= t '.score' %></th>
+        <th colspan="<%= @taikai.form_individual? ? 1 : 2 %>"><%= t '.score' %></th>
       </tr>
     </thead>
     <tbody>

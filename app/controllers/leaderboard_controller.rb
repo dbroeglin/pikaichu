@@ -14,7 +14,7 @@ class LeaderboardController < ApplicationController
   def compute_leaderboard(final)
     @taikai = Taikai.find(params[:id])
 
-    if @taikai.individual?
+    if @taikai.form_individual?
       @taikai = Taikai
                 .includes(participating_dojos: { participants: :results })
                 .find(params[:id])
