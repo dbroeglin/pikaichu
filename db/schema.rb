@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
   create_enum :taikai_form, [
     "individual",
     "team",
-    "2in1part1",
+    "2in1",
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|

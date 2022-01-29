@@ -77,16 +77,16 @@ class TaikaisController < ApplicationController
     params
       .require(:taikai)
       .permit(
-        :shortname,
-        :name,
         :description,
-        :start_date,
-        :end_date,
         :distributed,
-        :individual,
-        :total_num_arrows,
+        :end_date,
+        :form,
+        :name,
         :num_targets,
+        :shortname,
+        :start_date,
         :tachi_size,
+        :total_num_arrows,
       )
   end
 end

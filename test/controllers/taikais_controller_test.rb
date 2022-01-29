@@ -3,8 +3,10 @@ require 'test_helper'
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai1 = taikais(:taikai1)
-    @other_taikai = taikais(:taikai2)
+    @individual_12 = taikais(:individual_12)
+    @other_taikai = taikais(:team_12)
+    @attributes = @individual_12.attributes.delete_if { |key| key =~ /^(id|.*_date|.*_at|.*_by)$/ }
+    @other_attributes = @other_taikai.attributes.delete_if { |key| key =~ /^(id|.*_at|.*_by)$/ }
 
     @generic_params = {
       'shortname' => 'taikai-to-create',
@@ -12,7 +14,7 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
       'description' => "Let's create a new taikai",
       'start_date' => '2022-01-06',
       'end_date' => '2022-01-07',
-      'individual' => 'true',
+      'form' => 'individual',
       'distributed' => 'true',
     }
   end
@@ -39,7 +41,7 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
 
   test 'should validate target/arrow/tachi sizes' do
     assert_no_changes 'Taikai.count' do
-      post taikais_url @taikai1, params: {
+      post taikais_url @individual_12, params: {
         'taikai' => @generic_params.merge(total_num_arrows: 13, num_targets: 7, tachi_size: 3)
       }
     end
@@ -50,22 +52,22 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get edit' do
-    get edit_taikai_url @taikai1
+    get edit_taikai_url @individual_12
     assert_response :success
   end
 
   test 'should patch update' do
-    patch taikai_url @taikai1, params: { taikai: @taikai1.attributes }
+    patch taikai_url @individual_12, params: { taikai: @attributes }
     assert_redirected_to taikais_url
   end
 
   test 'should not be able to update taikai he is not admin of' do
-    patch taikai_url @other_taikai, params: { taikai: @other_taikai.attributes }
+    patch taikai_url @other_taikai, params: { taikai: @other_attributes }
     assert_unauthorized
   end
 
   test 'should get destroy' do
-    delete taikai_url @taikai1
+    delete taikai_url @individual_12
     assert_redirected_to taikais_url
   end
 

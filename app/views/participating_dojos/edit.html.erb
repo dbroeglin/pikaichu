@@ -42,7 +42,7 @@
           </p>
         </div>
       </div>
-      <% if @taikai.individual %>
+      <% if @taikai.form_individual? %>
         <div class="card mt-5">
           <header class="card-header">
             <p class="card-header-title"><%= Participant.model_name.human count: 2 %></p>

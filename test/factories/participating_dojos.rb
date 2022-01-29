@@ -10,7 +10,7 @@ FactoryBot.define do
       end
 
       after(:create) do |participating_dojo, evaluator|
-        if participating_dojo.taikai.form_form_individual?
+        if participating_dojo.taikai.form_individual?
           create_list(:participant, evaluator.participant_count, participating_dojo: participating_dojo)
         else
           create_list(:team_with_participants, evaluator.participant_count, participating_dojo: participating_dojo)

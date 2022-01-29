@@ -21,7 +21,7 @@
   </div>
 
   <%= f.input :distributed %>
-  <%= f.input :individual %>
+  <%= f.input :form %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3", disabled: taikai.id && !policy(taikai).update? %>
   <%= link_to t('cancel'), root_path, class: "button" %>

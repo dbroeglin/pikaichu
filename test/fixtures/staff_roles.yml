@@ -1,24 +1,24 @@
 taikai_admin:
   code: taikai_admin
-  label: '{"fr":"Administrateur","en":"Administrator"}"'
-  description: "Administrator of an entire Taikai"
+  label: { 'fr': 'Administrateur' }
+  description: { 'fr': 'Administrator of an entire Taikai' }
 
 dojo_admin:
   code: dojo_admin
-  label: Dojo Administrator
-  description: "Administrator for a particular participating dojo"
+  label: { 'fr': 'Dojo Administrator' }
+  description: { 'fr': 'Administrator for a particular participating dojo' }
 
 chairman:
   code: chairman
-  label: Chairman
-  description: "Taikai chairman"
+  label: { 'fr': 'Chairman' }
+  description: { 'fr': 'Taikai chairman' }
 
 marking_referee:
   code: marking_referee
-  label: Marking Referee
-  description: "Marking Referee"
+  label: { 'fr': 'Marking Referee' }
+  description: { 'fr': 'Marking Referee"' }
 
 yatori:
   code: yatori
-  label: Yatori
-  description: "Yatori"
+  label: { 'fr': 'Yatori' }
+  description: { 'fr': 'Yatori"' }

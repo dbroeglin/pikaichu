@@ -1,49 +1,49 @@
-taikai1:
-  shortname: taikai-1
+individual_12:
+  shortname: individual-12
   name: Taikai 1
   start_date: <%= 5.days.from_now %>
   end_date: <%= 6.days.from_now %>
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
-  distributed: true
-  individual: true
+  distributed: false
+  form: individual
 
-taikai2:
-  shortname: taikai-2
+team_12:
+  shortname: team-12
   name: Taikai 2
   start_date: <%= 10.days.from_now %>
   end_date: <%= 12.days.from_now %>
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
-  distributed: true
-  individual: false
+  distributed: false
+  form: team
 
-taikai3:
-  shortname: taikai-3
-  name: Taikai 3
+2in1_12:
+  shortname: 2in1-12
+  name: "2 in 1 / 12"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
   distributed: false
-  individual: true
+  form: 2in1
 
-taikai4:
-  shortname: taikai-4
+individual_20:
+  shortname: individual-20
   name: Taikai 4
   start_date: <%= 20.days.from_now %>
   end_date: <%= 24.days.from_now %>
   num_targets: 10
-  total_num_arrows: 12
-  tachi_size: 5
+  total_num_arrows: 20
+  tachi_size: 3
   distributed: false
-  individual: false
+  form: team
 
-taikai5: # Admin is Alain Térieur
-  shortname: taikai-5
+other_taikai: # Admin is Alain Térieur
+  shortname: other-taikai
   name: Taikai 5
   start_date: <%= 20.days.from_now %>
   end_date: <%= 24.days.from_now %>
@@ -51,4 +51,4 @@ taikai5: # Admin is Alain Térieur
   total_num_arrows: 12
   tachi_size: 3
   distributed: true
-  individual: false
+  form: team

@@ -11,9 +11,11 @@ fr:
   home:
     index:
       dojos_summary: "%{nb} Clubs gérés."
-      taikais_summary: "%{nb} Taikais gérés."
-      manage_taikais: "Gérer les Taikais"
+      dojos: Clubs
       manage_dojos: "Gérer les Clubs"
+      manage_taikais: "Gérer les Taikai"
+      taikais_summary: "%{nb} Taikai gérés."
+      taikais: Taikai
   dojos:
     index:
       title: Liste des Clubs
@@ -120,11 +122,15 @@ fr:
       dates: Dates
       distributed: À distance
       teams: En équipe
-      title: Liste des Taikais
+      title: Liste des Taikai
     edit:
       title: Modification du Taikai
     new:
       title: Ajouter un Taikai
+    show:
+      total_num_arrows:
+        one: "%{count} flèche"
+        other: "%{count} flèches"
   teams:
     destroy:
       title: Effacer une équipe

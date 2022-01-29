@@ -26,13 +26,9 @@
           <% @taikais.each do |taikai| %>
           <tr>
             <td>
-              <% if taikai.distributed %>
-                <span class="icon is-small" title="<%= t '.distributed' %>">
+                <%= taikai_form_icon taikai %>&nbsp;<% if taikai.distributed %><span class="icon is-small" title="<%= t '.distributed' %>">
                   <i class="fas fa-globe"></i>
-                </span><% end %>&nbsp;<% if !taikai.form_individual? %><span class="icon is-small" title="<%= t '.teams' %>">
-                  <i class="fas fa-users"></i>
-                </span>
-              <% end %>
+                </span><% end %>
             </td>
             <td><%= link_to taikai.shortname, taikai_path(taikai) %></td>
             <td><%= taikai.name %></td>

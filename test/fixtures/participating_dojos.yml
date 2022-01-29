@@ -1,23 +1,23 @@
-participating_dojo1_taikai1:
-  taikai: taikai1
+participating_dojo1_individual_12:
+  taikai: individual_12
   dojo: dojo_fr
 
-participating_dojo2_taikai1:
-  taikai: taikai1
+participating_dojo2_individual_12:
+  taikai: individual_12
   dojo: dojo_hk
 
-participating_dojo1_taikai2:
-  taikai: taikai2
+participating_dojo1_team_12:
+  taikai: team_12
   dojo: dojo_fr
 
-participating_dojo1_taikai3:
-  taikai: taikai3
+participating_dojo1_2in1_12:
+  taikai: 2in1_12
   dojo: dojo_fr
 
-participating_dojo1_taikai4:
-  taikai: taikai4
+participating_dojo1_individual_20:
+  taikai: individual_20
   dojo: dojo_fr
 
 participating_dojo1_taikai5:
-  taikai: taikai5
+  taikai: other_taikai
   dojo: dojo_fr

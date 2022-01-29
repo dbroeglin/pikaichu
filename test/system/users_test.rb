@@ -17,7 +17,7 @@ class UsersTest < ApplicationSystemTestCase
 
     find_button("Connexion").click
 
-    assert_selector "p.title", text: "Taikais"
+    assert_selector "p.title", text: "Taikai"
     assert_selector "p.title", text: "Clubs"
 
     click_on "Déconnexion"

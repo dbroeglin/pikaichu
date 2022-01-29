@@ -3,9 +3,9 @@ require "test_helper"
 class SearchControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:taikai1)
-    @participating_dojo = participating_dojos(:participating_dojo1_taikai1)
-    @staff = staffs(:staff1_taikai1)
+    @taikai = taikais(:individual_12)
+    @participating_dojo = participating_dojos(:participating_dojo1_individual_12)
+    @staff = staffs(:staff1_individual_12)
   end
 
   test "should search dojos" do

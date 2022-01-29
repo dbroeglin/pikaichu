@@ -12,19 +12,29 @@ fr:
         other: Clubs hôtes
       taikai:
         one: Taikai
-        other: Taikais
+        other: Taikai
       team:
         one: Équipe
         other: Équipes
       staff:
         one: Staff
         other: Staffs
+    booleans:
+      taikai:
+        distributed:
+          'true': À distance
+          'false': local
     enums:
       result:
         status:
           hit: Touché
           miss: Manqué
           unknown: Inconnu
+      taikai:
+        form:
+          2in1: 2 en 1
+          individual: Individuel
+          team: En équipe
     attributes:
       user:
         firstname: Prénom
@@ -39,19 +49,19 @@ fr:
         club: Club
         display_name: Nom
         firstname: Prénom
-        index: Nb
-        index_title: Numéro de participant
         index_in_team: Ordre dans l'équipe
+        index_title: Numéro de participant
+        index: Nb
         kyudojin: Kyudojin
         lastname: Nom
         participating_dojo: Club hôte
         team: Équipe
       participating_dojo:
-        display_name: Nom court
         city: Ville
+        display_name: Nom court
         dojo: Club
-        num_participants: Nb.
         num_participants_title: Nombre de participants
+        num_participants: Nb.
         pays: Pays
       staff:
         display_name: Nom
@@ -61,16 +71,16 @@ fr:
         role_id: Rôle
         user: Utilisateur
       taikai:
-        shortname: Nom court
-        name: Nom entier
-        start_date: Date de début
-        end_date: Date de fin
         distributed: À distance
-        individual: Individuel
+        end_date: Date de fin
+        form: Forme
+        name: Nom entier
         num_arrows: Nb de flèches
         num_targets: Nb de cibles
-        total_num_arrows: Nb total de flèches
+        shortname: Nom court
+        start_date: Date de début
         tachi_size: Taille des tachi
+        total_num_arrows: Nb total de flèches
       team:
         index: Numéro
         shortname: Nom court

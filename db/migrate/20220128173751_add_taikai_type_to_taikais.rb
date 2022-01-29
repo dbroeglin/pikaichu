@@ -1,6 +1,6 @@
 class AddTaikaiTypeToTaikais < ActiveRecord::Migration[7.0]
   def change
-    create_enum :taikai_form, %w[individual team 2in1part1]
+    create_enum :taikai_form, %w[individual team 2in1]
 
     add_column :taikais, :form, :taikai_form
 

@@ -1,5 +1,20 @@
 # rubocop:disable all
 module TaikaisHelper
+  def taikai_form_icon(taikai)
+    title = Taikai.human_enum_value :form, taikai.form
+    icon = case taikai.form
+    when 'individual'
+      "fas fa-user"
+    when 'team'
+      "fas fa-users"
+    when '2in1'
+      "fas fa-code-branch"
+    else
+      raise "Unknown Taikai Form: '#{taikai.form}'"
+    end
+    %(<span class="icon is-small" title="#{title}"><i class="#{icon}"></i></span>).html_safe
+  end
+
   def result_mark(result)
     if result.final?
       case result.status

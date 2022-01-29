@@ -5,7 +5,7 @@ class Taikai < ApplicationRecord
   enum form: {
     individual: 'individual',
     team: 'team',
-    '2in1part1': '2in1part1'
+    '2in1': '2in1'
   }, _prefix: :form
 
   audited

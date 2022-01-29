@@ -27,7 +27,7 @@ module SignInHelper
     follow_redirect!
     assert_response :success
 
-    assert_select "p.title", text: "Taikais"
+    assert_select "p.title", text: "Taikai"
     assert_select "p.title", text: "Clubs"
   end
 end
