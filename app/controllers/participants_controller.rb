@@ -54,7 +54,7 @@ class ParticipantsController < ApplicationController
     @participant = @parent_association.find(params[:id])
 
     @participant.destroy
-    redirect_to_edit(:see_other)
+    redirect_to_edit
   end
 
   def reorder
@@ -128,13 +128,13 @@ class ParticipantsController < ApplicationController
       )
   end
 
-  def redirect_to_edit(status = 307)
+  def redirect_to_edit
     if @team
       redirect_to edit_taikai_participating_dojo_team_path(@taikai, @participating_dojo, @team),
-                  status: 303
+                  status: :see_other
     else
       redirect_to edit_taikai_participating_dojo_path(@taikai, @participating_dojo),
-                  status: 303
+                  status: :see_other
     end
   end
 

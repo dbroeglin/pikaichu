@@ -3,8 +3,8 @@ require 'test_helper'
 class StaffsControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_12)
-    @staff = staffs(:staff1_individual_12)
+    @taikai = taikais(:individual12)
+    @staff = staffs(:staff1_individual12)
   end
 
   test 'should get new' do
@@ -19,7 +19,7 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
         lastname: "Brown",
         taikai_id: @taikai.id,
         role_id: staff_roles(:chairman),
-        participating_dojo_id: participating_dojos(:participating_dojo1_individual_12)
+        participating_dojo_id: participating_dojos(:participating_dojo1_individual12)
       } }
     end
     assert_redirected_to edit_taikai_url @taikai

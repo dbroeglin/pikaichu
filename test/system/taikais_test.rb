@@ -9,7 +9,7 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test "visiting taikai-1" do
-    shortname = taikais('individual_12').shortname
+    shortname = taikais('individual12').shortname
 
     click_on "Gérer les Taikai"
 
@@ -20,22 +20,20 @@ class TaikaisTest < ApplicationSystemTestCase
     assert_selector "p.title.is-4", text: "Taikai 1 (#{shortname})"
   end
 
-
   [
-    [:individual, :false, 12],
-    [:team,       :false, 12],
-    [:'2in1',     :false, 12],
-    [:individual, :false, 20],
-    [:team,       :false, 20],
-    [:'2in1',     :false, 20],
-    [:individual, :true,  12],
-    [:team,       :true,  12],
-    [:'2in1',     :true,  12],
-    [:individual, :true,  20],
-    [:team,       :true,  20],
-    [:'2in1',     :true,  20],
+    [:individual, false, 12],
+    [:team,       false, 12],
+    [:'2in1',     false, 12],
+    [:individual, false, 20],
+    [:team,       false, 20],
+    [:'2in1',     false, 20],
+    [:individual, true,  12],
+    [:team,       true,  12],
+    [:'2in1',     true,  12],
+    [:individual, true,  20],
+    [:team,       true,  20],
+    [:'2in1',     true,  20],
   ].each do |form, distributed, total_num_arrows|
-
     test "creating an #{form}/#{distributed} #{total_num_arrows} arrows taikai" do
       shortname = "#{form}-#{distributed}-#{total_num_arrows}-taikai"
 

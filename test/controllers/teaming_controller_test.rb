@@ -4,20 +4,20 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
 
-    @taikai = taikais(:'2in1_12')
-    @participating_dojo = participating_dojos(:fr_2in1_12)
-    @team_a = teams(:a_fr_2in1_12)
-    @team_b = teams(:b_fr_2in1_12) # empty
+    @taikai = taikais(:'2in112')
+    @participating_dojo = participating_dojos(:fr_2in112)
+    @team_a = teams(:a_fr_2in112)
+    @team_b = teams(:b_fr_2in112) # empty
 
     # team a:
-    @participant1 = participants(:p1_fr_2in1_12)
-    @participant2 = participants(:p2_fr_2in1_12)
-    @participant3 = participants(:p3_fr_2in1_12)
+    @participant1 = participants(:p1_fr_2in112)
+    @participant2 = participants(:p2_fr_2in112)
+    @participant3 = participants(:p3_fr_2in112)
 
     # non assigned
-    @participant4 = participants(:p4_fr_2in1_12)
-    @participant5 = participants(:p5_fr_2in1_12)
-    @participant6 = participants(:p6_fr_2in1_12)
+    @participant4 = participants(:p4_fr_2in112)
+    @participant5 = participants(:p5_fr_2in112)
+    @participant6 = participants(:p6_fr_2in112)
   end
 
   test "add participant in empty team" do
@@ -156,7 +156,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to teaming_edit_taikai_participating_dojo_url @taikai, @participating_dojo
     assert @controller.instance_variable_get(:@team).errors.of_kind? :shortname, :blank
-    assert_equal "Le nom d'une équipe ne peut pas être vide.",  flash[:alert]
+    assert_equal "Le nom d'une équipe ne peut pas être vide.", flash[:alert]
   end
 
   test "cannot add team with same name" do
@@ -167,6 +167,6 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to teaming_edit_taikai_participating_dojo_url @taikai, @participating_dojo
     assert @controller.instance_variable_get(:@team).errors.of_kind? :shortname, :taken
-    assert_equal "Une équipe avec le nom '#{@team_a.shortname}' existe déjà.",  flash[:alert]
+    assert_equal "Une équipe avec le nom '#{@team_a.shortname}' existe déjà.", flash[:alert]
   end
 end

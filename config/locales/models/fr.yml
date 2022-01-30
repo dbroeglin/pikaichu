@@ -23,7 +23,7 @@ fr:
       taikai:
         distributed:
           'true': À distance
-          'false': local
+          'false': Local
     enums:
       result:
         status:

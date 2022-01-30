@@ -3,7 +3,7 @@ require "test_helper"
 class LeaderboardControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_12)
+    @taikai = taikais(:individual12)
   end
 
   test "should get show" do

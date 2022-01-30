@@ -3,9 +3,9 @@ require 'test_helper'
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:alex_terieur)
-    @individual_12 = taikais(:individual_12)
-    @other_taikai = taikais(:team_12)
-    @attributes = @individual_12.attributes.delete_if { |key| key =~ /^(id|.*_date|.*_at|.*_by)$/ }
+    @individual12 = taikais(:individual12)
+    @other_taikai = taikais(:team12)
+    @attributes = @individual12.attributes.delete_if { |key| key =~ /^(id|.*_date|.*_at|.*_by)$/ }
     @other_attributes = @other_taikai.attributes.delete_if { |key| key =~ /^(id|.*_at|.*_by)$/ }
 
     @generic_params = {
@@ -41,7 +41,7 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
 
   test 'should validate target/arrow/tachi sizes' do
     assert_no_changes 'Taikai.count' do
-      post taikais_url @individual_12, params: {
+      post taikais_url @individual12, params: {
         'taikai' => @generic_params.merge(total_num_arrows: 13, num_targets: 7, tachi_size: 3)
       }
     end
@@ -52,12 +52,12 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get edit' do
-    get edit_taikai_url @individual_12
+    get edit_taikai_url @individual12
     assert_response :success
   end
 
   test 'should patch update' do
-    patch taikai_url @individual_12, params: { taikai: @attributes }
+    patch taikai_url @individual12, params: { taikai: @attributes }
     assert_redirected_to taikais_url
   end
 
@@ -67,7 +67,7 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get destroy' do
-    delete taikai_url @individual_12
+    delete taikai_url @individual12
     assert_redirected_to taikais_url
   end
 

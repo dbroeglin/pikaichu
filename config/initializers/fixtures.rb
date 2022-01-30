@@ -1,3 +1,1 @@
-if Rails.env.development? || Rails.env.test?
-  Faker::Config.random = Random.new(42)
-end
+Faker::Config.random = Random.new(42) if Rails.env.development? || Rails.env.test?

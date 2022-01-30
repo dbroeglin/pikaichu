@@ -2,7 +2,7 @@ require "test_helper"
 
 class ParticipantTest < ActiveSupport::TestCase
   setup do
-    @participant = participants(:participant1_participating_dojo1_individual_12)
+    @participant = participants(:participant1_participating_dojo1_individual12)
     @participant.create_empty_results
   end
 

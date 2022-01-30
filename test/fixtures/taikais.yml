@@ -1,4 +1,4 @@
-individual_12:
+individual12:
   shortname: individual-12
   name: Taikai 1
   start_date: <%= 5.days.from_now %>
@@ -9,7 +9,7 @@ individual_12:
   distributed: false
   form: individual
 
-team_12:
+team12:
   shortname: team-12
   name: Taikai 2
   start_date: <%= 10.days.from_now %>
@@ -20,7 +20,7 @@ team_12:
   distributed: false
   form: team
 
-2in1_12:
+2in112:
   shortname: 2in1-12
   name: "2 in 1 / 12"
   start_date: <%= 16.days.from_now %>

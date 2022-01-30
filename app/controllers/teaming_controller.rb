@@ -5,7 +5,7 @@ class TeamingController < ApplicationController
   def edit
     @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
     @participants = @participating_dojo.participants.where("participants.team_id IS NULL")
-    @team = @participating_dojo.teams.build()
+    @team = @participating_dojo.teams.build
   end
 
   def create_team
@@ -36,12 +36,11 @@ class TeamingController < ApplicationController
           participant.index_in_team = nil
           participant.save!
         end
-        participant.insert_at(params[:index].to_i)
       else
         participant.team = team
         participant.save!
-        participant.insert_at(params[:index].to_i)
       end
+      participant.insert_at(params[:index].to_i)
     else
       participant.move_to_bottom
       Participant.acts_as_list_no_update do

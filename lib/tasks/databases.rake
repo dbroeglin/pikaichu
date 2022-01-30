@@ -20,7 +20,7 @@ namespace :db do
   namespace :fixtures do
     desc "Load fixtures and post-process"
     task full: :'db:fixtures:load' do
-      Participant.all.each &:create_empty_results
+      Participant.all.each(&:create_empty_results)
     end
   end
 end

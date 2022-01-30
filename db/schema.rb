@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
     t.integer "total_num_arrows", limit: 2, default: 12, null: false
     t.integer "tachi_size", limit: 2, default: 3, null: false
     t.enum "form", enum_type: "taikai_form"
+    t.index ["form"], name: "taikais_by_form"
     t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 
