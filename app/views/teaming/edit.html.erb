@@ -1,17 +1,44 @@
-<div class="container mb-3">
-  <%= link_to teaming_clear_taikai_participating_dojo_path(@taikai, @participating_dojo),
-        class: "button is-danger",
-        data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
-        title: t('destroy') do %>
-    <span class="icon">
-      <i class="far fa-trash-can"></i>
-    </span>
-    <span>TODO: CLEAR</span>
-  <% end %>
-</div>
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <p>
+        <%= link_to t('back'), edit_taikai_participating_dojo_path(@taikai, @participating_dojo), class: "button is-light" %>
+      </p>
+    </div>
+    <div class="level-item">
+      <%= bulma_form_with url: teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo) do |f| %>
+        <div class="field has-addons">
+          <p class="control">
+            <%= f.text_field :shortname, class: "input", placeholder: t('.placeholders.team_shortname') %>
+          </p>
+          <p class="control">
+            <button class="button"><%= t '.add_team'  %></button>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item">
+      <%= link_to teaming_clear_taikai_participating_dojo_path(@taikai, @participating_dojo),
+            class: "button is-danger",
+            data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+            title: t('destroy') do %>
+        <span class="icon">
+          <i class="far fa-trash-can"></i>
+        </span>
+        <span><%= t '.clear_all' %></span>
+      <% end %>
+    </p>
+  </div>
+</nav>
+
 <div class="columns is-mobile" data-controller="drag-teams" data-drag-teams-url="<%= teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo %>">
-  <div class="column is-narrow" data-drag-teams-target="right">
-    <% @participating_dojo.participants.each do |participant| %>
+  <div class="column is-narrow" data-drag-teams-target="left">
+    <% @participants.each do |participant| %>
       <p data-id="<%= participant.id %>">
         <span class="tag"><%= participant.display_name %> (<%= participant.club %>)</span>
       </p>
@@ -23,7 +50,7 @@
       <div class="column is-4">
         <div class="box">
           <p class="team-title" ><%= team.shortname %></p>
-          <div class="container" data-drag-teams-target="left">
+          <div class="container" data-drag-teams-target="right" data-id="<%= team.id %>">
             <% team.participants.each do |participant| %>
               <p data-id="<%= participant.id %>">
                 <span class="tag"><%= participant.display_name %> (<%= participant.club %>)</span>

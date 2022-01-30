@@ -2,6 +2,7 @@ jean_bon:
   firstname: Jean
   lastname: Bon
   email: jean.bon@example.org
+  admin: true
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   confirmed_at: <%= Time.zone.now - 1.hour %>
   confirmation_sent_at: <%= Time.zone.now - 2.hours %>

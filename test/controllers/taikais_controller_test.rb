@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:jean_bon)
+    sign_in users(:alex_terieur)
     @individual_12 = taikais(:individual_12)
     @other_taikai = taikais(:team_12)
     @attributes = @individual_12.attributes.delete_if { |key| key =~ /^(id|.*_date|.*_at|.*_by)$/ }

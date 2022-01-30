@@ -1,8 +1,14 @@
 require 'application_system_test_case'
+require 'taikais_test_helpers'
 
 class TaikaisTest < ApplicationSystemTestCase
-  test "visiting taikai-1" do
+  include TaikaisTestHelpers
+
+  setup do
     sign_in_as users(:jean_bon)
+  end
+
+  test "visiting taikai-1" do
     shortname = taikais('individual_12').shortname
 
     click_on "Gérer les Taikai"
@@ -31,7 +37,6 @@ class TaikaisTest < ApplicationSystemTestCase
   ].each do |form, distributed, total_num_arrows|
 
     test "creating an #{form}/#{distributed} #{total_num_arrows} arrows taikai" do
-      sign_in_as users(:jean_bon)
       shortname = "#{form}-#{distributed}-#{total_num_arrows}-taikai"
 
       go_to_taikais
@@ -71,17 +76,5 @@ class TaikaisTest < ApplicationSystemTestCase
     fill_in "Nb total de flèches", with: total_num_arrows
 
     check "À distance" if distributed
-  end
-
-  def go_to_taikais
-    click_on "Gérer les Taikai"
-
-    assert_selector "h1.title", text: "Liste des Taikai"
-  end
-
-  def go_to_taikai(label)
-    go_to_taikais
-
-    click_on taikais(label).shortname
   end
 end

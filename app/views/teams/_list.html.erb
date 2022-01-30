@@ -1,10 +1,32 @@
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item">
+      <%= link_to teaming_edit_taikai_participating_dojo_path(taikai, participating_dojo),
+            class: "button has-background-light",
+            title: t('.form_teams') do %>
+        <span class="icon is-small">
+          <i class="fas fa-list-ol"></i>
+        </span>
+        <span><%= t '.form_teams' %></span>
+      <% end %>
+    </p>
+  </div>
+</nav>
+
 <table class="table is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr class="has-text-centered">
       <th><%= Team.human_attribute_name :index %></th>
       <th><%= Team.human_attribute_name :name %></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo),
+        <%= link_to teaming_edit_taikai_participating_dojo_path(taikai, participating_dojo),
               class: "button is-small has-background-light",
               title: t('teams.new.title') do %>
           <span class="icon is-small">

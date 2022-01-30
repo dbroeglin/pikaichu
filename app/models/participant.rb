@@ -1,7 +1,7 @@
 class Participant < ApplicationRecord
   audited
 
-  acts_as_list column: :index_in_team, scope: :team
+  acts_as_list column: :index_in_team, scope: :team, sequential_updates: true
 
   belongs_to :participating_dojo
   belongs_to :team, optional: true

@@ -141,6 +141,16 @@ fr:
     form:
       placeholders:
         index: Laisser blanc pour un choix par défaut...
+    list:
+      form_teams: Former les équipes
+  teaming:
+    edit:
+      add_team: Ajouter une équipe
+      clear_all: Effacer les équipes
+      empty_team_shortname: Le nom d'une équipe ne peut pas être vide.
+      taken_team_shortname: Une équipe avec le nom '%{shortname}' existe déjà.
+      placeholders:
+        team_shortname: Nom d'équipe
   staffs:
     destroy:
       title: Effacer un staff

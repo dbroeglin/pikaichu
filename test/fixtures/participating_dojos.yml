@@ -1,23 +1,34 @@
 participating_dojo1_individual_12:
   taikai: individual_12
   dojo: dojo_fr
+  display_name: FR
 
 participating_dojo2_individual_12:
   taikai: individual_12
   dojo: dojo_hk
+  display_name: HK
 
 participating_dojo1_team_12:
   taikai: team_12
   dojo: dojo_fr
+  display_name: FR
 
-participating_dojo1_2in1_12:
+fr_2in1_12:
   taikai: 2in1_12
   dojo: dojo_fr
+  display_name: FR
+
+hk_2in1_12:
+  taikai: 2in1_12
+  dojo: dojo_hk
+  display_name: HK
 
 participating_dojo1_individual_20:
   taikai: individual_20
   dojo: dojo_fr
+  display_name: FR
 
 participating_dojo1_taikai5:
   taikai: other_taikai
   dojo: dojo_fr
+  display_name: FR

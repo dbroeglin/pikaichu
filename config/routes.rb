@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       member do
         get 'teaming/edit'
         post 'teaming/apply'
+        post 'teaming/create_team'
         delete 'teaming/clear'
         patch 'teaming/move'
       end
