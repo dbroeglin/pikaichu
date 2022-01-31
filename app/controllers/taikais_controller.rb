@@ -48,20 +48,6 @@ class TaikaisController < ApplicationController
     redirect_to action: 'index', status: :see_other
   end
 
-  def draw
-    @taikai = authorize Taikai
-              .includes(participating_dojos: :participants)
-              .find(params[:id])
-
-    if @taikai.draw
-      flash[:notice] = t :draw_ok
-    else
-      flash[:alert] = t :draw_error
-    end
-
-    redirect_to action: :show, id: @taikai
-  end
-
   def export
     @taikai =
       Taikai

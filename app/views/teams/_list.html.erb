@@ -25,8 +25,9 @@
     <tr class="has-text-centered">
       <th><%= Team.human_attribute_name :index %></th>
       <th><%= Team.human_attribute_name :name %></th>
+      <th><%= Team.human_attribute_name :num_participants %></th>
       <th class="has-text-right">
-        <%= link_to teaming_edit_taikai_participating_dojo_path(taikai, participating_dojo),
+        <%= link_to new_taikai_participating_dojo_team_path(taikai, participating_dojo),
               class: "button is-small has-background-light",
               title: t('teams.new.title') do %>
           <span class="icon is-small">
@@ -42,6 +43,7 @@
     <tr>
       <td><%= team.index %></td>
       <td><%= team.shortname %></td>
+      <td><%= team.participants.size %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_team_path(taikai, participating_dojo, team),
               class: "button is-small has-background-light",

@@ -15,15 +15,6 @@
   </span>
 <% end if policy(taikai).destroy? %>
 
-<%= link_to draw_taikai_path(taikai),
-            class: "button #{size} has-background-light ml-3",
-            data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
-            title: t('taikais.draw') do %>
-  <span class="icon <%= size %>">
-    <i class="fas fa-shuffle"></i>
-  </span>
-<% end if policy(taikai).draw? %>
-
 <%= link_to show_marking_path(taikai),
             class: "button #{size} has-background-light ml-3",
             title: t('taikais.marking_sheet.title') do %>
@@ -40,7 +31,7 @@
   </span>
 <% end %>
 
-<%= link_to taikai_export_path(taikai),
+<%= link_to taikai_export_taikai_path(taikai),
             class: "button #{size} has-background-light",
             title: t('taikais.export.title') do %>
   <span class="icon <%= size %>">

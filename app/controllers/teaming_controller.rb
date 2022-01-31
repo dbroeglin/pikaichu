@@ -4,7 +4,7 @@ class TeamingController < ApplicationController
 
   def edit
     @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
-    @participants = @participating_dojo.participants.where("participants.team_id IS NULL").reorder(club: :asc, lastname: :asc, firstname: :asc)
+    @participants = @participating_dojo.participants.unteamed.reorder(club: :asc, lastname: :asc, firstname: :asc)
     @team = @participating_dojo.teams.build
   end
 
@@ -57,11 +57,25 @@ class TeamingController < ApplicationController
     redirect_to action: :edit, status: :see_other
   end
 
-  def apply
-    @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
+  def form_randomly
+    if params[:prefix].blank?
+      flash[:alert] = t 'teaming.edit.empty_team_prefix', shortname: params[:shortname]
+    else
+      unteamed_participants = @participating_dojo.participants.unteamed.shuffle
+      groups = unteamed_participants.in_groups_of @participating_dojo.taikai.tachi_size
 
-    # @participating_dojo.participants.group_by(&:club)
+      groups.each_with_index do |group, index|
+        team = @participating_dojo.teams.build(shortname: "#{params[:prefix]}#{index + 1}")
 
+        group.compact.each_with_index do |participant, index|
+          participant.index_in_team = index + 1
+          team.participants << participant
+        end
+
+        team.save!
+      end
+
+    end
     redirect_to action: :edit, status: :see_other
   end
 

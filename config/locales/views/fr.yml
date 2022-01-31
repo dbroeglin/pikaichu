@@ -164,10 +164,13 @@ fr:
     edit:
       add_team: Ajouter une équipe
       clear_all: Effacer les équipes
+      empty_team_prefix: Le préfixe de nom d'éqjuipe ne peut pas être vide.
       empty_team_shortname: Le nom d'une équipe ne peut pas être vide.
+      form_randomly: Former aléatoirement
       taken_team_shortname: Une équipe avec le nom '%{shortname}' existe déjà.
       placeholders:
         team_shortname: Nom d'équipe
+        team_prefix: Préfixe
   staffs:
     destroy:
       title: Effacer un staff

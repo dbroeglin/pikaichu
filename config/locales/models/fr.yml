@@ -84,6 +84,7 @@ fr:
       team:
         index: Numéro
         shortname: Nom court
+        num_participants: Nb.
     errors:
       models:
         team:
@@ -95,6 +96,10 @@ fr:
             index_in_team:
               blank: doit être défini si le participant fait partie d'une équipe.
               taken: doit être unique au sein d'une équipe.
+        participating_dojo:
+          attributes:
+            base:
+              unteamed: Impossible de tirer au sort tant que tous les participants ne sont pas membres d'une équipe.
         staff:
           attributes:
             user:

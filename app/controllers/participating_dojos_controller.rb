@@ -51,6 +51,18 @@ class ParticipatingDojosController < ApplicationController
     redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: :see_other
   end
 
+  def draw
+    @participating_dojo = authorize @taikai.participating_dojos.find(params[:id])
+
+    if @participating_dojo.draw
+      flash[:notice] = t :draw_ok
+    else
+      flash[:alert] = @participating_dojo.errors.full_messages.join("; ")
+    end
+
+    redirect_to controller: :taikais, action: :show, id: @taikai
+  end
+
   private
 
   def participating_dojo_params

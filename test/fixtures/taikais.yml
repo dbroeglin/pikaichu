@@ -40,6 +40,17 @@ individual_20:
   total_num_arrows: 20
   tachi_size: 3
   distributed: false
+  form: individual
+
+team_20:
+  shortname: individual-20
+  name: Taikai 4
+  start_date: <%= 20.days.from_now %>
+  end_date: <%= 24.days.from_now %>
+  num_targets: 10
+  total_num_arrows: 20
+  tachi_size: 3
+  distributed: false
   form: team
 
 other_taikai: # Admin is Alain Térieur

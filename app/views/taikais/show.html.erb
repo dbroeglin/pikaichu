@@ -65,16 +65,25 @@
                   %>
                   <tr>
                     <% if team_index == 0 && participant_index == 0 %>
-                    <td rowspan="<%= dojo.teams.map(&:participants).flatten.size %>"><%= dojo.display_name %></td>
+                      <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
                     <% end %>
                     <% if participant_index == 0 %>
-                    <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
-                    <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
+                      <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
+                      <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
                     <% end %>
                     <td><%= participant.display_name %><%= participant.kyudojin ? " (#{participant.kyudojin.federation_club})" : "" %></td>
                   </tr>
                   <%
                         end
+                      end
+                      dojo.participants.unteamed.each do |participant|
+                  %>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td><%= participant.display_name %><%= participant.kyudojin ? " (#{participant.kyudojin.federation_club})" : "" %></td>
+                    </tr>
+                  <%
                       end
                     end
                   %>
@@ -82,7 +91,7 @@
                   <tr>
                     <td></td>
                     <% unless @taikai.form_individual? %>
-                    <td></td>
+                      <td></td>
                     <% end %>
                     <td></td>
                   </tr>
@@ -93,9 +102,48 @@
         </div>
 
         <div class="column">
+          <div class="card mb-5">
+            <header class="card-header">
+              <p class="card-header-title"><%= ParticipatingDojo.model_name.human count: 2 %></p>
+            </header>
+            <div class="card-content">
+              <table class="table is-narrow">
+                <thead>
+                  <tr class="has-text-centered">
+                    <th><%= ParticipatingDojo.human_attribute_name :display_name %></th>
+                    <th><%= ParticipatingDojo.human_attribute_name :city %></th>
+                    <th><%= ParticipatingDojo.human_attribute_name :country %></th>
+                    <th title="<%= t('activerecord.attributes.participating_dojo.num_participants_title') %>"><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @taikai.participating_dojos.each do |participating_dojo| %>
+                  <tr>
+                    <td><%= participating_dojo.display_name %></td>
+                    <td><%= participating_dojo.dojo.city %></td>
+                    <td><%= participating_dojo.dojo.country_name %></td>
+                    <td><%= participating_dojo.participants.count %></td>
+                    <td>
+                      <%= link_to draw_taikai_participating_dojo_path(@taikai, participating_dojo),
+                                  class: "button is-small has-background-light ml-3",
+                                  data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
+                                  title: t('taikais.draw') do %>
+                        <span class="icon is-small">
+                          <i class="fas fa-shuffle"></i>
+                        </span>
+                      <% end if policy(@taikai).draw? %>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <div class="card">
             <header class="card-header">
-              <p class="card-header-title"><%= Staff.model_name.human.pluralize %></p>
+              <p class="card-header-title"><%= Staff.model_name.human count: 2 %></p>
             </header>
             <div class="card-content">
               <table class="table is-narrow">

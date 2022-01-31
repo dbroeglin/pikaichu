@@ -1,5 +1,4 @@
 <nav class="level">
-  <!-- Left side -->
   <div class="level-left">
     <div class="level-item">
       <p>
@@ -18,9 +17,19 @@
         </div>
       <% end %>
     </div>
+    <div class="level-item">
+      <%= bulma_form_with url: teaming_form_randomly_taikai_participating_dojo_path(@taikai, @participating_dojo) do |f| %>
+        <div class="field has-addons">
+          <p class="control">
+            <%= f.text_field :prefix, class: "input", placeholder: t('.placeholders.team_prefix') %>
+          </p>
+          <p class="control">
+            <button class="button"><%= t '.form_randomly'  %></button>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <!-- Right side -->
   <div class="level-right">
     <p class="level-item">
       <%= link_to teaming_clear_taikai_participating_dojo_path(@taikai, @participating_dojo),

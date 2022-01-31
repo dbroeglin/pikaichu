@@ -7,6 +7,10 @@ class ParticipatingDojoPolicy < ApplicationPolicy
     @participating_dojo = participating_dojo
   end
 
+  def draw?
+    update?
+  end
+
   def edit?
     update?
   end
