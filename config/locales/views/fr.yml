@@ -27,12 +27,26 @@ fr:
       title: Ajouter un club
   leaderboard:
     show:
+      back: Retour au Taikai
+      public: Résultats publics
+      title: "Tableau des résultats intermédiaires - %{taikai}"
+      2in1: Résultats en équipe
+    show_2in1:
+      back: Retour au Taikai
+      title: "Tableau des résultats intermédiaires - %{taikai}"
+      individual: Résultats individuels
+    individual:
       name: Nom
       rank: Rang
       round: Série %{index}
       score: Score
       team_score: Total
-      title: "Tableau des résultats intermédiaires - %{taikai}"
+    team:
+      name: Nom
+      rank: Rang
+      round: Série %{index}
+      score: Score
+      team_score: Total
     public:
       name: Nom
       rank: Rang
@@ -42,6 +56,7 @@ fr:
       title: "Tableau des résultats - %{taikai}"
   marking:
     show:
+      back: Retour au Taikai
       input: Saisie
       rank: Rang
       round: Série %{index}
@@ -73,6 +88,8 @@ fr:
       title: Modifier un club hôte
       import: Importer la liste des participants
       file: Fichier Excel CNKyudo
+      placeholders:
+        choose_a_file: Choisir un fichier
     new:
       title: Ajouter un club hôte
     form:

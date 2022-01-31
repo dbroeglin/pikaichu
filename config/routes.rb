@@ -14,8 +14,6 @@ Rails.application.routes.draw do
         to: 'marking#finalize',
         as: :finalize_round_marking
   get  '/taikais/:id/draw',                             to: 'taikais#draw',          as: :draw_taikai
-  get  '/taikais/:id/leaderboard',                      to: 'leaderboard#show',      as: :show_taikai_leaderboard
-  get  '/taikais/:id/leaderboard/public',               to: 'leaderboard#public',    as: :show_taikai_leaderboard_public
   get  '/taikais/:id/export.xlsx',                      to: 'taikais#export',        as: :taikai_export
 
   get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',
@@ -27,6 +25,11 @@ Rails.application.routes.draw do
                               as: :search_kyudojins
 
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    member do
+      get  '/leaderboard',                      to: 'leaderboard#show'
+      get  '/leaderboard/2in1',                 to: 'leaderboard#show_2in1'
+      get  '/leaderboard/public',               to: 'leaderboard#public'
+    end
     resources :participating_dojos do
       member do
         get 'teaming/edit'

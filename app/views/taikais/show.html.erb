@@ -57,7 +57,7 @@
                       end
                     end
                   %>
-                  <% else %>
+                  <% else # team / 2in1 %>
                   <%
                     @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
                       dojo.teams.each_with_index do |team, team_index|
@@ -65,7 +65,7 @@
                   %>
                   <tr>
                     <% if team_index == 0 && participant_index == 0 %>
-                    <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                    <td rowspan="<%= dojo.teams.map(&:participants).flatten.size %>"><%= dojo.display_name %></td>
                     <% end %>
                     <% if participant_index == 0 %>
                     <td rowspan="<%= team.participants.size %>"><%= team.index %></td>

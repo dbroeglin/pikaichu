@@ -1,0 +1,40 @@
+<table class="table is-narrow is-bordered is-striped has-text-centered">
+  <thead>
+    <tr>
+      <th rowspan="2"><%= t '.rank' %></th>
+      <th rowspan="2" colspan="3"><%= t '.name' %></th>
+      <% taikai.num_rounds.times do |index| %>
+      <th colspan="<%= taikai.num_arrows %>"><%= t '.round', index: index + 1 %></th>
+      <% end %>
+      <th rowspan="2"><%= t '.score' %></th>
+    </tr>
+    <tr>
+      <% taikai.total_num_arrows.times do |index| %>
+        <th><%= index + 1 %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% rank = 0 %>
+    <% participants_by_score.each_pair do |pair| %>
+    <%   score, participants = *pair %>
+    <%   participants.each_with_index do |participant, index| %>
+    <%     rank += 1 %>
+      <tr>
+        <% if index == 0 %>
+        <th rowspan="<%= participants.size %>" class="has-text-centered"><%= rank %></th>
+        <% end %>
+        <td class="has-text-left"><%= taikai.distributed? ? participant.participating_dojo.display_name : participant.club %></td>
+        <td><%= participant.index %></td>
+        <td class="has-text-left"><%= participant.display_name %></td>
+        <% participant.results.each do |result| %>
+        <td><%= icon_from(result) %></td>
+        <% end %>
+        <% if index == 0 %>
+        <th rowspan="<%= participants.size %>"><%= score %></th>
+        <% end %>
+      </tr>
+    <%   end %>
+    <% end %>
+  </tbody>
+</table>

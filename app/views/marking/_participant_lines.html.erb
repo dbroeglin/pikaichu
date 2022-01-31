@@ -14,14 +14,14 @@
           <%
                 end
               end
-            else
+            else # team / 2in1
               @participating_dojos.each_with_index do |dojo|
                  dojo.teams.each_with_index do |team, team_index|
                    team.participants.each_with_index do |participant, participant_index|
           %>
           <tr class="has-text-left" id="<%= dom_id(participant) %>">
             <% if team_index == 0 && participant_index == 0 %>
-            <th  class="is-vcentered has-text-centered first" rowspan="<%= dojo.participants.size %>">
+            <th  class="is-vcentered has-text-centered first" rowspan="<%= dojo.teams.map(&:participants).flatten.size %>">
               <%= dojo.display_name %>
             </th>
             <% end %>

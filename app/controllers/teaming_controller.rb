@@ -4,7 +4,7 @@ class TeamingController < ApplicationController
 
   def edit
     @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
-    @participants = @participating_dojo.participants.where("participants.team_id IS NULL")
+    @participants = @participating_dojo.participants.where("participants.team_id IS NULL").reorder(club: :asc, lastname: :asc, firstname: :asc)
     @team = @participating_dojo.teams.build
   end
 

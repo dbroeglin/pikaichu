@@ -34,7 +34,7 @@ class TaikaisTest < ApplicationSystemTestCase
     [:team,       true,  20],
     [:'2in1',     true,  20],
   ].each do |form, distributed, total_num_arrows|
-    test "creating an #{form}/#{distributed} #{total_num_arrows} arrows taikai" do
+    test "creating a #{form} #{distributed} #{total_num_arrows} arrows taikai" do
       shortname = "#{form}-#{distributed}-#{total_num_arrows}-taikai"
 
       go_to_taikais
@@ -45,6 +45,7 @@ class TaikaisTest < ApplicationSystemTestCase
 
       form_label = { individual: 'Individuel', team: 'En équipe', '2in1': '2 en 1' }[form]
       fill_in_taikai shortname, form_label, distributed, total_num_arrows
+      uncheck "À distance" unless distributed
       click_on "Sauvegarder"
 
       assert_selector "h1.title", text: "Liste des Taikai"

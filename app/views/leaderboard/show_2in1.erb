@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
+
+  <p class="mb-3">
+    <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
+    <%= link_to t('.individual'), leaderboard_taikai_path(@taikai), class: "button is-light" %>
+  </p>
+
+  <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
+
+</div>
