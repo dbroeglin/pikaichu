@@ -13,6 +13,24 @@
       </div>
       <div class="media-right">
         <%= render "icons", taikai: @taikai, size: "" %>
+        <% if @taikai.form_2in1? %>
+          <%= bulma_form_with url: generate_taikai_path(@taikai),
+                              data: { turbo_method: 'post', turbo_confirm: t('confirm_html') } do |f| %>
+            <div class="field has-addons mt-3">
+              <p class="control">
+                <span name="bracket_size" id="bracket_size" class="select">
+                  <select>
+                    <option>8</option>
+                    <option>4</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <button class="button"><%= t '.generate' %></button>
+              </p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
 

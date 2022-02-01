@@ -145,6 +145,7 @@ fr:
     new:
       title: Ajouter un Taikai
     show:
+      generate: Générer la second partie
       total_num_arrows:
         one: "%{count} flèche"
         other: "%{count} flèches"

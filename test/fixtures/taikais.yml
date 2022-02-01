@@ -43,7 +43,7 @@ individual_20:
   form: individual
 
 team_20:
-  shortname: individual-20
+  shortname: team-20
   name: Taikai 4
   start_date: <%= 20.days.from_now %>
   end_date: <%= 24.days.from_now %>
