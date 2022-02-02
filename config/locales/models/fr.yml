@@ -106,6 +106,8 @@ fr:
               blank: doit être défini si son rôle nécessite l'utilisation de PiKaichu.
         taikai:
           attributes:
+            base:
+              not_finalized: Tous les résultats doivent être finalisés avant de créer le tournoi par équipe.
             total_num_arrows:
               inclusion: doit être 12 ou 20.
             tachi_size:

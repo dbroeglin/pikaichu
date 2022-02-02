@@ -64,7 +64,7 @@ class TaikaisController < ApplicationController
   end
 
   def generate
-    @taikai = Taikai.create_from_2in1(params[:id], current_user, "partie2", "partie 2")
+    @taikai = Taikai.create_from_2in1(params[:id], current_user, "partie2", "partie 2", params[:bracket_size].to_i)
 
     if @taikai.errors.empty?
       redirect_to action: 'show', id: @taikai.id, status: :see_other

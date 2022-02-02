@@ -72,7 +72,11 @@ class Taikai < ApplicationRecord
     staffs.joins(:role).where(user: user, 'role.code': :dojo_admin).any?
   end
 
-  def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix)
+  def finalized?
+    !Result.joins(participant: :participating_dojo).where("participating_dojos.id": participating_dojos.pluck(:id)).where(final: false).any?
+  end
+
+  def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
     taikai = Taikai.includes(
       {
         participating_dojos: [
@@ -82,6 +86,7 @@ class Taikai < ApplicationRecord
       },
       staffs: :user
     ).find(taikai_id)
+
 
     new_taikai = Taikai.new(
       shortname: "#{taikai.shortname}-#{shortname_suffix}",
@@ -95,6 +100,12 @@ class Taikai < ApplicationRecord
       form: 'team',
       current_user: current_user,
     )
+
+    unless taikai.finalized?
+      new_taikai.errors.add(:base, :not_finalized)
+      return new_taikai
+    end
+
     unless new_taikai.save
       return new_taikai
     end
@@ -110,30 +121,39 @@ class Taikai < ApplicationRecord
       )
     end
 
+    new_participating_dojos = {}
     taikai.participating_dojos.each do |participating_dojo|
-      new_participating_dojo = new_taikai.participating_dojos.create!(
+      new_participating_dojos[participating_dojo.id] = new_taikai.participating_dojos.create!(
         display_name: participating_dojo.display_name,
         dojo: participating_dojo.dojo,
       )
+    end
 
-      # TODO: select only the 4/8 best teams to copy
-      new_teams = {}
-      participating_dojo.teams.each do |team|
-        new_teams[team.id] = new_participating_dojo.teams.create!(
+    # TODO: select only the 4/8 best teams to copy
+    new_teams = {}
+    taikai
+      .participating_dojos
+      .map(&:teams).flatten
+      .sort_by(&:score).reverse
+      .first(bracket_size)
+      .each do |team|
+        puts "Creating new team #{team.shortname}"
+        new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
           shortname: team.shortname
           # TODO: index based on scoring of the current taikai
         )
-      end
-
-      participating_dojo.participants.each do |participant|
-        new_participating_dojo.participants.create!(
-          firstname: participant.firstname,
-          lastname: participant.lastname,
-          team: new_teams[participant.team_id]
-        )
-        # TODO: create matches and .create_empty_results
-      end
+        team.participants.each do |participant|
+          puts "  Creating new participant #{participant.display_name}"
+          new_team.participants.create!(
+            kyudojin: participant.kyudojin,
+            firstname: participant.firstname,
+            lastname: participant.lastname,
+            participating_dojo: new_participating_dojos[team.participating_dojo_id],
+          )
+        end
     end
+    # TODO: create matches and .create_empty_results
+
 
     new_taikai
   end
