@@ -6,6 +6,8 @@
   <%= f.input :level, input_html: { disabled: true } %>
   <%= f.input :index, input_html: { disabled: true } %>
   <%= f.input :winner, as: :select, collection: [nil, 1, 2] %>
+  <%= f.input :team1_id, collection: teams, text_method: :shortname, value_method: :id, include_blank: true %>
+  <%= f.input :team2_id, collection: teams, text_method: :shortname, value_method: :id, include_blank: true %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3" %>
   <%= link_to t('cancel'), taikai_matches_path(taikai), class: "button" %>

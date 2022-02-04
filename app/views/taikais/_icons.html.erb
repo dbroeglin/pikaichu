@@ -1,23 +1,6 @@
-<%= link_to edit_taikai_path(taikai),
-      class: "button #{size} has-background-light",
-      title: t('edit') do %>
-  <span class="icon <%= size %>">
-    <i class="fas fa-pen"></i>
-  </span>
-<% end if policy(taikai).edit? %>
-
-<%= link_to taikai,
-      class: "button #{size} has-background-light",
-      data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
-      title: t('destroy') do %>
-  <span class="icon <%= size %>">
-    <i class="far fa-trash-can"></i>
-  </span>
-<% end if policy(taikai).destroy? %>
-
 <% if taikai.form_matches? %>
   <%= link_to taikai_matches_path(taikai),
-              class: "button #{size} has-background-light ml-3",
+              class: "button #{size} has-background-light",
               title: t('taikais.marking_sheet.title') do %>
     <span class="icon <%= size %>">
       <i class="fas fa-filter"></i>
@@ -25,10 +8,10 @@
   <% end %>
 <% else %>
   <%= link_to show_marking_path(taikai),
-              class: "button #{size} has-background-light ml-3",
+              class: "button #{size} has-background-light",
               title: t('taikais.marking_sheet.title') do %>
     <span class="icon <%= size %>">
-      <i class="far fa-circle-dot"></i>
+      <i class="far fa-dot-circle"></i>
     </span>
   <% end %>
 <% end %>
@@ -50,3 +33,20 @@
     <i class="fas fa-file-excel"></i>
   </span>
 <% end %>
+
+<%= link_to edit_taikai_path(taikai),
+      class: "button #{size} has-background-light ml-3",
+      title: t('edit') do %>
+  <span class="icon <%= size %>">
+    <i class="fas fa-pen"></i>
+  </span>
+<% end if policy(taikai).edit? %>
+
+<%= link_to taikai,
+      class: "button #{size} has-background-light",
+      data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
+      title: t('destroy') do %>
+  <span class="icon <%= size %>">
+    <i class="fas fa-trash"></i>
+  </span>
+<% end if policy(taikai).destroy? %>

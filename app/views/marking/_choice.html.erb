@@ -13,7 +13,7 @@
                 data: { turbo_method: 'post', turbo: marking },
                 title: t('.mark_missed') do %>
       <span class="icon is-small">
-        <i class="fas fa-xmark"></i>
+        <i class="fas fa-times"></i>
       </span>
     <% end if marking %>
     <%= link_to update_marking_path(taikai, participant, status: 'unknown', match_id: match&.id),

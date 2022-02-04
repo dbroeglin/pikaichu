@@ -9,7 +9,9 @@ class MatchesController < ApplicationController
 
   def edit
     @match = @taikai.matches.find(params[:id])
-
+    @teams = @taikai
+      .participating_dojos.map(&:teams).flatten
+      .sort_by(&:shortname)
   end
 
   def update
@@ -17,10 +19,11 @@ class MatchesController < ApplicationController
 
     @match.assign_attributes(match_params)
 
-    if @match.changes[:team1_id]
-      @match.assign_team1(match.team1)
-    elsif @match.changes[:team2_id]
-      @match.assign_team2(match.team2)
+    if @match.changes[:team1_id] && @match.changes[:team1_id].second
+      @match.assign_team1(@match.team1)
+    end
+    if @match.changes[:team2_id] && @match.changes[:team2_id].second
+      @match.assign_team2(@match.team2)
     end
     if @match.changes[:winner]
       if @match.winner.nil?
