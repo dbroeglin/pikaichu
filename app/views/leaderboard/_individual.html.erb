@@ -28,7 +28,7 @@
         <td><%= participant.index %></td>
         <td class="has-text-left"><%= participant.display_name %></td>
         <% participant.results.each do |result| %>
-        <td><%= icon_from(result) %></td>
+        <td><%= icon_from(result, final) %></td>
         <% end %>
         <% if index == 0 %>
         <th rowspan="<%= participants.size %>"><%= score %></th>

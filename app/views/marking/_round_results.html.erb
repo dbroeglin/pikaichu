@@ -1,27 +1,32 @@
+<% results = results.select { |result| result.match == match } %>
 <div id="<%= dom_id participant, results.first.round %>" class="level is-mobile<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : " has-background-info-light mx-0" %>">
-  <% results.each do |result| %>
-    <% if result.status %>
-      <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status),
-                  class: "button is-small is-text",
+  <div class="level-left">
+    <% results.each do |result| %>
+      <% if result.status %>
+        <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status, match_id: match&.id),
+                    class: "button is-small is-text",
+                    data: { turbo_method: 'patch' },
+                    title: Result.human_enum_value(:status, result.status) do %>
+          <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
+            <%= icon_from(result) %>
+          </span>
+        <% end %>
+      <% else %>
+        <span class="icon is-small" title="Not yet defined">&nbsp;</span>
+      <% end %>
+      </a>
+    <% end %>
+  </div>
+  <% if !results.first.final && results.count {|r| r.known? } == 4 %>
+    <div class="level-right">
+      <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round, match_id: match&.id),
+                  class: "button is-small has-background-info ml-2",
                   data: { turbo_method: 'patch' },
-                  title: Result.human_enum_value(:status, result.status) do %>
-        <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
-          <%= icon_from(result) %>
+                  title: t('.finalize_round', index: results.first.round) do %>
+        <span class="icon is-small">
+          <i class="fas fa-check"></i>
         </span>
       <% end %>
-    <% else %>
-      <span class="icon is-small" title="Not yet defined">&nbsp;</span>
-    <% end %>
-    </a>
-  <% end %>
-  <% if !results.first.final && results.count {|r| r.known? } == 4 %>
-    <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round),
-                class: "button is-small has-background-info ml-2",
-                data: { turbo_method: 'patch' },
-                title: t('.finalize_round', index: results.first.round) do %>
-      <span class="icon is-small">
-        <i class="fas fa-check"></i>
-      </span>
-    <% end %>
+    </div>
   <% end %>
 </div>

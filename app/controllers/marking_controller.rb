@@ -5,6 +5,7 @@ class MarkingController < ApplicationController
 
   def show
     @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
+    @match = nil
 
     if current_user.admin? || @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
@@ -19,11 +20,19 @@ class MarkingController < ApplicationController
     end
   end
 
+  def show_match
+    @taikai = Taikai.find(params[:taikai_id])
+    @match = @taikai.matches.find(params[:id])
+
+  end
+
+
   def update
     # TODO: Optimize?
     @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
+    @match = Match.find_by(id: params[:match_id])
 
     @result = @participant.results.first_empty
     if @result
@@ -32,14 +41,14 @@ class MarkingController < ApplicationController
         respond_to do |format|
           format.html { redirect_to action: :show }
           format.turbo_stream do
-            @results = @participant.results.round @result.round
+            @results = @participant.results.where(match_id: @match&.id).round @result.round
           end
         end
       else
         respond_to do |format|
           format.html { redirect_to action: :show }
           format.turbo_stream do
-            @results = @participant.results.round(@result.round - 1)
+            @results = @participant.results.where(match_id: @match&.id).round(@result.round - 1)
           end
         end
       end
@@ -52,8 +61,9 @@ class MarkingController < ApplicationController
     @taikai = Taikai.find(params[:id])
     @participant = @taikai.participants.find(params[:participant_id])
     @result = @participant.results.find(params[:result_id])
+    @match = Match.find_by(id: params[:match_id])
 
-    num_marked_results_in_round = @participant.results.round(@result.round).count(&:marked?)
+    num_marked_results_in_round = @participant.results.where(match_id: @match&.id).round(@result.round).count(&:marked?)
 
     @result.status = case @result.status
                      when 'hit' then 'miss'
@@ -64,7 +74,7 @@ class MarkingController < ApplicationController
     @result.save!
     respond_to do |format|
       format.turbo_stream do
-        @results = @participant.results.round @result.round
+        @results = @participant.results.where(match_id: @match&.id).round @result.round
         render action: :update
       end
     end
@@ -74,11 +84,12 @@ class MarkingController < ApplicationController
     @taikai = Taikai.find(params[:id])
     @participant = @taikai.participants.find(params[:participant_id])
     @results = @participant.results.round(params[:round])
+    @match = Match.find_by(id: params[:match_id])
 
     @results.update_all(final: true)
     respond_to do |format|
       format.turbo_stream do
-        @results = @participant.results.round params[:round]
+        @results = @participant.results.where(match_id: @match&.id).round params[:round]
         render action: :update
       end
     end

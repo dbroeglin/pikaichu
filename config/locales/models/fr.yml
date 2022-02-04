@@ -35,6 +35,7 @@ fr:
           2in1: 2 en 1
           individual: Individuel
           team: En équipe
+          matches: Matchs Éliminatoires
     attributes:
       user:
         firstname: Prénom

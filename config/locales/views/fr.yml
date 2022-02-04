@@ -55,6 +55,12 @@ fr:
       team_score: Total
       title: "Tableau des résultats - %{taikai}"
   marking:
+    choice:
+      mark_hit: Marquer "Touché"
+      mark_missed: Marquer "Manqué"
+      mark_unknown: Marquer "Incertain"
+    round_results:
+      finalize_round: "Valider la série %{index}"
     show:
       back: Retour au Taikai
       input: Saisie
@@ -62,12 +68,19 @@ fr:
       round: Série %{index}
       score: Score
       title: "Feuille de marque - %{taikai}"
-    round_results:
-      finalize_round: "Valider la série %{index}"
-    choice:
-      mark_hit: Marquer "Touché"
-      mark_missed: Marquer "Manqué"
-      mark_unknown: Marquer "Incertain"
+    show_match:
+      back: Retour au match
+      input: Saisie
+      rank: Rang
+      round: Série %{index}
+      score: Score
+      title: "Feuille de marque - %{taikai}"
+  matches:
+    index:
+      back: Retour au Taikai
+      title: "Tableau des matchs - %{taikai}"
+    edit:
+      title: Modifier un match
   participants:
     edit:
       title: Modifier un participant

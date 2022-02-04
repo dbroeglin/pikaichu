@@ -53,10 +53,9 @@ class LeaderboardController < ApplicationController
 
     @teams_by_score = @taikai.participating_dojos
       .map(&:teams).flatten
-      .sort_by { |participant| participant.score(final) }.reverse
-      .group_by { |participant| participant.score(final) }
-      .each { |_, participants| participants.sort_by!(&:index) }
-
+      .sort_by { |team| team.score(final) }.reverse
+      .group_by { |team| team.score(final) }
+      .each { |_, teams| teams.sort_by!(&:index) }
   end
 
 end

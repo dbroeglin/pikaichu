@@ -2,6 +2,7 @@ class Result < ApplicationRecord
   audited
 
   belongs_to :participant
+  belongs_to :match, optional: true
 
   validate :cannot_update_if_finalized, on: :update
 

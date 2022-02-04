@@ -5,7 +5,8 @@ class Taikai < ApplicationRecord
   enum form: {
     individual: 'individual',
     team: 'team',
-    '2in1': '2in1'
+    '2in1': '2in1',
+    'matches': 'matches',
   }, _prefix: :form
 
   audited
@@ -20,6 +21,7 @@ class Taikai < ApplicationRecord
         )
     end
   end
+  has_many :matches, dependent: :destroy, inverse_of: :taikai
   has_many :participating_dojos, -> { order display_name: :asc },
            dependent: :destroy,
            inverse_of: :taikai
@@ -97,7 +99,7 @@ class Taikai < ApplicationRecord
       num_targets: taikai.num_targets,
       tachi_size: taikai.tachi_size,
       distributed: taikai.distributed,
-      form: 'team',
+      form: 'matches',
       current_user: current_user,
     )
 
@@ -130,7 +132,7 @@ class Taikai < ApplicationRecord
     end
 
     # TODO: select only the 4/8 best teams to copy
-    new_teams = {}
+    new_teams = []
     taikai
       .participating_dojos
       .map(&:teams).flatten
@@ -142,6 +144,7 @@ class Taikai < ApplicationRecord
           shortname: team.shortname
           # TODO: index based on scoring of the current taikai
         )
+        new_teams << new_team
         team.participants.each do |participant|
           puts "  Creating new participant #{participant.display_name}"
           new_team.participants.create!(
@@ -152,9 +155,33 @@ class Taikai < ApplicationRecord
           )
         end
     end
-    # TODO: create matches and .create_empty_results
-
+    create_matches(new_taikai, new_teams)
 
     new_taikai
+  end
+
+  def self.create_matches(taikai, teams)
+    num_teams = teams.size
+    raise "Only 4 or 8 teams are allowed not #{num_teams}" if num_teams != 4 && num_teams != 8
+
+    if num_teams == 8
+      teams.in_groups_of(2).each_with_index do |(team1, team2), index|
+        taikai.matches.create!(
+          index: index + 1,
+          level: 3,
+        ).assign_team1(team1).assign_team2(team2).save!
+      end
+      taikai.matches.create!(index: 1, level: 2)
+      taikai.matches.create!(index: 2, level: 2)
+    elsif num_teams == 4
+      teams.in_groups_of(2).each_with_index do |(team1, team2), index|
+        taikai.matches.create!(
+          index: index + 1,
+          level: 2,
+        ).assign_team1(team1).assign_team2(team2).save!
+      end
+    end
+    taikai.matches.create!(index: 1, level: 1)
+    taikai.matches.create!(index: 2, level: 1)
   end
 end

@@ -21,11 +21,13 @@ class Team < ApplicationRecord
               allow_blank: true,
             }
 
-  def score(final = true)
+  def score(final = true, match_id = nil)
+    scope = results
+    scope = scope.select { |r| r.match_id == match_id } if match_id
     if final
-      results.select { |r| r.final? && r.status_hit? }.size
+      scope.select { |r| r.final? && r.status_hit? }.size
     else
-      results.select(&:status_hit?).size
+      scope.select(&:status_hit?).size
     end
   end
 end

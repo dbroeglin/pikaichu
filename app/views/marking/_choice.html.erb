@@ -1,6 +1,6 @@
-<% marking = participant.marking? %>
+<% marking = participant.marking?(match&.id) %>
 <div class="level is-mobile is-centered is-gapless" id="<%= dom_id(participant, :choice) %>">
-    <%= link_to update_marking_path(taikai, participant, status: 'hit'),
+    <%= link_to update_marking_path(taikai, participant, status: 'hit', match_id: match&.id),
                 class: "button is-small",
                 data: { turbo_method: 'post' },
                 title: t('.mark_hit') do %>
@@ -8,7 +8,7 @@
         <i class="far fa-circle"></i>
       </span>
     <% end if marking%>
-    <%= link_to update_marking_path(taikai, participant, status: 'miss'),
+    <%= link_to update_marking_path(taikai, participant, status: 'miss', match_id: match&.id),
                 class: "button is-small ml-1",
                 data: { turbo_method: 'post', turbo: marking },
                 title: t('.mark_missed') do %>
@@ -16,7 +16,7 @@
         <i class="fas fa-xmark"></i>
       </span>
     <% end if marking %>
-    <%= link_to update_marking_path(taikai, participant, status: 'unknown'),
+    <%= link_to update_marking_path(taikai, participant, status: 'unknown', match_id: match&.id),
                 class: "button is-small ml-1",
                 data: { turbo_method: 'post' },
                 title: t('.mark_unknown') do %>

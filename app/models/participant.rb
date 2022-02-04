@@ -33,16 +33,13 @@ class Participant < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
-  def score(final = true)
+  def score(final = true, match_id = nil)
+    scope = results.select { |result| result.match_id == match_id }
     if final
-      results.select { |r| r.final? && r.status_hit? }.size
+      scope.select { |r| r.final? && r.status_hit? }.size
     else
-      results.select(&:status_hit?).size
+      scope.select(&:status_hit?).size
     end
-  end
-
-  def finalized_score
-    results.select { |r| r.final? && r.status == 'hit' }.size
   end
 
   def previous_round_finalized?(result)
@@ -53,9 +50,10 @@ class Participant < ApplicationRecord
     end
   end
 
-  def marking?
-    num_marked = results.count(&:marked?)
-    num_finalized = results.count(&:final?)
+  def marking?(match_id = nil)
+    scope = results.select { |result| result.match_id == match_id }
+    num_marked = scope.count(&:marked?)
+    num_finalized = scope.count(&:final?)
 
     num_marked != participating_dojo.taikai.total_num_arrows &&
       (num_marked.zero? ||
@@ -63,11 +61,11 @@ class Participant < ApplicationRecord
           (num_marked % participating_dojo.taikai.num_arrows != 0))
   end
 
-  def create_empty_results
-    if results.where('status IS NOT NULL').any?
+  def create_empty_results(match_id = nil)
+    if results.where('status IS NOT NULL').where(match_id: match_id).any?
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
-    results.destroy_all
+    results.where(match_id: match_id).destroy_all
 
     now = DateTime.now
     hashes =
@@ -75,6 +73,7 @@ class Participant < ApplicationRecord
         (1..taikai.num_arrows).map do |index|
           {
             participant_id: id,
+            match_id: match_id,
             round: round_index,
             index: index,
             created_at: now,

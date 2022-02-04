@@ -30,6 +30,12 @@ Rails.application.routes.draw do
       get  'export.xlsx',                      to: 'taikais#export',        as: :taikai_export # TODO: refactor
       post 'generate'
     end
+    resources :matches do
+      member do
+        get 'marking', to: 'marking#show_match'
+        patch 'select_winner'
+      end
+    end
     resources :participating_dojos do
       member do
         get 'draw'

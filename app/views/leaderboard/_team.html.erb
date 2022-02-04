@@ -32,7 +32,7 @@
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
           <% participant.results.each do |result| %>
-          <td><%= icon_from(result) %></td>
+          <td><%= icon_from(result, final) %></td>
           <% end %>
           <td><%= participant.score(final) %></td>
           <% if team_index == 0 && participant_index == 0 %>

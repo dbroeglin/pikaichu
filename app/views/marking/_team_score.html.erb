@@ -1,1 +1,1 @@
-<span id="<%= dom_id team, :score %>"><%= team.score(false) %></span>
+<span id="<%= dom_id team, :score %>"><%= team.score(false, local_assigns[:match]&.id) %></span>

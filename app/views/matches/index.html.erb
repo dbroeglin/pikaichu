@@ -1,0 +1,29 @@
+<div class="section">
+  <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
+
+  <p class="mb-3">
+    <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
+  </p>
+
+  <div class="columns is-vcentered">
+    <div class="column is-one-third">
+      <% @matches[3].each do |match| %>
+        <%= render "match", match: match %>
+      <% end %>
+    </div>
+    <div class="column is-one-third">
+      <% @matches[2].each_with_index do |match, index| %>
+        <%= render "match", match: match %>
+        <% if index == 0 %>
+        <div class="mt-6 mb-6"><p>&nbsp;</p></div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="column is-one-third">
+      <div class="mt-6 mb-6"><p>&nbsp;</p></div>
+      <% @matches[1].each do |match| %>
+        <%= render "match", match: match %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,8 @@ module TaikaisHelper
       "fas fa-users"
     when '2in1'
       "fas fa-code-branch"
+    when 'matches'
+      "fas fa-users"
     else
       raise "Unknown Taikai Form: '#{taikai.form}'"
     end

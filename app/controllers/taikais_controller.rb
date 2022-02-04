@@ -49,7 +49,11 @@ class TaikaisController < ApplicationController
 
   def destroy
     @taikai = authorize Taikai.find(params[:id])
-    @taikai.destroy
+    ActiveRecord::Base.transaction do
+      # TODO: deal with the graph of dependencies (use nullify?)
+      @taikai.participants.each { |participant| participant.results.delete_all }
+      @taikai.destroy
+    end
 
     redirect_to action: 'index', status: :see_other
   end
@@ -64,7 +68,9 @@ class TaikaisController < ApplicationController
   end
 
   def generate
-    @taikai = Taikai.create_from_2in1(params[:id], current_user, "partie2", "partie 2", params[:bracket_size].to_i)
+    ActiveRecord::Base.transaction do
+      @taikai = Taikai.create_from_2in1(params[:id], current_user, "partie2", "partie 2", params[:bracket_size].to_i)
+    end
 
     if @taikai.errors.empty?
       redirect_to action: 'show', id: @taikai.id, status: :see_other

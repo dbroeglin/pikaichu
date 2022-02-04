@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-half is-offset-2">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title"><%= t '.title' %></p>
+        </header>
+        <div class="card-content">
+          <%= render "form", taikai: @taikai, match: @match %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

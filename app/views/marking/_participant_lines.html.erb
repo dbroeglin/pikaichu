@@ -14,6 +14,24 @@
           <%
                 end
               end
+            elsif @taikai.form_matches?
+              [@match.team1, @match.team2].each do |team|
+                team.participants.each_with_index do |participant, participant_index|
+          %>
+          <tr class="has-text-left" id="<%= dom_id(participant) %>">
+            <% if participant_index == 0 %>
+            <th  class="is-vcentered has-text-centered first" rowspan="<%= team.participants.size %>">
+              <%= team.shortname %>
+            </th>
+            <% end %>
+            <%= render "participant_results", taikai: @taikai, participant: participant, first: (participant_index == 0 ? "first" : ""), match: @match %>
+            <% if participant_index == 0 %>
+            <th class="is-vcentered has-text-centered first" rowspan="<%= team.participants.size %>"><%= render "team_score", team: team, match: @match %></th>
+            <% end %>
+          </tr>
+          <%
+                end
+              end
             else # team / 2in1
               @participating_dojos.each_with_index do |dojo|
                  dojo.teams.each_with_index do |team, team_index|

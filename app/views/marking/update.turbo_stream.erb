@@ -1,17 +1,17 @@
 <%= turbo_stream.replace dom_id @participant, @results.first.round do %>
-  <%= render "round_results", participant: @participant, results: @results, formats: [:html] %>
+  <%= render "round_results", participant: @participant, results: @results, match: @match, formats: [:html] %>
 <% end %>
 <%= turbo_stream.replace dom_id @participant, "tally_#{@results.first.round}" do %>
-  <%= render "round_tally", participant: @participant, results: @results, formats: [:html] %>
+  <%= render "round_tally", participant: @participant, results: @results, match: @match, formats: [:html] %>
 <% end %>
 <%= turbo_stream.replace dom_id @participant, :score do %>
-  <%= render "individual_score", participant: @participant, formats: [:html] %>
+  <%= render "individual_score", participant: @participant, match: @match, formats: [:html] %>
 <% end %>
 <% unless @taikai.form_individual? %>
   <%= turbo_stream.replace dom_id @participant.team, :score do %>
-    <%= render "team_score", team: @participant.team, formats: [:html] %>
+    <%= render "team_score", team: @participant.team, match: @match, formats: [:html] %>
   <% end %>
 <% end %>
 <%= turbo_stream.replace dom_id @participant, 'choice' do %>
-  <%= render "choice", taikai: @taikai, participant: @participant %>
+  <%= render "choice", taikai: @taikai, participant: @participant, match: @match %>
 <% end %>

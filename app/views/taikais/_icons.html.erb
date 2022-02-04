@@ -15,20 +15,32 @@
   </span>
 <% end if policy(taikai).destroy? %>
 
-<%= link_to show_marking_path(taikai),
-            class: "button #{size} has-background-light ml-3",
-            title: t('taikais.marking_sheet.title') do %>
-  <span class="icon <%= size %>">
-    <i class="far fa-circle-dot"></i>
-  </span>
+<% if taikai.form_matches? %>
+  <%= link_to taikai_matches_path(taikai),
+              class: "button #{size} has-background-light ml-3",
+              title: t('taikais.marking_sheet.title') do %>
+    <span class="icon <%= size %>">
+      <i class="fas fa-filter"></i>
+    </span>
+  <% end %>
+<% else %>
+  <%= link_to show_marking_path(taikai),
+              class: "button #{size} has-background-light ml-3",
+              title: t('taikais.marking_sheet.title') do %>
+    <span class="icon <%= size %>">
+      <i class="far fa-circle-dot"></i>
+    </span>
+  <% end %>
 <% end %>
 
+<% unless taikai.form_matches? %>
 <%= link_to leaderboard_taikai_path(taikai),
             class: "button #{size} has-background-light",
             title: t('taikais.leaderboard.title') do %>
   <span class="icon <%= size %>">
     <i class="fas fa-medal"></i>
   </span>
+<% end %>
 <% end %>
 
 <%= link_to taikai_export_taikai_path(taikai),

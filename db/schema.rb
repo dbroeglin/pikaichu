@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_28_173751) do
+ActiveRecord::Schema.define(version: 2022_02_02_200022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
     "individual",
     "team",
     "2in1",
+    "matches",
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|
@@ -70,6 +71,20 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
     t.index ["federation_id"], name: "by_federation_id", unique: true
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "taikai_id", null: false
+    t.bigint "team1_id"
+    t.bigint "team2_id"
+    t.integer "level", limit: 2, null: false
+    t.integer "index", limit: 2, null: false
+    t.integer "winner", limit: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taikai_id"], name: "index_matches_on_taikai_id"
+    t.index ["team1_id"], name: "index_matches_on_team1_id"
+    t.index ["team2_id"], name: "index_matches_on_team2_id"
+  end
+
   create_table "participants", force: :cascade do |t|
     t.integer "index"
     t.string "firstname"
@@ -108,7 +123,9 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "final", default: false, null: false
-    t.index ["participant_id", "round", "index"], name: "by_participant_round_index", unique: true
+    t.bigint "match_id"
+    t.index ["match_id"], name: "index_results_on_match_id"
+    t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"
   end
 
@@ -188,11 +205,15 @@ ActiveRecord::Schema.define(version: 2022_01_28_173751) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "matches", "taikais"
+  add_foreign_key "matches", "teams", column: "team1_id"
+  add_foreign_key "matches", "teams", column: "team2_id"
   add_foreign_key "participants", "kyudojins"
   add_foreign_key "participants", "participating_dojos"
   add_foreign_key "participants", "teams"
   add_foreign_key "participating_dojos", "dojos"
   add_foreign_key "participating_dojos", "taikais"
+  add_foreign_key "results", "matches"
   add_foreign_key "results", "participants"
   add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
