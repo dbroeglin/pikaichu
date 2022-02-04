@@ -5,8 +5,8 @@
 
   <%= f.input :level, input_html: { disabled: true } %>
   <%= f.input :index, input_html: { disabled: true } %>
-  <%= f.input :winner, as: :select, collection: [1, 2] %>
+  <%= f.input :winner, as: :select, collection: [nil, 1, 2] %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3" %>
-  <%= link_to t('cancel'), dojos_path, class: "button" %>
+  <%= link_to t('cancel'), taikai_matches_path(taikai), class: "button" %>
 <% end %>

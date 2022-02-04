@@ -11,7 +11,6 @@
         <td>
           <strong><%= match.score1 %></strong>
         </td>
-        <% if match.assigned? %>
         <td rowspan="2" style="border-bottom: 0px">
           <%= link_to edit_taikai_match_path(match.taikai, match),
                       class: "button has-background-light is-small pb-1 pt-1",
@@ -20,12 +19,14 @@
               <i class="fas fa-pen"></i>
             </span>
           <% end %>
-          <%= link_to marking_taikai_match_path(match.taikai, match),
-                      class: "button has-background-light is-small mt-1",
-                      title: t('taikais.marking_sheet.title') do %>
-            <span class="icon is-small">
-              <i class="far fa-circle-dot"></i>
-            </span>
+          <% if match.assigned? %>
+            <%= link_to marking_taikai_match_path(match.taikai, match),
+                        class: "button has-background-light is-small mt-1",
+                        title: t('taikais.marking_sheet.title') do %>
+              <span class="icon is-small">
+                <i class="far fa-circle-dot"></i>
+              </span>
+            <% end %>
           <% end %>
           <%= link_to select_winner_taikai_match_path(match.taikai, match),
                       class: "button has-background-light is-small mt-1",
@@ -36,7 +37,6 @@
             </span>
           <% end if match.finalized? && !match.winner %>
         </td>
-        <% end %>
       </tr>
       <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 2 %>>
         <td><%= match.team2&.shortname %></td>

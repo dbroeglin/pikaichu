@@ -23,7 +23,11 @@ class MatchesController < ApplicationController
       @match.assign_team2(match.team2)
     end
     if @match.changes[:winner]
-      @match.select_winner(@match.winner)
+      if @match.winner.nil?
+        @match.winner = nil
+      else
+        @match.select_winner(@match.winner)
+      end
     end
 
     if @match.update(match_params)
