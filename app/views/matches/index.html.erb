@@ -6,11 +6,13 @@
   </p>
 
   <div class="columns is-vcentered">
+    <% if @matches[3] %>
     <div class="column is-one-third">
       <% @matches[3].each do |match| %>
         <%= render "match", match: match %>
-      <% end %>
+      <% end  %>
     </div>
+    <% end %>
     <div class="column is-one-third">
       <% @matches[2].each_with_index do |match, index| %>
         <%= render "match", match: match %>
