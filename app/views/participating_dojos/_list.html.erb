@@ -30,7 +30,7 @@
                     data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
                     title: t('taikais.draw') do %>
           <span class="icon is-small">
-            <i class="fas fa-shuffle"></i>
+            <i class="fas fa-dice"></i>
           </span>
         <% end if policy(@taikai).draw? %>
         <%= link_to edit_taikai_participating_dojo_path(taikai, participating_dojo),
@@ -45,7 +45,7 @@
               data: { turbo_method: 'delete', turbo_confirm: t('confirm_html') },
               title: t('participating_dojos.destroy.title') do %>
           <span class="icon is-small">
-            <i class="far fa-trash-can"></i>
+            <i class="fas fa-trash"></i>
           </span>
         <% end if policy(participating_dojo).destroy? %>
       </td>

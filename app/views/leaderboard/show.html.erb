@@ -12,7 +12,7 @@
   <% if @taikai.form_individual? || @taikai.form_2in1? %>
     <%= render 'individual', taikai: @taikai, participants_by_score: @participants_by_score, final: @final %>
   <% else %>
-    <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
+    <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
   <% end %>
 
 </div>

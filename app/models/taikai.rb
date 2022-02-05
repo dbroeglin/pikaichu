@@ -165,20 +165,27 @@ class Taikai < ApplicationRecord
     raise "Only 4 or 8 teams are allowed not #{num_teams}" if num_teams != 4 && num_teams != 8
 
     if num_teams == 8
-      teams.in_groups_of(2).each_with_index do |(team1, team2), index|
-        taikai.matches.create!(
-          index: index + 1,
-          level: 3,
-        ).assign_team1(team1).assign_team2(team2).save!
+      # re-order according to tournament guide version of Nov. 2021
+      teams = [teams[0], teams[7], teams[4], teams[3], teams[2], teams[5], teams[6], teams[1]]
+        .in_groups_of(2)
+        .each_with_index do |(team1, team2), index|
+          taikai.matches.create!(
+            index: index + 1,
+            level: 3,
+          ).assign_team1(team1).assign_team2(team2).save!
       end
       taikai.matches.create!(index: 1, level: 2)
       taikai.matches.create!(index: 2, level: 2)
     elsif num_teams == 4
-      teams.in_groups_of(2).each_with_index do |(team1, team2), index|
-        taikai.matches.create!(
-          index: index + 1,
-          level: 2,
-        ).assign_team1(team1).assign_team2(team2).save!
+      # assign according to tournament guide version of Nov. 2021
+      teams =
+      [teams[0], teams[3], teams[2], teams[1]]
+        .in_groups_of(2)
+        .each_with_index do |(team1, team2), index|
+          taikai.matches.create!(
+            index: index + 1,
+            level: 2,
+          ).assign_team1(team1).assign_team2(team2).save!
       end
     end
     taikai.matches.create!(index: 1, level: 1)

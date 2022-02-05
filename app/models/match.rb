@@ -26,6 +26,14 @@ class Match < ApplicationRecord
     !results.where(final: false).any?
   end
 
+  def ordered_teams
+    if is_winner? 1
+      [team1, team2]
+    else
+      [team2, team1]
+    end
+  end
+
   def select_winner(winner)
     # TODO handle "small" final
     raise "Winner can be only 1 or 2" if winner < 1 || 2 < winner

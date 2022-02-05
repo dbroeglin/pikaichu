@@ -51,11 +51,19 @@ class LeaderboardController < ApplicationController
       .includes(participating_dojos: { teams: [{ participants: :results }] })
       .find(params[:id])
 
-    @teams_by_score = @taikai.participating_dojos
-      .map(&:teams).flatten
-      .sort_by { |team| team.score(final) }.reverse
-      .group_by { |team| team.score(final) }
-      .each { |_, teams| teams.sort_by!(&:index) }
+    if @taikai.form_team?
+      @teams_by_score = @taikai.participating_dojos
+        .map(&:teams).flatten
+        .sort_by { |team| team.score(final) }.reverse
+        .group_by { |team| team.score(final) }
+        .each { |_, teams| teams.sort_by!(&:index) }
+    elsif @taikai.form_matches?
+      @teams_by_score = Match.where(taikai: @taikai, level: 1).order(index: :asc)
+        .map(&:ordered_teams).flatten
+        .group_by { |team| team.participants.sum { |participant| participant.results.joins(:match).where("matches.level": 1, "results.status": 'hit').count } }
+    else
+      raise "compute_team_leaderboard works only for 'team' and 'matches' taikais"
+    end
   end
 
 end

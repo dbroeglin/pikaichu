@@ -47,6 +47,12 @@ fr:
       round: Série %{index}
       score: Score
       team_score: Total
+    matches:
+      name: Nom
+      rank: Rang
+      round: Série %{index}
+      score: Score
+      team_score: Total
     public:
       name: Nom
       rank: Rang
