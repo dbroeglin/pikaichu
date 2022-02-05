@@ -275,8 +275,12 @@ GEM
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     strscan (3.0.1)
+    tabulo (2.8.0)
+      tty-screen (= 0.8.1)
+      unicode-display_width (= 2.1.0)
     thor (1.2.1)
     timeout (0.2.0)
+    tty-screen (0.8.1)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -337,6 +341,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  tabulo
   turbo-rails
   tzinfo-data
   web-console
