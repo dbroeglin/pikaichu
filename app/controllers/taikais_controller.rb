@@ -69,7 +69,7 @@ class TaikaisController < ApplicationController
 
   def generate
     ActiveRecord::Base.transaction do
-      @taikai = Taikai.create_from_2in1(params[:id], current_user, "partie2", "partie 2", params[:bracket_size].to_i)
+      @taikai = Taikai.create_from_2in1(params[:id], current_user, "part2", "partie 2", params[:bracket_size].to_i)
     end
 
     if @taikai.errors.empty?
