@@ -78,6 +78,14 @@ class Taikai < ApplicationRecord
     !Result.joins(participant: :participating_dojo).where("participating_dojos.id": participating_dojos.pluck(:id)).where(final: false).any?
   end
 
+  def teams_by_score(final)
+    @teams_by_score = participating_dojos
+      .map(&:teams).flatten
+      .sort_by { |team| team.score(final) }.reverse
+      .group_by { |team| team.score(final) }
+      .each { |_, teams| teams.sort_by! { |team| [-team.tie_break_score(final), team.index] }}
+  end
+
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
     taikai = Taikai.includes(
       {
@@ -134,9 +142,7 @@ class Taikai < ApplicationRecord
     # TODO: select only the 4/8 best teams to copy
     new_teams = []
     taikai
-      .participating_dojos
-      .map(&:teams).flatten
-      .sort_by(&:score).reverse
+      .teams_by_score(true).values.flatten
       .first(bracket_size)
       .each do |team|
         puts "Creating new team #{team.shortname}"

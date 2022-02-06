@@ -23,8 +23,8 @@ hk_2in112:
   dojo: dojo_hk
   display_name: HK
 
-participating_dojo1_individual_20:
-  taikai: individual_20
+participating_dojo1_individual20:
+  taikai: individual20
   dojo: dojo_fr
   display_name: FR
 
@@ -32,3 +32,10 @@ participating_dojo1_taikai5:
   taikai: other_taikai
   dojo: dojo_fr
   display_name: FR
+
+
+AK_2in1_test:
+  taikai: 2in1_test
+  dojo: dojo_fr
+  display_name: AK
+

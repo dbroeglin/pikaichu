@@ -14,6 +14,7 @@ class LeaderboardController < ApplicationController
     @taikai = Taikai.find(params[:id])
     @final = false
 
+    @num_tie_break_arrows = 0
     compute_team_leaderboard(@final)
   end
 
@@ -29,9 +30,6 @@ class LeaderboardController < ApplicationController
   end
 
   private
-
-  def compute_leaderboard(final)
-  end
 
   def compute_individual_leaderboard(final)
     @taikai = Taikai
@@ -50,19 +48,17 @@ class LeaderboardController < ApplicationController
     @taikai = Taikai
       .includes(participating_dojos: { teams: [{ participants: :results }] })
       .find(params[:id])
-
-    if @taikai.form_team?
-      @teams_by_score = @taikai.participating_dojos
-        .map(&:teams).flatten
-        .sort_by { |team| team.score(final) }.reverse
-        .group_by { |team| team.score(final) }
-        .each { |_, teams| teams.sort_by!(&:index) }
+    @num_tie_break_arrows = 0
+    if @taikai.form_team? || @taikai.form_2in1?
+      @num_tie_break_arrows = Result.joins(participant: :participating_dojo).where("participating_dojo.taikai_id": @taikai, round_type: 'tie_break').maximum(:index)
+      @teams_by_score = @taikai.teams_by_score(final)
     elsif @taikai.form_matches?
+
       @teams_by_score = Match.where(taikai: @taikai, level: 1).order(index: :asc)
         .map(&:ordered_teams).flatten
         .group_by { |team| team.participants.sum { |participant| participant.results.joins(:match).where("matches.level": 1, "results.status": 'hit').count } }
     else
-      raise "compute_team_leaderboard works only for 'team' and 'matches' taikais"
+      raise "compute_team_leaderboard works only for 'team', '2in1' and 'matches' taikais"
     end
   end
 

@@ -27,7 +27,7 @@
         <td class="has-text-left"><%= taikai.distributed? ? participant.participating_dojo.display_name : participant.club %></td>
         <td><%= participant.index %></td>
         <td class="has-text-left"><%= participant.display_name %></td>
-        <% participant.results.each do |result| %>
+        <% participant.results.normal.each do |result| %><%# TODO: Handle tie-break display here %>
         <td><%= icon_from(result, final) %></td>
         <% end %>
         <% if index == 0 %>

@@ -40,6 +40,9 @@ $beige-light: #D0D1CD;
 
 $info: #3478b1;
 $card-header-background-color: #EFF5FA;
+
+$table-striped-row-even-background-color: hsl(0, 0%, 94%);
+
 @import 'bulma/bulma';
 @import 'bulma-list';
 @import 'bulma-divider';

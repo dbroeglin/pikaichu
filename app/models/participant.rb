@@ -13,6 +13,14 @@ class Participant < ApplicationRecord
     def first_empty
       self.find(&:empty?)
     end
+
+    def normal
+      where(round_type: 'normal')
+    end
+
+    def tie_break
+      where(round_type: 'tie_break')
+    end
   end
   has_one :taikai, through: :participating_dojo
   belongs_to :kyudojin, optional: true
@@ -34,7 +42,8 @@ class Participant < ApplicationRecord
   end
 
   def score(final = true, match_id = nil)
-    scope = results.select { |result| result.match_id == match_id }
+    scope = results.where(round_type: 'normal')
+    scope = scope.select { |result| result.match_id == match_id }
     if final
       scope.select { |r| r.final? && r.status_hit? }.size
     else

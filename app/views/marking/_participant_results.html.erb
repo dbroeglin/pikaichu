@@ -5,7 +5,7 @@
 <td class="has-text-centered <%= first %>">
   <%= render "choice", taikai: @taikai, participant: participant, match: local_assigns[:match] %>
 </td>
-<% participant.results.group_by(&:round).each_pair do |round_index, results| %>
+<% participant.results.normal.group_by(&:round).each_pair do |round_index, results| %>
   <td class="has-text-left <%= first %>">
     <%= render "round_results", participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
   </td>

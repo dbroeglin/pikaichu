@@ -34,21 +34,21 @@ class MarkingController < ApplicationController
     @participant = @taikai.participants.find(params[:participant_id])
     @match = Match.find_by(id: params[:match_id])
 
-    @result = @participant.results.first_empty
+    @result = @participant.results.normal.first_empty
     if @result
       if @participant.previous_round_finalized?(@result)
         @result.update!(status: params[:status])
         respond_to do |format|
           format.html { redirect_to action: :show }
           format.turbo_stream do
-            @results = @participant.results.where(match_id: @match&.id).round @result.round
+            @results = @participant.results.normal.where(match_id: @match&.id).round @result.round
           end
         end
       else
         respond_to do |format|
           format.html { redirect_to action: :show }
           format.turbo_stream do
-            @results = @participant.results.where(match_id: @match&.id).round(@result.round - 1)
+            @results = @participant.results.normal.where(match_id: @match&.id).round(@result.round - 1)
           end
         end
       end

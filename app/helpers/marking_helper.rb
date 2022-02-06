@@ -1,6 +1,6 @@
 module MarkingHelper
   def icon_from(result, final = false)
-    return '' if final && !result.final?
+    return '' if result.nil? || final && !result.final?
     case result.status
     when 'hit' then '<i class="far fa-circle"></i>'
     when 'miss' then '<i class="fas fa-times"></i>'

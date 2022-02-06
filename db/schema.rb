@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_200022) do
+ActiveRecord::Schema.define(version: 2022_02_05_203358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 2022_02_02_200022) do
     "hit",
     "miss",
     "unknown",
+  ], force: :cascade
+
+  create_enum :round_type, [
+    "normal",
+    "tie_break",
   ], force: :cascade
 
   create_enum :taikai_form, [
@@ -124,6 +129,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_200022) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "final", default: false, null: false
     t.bigint "match_id"
+    t.enum "round_type", default: "normal", null: false, enum_type: "round_type"
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"

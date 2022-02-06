@@ -3,7 +3,7 @@
 
   <p class="mb-3">
     <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
-    <%= link_to t('.public'), leaderboard_public_taikai_path(@taikai), class: "button is-light" %>
+    <%= link_to(t('.public'), leaderboard_public_taikai_path(@taikai), class: "button is-light") unless @taikai.form_matches? %>
     <% if @taikai.form_2in1? %>
       <%= link_to t('.2in1'), leaderboard_2in1_taikai_path(@taikai), class: "button is-light" %>
     <% end %>

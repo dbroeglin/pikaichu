@@ -8,11 +8,16 @@
       <% end %>
       <th rowspan="2"><%= t '.score' %></th>
       <th rowspan="2"><%= t '.team_score' %></th>
+      <th colspan="<%= @num_tie_break_arrows + 1 %>"><%= t '.tie_break' %></th>
     </tr>
     <tr>
       <% taikai.total_num_arrows.times do |index| %>
         <th><%= index + 1 %></th>
       <% end %>
+      <% @num_tie_break_arrows.times do |index| %>
+        <th><%= @taikai.total_num_arrows + index + 1 %></th>
+      <% end %>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -31,13 +36,24 @@
             <td rowspan="<%= team.participants.size %>" class="has-text-left"><%= team.participating_dojo.display_name %> - <%= team.shortname %></td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
-          <% participant.results.each do |result| %>
+          <% participant.results.select { |result| result.round_type_normal? }.each do |result| %>
           <td><%= icon_from(result, final) %></td>
           <% end %>
           <td><%= participant.score(final) %></td>
           <% if team_index == 0 && participant_index == 0 %>
             <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= score %></th>
           <% end %>
+          <% if @num_tie_break_arrows > 0 %>
+            <% @num_tie_break_arrows.times do |index| %>
+              <td>
+                <%= icon_from(participant.results.find { |result| result.round_type_tie_break? && result.index == (index + 1) }, final) %>
+              </td>
+            <% end %>
+            <% if participant_index == 0 %>
+              <th rowspan="<%= team.participants.size %>"><%= (s = team.tie_break_score(final)) == 0 ? nil : s %></th>
+            <% end %>
+          <% end %>
+
       </tr>
     <%     end %>
     <%   end %>

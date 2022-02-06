@@ -47,6 +47,7 @@ fr:
       round: Série %{index}
       score: Score
       team_score: Total
+      tie_break: Tie-break
     matches:
       name: Nom
       rank: Rang

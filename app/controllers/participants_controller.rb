@@ -82,8 +82,8 @@ class ParticipantsController < ApplicationController
         attrs = {
           federation_country_code: 'FR',
           federation_club: row['Club'],
-          firstname: I18n.transliterate(row['Prénom']).upcase,
-          lastname: I18n.transliterate(row['Nom']).upcase,
+          firstname: I18n.transliterate(row['Prénom']).upcase.tr('-', ' '),
+          lastname: I18n.transliterate(row['Nom']).upcase.tr('-', ' '),
         }
         kyudojin = Kyudojin.find_by(**attrs)
 

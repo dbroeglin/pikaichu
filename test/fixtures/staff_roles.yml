@@ -1,12 +1,12 @@
 taikai_admin:
   code: taikai_admin
   label: { 'fr': 'Administrateur' }
-  description: { 'fr': 'Administrator of an entire Taikai' }
+  description: { 'fr': 'Administrateur du taikai' }
 
 dojo_admin:
   code: dojo_admin
   label: { 'fr': 'Dojo Administrator' }
-  description: { 'fr': 'Administrator for a particular participating dojo' }
+  description: { 'fr': "Administrateur d'un club participant" }
 
 chairman:
   code: chairman

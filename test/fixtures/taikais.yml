@@ -31,7 +31,7 @@ team12:
   distributed: false
   form: 2in1
 
-individual_20:
+individual20:
   shortname: individual-20
   name: Taikai 4
   start_date: <%= 20.days.from_now %>
@@ -42,7 +42,7 @@ individual_20:
   distributed: false
   form: individual
 
-team_20:
+team20:
   shortname: team-20
   name: Taikai 4
   start_date: <%= 20.days.from_now %>
@@ -63,3 +63,14 @@ other_taikai: # Admin is Alain Térieur
   tachi_size: 3
   distributed: true
   form: team
+
+2in1_test:
+  shortname: 2in1-test
+  name: "2 in 1 / test"
+  start_date: <%= 16.days.from_now %>
+  end_date: <%= 18.days.from_now %>
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  distributed: false
+  form: 2in1

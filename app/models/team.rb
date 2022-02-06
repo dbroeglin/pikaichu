@@ -22,8 +22,18 @@ class Team < ApplicationRecord
             }
 
   def score(final = true, match_id = nil)
-    scope = results
+    scope = results.where(round_type: 'normal')
     scope = scope.select { |r| r.match_id == match_id } if match_id
+    if final
+      scope.select { |r| r.final? && r.status_hit? }.size
+    else
+      scope.select(&:status_hit?).size
+    end
+  end
+
+  def tie_break_score(final = true, match_id = nil)
+    scope = results.where(round_type: 'tie_break')
+    scope = scope.select { |result| result.match_id == match_id }
     if final
       scope.select { |r| r.final? && r.status_hit? }.size
     else

@@ -38,7 +38,7 @@ staff1_2in112:
 staff1_individual_20:
   firstname: Jean
   lastname: Bon
-  taikai: individual_20
+  taikai: individual20
   role: taikai_admin
   user: jean_bon
 

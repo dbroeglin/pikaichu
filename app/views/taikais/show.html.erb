@@ -20,8 +20,8 @@
               <p class="control">
                 <span class="select">
                   <select name="bracket_size" id="bracket_size">
-                    <option>8</option>
                     <option>4</option>
+                    <option>8</option>
                   </select>
                 </span>
               </p>
@@ -60,12 +60,12 @@
                 <tbody>
                   <% if @taikai.form_individual? %>
                   <%
-                    @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
-                      dojo.participants.each_with_index do |participant, participant_index|
+                    @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
+                      participating_dojo.participants.each_with_index do |participant, participant_index|
                   %>
                   <tr>
                     <% if participant_index == 0 %>
-                    <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                    <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
                     <% end %>
                     <td><%= participant.index %></td>
                     <td><%= participant.display_name %></td>
@@ -77,29 +77,29 @@
                   %>
                   <% else # team / 2in1 %>
                   <%
-                    @taikai.participating_dojos.each_with_index do |dojo, dojo_index|
-                      dojo.teams.each_with_index do |team, team_index|
+                    @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
+                      participating_dojo.teams.each_with_index do |team, team_index|
                         team.participants.each_with_index do |participant, participant_index|
                   %>
                   <tr>
                     <% if team_index == 0 && participant_index == 0 %>
-                      <td rowspan="<%= dojo.participants.size %>"><%= dojo.display_name %></td>
+                      <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
                     <% end %>
                     <% if participant_index == 0 %>
                       <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
                       <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
                     <% end %>
-                    <td><%= participant.display_name %><%= participant.kyudojin ? " (#{participant.kyudojin.federation_club})" : "" %></td>
+                    <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
                   </tr>
                   <%
                         end
                       end
-                      dojo.participants.unteamed.each do |participant|
+                      participating_dojo.participants.unteamed.each do |participant|
                   %>
                     <tr>
+                      <td><%= participating_dojo.display_name %></td>
                       <td>-</td>
-                      <td>-</td>
-                      <td><%= participant.display_name %><%= participant.kyudojin ? " (#{participant.kyudojin.federation_club})" : "" %></td>
+                      <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
                     </tr>
                   <%
                       end
