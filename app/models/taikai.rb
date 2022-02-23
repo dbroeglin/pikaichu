@@ -6,7 +6,7 @@ class Taikai < ApplicationRecord
     individual: 'individual',
     team: 'team',
     '2in1': '2in1',
-    'matches': 'matches',
+    matches: 'matches',
   }, _prefix: :form
 
   audited

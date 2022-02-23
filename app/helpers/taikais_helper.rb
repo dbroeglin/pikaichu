@@ -34,7 +34,7 @@ module TaikaisHelper
 
   def export_summary_sheet (xlsx_package)
     xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
-      sheet.column_widths 20, 50
+      sheet.column_widths 20, 60
       sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
       sheet.add_row [t('.infos'), ""], style: [@header_row_style, @header_row_style], height: 30
       sheet.merge_cells('A1:B1')
@@ -70,8 +70,11 @@ module TaikaisHelper
 
       @taikai.participating_dojos.each do |participating_dojo|
         dojo = participating_dojo.dojo
-        sheet.add_row [participating_dojo.display_name, "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? '' : ", #{dojo.city}"}, #{dojo.country_name}"],
-                      style: [@info_label_cell_style, @description_style], height: 20
+        sheet.add_row [
+            participating_dojo.display_name,
+            "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? '' : ", #{dojo.city}"}, #{dojo.country_name}"
+          ],
+          style: [@info_label_cell_style, @description_style], height: 20
       end
     end
   end
@@ -182,9 +185,17 @@ module TaikaisHelper
 
   def export_results_sheet(xlsx_package)
     if @taikai.form_individual?
+      export_individual_results xlsx_package
+    else
+      export_team_results xlsx_package
+    end
+  end
+
+  def export_individual_results(xlsx_package)
+      export_individual_results(xlsx_package)
       row_styles = [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
                    [@result_cell_style] * @taikai.total_num_arrows +
-                   [@total_cell_style]
+                   [@total_cell_style, @result_cell_style]
 
       xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
         sheet.add_row [
@@ -233,7 +244,7 @@ module TaikaisHelper
             participant.index,
             @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
             participant.display_name,
-          ] + (participant.results.map do |result|
+          ] + (participant.results.normal.map do |result|
             result_mark(result)
           end + [participant.score || 0])
         end
@@ -246,89 +257,99 @@ module TaikaisHelper
 
         sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
       end
-    else
-      row_styles = [@total_cell_style] +
-                   [@table_cell_style] * 4 +
-                   [@result_cell_style] * @taikai.total_num_arrows +
-                   [@total_cell_style, @total_cell_style]
+  end
 
-      xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
-        sheet.add_row [
-          t('.results.rank'),
-          t('.results.index'),
-          t('.results.team'),
-          @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
-          t('.results.display_name'),
-        ] + (
-          (1..(@taikai.num_rounds)).map do |index|
-            [t('.results.round', count: index), '', '', '']
-          end
-        ).flatten + [
-          t('.results.score'),
-          t('.results.team_score'),
-        ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
-                  [@vert_header_row_style, @vert_header_row_style], height: 50
-        sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
+  def export_team_results(xlsx_package)
+    row_styles = [@total_cell_style] +
+                  [@table_cell_style] * 4 +
+                  [@result_cell_style] * @taikai.total_num_arrows +
+                  [@total_cell_style, @total_cell_style]
 
-        columns = ('F'..'Z').to_a + ['AA'] # TODO: this does not work for more than 20 arrows!!!
-        @taikai.num_rounds.times do |index|
-          sheet.merge_cells("#{columns[4 * index]}1:#{columns[4 * index + 3]}1")
+    nb_tie_break = Result.joins(participant: :participating_dojo)
+      .where("participating_dojos.taikai_id = ?", 9)
+      .where("results.round_type": :tie_break)
+      .maximum("results.index") || 0
+
+    xlsx_package.workbook.add_worksheet(name: t('.results.title')) do |sheet|
+      sheet.add_row [
+        t('.results.rank'),
+        t('.results.index'),
+        t('.results.team'),
+        @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
+        t('.results.display_name'),
+      ] + (
+        (1..(@taikai.num_rounds)).map do |index|
+          [t('.results.round', count: index), '', '', '']
         end
-        last_column = columns[@taikai.total_num_arrows + 1]
+      ).flatten + [
+        t('.results.score'),
+        t('.results.team_score'),
+      ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
+                [@vert_header_row_style, @vert_header_row_style], height: 50
+      sheet.column_widths(*([3, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4] + [4] * nb_tie_break))
 
-        # Order teams by reverse score and index
-        teams = @taikai
-          .participating_dojos
-          .map(&:teams).flatten
-          .sort_by { |participant| [-participant.score, participant.index]}
+      columns = ('F'..'Z').to_a + ['AA'] # TODO: this does not work for more than 20 arrows!!!
+      @taikai.num_rounds.times do |index|
+        sheet.merge_cells("#{columns[4 * index]}1:#{columns[4 * index + 3]}1")
+      end
+      last_column = columns[@taikai.total_num_arrows + 1]
 
-        current_rank = rank = 1
-        team_start_line = exaequo_start_line = current_line = 2
-        previous_score = teams.first&.score
-        rows = teams.map do |team|
-          # merge team cells
-          line = team_start_line + team.participants.size - 1
-          sheet.merge_cells("B#{team_start_line}:B#{line}")
-          sheet.merge_cells("C#{team_start_line}:C#{line}")
-          sheet.merge_cells("D#{team_start_line}:D#{line}")
-          team_start_line = line + 1
+      # Order teams by reverse score and index
+      teams = @taikai
+        .participating_dojos
+        .map(&:teams).flatten
+        .sort_by { |participant| [-participant.score, participant.index]}
 
-          if previous_score != team.score
-            previous_score = team.score
-            current_rank = rank
+      current_rank = rank = 1
+      team_start_line = exaequo_start_line = current_line = 2
+      previous_score = teams.first&.score
+      rows = teams.map do |team|
+        # merge team cells
+        line = team_start_line + team.participants.size - 1
+        sheet.merge_cells("B#{team_start_line}:B#{line}")
+        sheet.merge_cells("C#{team_start_line}:C#{line}")
+        sheet.merge_cells("D#{team_start_line}:D#{line}")
+        team_start_line = line + 1
 
-            sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-            sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
-            exaequo_start_line = current_line
-          end
-          rank += 1
+        if previous_score != team.score
+          previous_score = team.score
+          current_rank = rank
 
-          team.participants.map do |participant|
-            current_line += 1
+          sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+          sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
+          exaequo_start_line = current_line
+        end
+        rank += 1
 
-            [
-              current_rank,
-              team.index,
-              team.shortname,
-              @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
-              participant.display_name,
-            ] + (participant.results.map do |result|
+        team.participants.map do |participant|
+          current_line += 1
+          [
+            current_rank,
+            team.index,
+            team.shortname,
+            @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
+            participant.display_name,
+          ] + (
+            participant.results.normal.map do |result|
               result_mark(result)
             end + [
               participant.score || 0,
               participant.team.score || 0,
-            ])
-          end
-        end.flatten(1)
-        sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
-        sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
-
-        rows.each do |row|
-          sheet.add_row row, style: row_styles
+            ] + participant.results.tie_break.map do |result|
+              result_mark(result)
+            end
+          )
         end
+      end.flatten(1)
+      sheet.merge_cells("A#{exaequo_start_line}:A#{current_line - 1}")
+      sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{current_line - 1}")
 
-        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+      rows.each do |row|
+        sheet.add_row row, style: row_styles
       end
+
+      sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
     end
   end
+
 end
