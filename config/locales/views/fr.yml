@@ -124,9 +124,6 @@ fr:
       title: Tableau des résultats
     export:
       distributed: À distance
-      individual:
-        'true': Individuel
-        'false': En équipe
       infos: Informations
       participants:
         club: Club
@@ -145,7 +142,9 @@ fr:
         score: Score
         team: Équipe
         team_score: Total
-        title: Résultats
+        title:
+          individual: Résultats individuels
+          team: Résultats en équipes
       staff:
         firstname: Prénom
         lastname: Nom

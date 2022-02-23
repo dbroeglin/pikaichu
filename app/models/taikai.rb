@@ -8,6 +8,7 @@ class Taikai < ApplicationRecord
     '2in1': '2in1',
     matches: 'matches',
   }, _prefix: :form
+  human_enum :form
 
   audited
 
