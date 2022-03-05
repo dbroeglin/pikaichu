@@ -97,6 +97,8 @@ fr:
             index_in_team:
               blank: doit être défini si le participant fait partie d'une équipe.
               taken: doit être unique au sein d'une équipe.
+            kyudojin:
+              taken: est déjà participant(e).
         participating_dojo:
           attributes:
             base:
