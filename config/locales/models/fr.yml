@@ -68,8 +68,8 @@ fr:
         display_name: Nom
         firstname: Prénom
         lastname: Nom
-        participating_dojo_id: Club hôte
-        role_id: Rôle
+        participating_dojo: Club hôte
+        role: Rôle
         user: Utilisateur
       taikai:
         distributed: À distance
