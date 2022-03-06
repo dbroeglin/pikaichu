@@ -46,4 +46,11 @@ class ParticipatingDojo < ApplicationRecord
     end
     true
   end
+
+  def teams_by_score(final)
+    @teams_by_score = teams
+      .sort_by { |team| team.score(final) }.reverse
+      .group_by { |team| team.score(final) }
+      .each { |_, teams| teams.sort_by! { |team| [-team.tie_break_score(final), team.index] }}
+  end
 end

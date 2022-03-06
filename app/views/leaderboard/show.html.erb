@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
-  <p class="mb-3">
+  <p class="mb-6">
     <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
     <%= link_to(t('.public'), leaderboard_public_taikai_path(@taikai), class: "button is-light") unless @taikai.form_matches? %>
     <% if @taikai.form_2in1? %>
@@ -9,10 +9,32 @@
     <% end %>
   </p>
 
+  <% if @taikai.distributed? %>
+    <h2 class="title is-4"><%= t '.all' %></h2>
+  <% end %>
   <% if @taikai.form_individual? || @taikai.form_2in1? %>
     <%= render 'individual', taikai: @taikai, participants_by_score: @participants_by_score, final: @final %>
+
+    <% @score_by_participating_dojo.each do |partcipating_dojo, participants_by_score| %>
+      <h2 class="title is-4 mt-5"><%= partcipating_dojo.display_name %></h2>
+
+      <% if participants_by_score.empty? %>
+        <p><%= t '.no_participants_yet' %></p>
+      <% else %>
+        <%= render 'individual', taikai: @taikai, participants_by_score: participants_by_score, final: @final %>
+      <% end %>
+    <% end %>
   <% else %>
     <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
-  <% end %>
 
+    <% @score_by_participating_dojo.each do |partcipating_dojo, teams_by_score| %>
+      <h2 class="title is-4 mt-5"><%= partcipating_dojo.display_name %></h2>
+
+      <% if teams_by_score.empty? %>
+        <p><%= t '.no_participants_yet' %></p>
+      <% else %>
+        <%= render @taikai.form, taikai: @taikai, teams_by_score: @eams_by_score, final: @final %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

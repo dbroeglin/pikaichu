@@ -27,14 +27,18 @@ fr:
       title: Ajouter un club
   leaderboard:
     show:
+      2in1: Résultats en équipe
+      all: Tous les clubs
       back: Retour au Taikai
+      no_participants_yet: Aucun participant enregistré.
       public: Résultats publics
       title: "Tableau des résultats intermédiaires - %{taikai}"
-      2in1: Résultats en équipe
     show_2in1:
+      all: Tous les clubs
       back: Retour au Taikai
-      title: "Tableau des résultats intermédiaires - %{taikai}"
       individual: Résultats individuels
+      no_participants_yet: Aucun participant enregistré.
+      title: "Tableau des résultats intermédiaires - %{taikai}"
     individual:
       name: Nom
       rank: Rang

@@ -45,6 +45,16 @@ class LeaderboardController < ApplicationController
       .group_by { |participant| participant.score(final) }
       .each { |_, participants| participants.sort_by!(&:index) }
 
+    @score_by_participating_dojo = {}
+    if @taikai.distributed?
+      @taikai.participating_dojos.each do |participating_dojo|
+        @score_by_participating_dojo[participating_dojo] =
+          participating_dojo.participants
+            .sort_by { |participant| participant.score(final) }.reverse
+            .group_by { |participant| participant.score(final) }
+            .each { |_, participants| participants.sort_by!(&:index) }
+      end
+    end
   end
 
   def compute_team_leaderboard(final)
@@ -54,10 +64,19 @@ class LeaderboardController < ApplicationController
 
     @num_tie_break_arrows = 0
     if @taikai.form_team? || @taikai.form_2in1?
-      @num_tie_break_arrows = Result.joins(participant: :participating_dojo).where("participating_dojo.taikai_id": @taikai, round_type: 'tie_break').maximum(:index) || 0
+      @num_tie_break_arrows = Result.joins(participant: :participating_dojo)
+        .where("participating_dojo.taikai_id": @taikai, round_type: 'tie_break')
+        .maximum(:index) || 0
       @teams_by_score = @taikai.teams_by_score(final)
-    elsif @taikai.form_matches?
 
+      @score_by_participating_dojo = {}
+      if @taikai.distributed?
+        @taikai.participating_dojos.each do |participating_dojo|
+          @score_by_participating_dojo[participating_dojo] =
+            participating_dojo.teams_by_score(final)
+        end
+      end
+    elsif @taikai.form_matches?
       @teams_by_score = Match.where(taikai: @taikai, level: 1).order(index: :asc)
         .map(&:ordered_teams).flatten
         .group_by { |team| team.participants.sum { |participant| participant.results.joins(:match).where("matches.level": 1, "results.status": 'hit').count } }

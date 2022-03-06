@@ -6,6 +6,20 @@
     <%= link_to t('.individual'), leaderboard_taikai_path(@taikai), class: "button is-light" %>
   </p>
 
+
+  <% if @taikai.distributed? %>
+    <h2 class="title is-4"><%= t '.all' %></h2>
+  <% end %>
   <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
+
+  <% @score_by_participating_dojo.each do |partcipating_dojo, teams_by_score| %>
+    <h2 class="title is-4 mt-5"><%= partcipating_dojo.display_name %></h2>
+
+    <% if teams_by_score.empty? %>
+      <p><%= t '.no_participants_yet' %></p>
+    <% else %>
+      <%= render 'team', taikai: @taikai, teams_by_score: teams_by_score, final: @final  %>
+    <% end %>
+  <% end %>
 
 </div>

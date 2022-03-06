@@ -8,7 +8,9 @@
       <% end %>
       <th rowspan="2"><%= t '.score' %></th>
       <th rowspan="2"><%= t '.team_score' %></th>
-      <th colspan="<%= @num_tie_break_arrows + 1 %>"><%= t '.tie_break' %></th>
+      <% unless @num_tie_break_arrows.zero? %>
+        <th colspan="<%= @num_tie_break_arrows + 1 %>"><%= t '.tie_break' %></th>
+      <% end %>
     </tr>
     <tr>
       <% taikai.total_num_arrows.times do |index| %>
@@ -17,7 +19,9 @@
       <% @num_tie_break_arrows.times do |index| %>
         <th><%= @taikai.total_num_arrows + index + 1 %></th>
       <% end %>
-      <th></th>
+      <% unless @num_tie_break_arrows.zero? %>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
