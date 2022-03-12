@@ -23,7 +23,7 @@
       <% else %>
         <%= render 'individual', taikai: @taikai, participants_by_score: participants_by_score, final: @final %>
       <% end %>
-    <% end %>
+    <% end if @taikai.distributed? %>
   <% else %>
     <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
 
@@ -33,8 +33,8 @@
       <% if teams_by_score.empty? %>
         <p><%= t '.no_participants_yet' %></p>
       <% else %>
-        <%= render @taikai.form, taikai: @taikai, teams_by_score: @eams_by_score, final: @final %>
+        <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
       <% end %>
     <% end %>
-  <% end %>
+  <% end if @taikai.distributed? %>
 </div>
