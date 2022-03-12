@@ -84,7 +84,7 @@ class Taikai < ApplicationRecord
       .map(&:teams).flatten
       .sort_by { |team| team.score(final) }.reverse
       .group_by { |team| team.score(final) }
-      .each { |_, teams| teams.sort_by! { |team| [-team.tie_break_score(final), team.index] }}
+      .each { |_, teams| teams.sort_by! { |team| [-team.tie_break_score(final), team.index || 0] }}
   end
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
