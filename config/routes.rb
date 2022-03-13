@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       get  'leaderboard',                      to: 'leaderboard#show'
       get  'leaderboard/2in1',                 to: 'leaderboard#show_2in1'
       get  'leaderboard/public',               to: 'leaderboard#public'
-      get  'export.xlsx',                      to: 'taikais#export',        as: :taikai_export # TODO: refactor
+      get  'export.xlsx',                      to: 'taikais#export', as: :taikai_export # TODO: refactor
       post 'generate'
     end
     resources :matches do

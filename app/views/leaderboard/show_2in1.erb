@@ -6,7 +6,6 @@
     <%= link_to t('.individual'), leaderboard_taikai_path(@taikai), class: "button is-light" %>
   </p>
 
-
   <% if @taikai.distributed? %>
     <h2 class="title is-4"><%= t '.all' %></h2>
   <% end %>
@@ -17,9 +16,10 @@
 
     <% if teams_by_score.empty? %>
       <p><%= t '.no_participants_yet' %></p>
+
     <% else %>
       <%= render 'team', taikai: @taikai, teams_by_score: teams_by_score, final: @final  %>
     <% end %>
-  <% end %>
+  <% end if @taikai.distributed? %>
 
 </div>

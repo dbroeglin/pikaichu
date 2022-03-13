@@ -80,18 +80,21 @@ class Taikai < ApplicationRecord
   end
 
   def teams_by_score(final)
-    @teams_by_score = participating_dojos
+    @teams_by_score =
+      participating_dojos
       .map(&:teams).flatten
       .sort_by { |team| team.score(final) }.reverse
       .group_by { |team| team.score(final) }
-      .each { |_, teams| teams.sort_by! { |team| [-team.tie_break_score(final), team.index || 0] }}
+      .each do |_, teams|
+        teams.sort_by! { |team| [-team.tie_break_score(final), team.index || 0] }
+      end
   end
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
     taikai = Taikai.includes(
       {
         participating_dojos: [
-          { teams: { participants: :results }},
+          { teams: { participants: :results } },
           { participants: [:results, :kyudojin] }
         ]
       },
@@ -146,14 +149,14 @@ class Taikai < ApplicationRecord
       .teams_by_score(true).values.flatten
       .first(bracket_size)
       .each do |team|
-        puts "Creating new team #{team.shortname}"
+        logger.info "Creating new team #{team.shortname}"
         new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
           shortname: team.shortname
           # TODO: index based on scoring of the current taikai
         )
         new_teams << new_team
         team.participants.each do |participant|
-          puts "  Creating new participant #{participant.display_name}"
+          logger.info "  Creating new participant #{participant.display_name}"
           new_team.participants.create!(
             kyudojin: participant.kyudojin,
             firstname: participant.firstname,
@@ -171,21 +174,21 @@ class Taikai < ApplicationRecord
     num_teams = teams.size
     raise "Only 4 or 8 teams are allowed not #{num_teams}" if num_teams != 4 && num_teams != 8
 
-    if num_teams == 8
+    case num_teams
+    when 8
       # re-order according to tournament guide version of Nov. 2021
-      teams = [teams[0], teams[7], teams[4], teams[3], teams[2], teams[5], teams[6], teams[1]]
+      [teams[0], teams[7], teams[4], teams[3], teams[2], teams[5], teams[6], teams[1]]
         .in_groups_of(2)
         .each_with_index do |(team1, team2), index|
           taikai.matches.create!(
             index: index + 1,
             level: 3,
           ).assign_team1(team1).assign_team2(team2).save!
-      end
+        end
       taikai.matches.create!(index: 1, level: 2)
       taikai.matches.create!(index: 2, level: 2)
-    elsif num_teams == 4
+    when 4
       # assign according to tournament guide version of Nov. 2021
-      teams =
       [teams[0], teams[3], teams[2], teams[1]]
         .in_groups_of(2)
         .each_with_index do |(team1, team2), index|
@@ -193,7 +196,7 @@ class Taikai < ApplicationRecord
             index: index + 1,
             level: 2,
           ).assign_team1(team1).assign_team2(team2).save!
-      end
+        end
     end
     taikai.matches.create!(index: 1, level: 1)
     taikai.matches.create!(index: 2, level: 1)
