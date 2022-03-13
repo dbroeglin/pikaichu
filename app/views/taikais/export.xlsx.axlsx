@@ -58,4 +58,4 @@ xlsx_package.use_autowidth = false
 export_summary_sheet xlsx_package
 export_staff_sheet xlsx_package
 export_participants_sheet xlsx_package
-export_results_sheet xlsx_package
+export_results_sheets xlsx_package
