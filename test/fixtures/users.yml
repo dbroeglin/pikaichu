@@ -1,7 +1,8 @@
 jean_bon:
+  # Jean is the administrator of the application. He has full access to all the data and users.
   firstname: Jean
   lastname: Bon
-  email: jean.bon@example.org
+  email: jean.bon@test.kyudo.fr
   admin: true
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   confirmed_at: <%= Time.zone.now - 1.hour %>
@@ -10,15 +11,43 @@ jean_bon:
 alain_terieur:
   firstname: Alain
   lastname: Térieur
-  email: alain.terieur@example.org
+  email: alain.terieur@test.kyudo.fr
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   confirmed_at: <%= Time.zone.now - 1.hour %>
   confirmation_sent_at: <%= Time.zone.now - 2.hours %>
 
 alex_terieur:
+  # Alex is a Taikai participant he accesses the application to visualize his results.
   firstname: Alex
   lastname: Térieur
-  email: alex.terieur@example.org
+  email: alex.terieur@test.kyudo.fr
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
+
+pat:
+  # Pat is a federation official, her role is to validate (homologates) Taikais and results.
+  firstname: Pat
+  lastname: Ronat
+  email: pat.ronat@test.kyudo.fr
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
+
+vince:
+  # Vince organizes Taikais. He knows the application well and understands Taikai organization and rules.
+  firstname: Vince
+  lastname: Santo
+  email: vince.santo@test.kyudo.fr
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  confirmed_at: <%= Time.zone.now - 1.hour %>
+  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
+
+marie:
+  # Marie is a Kyudo fan, she follows Taikais and the championship. She might be a participant at times.
+  firstname: Marie
+  lastname: Tournelle
+  email: marie.tournelle@test.kyudo.fr
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   confirmed_at: <%= Time.zone.now - 1.hour %>
   confirmation_sent_at: <%= Time.zone.now - 2.hours %>
