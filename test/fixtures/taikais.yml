@@ -1,57 +1,55 @@
-individual12:
-  shortname: individual-12
-  name: Taikai 1
+<%
+  [true, false].each do |distributed|
+    [12, 20].each do |total_num_arrows|
+%>
+individual<%= distributed ? '_dist_' : '' %><%= total_num_arrows %>:
+  shortname: individual-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  name: Individual <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
   start_date: <%= 5.days.from_now %>
   end_date: <%= 6.days.from_now %>
   num_targets: 6
-  total_num_arrows: 12
+  total_num_arrows: <%= total_num_arrows %>
   tachi_size: 3
-  distributed: false
+  distributed: <%= distributed %>
   form: individual
 
-team12:
-  shortname: team-12
-  name: Taikai 2
+team<%= distributed ? '_dist_' : '' %><%= total_num_arrows %>:
+  shortname: team-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  name: Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
   start_date: <%= 10.days.from_now %>
   end_date: <%= 12.days.from_now %>
   num_targets: 6
-  total_num_arrows: 20
+  total_num_arrows: <%= total_num_arrows %>
   tachi_size: 3
-  distributed: false
+  distributed: <%= distributed %>
   form: team
 
-2in112:
-  shortname: 2in1-12
-  name: "2 in 1 / 12"
+2in1<%= distributed ? '_dist_' : '' %><%= total_num_arrows %>:
+  shortname: 2in1-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
   num_targets: 6
-  total_num_arrows: 12
+  total_num_arrows: <%= total_num_arrows %>
   tachi_size: 3
-  distributed: false
+  distributed: <%= distributed %>
   form: 2in1
 
-individual20:
-  shortname: individual-20
-  name: Taikai 4
-  start_date: <%= 20.days.from_now %>
-  end_date: <%= 24.days.from_now %>
-  num_targets: 10
-  total_num_arrows: 20
+matches<%= distributed ? '_dist_' : '' %><%= total_num_arrows %>:
+  shortname: matches-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
+  start_date: <%= 16.days.from_now %>
+  end_date: <%= 18.days.from_now %>
+  num_targets: 6
+  total_num_arrows: <%= total_num_arrows %>
   tachi_size: 3
-  distributed: false
-  form: individual
+  distributed: <%= distributed %>
+  form: matches
 
-team20:
-  shortname: team-20
-  name: Taikai 4
-  start_date: <%= 20.days.from_now %>
-  end_date: <%= 24.days.from_now %>
-  num_targets: 10
-  total_num_arrows: 20
-  tachi_size: 3
-  distributed: false
-  form: team
+<%
+    end
+  end
+%>
 
 other_taikai: # Admin is Alain Térieur
   shortname: other-taikai
