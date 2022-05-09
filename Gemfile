@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.4"
+ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0"
@@ -57,9 +57,9 @@ gem 'devise'
 
 gem "pundit"
 
+# TODO: PG enums are supported in Rails 7.
+# Warning: did not work because of add_enum_value
 gem 'activerecord-postgres_enum', "~> 2.0"
-
-gem "bulma-rails", "~> 0.9.2"
 
 gem 'country_select'
 
@@ -76,6 +76,8 @@ gem "roo", "~> 2.8.0"
 gem 'acts_as_list'
 
 gem 'tabulo'
+
+gem 'statesman', '~> 8.0.3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
