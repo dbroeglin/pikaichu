@@ -6,6 +6,7 @@
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.0",
     "bulma": "^0.9.3",
+    "bulma-divider": "^0.2.0",
     "esbuild": "^0.14.8",
     "sass": "^1.45.1",
     "sortablejs": "^1.14.0",
