@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_203358) do
+ActiveRecord::Schema.define(version: 2022_05_14_095035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,18 @@ ActiveRecord::Schema.define(version: 2022_02_05_203358) do
     t.index ["user_id"], name: "index_staffs_on_user_id"
   end
 
+  create_table "taikai_transitions", force: :cascade do |t|
+    t.string "to_state", null: false
+    t.json "metadata", default: {}
+    t.integer "sort_key", null: false
+    t.integer "taikai_id", null: false
+    t.boolean "most_recent", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taikai_id", "most_recent"], name: "index_taikai_transitions_parent_most_recent", unique: true, where: "most_recent"
+    t.index ["taikai_id", "sort_key"], name: "index_taikai_transitions_parent_sort", unique: true
+  end
+
   create_table "taikais", force: :cascade do |t|
     t.string "shortname"
     t.string "name"
@@ -225,5 +237,6 @@ ActiveRecord::Schema.define(version: 2022_02_05_203358) do
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
+  add_foreign_key "taikai_transitions", "taikais"
   add_foreign_key "teams", "participating_dojos"
 end

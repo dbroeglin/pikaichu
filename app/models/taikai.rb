@@ -1,4 +1,6 @@
 class Taikai < ApplicationRecord
+  audited
+
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6
   attribute :tachi_size, default: 3
@@ -10,7 +12,14 @@ class Taikai < ApplicationRecord
   }, _prefix: :form
   human_enum :form
 
-  audited
+  has_many :taikai_transitions, autosave: false, class_name: :TaikaiTransition, dependent: :destroy
+  include Statesman::Adapters::ActiveRecordQueries[
+    transition_class: TaikaiTransition,
+    initial_state: :new
+  ]
+  delegate :can_transition_to?,
+    :current_state, :history, :last_transition, :last_transition_to,
+    :transition_to!, :transition_to, :in_state?, to: :state_machine
 
   has_many :staffs, dependent: :destroy do
     def ordered
@@ -200,5 +209,9 @@ class Taikai < ApplicationRecord
     end
     taikai.matches.create!(index: 1, level: 1)
     taikai.matches.create!(index: 2, level: 1)
+  end
+
+  def state_machine
+    @state_machine ||= TaikaiStateMachine.new(self, transition_class: TaikaiTransition)
   end
 end
