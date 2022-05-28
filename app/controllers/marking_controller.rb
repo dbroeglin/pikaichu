@@ -37,7 +37,7 @@ class MarkingController < ApplicationController
     @result = @participant.results.normal.first_empty
     if @result
       if @participant.previous_round_finalized?(@result)
-        @result.update!(status: params[:status])
+        @result.update!(status: params[:status], value: params[:value])
         respond_to do |format|
           format.html { redirect_to action: :show }
           format.turbo_stream do
@@ -63,14 +63,12 @@ class MarkingController < ApplicationController
     @result = @participant.results.find(params[:result_id])
     @match = Match.find_by(id: params[:match_id])
 
-    num_marked_results_in_round = @participant.results.where(match_id: @match&.id).round(@result.round).count(&:marked?)
+    if @taikai.scoring_kinteki?
+      @result.rotate_status(@participant.results.where(match_id: @match&.id).round(@result.round).count(&:marked?) == 4)
+    else
+      @result.rotate_value
+    end
 
-    @result.status = case @result.status
-                     when 'hit' then 'miss'
-                     when 'miss' then num_marked_results_in_round == 4 ? 'hit' : 'unknown'
-                     when 'unknown' then 'hit'
-                     else raise "Cannot change value of a result that has not been marked yet"
-                     end
     @result.save!
     respond_to do |format|
       format.turbo_stream do

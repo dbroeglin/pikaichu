@@ -1,15 +1,13 @@
 <% results = results.select { |result| result.match == match } %>
-<div id="<%= dom_id participant, results.first.round %>" class="level is-mobile<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : " has-background-info-light mx-0" %>">
+<div id="<%= dom_id participant, results.first.round %>" class="level is-mobile<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : " mx-0" %>">
   <div class="level-left">
     <% results.each do |result| %>
       <% if result.status %>
         <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status, match_id: match&.id),
-                    class: "button is-small is-text",
+                    class: "button is-small is-light is-rounded#{result.final? ? "" : " is-link"}",
                     data: { turbo_method: 'patch' },
                     title: Result.human_enum_value(:status, result.status) do %>
-          <span class="icon is-small" title="<%= Result.human_enum_value(:status, result.status) %>">
-            <%= icon_from(result) %>
-          </span>
+          <%= full_icon_from(result) %>
         <% end %>
       <% else %>
         <span class="icon is-small" title="Not yet defined">&nbsp;</span>

@@ -12,7 +12,7 @@ class LeaderboardTest < ApplicationSystemTestCase
     test "visiting '#{taikai.shortname}' leaderboard" do
       go_to_taikais
 
-      find("td", text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
+      find("a", exact_text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
 
       assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
       assert_selector "h1.title", text: taikai.shortname
@@ -25,7 +25,7 @@ class LeaderboardTest < ApplicationSystemTestCase
     test "visiting '#{taikai.shortname}' public leaderboard" do
       go_to_taikais
 
-      find("td", text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
+      find("a", exact_text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
 
       assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
       assert_selector "h1.title", text: taikai.shortname

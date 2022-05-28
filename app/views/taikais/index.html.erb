@@ -10,6 +10,7 @@
             <th><%= Taikai.human_attribute_name :shortname %></th>
             <th><%= Taikai.human_attribute_name :name %></th>
             <th><%= t '.dates' %></th>
+            <th><%= t '.num_participants' %></th>
             <th class="has-text-right">
               <%= link_to new_taikai_path,
                 class: "button is-small has-background-light",
@@ -33,6 +34,7 @@
             <td><%= link_to taikai.shortname, taikai_path(taikai) %></td>
             <td><%= taikai.name %></td>
             <td><%= l taikai.start_date, format: :shorter %> - <%= l taikai.end_date, format: :shorter %></td>
+            <td><%= taikai.participants.size %></td>
             <td class="has-text-right">
               <%= render "icons", taikai: taikai, size: "is-small" %>
             </td>

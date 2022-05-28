@@ -66,7 +66,11 @@ fr:
       team_score: Total
       title: "Tableau des résultats - %{taikai}"
   marking:
-    choice:
+    choice_kinteki:
+      mark_hit: Marquer "Touché"
+      mark_missed: Marquer "Manqué"
+      mark_unknown: Marquer "Incertain"
+    choice_enteki:
       mark_hit: Marquer "Touché"
       mark_missed: Marquer "Manqué"
       mark_unknown: Marquer "Incertain"
@@ -129,6 +133,7 @@ fr:
     export:
       distributed: À distance
       infos: Informations
+      type: Type
       participants:
         club: Club
         display_name: Nom
@@ -161,6 +166,7 @@ fr:
     index:
       dates: Dates
       distributed: À distance
+      num_participants: '#'
       teams: En équipe
       title: Liste des Taikai
     edit:

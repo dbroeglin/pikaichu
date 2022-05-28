@@ -45,10 +45,11 @@ class Participant < ApplicationRecord
     scope = results.where(round_type: 'normal')
     scope = scope.select { |result| result.match_id == match_id }
     if final
-      scope.select { |r| r.final? && r.status_hit? }.size
+      results = scope.select { |r| r.final? && r.status_hit? }
     else
-      scope.select(&:status_hit?).size
+      results = scope.select(&:status_hit?)
     end
+    Score::new(results.size, results.map(&:value).compact.sum)
   end
 
   def previous_round_finalized?(result)

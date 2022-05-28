@@ -1,0 +1,24 @@
+<%= link_to update_marking_path(taikai, participant, status: 'hit', match_id: match&.id),
+            class: "button is-small",
+            data: { turbo_method: 'post' },
+            title: t('.mark_hit') do %>
+  <span class="icon is-small">
+    <i class="far fa-circle"></i>
+  </span>
+<% end %>
+<%= link_to update_marking_path(taikai, participant, status: 'miss', match_id: match&.id),
+            class: "button is-small ml-1",
+            data: { turbo_method: 'post', turbo: marking },
+            title: t('.mark_missed') do %>
+  <span class="icon is-small">
+    <i class="fas fa-times"></i>
+  </span>
+<% end %>
+<%= link_to update_marking_path(taikai, participant, status: 'unknown', match_id: match&.id),
+            class: "button is-small ml-1",
+            data: { turbo_method: 'post' },
+            title: t('.mark_unknown') do %>
+  <span class="icon is-small">
+    <i class="fas fa-question"></i>
+  </span>
+<% end %>

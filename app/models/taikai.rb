@@ -12,6 +12,13 @@ class Taikai < ApplicationRecord
   }, _prefix: :form
   human_enum :form
 
+  enum scoring: {
+    kinteki: 'kinteki',
+    enteki: 'enteki',
+  }, _prefix: :scoring
+  human_enum :scoring
+
+
   has_many :taikai_transitions, autosave: false, class_name: :TaikaiTransition, dependent: :destroy
   include Statesman::Adapters::ActiveRecordQueries[
     transition_class: TaikaiTransition,

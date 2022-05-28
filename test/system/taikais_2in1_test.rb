@@ -5,17 +5,17 @@ class Taikais2in1Test < ApplicationSystemTestCase
   include TaikaisTestHelpers
 
   setup do
-    @taikai = taikais('2in112')
+    @taikai = taikais(:'2in1_12')
   end
 
   test "creating editing participating dojo" do
     sign_in_as users(:jean_bon)
-    go_to_taikai '2in112'
+    go_to_taikai :'2in1_12'
 
     click_on "Modifier"
     assert_selector "p.card-header-title", text: "Modification du Taikai"
 
-    find("td", text: "FR").ancestor("tr").click_on "Modifier"
+    find("td", text: "AK").ancestor("tr").click_on "Modifier"
 
     assert_selector "p.card-header-title", text: "Modifier un club hôte"
     assert_selector "p.card-header-title", text: "Importer la liste des participant"

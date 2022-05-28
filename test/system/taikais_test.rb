@@ -9,15 +9,15 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test "visiting taikai-1" do
-    shortname = taikais('individual12').shortname
+    taikai = taikais(:individual_12)
 
     click_on "Gérer les Taikai"
 
     assert_selector "h1.title", text: "Liste des Taikai"
 
-    click_on shortname
+    click_on taikai.shortname
 
-    assert_selector "p.title.is-4", text: "Taikai 1 (#{shortname})"
+    assert_selector "p.title.is-4", text: "#{taikai.name} (#{taikai.shortname})"
   end
 
   [

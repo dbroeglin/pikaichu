@@ -49,8 +49,8 @@ module AxlsxExportHelpers
       sheet.add_row [Taikai.human_attribute_name(:description), @taikai.description],
                     style: [@info_label_cell_style, @description_style], height: 60
       sheet.add_row [
-        Taikai.human_attribute_name(:type),
-        "#{@taikai.human_form}#{" (#{t('.distributed')})" if @taikai.distributed? }"
+        t('.type'),
+        "#{@taikai.human_form} - #{@taikai.human_scoring}#{" (#{t('.distributed')})" if @taikai.distributed? }"
       ], style: [@info_label_cell_style, @info_data_cell_style], height: 20
       sheet.add_row [Taikai.human_attribute_name(:total_num_arrows), @taikai.total_num_arrows],
                     style: [@info_label_cell_style, @info_data_cell_style], height: 20
@@ -117,6 +117,8 @@ module AxlsxExportHelpers
 
         dojo_start_line = 2
         @taikai.participating_dojos.each do |participating_dojo|
+          next if participating_dojo.participants.size == 0 # TODO: maybe still display the dojo but with empty line?
+
           participating_dojo.participants.each do |participant|
             row = [
               "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
@@ -149,7 +151,10 @@ module AxlsxExportHelpers
         dojo_start_line = 2
         team_start_line = 2
         @taikai.participating_dojos.each do |participating_dojo|
+          next if participating_dojo.participants.size == 0 # TODO: maybe still display the dojo but with empty line?
+
           participating_dojo.teams.each_with_index do |team, team_index|
+
             team.participants.each_with_index do |participant, participant_index|
               row = [
                 "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
@@ -167,15 +172,12 @@ module AxlsxExportHelpers
                 sheet.merge_cells("C#{team_start_line}:C#{line}")
                 team_start_line = line + 1
               end
-
-              next unless team_index.zero?
-
-              line = dojo_start_line + participating_dojo.participants.size - 1
-              sheet.merge_cells("A#{dojo_start_line}:A#{line}")
-              dojo_start_line = line + 1
             end
           end
-        end
+          line = dojo_start_line + participating_dojo.teams.map {|team| team.participants.size }.sum - 1
+          sheet.merge_cells("A#{dojo_start_line}:A#{line}")
+          dojo_start_line = line + 1
+      end
 
         sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
       end
@@ -204,6 +206,8 @@ module AxlsxExportHelpers
 
       if @taikai.distributed?
         @taikai.participating_dojos.each do |participating_dojo|
+          next if participating_dojo.participants.size == 0 # TODO: maybe still display the dojo but with empty line?
+
           @current_row += 2
 
           sheet.add_row
@@ -269,7 +273,7 @@ module AxlsxExportHelpers
         participant.display_name,
       ] + (participant.results.normal.map do |result|
         result_mark(result)
-      end + [participant.score || 0])
+      end + [display_score(participant.score, @taikai.scoring_enteki?)])
 
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
@@ -292,10 +296,12 @@ module AxlsxExportHelpers
         .maximum("results.index") || 0
       sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4] + [4] * @nb_tie_break))
 
-      export_team_results_table sheet
+      export_team_results_table sheet, @taikai.participating_dojos
 
       if @taikai.distributed?
         @taikai.participating_dojos.each do |participating_dojo|
+          next if participating_dojo.participants.size == 0 # TODO: maybe still display the dojo but with empty line?
+
           @current_row += 2
 
           sheet.add_row
@@ -310,8 +316,6 @@ module AxlsxExportHelpers
 
 
   def export_team_results_table(sheet, participating_dojos = nil)
-    participating_dojos = @taikai.participating_dojos if participating_dojos.nil?
-
     row_styles = [@total_cell_style] +
                   [@table_cell_style] * 4 +
                   [@result_cell_style] * @taikai.total_num_arrows +
@@ -348,11 +352,15 @@ module AxlsxExportHelpers
     team_start_line = exaequo_start_line = @current_row + 1
     previous_score = teams.first&.score
     rows = teams.map do |team|
+      next if team.participants.size == 0
       # merge team cells
       line = team_start_line + team.participants.size - 1
       sheet.merge_cells("B#{team_start_line}:B#{line}")
       sheet.merge_cells("C#{team_start_line}:C#{line}")
       sheet.merge_cells("D#{team_start_line}:D#{line}")
+      #logger.info("MERGE B#{team_start_line}:B#{line}")
+      #logger.info("MERGE C#{team_start_line}:C#{line}")
+      #logger.info("MERGE D#{team_start_line}:D#{line}")
       team_start_line = line + 1
 
       if previous_score != team.score
@@ -361,6 +369,8 @@ module AxlsxExportHelpers
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
         sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+        #logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+        #logger.info("MERGE #{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
         exaequo_start_line = @current_row + 1
       end
       rank += 1
@@ -378,16 +388,18 @@ module AxlsxExportHelpers
           participant.results.normal.map do |result|
             result_mark(result)
           end + [
-            participant.score || 0,
-            participant.team.score || 0,
+            display_score(participant.score, @taikai.scoring_enteki?),
+            display_score(participant.team.score, @taikai.scoring_enteki?),
           ] + participant.results.tie_break.map do |result|
             result_mark(result)
           end
         )
       end
-    end.flatten(1)
+    end.flatten(1).compact
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
     sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+    #logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+    #logger.info("MERGE A#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
 
     rows.each do |row|
       sheet.add_row row, style: row_styles

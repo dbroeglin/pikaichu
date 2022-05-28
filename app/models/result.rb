@@ -4,6 +4,12 @@ class Result < ApplicationRecord
   belongs_to :participant
   belongs_to :match, optional: true
 
+  ENTEKI_VALUES = [0, 3, 5, 7, 9, 10]
+  validates :status, presence: true, if: -> { value.present? }
+  validates :value,
+    if: -> { participant.taikai.scoring == 'enteki' },
+    presence: true,
+    inclusion: { in: ENTEKI_VALUES }
   validate :cannot_update_if_finalized, on: :update
 
   enum status: {
@@ -19,7 +25,14 @@ class Result < ApplicationRecord
     tie_break: 'tie_break',
   }, _prefix: :round_type
 
-  human_enum :status
+  human_enum :round_type
+
+  def value=(value)
+    super(value)
+    if !value.nil?
+      self.status = self.value.zero? ? 'miss' : 'hit'
+    end
+  end
 
   def known?
     status_hit? || status_miss?
@@ -31,6 +44,26 @@ class Result < ApplicationRecord
 
   def empty?
     status.nil?
+  end
+
+  def rotate_status(all_marked)
+    self.status = case status
+    when 'hit' then 'miss'
+    when 'miss' then all_marked ? 'hit' : 'unknown'
+    when 'unknown' then 'hit'
+    else raise "Cannot change value of a result that has not been marked yet"
+    end
+
+    self
+  end
+
+  def rotate_value
+    self.value = (Result::ENTEKI_VALUES + [0])
+      .each_cons(2)
+      .find {|pair| pair.first == self.value }
+      .last
+
+    self
   end
 
   def cannot_update_if_finalized
@@ -47,6 +80,7 @@ class Result < ApplicationRecord
 
     taikai.participants
       .find_by(lastname: lastname)
-      .results.create(round: taikai.num_rounds + 1, index: index, final: true, round_type: 'tie_break', status: status)
+      .results
+      create(round: taikai.num_rounds + 1, index: index, final: true, round_type: 'tie_break', status: status)
   end
 end

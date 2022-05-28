@@ -3,9 +3,9 @@ require "test_helper"
 class ParticipantsControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual12)
-    @participating_dojo = participating_dojos(:participating_dojo1_individual12)
-    @participant = participants(:participant1_participating_dojo1_individual12)
+    @taikai = taikais(:individual_12)
+    @participating_dojo = participating_dojos(:participating_dojo1_individual_12)
+    @participant = participants(:participant1_participating_dojo1_individual_12)
   end
 
   test "should get new" do

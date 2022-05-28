@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_14_095035) do
+ActiveRecord::Schema.define(version: 2022_05_19_172956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 2022_05_14_095035) do
     "team",
     "2in1",
     "matches",
+  ], force: :cascade
+
+  create_enum :taikai_scoring, [
+    "kinteki",
+    "enteki",
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|
@@ -130,6 +135,7 @@ ActiveRecord::Schema.define(version: 2022_05_14_095035) do
     t.boolean "final", default: false, null: false
     t.bigint "match_id"
     t.enum "round_type", default: "normal", null: false, enum_type: "round_type"
+    t.integer "value"
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"
@@ -184,7 +190,9 @@ ActiveRecord::Schema.define(version: 2022_05_14_095035) do
     t.integer "total_num_arrows", limit: 2, default: 12, null: false
     t.integer "tachi_size", limit: 2, default: 3, null: false
     t.enum "form", enum_type: "taikai_form"
+    t.enum "scoring", default: "kinteki", enum_type: "taikai_scoring"
     t.index ["form"], name: "taikais_by_form"
+    t.index ["scoring"], name: "taikais_by_scoring"
     t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 

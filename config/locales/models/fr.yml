@@ -36,6 +36,9 @@ fr:
           individual: Individuel
           team: En équipe
           matches: Matchs Éliminatoires
+        scoring:
+          kinteki: Kinteki
+          enteki: Enteki
     attributes:
       user:
         firstname: Prénom
@@ -78,6 +81,7 @@ fr:
         name: Nom entier
         num_arrows: Nb de flèches
         num_targets: Nb de cibles
+        scoring:
         shortname: Nom court
         start_date: Date de début
         tachi_size: Taille des tachi

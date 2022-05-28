@@ -1,9 +1,17 @@
-a_fr_2in112:
-  participating_dojo: fr_2in112
+a_fr_2in1_dist_12:
+  participating_dojo: fr_2in1_dist_12
   shortname: A FR
 
-b_fr_2in112:
-  participating_dojo: fr_2in112
+b_fr_2in1_dist_12:
+  participating_dojo: fr_2in1_dist_12
+  shortname: B FR
+
+a_fr_2in1_dist_12_enteki:
+  participating_dojo: fr_2in1_dist_12_enteki
+  shortname: A FR
+
+b_fr_2in1_dist_12_enteki:
+  participating_dojo: fr_2in1_dist_12_enteki
   shortname: B FR
 
 a_hk_2in112:

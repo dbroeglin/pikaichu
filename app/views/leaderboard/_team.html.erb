@@ -43,9 +43,9 @@
           <% participant.results.select { |result| result.round_type_normal? }.each do |result| %>
           <td><%= icon_from(result, final) %></td>
           <% end %>
-          <td><%= participant.score(final) %></td>
+          <td><%= display_score participant.score(final), taikai.scoring_enteki? %></td>
           <% if team_index == 0 && participant_index == 0 %>
-            <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= score %></th>
+            <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= display_score score, taikai.scoring_enteki? %></th>
           <% end %>
           <% if @num_tie_break_arrows > 0 %>
             <% @num_tie_break_arrows.times do |index| %>
@@ -54,7 +54,9 @@
               </td>
             <% end %>
             <% if participant_index == 0 %>
-              <th rowspan="<%= team.participants.size %>"><%= (s = team.tie_break_score(final)) == 0 ? nil : s %></th>
+              <th rowspan="<%= team.participants.size %>">
+                <%= (s = team.tie_break_score(final)).hits == 0 ? nil : display_score(s, taikai.scoring_enteki?) %>
+              </th>
             <% end %>
           <% end %>
 
