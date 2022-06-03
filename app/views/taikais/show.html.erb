@@ -2,9 +2,10 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4"><%= @taikai.name %> (<%= @taikai.shortname %>)</p>
+        <p class="title is-4"><%= t '.overview', description: "#{@taikai.name} (#{@taikai.shortname})" %></p>
         <p class="subtitle is-6">
           <%= l @taikai.start_date %> - <%= l @taikai.end_date %> &#8212
+          <%= Taikai.human_enum_value :scoring, @taikai.scoring %> &#8212
           <%= Taikai.human_enum_value :form, @taikai.form %> &#8212
           <%= t("activerecord.booleans.taikai.distributed.#{@taikai.distributed}") %> &#8212
           <%= t ".total_num_arrows", count: @taikai.total_num_arrows %>
