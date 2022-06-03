@@ -247,8 +247,9 @@ module AxlsxExportHelpers
 
     # Order participants by reverse score and index
     participants = participating_dojos
-      .map(&:participants).flatten
-      .sort_by { |participant| [-participant.score, participant.index]}
+      .map(&:participants)
+      .flatten
+      .sort_by { |participant| [-participant.score, participant.index || 0]}
 
     current_rank = rank = 1
     exaequo_start_line = @current_row + 1
@@ -345,8 +346,9 @@ module AxlsxExportHelpers
 
     # Order teams by reverse score and index
     teams = participating_dojos
-      .map(&:teams).flatten
-      .sort_by { |participant| [-participant.score, participant.index]}
+      .map(&:teams)
+      .flatten
+      .sort_by { |participant| [-participant.score, participant.index || 0]}
 
     current_rank = rank = 1
     team_start_line = exaequo_start_line = @current_row + 1
