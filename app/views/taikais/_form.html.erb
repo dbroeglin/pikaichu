@@ -12,6 +12,15 @@
 
   <div class="columns">
     <div class="column one-half">
+      <%= f.input :scoring %>
+    </div>
+    <div class="column one-half">
+      <%= f.input :form %>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column one-half">
       <%= f.input :total_num_arrows %>
       <%= f.input :tachi_size %>
     </div>
@@ -21,7 +30,6 @@
   </div>
 
   <%= f.input :distributed %>
-  <%= f.input :form %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3", disabled: taikai.id && !policy(taikai).update? %>
   <%= link_to t('cancel'), taikai.persisted? ?  taikai_path(taikai) : taikais_path, class: "button" %>

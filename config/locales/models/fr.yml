@@ -34,8 +34,8 @@ fr:
         form:
           2in1: 2 en 1
           individual: Individuel
-          team: En équipe
-          matches: Matchs Éliminatoires
+          team: En équipes
+          matches: Matchs
         scoring:
           kinteki: Kinteki
           enteki: Enteki

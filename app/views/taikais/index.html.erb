@@ -1,48 +1,45 @@
 <div class="container">
-  <div class="columns">
-    <div class="column is-three-quarters is-offset-2">
-      <h1 class="title"><%= t '.title' %></h1>
+  <h1 class="title"><%= t '.title' %></h1>
 
-      <table class="table is-fullwidth">
-        <thead>
-          <tr class="has-text-centered">
-            <th></th>
-            <th><%= Taikai.human_attribute_name :shortname %></th>
-            <th><%= Taikai.human_attribute_name :name %></th>
-            <th><%= t '.dates' %></th>
-            <th><%= t '.num_participants' %></th>
-            <th class="has-text-right">
-              <%= link_to new_taikai_path,
-                class: "button is-small has-background-light",
-                title: t('new') do %>
-                <span class="icon is-small">
-                  <i class="fas fa-plus"></i>
-                </span>
-                <span><%= t :new %></span>
-              <% end %>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @taikais.each do |taikai| %>
-          <tr>
-            <td>
-                <%= taikai_form_icon taikai %>&nbsp;<% if taikai.distributed %><span class="icon is-small" title="<%= t '.distributed' %>">
-                  <i class="fas fa-globe"></i>
-                </span><% end %>
-            </td>
-            <td><%= link_to taikai.shortname, taikai_path(taikai) %></td>
-            <td><%= taikai.name %></td>
-            <td><%= l taikai.start_date, format: :shorter %> - <%= l taikai.end_date, format: :shorter %></td>
-            <td><%= taikai.participants.size %></td>
-            <td class="has-text-right">
-              <%= render "icons", taikai: taikai, size: "is-small" %>
-            </td>
-          </tr>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr class="has-text-centered">
+        <th><%= Taikai.human_attribute_name :shortname %></th>
+        <th><%= Taikai.human_attribute_name :name %></th>
+        <th><%= t '.dates' %></th>
+        <th>&nbsp;</th>
+        <th class="has-text-right">
+          <%= link_to new_taikai_path,
+            class: "button is-small has-background-light",
+            title: t('new') do %>
+            <span class="icon is-small">
+              <i class="fas fa-plus"></i>
+            </span>
+            <span><%= t :new %></span>
           <% end %>
-        </tbody>
-      </table>
-      <%= paginate @taikais %>
-    </div>
-  </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @taikais.each do |taikai| %>
+      <tr>
+        <td><%= link_to taikai.shortname, taikai_path(taikai) %></td>
+        <td><%= taikai.name %></td>
+        <td><%= l taikai.start_date, format: :shorter %> - <%= l taikai.end_date, format: :shorter %></td>
+        <td>
+            <div class="tags has-addons">
+              <span class="tag is-link"><%= Taikai.human_enum_value :scoring, taikai.scoring %></span>
+              <span class="tag is-dark"><%= Taikai.human_enum_value :form, taikai.form %></span>
+              <span class="tag is-info"><%= t("activerecord.booleans.taikai.distributed.#{taikai.distributed}") %></span>
+              <span class="tag is-primary"><%= taikai.participants.size %></span>
+            </div>
+        </td>
+        <td class="has-text-right">
+          <%= render "icons", taikai: taikai, size: "is-small" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @taikais %>
 </div>

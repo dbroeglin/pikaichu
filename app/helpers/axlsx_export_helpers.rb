@@ -197,7 +197,6 @@ module AxlsxExportHelpers
   end
 
   def export_individual_results(xlsx_package)
-
     xlsx_package.workbook.add_worksheet(name: t('.results.title.individual')) do |sheet|
       sheet.column_widths(*([5, 5, 20, 25] + [4] * @taikai.total_num_arrows + [8]))
 
