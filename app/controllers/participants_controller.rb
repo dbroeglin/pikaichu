@@ -77,7 +77,7 @@ class ParticipantsController < ApplicationController
         csv_data,
         headers: true,
         col_sep: ',',
-        skip_lines: /CNKyudo - Interface de gestion/
+        skip_lines: /Kyudo - Interface de gestion/
       ) do |row|
         attrs = {
           federation_country_code: 'FR',

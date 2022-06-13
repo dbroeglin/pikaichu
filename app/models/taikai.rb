@@ -1,6 +1,7 @@
 class Taikai < ApplicationRecord
   audited
 
+  attr_accessor :current_user
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6
   attribute :tachi_size, default: 3
@@ -68,8 +69,7 @@ class Taikai < ApplicationRecord
             inclusion: {
               in: [3, 6, 5, 10]
             }
-
-  attr_accessor :current_user
+  validate :number_of_dojos
 
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
@@ -221,5 +221,11 @@ class Taikai < ApplicationRecord
 
   def state_machine
     @state_machine ||= TaikaiStateMachine.new(self, transition_class: TaikaiTransition)
+  end
+
+  def number_of_dojos
+    if !distributed && participating_dojos.count > 1
+      errors.add(:distributed, :num_participating_dojos)
+    end
   end
 end
