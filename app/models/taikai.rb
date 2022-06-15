@@ -57,7 +57,7 @@ class Taikai < ApplicationRecord
   validates :total_num_arrows,
             presence: true,
             inclusion: {
-              in: [12, 20]
+              in: [12, 20, 24, 40]
             }
   validates :tachi_size,
             presence: true,

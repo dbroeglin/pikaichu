@@ -80,7 +80,7 @@ fr:
         form: Forme
         name: Nom entier
         num_arrows: Nb de flèches
-        num_targets: Nb de cibles
+        num_targets: Nb de cibles/tireurs
         scoring:
         shortname: Nom court
         start_date: Date de début
