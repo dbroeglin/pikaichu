@@ -67,7 +67,7 @@ class Taikai < ApplicationRecord
   validates :num_targets,
             presence: true,
             inclusion: {
-              in: [3, 6, 5, 10]
+              in: [3, 6, 5, 9, 10]
             }
   validate :number_of_dojos
 
