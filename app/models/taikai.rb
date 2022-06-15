@@ -129,6 +129,7 @@ class Taikai < ApplicationRecord
       tachi_size: taikai.tachi_size,
       distributed: taikai.distributed,
       form: 'matches',
+      scoring: taikai.scoring,
       current_user: current_user,
     )
 
