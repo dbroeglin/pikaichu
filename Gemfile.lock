@@ -342,7 +342,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.6)
   pundit
-  rails (~> 7.0.0)
+  rails (~> 7.0.1)
   roo (~> 2.8.0)
   rubocop
   rubocop-rails
