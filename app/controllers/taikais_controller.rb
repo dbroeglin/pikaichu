@@ -2,7 +2,7 @@ class TaikaisController < ApplicationController
   def index
     @taikais =
       Taikai.all
-        .order(start_date: :asc, end_date: :asc, shortname: :asc)
+        .order(start_date: :desc, end_date: :desc, shortname: :asc)
         .includes(:participants)
         .page params[:page]
   end
@@ -93,6 +93,7 @@ class TaikaisController < ApplicationController
         :distributed,
         :end_date,
         :form,
+        :scoring,
         :name,
         :num_targets,
         :shortname,
