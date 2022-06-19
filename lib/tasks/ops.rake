@@ -17,9 +17,9 @@ namespace :ops do
   namespace :deploy do
     desc "Build & deploy docker image"
     task docker: :environment do
-        sh "docker build --tag pikaichu_production ."
-        sh "docker tag pikaichu_production #{acr_server}/pikaichu:production"
-        sh "docker push #{acr_server}/pikaichu:production"
+      sh "docker build --tag pikaichu_production ."
+      sh "docker tag pikaichu_production #{acr_server}/pikaichu:production"
+      sh "docker push #{acr_server}/pikaichu:production"
     end
   end
 

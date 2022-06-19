@@ -1,5 +1,5 @@
 class TaikaiTransition < ApplicationRecord
-  #include Statesman::Adapters::ActiveRecordTransition
+  # include Statesman::Adapters::ActiveRecordTransition
 
   # If your transition table doesn't have the default `updated_at` timestamp column,
   # you'll need to configure the `updated_timestamp_column` option, setting it to
@@ -16,7 +16,8 @@ class TaikaiTransition < ApplicationRecord
 
   def update_most_recent
     last_transition = taikai.taikai_transitions.order(:sort_key).last
-    return unless last_transition.present?
+    return if last_transition.blank?
+
     last_transition.update_column(:most_recent, true)
   end
 end

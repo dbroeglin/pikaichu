@@ -17,11 +17,11 @@ class CreateTaikaiTransitions < ActiveRecord::Migration[7.0]
     add_foreign_key :taikai_transitions, :taikais
 
     add_index(:taikai_transitions,
-              %i(taikai_id sort_key),
+              %i[taikai_id sort_key],
               unique: true,
               name: "index_taikai_transitions_parent_sort")
     add_index(:taikai_transitions,
-              %i(taikai_id most_recent),
+              %i[taikai_id most_recent],
               unique: true,
               where: "most_recent",
               name: "index_taikai_transitions_parent_most_recent")

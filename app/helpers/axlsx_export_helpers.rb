@@ -359,9 +359,9 @@ module AxlsxExportHelpers
       sheet.merge_cells("B#{team_start_line}:B#{line}")
       sheet.merge_cells("C#{team_start_line}:C#{line}")
       sheet.merge_cells("D#{team_start_line}:D#{line}")
-      #logger.info("MERGE B#{team_start_line}:B#{line}")
-      #logger.info("MERGE C#{team_start_line}:C#{line}")
-      #logger.info("MERGE D#{team_start_line}:D#{line}")
+      # logger.info("MERGE B#{team_start_line}:B#{line}")
+      # logger.info("MERGE C#{team_start_line}:C#{line}")
+      # logger.info("MERGE D#{team_start_line}:D#{line}")
       team_start_line = line + 1
 
       if previous_score != team.score
@@ -370,8 +370,8 @@ module AxlsxExportHelpers
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
         sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
-        #logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
-        #logger.info("MERGE #{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+        # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+        # logger.info("MERGE #{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
         exaequo_start_line = @current_row + 1
       end
       rank += 1
@@ -399,8 +399,8 @@ module AxlsxExportHelpers
     end.flatten(1).compact
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
     sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
-    #logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
-    #logger.info("MERGE A#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+    # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+    # logger.info("MERGE A#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
 
     rows.each do |row|
       sheet.add_row row, style: row_styles

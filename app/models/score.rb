@@ -10,7 +10,7 @@ class Score
   def <=>(other)
     result = @value <=> other.value
     return result if result != 0
-    return @hits <=> other.hits
+    @hits <=> other.hits
   end
 
   def ==(other)
@@ -20,11 +20,11 @@ class Score
   end
 
   def +(other)
-    Score::new(hits + other.hits, value + other.value)
+    Score.new(hits + other.hits, value + other.value)
   end
 
-  def -@()
-    Score::new(-hits, -value)
+  def -@
+    Score.new(-hits, -value)
   end
 
   def to_s

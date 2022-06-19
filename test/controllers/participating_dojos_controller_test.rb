@@ -1,3 +1,5 @@
+# rubocop:disable Naming/VariableNumber
+
 require "test_helper"
 
 class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest

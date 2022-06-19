@@ -15,6 +15,6 @@ class TaikaiStateMachine
 
   guard_transition to: :validated do |taikai|
     # all participating dojos validated
-    taikai.participating_dojos.all? &:validated?
+    taikai.participating_dojos.all?(&:validated?)
   end
 end

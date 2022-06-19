@@ -8,7 +8,7 @@ if Rails.env.development? || Rails.env.test?
       sh 'bin/rails db:drop'
       sh 'bin/rails db:create'
       sh 'bin/rails db:migrate'
-      sh 'bin/rails dev:prime'
+      sh 'bin/rails ops:db:fixtures:full'
 
       sh 'bin/rails test test/controllers'
       sh 'bin/rails rubocop'
