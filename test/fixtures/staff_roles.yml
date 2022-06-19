@@ -1,24 +1,34 @@
 taikai_admin:
   code: taikai_admin
-  label: { 'fr': 'Administrateur' }
-  description: { 'fr': 'Administrateur du taikai' }
+  label: { 'fr': 'Administrateur', 'en': 'Administrator' }
+  description: { 'fr': 'Administrateur du Taikai', 'en': 'Taikai administrator' }
 
 dojo_admin:
   code: dojo_admin
-  label: { 'fr': 'Dojo Administrator' }
-  description: { 'fr': "Administrateur d'un club participant" }
+  label: { 'fr': 'Administrateur de club', 'en': 'Dojo administrator' }
+  description: { 'fr': 'Administrateur de club participant', 'en': 'Participating Dojo administrator' }
 
 chairman:
   code: chairman
-  label: { 'fr': 'Chairman' }
-  description: { 'fr': 'Taikai chairman' }
+  label: { 'fr': 'Directeur du tournoi', 'en': 'Chairman' }
+  description: { 'fr': 'Directeur du tournoi', 'en': 'Taikai chairman' }
 
 marking_referee:
   code: marking_referee
-  label: { 'fr': 'Marking Referee' }
-  description: { 'fr': 'Marking Referee"' }
+  label: { 'fr': 'Enregistreur', 'en': 'Marking Referee' }
+  description: { 'fr': 'Enregistreur des résultats', en: 'Marking Referee' }
+
+shajo_referee:
+  code: shajo_referee
+  label: { 'fr':'Juge de shajô','en':'Shajô Referee'}
+  description: { 'fr':'Juge de shajô','en':'Shajô Referee'}
+
+target_referee:
+  code: target_referee
+  label: { 'fr': 'Juge de cible', 'en': 'Matomae Referee' }
+  description: { 'fr': 'Juge de cible', 'en': 'Matomae Referee' }
 
 yatori:
   code: yatori
-  label: { 'fr': 'Yatori' }
-  description: { 'fr': 'Yatori"' }
+  label: { 'fr': 'Yatori', 'en': 'Yatori' }
+  description: { 'fr': 'Yatori', 'en': 'Yatori' }
