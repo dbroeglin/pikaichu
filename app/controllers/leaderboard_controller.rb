@@ -80,11 +80,11 @@ class LeaderboardController < ApplicationController
     elsif @taikai.form_matches?
       @teams_by_score = Match.where(taikai: @taikai, level: 1)
         .order(index: :asc)
-        .map(&:ordered_teams).flatten.compact
-        .group_by do |team|
-          team.participants.sum do |participant|
-            participant.results.joins(:match).where("matches.level": 1, "results.status": 'hit').count
-          end
+        .map do |match|
+          match.ordered_teams.compact.map { |team| [team, match] }
+        end.flatten(1).compact
+        .map do |team, match|
+          [team, match, team.score(true, match.id)]
         end
     else
       raise "compute_team_leaderboard works only for 'team', '2in1' and 'matches' taikais"

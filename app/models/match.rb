@@ -62,8 +62,13 @@ class Match < ApplicationRecord
   end
 
   def assign_team1(team)
+    if self.team1
+      self.team1.participants.each do |participant|
+        participant.results.where(match_id: id).destroy_all
+      end
+    end
     self.team1 = team
-    team1.participants.each do |participant|
+    self.team1.participants.each do |participant|
       participant.create_empty_results id
     end
 
@@ -71,6 +76,11 @@ class Match < ApplicationRecord
   end
 
   def assign_team2(team)
+    if self.team2
+      self.team2.participants.each do |participant|
+        participant.results.where(match_id: id).destroy_all
+      end
+    end
     self.team2 = team
     team2.participants.each do |participant|
       participant.create_empty_results id

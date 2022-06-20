@@ -20,9 +20,11 @@ class MatchesController < ApplicationController
     @match.assign_attributes(match_params)
 
     if @match.changes[:team1_id] && @match.changes[:team1_id].second
+      # TODO: Should clean results if nil
       @match.assign_team1(@match.team1)
     end
     if @match.changes[:team2_id] && @match.changes[:team2_id].second
+      # TODO: Should clean results if nil
       @match.assign_team2(@match.team2)
     end
     if @match.changes[:winner] && !@match.winner.nil?
