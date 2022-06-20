@@ -53,6 +53,17 @@ Reset all results in a Taikai:
          r.save(validate:false)
        }
 
+Generate results for an Enteki Taikai:
+
+    Taikai.find_by(shortname: '2in1-20-enteki')
+      .participants.map(&:results).flatten
+      .each { |r|
+        r.value = [0, 3, 5, 7, 9, 10].sample
+        r.status = r.value == 0 ? 'miss' : 'hit'
+        r.final = true
+        r.save
+      }
+
 Manually add a result for a tie-break:
 
     Taikai.find_by(shortname: "2in1-test").participants.find_by(lastname: "LASTNAME").results.create(round: 4, index:1, round_type: 'tie_break', status: 'hit')

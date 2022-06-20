@@ -25,12 +25,16 @@ class MatchesController < ApplicationController
     if @match.changes[:team2_id] && @match.changes[:team2_id].second
       @match.assign_team2(@match.team2)
     end
-    if @match.changes[:winner]
-      if @match.winner.nil?
-        @match.winner = nil
-      else
-        @match.select_winner(@match.winner)
-      end
+    if @match.changes[:winner] && !@match.winner.nil?
+      @match.select_winner(@match.winner)
+    end
+
+    if @match.errors.any?
+      @teams = @taikai
+        .participating_dojos.map(&:teams).flatten
+        .sort_by(&:shortname)
+      render :edit, status: :unprocessable_entity
+      return
     end
 
     if @match.update(match_params)
@@ -43,9 +47,9 @@ class MatchesController < ApplicationController
   def select_winner
     @match = @taikai.matches.find(params[:id])
 
-   @match.select_winner(@match.score1 > @match.score2 ? 1 : 2)
+    @match.select_winner(@match.score1 > @match.score2 ? 1 : 2)
 
-   redirect_to action: 'index', status: :see_other
+    redirect_to action: 'index', status: :see_other
   end
 
   private

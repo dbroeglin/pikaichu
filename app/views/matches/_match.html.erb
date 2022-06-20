@@ -35,7 +35,7 @@
             <span class="icon is-small">
               <i class="fas fa-balance-scale"></i>
             </span>
-          <% end if match.finalized? && !match.winner %>
+          <% end if match_is_decidable?(match) %>
         </td>
       </tr>
       <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 2 %>>

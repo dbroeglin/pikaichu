@@ -12,12 +12,16 @@ en:
         shortname: Code
     errors:
       models:
-        team:
+        match:
           attributes:
-            index:
-              taken: must be unique within a participating dojo
+            winner:
+              defined_results_for_target: cannot be declared when target match already has results
         participant:
           attributes:
             index_in_team:
               blank: must be defined if participant is a team member
               taken: must be unique within a team
+        team:
+          attributes:
+            index:
+              taken: must be unique within a participating dojo

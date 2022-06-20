@@ -38,15 +38,26 @@ class Match < ApplicationRecord
     # TODO handle "small" final
     raise "Winner can be only 1 or 2" if winner < 1 || 2 < winner
     self.winner = winner
-    save!
-    if level > 1
-      match = Match.find_by(taikai_id: taikai_id, level: level - 1, index: ((index - 1) / 2) + 1)
-      eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner})").save!
-    end
-    if level == 2
-      # third place play-off
-      match = Match.find_by(taikai_id: taikai_id, level: 1, index: 2)
-      eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner == 1 ? 2 : 1})").save!
+    ActiveRecord::Base.transaction do
+      save!
+      if level > 1
+        match = Match.find_by(taikai_id: taikai_id, level: level - 1, index: ((index - 1) / 2) + 1)
+        if match.defined_results?
+          self.errors.add(:winner, :defined_results_for_target)
+          raise ActiveRecord::Rollback
+        end
+        eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner})").save!
+      end
+      if level == 2
+        # third place play-off
+        match = Match.find_by(taikai_id: taikai_id, level: 1, index: 2)
+
+        if match.defined_results?
+          self.errors.add(:base, :defined_results_for_target)
+          raise ActiveRecord::Rollback
+        end
+        eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner == 1 ? 2 : 1})").save!
+      end
     end
   end
 
@@ -66,5 +77,9 @@ class Match < ApplicationRecord
     end
 
     self
+  end
+
+  def defined_results?
+    results.where('status IS NOT NULL').any?
   end
 end

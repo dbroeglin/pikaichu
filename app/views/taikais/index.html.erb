@@ -1,6 +1,8 @@
 <div class="container">
   <h1 class="title"><%= t '.title' %></h1>
 
+  <p><%= page_entries_info @taikais, entry_name: Taikai.model_name.human %></p>
+
   <table class="table is-fullwidth">
     <thead>
       <tr class="has-text-centered">

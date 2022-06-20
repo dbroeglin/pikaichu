@@ -49,6 +49,12 @@ fr:
         country_name: Pays
         name: Nom entier
         shortname: Nom court
+      match:
+        level: Niveau
+        index: Numéro
+        winner: Vainqueur
+        team1_id: Équipe 1
+        team2_id: Équipe 2
       participant:
         club: Club
         display_name: Nom
@@ -92,10 +98,10 @@ fr:
         num_participants: Nb.
     errors:
       models:
-        team:
+        match:
           attributes:
-            index:
-              taken: doit être unique pour un club hôte.
+            winner:
+              defined_results_for_target: ne peut être déclarer quand les matchs cible sont ont déjà des résultats
         participant:
           attributes:
             index_in_team:
@@ -125,3 +131,7 @@ fr:
               invalid: ne peut contenir que des lettres alphabétiques, des chiffres et des tirets.
             distributed:
               num_participating_dojos: doit être coché s'il y a plusieurs clubs participants.
+        team:
+          attributes:
+            index:
+              taken: doit être unique pour un club hôte.

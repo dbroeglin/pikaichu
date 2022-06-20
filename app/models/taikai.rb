@@ -51,14 +51,22 @@ class Taikai < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: /\A(?![0-9]+$)(?!-)[a-zA-Z0-9-]{,63}(?<!-)\z/ }
 
-  validates :name, :start_date, :end_date, :form, presence: true
+  validates :name, presence: true
+  validates :form, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :total_num_arrows, presence: true
   validates :total_num_arrows,
-            presence: true,
             inclusion: {
               in: [12, 20, 24, 40]
-            }
+            },
+            unless: :form_matches?
+  validates :total_num_arrows,
+            inclusion: {
+              in: [4]
+            },
+            if: :form_matches?
+
   validates :tachi_size,
             presence: true,
             inclusion: {
@@ -124,7 +132,7 @@ class Taikai < ApplicationRecord
       name: "#{taikai.name} #{name_suffix}",
       start_date: taikai.start_date,
       end_date: taikai.end_date,
-      total_num_arrows: taikai.total_num_arrows,
+      total_num_arrows: 4,
       num_targets: taikai.num_targets,
       tachi_size: taikai.tachi_size,
       distributed: taikai.distributed,

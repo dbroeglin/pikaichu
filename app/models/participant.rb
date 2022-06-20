@@ -71,8 +71,12 @@ class Participant < ApplicationRecord
           (num_marked % participating_dojo.taikai.num_arrows != 0))
   end
 
+  def defined_results?(match_id = nil)
+    results.where('status IS NOT NULL').where(match_id: match_id).any?
+  end
+
   def create_empty_results(match_id = nil)
-    if results.where('status IS NOT NULL').where(match_id: match_id).any?
+    if defined_results?(match_id)
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
     results.where(match_id: match_id).destroy_all
