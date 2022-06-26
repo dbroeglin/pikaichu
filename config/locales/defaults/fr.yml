@@ -9,6 +9,11 @@ fr:
             dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
+    template:
+      body: 'Il y a des erreurs de validation avec les champs suivants:'
+      header:
+        one: "1 erreur à empêché la sauvegarde des données de: %{model}"
+        other: "%{count} erreurs ont empêché la sauvegarde de: %{model}"
   date:
     abbr_day_names:
     - dim
