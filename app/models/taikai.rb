@@ -55,12 +55,13 @@ class Taikai < ApplicationRecord
   validates :form, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+
   validates :total_num_arrows, presence: true
   validates :total_num_arrows,
             inclusion: {
-              in: [12, 20, 24, 40]
+              in: [12, 20]
             },
-            unless: :form_matches?
+            if: -> { scoring_kinteki? && !form_matches? }
   validates :total_num_arrows,
             inclusion: {
               in: [4]
