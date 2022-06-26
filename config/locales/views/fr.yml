@@ -7,6 +7,7 @@ fr:
   save: Sauvegarder
   cancel: Retour
   back: Retour
+  import: Importer
 
   home:
     index:
@@ -118,6 +119,7 @@ fr:
       file: Fichier Excel CNKyudo
       placeholders:
         choose_a_file: Choisir un fichier
+        no_file_uploaded: Aucun fichier chargé
     new:
       title: Ajouter un club hôte
     form:
@@ -191,6 +193,8 @@ fr:
         index: Laisser blanc pour un choix par défaut...
     list:
       form_teams: Former les équipes
+      teamed: "%{teamed} participants affectés sur %{total}."
+
   teaming:
     edit:
       add_team: Ajouter une équipe

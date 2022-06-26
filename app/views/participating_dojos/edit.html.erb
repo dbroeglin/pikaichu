@@ -68,23 +68,24 @@
           </header>
           <div class="card-content">
             <%= form_with url: import_taikai_participating_dojo_participants_path(@taikai, @participating_dojo) do |f| %>
-              <div class="field">
+              <div class="field" id="file-js">
                 <label class=" label" for="user"><%= t('.file') %></label>
                 <div class="control">
-                  <div class="file is-warning">
+                  <div class="file has-name is-warning" data-controller="file-upload">
                     <label class="file-label">
-                      <%= f.file_field :excel, class: "file-input" %>
+                      <%= f.file_field :excel, class: "file-input", 'data-file-upload-target': 'file' %>
                       <span class="file-cta">
                         <span class="file-icon">
                           <i class="fas fa-upload"></i>
                         </span>
                         <span class="file-label"><%= t '.placeholders.choose_a_file' %></span>
                       </span>
+                      <span class="file-name" data-file-upload-target="name"><%= t '.placeholders.no_file_uploaded' %></span>
                     </label>
                   </div>
                 </div>
               </div>
-              <%= f.button t('save'), class: "button has-background-light mr-3" %>
+              <%= f.button t('import'), class: "button has-background-light mr-3" %>
             <% end %>
           </div>
         </div>
