@@ -6,11 +6,13 @@
   <%= render "choice", taikai: @taikai, participant: participant, match: local_assigns[:match] %>
 </td>
 <% participant.results.normal.group_by(&:round).each_pair do |round_index, results| %>
-  <td class="has-text-left <%= first %>">
-    <%= render "round_results", participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
-  </td>
-  <td class="<%= first %> is-bold">
-    <%= render "round_tally",   participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
-  </td>
+  <% if params[:round].nil? || params[:round].to_i == (round_index-1) %>
+    <td class="has-text-left <%= first %>">
+      <%= render "round_results", participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
+    </td>
+    <td class="<%= first %> is-bold">
+      <%= render "round_tally",   participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
+    </td>
+  <% end %>
 <% end %>
 <td class="has-text-centered has-text-weight-semibold <%= first %>"><%= render "individual_score", participant: participant, match: local_assigns[:match] %></td>

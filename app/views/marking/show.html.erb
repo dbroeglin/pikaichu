@@ -1,8 +1,12 @@
-<div class="container">
+<div>
   <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
   <p class="mb-3">
     <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
+    <%= link_to "All", show_marking_path(@taikai), class: "button is-light" %>
+    <% @taikai.num_rounds.times do |round_index| %>
+      <%= link_to (round_index + 1), show_marking_path(@taikai, round: round_index), class: "button is-light" %>
+    <% end %>
   </p>
 
   <table class="table is-narrow is-striped is-bordered">
@@ -16,8 +20,10 @@
         <% end %>
         <th><%= Participant.human_attribute_name :display_name %></th>
         <th><%= t '.input' %></th>
-        <% @taikai.num_rounds.times do |index| %>
-          <th colspan="2"><%= t '.round', index: index + 1 %></th>
+        <% @taikai.num_rounds.times do |round_index| %>
+          <% if params[:round].nil? || params[:round].to_i == round_index %>
+            <th colspan="2"><%= t '.round', index: round_index + 1 %></th>
+          <% end %>
         <% end %>
         <th colspan="<%= @taikai.form_individual? ? 1 : 2 %>"><%= t '.score' %></th>
       </tr>
