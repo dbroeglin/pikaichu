@@ -78,6 +78,7 @@ fr:
     round_results:
       finalize_round: "Valider la série %{index}"
     show:
+      all: Toutes les séries
       back: Retour au Taikai
       input: Saisie
       rank: Rang

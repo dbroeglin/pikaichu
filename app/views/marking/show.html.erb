@@ -2,10 +2,12 @@
   <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
   <p class="mb-3">
-    <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light" %>
-    <%= link_to "All", show_marking_path(@taikai), class: "button is-light" %>
+    <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light mr-5" %>
+    <%= link_to t('.all'), show_marking_path(@taikai), class: "button is-light#{params[:round].nil? ? " is-primary" : ""}" %>
     <% @taikai.num_rounds.times do |round_index| %>
-      <%= link_to (round_index + 1), show_marking_path(@taikai, round: round_index), class: "button is-light" %>
+      <%= link_to (round_index + 1),
+            show_marking_path(@taikai, round: round_index),
+            class: "button is-light#{params[:round].present? && params[:round].to_i == round_index ? " is-primary" : ""}" %>
     <% end %>
   </p>
 
