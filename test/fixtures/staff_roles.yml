@@ -32,3 +32,8 @@ yatori:
   code: yatori
   label: { 'fr': 'Yatori', 'en': 'Yatori' }
   description: { 'fr': 'Yatori', 'en': 'Yatori' }
+
+operations_chairman:
+  code: operations_chairman
+  label: { 'fr': 'Responsable Logistique', 'en': 'Operations Chairman' }
+  description: { 'fr': 'Responsable Logistique', 'en': 'Operations Chairman' }
