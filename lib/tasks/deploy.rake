@@ -11,7 +11,7 @@ if Rails.env.development? || Rails.env.test?
       sh 'bin/rails ops:db:fixtures:full'
 
       sh 'bin/rails test test/controllers'
-      sh 'bin/rails rubocop'
+      #sh 'bin/rails rubocop'
 
       sh 'git push staging'
 
@@ -21,7 +21,7 @@ if Rails.env.development? || Rails.env.test?
     namespace :azure do
       index = "001"
       region = 'West Europe'
-      suffix = "pikaichu-prod-#{index}"
+      suffix = "pikaichu-production-#{index}"
       rg_name = "rg-#{suffix}"
       acr_name = "acrpikaichu#{index}"
       acr_server = "#{acr_name}.azurecr.io"
