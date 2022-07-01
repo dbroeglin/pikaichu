@@ -48,7 +48,8 @@ class TeamsController < ApplicationController
       .require(:team)
       .permit(
         :index,
-        :shortname
+        :shortname,
+        :mixed
       )
   end
 

@@ -174,6 +174,7 @@ class Taikai < ApplicationRecord
     new_teams = []
     taikai
       .teams_by_score(true).values.flatten
+      .select{ |team| !team.mixed } # TODO: generate error if not enough teams
       .first(bracket_size)
       .each do |team|
         logger.info "Creating new team #{team.shortname}"

@@ -65,7 +65,10 @@ class TeamingController < ApplicationController
       groups = unteamed_participants.in_groups_of @participating_dojo.taikai.tachi_size
 
       groups.each_with_index do |group, index|
-        team = @participating_dojo.teams.build(shortname: "#{params[:prefix]}#{index + 1}")
+        team = @participating_dojo.teams.build(
+          shortname: "#{params[:prefix]}#{index + 1}",
+          mixed: true
+        )
 
         group.compact.each_with_index do |participant, index|
           participant.index_in_team = index + 1
@@ -74,7 +77,6 @@ class TeamingController < ApplicationController
 
         team.save!
       end
-
     end
     redirect_to action: :edit, status: :see_other
   end

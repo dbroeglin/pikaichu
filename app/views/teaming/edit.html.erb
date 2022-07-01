@@ -61,7 +61,16 @@
     <% @teams.each do |team| %>
       <div class="column is-4">
         <div class="box">
-          <p class="team-title" ><%= team.shortname %></p>
+          <p class="team-title" >
+            <%= link_to edit_taikai_participating_dojo_team_path(@taikai, @participating_dojo, team),
+              class: "button is-small has-background-light mb-1",
+              title: t('teams.edit.title') do %>
+              <span class="icon is-small">
+                <i class="fas fa-pen"></i>
+              </span>
+            <% end %>
+            <%= team.shortname %>
+          </p>
           <div class="container" data-drag-teams-target="right" data-id="<%= team.id %>">
             <% team.participants.each do |participant| %>
               <p data-id="<%= participant.id %>">

@@ -37,7 +37,10 @@
           <% end %>
           <% if participant_index == 0 %>
             <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
-            <td rowspan="<%= team.participants.size %>" class="has-text-left"><%= team.participating_dojo.display_name %> - <%= team.shortname %></td>
+            <td rowspan="<%= team.participants.size %>" class="has-text-left">
+              <% if taikai.distributed %><%= team.participating_dojo.display_name %> - <% end%>
+              <%= team.shortname %>
+            </td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
           <% participant.results.select { |result| result.round_type_normal? }.each do |result| %>

@@ -10,7 +10,7 @@ class ParticipatingDojo < ApplicationRecord
               where "team_id IS NULL"
             end
           end
-  has_many :teams, -> { order index: :asc }, dependent: :destroy, inverse_of: :participating_dojo
+  has_many :teams, -> { order shortname: :asc }, dependent: :destroy, inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
 
   def draw

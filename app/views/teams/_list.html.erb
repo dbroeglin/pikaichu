@@ -43,7 +43,7 @@
     <tr>
       <td><%= team.index %></td>
       <td><%= team.shortname %></td>
-      <td><%= team.participants.size %></td>
+      <td><%= team.participants.size %><%= team.mixed ? "*": "" %></td>
       <td class="has-text-right">
         <%= link_to edit_taikai_participating_dojo_team_path(taikai, participating_dojo, team),
               class: "button is-small has-background-light",

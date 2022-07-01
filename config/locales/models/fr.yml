@@ -96,6 +96,7 @@ fr:
         index: Numéro
         shortname: Nom court
         num_participants: Nb.
+        mixed: Mixte
     errors:
       models:
         match:

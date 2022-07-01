@@ -5,6 +5,7 @@
 
   <%= f.input :index, input_html: { placeholder: t('.placeholders.index') } %>
   <%= f.input :shortname %>
+  <%= f.input :mixed %>
 
   <%= f.button t('save'), class: "button has-background-light mr-3" %>
   <%= link_to t('cancel'), edit_taikai_participating_dojo_path(taikai, participating_dojo), class: "button" %>
