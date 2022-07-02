@@ -3,12 +3,12 @@
   <% if @taikai.form_2in1? %>
     <% if @teams_by_score.present? %>
       <p class="mb-6">
-        <%= link_to t('.individual'), leaderboard_public_taikai_path(@taikai, individual: true), class: "button is-light" %>
+        <%= link_to t('.individual'), leaderboard_public_taikai_path(@taikai, individual: true), class: "button is-primary" %>
       </p>
       <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
     <% else %>
       <p class="mb-6">
-        <%= link_to t('.team'), leaderboard_public_taikai_path(@taikai), class: "button is-light" %>
+        <%= link_to t('.team'), leaderboard_public_taikai_path(@taikai), class: "button is-primary" %>
       </p>
       <%= render 'individual', taikai: @taikai, participants_by_score: @participants_by_score, final: @final %>
     <% end %>
