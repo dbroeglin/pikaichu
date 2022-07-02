@@ -1,4 +1,6 @@
 class LeaderboardController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:public]
+
   def show
     @taikai = Taikai.find(params[:id])
     @final = false
@@ -25,6 +27,12 @@ class LeaderboardController < ApplicationController
 
     @num_tie_break_arrows = 0
     if @taikai.form_individual? || @taikai.form_2in1?
+      if params[:individual]
+        compute_individual_leaderboard(@final)
+      else
+        compute_team_leaderboard(@final)
+      end
+    elsif @taikai.form_individual?
       compute_individual_leaderboard(@final)
     else
       compute_team_leaderboard(@final)

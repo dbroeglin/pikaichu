@@ -61,6 +61,8 @@ fr:
       team_score: Total
     public:
       name: Nom
+      individual: Résultats individuels
+      team: Résultats en équipes
       rank: Rang
       round: Série %{index}
       score: Score
