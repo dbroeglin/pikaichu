@@ -29,7 +29,18 @@ module MarkingHelper
 
   def display_score(score, enteki)
     if score.nil?
-      return enteki ? "0 / 0".html_safe : "0"
+      return enteki ? "0&nbsp;/&nbsp;0" : "0"
+    end
+    if enteki
+      "#{score.value}&nbsp;/&nbsp;#{score.hits}".html_safe
+    else
+      score.hits.to_s
+    end
+  end
+
+  def display_score_axlsx(score, enteki)
+    if score.nil?
+      return enteki ? "0 / 0" : "0"
     end
     if enteki
       "#{score.value} / #{score.hits}".html_safe
@@ -41,7 +52,7 @@ module MarkingHelper
   def display_round_tally(participant, results)
     hits = results.map(&:status).tally['hit'] || 0
     if participant.taikai.scoring_enteki?
-      "#{results.map(&:value).compact.sum} / #{hits}".html_safe
+      "#{results.map(&:value).compact.sum}&nbsp;/&nbsp;#{hits}".html_safe
     else
       hits.to_s
     end

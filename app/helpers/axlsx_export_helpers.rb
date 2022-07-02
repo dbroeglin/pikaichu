@@ -18,14 +18,18 @@ module AxlsxExportHelpers
 
   def result_mark(result)
     if result.final?
-      case result.status
-      when 'hit'
-        'O'
-      when 'miss'
-        'X'
+      if result.value
+        result.value
       else
-        ''
-      end
+        case result.status
+        when 'hit'
+          'O'
+        when 'miss'
+          'X'
+        else
+          ''
+        end
+        end
     else
       ''
     end
@@ -273,7 +277,7 @@ module AxlsxExportHelpers
         participant.display_name,
       ] + (participant.results.normal.map do |result|
         result_mark(result)
-      end + [display_score(participant.score, @taikai.scoring_enteki?)])
+      end + [display_score_axlsx(participant.score, @taikai.scoring_enteki?)])
 
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
@@ -389,8 +393,8 @@ module AxlsxExportHelpers
           participant.results.normal.map do |result|
             result_mark(result)
           end + [
-            display_score(participant.score, @taikai.scoring_enteki?),
-            display_score(participant.team.score, @taikai.scoring_enteki?),
+            display_score_axlsx(participant.score, @taikai.scoring_enteki?),
+            display_score_axlsx(participant.team.score, @taikai.scoring_enteki?),
           ] + participant.results.tie_break.map do |result|
             result_mark(result)
           end

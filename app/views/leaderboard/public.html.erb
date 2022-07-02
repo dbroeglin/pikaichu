@@ -1,4 +1,3 @@
-<div class="container">
   <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
   <% if @taikai.form_individual? || @taikai.form_2in1? %>
@@ -6,4 +5,3 @@
   <% else %>
     <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
   <% end %>
-</div>

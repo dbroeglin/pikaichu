@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title>PiKaichu<%= @page_title ? " - #{@page_title}" : "" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="refresh" content="15">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <section class="section">
+      <div class="container">
+        <% if notice %>
+        <div class="notification is-info mb-5">
+          <button class="delete"></button>
+          <%= notice %>
+        </div>
+        <% end %>
+        <% if alert %>
+        <div class="notification is-danger mb-5">
+          <button class="delete"></button>
+          <%= alert %>
+        </div>
+        <% end %>
+      </div>
+      <%= yield %>
+    </section>
+  </body>
+</html>

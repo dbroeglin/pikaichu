@@ -29,6 +29,8 @@ class LeaderboardController < ApplicationController
     else
       compute_team_leaderboard(@final)
     end
+
+    render layout: 'public'
   end
 
   private
