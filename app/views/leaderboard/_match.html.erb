@@ -12,30 +12,6 @@
           <strong><%= display_score match.score1, taikai.scoring_enteki? %></strong>
         </td>
         <td rowspan="2" style="border-bottom: 0px">
-          <%= link_to edit_taikai_match_path(match.taikai, match),
-                      class: "button has-background-light is-small pb-1 pt-1",
-                      title: t('taikais.marking_sheet.title') do %>
-            <span class="icon is-small">
-              <i class="fas fa-pen"></i>
-            </span>
-          <% end %>
-          <% if match.assigned? %>
-            <%= link_to marking_taikai_match_path(match.taikai, match),
-                        class: "button has-background-light is-small mt-1",
-                        title: t('taikais.marking_sheet.title') do %>
-              <span class="icon is-small">
-                <i class="far fa-dot-circle"></i>
-              </span>
-            <% end %>
-          <% end %>
-          <%= link_to select_winner_taikai_match_path(match.taikai, match),
-                      class: "button has-background-light is-small mt-1",
-                      data: { turbo_method: 'patch', turbo_confirm: t('confirm_html') },
-                      title: t('taikais.marking_sheet.title') do %>
-            <span class="icon is-small">
-              <i class="fas fa-balance-scale"></i>
-            </span>
-          <% end if match_is_decidable?(match) %>
         </td>
       </tr>
       <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 2 %>>

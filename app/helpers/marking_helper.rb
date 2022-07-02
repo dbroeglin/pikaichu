@@ -29,7 +29,7 @@ module MarkingHelper
 
   def display_score(score, enteki)
     if score.nil?
-      return enteki ? "0&nbsp;/&nbsp;0" : "0"
+      return enteki ? "0&nbsp;/&nbsp;0".html_safe : "0"
     end
     if enteki
       "#{score.value}&nbsp;/&nbsp;#{score.hits}".html_safe

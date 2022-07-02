@@ -14,6 +14,8 @@
     <% end %>
   <% elsif @taikai.form_individual? %>
     <%= render 'individual', taikai: @taikai, participants_by_score: @participants_by_score, final: @final %>
+  <% elsif @taikai.form_matches? %>
+    <%= render 'matches', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
   <% else %>
     <%= render 'team', taikai: @taikai, teams_by_score: @teams_by_score, final: @final  %>
   <% end %>

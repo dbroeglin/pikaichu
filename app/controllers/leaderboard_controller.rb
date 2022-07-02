@@ -96,7 +96,10 @@ class LeaderboardController < ApplicationController
         .map do |team, match|
           [team, match, team.score(true, match.id)]
         end
-    else
+      @matches = @taikai.matches
+        .group_by(&:level)
+        .each { |_, matches| matches.sort_by!(&:index) }
+      else
       raise "compute_team_leaderboard works only for 'team', '2in1' and 'matches' taikais"
     end
   end
