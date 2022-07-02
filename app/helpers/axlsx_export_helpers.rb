@@ -242,7 +242,7 @@ module AxlsxExportHelpers
       t('.results.score'),
     ], style: [@vert_header_row_style] + [@header_row_style] * (3 + @taikai.total_num_arrows) + [@vert_header_row_style], height: 50
 
-    columns = ('E'..'Z').to_a # TODO: this does not work for more than 20 arrows!!!
+    columns = ('E'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
       sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
     end
@@ -341,7 +341,7 @@ module AxlsxExportHelpers
     ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
               [@vert_header_row_style, @vert_header_row_style], height: 50
 
-    columns = ('F'..'Z').to_a + ['AA'] # TODO: this does not work for more than 20 arrows!!!
+    columns = ('F'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
       sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
     end
