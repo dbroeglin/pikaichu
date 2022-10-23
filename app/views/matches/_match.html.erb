@@ -2,7 +2,7 @@
   <table class="table is-fullwidth is-narrow">
     <tbody>
       <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 1 %>>
-        <td><%= match.team1&.shortname || "-" %></td>
+        <td><%= match.team1 ? "#{match.team1.shortname} (#{match.team1.index})" : "-" %></td>
         <td class="is-vcentered">
           <% match.team1.participants.each do |participant| %>
             <span class="tag has-background-info-light"><%= participant.display_name %></span>
@@ -39,7 +39,7 @@
         </td>
       </tr>
       <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 2 %>>
-        <td><%= match.team2&.shortname || "-" %></td>
+        <td><%= match.team2 ? "#{match.team2.shortname} (#{match.team2.index})" : "-" %></td>
         <td>
           <% match.team2.participants.each do |participant| %>
             <span class="tag has-background-info-light"><%= participant.display_name %></span>

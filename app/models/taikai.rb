@@ -176,10 +176,11 @@ class Taikai < ApplicationRecord
       .teams_by_score(true).values.flatten
       .select{ |team| !team.mixed } # TODO: generate error if not enough teams
       .first(bracket_size)
-      .each do |team|
+      .each_with_index do |team, index|
         logger.info "Creating new team #{team.shortname}"
         new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
-          shortname: team.shortname
+          shortname: team.shortname,
+          index: index + 1
           # TODO: index based on scoring of the current taikai
         )
         new_teams << new_team
