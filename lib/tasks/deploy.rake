@@ -68,6 +68,15 @@ if Rails.env.development? || Rails.env.test?
           )
       end
 
+      desc "Deploy Posgresql FW rule for my current IP"
+      task pg_fw: :env do
+        sh %(
+          MY_CURRENT_IP=`dig +short myip.opendns.com @resolver4.opendns.com`
+          az postgres flex<cible-server firewall-rule create --resource-group #{rg_name} --name #{pg_name} -r home --start-ip-address $MY_CURRENT_IP --end-ip-address $MY_CURRENT_IP
+
+          )
+      end
+
       desc "Deploy Azure Foundation"
       task webapp: :foundation do
         sh %(
