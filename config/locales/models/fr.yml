@@ -123,7 +123,7 @@ fr:
             base:
               not_finalized: Tous les résultats doivent être finalisés avant de créer le tournoi par équipe.
             total_num_arrows:
-              inclusion: "doit être 12 ou 20 pour kinteki, 4 pour des les matches et libre pour enteki."
+              inclusion: "doit être 8, 12 ou 20 pour kinteki, 4 pour des les matches et libre pour enteki."
             tachi_size:
               inclusion: doit être 3 ou 6.
             num_targets:

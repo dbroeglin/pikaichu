@@ -59,7 +59,7 @@ class Taikai < ApplicationRecord
   validates :total_num_arrows, presence: true
   validates :total_num_arrows,
             inclusion: {
-              in: [12, 20]
+              in: [8, 12, 20]
             },
             if: -> { scoring_kinteki? && !form_matches? }
   validates :total_num_arrows,
