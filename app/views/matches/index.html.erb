@@ -19,13 +19,13 @@
         <% if index == 0 %>
         <div class="mt-6 mb-6"><p>&nbsp;</p></div>
         <% end %>
-      <% end %>
+      <% end if @matches[2] %>
     </div>
     <div class="column is-one-third">
       <div class="mt-6 mb-6"><p>&nbsp;</p></div>
       <% @matches[1].each do |match| %>
         <%= render "match", match: match, taikai: @taikai %>
-      <% end %>
+      <% end if @matches[1] %>
     </div>
   </div>
 </div>

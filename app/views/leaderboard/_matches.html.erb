@@ -6,6 +6,7 @@
     <% end  %>
   </div>
   <% end %>
+  <% if @matches[2] %>
   <div class="column is-one-third">
     <% @matches[2].each_with_index do |match, index| %>
       <%= render "match", match: match, taikai: taikai %>
@@ -14,12 +15,15 @@
       <% end %>
     <% end %>
   </div>
+  <% end %>
+  <% if @matches[2] %>
   <div class="column is-one-third">
     <div class="mt-6 mb-6"><p>&nbsp;</p></div>
     <% @matches[1].each do |match| %>
       <%= render "match", match: match, taikai: taikai %>
     <% end %>
   </div>
+  <% end %>
 </div>
 
 <table class="table is-narrow is-bordered is-striped has-text-centered">
