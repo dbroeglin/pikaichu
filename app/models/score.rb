@@ -1,16 +1,10 @@
-class Score
+class Score < ApplicationRecord
   include Comparable
-  attr_reader :hits
-  attr_reader :value
-
-  def initialize(hits, value)
-    @hits, @value = hits, value
-  end
 
   def <=>(other)
-    result = @value <=> other.value
+    result = value <=> other.value
     return result if result != 0
-    @hits <=> other.hits
+    hits <=> other.hits
   end
 
   def ==(other)
@@ -20,11 +14,11 @@ class Score
   end
 
   def +(other)
-    Score.new(hits + other.hits, value + other.value)
+    Score.new(hits: hits + other.hits, value: value + other.value)
   end
 
   def -@
-    Score.new(-hits, -value)
+    Score.new(hits: -hits, value: -value)
   end
 
   def to_s

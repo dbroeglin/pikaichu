@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class ResultTest < ActiveSupport.TestCase
+class ResultTest < ActiveSupport::TestCase
   setup do
     @kinteki_participant = participants(:participant_participating_dojo_2in1_12)
     @enteki_participant  = participants(:participant_participating_dojo_2in1_12_enteki)
@@ -27,7 +27,7 @@ class ResultTest < ActiveSupport.TestCase
     assert result.valid?, 'should validate'
   end
 
-  Result.ENTEKI_VALUES.each do |value|
+  Result::ENTEKI_VALUES.each do |value|
     test "#{value} is valid enteki value" do
       result = Result.new(participant: @enteki_participant, value: value)
 
@@ -36,7 +36,7 @@ class ResultTest < ActiveSupport.TestCase
     end
   end
 
-  ((0..10).to_a - Result.ENTEKI_VALUES).each do |value|
+  ((0..10).to_a - Result::ENTEKI_VALUES).each do |value|
     test "#{value} is not a valid enteki value" do
       result = Result.new(participant: @enteki_participant, value: value)
 

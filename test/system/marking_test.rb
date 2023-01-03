@@ -12,9 +12,13 @@ class MarkingTest < ApplicationSystemTestCase
     test "visiting '#{taikai.shortname}' marking sheet" do
       go_to_taikais
 
-      find("td", text: taikai.shortname).ancestor("tr").click_on("Feuille de marque")
+      find("td", exact_text: taikai.shortname).ancestor("tr").click_on("Feuille de marque")
 
-      assert_selector "h1.title", text: "Feuille de marque"
+      if taikai.form_matches?
+        assert_selector "h1.title", text: "Tableau des matchs"
+      else
+        assert_selector "h1.title", text: "Feuille de marque"
+      end
       assert_selector "h1.title", text: taikai.shortname
 
       click_on "Retour au Taikai"

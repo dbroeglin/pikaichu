@@ -5,6 +5,7 @@ class TaikaisController < ApplicationController
         .order(start_date: :desc, end_date: :desc, shortname: :asc)
         .includes(:participants)
         .page params[:page]
+      @taikais = @taikais.per params[:per] if params[:per]
   end
 
   def show

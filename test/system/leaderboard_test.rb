@@ -21,7 +21,10 @@ class LeaderboardTest < ApplicationSystemTestCase
 
       assert_selector "p.title.is-4", text: taikai.name
     end
+  end
 
+
+  Taikai.where("form <> 'matches'").each do |taikai|
     test "visiting '#{taikai.shortname}' public leaderboard" do
       go_to_taikais
 

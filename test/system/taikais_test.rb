@@ -10,10 +10,18 @@ class TaikaisTest < ApplicationSystemTestCase
     sign_in_as users(:jean_bon)
   end
 
-  test "visiting taikai-1" do
+  test "visiting taikais" do
     taikai = taikais(:individual_12)
 
     click_on "Gérer les Taikai"
+
+    assert_selector "h1.title", text: "Liste des Taikai"
+  end
+
+  test "visiting individual_12" do
+    taikai = taikais(:individual_12)
+
+    go_to_taikais
 
     assert_selector "h1.title", text: "Liste des Taikai"
 
@@ -51,6 +59,8 @@ class TaikaisTest < ApplicationSystemTestCase
       click_on "Sauvegarder"
 
       assert_selector "h1.title", text: "Liste des Taikai"
+
+      go_to_taikais # Display all taikais on one page
       assert_selector "td a", text: shortname
 
       click_on shortname

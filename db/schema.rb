@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_29_185849) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,9 +74,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_185849) do
     t.string "firstname"
     t.string "federation_id"
     t.string "federation_country_code"
-    t.string "federation_club"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "federation_club"
     t.index ["federation_id"], name: "by_federation_id", unique: true
   end
 
@@ -138,6 +138,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_185849) do
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.bigint "participant_id"
+    t.bigint "team_id"
+    t.bigint "match_id"
+    t.integer "hits"
+    t.integer "value"
+    t.integer "tie_break_hits"
+    t.integer "tie_break_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_scores_on_match_id"
+    t.index ["participant_id"], name: "by_participant_id", unique: true
+    t.index ["participant_id"], name: "index_scores_on_participant_id"
+    t.index ["team_id", "match_id"], name: "by_team_id_match_id", unique: true
+    t.index ["team_id"], name: "index_scores_on_team_id"
   end
 
   create_table "staff_roles", force: :cascade do |t|
@@ -241,6 +258,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_185849) do
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
   add_foreign_key "results", "participants"
+  add_foreign_key "scores", "matches"
+  add_foreign_key "scores", "participants"
+  add_foreign_key "scores", "teams"
   add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"

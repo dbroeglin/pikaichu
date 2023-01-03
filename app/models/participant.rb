@@ -49,7 +49,7 @@ class Participant < ApplicationRecord
     else
       results = scope.select(&:status_hit?)
     end
-    Score.new(results.size, results.map(&:value).compact.sum)
+    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
   end
 
   def previous_round_finalized?(result)

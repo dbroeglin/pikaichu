@@ -31,7 +31,7 @@ class Team < ApplicationRecord
         scope.select(&:status_hit?)
       end
 
-    Score.new(results.size, results.map(&:value).compact.sum)
+    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
   end
 
   def tie_break_score(final = true, match_id = nil)
@@ -44,6 +44,6 @@ class Team < ApplicationRecord
         scope.select(&:status_hit?)
       end
 
-    Score.new(results.size, results.map(&:value).compact.sum)
+    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
   end
 end
