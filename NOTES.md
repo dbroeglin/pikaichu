@@ -63,7 +63,3 @@ Generate results for an Enteki Taikai:
         r.final = true
         r.save
       }
-
-Manually add a result for a tie-break:
-
-    Taikai.find_by(shortname: "2in1-test").participants.find_by(lastname: "LASTNAME").results.create(round: 4, index:1, round_type: 'tie_break', status: 'hit')

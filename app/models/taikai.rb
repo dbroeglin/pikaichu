@@ -1,4 +1,5 @@
 class Taikai < ApplicationRecord
+  include HasRankable
   audited
 
   attr_accessor :current_user
@@ -19,7 +20,6 @@ class Taikai < ApplicationRecord
     enteki: 'enteki',
   }, _prefix: :scoring
   human_enum :scoring
-
 
   has_many :taikai_transitions, autosave: false, class_name: :TaikaiTransition, dependent: :destroy
   include Statesman::Adapters::ActiveRecordQueries[
@@ -45,6 +45,7 @@ class Taikai < ApplicationRecord
            dependent: :destroy,
            inverse_of: :taikai
   has_many :participants, through: :participating_dojos
+  has_many :teams, through: :participating_dojos
 
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
@@ -105,6 +106,7 @@ class Taikai < ApplicationRecord
     !Result.joins(participant: :participating_dojo).where("participating_dojos.id": participating_dojos.pluck(:id)).where(final: false).any?
   end
 
+  # Remove after better handling of tie_break
   def teams_by_score(final)
     @teams_by_score =
       participating_dojos

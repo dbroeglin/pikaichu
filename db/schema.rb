@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_08_121148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
     t.integer "index_in_team"
     t.bigint "kyudojin_id"
     t.string "club", default: "", null: false
+    t.integer "rank"
     t.index ["kyudojin_id"], name: "index_participants_on_kyudojin_id"
     t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "kyudojin_id"], name: "by_participants_participating_dojo_kyudojin", unique: true
@@ -135,23 +136,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
     t.bigint "match_id"
     t.enum "round_type", default: "normal", null: false, enum_type: "round_type"
     t.integer "value"
+    t.bigint "score_id", null: false
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
     t.index ["participant_id"], name: "index_results_on_participant_id"
+    t.index ["score_id"], name: "index_results_on_score_id"
   end
 
   create_table "scores", force: :cascade do |t|
     t.bigint "participant_id"
     t.bigint "team_id"
     t.bigint "match_id"
-    t.integer "hits"
-    t.integer "value"
-    t.integer "tie_break_hits"
-    t.integer "tie_break_value"
+    t.integer "hits", default: 0
+    t.integer "value", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_scores_on_match_id"
-    t.index ["participant_id"], name: "by_participant_id", unique: true
+    t.index ["participant_id", "match_id"], name: "by_participant_id", unique: true
     t.index ["participant_id"], name: "index_scores_on_participant_id"
     t.index ["team_id", "match_id"], name: "by_team_id_match_id", unique: true
     t.index ["team_id"], name: "index_scores_on_team_id"
@@ -219,6 +220,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "mixed", default: false, null: false
+    t.integer "rank"
     t.index ["participating_dojo_id", "index"], name: "teams_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "shortname"], name: "by_teams_shortname", unique: true
     t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"
@@ -258,6 +260,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_125729) do
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
   add_foreign_key "results", "participants"
+  add_foreign_key "results", "scores"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"

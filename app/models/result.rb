@@ -1,7 +1,8 @@
 class Result < ApplicationRecord
   audited
 
-  belongs_to :participant
+  belongs_to :participant # TODO: remove when scores have been validated
+  belongs_to :score
   belongs_to :match, optional: true
 
   ENTEKI_VALUES = [0, 3, 5, 7, 9, 10]

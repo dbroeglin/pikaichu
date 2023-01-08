@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+  include Rankable, Scorable
   audited
 
   belongs_to :participating_dojo
