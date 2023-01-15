@@ -1,6 +1,5 @@
 class TaikaiTransition < ApplicationRecord
-  # include Statesman::Adapters::ActiveRecordTransition
-
+  validates :to_state, inclusion: { in: TaikaiStateMachine.states }
   # If your transition table doesn't have the default `updated_at` timestamp column,
   # you'll need to configure the `updated_timestamp_column` option, setting it to
   # another column name (e.g. `:updated_on`) or `nil`.

@@ -13,8 +13,8 @@ class TaikaisController < ApplicationController
       Taikai.includes(
         {
           participating_dojos: [
-            { teams: { participants: :results }},
-            { participants: [:results, :kyudojin] }
+            { teams: { participants: { scores: :results }}},
+            { participants: [{ scores: :results }, :kyudojin] }
           ]
         },
         staffs: :user
@@ -65,7 +65,7 @@ class TaikaisController < ApplicationController
   def export
     @taikai =
       Taikai
-      .includes({ participating_dojos: [{ teams: { participants: :results } }, { participants: [:results] }] }, :staffs)
+      .includes({ participating_dojos: [{ teams: { participants: { scores: :results }}}, { participants:  { scores: :results }}] }, :staffs)
       .find(params[:id])
 
     render xlsx: 'export', filename: "Taikai - #{@taikai.shortname}.xlsx"

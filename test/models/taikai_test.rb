@@ -53,4 +53,12 @@ class TaikaiTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "transitions" do
+    @taikai.form = :'2in1'
+    @taikai.save!
+    @taikai.transition_to(:registration)
+    @taikai.transition_to(:marking)
+    @taikai.transition_to(:validated)
+  end
 end

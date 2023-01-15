@@ -4,7 +4,6 @@ class LeaderboardController < ApplicationController
   def show
     @taikai = Taikai.find(params[:id])
     @final = false
-    @num_tie_break_arrows = 0
 
     if @taikai.form_individual? || @taikai.form_2in1?
       compute_individual_leaderboard(@final)
@@ -17,7 +16,6 @@ class LeaderboardController < ApplicationController
     @taikai = Taikai.find(params[:id])
     @final = false
 
-    @num_tie_break_arrows = 0
     compute_team_leaderboard(@final)
   end
 
@@ -25,7 +23,6 @@ class LeaderboardController < ApplicationController
     @taikai = Taikai.find(params[:id])
     @final = true
 
-    @num_tie_break_arrows = 0
     if @taikai.form_individual? || @taikai.form_2in1?
       if params[:individual]
         compute_individual_leaderboard(@final)
@@ -45,15 +42,10 @@ class LeaderboardController < ApplicationController
 
   def compute_individual_leaderboard(final)
     @taikai = Taikai
-      .includes(participating_dojos: { participants: :results })
+      .includes(participating_dojos: { participants: { scores: :results }})
       .find(params[:id])
 
-    @num_tie_break_arrows = 0
-    @participants_by_score = @taikai.participating_dojos
-      .map(&:participants).flatten
-      .sort_by { |participant| participant.score(final) }.reverse
-      .group_by { |participant| participant.score(final) }
-      .each { |_, participants| participants.sort_by!(&:index) }
+    @participants_by_score = @taikai.participants_by_score(final)
 
     @score_by_participating_dojo = {}
     if @taikai.distributed?
@@ -69,16 +61,12 @@ class LeaderboardController < ApplicationController
 
   def compute_team_leaderboard(final)
     @taikai = Taikai
-      .includes(participating_dojos: { teams: [{ participants: :results }] })
+      .includes(participating_dojos: { teams: [{ participants: { scores: :results }}] })
       .find(params[:id])
 
-    @num_tie_break_arrows = 0
     @score_by_participating_dojo = {}
 
     if @taikai.form_team? || @taikai.form_2in1?
-      @num_tie_break_arrows = Result.joins(participant: :participating_dojo)
-        .where("participating_dojo.taikai_id": @taikai, round_type: 'tie_break')
-        .maximum(:index) || 0
       @teams_by_score = @taikai.teams_by_score(final)
 
       if @taikai.distributed?

@@ -69,7 +69,7 @@ class Match < ApplicationRecord
     end
     self.team1 = team
     self.team1.participants.each do |participant|
-      participant.create_empty_results id
+      participant.create_empty_score_and_results id
     end
 
     self
@@ -83,7 +83,7 @@ class Match < ApplicationRecord
     end
     self.team2 = team
     team2.participants.each do |participant|
-      participant.create_empty_results id
+      participant.create_empty_score_and_results id
     end
 
     self

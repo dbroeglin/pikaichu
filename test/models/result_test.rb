@@ -6,30 +6,32 @@ class ResultTest < ActiveSupport::TestCase
   setup do
     @kinteki_participant = participants(:participant_participating_dojo_2in1_12)
     @enteki_participant  = participants(:participant_participating_dojo_2in1_12_enteki)
+    @kinteki_score = Score.new(participant: @kinteki_participant)
+    @enteki_score = Score.new(participant: @enteki_participant)
   end
 
   test "value can be empty for kinteki" do
-    result = Result.new(participant: @kinteki_participant)
+    result = Result.new(participant: @kinteki_participant, score: @kinteki_score)
 
     assert result.valid?, 'should validate'
   end
 
   test "value cannot be empty for enteki" do
-    result = Result.new(participant: @enteki_participant)
+    result = Result.new(participant: @enteki_participant, score: @enteki_score)
 
     assert result.invalid?, 'should not validate'
     assert result.errors.added? :value, :blank
   end
 
   test "marked must be true when value is set for enteki" do
-    result = Result.new(participant: @enteki_participant, value: 0)
+    result = Result.new(participant: @enteki_participant, score: @enteki_score, value: 0)
 
     assert result.valid?, 'should validate'
   end
 
   Result::ENTEKI_VALUES.each do |value|
     test "#{value} is valid enteki value" do
-      result = Result.new(participant: @enteki_participant, value: value)
+      result = Result.new(participant: @enteki_participant, score: @enteki_score, value: value)
 
       assert value.zero? && result.status_miss? || !value.zero? && result.status_hit?
       assert result.valid?, 'should validate'
@@ -38,7 +40,7 @@ class ResultTest < ActiveSupport::TestCase
 
   ((0..10).to_a - Result::ENTEKI_VALUES).each do |value|
     test "#{value} is not a valid enteki value" do
-      result = Result.new(participant: @enteki_participant, value: value)
+      result = Result.new(participant: @enteki_participant, score: @enteki_score, value: value)
 
       assert result.invalid?, 'should not validate'
       assert result.errors.added? :value, :inclusion, value: value
@@ -46,7 +48,7 @@ class ResultTest < ActiveSupport::TestCase
   end
 
   test "rotate value 0 to 3" do
-    assert_equal 3, Result.new(value: 0).rotate_value.value
+    assert_equal 3, Result.new( value: 0).rotate_value.value
   end
 
   test "rotate value 3 to 5" do

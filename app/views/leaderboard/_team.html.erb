@@ -8,19 +8,10 @@
       <% end %>
       <th rowspan="2"><%= t '.score' %></th>
       <th rowspan="2"><%= t '.team_score' %></th>
-      <% unless @num_tie_break_arrows.zero? %>
-        <th colspan="<%= @num_tie_break_arrows + 1 %>"><%= t '.tie_break' %></th>
-      <% end %>
     </tr>
     <tr>
       <% taikai.total_num_arrows.times do |index| %>
         <th><%= index + 1 %></th>
-      <% end %>
-      <% @num_tie_break_arrows.times do |index| %>
-        <th><%= @taikai.total_num_arrows + index + 1 %></th>
-      <% end %>
-      <% unless @num_tie_break_arrows.zero? %>
-        <th></th>
       <% end %>
     </tr>
   </thead>
@@ -43,26 +34,14 @@
             </td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
-          <% participant.results.select { |result| result.round_type_normal? }.each do |result| %>
+          <%# TODO: make this less brittle, in this scenario, we should have only one score %>
+          <% participant.scores.first.results.each do |result| %>
           <td><%= icon_from(result, final) %></td>
           <% end %>
           <td><%= display_score participant.score(final), taikai.scoring_enteki? %></td>
           <% if team_index == 0 && participant_index == 0 %>
             <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= display_score score, taikai.scoring_enteki? %></th>
           <% end %>
-          <% if @num_tie_break_arrows > 0 %>
-            <% @num_tie_break_arrows.times do |index| %>
-              <td>
-                <%= icon_from(participant.results.find { |result| result.round_type_tie_break? && result.index == (index + 1) }, final) %>
-              </td>
-            <% end %>
-            <% if participant_index == 0 %>
-              <th rowspan="<%= team.participants.size %>">
-                <%= (s = team.tie_break_score(final)).hits == 0 ? nil : display_score(s, taikai.scoring_enteki?) %>
-              </th>
-            <% end %>
-          <% end %>
-
       </tr>
     <%     end %>
     <%   end %>

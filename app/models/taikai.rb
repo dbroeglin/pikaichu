@@ -112,11 +112,39 @@ class Taikai < ApplicationRecord
       participating_dojos
       .map(&:teams).flatten
       .sort_by { |team| team.score(final) }.reverse
-      .group_by { |team| team.score(final) }
-      .each do |_, teams|
-        teams.sort_by! { |team| [-team.tie_break_score(final), team.index || 0] }
-      end
+      .group_by { |team| team.score(final).score_value } # group_by works on eq? & hash
   end
+
+  def participants_by_score(final)
+    participating_dojos
+      .map(&:participants).flatten
+      .sort_by { |participant| participant.score(final) }.reverse
+      .group_by { |participant| participant.score(final).score_value } # group_by works on eq? & hash
+      .each { |_, participants| participants.sort_by!(&:index) }
+  end
+
+  def create_scores
+    if form_matches?
+      # TODO: implement for matches
+      raise "Score creation is not implemented for matches"
+    else
+      participants.each do |participant|
+        participant.create_empty_score_and_results
+      end
+    end
+  end
+
+  def delete_scores
+    if form_matches?
+      # TODO: implement for matches
+      raise "Score deletion is not implemented for matches"
+    else
+      participants.each do |participant|
+        participant.scores.destroy_all
+      end
+    end
+  end
+
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
     taikai = Taikai.includes(

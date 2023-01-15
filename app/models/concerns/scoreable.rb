@@ -1,8 +1,8 @@
-module Scorable
+module Scoreable
   extend ActiveSupport::Concern
 
   included do
-    has_many :scores,  dependent: :destroy
+    has_many :scores, dependent: :destroy
   end
 
   class_methods do

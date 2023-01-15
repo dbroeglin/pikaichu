@@ -8,7 +8,7 @@ FactoryBot.define do
     index_in_team { (team.participants.maximum(:index_in_team) || 0) + 1 if team }
 
     after(:create) do |participant, _|
-      participant.create_empty_results
+      participant.create_empty_score_and_results
 
       participant.reload
     end

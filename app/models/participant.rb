@@ -1,30 +1,16 @@
 class Participant < ApplicationRecord
-  include Rankable, Scorable
+  include Rankable, Scoreable
   audited
 
   acts_as_list column: :index_in_team, scope: :team, sequential_updates: true
 
   belongs_to :participating_dojo
   belongs_to :team, optional: true
-  has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :participant, dependent: :destroy do
-    def round(index)
-      where(round: index)
-    end
 
-    def first_empty
-      self.find(&:empty?)
-    end
-
-    def normal
-      where(round_type: 'normal')
-    end
-
-    def tie_break
-      where(round_type: 'tie_break')
-    end
-  end
   has_one :taikai, through: :participating_dojo
   belongs_to :kyudojin, optional: true
+  has_many :results, through: :scores
+
 
   validates :firstname, :lastname, presence: true
   validates :kyudojin,
@@ -42,9 +28,12 @@ class Participant < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
+  def add_result(match_id, status, value)
+    scores.find_by(match_id: match_id).add_result(status, value)
+  end
+
   def score(final = true, match_id = nil)
-    scope = results.where(round_type: 'normal')
-    scope = scope.select { |result| result.match_id == match_id }
+    scope = scores.find_by(match_id: match_id).results
     if final
       results = scope.select { |r| r.final? && r.status_hit? }
     else
@@ -53,16 +42,8 @@ class Participant < ApplicationRecord
     Score.new(hits: results.size, value: results.map(&:value).compact.sum)
   end
 
-  def previous_round_finalized?(result)
-    if result.round == 1
-      true
-    else
-      results.round(result.round - 1).all?(&:final?)
-    end
-  end
-
   def marking?(match_id = nil)
-    scope = results.select { |result| result.match_id == match_id }
+    scope = scores.find_by(match_id: match_id).results
     num_marked = scope.count(&:marked?)
     num_finalized = scope.count(&:final?)
 
@@ -76,11 +57,12 @@ class Participant < ApplicationRecord
     results.where('status IS NOT NULL').where(match_id: match_id).any?
   end
 
-  def create_empty_results(match_id = nil)
+  def create_empty_score_and_results(match_id = nil)
     if defined_results?(match_id)
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
-    results.where(match_id: match_id).destroy_all
+
+    score = Score.create(participant_id: id, match_id: match_id)
 
     now = DateTime.now
     hashes =
@@ -89,6 +71,7 @@ class Participant < ApplicationRecord
           {
             participant_id: id,
             match_id: match_id,
+            score_id: score.id,
             round: round_index,
             index: index,
             created_at: now,
@@ -96,7 +79,8 @@ class Participant < ApplicationRecord
           }
         end
       end.flatten
-    results.insert_all hashes
+    score.results.insert_all hashes
+    scores.reload
     results.reload
   end
 end

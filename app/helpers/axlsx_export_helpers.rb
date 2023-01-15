@@ -275,7 +275,7 @@ module AxlsxExportHelpers
         participant.index,
         @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
         participant.display_name,
-      ] + (participant.results.normal.map do |result|
+      ] + (participant.scores.first.results.map do |result| # TODO: make less brittle
         result_mark(result)
       end + [display_score_axlsx(participant.score, @taikai.scoring_enteki?)])
 
@@ -294,11 +294,8 @@ module AxlsxExportHelpers
     xlsx_package.workbook.add_worksheet(name: t('.results.title.team')) do |sheet|
 
       @current_row = 1
-      @nb_tie_break = Result.joins(participant: :participating_dojo)
-        .where("participating_dojos.taikai_id = ?", 9)
-        .where("results.round_type": :tie_break)
-        .maximum("results.index") || 0
-      sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4] + [4] * @nb_tie_break))
+
+      sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
 
       export_team_results_table sheet, @taikai.participating_dojos
 
@@ -390,14 +387,13 @@ module AxlsxExportHelpers
           @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
           participant.display_name,
         ] + (
-          participant.results.normal.map do |result|
+          # TODO: make less brittle, should work here as we are not displaying matches
+          participant.scores.first.results.map do |result|
             result_mark(result)
           end + [
             display_score_axlsx(participant.score, @taikai.scoring_enteki?),
             display_score_axlsx(participant.team.score, @taikai.scoring_enteki?),
-          ] + participant.results.tie_break.map do |result|
-            result_mark(result)
-          end
+          ]
         )
       end
     end.flatten(1).compact

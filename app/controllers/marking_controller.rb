@@ -4,15 +4,15 @@ class MarkingController < ApplicationController
   end
 
   def show
-    @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: { participants: [ { scores: :results }] }).find(params[:id])
     @match = nil
 
     if current_user.admin? || @taikai.taikai_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: :results }, teams: [participants: :results])
+                                    .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
     elsif @taikai.dojo_admin?(current_user)
       @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: :results }, teams: [participants: :results])
+                                    .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
                                     .joins(staffs: [:role])
                                     .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
     else
@@ -23,48 +23,42 @@ class MarkingController < ApplicationController
   def show_match
     @taikai = Taikai.find(params[:taikai_id])
     @match = @taikai.matches.find(params[:id])
-
   end
 
 
   def update
     # TODO: Optimize?
-    @taikai = Taikai.includes(participating_dojos: { participants: [:results] }).find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: { participants: { scores: :results }}).find(params[:id])
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
     @match = Match.find_by(id: params[:match_id])
 
-    @result = @participant.results.normal.first_empty
-    if @result
-      if @participant.previous_round_finalized?(@result)
-        @result.update!(status: params[:status], value: params[:value])
-        respond_to do |format|
-          format.html { redirect_to action: :show }
-          format.turbo_stream do
-            @results = @participant.results.normal.where(match_id: @match&.id).round @result.round
-          end
-        end
-      else
-        respond_to do |format|
-          format.html { redirect_to action: :show }
-          format.turbo_stream do
-            @results = @participant.results.normal.where(match_id: @match&.id).round(@result.round - 1)
-          end
+    begin
+      @result = @participant.add_result(@match&.id, params[:status], params[:value])
+      @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
+    rescue Score::PreviousRoundNotValidatedError => e
+      respond_to do |format|
+        format.html { redirect_to action: :show, id: @taikai.id }
+        format.turbo_stream do
+          logger.warn"Participant #{@participant.id}'s previous round has not been validated yet"
+          @results = @participant.results.where(match_id: @match&.id, round: e.previous_round)
+          raise "debug!!!"
         end
       end
-    else
-      render plain: "Unable to find undefined results", status: :unprocessable_entity
+    rescue Score::UnableToFindUndefinedResultsError
+      logger.warn "Participant #{@participant.id} has no undefined results left"
+      render plain: "Unable to find non marked results", status: :unprocessable_entity
     end
   end
 
   def rotate
     @taikai = Taikai.find(params[:id])
     @participant = @taikai.participants.find(params[:participant_id])
-    @result = @participant.results.find(params[:result_id])
+    @result = @participant.scores.find_by(match_id: params[:match_id]).results.find(params[:result_id])
     @match = Match.find_by(id: params[:match_id])
 
     if @taikai.scoring_kinteki?
-      @result.rotate_status(@participant.results.where(match_id: @match&.id).round(@result.round).count(&:marked?) == 4)
+      @result.rotate_status(@participant.scores.find_by(match_id: @match&.id).results.round(@result.round).count(&:marked?) == 4)
     else
       @result.rotate_value
     end
@@ -72,7 +66,7 @@ class MarkingController < ApplicationController
     @result.save!
     respond_to do |format|
       format.turbo_stream do
-        @results = @participant.results.where(match_id: @match&.id).round @result.round
+        @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
         render action: :update
       end
     end
@@ -81,13 +75,13 @@ class MarkingController < ApplicationController
   def finalize
     @taikai = Taikai.find(params[:id])
     @participant = @taikai.participants.find(params[:participant_id])
-    @results = @participant.results.round(params[:round])
+    @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]
     @match = Match.find_by(id: params[:match_id])
 
     @results.update_all(final: true)
     respond_to do |format|
       format.turbo_stream do
-        @results = @participant.results.where(match_id: @match&.id).round params[:round]
+        @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]
         render action: :update
       end
     end

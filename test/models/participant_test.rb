@@ -5,7 +5,7 @@ require "test_helper"
 class ParticipantTest < ActiveSupport::TestCase
   setup do
     @participant = participants(:participant1_participating_dojo1_individual_12)
-    @participant.create_empty_results
+    @participant.create_empty_score_and_results
   end
 
   test "12 results created" do
@@ -57,5 +57,13 @@ class ParticipantTest < ActiveSupport::TestCase
 
     result = @participant.results.first_empty
     assert @participant.previous_round_finalized?(result)
+  end
+
+  test "update works for 2.1 if 1.x are finalized" do
+    @participant.results.round(1).update_all(status: 'miss', final: true)
+    @participant.results.reload
+
+    result = @participant.add_result('hit')
+    assert_equal 1, @participant.scores.first.hits
   end
 end

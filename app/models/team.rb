@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  include Rankable, Scorable
+  include Rankable, Scoreable
   audited
 
   belongs_to :participating_dojo
@@ -22,22 +22,10 @@ class Team < ApplicationRecord
               allow_blank: true,
             }
 
+  # This uses participant results
   def score(final = true, match_id = nil)
-    scope = results.where(round_type: 'normal')
+    scope = self.results
     scope = scope.select { |r| r.match_id == match_id } if match_id
-    results =
-      if final
-        scope.select { |r| r.final? && r.status_hit? }
-      else
-        scope.select(&:status_hit?)
-      end
-
-    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
-  end
-
-  def tie_break_score(final = true, match_id = nil)
-    scope = results.where(round_type: 'tie_break')
-    scope = scope.select { |result| result.match_id == match_id }
     results =
       if final
         scope.select { |r| r.final? && r.status_hit? }
