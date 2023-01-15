@@ -77,7 +77,7 @@ gem 'acts_as_list'
 
 gem 'tabulo'
 
-gem 'statesman', '~> 8.0.3'
+gem 'statesman', '~> 10.0.0'
 
 gem 'kaminari'
 
