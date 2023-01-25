@@ -1,7 +1,7 @@
   <h1 class="title"><%= t '.title', taikai: @taikai.shortname %></h1>
 
   <% if @taikai.form_2in1? %>
-    <% if @teams_by_score.present? %>
+    <% if defined? @teams_by_score %>
       <p class="mb-6">
         <%= link_to t('.individual'), leaderboard_public_taikai_path(@taikai, individual: true), class: "button is-primary" %>
       </p>

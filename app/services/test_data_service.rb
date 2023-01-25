@@ -4,7 +4,6 @@ class TestDataService
     raise "Taikai cannot be nil" if taikai.nil?
     raise "Cannot generate scores for 'matches'" if taikai.form_matches?
 
-
     if taikai.scoring_kinteki?
       taikai.participants.map(&:results).flatten
         .each do |r|

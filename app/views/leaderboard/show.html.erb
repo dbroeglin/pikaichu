@@ -24,9 +24,7 @@
         <%= render 'individual', taikai: @taikai, participants_by_score: participants_by_score, final: @final %>
       <% end %>
     <% end if @taikai.distributed? %>
-  <% else %>
-    <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
-
+  <% elsif @taikai.form_team? %>
     <% @score_by_participating_dojo.each do |partcipating_dojo, teams_by_score| %>
       <h2 class="title is-4 mt-5"><%= partcipating_dojo.display_name %></h2>
 
@@ -36,5 +34,7 @@
         <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
       <% end %>
     <% end if @taikai.distributed? %>
+  <% elsif @taikai.form_matches? %>
+    <%= render @taikai.form, taikai: @taikai, teams_by_score: @teams_by_score, final: @final %>
   <% end %>
 </div>

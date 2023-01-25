@@ -23,9 +23,9 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-
   Taikai.where("form <> 'matches'").each do |taikai|
     test "visiting '#{taikai.shortname}' public leaderboard" do
+      taikai.create_scores
       go_to_taikais
 
       find("a", exact_text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
@@ -35,7 +35,17 @@ class LeaderboardTest < ApplicationSystemTestCase
 
       click_on "Résultats publics"
 
-      assert_selector "h1.title", text: "Tableau des résultats -"
+      assert_selector "h1.title", text: "Tableau des résultats - #{taikai.shortname}"
+
+      if taikai.form_2in1?
+        click_on "Afficher les résultats en équipe"
+      end
+    end
+  end
+
+  Taikai.where("form = 'matches'").each do |taikai|
+    test "visiting '#{taikai.shortname}' public leaderboard" do
+      skip "Public leaderboard for matches not implemented yet"
     end
   end
 end
