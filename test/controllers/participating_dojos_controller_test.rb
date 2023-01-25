@@ -5,9 +5,10 @@ require "test_helper"
 class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_12)
-    @participating_dojo = participating_dojos(:participating_dojo1_individual_12)
-    @other_participating_dojo = participating_dojos(:participating_dojo2_individual_12)
+    @taikai = taikais(:individual_dist_12)
+    @participating_dojo = participating_dojos(:participating_dojo1_individual_dist_12)
+    @other_user = users(:alain_terieur) # dojo admin of :participating_dojo1_individual_dist_12
+    @other_participating_dojo = participating_dojos(:participating_dojo2_individual_dist_12)
   end
 
   test "should get new" do
@@ -42,9 +43,7 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not get edit if not dojo_admin" do
-    user = @taikai.staffs.joins(:role).where(participating_dojo: @participating_dojo,
-                                             'role.code': :dojo_admin).first.user
-    sign_in user
+    sign_in @other_user
     get edit_taikai_participating_dojo_url @taikai, @other_participating_dojo
     assert_unauthorized
   end

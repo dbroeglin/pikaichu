@@ -32,8 +32,16 @@ class Participant < ApplicationRecord
     scores.find_by(match_id: match_id).add_result(status, value)
   end
 
+  def first_score_results
+    # TODO: review all usages and make less brittle
+    scores.first&.results || []
+  end
+
   def score(final = true, match_id = nil)
-    scope = scores.find_by(match_id: match_id).results
+    score = scores.find_by(match_id: match_id)
+    return Score.new(hits: 0, value: 0) if score.nil?
+
+    scope = score.results
     if final
       results = scope.select { |r| r.final? && r.status_hit? }
     else
@@ -43,14 +51,12 @@ class Participant < ApplicationRecord
   end
 
   def marking?(match_id = nil)
-    scope = scores.find_by(match_id: match_id).results
-    num_marked = scope.count(&:marked?)
-    num_finalized = scope.count(&:final?)
+    score = scores.find_by(match_id: match_id)
+    if score.nil?
+      return false
+    end
 
-    num_marked != participating_dojo.taikai.total_num_arrows &&
-      (num_marked.zero? ||
-        num_finalized == num_marked ||
-          (num_marked % participating_dojo.taikai.num_arrows != 0))
+    score.marking?
   end
 
   def defined_results?(match_id = nil)
@@ -62,25 +68,10 @@ class Participant < ApplicationRecord
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
 
-    score = Score.create(participant_id: id, match_id: match_id)
-
-    now = DateTime.now
-    hashes =
-      (1..taikai.num_rounds).map do |round_index|
-        (1..taikai.num_arrows).map do |index|
-          {
-            participant_id: id,
-            match_id: match_id,
-            score_id: score.id,
-            round: round_index,
-            index: index,
-            created_at: now,
-            updated_at: now,
-          }
-        end
-      end.flatten
-    score.results.insert_all hashes
+    score = scores.create(participant_id: id, match_id: match_id)
+    score.create_results taikai.num_rounds, taikai.num_arrows
     scores.reload
+
     results.reload
   end
 end

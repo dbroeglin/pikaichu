@@ -54,3 +54,10 @@ participant_participating_dojo_2in1_12_enteki:
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: Club1
+
+participant1_AK_2in1_test:
+  participating_dojo: AK_2in1_test
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: Club1
+

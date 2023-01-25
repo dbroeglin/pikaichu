@@ -131,6 +131,7 @@ class Taikai < ApplicationRecord
       participants.each do |participant|
         participant.create_empty_score_and_results
       end
+      save!
     end
   end
 

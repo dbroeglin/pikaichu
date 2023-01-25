@@ -42,7 +42,6 @@ class MarkingController < ApplicationController
         format.turbo_stream do
           logger.warn"Participant #{@participant.id}'s previous round has not been validated yet"
           @results = @participant.results.where(match_id: @match&.id, round: e.previous_round)
-          raise "debug!!!"
         end
       end
     rescue Score::UnableToFindUndefinedResultsError

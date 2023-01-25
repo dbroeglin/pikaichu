@@ -13,6 +13,10 @@ class Result < ApplicationRecord
     inclusion: { in: ENTEKI_VALUES }
   validate :cannot_update_if_finalized, on: :update
 
+  after_save do
+    score.recalculate_score
+  end
+
   enum status: {
     hit: 'hit',
     miss: 'miss',

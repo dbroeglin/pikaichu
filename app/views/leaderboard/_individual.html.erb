@@ -28,7 +28,7 @@
         <td><%= participant.index %></td>
         <td class="has-text-left"><%= participant.display_name %></td>
         <%# TODO: make less brittle %>
-        <% participant.scores.first.results.each do |result| %>
+        <% participant.first_score_results.each do |result| %>
         <td><%= icon_from(result, final) %></td>
         <% end %>
         <% if index == 0 %>

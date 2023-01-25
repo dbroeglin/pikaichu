@@ -91,5 +91,4 @@ class LeaderboardController < ApplicationController
       raise "compute_team_leaderboard works only for 'team', '2in1' and 'matches' taikais"
     end
   end
-
 end
