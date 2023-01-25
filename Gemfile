@@ -103,6 +103,10 @@ group :development do
   gem 'bundler-audit', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+
+  gem 'guard'
+  gem 'guard-rails'
+  gem 'guard-minitest'
 end
 
 group :test do
