@@ -14,7 +14,7 @@
       <i class="far fa-dot-circle"></i>
     </span>
   <% end %>
-<% end %>
+<% end if policy(taikai).marking_show? %>
 
 <%= link_to leaderboard_taikai_path(taikai),
             class: "button #{size} has-background-light",
@@ -22,7 +22,7 @@
   <span class="icon <%= size %>">
     <i class="fas fa-medal"></i>
   </span>
-<% end %>
+<% end if policy(taikai).leaderboard_show? %>
 
 <%= link_to taikai_export_taikai_path(taikai),
             class: "button #{size} has-background-light",
@@ -30,7 +30,7 @@
   <span class="icon <%= size %>">
     <i class="fas fa-file-excel"></i>
   </span>
-<% end %>
+<% end if policy(taikai).export? %>
 
 <%= link_to edit_taikai_path(taikai),
       class: "button #{size} has-background-light ml-3",

@@ -54,11 +54,36 @@ class TaikaiTest < ActiveSupport::TestCase
     end
   end
 
+  %i(2in1 matches individual team).each do |form|
+    test "transitions for #{form}" do
+      @taikai.form = form
+      @taikai.total_num_arrows = form == :matches ? 4 : 12
+      @taikai.save!
+      @taikai.transition_to!(:registration)
+      @taikai.transition_to!(:marking)
+      @taikai.transition_to!(:tie_break)
+      @taikai.transition_to!(:done)
+    end
+  end
+
+
   test "transitions" do
     @taikai.form = :'2in1'
     @taikai.save!
-    @taikai.transition_to(:registration)
-    @taikai.transition_to(:marking)
-    @taikai.transition_to(:validated)
+    @taikai.transition_to!(:registration)
+    @taikai.transition_to!(:marking)
+    @taikai.transition_to!(:tie_break)
+    @taikai.transition_to!(:done)
   end
+
+  test "cannot change once done" do
+    @taikai.form = :'2in1'
+    @taikai.save!
+    %i(registration marking tie_break done).each do |state|
+      @taikai.transition_to!(state)
+    end
+
+    # TODO: test that we cannot change the form, scoring, etc.
+  end
+
 end

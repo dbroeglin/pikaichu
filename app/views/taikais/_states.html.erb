@@ -1,0 +1,40 @@
+<%
+  states = TaikaiStateMachine.states
+  succ = TaikaiStateMachine.successors
+  previous_state = taikai.previous_state
+  next_state = taikai.next_state
+%>
+<div class="tabs is-toggle is-centered">
+  <ul>
+    <% if previous_state %>
+    <li>
+      <%= link_to transition_to_taikai_path(taikai, state: previous_state),
+                  data: { 'turbo-method' => :post },
+                  class: "",
+                  title: t("activerecord.states.taikai.#{previous_state}") do %>
+        <span class="icon is-small"><i class="fas fa-angles-left" aria-hidden="true"></i></span>
+        <span></span>
+      <% end %>
+    </li>
+    <% end %>
+    <% states.each_with_index do |state, index| %>
+    <li class="inactiveLink <%= taikai.in_state?(state) ? "is-active" : "" %>">
+      <a>
+        <span class="icon is-small"><i class="fas fa-<%= index + 1 %>" aria-hidden="true"></i></span>
+        <span><%= t "activerecord.states.taikai.#{state}" %></span>
+      </a>
+    </li>
+    <% end %>
+    <% if next_state %>
+    <li>
+      <%= link_to transition_to_taikai_path(taikai, state: next_state),
+                  data: { 'turbo-method' => :post },
+                  class: "",
+                  title: t("activerecord.states.taikai.#{next_state}") do %>
+        <span class="icon is-small"><i class="fas fa-angles-right" aria-hidden="true"></i></span>
+      <% end  %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<hr/>

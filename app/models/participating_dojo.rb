@@ -53,4 +53,8 @@ class ParticipatingDojo < ApplicationRecord
         .sort_by { |team| team.score(final) }.reverse
         .group_by { |team| team.score(final) }
   end
+
+  def finalized?
+    participants.all?(&:finalized?)
+  end
 end

@@ -98,6 +98,10 @@ class Score < ApplicationRecord
           # TODO: could we reduce coupling here?
   end
 
+  def finalized?
+    results.all?(&:final?)
+  end
+
   def create_results(num_rounds, num_arrows)
     now = DateTime.now
     hashes =

@@ -1,8 +1,12 @@
 <div class="card">
   <div class="card-content">
+    <%= render "states", taikai: @taikai %>
     <div class="media">
       <div class="media-content">
-        <p class="title is-4"><%= t '.overview', description: "#{@taikai.name} (#{@taikai.shortname})" %></p>
+        <p class="title is-4">
+        <%= t '.overview', description: "#{@taikai.name} (#{@taikai.shortname})" %>
+        </p>
+
         <p class="subtitle is-6">
           <%= l @taikai.start_date %> - <%= l @taikai.end_date %> &#8212
           <%= Taikai.human_enum_value :scoring, @taikai.scoring %> &#8212
@@ -12,6 +16,7 @@
         </p>
         <p><%= @taikai.description %></p>
       </div>
+
       <div class="media-right">
         <%= render "icons", taikai: @taikai, size: "" %>
         <% if @taikai.form_2in1? %>

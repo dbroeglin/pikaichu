@@ -28,7 +28,7 @@ class Taikai < ApplicationRecord
   ]
   delegate :can_transition_to?,
     :current_state, :history, :last_transition, :last_transition_to,
-    :transition_to!, :transition_to, :in_state?, to: :state_machine
+    :transition_to!, :transition_to, :in_state?, :allowed_transitions, to: :state_machine
 
   has_many :staffs, dependent: :destroy do
     def ordered
@@ -80,6 +80,7 @@ class Taikai < ApplicationRecord
               in: [3, 6, 5, 9, 10]
             }
   validate :number_of_dojos
+  validate :no_change_when_done, on: :update
 
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
@@ -94,12 +95,8 @@ class Taikai < ApplicationRecord
     total_num_arrows / num_arrows
   end
 
-  def taikai_admin?(user)
-    staffs.joins(:role).where(user: user, 'role.code': :taikai_admin).any?
-  end
-
-  def dojo_admin?(user)
-    staffs.joins(:role).where(user: user, 'role.code': :dojo_admin).any?
+  def has_roles?(user, roles)
+    staffs.joins(:role).where(user: user, 'role.code': roles).any?
   end
 
   def finalized?
@@ -269,6 +266,24 @@ class Taikai < ApplicationRecord
   def number_of_dojos
     if !distributed && participating_dojos.count > 1
       errors.add(:distributed, :num_participating_dojos)
+    end
+  end
+
+  def previous_state
+    previous_state = TaikaiStateMachine.states[TaikaiStateMachine.states.index(current_state.to_s) - 1]
+    previous_state if allowed_transitions.index(previous_state)
+  end
+
+  def next_state
+    next_state = TaikaiStateMachine.states[TaikaiStateMachine.states.index(current_state.to_s) + 1]
+    next_state if allowed_transitions.index(next_state)
+  end
+
+  private
+
+  def no_change_when_done
+    if changed? && in_state?('done')
+      errors.add(:no_change_when_done, "No change is allowed once taikai is in state 'done'")
     end
   end
 end

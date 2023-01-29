@@ -84,6 +84,15 @@ class TaikaisController < ApplicationController
     end
   end
 
+  def transition_to
+    raise unless TaikaiStateMachine.states.include?(params[:state])
+    @taikai = authorize Taikai.find(params[:id])
+
+    @taikai.transition_to! params[:state]
+
+    redirect_to action: 'show', id: @taikai.id, status: :see_other
+  end
+
   private
 
   def taikai_params

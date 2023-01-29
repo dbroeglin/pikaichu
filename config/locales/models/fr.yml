@@ -1,5 +1,12 @@
 fr:
   activerecord:
+    states:
+      taikai:
+        new: Préparation
+        registration: Enregistrement
+        marking: Marquage
+        tie_break: Tie-Break
+        done: Terminé
     models:
       dojo:
         one: Club
@@ -87,7 +94,7 @@ fr:
         name: Nom entier
         num_arrows: Nb de flèches
         num_targets: Nb de cibles/tireurs
-        scoring:
+        scoring: Type de score
         shortname: Nom court
         start_date: Date de début
         tachi_size: Taille des tachi

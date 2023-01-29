@@ -22,3 +22,8 @@ form .dropdown {
   border-bottom: 1px solid $grey-light;
   margin-bottom: $size-6;
 }
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}

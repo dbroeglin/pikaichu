@@ -74,4 +74,8 @@ class Participant < ApplicationRecord
 
     results.reload
   end
+
+  def finalized?
+    scores.all?(&:finalized?)
+  end
 end

@@ -10,6 +10,8 @@ class MarkingTest < ApplicationSystemTestCase
 
   Taikai.all.each do |taikai|
     test "visiting '#{taikai.shortname}' marking sheet" do
+      taikai.transition_to! :registration
+      taikai.transition_to! :marking
       go_to_taikais
 
       find("td", exact_text: taikai.shortname).ancestor("tr").click_on("Feuille de marque")

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get  'leaderboard/public',               to: 'leaderboard#public'
       get  'export.xlsx',                      to: 'taikais#export', as: :taikai_export # TODO: refactor
       post 'generate'
+      post 'transition_to'
     end
     resources :matches do
       member do

@@ -7,10 +7,10 @@ class MarkingController < ApplicationController
     @taikai = Taikai.includes(participating_dojos: { participants: [ { scores: :results }] }).find(params[:id])
     @match = nil
 
-    if current_user.admin? || @taikai.taikai_admin?(current_user)
+    if policy(@taikai).admin?
       @participating_dojos = @taikai.participating_dojos
                                     .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
-    elsif @taikai.dojo_admin?(current_user)
+    elsif policy(@taikai).marking_show?
       @participating_dojos = @taikai.participating_dojos
                                     .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
                                     .joins(staffs: [:role])
@@ -29,6 +29,9 @@ class MarkingController < ApplicationController
   def update
     # TODO: Optimize?
     @taikai = Taikai.includes(participating_dojos: { participants: { scores: :results }}).find(params[:id])
+
+    authorize(@taikai, :marking_update?)
+
     @participating_dojos = @taikai.participating_dojos
     @participant = @taikai.participants.find(params[:participant_id])
     @match = Match.find_by(id: params[:match_id])
