@@ -27,6 +27,11 @@ class TaikaiStateMachine
     taikai.delete_scores unless taikai.form_matches?
   end
 
+  before_transition(from: :marking, to: :tie_break) do |taikai, transition|
+    Leaderboard.new(taikai_id: taikai.id, validated: true).compute_intermediate_ranks
+  end
+
+
   guard_transition to: :tie_break do |taikai|
     # all participating dojos validated
     #taikai.participating_dojos.all?(&:finalized?)

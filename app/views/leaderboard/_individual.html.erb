@@ -16,13 +16,12 @@
   </thead>
   <tbody>
     <% rank = 0 %>
-    <% participants_by_score.each_pair do |pair| %>
-    <%   score, participants = *pair %>
+    <% participants_by_score.each_pair do |score, participants| %>
     <%   participants.each_with_index do |participant, index| %>
     <%     rank += 1 %>
       <tr>
         <% if index == 0 %>
-        <th rowspan="<%= participants.size %>" class="has-text-centered"><%= rank %></th>
+        <th rowspan="<%= participants.size %>" class="has-text-centered"><%= display_rank taikai, participant, rank %></th>
         <% end %>
         <td class="has-text-left"><%= taikai.distributed? ? participant.participating_dojo.display_name : participant.club %></td>
         <td><%= participant.index %></td>

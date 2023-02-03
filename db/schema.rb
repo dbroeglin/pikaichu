@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_08_133052) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -101,6 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_08_133052) do
     t.bigint "kyudojin_id"
     t.string "club", default: "", null: false
     t.integer "rank"
+    t.integer "intermediate_rank"
     t.index ["kyudojin_id"], name: "index_participants_on_kyudojin_id"
     t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "kyudojin_id"], name: "by_participants_participating_dojo_kyudojin", unique: true
@@ -215,6 +216,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_08_133052) do
     t.datetime "updated_at", null: false
     t.boolean "mixed", default: false, null: false
     t.integer "rank"
+    t.integer "intermediate_rank"
     t.index ["participating_dojo_id", "index"], name: "teams_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "shortname"], name: "by_teams_shortname", unique: true
     t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"

@@ -50,7 +50,7 @@
       <% team.participants.each_with_index do |participant, participant_index| %>
         <tr>
           <% if participant_index == 0 %>
-            <th rowspan="<%= team.participants.size %>" class="has-text-centered"><%= rank %></th>
+            <th rowspan="<%= team.participants.size %>" class="has-text-centered"><%= display_rank taikai, team, rank %></th>
             <td rowspan="<%= team.participants.size %>" class="has-text-left"><%= team.participating_dojo.display_name %> - <%= team.shortname %></td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>

@@ -17,14 +17,13 @@
   </thead>
   <tbody>
     <% rank = 0 %>
-    <% teams_by_score.each_pair do |pair| %>
-    <%   score, teams = pair %>
+    <% teams_by_score.each_pair do |score, teams| %>
     <%   teams.each_with_index do |team, team_index| %>
     <%     rank += 1 %>
       <tr>
         <% team.participants.each_with_index do |participant, participant_index| %>
           <% if team_index == 0 && participant_index == 0 %>
-            <th rowspan="<%= teams.sum {|t| t.participants.size } %>" class="has-text-centered"><%= rank %></th>
+            <th rowspan="<%= teams.sum {|t| t.participants.size } %>" class="has-text-centered"><%= display_rank taikai, team, rank %></th>
           <% end %>
           <% if participant_index == 0 %>
             <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
