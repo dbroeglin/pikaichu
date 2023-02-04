@@ -37,7 +37,7 @@ class TaikaiStateMachine
 
   guard_transition to: :tie_break do |taikai|
     # all participating dojos validated
-    #taikai.participating_dojos.all?(&:finalized?)
+    taikai.participating_dojos.all?(&:finalized?)
     true
   end
 end
