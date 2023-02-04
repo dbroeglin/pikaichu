@@ -3,14 +3,20 @@ class ParticipatingDojo < ApplicationRecord
 
   belongs_to :taikai
   belongs_to :dojo
-  has_many :participants, -> { order index: :asc, lastname: :asc, firstname: :asc },
-           dependent: :destroy,
-           inverse_of: :participating_dojo do
-            def unteamed
-              where "team_id IS NULL"
-            end
-          end
-  has_many :teams, -> { order index: :asc, shortname: :asc }, dependent: :destroy, inverse_of: :participating_dojo
+  has_many :participants, -> {
+      order index: :asc, lastname: :asc, firstname: :asc
+      extending RankedAssociationExtension
+    },
+    dependent: :destroy,
+    inverse_of: :participating_dojo do
+      def unteamed
+        where "team_id IS NULL"
+      end
+    end
+  has_many :teams, -> {
+      order index: :asc, shortname: :asc
+      extending RankedAssociationExtension
+    }, dependent: :destroy, inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
 
   def draw
@@ -47,14 +53,12 @@ class ParticipatingDojo < ApplicationRecord
     true
   end
 
-  def teams_by_score(final)
-    @teams_by_score =
-      teams
-        .sort_by { |team| team.score(final) }.reverse
-        .group_by { |team| team.score(final) }
-  end
-
   def finalized?
     participants.all?(&:finalized?)
+  end
+
+  def in_state?(*params)
+    # Note: used by RankedAssociationExtension
+    taikai.in_state? *params
   end
 end

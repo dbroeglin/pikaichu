@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       post 'generate'
       post 'transition_to'
     end
+    resources :tie_break, only: [:index, :update]
     resources :matches do
       member do
         get 'marking', to: 'marking#show_match'

@@ -22,6 +22,10 @@ class Team < ApplicationRecord
               allow_blank: true,
             }
 
+  def display_name
+    shortname
+  end
+
   # This uses participant results
   def score(final = true, match_id = nil)
     scope = self.results

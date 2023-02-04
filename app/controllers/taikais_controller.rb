@@ -55,7 +55,9 @@ class TaikaisController < ApplicationController
     @taikai = authorize Taikai.find(params[:id])
     ActiveRecord::Base.transaction do
       # TODO: deal with the graph of dependencies (use nullify?)
-      @taikai.participants.each { |participant| participant.results.delete_all }
+      @taikai.teams.each { |team| team.scores.delete_all }
+      @taikai.participants.each { |participant| participant.scores.delete_all }
+      @taikai.matches.delete_all
       @taikai.destroy
     end
 

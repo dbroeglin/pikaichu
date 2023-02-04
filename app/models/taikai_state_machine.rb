@@ -14,23 +14,26 @@ class TaikaiStateMachine
   transition from: :marking,      to: :tie_break
   transition from: :tie_break,    to: :done
 
+  # TODO: delete after manual tests
+  transition from: :tie_break,    to: :marking
+  transition from: :done,         to: :tie_break
+
   guard_transition to: :marking do |taikai|
     # TODO: enough info for a dojo to start the taikai
     true
   end
 
   before_transition(from: :registration, to: :marking) do |taikai, transition|
-    taikai.create_scores unless taikai.form_matches?
+    #taikai.create_scores unless taikai.form_matches?
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, transition|
-    taikai.delete_scores unless taikai.form_matches?
+    #taikai.delete_scores unless taikai.form_matches?
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, transition|
     Leaderboard.new(taikai_id: taikai.id, validated: true).compute_intermediate_ranks
   end
-
 
   guard_transition to: :tie_break do |taikai|
     # all participating dojos validated

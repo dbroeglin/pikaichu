@@ -38,6 +38,10 @@ class TaikaiPolicy < ApplicationPolicy
     !taikai.in_state?(:new, :registration) && show?
   end
 
+  def tie_break_show?
+    taikai.in_state?(:tie_break) && show?
+  end
+
   def marking_show?
     marking_update?
   end
@@ -48,6 +52,10 @@ class TaikaiPolicy < ApplicationPolicy
 
   def show?
     true
+  end
+
+  def tie_break_update?
+    taikai.in_state?(:tie_break) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES)) # TODO: double check if MARKING_ROLES is right
   end
 
   def transition_to?

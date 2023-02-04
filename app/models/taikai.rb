@@ -44,8 +44,9 @@ class Taikai < ApplicationRecord
   has_many :participating_dojos, -> { order display_name: :asc },
            dependent: :destroy,
            inverse_of: :taikai
-  has_many :participants, through: :participating_dojos
-  has_many :teams, through: :participating_dojos
+
+  has_many :participants, -> { extending RankedAssociationExtension}, through: :participating_dojos
+  has_many :teams, -> { extending RankedAssociationExtension}, through: :participating_dojos
 
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
@@ -101,23 +102,6 @@ class Taikai < ApplicationRecord
 
   def finalized?
     !Result.joins(participant: :participating_dojo).where("participating_dojos.id": participating_dojos.pluck(:id)).where(final: false).any?
-  end
-
-  # Remove after better handling of tie_break
-  def teams_by_score(final)
-    @teams_by_score =
-      participating_dojos
-      .map(&:teams).flatten
-      .sort_by { |team| team.score(final) }.reverse
-      .group_by { |team| team.score(final).score_value } # group_by works on eq? & hash
-  end
-
-  def participants_by_score(final)
-    participating_dojos
-      .map(&:participants).flatten
-      .sort_by { |participant| participant.score(final) }.reverse
-      .group_by { |participant| participant.score(final).score_value } # group_by works on eq? & hash
-      .each { |_, participants| participants.sort_by!(&:index) }
   end
 
   def create_scores
@@ -201,7 +185,7 @@ class Taikai < ApplicationRecord
     # TODO: select only the 4/8 best teams to copy
     new_teams = []
     taikai
-      .teams_by_score(true).values.flatten
+      .teams.ranked(true).values.flatten
       .select{ |team| !team.mixed } # TODO: generate error if not enough teams
       .first(bracket_size)
       .each_with_index do |team, index|

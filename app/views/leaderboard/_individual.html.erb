@@ -31,7 +31,7 @@
         <td><%= icon_from(result, final) %></td>
         <% end %>
         <% if index == 0 %>
-        <th rowspan="<%= participants.size %>"><%= display_score score, taikai.scoring_enteki? %></th>
+        <th rowspan="<%= participants.size %>"><%= display_score participant.score, taikai.scoring_enteki? %></th>
         <% end %>
       </tr>
     <%   end %>

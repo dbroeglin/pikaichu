@@ -17,4 +17,24 @@ class ApplicationRecord < ActiveRecord::Base
       end
     end
   end
+
+  module RankedAssociationExtension
+    def intermediate_ranked
+      sort_by { |rankable| rankable.intermediate_rank }
+        .group_by { |rankable| rankable.intermediate_rank }
+        .each { |_, rankable| rankable.sort_by!(&:index) }
+    end
+
+    def ranked(validated = true)
+      if proxy_association.owner.in_state? :tie_break, :done
+        sort_by { |rankable| rankable.rank }
+          .group_by { |rankable| rankable.rank }
+          .each { |_, rankable| rankable.sort_by!(&:index) }
+    else
+        sort_by { |scoreable| scoreable.score(validated) }.reverse
+          .group_by { |scoreable| scoreable.score(validated).score_value } # group_by works on eq? & hash
+          .each { |_, scoreables| scoreables.sort_by!(&:index) }
+      end
+    end
+  end
 end

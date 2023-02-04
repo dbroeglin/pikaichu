@@ -11,16 +11,13 @@ class Leaderboard
       .includes(participating_dojos: { participants: { scores: :results }})
       .find(@taikai_id)
 
-    @participants_by_score = @taikai.participants_by_score(@validated)
+    @participants_by_score = @taikai.participants.ranked(@validated)
 
     @score_by_participating_dojo = {}
     if @taikai.distributed?
       @taikai.participating_dojos.each do |participating_dojo|
         @score_by_participating_dojo[participating_dojo] =
-          participating_dojo.participants
-            .sort_by { |participant| participant.score(@inal) }.reverse
-            .group_by { |participant| participant.score(@validated) }
-            .each { |_, participants| participants.sort_by!(&:index) }
+          participating_dojo.participants.ranked(@validated)
       end
     end
 
@@ -38,12 +35,12 @@ class Leaderboard
 
     @score_by_participating_dojo = {}
 
-    @teams_by_score = @taikai.teams_by_score(@validated)
+    @teams_by_score = @taikai.teams.ranked(@validated)
 
     if @taikai.distributed?
       @taikai.participating_dojos.each do |participating_dojo|
         @score_by_participating_dojo[participating_dojo] =
-          participating_dojo.teams_by_score(@validated)
+          participating_dojo.teams.ranked(@validated)
       end
     end
     return @teams_by_score, @score_by_participating_dojo
@@ -58,6 +55,7 @@ class Leaderboard
       raise "compute_matches_leaderboard works only 'matches' taikais"
     end
 
+    # TODO: refactor to taikai
     @teams_by_score = Match.where(taikai: @taikai, level: 1)
       .order(index: :asc)
       .map do |match|

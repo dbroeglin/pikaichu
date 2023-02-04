@@ -4,7 +4,6 @@ import { Sortable } from "sortablejs"
 // Connects to data-controller="drag"
 export default class extends Controller {
 
-
   connect() {
     this.csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
     Sortable.create(this.element, {

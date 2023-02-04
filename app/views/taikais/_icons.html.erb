@@ -24,6 +24,14 @@
   </span>
 <% end if policy(taikai).leaderboard_show? %>
 
+<%= link_to taikai_tie_break_index_path(taikai),
+            class: "button #{size} has-background-light",
+            title: t('taikais.tie_break.title') do %>
+  <span class="icon <%= size %>">
+    <i class="fas fa-scissors"></i>
+  </span>
+<% end if policy(taikai).tie_break_update? && !taikai.form_matches? %>
+
 <%= link_to taikai_export_taikai_path(taikai),
             class: "button #{size} has-background-light",
             title: t('taikais.export.title') do %>

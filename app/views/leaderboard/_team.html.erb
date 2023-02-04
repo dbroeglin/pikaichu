@@ -39,7 +39,7 @@
           <% end %>
           <td><%= display_score participant.score(final), taikai.scoring_enteki? %></td>
           <% if team_index == 0 && participant_index == 0 %>
-            <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= display_score score, taikai.scoring_enteki? %></th>
+            <th rowspan="<%= teams.sum {|t| t.participants.size } %>"><%= display_score team.score(final), taikai.scoring_enteki? %></th>
           <% end %>
       </tr>
     <%     end %>

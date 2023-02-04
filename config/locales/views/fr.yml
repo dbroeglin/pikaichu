@@ -135,6 +135,8 @@ fr:
       title: Feuille de marque
     leaderboard:
       title: Tableau des résultats
+    tie_break:
+      title: Tie-Break
     export:
       distributed: À distance
       infos: Informations
@@ -197,7 +199,15 @@ fr:
     list:
       form_teams: Former les équipes
       teamed: "%{teamed} participants affectés sur %{total}."
-
+  tie_break:
+    index:
+      back: Retour au Taikai
+      display_name: Nom
+      individual: Tie-break individuels
+      intermediate_rank: Rang intermédiaire
+      rank: Rang final
+      title: Tie-Break
+      team: Tie-break des équipes
   teaming:
     edit:
       add_team: Ajouter une équipe

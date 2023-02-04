@@ -57,9 +57,9 @@
           <% participant.results.joins(:match).where("matches.level": 1).each do |result| %>
             <td><%= icon_from(result, final) %></td>
           <% end %>
-          <td><%= participant.score(final, match.id) %></td>
+          <td><%= display_score participant.score(final, match.id), false %></td>
           <% if participant_index == 0 %>
-            <th rowspan="<%= team.participants.size %>"><%= score %></th>
+            <th rowspan="<%= team.participants.size %>"><%= display_score score, false %></th>
           <% end %>
         </tr>
       <% end %>
