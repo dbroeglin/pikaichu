@@ -33,7 +33,7 @@
           <th class="has-text-centered">
             <% if rankables.size > 1 %>
               <%= bulma_form_for rankable, url: taikai_tie_break_path(@taikai, rankable), html: { method: :patch } do |f| %>
-                <%= hidden_field_tag :individual, params[:individual] %>
+                <%= hidden_field_tag :individual, @individual %>
                 <div class="select is-small">
                   <%= select_tag :rank,
                         options_for_select((rankable.intermediate_rank..(rankable.intermediate_rank + rankables.size - 1)), rankable.rank),

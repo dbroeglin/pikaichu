@@ -5,8 +5,8 @@ class ParticipatingDojo < ApplicationRecord
   belongs_to :dojo
   has_many :participants, -> {
       order index: :asc, lastname: :asc, firstname: :asc
-      extending RankedAssociationExtension
     },
+    extend: RankedAssociationExtension,
     dependent: :destroy,
     inverse_of: :participating_dojo do
       def unteamed
@@ -15,8 +15,10 @@ class ParticipatingDojo < ApplicationRecord
     end
   has_many :teams, -> {
       order index: :asc, shortname: :asc
-      extending RankedAssociationExtension
-    }, dependent: :destroy, inverse_of: :participating_dojo
+    },
+    extend: RankedAssociationExtension,
+    dependent: :destroy,
+    inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
 
   def draw

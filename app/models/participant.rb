@@ -1,5 +1,5 @@
 class Participant < ApplicationRecord
-  include Rankable, Scoreable
+  include Scoreable
   audited
 
   acts_as_list column: :index_in_team, scope: :team, sequential_updates: true

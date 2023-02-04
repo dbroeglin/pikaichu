@@ -1,7 +1,5 @@
 <%
-  puts "RESULTS1: #{results.inspect}"
-  results = results.select { |result| result.match.id == match.id }
-  puts "RESULTS2: #{results.inspect}"
+  results = results.select { |result| result.match == match }
   verifying = !results.first.final && results.count {|r| r.known? } == 4
 %>
 <div id="<%= dom_id participant, results.first.round %>" class="level is-mobile<%= (!results.any?(&:status) || results.any?(&:final)) ? "" : " mx-0" %>">

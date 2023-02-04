@@ -30,7 +30,7 @@ class ApplicationRecord < ActiveRecord::Base
         sort_by { |rankable| rankable.rank }
           .group_by { |rankable| rankable.rank }
           .each { |_, rankable| rankable.sort_by!(&:index) }
-    else
+      else
         sort_by { |scoreable| scoreable.score(validated) }.reverse
           .group_by { |scoreable| scoreable.score(validated).score_value } # group_by works on eq? & hash
           .each { |_, scoreables| scoreables.sort_by!(&:index) }

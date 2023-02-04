@@ -1,5 +1,4 @@
 class Taikai < ApplicationRecord
-  include HasRankable
   audited
 
   attr_accessor :current_user
@@ -45,8 +44,12 @@ class Taikai < ApplicationRecord
            dependent: :destroy,
            inverse_of: :taikai
 
-  has_many :participants, -> { extending RankedAssociationExtension}, through: :participating_dojos
-  has_many :teams, -> { extending RankedAssociationExtension}, through: :participating_dojos
+  has_many :participants,
+    extend: RankedAssociationExtension,
+    through: :participating_dojos
+  has_many :teams,
+    extend: RankedAssociationExtension,
+    through: :participating_dojos
 
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
