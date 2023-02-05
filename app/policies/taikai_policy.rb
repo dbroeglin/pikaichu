@@ -59,7 +59,7 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def transition_to?
-    update?
+    admin?
   end
 
   def update?

@@ -9,7 +9,7 @@
     <% if previous_state %>
     <li>
       <%= link_to transition_to_taikai_path(taikai, state: previous_state),
-                  data: { 'turbo-method' => :post },
+                  data: { turbo_method: :post, turbo_confirm: t('confirm_previous_state_html') },
                   class: "",
                   title: t("activerecord.states.taikai.#{previous_state}") do %>
         <span class="icon is-small"><i class="fas fa-angles-left" aria-hidden="true"></i></span>
@@ -28,7 +28,7 @@
     <% if next_state %>
     <li>
       <%= link_to transition_to_taikai_path(taikai, state: next_state),
-                  data: { 'turbo-method' => :post },
+                  data: { turbo_method: :post, turbo_confirm: t('confirm_next_state_html') },
                   class: "",
                   title: t("activerecord.states.taikai.#{next_state}") do %>
         <span class="icon is-small"><i class="fas fa-angles-right" aria-hidden="true"></i></span>

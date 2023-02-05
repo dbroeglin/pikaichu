@@ -24,15 +24,20 @@ class TaikaiStateMachine
   end
 
   before_transition(from: :registration, to: :marking) do |taikai, transition|
-    #taikai.create_scores unless taikai.form_matches?
+    taikai.create_scores unless taikai.form_matches?
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, transition|
-    #taikai.delete_scores unless taikai.form_matches?
+    taikai.delete_scores unless taikai.form_matches?
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, transition|
     Leaderboard.new(taikai_id: taikai.id, validated: true).compute_intermediate_ranks
+  end
+
+  before_transition(from: :tie_break, to: :marking) do |taikai, transition|
+    taikai.participants.clear_ranks
+    taikai.teams.clear_ranks
   end
 
   guard_transition to: :tie_break do |taikai|

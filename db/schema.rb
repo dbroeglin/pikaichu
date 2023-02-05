@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "azure"
+  enable_extension "pg_cron"
+  enable_extension "pgaadauth"
   enable_extension "plpgsql"
 
   create_enum :result_status, [

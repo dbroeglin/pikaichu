@@ -19,6 +19,10 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   module RankedAssociationExtension
+    def clear_ranks
+      each { |rankable| rankable.update!(rank: nil, intermediate_rank: nil) }
+    end
+
     def intermediate_ranked
       sort_by { |rankable| rankable.intermediate_rank }
         .group_by { |rankable| rankable.intermediate_rank }
