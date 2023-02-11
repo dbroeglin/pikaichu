@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_11_110818) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "azure"
-  enable_extension "pg_cron"
-  enable_extension "pgaadauth"
   enable_extension "plpgsql"
 
   create_enum :result_status, [
@@ -125,7 +122,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.bigint "participant_id", null: false
     t.integer "round"
     t.integer "index"
     t.enum "status", enum_type: "result_status"
@@ -136,8 +132,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
     t.integer "value"
     t.bigint "score_id", null: false
     t.index ["match_id"], name: "index_results_on_match_id"
-    t.index ["participant_id", "round", "index", "match_id"], name: "by_participant_round_index_match_id", unique: true
-    t.index ["participant_id"], name: "index_results_on_participant_id"
     t.index ["score_id"], name: "index_results_on_score_id"
   end
 
@@ -258,7 +252,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_213156) do
   add_foreign_key "participating_dojos", "dojos"
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
-  add_foreign_key "results", "participants"
   add_foreign_key "results", "scores"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"

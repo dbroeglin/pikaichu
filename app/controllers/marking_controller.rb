@@ -4,7 +4,10 @@ class MarkingController < ApplicationController
   end
 
   def show
-    @taikai = Taikai.includes(participating_dojos: { participants: [ { scores: :results }] }).find(params[:id])
+    @taikai = authorize(
+      Taikai.includes(participating_dojos: { participants: [ { scores: :results }] }).find(params[:id]),
+      :marking_show?)
+
     @match = nil
 
     if policy(@taikai).admin?
@@ -21,7 +24,7 @@ class MarkingController < ApplicationController
   end
 
   def show_match
-    @taikai = Taikai.find(params[:taikai_id])
+    @taikai = authorize(Taikai.find(params[:taikai_id]), :marking_show?)
     @match = @taikai.matches.find(params[:id])
   end
 
@@ -44,7 +47,7 @@ class MarkingController < ApplicationController
         format.html { redirect_to action: :show, id: @taikai.id }
         format.turbo_stream do
           logger.warn"Participant #{@participant.id}'s previous round has not been validated yet"
-          @results = @participant.results.where(match_id: @match&.id, round: e.previous_round)
+          @results = @participant.score(@match&.id).results.where(round: e.previous_round)
         end
       end
     rescue Score::UnableToFindUndefinedResultsError

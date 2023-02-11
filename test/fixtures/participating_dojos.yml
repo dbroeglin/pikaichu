@@ -1,65 +1,58 @@
-participating_dojo1_individual_12:
-  taikai:  individual_12
-  dojo: dojo_fr
-  display_name: FR
-
-# participating_dojo2_individual_12:
-#   taikai:  individual_12
-#   dojo: dojo_hk
-#   display_name: HK
-
-participating_dojo1_individual_dist_12:
-  taikai:  individual_dist_12
-  dojo: dojo_fr
-  display_name: FR
 
 participating_dojo2_individual_dist_12:
   taikai: individual_dist_12
   dojo: dojo_hk
   display_name: HK
 
-participating_dojo1_team_12:
-  taikai: team_dist_12
-  dojo: dojo_fr
-  display_name: FR
-
-fr_2in1_dist_12_enteki:
-  taikai: 2in1_dist_12_enteki
-  dojo: dojo_fr
-  display_name: FR
-
-fr_2in1_dist_12:
-  taikai: 2in1_dist_12
-  dojo: dojo_fr
-  display_name: FR
-
 hk_2in112:
   taikai: 2in1_dist_12
   dojo: dojo_hk
   display_name: HK
-
-participating_dojo1_individual_20:
-  taikai: individual_20
-  dojo: dojo_fr
-  display_name: FR
 
 participating_dojo1_taikai5:
   taikai: other_taikai
   dojo: dojo_fr
   display_name: FR
 
-participating_dojo_2in1_12_enteki:
-  taikai: 2in1_12_enteki
-  dojo: dojo_fr
-  display_name: AK
-
-participating_dojo_2in1_12:
-  taikai: 2in1_12
-  dojo: dojo_fr
-  display_name: AK
-
 AK_2in1_test:
   taikai: 2in1_test
   dojo: dojo_fr
   display_name: AK
 
+<%
+  [true, false].each do |distributed|
+    [12, 20].each do |total_num_arrows|
+      %w(individual team 2in1).each do |form|
+        [true, false].each do |enteki|
+          label = "participating_dojo1_#{form}#{distributed ? '_dist' : ''}_#{total_num_arrows}#{enteki ? '_enteki' : ''}"
+          #puts label + " #{Zlib.crc32(label) % (2**30 - 1)}"
+%>
+<%= label %>:
+  taikai: <%= form %><%= distributed ? '_dist' : '' %>_<%= total_num_arrows %><%= enteki ? '_enteki' : '' %>
+  dojo: dojo_fr
+  display_name: <%= label.titleize %>
+<%
+        end
+      end
+    end
+  end
+%>
+
+<%
+  [true, false].each do |distributed|
+    [4].each do |total_num_arrows|
+      %w(matches).each do |form|
+        [true, false].each do |enteki|
+          label = "participating_dojo1_#{form}#{distributed ? '_dist' : ''}_#{total_num_arrows}#{enteki ? '_enteki' : ''}"
+          #puts label + " #{Zlib.crc32(label) % (2**30 - 1)}"
+%>
+<%= label %>:
+  taikai: <%= form %><%= distributed ? '_dist' : '' %>_<%= total_num_arrows %><%= enteki ? '_enteki' : '' %>
+  dojo: dojo_fr
+  display_name: <%= label.titleize %>
+<%
+        end
+      end
+    end
+  end
+%>

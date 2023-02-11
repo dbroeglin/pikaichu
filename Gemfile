@@ -107,6 +107,8 @@ group :development do
   gem 'guard'
   gem 'guard-rails'
   gem 'guard-minitest'
+
+  gem 'terminal-table'
 end
 
 group :test do

@@ -17,7 +17,7 @@ class Taikais2in1Test < ApplicationSystemTestCase
     click_on "Modifier"
     assert_selector "p.card-header-title", text: "Modification du Taikai"
 
-    find("td", text: "AK").ancestor("tr").click_on "Modifier"
+    find("td", text: "Participating Dojo1 2in1 12").ancestor("tr").click_on "Modifier"
 
     assert_selector "p.card-header-title", text: "Modifier un club hôte"
     assert_selector "p.card-header-title", text: "Importer la liste des participant"

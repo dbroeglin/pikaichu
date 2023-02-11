@@ -41,4 +41,8 @@ class ApplicationRecord < ActiveRecord::Base
       end
     end
   end
+
+  def to_ascii
+    to_s
+  end
 end

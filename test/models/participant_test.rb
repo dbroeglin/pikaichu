@@ -9,7 +9,6 @@ class ParticipantTest < ActiveSupport::TestCase
   end
 
   test "12 results created" do
-    assert_equal 12, @participant.results.size
+    assert_equal 12, @participant.score.results.size
   end
-
 end

@@ -16,20 +16,7 @@ class MatchesController < ApplicationController
 
   def update
     @match = Match.find(params[:id])
-
-    @match.assign_attributes(match_params)
-
-    if @match.changes[:team1_id] && @match.changes[:team1_id].second
-      # TODO: Should clean results if nil
-      @match.assign_team1(@match.team1)
-    end
-    if @match.changes[:team2_id] && @match.changes[:team2_id].second
-      # TODO: Should clean results if nil
-      @match.assign_team2(@match.team2)
-    end
-    if @match.changes[:winner] && !@match.winner.nil?
-      @match.select_winner(@match.winner)
-    end
+    @match.update(match_params)
 
     if @match.errors.any?
       @teams = @taikai
@@ -49,7 +36,7 @@ class MatchesController < ApplicationController
   def select_winner
     @match = @taikai.matches.find(params[:id])
 
-    @match.select_winner(@match.score1 > @match.score2 ? 1 : 2)
+    @match.select_winner(@match.score(1) > @match.score(2) ? 1 : 2)
 
     redirect_to action: 'index', status: :see_other
   end

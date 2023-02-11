@@ -22,7 +22,7 @@ class ParticipantsController < ApplicationController
       @participant.club = @participant.kyudojin.federation_club
     end
 
-    if @participant.save && @participant.create_empty_score_and_results
+    if @participant.save
       redirect_to_edit
     else
       render :new, status: :unprocessable_entity

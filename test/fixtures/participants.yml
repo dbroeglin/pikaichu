@@ -8,9 +8,9 @@ participant<%= index %>_participating_dojo1_individual_12:
 <% end %>
 
 <% 3.times do |index| %>
-p<%= index + 1 %>_fr_2in1_dist_12:
-  participating_dojo: fr_2in1_dist_12
-  team: a_fr_2in1_dist_12
+p<%= index + 1 %>_participating_dojo1_2in1_dist_12:
+  participating_dojo: participating_dojo1_2in1_dist_12
+  team: a_participating_dojo1_2in1_dist_12
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: K1
@@ -18,17 +18,17 @@ p<%= index + 1 %>_fr_2in1_dist_12:
 <% end %>
 
 <% (4..12).each do |index| %>
-p<%= index %>_fr_2in1_dist_12:
-  participating_dojo: fr_2in1_dist_12
+p<%= index %>_participating_dojo1_2in1_dist_12:
+  participating_dojo: participating_dojo1_2in1_dist_12
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: K2
 <% end %>
 
 <% 3.times do |index| %>
-p<%= index + 1 %>_fr_2in1_dist_12_enteki:
-  participating_dojo: fr_2in1_dist_12_enteki
-  team: a_fr_2in1_dist_12_enteki
+p<%= index + 1 %>_participating_dojo1_2in1_dist_12_enteki:
+  participating_dojo: participating_dojo1_2in1_dist_12_enteki
+  team: a_participating_dojo1_2in1_dist_12_enteki
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: K1
@@ -36,21 +36,21 @@ p<%= index + 1 %>_fr_2in1_dist_12_enteki:
 <% end %>
 
 <% (4..12).each do |index| %>
-p<%= index %>_fr_2in1_dist_12_enteki:
-  participating_dojo: fr_2in1_dist_12_enteki
+p<%= index %>_participating_dojo1_2in1_dist_12_enteki:
+  participating_dojo: participating_dojo1_2in1_dist_12_enteki
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: K2
 <% end %>
 
 participant_participating_dojo_2in1_12:
-  participating_dojo: participating_dojo_2in1_12
+  participating_dojo: participating_dojo1_2in1_12
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: Club1
 
 participant_participating_dojo_2in1_12_enteki:
-  participating_dojo: participating_dojo_2in1_12_enteki
+  participating_dojo: participating_dojo1_2in1_12_enteki
   firstname: <%= Faker::Name.first_name %>
   lastname: <%= Faker::Name.last_name %>
   club: Club1
@@ -61,3 +61,29 @@ participant1_AK_2in1_test:
   lastname: <%= Faker::Name.last_name %>
   club: Club1
 
+# Participants for matches
+<% 3.times do |index| %>
+p<%= index + 1 %>_participating_dojo1_matches_dist_4_enteki:
+  participating_dojo: participating_dojo1_matches_dist_4_enteki
+  team: a_participating_dojo1_matches_dist_4_enteki
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: K1
+  index_in_team: <%= index + 1 %>
+
+p<%= index + 4 %>_participating_dojo1_matches_dist_4_enteki:
+  participating_dojo: participating_dojo1_matches_dist_4_enteki
+  team: b_participating_dojo1_matches_dist_4_enteki
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: K1
+  index_in_team: <%= index + 1 %>
+
+p<%= index + 7 %>_participating_dojo1_matches_dist_4_enteki:
+  participating_dojo: participating_dojo1_matches_dist_4_enteki
+  team: c_participating_dojo1_matches_dist_4_enteki
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: K1
+  index_in_team: <%= index + 1 %>
+<% end %>

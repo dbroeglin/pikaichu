@@ -26,10 +26,18 @@ class Team < ApplicationRecord
     shortname
   end
 
-  # This uses participant results
-  def score(final = true, match_id = nil)
+  def create_empty_score(match_id: nil)
+    scores.create(team_id: id, match_id: match_id)
+  end
+
+  def score(match_id = nil)
+    scores.find_by(match_id: match_id)
+  end
+
+  # TODO
+  def old_score(final = true, match_id = nil)
     scope = self.results
-    scope = scope.select { |r| r.match_id == match_id } if match_id
+    scope = scope.where(match_id: match_id) if match_id
     results =
       if final
         scope.select { |r| r.final? && r.status_hit? }

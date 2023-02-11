@@ -9,7 +9,7 @@
           <% end if match.team1 %>
         </td>
         <td>
-          <strong><%= display_score match.score1, taikai.scoring_enteki? %></strong>
+          <strong><%= display_score match.score(1), taikai.scoring_enteki? %></strong>
         </td>
         <td rowspan="2" style="border-bottom: 0px">
           <%= link_to edit_taikai_match_path(match.taikai, match),
@@ -46,7 +46,7 @@
           <% end if match.team2 %>
         </td>
         <td class="is-vcentered">
-          <strong><%= display_score match.score2, taikai.scoring_enteki? %></strong>
+          <strong><%= display_score match.score(2), taikai.scoring_enteki? %></strong>
         </td>
       </tr>
     </tbody>

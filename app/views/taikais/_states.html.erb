@@ -6,7 +6,7 @@
 %>
 <div class="tabs is-toggle is-centered">
   <ul>
-    <% if previous_state %>
+    <% if previous_state && policy(taikai).transition_to? %>
     <li>
       <%= link_to transition_to_taikai_path(taikai, state: previous_state),
                   data: { turbo_method: :post, turbo_confirm: t('confirm_previous_state_html') },
@@ -25,7 +25,7 @@
       </a>
     </li>
     <% end %>
-    <% if next_state %>
+    <% if next_state && policy(taikai).transition_to? %>
     <li>
       <%= link_to transition_to_taikai_path(taikai, state: next_state),
                   data: { turbo_method: :post, turbo_confirm: t('confirm_next_state_html') },

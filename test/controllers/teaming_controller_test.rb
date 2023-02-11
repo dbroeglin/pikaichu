@@ -8,19 +8,19 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jean_bon)
 
     @taikai = taikais(:'2in1_dist_12')
-    @participating_dojo = participating_dojos(:fr_2in1_dist_12)
-    @team_a = teams(:a_fr_2in1_dist_12)
-    @team_b = teams(:b_fr_2in1_dist_12) # empty
+    @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12)
+    @team_a = teams(:a_participating_dojo1_2in1_dist_12)
+    @team_b = teams(:b_participating_dojo1_2in1_dist_12) # empty
 
     # team a:
-    @participant1 = participants(:p1_fr_2in1_dist_12)
-    @participant2 = participants(:p2_fr_2in1_dist_12)
-    @participant3 = participants(:p3_fr_2in1_dist_12)
+    @participant1 = participants(:p1_participating_dojo1_2in1_dist_12)
+    @participant2 = participants(:p2_participating_dojo1_2in1_dist_12)
+    @participant3 = participants(:p3_participating_dojo1_2in1_dist_12)
 
     # non assigned
-    @participant4 = participants(:p4_fr_2in1_dist_12)
-    @participant5 = participants(:p5_fr_2in1_dist_12)
-    @participant6 = participants(:p6_fr_2in1_dist_12)
+    @participant4 = participants(:p4_participating_dojo1_2in1_dist_12)
+    @participant5 = participants(:p5_participating_dojo1_2in1_dist_12)
+    @participant6 = participants(:p6_participating_dojo1_2in1_dist_12)
   end
 
   test "add participant in empty team" do

@@ -63,15 +63,27 @@ class Score < ApplicationRecord
       raise UnableToFindUndefinedResultsError
     end
 
+    results.reload # TODO: better perf?
     result
   end
 
-  def recalculate_score
+  def recalculate_individual_score
     results.reload # TODO: improve performance
     hit_results = results.select(&:status_hit?)
 
     self.hits =  hit_results.size
     self.value = hit_results.map(&:value).compact.sum
+
+    save
+    participant.team.scores.find_by(match_id: match_id).recalculate_team_score if participant.team
+  end
+
+  def recalculate_team_score
+    scores = team.participants.reload.map {|participant| participant.scores.find_by(match_id: match_id) }.flatten
+    self.hits = scores.map(&:hits).sum
+    self.value = scores.map(&:value).sum
+
+    save
   end
 
   def previous_round_finalized?(result)
@@ -99,7 +111,7 @@ class Score < ApplicationRecord
   end
 
   def finalized?
-    results.all?(&:final?)
+    results.any? && results.all?(&:final?)
   end
 
   def create_results(num_rounds, num_arrows)
@@ -108,7 +120,6 @@ class Score < ApplicationRecord
       (1..num_rounds).map do |round_index|
         (1..num_arrows).map do |index|
           {
-            participant_id: participant.id,
             match_id: match_id,
             score_id: id,
             round: round_index,

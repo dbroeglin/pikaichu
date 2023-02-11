@@ -3,7 +3,7 @@
     [12, 20].each do |total_num_arrows|
 %>
 individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: individual-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  shortname: individual<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
   name: Individual <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
   start_date: <%= 5.days.from_now %>
   end_date: <%= 6.days.from_now %>
@@ -14,7 +14,7 @@ individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
   form: individual
 
 team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: team-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  shortname: team<%= distributed ? '-dist-' : '' %>-<%= total_num_arrows %>
   name: Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
   start_date: <%= 10.days.from_now %>
   end_date: <%= 12.days.from_now %>
@@ -25,7 +25,7 @@ team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
   form: team
 
 2in1<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: 2in1-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
+  shortname: 2in1<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
   name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
@@ -35,19 +35,32 @@ team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
   distributed: <%= distributed %>
   form: 2in1
 
-matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: matches-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>
-  name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
+individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
+  shortname: individual<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
+  name: "Individual <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
   num_targets: 6
   total_num_arrows: <%= total_num_arrows %>
   tachi_size: 3
   distributed: <%= distributed %>
-  form: matches
+  form: 2in1
+  scoring: enteki
+
+team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
+  shortname: team<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
+  name: "Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
+  start_date: <%= 16.days.from_now %>
+  end_date: <%= 18.days.from_now %>
+  num_targets: 6
+  total_num_arrows: <%= total_num_arrows %>
+  tachi_size: 3
+  distributed: <%= distributed %>
+  form: 2in1
+  scoring: enteki
 
 2in1<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: 2in1-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>-enteki
+  shortname: 2in1<%= distributed ? 'dist' : '' %>-<%= total_num_arrows %>-enteki
   name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>
@@ -58,8 +71,29 @@ matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
   form: 2in1
   scoring: enteki
 
-matches<%= distributed ? '_dist_' : '' %><%= total_num_arrows %>_enteki:
-  shortname: matches-<%= distributed ? 'dist-' : '' %><%= total_num_arrows %>-enteki
+<%
+    end
+  end
+%>
+
+<%
+  [true, false].each do |distributed|
+    [4].each do |total_num_arrows|
+%>
+
+matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
+  shortname: matches<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
+  name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
+  start_date: <%= 16.days.from_now %>
+  end_date: <%= 18.days.from_now %>
+  num_targets: 6
+  total_num_arrows: <%= total_num_arrows %>
+  tachi_size: 3
+  distributed: <%= distributed %>
+  form: matches
+
+matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
+  shortname: matches<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
   name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>

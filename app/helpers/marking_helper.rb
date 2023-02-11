@@ -23,7 +23,7 @@ module MarkingHelper
   end
 
   def display_participant_score(participant, final, match_id)
-    score = participant.score(final, match_id)
+    score = participant.score(match_id)
     display_score score, participant.taikai.scoring_enteki?
   end
 

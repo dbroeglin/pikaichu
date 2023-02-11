@@ -9,7 +9,7 @@ class MarkingTest < ApplicationSystemTestCase
   end
 
   Taikai.all.each do |taikai|
-    test "visiting '#{taikai.shortname}' marking sheet" do
+    test "visiting #{taikai.shortname} marking sheet" do
       taikai.transition_to! :registration
       taikai.transition_to! :marking
       go_to_taikais

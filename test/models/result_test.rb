@@ -11,27 +11,27 @@ class ResultTest < ActiveSupport::TestCase
   end
 
   test "value can be empty for kinteki" do
-    result = Result.new(participant: @kinteki_participant, score: @kinteki_score)
+    result = Result.new(score: @kinteki_score)
 
     assert result.valid?, 'should validate'
   end
 
   test "value cannot be empty for enteki" do
-    result = Result.new(participant: @enteki_participant, score: @enteki_score)
+    result = Result.new(score: @enteki_score)
 
     assert result.invalid?, 'should not validate'
     assert result.errors.added? :value, :blank
   end
 
   test "marked must be true when value is set for enteki" do
-    result = Result.new(participant: @enteki_participant, score: @enteki_score, value: 0)
+    result = Result.new(score: @enteki_score, value: 0)
 
     assert result.valid?, 'should validate'
   end
 
   Result::ENTEKI_VALUES.each do |value|
     test "#{value} is valid enteki value" do
-      result = Result.new(participant: @enteki_participant, score: @enteki_score, value: value)
+      result = Result.new(score: @enteki_score, value: value)
 
       assert value.zero? && result.status_miss? || !value.zero? && result.status_hit?
       assert result.valid?, 'should validate'
@@ -40,7 +40,7 @@ class ResultTest < ActiveSupport::TestCase
 
   ((0..10).to_a - Result::ENTEKI_VALUES).each do |value|
     test "#{value} is not a valid enteki value" do
-      result = Result.new(participant: @enteki_participant, score: @enteki_score, value: value)
+      result = Result.new(score: @enteki_score, value: value)
 
       assert result.invalid?, 'should not validate'
       assert result.errors.added? :value, :inclusion, value: value

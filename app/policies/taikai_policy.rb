@@ -19,7 +19,7 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def destroy?
-    update?
+    admin?
   end
 
   def edit?

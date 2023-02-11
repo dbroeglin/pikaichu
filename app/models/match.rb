@@ -6,12 +6,17 @@ class Match < ApplicationRecord
   belongs_to :team2, class_name: "Team", optional: true
   has_many :results
 
-  def score1(final = false)
-    team1&.score final, id
+  def team(index)
+    raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
+    if index == 1
+      return team1
+    else
+      return team2
+    end
   end
 
-  def score2(final = false)
-    team2&.score final, id
+  def score(index)
+    team(index)&.scores&.find_by(match_id: id)
   end
 
   def is_winner?(index)
@@ -32,6 +37,22 @@ class Match < ApplicationRecord
     else
       [team2, team1]
     end
+  end
+
+
+  after_create do
+    initialize_team(1)
+    initialize_team(2)
+  end
+
+  before_update do
+    team1_change = changes[:team1_id]
+    team2_change = changes[:team2_id]
+
+    clean_team(team1_change.first) if team1_change && team1_change.first
+    clean_team(team2_change.first) if team2_change && team2_change.first
+    initialize_team(1) if team1_change && team1_change.second
+    initialize_team(2) if team2_change && team2_change.second
   end
 
   def select_winner(winner)
@@ -61,35 +82,38 @@ class Match < ApplicationRecord
     end
   end
 
-  def assign_team1(team)
-    if self.team1
-      self.team1.participants.each do |participant|
-        participant.results.where(match_id: id).destroy_all
-      end
-    end
-    self.team1 = team
-    self.team1.participants.each do |participant|
-      participant.create_empty_score_and_results id
-    end
-
-    self
-  end
-
-  def assign_team2(team)
-    if self.team2
-      self.team2.participants.each do |participant|
-        participant.results.where(match_id: id).destroy_all
-      end
-    end
-    self.team2 = team
-    team2.participants.each do |participant|
-      participant.create_empty_score_and_results id
-    end
-
-    self
-  end
-
   def defined_results?
     results.where('status IS NOT NULL').any?
+  end
+
+  def to_ascii
+    [
+    "Match #{level}.#{index} (#{team1.shortname} vs #{team2.shortname})",
+    "  Team1 #{team1.shortname}: #{team1.score(id).to_ascii}",
+    team1.participants.map { |participant| "    #{participant.to_ascii(id)}" },
+    "  Team2 #{team2.shortname}: #{team2.score(id).to_ascii}",
+    team2.participants.map { |participant| "    #{participant.to_ascii(id)}" },
+    ].flatten.join("\n")
+  end
+
+  private
+
+  def clean_team(team_id)
+    team = Team.find(team_id)
+    score = team.scores.find_by(match_id: id)
+    raise "Cannot change team if results have been finalized" if score.finalized?
+    team.scores.find_by(match_id: id).destroy!
+    team.participants.each do |participant|
+      participant.scores.find_by(match_id: id).destroy!
+    end
+  end
+
+  def initialize_team(index)
+    t = team(index)
+    t.create_empty_score match_id: id
+    t.participants.each do |participant|
+      participant.create_empty_score_and_results id
+    end
+    t.save!
   end
 end
