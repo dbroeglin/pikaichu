@@ -26,12 +26,16 @@ class MatchTest < ActiveSupport::TestCase
     @team2.participants.last.add_result(@match.id, :hit, 5)
 
     assert_not_nil @match.score(1)
-    assert_equal 2, @match.score(1).hits
-    assert_equal 13, @match.score(1).value
+    assert_equal 0, @match.score(1).hits
+    assert_equal 2, @match.score(1).intermediate_hits
+    assert_equal 0, @match.score(1).value
+    assert_equal 13, @match.score(1).intermediate_value
 
     assert_not_nil @match.score(2)
-    assert_equal 1, @match.score(2).hits
-    assert_equal 5, @match.score(2).value
+    assert_equal 0, @match.score(2).hits
+    assert_equal 0, @match.score(2).value
+    assert_equal 1, @match.score(2).intermediate_hits
+    assert_equal 5, @match.score(2).intermediate_value
   end
 
   test "team create" do

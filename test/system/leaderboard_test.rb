@@ -9,7 +9,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   Taikai.all.each do |taikai|
-    test "visiting '#{taikai.shortname}' leaderboard" do
+    test "visiting #{taikai.shortname} leaderboard" do
       taikai.transition_to! :registration
       taikai.transition_to! :marking
       go_to_taikais
@@ -26,7 +26,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   Taikai.where("form <> 'matches'").each do |taikai|
-    test "visiting '#{taikai.shortname}' public leaderboard" do
+    test "visiting #{taikai.shortname} public leaderboard" do
       taikai.transition_to! :registration
       taikai.transition_to! :marking
       go_to_taikais
@@ -47,7 +47,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   Taikai.where("form = 'matches'").each do |taikai|
-    test "visiting '#{taikai.shortname}' public leaderboard" do
+    test "visiting #{taikai.shortname} public leaderboard" do
       skip "Public leaderboard for matches not implemented yet"
     end
   end

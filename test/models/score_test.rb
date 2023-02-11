@@ -9,10 +9,10 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "comparison" do
-    assert_equal(0,  Score.new(hits: 0, value: 0)  <=> Score.new(hits: 0, value: 0))
-    assert_equal(-1, Score.new(hits: 0, value: 0)  <=> Score.new(hits: 1, value: 3))
-    assert_equal(1,  Score.new(hits: 1, value: 3)  <=> Score.new(hits: 0, value: 0))
-    assert_equal(-1, Score.new(hits: 1, value: 10) <=> Score.new(hits: 2, value: 10))
+    assert_equal(0,  Score::ScoreValue.new(hits: 0, value: 0)  <=> Score::ScoreValue.new(hits: 0, value: 0))
+    assert_equal(-1, Score::ScoreValue.new(hits: 0, value: 0)  <=> Score::ScoreValue.new(hits: 1, value: 3))
+    assert_equal(1,  Score::ScoreValue.new(hits: 1, value: 3)  <=> Score::ScoreValue.new(hits: 0, value: 0))
+    assert_equal(-1, Score::ScoreValue.new(hits: 1, value: 10) <=> Score::ScoreValue.new(hits: 2, value: 10))
   end
 
   test "marking?" do
@@ -70,18 +70,22 @@ class ScoreTest < ActiveSupport::TestCase
   test "update works for 2.1 if 1.x are finalized" do
     @score.results.round(1).each { |result| result.update!(status: 'hit', final: true) }
     assert_equal 4, @score.hits
+    assert_equal 4, @score.intermediate_hits
 
     result = @score.add_result :hit
-    assert_equal 5, @score.hits
+    assert_equal 4, @score.hits
+    assert_equal 5, @score.intermediate_hits
   end
 
   test "update fails for 2.1 if 1.x are not finalized" do
     @score.results.round(1).each { |result| result.update!(status: 'hit', final: false) }
-    assert_equal 4, @score.hits
+    assert_equal 0, @score.hits
+    assert_equal 4, @score.intermediate_hits
 
     assert_raises Score::PreviousRoundNotValidatedError do
       @score.add_result :hit
     end
-    assert_equal 4, @score.hits
+    assert_equal 0, @score.hits
+    assert_equal 4, @score.intermediate_hits
   end
 end

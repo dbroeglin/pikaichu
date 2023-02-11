@@ -14,6 +14,7 @@ class Score < ApplicationRecord
 
   class UnableToFindUndefinedResultsError < StandardError; end
 
+  # ScoreValue is used for grouping and comparison of scores (validated or not)
   class ScoreValue
     attr_reader :hits, :value
 
@@ -29,6 +30,15 @@ class Score < ApplicationRecord
 
     def hash
       (hits + 100 * (value || 0)).hash
+    end
+
+    def <=>(other)
+      return false if other.nil?
+
+      result = value <=> other.value
+      return result if result != 0
+
+      hits <=> other.hits
     end
 
     def to_s
@@ -69,10 +79,13 @@ class Score < ApplicationRecord
 
   def recalculate_individual_score
     results.reload # TODO: improve performance
-    hit_results = results.select(&:status_hit?)
+    intermediate_hit_results = results.select(&:status_hit?)
+    hit_results = intermediate_hit_results.select(&:final?)
 
     self.hits =  hit_results.size
     self.value = hit_results.map(&:value).compact.sum
+    self.intermediate_hits =  intermediate_hit_results.size
+    self.intermediate_value = intermediate_hit_results.map(&:value).compact.sum
 
     save
     participant.team.scores.find_by(match_id: match_id).recalculate_team_score if participant.team
@@ -82,6 +95,8 @@ class Score < ApplicationRecord
     scores = team.participants.reload.map {|participant| participant.scores.find_by(match_id: match_id) }.flatten
     self.hits = scores.map(&:hits).sum
     self.value = scores.map(&:value).sum
+    self.intermediate_hits = scores.map(&:intermediate_hits).sum
+    self.intermediate_value = scores.map(&:intermediate_value).sum
 
     save
   end
@@ -95,8 +110,12 @@ class Score < ApplicationRecord
     end
   end
 
-  def score_value
-    ScoreValue::new(hits: hits, value: value)
+  def score_value(validated = true)
+    if validated
+      ScoreValue::new(hits: hits, value: value)
+    else
+      ScoreValue::new(hits: intermediate_hits, value: intermediate_value)
+    end
   end
 
   def marking?
@@ -130,15 +149,6 @@ class Score < ApplicationRecord
         end
       end.flatten
     results.insert_all hashes
-  end
-
-  def <=>(other)
-    return false if other.nil?
-
-    result = value <=> other.value
-    return result if result != 0
-
-    hits <=> other.hits
   end
 
   def to_s

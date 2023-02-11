@@ -112,6 +112,9 @@ class Taikai < ApplicationRecord
       # TODO: implement for matches
       raise "Score creation is not implemented for matches"
     else
+      teams.each do |team|
+        team.create_empty_score
+      end
       participants.each do |participant|
         participant.create_empty_score_and_results
       end
