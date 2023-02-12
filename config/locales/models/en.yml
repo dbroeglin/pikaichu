@@ -15,7 +15,7 @@ en:
         match:
           attributes:
             winner:
-              defined_results_for_target: cannot be declared when target match already has results
+              defined_results_for_target_match: cannot be declared when target match already has results
         participant:
           attributes:
             index_in_team:

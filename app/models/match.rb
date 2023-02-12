@@ -64,7 +64,7 @@ class Match < ApplicationRecord
       if level > 1
         match = Match.find_by(taikai_id: taikai_id, level: level - 1, index: ((index - 1) / 2) + 1)
         if match.defined_results?
-          self.errors.add(:winner, :defined_results_for_target)
+          self.errors.add(:winner, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
         eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner})").save!
@@ -74,7 +74,7 @@ class Match < ApplicationRecord
         match = Match.find_by(taikai_id: taikai_id, level: 1, index: 2)
 
         if match.defined_results?
-          self.errors.add(:base, :defined_results_for_target)
+          self.errors.add(:base, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
         eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner == 1 ? 2 : 1})").save!
@@ -89,19 +89,21 @@ class Match < ApplicationRecord
   def to_ascii
     [
     "Match #{level}.#{index} (#{team1.shortname} vs #{team2.shortname})",
-    "  Team1 #{team1.shortname}: #{team1.score(id).to_ascii}",
-    team1.participants.map { |participant| "    #{participant.to_ascii(id)}" },
-    "  Team2 #{team2.shortname}: #{team2.score(id).to_ascii}",
-    team2.participants.map { |participant| "    #{participant.to_ascii(id)}" },
-    ].flatten.join("\n")
+    team1&.to_ascii(id).prepend("  "),
+    team2&.to_ascii(id).prepend("  "),
+    ].flatten.compact.join("\n")
   end
 
   private
 
   def clean_team(team_id)
     team = Team.find(team_id)
-    score = team.scores.find_by(match_id: id)
-    raise "Cannot change team if results have been finalized" if score.finalized?
+    score = team.score(id)
+    if score.finalized?
+      logger.error "Cannot clean team #{team_id} because score is finalized"
+      errors.add(:base, :cant_change_teams_if_results_exist)
+      throw :abort
+    end
     team.scores.find_by(match_id: id).destroy!
     team.participants.each do |participant|
       participant.scores.find_by(match_id: id).destroy!

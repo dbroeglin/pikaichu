@@ -34,6 +34,14 @@ class Team < ApplicationRecord
     scores.find_by(match_id: match_id)
   end
 
+
+  def to_ascii(match_id = nil)
+    [
+    "#{shortname}: #{score(match_id)&.to_ascii}",
+    participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
+    ].flatten.join("\n")
+  end
+
   # TODO
   def old_score(final = true, match_id = nil)
     scope = self.results

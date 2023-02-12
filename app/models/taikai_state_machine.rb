@@ -24,11 +24,11 @@ class TaikaiStateMachine
   end
 
   before_transition(from: :registration, to: :marking) do |taikai, transition|
-    taikai.create_scores unless taikai.form_matches?
+    taikai.create_scores unless taikai.form_matches? if taikai.id > 74
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, transition|
-    taikai.delete_scores unless taikai.form_matches?
+    taikai.delete_scores unless taikai.form_matches? if taikai id > 74
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, transition|

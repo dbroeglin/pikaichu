@@ -19,7 +19,6 @@ class ScoreTest < ActiveSupport::TestCase
     assert_not(Score.new(hits: 0, value: 0).marking?)
   end
 
-
   test "first_empty is first" do
     result = @score.results.first_empty
 
@@ -59,6 +58,17 @@ class ScoreTest < ActiveSupport::TestCase
     assert_not @score.previous_round_finalized?(result)
   end
 
+  test "finalized?" do
+    @score.results.update_all(status: 'miss')
+    @score.results.reload
+    assert_not @score.finalized?
+
+    @score.results.update_all(final: true)
+    @score.results.reload
+    assert @score.finalized?
+  end
+
+
   test "previous_round_finalized? is true for 2.1 if 1.x are finalized" do
     @score.results.round(1).update_all(status: 'miss', final: true)
     @score.results.reload
@@ -69,23 +79,19 @@ class ScoreTest < ActiveSupport::TestCase
 
   test "update works for 2.1 if 1.x are finalized" do
     @score.results.round(1).each { |result| result.update!(status: 'hit', final: true) }
-    assert_equal 4, @score.hits
-    assert_equal 4, @score.intermediate_hits
+    assert_score 0, 4, 0, 4, @score
 
     result = @score.add_result :hit
-    assert_equal 4, @score.hits
-    assert_equal 5, @score.intermediate_hits
+    assert_score 0, 4, 0, 5, @score
   end
 
   test "update fails for 2.1 if 1.x are not finalized" do
     @score.results.round(1).each { |result| result.update!(status: 'hit', final: false) }
-    assert_equal 0, @score.hits
-    assert_equal 4, @score.intermediate_hits
+    assert_score 0, 0, 0, 4, @score
 
     assert_raises Score::PreviousRoundNotValidatedError do
       @score.add_result :hit
     end
-    assert_equal 0, @score.hits
-    assert_equal 4, @score.intermediate_hits
+    assert_score 0, 0, 0, 4, @score
   end
 end

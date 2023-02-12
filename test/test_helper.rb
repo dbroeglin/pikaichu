@@ -46,3 +46,10 @@ module ActionDispatch
     include Devise::Test::IntegrationHelpers
   end
 end
+
+def assert_score(expected_value, expected_hits, expected_intermediate_value, expected_intermediate_hits, actual_score)
+  assert_equal expected_value, actual_score.value
+  assert_equal expected_hits, actual_score.hits
+  assert_equal expected_intermediate_value, actual_score.intermediate_value
+  assert_equal expected_intermediate_hits, actual_score.intermediate_hits
+end

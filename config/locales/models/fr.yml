@@ -108,8 +108,10 @@ fr:
       models:
         match:
           attributes:
+            base:
+              cant_change_teams_if_results_exist: Impossible de changer les équipes après avoir défini des résultats
             winner:
-              defined_results_for_target: ne peut être déclarer quand les matchs cible sont ont déjà des résultats
+              defined_results_for_target_match: ne peut être déclaré quand les matchs cible ont déjà des résultats
         participant:
           attributes:
             index_in_team:

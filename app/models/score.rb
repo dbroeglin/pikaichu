@@ -88,11 +88,13 @@ class Score < ApplicationRecord
     self.intermediate_value = intermediate_hit_results.map(&:value).compact.sum
 
     save
-    participant.team.scores.find_by(match_id: match_id).recalculate_team_score if participant.team
+    participant.team.score(match_id).recalculate_team_score if participant.team
   end
 
   def recalculate_team_score
-    scores = team.participants.reload.map {|participant| participant.scores.find_by(match_id: match_id) }.flatten
+    scores = team.participants.reload.map do |participant|
+      participant.score(match_id)
+    end.flatten
     self.hits = scores.map(&:hits).sum
     self.value = scores.map(&:value).sum
     self.intermediate_hits = scores.map(&:intermediate_hits).sum
@@ -130,7 +132,11 @@ class Score < ApplicationRecord
   end
 
   def finalized?
-    results.any? && results.all?(&:final?)
+    if team_id
+      team.participants.all? { |participant| participant.score(match_id).finalized? }
+    else
+      results.any? && results.all?(&:final?)
+    end
   end
 
   def create_results(num_rounds, num_arrows)
@@ -153,6 +159,10 @@ class Score < ApplicationRecord
 
   def to_s
     "#{value} / #{hits}"
+  end
+
+  def to_ascii
+    "#{value}/#{hits}|#{intermediate_value}/#{intermediate_hits}"
   end
 
   private

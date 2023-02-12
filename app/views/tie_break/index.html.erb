@@ -29,7 +29,7 @@
           <% if index.zero? %>
             <th class="has-text-centered" rowspan="<%= rankables.size %>"><%= rankable.intermediate_rank %></th>
           <% end %>
-          <td class="has-text-left"><%= rankable.display_name %></td>
+          <td class="has-text-left"><%= rankable.display_name %><%= (rankable.mixed ? "*": "") if defined? rankable.mixed %></td>
           <th class="has-text-centered">
             <% if rankables.size > 1 %>
               <%= bulma_form_for rankable, url: taikai_tie_break_path(@taikai, rankable), html: { method: :patch } do |f| %>

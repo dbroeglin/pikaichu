@@ -80,10 +80,9 @@ class MarkingController < ApplicationController
   def finalize
     @taikai = Taikai.find(params[:id])
     @participant = @taikai.participants.find(params[:participant_id])
-    @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]
     @match = Match.find_by(id: params[:match_id])
 
-    @results.update_all(final: true)
+    @participant.finalize_round(params[:round], params[:match_id])
     respond_to do |format|
       format.turbo_stream do
         @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]

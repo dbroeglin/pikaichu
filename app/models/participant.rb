@@ -27,11 +27,16 @@ class Participant < ApplicationRecord
   end
 
   def add_result(match_id, status, value)
-    scores.find_by(match_id: match_id).add_result(status, value)
+    score(match_id).add_result(status, value)
   end
 
   def score(match_id = nil)
     scores.find_by(match_id: match_id)
+  end
+
+  def finalize_round(round, match_id)
+    @results = score(match_id).results.round round
+    @results.update_all(final: true)
   end
 
   def old_score(final = true, match_id = nil)
@@ -77,6 +82,6 @@ class Participant < ApplicationRecord
 
   def to_ascii(match_id = nil)
     s = score(match_id)
-    "#{display_name.rjust(20)}: #{s.to_ascii} | #{s.results.map(&:to_ascii).join ','} |"
+    "#{display_name.rjust(20)}: #{s&.to_ascii} | #{s&.results&.map(&:to_ascii)&.join ','} |"
   end
 end
