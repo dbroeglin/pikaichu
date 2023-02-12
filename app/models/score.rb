@@ -1,7 +1,6 @@
 class Score < ApplicationRecord
   # TODO: after migration
   # audited
-  include Comparable
 
   class PreviousRoundNotValidatedError < StandardError
     attr_reader :previous_round
@@ -17,6 +16,7 @@ class Score < ApplicationRecord
   # ScoreValue is used for grouping and comparison of scores (validated or not)
   class ScoreValue
     attr_reader :hits, :value
+    include Comparable
 
     def initialize(hits:, value: nil)
       @hits, @value = hits, value
@@ -33,7 +33,7 @@ class Score < ApplicationRecord
     end
 
     def <=>(other)
-      return false if other.nil?
+      return 1 if other.nil?
 
       result = value <=> other.value
       return result if result != 0
@@ -48,6 +48,8 @@ class Score < ApplicationRecord
 
   belongs_to :team, optional: true
   belongs_to :participant, optional: true
+  belongs_to :match, optional: true
+
   has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :score, dependent: :destroy do
     def round(index)
       where(round: index)
@@ -80,14 +82,14 @@ class Score < ApplicationRecord
   def recalculate_individual_score
     results.reload # TODO: improve performance
     intermediate_hit_results = results.select(&:status_hit?)
-    hit_results = intermediate_hit_results.select(&:final?)
+    hit_results              = intermediate_hit_results.select(&:final?)
 
-    self.hits =  hit_results.size
-    self.value = hit_results.map(&:value).compact.sum
-    self.intermediate_hits =  intermediate_hit_results.size
+    self.hits               = hit_results.size
+    self.value              = hit_results.map(&:value).compact.sum
+    self.intermediate_hits  = intermediate_hit_results.size
     self.intermediate_value = intermediate_hit_results.map(&:value).compact.sum
 
-    save
+    save!
     participant.team.score(match_id).recalculate_team_score if participant.team
   end
 
@@ -100,7 +102,7 @@ class Score < ApplicationRecord
     self.intermediate_hits = scores.map(&:intermediate_hits).sum
     self.intermediate_value = scores.map(&:intermediate_value).sum
 
-    save
+    save!
   end
 
   def previous_round_finalized?(result)

@@ -15,6 +15,15 @@ class Match < ApplicationRecord
     end
   end
 
+  def set_team(index, team)
+    raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
+    if index == 1
+      self.team1 = team
+    else
+      self.team2 = team
+    end
+  end
+
   def score(index)
     team(index)&.scores&.find_by(match_id: id)
   end
@@ -31,6 +40,10 @@ class Match < ApplicationRecord
     !results.where(final: false).any?
   end
 
+  def decided?
+    !winner.nil?
+  end
+
   def ordered_teams
     if is_winner? 1
       [team1, team2]
@@ -39,10 +52,9 @@ class Match < ApplicationRecord
     end
   end
 
-
   after_create do
-    initialize_team(1)
-    initialize_team(2)
+    initialize_team(1) if team(1)
+    initialize_team(2) if team(2)
   end
 
   before_update do
@@ -56,7 +68,6 @@ class Match < ApplicationRecord
   end
 
   def select_winner(winner)
-    # TODO handle "small" final
     raise "Winner can be only 1 or 2" if winner < 1 || 2 < winner
     self.winner = winner
     ActiveRecord::Base.transaction do
@@ -67,7 +78,8 @@ class Match < ApplicationRecord
           self.errors.add(:winner, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
-        eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner})").save!
+        match.set_team(index % 2 == 0 ? 2 : 1, team(winner))
+        match.save!
       end
       if level == 2
         # third place play-off
@@ -77,7 +89,8 @@ class Match < ApplicationRecord
           self.errors.add(:base, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
-        eval("match.assign_team#{index % 2 == 0 ? 2 : 1}(team#{winner == 1 ? 2 : 1})").save!
+        match.set_team(index % 2 == 0 ? 2 : 1, team(winner == 1 ? 2 : 1))
+        match.save!
       end
     end
   end
@@ -88,9 +101,10 @@ class Match < ApplicationRecord
 
   def to_ascii
     [
-    "Match #{level}.#{index} (#{team1.shortname} vs #{team2.shortname})",
-    team1&.to_ascii(id).prepend("  "),
-    team2&.to_ascii(id).prepend("  "),
+    "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname})",
+    (("  Winner: #{winner} - #{team(winner)&.shortname}") if winner),
+    (team1&.to_ascii(id) || "").prepend("  "),
+    (team2&.to_ascii(id) || "").prepend("  "),
     ].flatten.compact.join("\n")
   end
 

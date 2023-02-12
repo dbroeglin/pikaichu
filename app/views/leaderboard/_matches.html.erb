@@ -26,6 +26,7 @@
   <% end %>
 </div>
 
+<% if @matches[1][0] && @matches[1][0].decided? && @matches[1][1]&& @matches[1][1].decided? %>
 <table class="table is-narrow is-bordered is-striped has-text-centered">
   <thead>
     <tr>
@@ -54,10 +55,10 @@
             <td rowspan="<%= team.participants.size %>" class="has-text-left"><%= team.participating_dojo.display_name %> - <%= team.shortname %></td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
-          <% participant.results.joins(:match).where("matches.level": 1).each do |result| %>
+          <% participant.scores.joins(:match).where("matches.level": 1).first.results.each do |result| %>
             <td><%= icon_from(result, final) %></td>
           <% end %>
-          <td><%= display_score participant.score(final, match.id), false %></td>
+          <td><%= display_score participant.score(match.id).score_value(final), false %></td>
           <% if participant_index == 0 %>
             <th rowspan="<%= team.participants.size %>"><%= display_score score, false %></th>
           <% end %>
@@ -66,3 +67,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>

@@ -36,7 +36,7 @@ class MatchesController < ApplicationController
   def select_winner
     @match = @taikai.matches.find(params[:id])
 
-    @match.select_winner(@match.score(1) > @match.score(2) ? 1 : 2)
+    @match.select_winner(@match.score(1).score_value > @match.score(2).score_value ? 1 : 2)
 
     redirect_to action: 'index', status: :see_other
   end

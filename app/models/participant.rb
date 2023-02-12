@@ -35,21 +35,10 @@ class Participant < ApplicationRecord
   end
 
   def finalize_round(round, match_id)
-    @results = score(match_id).results.round round
+    score = score(match_id)
+    @results = score.results.round(round)
     @results.update_all(final: true)
-  end
-
-  def old_score(final = true, match_id = nil)
-    score = scores.find_by(match_id: match_id)
-    return Score.new(hits: 0, value: 0) if score.nil?
-
-    scope = score.results
-    if final
-      results = scope.select { |r| r.final? && r.status_hit? }
-    else
-      results = scope.select(&:status_hit?)
-    end
-    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
+    score.recalculate_individual_score
   end
 
   def marking?(match_id = nil)
@@ -71,7 +60,7 @@ class Participant < ApplicationRecord
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
 
-    score = scores.create(participant_id: id, match_id: match_id)
+    score = scores.create!(participant_id: id, match_id: match_id)
     score.create_results taikai.num_rounds, taikai.num_arrows
     scores.reload
   end

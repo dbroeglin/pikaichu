@@ -12,9 +12,63 @@ class MatchTest < ActiveSupport::TestCase
       taikai_id: @taikai.id,
       team1_id: @team1.id,
       team2_id: @team2.id,
+      level: 2,
+      index: 1)
+    @target_match1 = Match.create(
+      taikai_id: @taikai.id,
       level: 1,
       index: 1)
+    @target_match2 = Match.create(
+      taikai_id: @taikai.id,
+      level: 1,
+      index: 2)
+    end
+
+  test "select winner in quarter finals" do
+    generate_results
+    finalize_results
+
+    @match.select_winner 1
+    @target_match1.reload
+    @target_match2.reload
+
+    # puts @match.to_ascii
+    # puts @target_match1.to_ascii
+    # puts @target_match2.to_ascii
+
+    assert_equal @team1, @target_match1.team1
+    assert_score 0, 0, 0, 0, @target_match1.score(1)
+    assert_nil @target_match1.score(2)
+
+    assert_equal @team2, @target_match2.team1
+    assert_score 0, 0, 0, 0, @target_match2.score(1)
+    assert_nil @target_match2.score(2)
   end
+
+  test "finalize" do
+    assert_score 0, 0, 0, 0, @match.score(1)
+    assert_score 0, 0, 0, 0, @match.score(2)
+
+    generate_results
+
+    assert_score 0, 0, 36, 12, @match.score(1)
+    assert_score 0, 0, 36, 12, @match.score(2)
+
+    @match.team1.participants.each do |participant|
+      participant.finalize_round 1, @match.id
+    end
+
+    assert_score 36, 12, 36, 12, @match.score(1)
+    assert_score 0, 0, 36, 12, @match.score(2)
+
+    @match.team2.participants.each do |participant|
+      participant.finalize_round 1, @match.id
+    end
+
+    assert_score 36, 12, 36, 12, @match.score(1)
+    assert_score 36, 12, 36, 12, @match.score(2)
+  end
+
 
   test "marking" do
     assert_equal 0, @match.score(1).hits
@@ -104,4 +158,18 @@ class MatchTest < ActiveSupport::TestCase
     end
   end
 
+
+  def finalize_results
+
+  end
+
+  def generate_results
+    @match.team1.participants.each do |participant|
+      4.times { participant.add_result(@match.id, :hit, 3) }
+    end
+
+    @match.team2.participants.each do |participant|
+      4.times { participant.add_result(@match.id, :hit, 3) }
+    end
+  end
 end

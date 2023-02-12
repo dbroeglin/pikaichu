@@ -230,7 +230,9 @@ class Taikai < ApplicationRecord
           taikai.matches.create!(
             index: index + 1,
             level: 3,
-          ).assign_team1(team1).assign_team2(team2).save!
+            team1: team1,
+            team2: team2
+          ).save!
         end
       taikai.matches.create!(index: 1, level: 2)
       taikai.matches.create!(index: 2, level: 2)
@@ -242,7 +244,9 @@ class Taikai < ApplicationRecord
           taikai.matches.create!(
             index: index + 1,
             level: 2,
-          ).assign_team1(team1).assign_team2(team2).save!
+            team1: team1,
+            team2: team2
+          ).save!
         end
     end
     taikai.matches.create!(index: 1, level: 1)

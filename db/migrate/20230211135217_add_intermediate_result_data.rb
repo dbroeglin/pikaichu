@@ -9,12 +9,16 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
     Taikai.where(form: ['2in1', 'team']).each do |taikai|
       puts "Migration #{taikai.shortname}..."
       taikai.teams.each do |team|
-        team.create_empty_score if team.score.nil?
+        if team.score.nil?
+          puts "  Creating score for team #{team.id} - #{team.shortname}..."
+          score = team.create_empty_score
+          puts "     Created: #{score&.id}"
+        end
       end
     end
 
     Taikai.where(form: ['matches']).each do |taikai|
-      puts "Migration #{taikai.shortname}..."
+      puts "Matches migration #{taikai.shortname}..."
       taikai.matches.each do |match|
         if match.team1 && match.score(1).nil?
           puts "Creating score for team1 (#{match.team1.id}) #{match.team1.shortname}..."
@@ -29,10 +33,17 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
       end
     end
 
+    failed = false
     Participant.all.each do |participant|
-      participant.scores.each do |participant|
-        participant.recalculate_individual_score
+      participant.scores.each do |score|
+        score.recalculate_individual_score
+      rescue
+        failed = true
+        puts "Failed for score  #{score.id} - #{score.participant.participating_dojo.taikai.shortname}"
+        p score
       end
     end
+
+    raise "failed" if failed
   end
 end

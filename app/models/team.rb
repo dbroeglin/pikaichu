@@ -27,8 +27,9 @@ class Team < ApplicationRecord
   end
 
   def create_empty_score(match_id: nil)
-    scores.create(team_id: id, match_id: match_id)
+    scores.create!(team_id: id, match_id: match_id)
   end
+
 
   def score(match_id = nil)
     scores.find_by(match_id: match_id)
@@ -40,19 +41,5 @@ class Team < ApplicationRecord
     "#{shortname}: #{score(match_id)&.to_ascii}",
     participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
     ].flatten.join("\n")
-  end
-
-  # TODO
-  def old_score(final = true, match_id = nil)
-    scope = self.results
-    scope = scope.where(match_id: match_id) if match_id
-    results =
-      if final
-        scope.select { |r| r.final? && r.status_hit? }
-      else
-        scope.select(&:status_hit?)
-      end
-
-    Score.new(hits: results.size, value: results.map(&:value).compact.sum)
   end
 end

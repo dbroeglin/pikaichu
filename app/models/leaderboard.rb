@@ -62,7 +62,7 @@ class Leaderboard
         match.ordered_teams.compact.map { |team| [team, match] }
       end.flatten(1).compact
       .map do |team, match|
-        [team, match, team.score(true, match.id)]
+        [team, match, team.score(match.id).score_value]
       end
     @matches = @taikai.matches
       .group_by(&:level)
