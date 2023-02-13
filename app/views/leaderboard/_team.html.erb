@@ -33,8 +33,7 @@
             </td>
           <% end %>
           <td class="has-text-left"><%= participant.display_name %></td>
-          <%# TODO: make this less brittle, in this scenario, we should have only one score %>
-          <% participant.scores.first.results.each do |result| %>
+          <% participant.score.results.each do |result| %>
           <td><%= icon_from(result, final) %></td>
           <% end %>
           <td><%= display_score participant.score(final), taikai.scoring_enteki? %></td>

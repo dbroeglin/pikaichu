@@ -211,6 +211,7 @@ class Taikai < ApplicationRecord
             kyudojin: participant.kyudojin,
             firstname: participant.firstname,
             lastname: participant.lastname,
+            club: participant.club,
             participating_dojo: new_participating_dojos[team.participating_dojo_id],
           )
         end

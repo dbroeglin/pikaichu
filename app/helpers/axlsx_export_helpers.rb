@@ -197,6 +197,8 @@ module AxlsxExportHelpers
     when '2in1'
       export_individual_results xlsx_package
       export_team_results xlsx_package
+    when 'matches'
+      export_matches_results xlsx_package
     end
   end
 
@@ -252,22 +254,22 @@ module AxlsxExportHelpers
     participants = participating_dojos
       .map(&:participants)
       .flatten
-      .sort_by { |participant| [-participant.score, participant.index || 0]}
+      .sort_by { |participant| [participant.rank, participant.index || 0]}
 
     current_rank = rank = 1
     exaequo_start_line = @current_row + 1
-    previous_score = participants.first&.score
+    previous_rank = participants.first&.rank
     rows = participants.map do |participant|
-      if previous_score != participant.score
-        previous_score = participant.score
-        current_rank = rank
+      if previous_rank != participant.rank
+        previous_rank = participant.rank
+        current_rank = participant.rank
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
         sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
 
         exaequo_start_line = @current_row + 1
       end
-      rank += 1
+      rank = participant.rank
       @current_row += 1
 
       [
@@ -275,7 +277,7 @@ module AxlsxExportHelpers
         participant.index,
         @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
         participant.display_name,
-      ] + (participant.scores.first.results.map do |result| # TODO: make less brittle
+      ] + (participant.score.results.map do |result|
         result_mark(result)
       end + [display_score_axlsx(participant.score, @taikai.scoring_enteki?)])
 
@@ -315,7 +317,6 @@ module AxlsxExportHelpers
     end
   end
 
-
   def export_team_results_table(sheet, participating_dojos = nil)
     row_styles = [@total_cell_style] +
                   [@table_cell_style] * 4 +
@@ -348,11 +349,11 @@ module AxlsxExportHelpers
     teams = participating_dojos
       .map(&:teams)
       .flatten
-      .sort_by { |participant| [-participant.score, participant.index || 0]}
+      .sort_by { |participant| [participant.rank, participant.index || 0]}
 
     current_rank = rank = 1
     team_start_line = exaequo_start_line = @current_row + 1
-    previous_score = teams.first&.score
+    previous_rank = teams.first&.rank
     rows = teams.map do |team|
       next if team.participants.size == 0
       # merge team cells
@@ -365,8 +366,8 @@ module AxlsxExportHelpers
       # logger.info("MERGE D#{team_start_line}:D#{line}")
       team_start_line = line + 1
 
-      if previous_score != team.score
-        previous_score = team.score
+      if previous_rank != team.rank
+        previous_rank = team.rank
         current_rank = rank
 
         sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
@@ -379,7 +380,6 @@ module AxlsxExportHelpers
 
       team.participants.map do |participant|
         @current_row += 1
-
         [
           current_rank,
           team.index,
@@ -387,8 +387,7 @@ module AxlsxExportHelpers
           @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
           participant.display_name,
         ] + (
-          # TODO: make less brittle, should work here as we are not displaying matches
-          participant.scores.first.results.map do |result|
+          participant.score.results.map do |result|
             result_mark(result)
           end + [
             display_score_axlsx(participant.score, @taikai.scoring_enteki?),
@@ -408,4 +407,119 @@ module AxlsxExportHelpers
 
     sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
   end
+
+  def export_matches_results(xlsx_package)
+
+    xlsx_package.workbook.add_worksheet(name: t('.results.title.matches')) do |sheet|
+
+      @current_row = 1
+
+      sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
+
+      export_matches_results_table sheet, @taikai.participating_dojos
+
+      # if @taikai.distributed?
+      #   @taikai.participating_dojos.each do |participating_dojo|
+      #     next if participating_dojo.participants.size == 0 # TODO: maybe still display the dojo but with empty line?
+
+      #     @current_row += 2
+
+      #     sheet.add_row
+
+      #     export_team_results_table sheet, [participating_dojo]
+      #   end
+      # end
+
+      sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+    end
+  end
+
+  def export_matches_results_table(sheet, participating_dojos = nil)
+    row_styles = [@total_cell_style] +
+                  [@table_cell_style] * 4 +
+                  [@result_cell_style] * @taikai.total_num_arrows +
+                  [@total_cell_style, @total_cell_style]
+
+    sheet.add_row [
+      t('.results.rank'),
+      t('.results.index'),
+      t('.results.team'),
+      @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
+      t('.results.display_name'),
+    ] + (
+      (1..(@taikai.num_rounds)).map do |index|
+        [t('.results.round', count: index), '', '', '']
+      end
+    ).flatten + [
+      t('.results.score'),
+      t('.results.team_score'),
+    ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
+              [@vert_header_row_style, @vert_header_row_style], height: 50
+
+    columns = ('F'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
+    @taikai.num_rounds.times do |index|
+      sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
+    end
+    last_column = columns[@taikai.total_num_arrows + 1]
+
+    teams_by_score, matches = Leaderboard::new(taikai_id: @taikai.id, validated: true).compute_matches_leaderboard
+
+    current_rank = rank = 1
+    team_start_line = exaequo_start_line = @current_row + 1
+    previous_rank = teams_by_score&.first&.first.rank
+    rows = teams_by_score.map do |team, match, score|
+      next if team.participants.size == 0
+      # merge team cells
+      line = team_start_line + team.participants.size - 1
+      sheet.merge_cells("B#{team_start_line}:B#{line}")
+      sheet.merge_cells("C#{team_start_line}:C#{line}")
+      sheet.merge_cells("D#{team_start_line}:D#{line}")
+      # logger.info("MERGE B#{team_start_line}:B#{line}")
+      # logger.info("MERGE C#{team_start_line}:C#{line}")
+      # logger.info("MERGE D#{team_start_line}:D#{line}")
+      team_start_line = line + 1
+
+      if previous_rank != team.rank
+        previous_rank = team.rank
+        current_rank = rank
+
+        sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
+        sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+        # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+        # logger.info("MERGE #{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+        exaequo_start_line = @current_row + 1
+      end
+      rank += 1
+
+      team.participants.map do |participant|
+        @current_row += 1
+        [
+          current_rank,
+          team.index,
+          team.shortname,
+          @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
+          participant.display_name,
+        ] + (
+          # TODO: make less brittle, should work here as we are not displaying matches
+          participant.score(match.id).results.map do |result|
+            result_mark(result)
+          end + [
+            display_score_axlsx(participant.score(match.id).score_value, @taikai.scoring_enteki?),
+            display_score_axlsx(participant.team.score(match.id).score_value, @taikai.scoring_enteki?),
+          ]
+        )
+      end
+    end.flatten(1).compact
+    sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
+    sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+    # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
+    # logger.info("MERGE A#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
+
+    rows.each do |row|
+      sheet.add_row row, style: row_styles
+    end
+
+    sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+  end
+
 end

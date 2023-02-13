@@ -163,6 +163,7 @@ fr:
         title:
           individual: Résultats individuels
           team: Résultats en équipes
+          matches: Résultats des matchs
       staff:
         firstname: Prénom
         lastname: Nom
