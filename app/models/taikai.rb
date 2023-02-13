@@ -104,7 +104,10 @@ class Taikai < ApplicationRecord
   end
 
   def finalized?
-    !Result.joins(participant: :participating_dojo).where("participating_dojos.id": participating_dojos.pluck(:id)).where(final: false).any?
+    !Result
+      .joins(score: { participant: :participating_dojo })
+      .where("participating_dojos.id": participating_dojos.pluck(:id))
+      .where(final: false).any?
   end
 
   def create_scores
@@ -138,8 +141,8 @@ class Taikai < ApplicationRecord
     taikai = Taikai.includes(
       {
         participating_dojos: [
-          { teams: { participants: :results } },
-          { participants: [:results, :kyudojin] }
+          { teams: :participants } ,
+          { participants: :kyudojin }
         ]
       },
       staffs: :user
