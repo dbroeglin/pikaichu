@@ -26,7 +26,7 @@
   <% end %>
 </div>
 
-<% if @matches[1][0] && @matches[1][0].decided? && @matches[1][1]&& @matches[1][1].decided? %>
+<% if @matches[1]&.dig(0) && @matches[1]&.dig(0).decided? && @matches[1]&.dig(1) && @matches[1]&.dig(1).decided? %>
 <table class="table is-narrow is-bordered is-striped has-text-centered">
   <thead>
     <tr>
