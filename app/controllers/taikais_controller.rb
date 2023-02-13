@@ -54,9 +54,16 @@ class TaikaisController < ApplicationController
   def destroy
     @taikai = authorize Taikai.find(params[:id])
     ActiveRecord::Base.transaction do
-      # TODO: deal with the graph of dependencies (use nullify?)
+      Result
+        .joins(score: { participant: :participating_dojo })
+        .where("participating_dojos.taikai_id": @taikai.id)
+        .delete_all
       Score
         .joins(participant: :participating_dojo)
+        .where("participating_dojos.taikai_id": @taikai.id)
+        .delete_all
+      Score
+        .joins(team: :participating_dojo)
         .where("participating_dojos.taikai_id": @taikai.id)
         .delete_all
 
