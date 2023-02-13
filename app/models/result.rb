@@ -13,7 +13,7 @@ class Result < ApplicationRecord
   validate :cannot_update_if_finalized, on: :update
 
   after_save do
-    score.recalculate_individual_score if status_hit?
+    score.recalculate_individual_score
   end
 
   enum status: {
