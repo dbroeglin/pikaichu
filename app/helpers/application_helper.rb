@@ -44,6 +44,9 @@ module ApplicationHelper
         collection = @object.class.send(method.to_s.pluralize).map do |key, _|
           [key, @object.class.human_enum_value(method, key)]
         end
+        value_method = options[:value_method] || :first
+        text_method = options[:text_method] || :last
+
         safe_join [
           label(method, options[:label]),
           (
@@ -51,8 +54,8 @@ module ApplicationHelper
               collection_select(
                 method,
                 collection,
-                :first,
-                :last,
+                value_method,
+                text_method,
                 options,
                 merge_input_options(
                   {
@@ -197,6 +200,7 @@ module ApplicationHelper
     end
 
     # Computes the type of input we will use to edit the object
+    # based on the field type or :as options
     def input_type_for_object_type(object_type, options)
       input_type =
         case object_type

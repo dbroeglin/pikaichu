@@ -1,0 +1,63 @@
+<div class="container">
+  <p class="mb-3">
+    <%= link_to t('.back'), taikai_rectification_index_path(@taikai), class: "button is-light mr-5" %>
+  </p>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title"><%= t '.title' %></p>
+    </header>
+    <div class="card-content">
+      <%= bulma_form_with model: @result, url: taikai_rectification_path(@taikai, @result) do |f| %>
+        <% if @result.errors.any? %>
+          <div class="notification is-danger">
+            <h2><%= t 'errors.template.header', model: @result.class.model_name.human.downcase, count: @result.errors.size %></h2>
+            <% if @result.errors[:base].present? %>
+              <p class="notification is-danger">
+                <%= @result.errors[:base].join(', ') %>
+              </p>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <label class=" label" for="result_participant"><%= t '.participant' %></label>
+          <div class="control">
+            <input class="input" type="text"  id="result_participant"
+              value="<%= @result.score.participant.display_name %> / <%= @result.score.participant.club %>" disabled="yes">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class=" label" for="result_description"><%= t '.description' %></label>
+          <div class="control">
+            <input class="input" type="text"  id="result_description"
+              value="<%= t '.description_template', round: @result.round, index: @result.round %>" disabled="yes">
+          </div>
+        </div>
+
+        <% if @taikai.form_matches? %>
+        <div class="field">
+          <label class=" label" for="result_match_level">Niveau du match</label>
+          <div class="control">
+            <input class="input" type="text"  id="result_match_level"
+              value="<%= Match.human_enum_value :level, @result.score.match.level.to_s %>" disabled="yes">
+          </div>
+        </div>
+        <% end %>
+
+        <% if @taikai.scoring_enteki? %>
+          <%= f.input :value, as: :select, collection: Result::ENTEKI_VALUES %>
+        <% else %>
+          <%= f.input :status, as: :select, collection: (
+                ['hit', 'miss'].map do |key|
+                  [key, Result.human_enum_value(:status, key)]
+                end
+              ), value_method: :first, text_method: :last %>
+        <% end %>
+
+        <%= f.button t('save'), class: "button has-background-light mr-3" %>
+        <%= link_to t('cancel'), taikai_rectification_index_path(@taikai), class: "button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

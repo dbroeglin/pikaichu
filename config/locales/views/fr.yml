@@ -131,6 +131,16 @@ fr:
       placeholders:
         dojo: Commencez à saisir un nom...
         display_name: Laisser blanc pour utiliser le nom du club
+  rectification:
+    index:
+      back: Retour au Taikai
+      index: ID
+    edit:
+      back: Retour à la liste des résultats
+      description: Description
+      description_template: Série %{round}, Flèche %{index}
+      participant: Participant
+      title: Rectification d'un résultat
   taikais:
     draw: Tirage au sort
     marking_sheet:

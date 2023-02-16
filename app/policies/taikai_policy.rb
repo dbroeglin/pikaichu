@@ -50,6 +50,10 @@ class TaikaiPolicy < ApplicationPolicy
     taikai.in_state?(:marking) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES))
   end
 
+  def rectification_update?
+    taikai.in_state?(:marking, :tie_break) && (user.admin? || taikai.has_roles?(user, ADMIN_ROLES))
+  end
+
   def show?
     true
   end

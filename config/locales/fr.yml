@@ -39,7 +39,6 @@ fr:
     registrations:
       edit:
         my_account: Mon compte
-  draw_error: Un erreur est survenue pendant le tirage au sort. Contactez l'administrateur.
   draw_ok: Le tirage au sort a été effectué.
   file_missing: Aucun fichier importé.
   import_alerts:

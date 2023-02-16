@@ -1,0 +1,39 @@
+<p class="mb-3">
+  <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light mr-5" %>
+</p>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr class="has-text-centered">
+      <th><%= Taikai.human_attribute_name :name %></th>
+      <% if @taikai.form_matches? %>
+      <th><%= t '.index' %></th>
+      <% end %>
+      <% @taikai.total_num_arrows.times do |index| %>
+        <th><%= index + 1 %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+<% @taikai.participants.each do |participant| %>
+    <% participant.scores.each do |score| %>
+  <tr>
+    <td><%= participant.display_name %></td>
+    <% if @taikai.form_matches? %>
+    <td><%= Match.human_enum_value :level, score.match.level.to_s %></td>
+    <% end %>
+    <% score.results.each do |result| %>
+      <td>
+        <%= link_to edit_taikai_rectification_path @taikai, result,
+              class: "button is-small is-light",
+              data: { turbo_method: 'patch', turbo_confirm: t('confirm_html') } do
+        %>
+          <%= icon_from(result, true) %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+    <% end %>
+<% end %>
+  </tbody>
+</table>

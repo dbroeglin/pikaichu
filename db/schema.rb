@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_11_135217) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_204849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -131,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_135217) do
     t.bigint "match_id"
     t.integer "value"
     t.bigint "score_id", null: false
+    t.boolean "overriden", default: false
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["score_id"], name: "index_results_on_score_id"
   end

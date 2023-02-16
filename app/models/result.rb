@@ -54,6 +54,16 @@ class Result < ApplicationRecord
     self
   end
 
+  def override_status(status)
+    self.overriden = true
+    self.status = status
+  end
+
+  def override_value(value)
+    self.overriden = true
+    self.value = value
+  end
+
   def rotate_value
     self.value = (Result::ENTEKI_VALUES + [0])
       .each_cons(2)
@@ -68,7 +78,7 @@ class Result < ApplicationRecord
     #  even the final boolean
     finalized = final? && changes['final'].nil? || !final? && changes['final']&.first
 
-    errors.add(:result_id, "is already finalized") if finalized
+    errors.add(:base, :already_finalized) if finalized && !overriden
   end
 
   def to_s

@@ -43,6 +43,4 @@ class LeaderboardController < ApplicationController
 
     render layout: 'public'
   end
-
-  private
 end

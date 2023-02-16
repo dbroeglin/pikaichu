@@ -17,6 +17,9 @@ fr:
       participating_dojo:
         one: Club hôte
         other: Clubs hôtes
+      result:
+        one: Résultat
+        other: Résultats
       taikai:
         one: Taikai
         other: Taikai
@@ -32,6 +35,11 @@ fr:
           'true': À distance
           'false': Local
     enums:
+      match:
+        level:
+          "1": Finale
+          "2": Demi finale
+          "3": Quart de finale
       result:
         status:
           hit: Touché
@@ -46,6 +54,12 @@ fr:
         scoring:
           kinteki: Kinteki
           enteki: Enteki
+        state:
+          new: Préparation
+          registration: Enregistrement
+          marking: Marquage
+          tie_break: Tie-Break
+          done: Terminé
     attributes:
       user:
         firstname: Prénom
@@ -123,6 +137,10 @@ fr:
           attributes:
             base:
               unteamed: Impossible de tirer au sort tant que tous les participants ne sont pas membres d'une équipe.
+        result:
+          attributes:
+            base:
+              already_finalized: Impossible de modifier un résultat finalisé
         staff:
           attributes:
             user:

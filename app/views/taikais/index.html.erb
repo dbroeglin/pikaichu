@@ -6,7 +6,6 @@
   <table class="table is-fullwidth">
     <thead>
       <tr class="has-text-centered">
-        <th><%= Taikai.human_attribute_name :shortname %></th>
         <th><%= Taikai.human_attribute_name :name %></th>
         <th><%= t '.dates' %></th>
         <th>&nbsp;</th>
@@ -25,13 +24,13 @@
     <tbody>
       <% @taikais.each do |taikai| %>
       <tr>
-        <td><%= link_to taikai.shortname, taikai_path(taikai) %></td>
-        <td><%= taikai.name %></td>
+        <td><%= link_to taikai.name, taikai_path(taikai) %></td>
         <td><%= l taikai.start_date, format: :shorter %> - <%= l taikai.end_date, format: :shorter %></td>
         <td>
             <div class="tags has-addons">
-              <span class="tag is-link"><%= Taikai.human_enum_value :scoring, taikai.scoring %></span>
+              <span class="tag is-warning"><%= Taikai.human_enum_value :state, taikai.current_state %></span>
               <span class="tag is-dark"><%= Taikai.human_enum_value :form, taikai.form %></span>
+              <span class="tag is-link"><%= Taikai.human_enum_value :scoring, taikai.scoring %></span>
               <span class="tag is-info"><%= t("activerecord.booleans.taikai.distributed.#{taikai.distributed}") %></span>
               <span class="tag is-primary"><%= taikai.participants.size %></span>
             </div>
