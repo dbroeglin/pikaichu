@@ -2,13 +2,18 @@
   <%= link_to t('.back'), taikai_path(@taikai), class: "button is-light mr-5" %>
 </p>
 
-<table class="table is-fullwidth">
+<table class="table is-narrow is-bordered is-striped is-fullwidth">
   <thead>
     <tr class="has-text-centered">
-      <th><%= Taikai.human_attribute_name :name %></th>
+      <th rowspan="2"><%= Taikai.human_attribute_name :name %></th>
       <% if @taikai.form_matches? %>
-      <th><%= t '.index' %></th>
+      <th rowspan="2"><%= t '.index' %></th>
       <% end %>
+      <% @taikai.num_rounds.times do |index| %>
+      <th colspan="<%= @taikai.num_arrows %>"><%= t '.round', index: index + 1 %></th>
+      <% end %>
+    </tr>
+    <tr>
       <% @taikai.total_num_arrows.times do |index| %>
         <th><%= index + 1 %></th>
       <% end %>

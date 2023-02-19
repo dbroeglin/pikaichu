@@ -135,6 +135,7 @@ fr:
     index:
       back: Retour au Taikai
       index: ID
+      round: Série %{index}
     edit:
       back: Retour à la liste des résultats
       description: Description
@@ -147,6 +148,8 @@ fr:
       title: Feuille de marque
     leaderboard:
       title: Tableau des résultats
+    rectification:
+      title: Rectification
     tie_break:
       title: Tie-Break
     export:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_204849) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_17_095344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -177,6 +177,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_204849) do
     t.index ["user_id"], name: "index_staffs_on_user_id"
   end
 
+  create_table "taikai_events", force: :cascade do |t|
+    t.bigint "taikai_id", null: false
+    t.bigint "user_id", null: false
+    t.string "category"
+    t.text "message"
+    t.jsonb "data"
+    t.datetime "created_at"
+    t.index ["taikai_id"], name: "index_taikai_events_on_taikai_id"
+    t.index ["user_id"], name: "index_taikai_events_on_user_id"
+  end
+
   create_table "taikai_transitions", force: :cascade do |t|
     t.string "to_state", null: false
     t.json "metadata", default: {}
@@ -263,6 +274,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_204849) do
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
+  add_foreign_key "taikai_events", "taikais"
+  add_foreign_key "taikai_events", "users"
   add_foreign_key "taikai_transitions", "taikais"
   add_foreign_key "teams", "participating_dojos"
 end

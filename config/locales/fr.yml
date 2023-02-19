@@ -49,3 +49,17 @@ fr:
     other: "Les kyudojin suivants n'ont pas été trouvés dans la base FFJDA : %{names}."
   or_divider: Ou
   search_results: Résultats de la recherche
+  templates:
+    taikai_event:
+      rectification:
+        kinteki: "%{user} a rectifié le résultat du tir %{index} de la série %{round} de %{participant} à %{status} (précédemment: %{previous_status})."
+        enteki: "%{user} a rectifié le résultat du tir %{index} de la série %{round} de %{participant} à %{value}/%{status} (précédemment %{previous_value}/%{previous_status}."
+      state_transition:
+        new_registration: "%{user} a passé '%{taikai}' de l'état 'Préparation' à l'état 'Enregistrement'."
+        registration_new: "%{user} a retourné '%{taikai}' de l'état 'Enregistrement' à l'état 'Préparation'."
+        registration_marking: "%{user} a passé '%{taikai}' de l'état 'Enregistrement' à l'état 'Marquage'."
+        marking_registration: "%{user} a retourné '%{taikai}' de l'état 'Marquage' à l'état 'Enregistrement'."
+        marking_tie_break: "%{user} a passé '%{taikai}' de l'état 'Marquage' à l'état 'Tie-Break'."
+        tie_break_marking: "%{user} a retourné '%{taikai}' de l'état 'Tie-Break' à l'état 'Marquage'."
+        tie_break_done: "%{user} a passé '%{taikai}' de l'état 'Tie-Break' à l'état 'Terminé'."
+        done_tie_break: "%{user} a retourné '%{taikai}' de l'état 'Terminé' à l'état 'Tie-Break'."

@@ -55,13 +55,21 @@ class Result < ApplicationRecord
   end
 
   def override_status(status)
-    self.overriden = true
     self.status = status
+    if changes[:status]
+      self.overriden = true
+    end
+
+    !changes[:status].nil?
   end
 
   def override_value(value)
-    self.overriden = true
     self.value = value
+    if changes[:value]
+      self.overriden = true
+    end
+
+    !changes[:value].nil?
   end
 
   def rotate_value

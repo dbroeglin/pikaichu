@@ -28,7 +28,7 @@ class TaikaiStateMachine
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, transition|
-    taikai.delete_scores unless taikai.form_matches? if taikai id > 74
+    taikai.delete_scores unless taikai.form_matches? if taikai.id > 74
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, transition|
@@ -38,6 +38,14 @@ class TaikaiStateMachine
   before_transition(from: :tie_break, to: :marking) do |taikai, transition|
     taikai.participants.clear_ranks
     taikai.teams.clear_ranks
+  end
+
+  before_transition() do |taikai, transition|
+    TaikaiEvent.state_transition(
+      user: taikai.current_user,
+      taikai: taikai,
+      from: taikai.current_state,
+      to: transition.to_state)
   end
 
   guard_transition to: :tie_break do |taikai|

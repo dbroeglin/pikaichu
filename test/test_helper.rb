@@ -29,6 +29,8 @@ module SignInHelper
 
     assert_select "p.title", text: "Taikai"
     assert_select "p.title", text: "Clubs"
+
+    user
   end
 end
 

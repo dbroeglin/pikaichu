@@ -25,7 +25,7 @@ class TaikaisTest < ApplicationSystemTestCase
 
     assert_selector "h1.title", text: "Liste des Taikai"
 
-    click_on taikai.shortname
+    click_on taikai.shortname.titleize
 
     assert_selector "p.title.is-4", text: "#{taikai.name} (#{taikai.shortname})"
   end
@@ -61,9 +61,9 @@ class TaikaisTest < ApplicationSystemTestCase
       assert_selector "h1.title", text: "Liste des Taikai"
 
       go_to_taikais # Display all taikais on one page
-      assert_selector "td a", text: shortname
+      assert_selector "td a", text: shortname.titleize
 
-      click_on shortname
+      click_on shortname.titleize
 
       assert_selector "p.title.is-4", text: "#{shortname.titleize} (#{shortname})"
       assert_selector "p.subtitle.is-6", text: form_label

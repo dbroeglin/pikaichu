@@ -13,13 +13,30 @@ class RectificationController < ApplicationController
     @taikai = authorize Taikai.find(params[:taikai_id]), :rectification_update?
     @result = Result.joins(score: { participant: {participating_dojo: :taikai}}).where("taikai.id": @taikai.id).find(params[:id])
 
-    if @taikai.scoring_enteki?
+    previous_status = @result.status
+    previous_value = @result.value
+
+    changed = if @taikai.scoring_enteki?
       @result.override_value(params[:result][:value])
     else
       @result.override_status(params[:result][:status])
     end
 
-    if @result.save
+    ok = true
+    if changed
+      Result.transaction do
+        ok = @result.save
+        TaikaiEvent.rectification(
+          taikai: @taikai,
+          user: current_user,
+          result: @result,
+          previous_status: previous_status,
+          previous_value: previous_value
+        )
+      end
+    end
+
+    if ok
       redirect_to action: :index, params: { taikai_id: @taikai.id }
     else
       render :edit, status: :unprocessable_entity

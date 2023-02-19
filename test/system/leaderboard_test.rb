@@ -10,11 +10,12 @@ class LeaderboardTest < ApplicationSystemTestCase
 
   Taikai.all.each do |taikai|
     test "visiting #{taikai.shortname} leaderboard" do
+      taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
       taikai.transition_to! :marking
       go_to_taikais
 
-      find("a", exact_text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
+      find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")
 
       assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
       assert_selector "h1.title", text: taikai.shortname
@@ -27,11 +28,12 @@ class LeaderboardTest < ApplicationSystemTestCase
 
   Taikai.where("form <> 'matches'").each do |taikai|
     test "visiting #{taikai.shortname} public leaderboard" do
+      taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
       taikai.transition_to! :marking
       go_to_taikais
 
-      find("a", exact_text: taikai.shortname).ancestor("tr").click_on("Tableau des résultats")
+      find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")
 
       assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
       assert_selector "h1.title", text: taikai.shortname

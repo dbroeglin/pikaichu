@@ -1,6 +1,7 @@
 class Taikai < ApplicationRecord
   audited
 
+  # Used to pass the current user to the model logic (states man or model methods)
   attr_accessor :current_user
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6

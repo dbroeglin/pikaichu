@@ -10,7 +10,7 @@ module TaikaisTestHelpers
 
     go_to_taikais
 
-    click_on taikai.shortname
+    click_on taikai.name
 
     assert_selector "p.title.is-4", text: "#{taikai.name} (#{taikai.shortname})"
   end

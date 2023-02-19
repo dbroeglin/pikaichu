@@ -117,7 +117,7 @@ class ResultTest < ActiveSupport::TestCase
 
   test "kinteki finalized records can be overriden" do
     @kinteki_result.update(status: :hit, final: true)
-    @kinteki_result.override_status(:miss)
+    assert_equal true, @kinteki_result.override_status(:miss)
     @kinteki_result.save!
 
     assert_equal true, @kinteki_result.final
@@ -127,7 +127,7 @@ class ResultTest < ActiveSupport::TestCase
 
   test "enteki finalized records can be overriden" do
     @enteki_result.update(value: 10, final: true)
-    @enteki_result.override_value(0)
+    assert_equal true, @enteki_result.override_value(0)
     @enteki_result.save!
 
     assert_equal true, @enteki_result.final
@@ -135,4 +135,22 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal 0, @enteki_result.value
     assert_equal 'miss', @enteki_result.status
   end
+
+  test "kinteki finalized records can be overriden but are not if no change" do
+    @kinteki_result.update(status: :hit, final: true)
+    assert_equal false, @kinteki_result.override_status(:hit)
+    assert_equal false, @enteki_result.save
+
+    assert_equal false, @kinteki_result.override_status('hit')
+    assert_equal false, @enteki_result.save
+  end
+
+  test "enteki finalized records can be overriden but are not if no change" do
+    @enteki_result.update(value: 10, final: true)
+    assert_equal false, @enteki_result.override_value(10)
+    assert_equal false, @enteki_result.save
+
+    assert_equal false, @enteki_result.override_value("10")
+    assert_equal false, @enteki_result.save
+ end
 end
