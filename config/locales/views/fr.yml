@@ -198,10 +198,12 @@ fr:
       title: Ajouter un Taikai
     show:
       generate: Générer la seconde partie
+      now: Maintenant
       overview: Vue d'ensemble de «%{description}»
       total_num_arrows:
         one: "%{count} flèche"
         other: "%{count} flèches"
+      you_are_here: Vous êtes ici!
   teams:
     destroy:
       title: Effacer une équipe

@@ -51,6 +51,8 @@ class Taikai < ApplicationRecord
   has_many :teams,
     extend: RankedAssociationExtension,
     through: :participating_dojos
+  has_many :events, -> { order created_at: :asc }, class_name: 'TaikaiEvent', dependent: :destroy
+
 
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
