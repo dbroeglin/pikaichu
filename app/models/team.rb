@@ -1,8 +1,10 @@
 class Team < ApplicationRecord
+  include NoChangeIfTaikaiDone
   include Scoreable
   audited
 
   belongs_to :participating_dojo
+  has_one :taikai, through: :participating_dojo
   has_many :participants,
            -> { order index_in_team: :asc, lastname: :asc, firstname: :asc },
            dependent: :destroy,

@@ -9,11 +9,7 @@ fr:
             dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
-    template:
-      body: 'Il y a des erreurs de validation avec les champs suivants:'
-      header:
-        one: "1 erreur à empêché la sauvegarde des données de: %{model}"
-        other: "%{count} erreurs ont empêché la sauvegarde de: %{model}"
+
   date:
     abbr_day_names:
     - dim
@@ -149,10 +145,10 @@ fr:
         one: ne fait pas la bonne longueur (doit comporter un seul caractère)
         other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
     template:
-      body: 'Veuillez vérifier les champs suivants : '
+      body: 'Il y a des erreurs de validation avec les champs suivants:'
       header:
-        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
-        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+        one: "1 erreur à empêché la sauvegarde des données de ce·tte «%{model}»"
+        other: "%{count} erreurs ont empêché la sauvegarde de ce·tte «%{model}»"
   helpers:
     select:
       prompt: Veuillez sélectionner

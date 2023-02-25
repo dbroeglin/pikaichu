@@ -119,6 +119,8 @@ fr:
         num_participants: Nb.
         mixed: Mixte
     errors:
+      messages:
+        no_change_if_taikai_is_done: Un Taikai à l'état terminé ne peut plus être modifié !
       models:
         match:
           attributes:

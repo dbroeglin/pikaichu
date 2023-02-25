@@ -1,12 +1,16 @@
 class Taikai < ApplicationRecord
+  include NoChangeIfTaikaiDone
   audited
 
-  # Used to pass the current user to the model logic (states man or model methods)
+  # Used to pass the current user to the model logic (statesman or model methods)
   attr_accessor :current_user
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6
   attribute :tachi_size, default: 3
   attribute :distributed, default: false
+
+  CATEGORY_VALUES = %w(A B C).freeze
+
   enum form: {
     individual: 'individual',
     team: 'team',
@@ -87,7 +91,6 @@ class Taikai < ApplicationRecord
               in: [3, 6, 5, 9, 10]
             }
   validate :number_of_dojos
-  validate :no_change_when_done, on: :update
 
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
@@ -282,9 +285,8 @@ class Taikai < ApplicationRecord
 
   private
 
-  def no_change_when_done
-    if changed? && in_state?('done')
-      errors.add(:no_change_when_done, "No change is allowed once taikai is in state 'done'")
-    end
+  # Used by NoChangeIfTaikaiDone concern
+  def taikai
+    self
   end
 end

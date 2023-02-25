@@ -9,9 +9,7 @@
 %>
 
 <%= bulma_form_with model: form_path do |f| %>
-  <% if participant.errors.any? %>
-    <h2><%= pluralize(participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
-  <% end %>
+  <%= f.errors %>
 
   <div class="field">
     <label class=" label" for="user"><%= t('.search_kyudojin') %></label>

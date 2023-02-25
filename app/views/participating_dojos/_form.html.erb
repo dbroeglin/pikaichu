@@ -1,7 +1,5 @@
 <%= bulma_form_with model: [taikai, participating_dojo] do |f| %>
-  <% if participating_dojo.errors.any? %>
-    <h2><%= pluralize(participating_dojo.errors.count, "error") %> prohibited this participating_dojo from being saved</h2>
-  <% end %>
+  <%= f.errors %>
 
   <div class="field">
     <label class=" label" for="dojo_name"><%= ParticipatingDojo.human_attribute_name :dojo %></label>

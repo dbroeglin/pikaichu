@@ -24,6 +24,29 @@ module ApplicationHelper
       end
     end
 
+    def errors
+      return '' if object.errors.empty?
+
+      if object.errors[:base].present?
+        base_html = object.errors[:base].map do |error|
+          <<-HTML
+          <ul>
+            <li>#{object.errors[:base].join(', ')}</li>
+          </ul>
+          HTML
+        end.join("\n")
+      end
+
+      html = <<-HTML
+      <div class="content notification is-danger">
+          <p>#{I18n::t 'errors.template.header', model: object.class.model_name.human.titlecase, count: object.errors.size}</p>
+          #{base_html}
+      </div>
+      HTML
+
+      html.html_safe
+    end
+
     private
 
     def collection_input(method, options, &block)

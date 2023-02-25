@@ -1,7 +1,5 @@
 <%= bulma_form_with model: dojo do |f| %>
-  <% if dojo.errors.any? %>
-    <h2><%= pluralize(dojo.errors.count, "error") %> prohibited this dojo from being saved:</h2>
-  <% end %>
+  <%= f.errors %>
 
   <%= f.input :shortname %>
   <%= f.input :name %>

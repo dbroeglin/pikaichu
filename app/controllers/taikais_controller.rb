@@ -111,6 +111,7 @@ class TaikaisController < ApplicationController
     params
       .require(:taikai)
       .permit(
+        :category,
         :description,
         :distributed,
         :end_date,
@@ -122,6 +123,7 @@ class TaikaisController < ApplicationController
         :start_date,
         :tachi_size,
         :total_num_arrows,
+
       )
   end
 end

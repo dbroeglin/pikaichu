@@ -1,4 +1,5 @@
 class Participant < ApplicationRecord
+  include NoChangeIfTaikaiDone
   include Scoreable
   audited
 

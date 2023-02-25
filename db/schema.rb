@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_095344) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_25_162450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -214,6 +214,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_095344) do
     t.integer "tachi_size", limit: 2, default: 3, null: false
     t.enum "form", enum_type: "taikai_form"
     t.enum "scoring", default: "kinteki", enum_type: "taikai_scoring"
+    t.string "category"
     t.index ["form"], name: "taikais_by_form"
     t.index ["scoring"], name: "taikais_by_scoring"
     t.index ["shortname"], name: "by_taikais_shortname", unique: true

@@ -1,4 +1,5 @@
 class Staff < ApplicationRecord
+  include NoChangeIfTaikaiDone
   audited
 
   belongs_to :role, class_name: "StaffRole"

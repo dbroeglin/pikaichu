@@ -1,6 +1,32 @@
 class Score < ApplicationRecord
-  # TODO: after migration
-  # audited
+  include NoChangeIfTaikaiDone
+  audited
+
+
+  belongs_to :team, optional: true
+  belongs_to :participant, optional: true
+  belongs_to :match, optional: true
+
+  has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :score, dependent: :destroy do
+    def round(index)
+      where(round: index)
+    end
+
+    def first_empty
+      self.find(&:empty?)
+    end
+  end
+
+  validate :team_xor_participant
+  validates :hits, :value, presence: true
+
+  def taikai
+    if team
+      team.taikai
+    else
+      participant.taikai
+    end
+  end
 
   class PreviousRoundNotValidatedError < StandardError
     attr_reader :previous_round
@@ -45,23 +71,6 @@ class Score < ApplicationRecord
       "Score(hits: #{hits}, value: #{value})"
     end
   end
-
-  belongs_to :team, optional: true
-  belongs_to :participant, optional: true
-  belongs_to :match, optional: true
-
-  has_many :results, -> { order(round: :asc, index: :asc) }, inverse_of: :score, dependent: :destroy do
-    def round(index)
-      where(round: index)
-    end
-
-    def first_empty
-      self.find(&:empty?)
-    end
-  end
-
-  validate :team_xor_participant
-  validates :hits, :value, presence: true
 
   def add_result(status, value = nil)
     result = results.first_empty

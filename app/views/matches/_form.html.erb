@@ -1,7 +1,5 @@
 <%= bulma_form_with model: [taikai, match] do |f| %>
-  <% if match.errors.any? %>
-    <h2><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
-  <% end %>
+  <%= f.errors %>
 
   <%= f.input :level, input_html: { disabled: true } %>
   <%= f.input :index, input_html: { disabled: true } %>

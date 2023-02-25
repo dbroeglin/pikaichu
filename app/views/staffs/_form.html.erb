@@ -1,7 +1,5 @@
 <%= bulma_form_with model: [taikai, staff], class: "participant" do |f| %>
-  <% if staff.errors.any? %>
-    <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
-  <% end %>
+  <%= f.errors %>
 
   <div class="field">
     <label class=" label" for="user"><%= Staff.human_attribute_name :user %></label>
