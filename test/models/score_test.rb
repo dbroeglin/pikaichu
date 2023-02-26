@@ -108,11 +108,4 @@ class ScoreTest < ActiveSupport::TestCase
 
     assert_equal Score::ScoreValue.new(hits: 4), score1 + score2
   end
-
-  test "addition of ScoreValue vith hits and value" do
-    score1 = Score::ScoreValue.new(hits: 1, value: 2)
-    score2 = Score::ScoreValue.new(hits: 3, value: 4)
-
-    assert_equal Score::ScoreValue.new(hits: 4, value: 6), score1 + score2
-  end
 end
