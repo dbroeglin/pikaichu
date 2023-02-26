@@ -54,6 +54,7 @@ if Rails.env.development? || Rails.env.test?
 
       desc "Deploy Image to Azure ACR"
       task :image do
+        sh "az acr login -n #{acr_name}"
         sh "docker build --tag pikaichu_production ."
         sh "docker tag pikaichu_production #{acr_server}/pikaichu:production"
         sh "docker push #{acr_server}/pikaichu:production"

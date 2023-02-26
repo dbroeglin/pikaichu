@@ -19,6 +19,14 @@ fr:
       manage_taikais: "Gérer les Taikai"
       taikais_summary: "%{nb} Taikai gérés."
       taikais: Taikai
+  championship:
+    export:
+      category: Catégorie
+      club: Club
+      display_name: Nom Prénom
+      rank: Rang
+      taikai_name: Nom du Taikai
+      total: Total
   dojos:
     index:
       title: Liste des Clubs

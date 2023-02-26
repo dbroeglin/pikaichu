@@ -65,7 +65,8 @@ Rails.application.routes.draw do
     resources :staffs
   end
 
-  get '/championship/:year/export', to: 'championship#export'
+  get '/championship',              to: 'championship#index'
+  get '/championship/:year/export', to: 'championship#export', as: :championship_export
 
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

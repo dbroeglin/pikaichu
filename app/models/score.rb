@@ -68,7 +68,11 @@ class Score < ApplicationRecord
     end
 
     def +(other)
-      ScoreValue::new(hits: hits + other.hits, value: value + other.value)
+      if (value || other.value)
+        ScoreValue::new(hits: hits + other.hits, value: (value || 0) + other.value)
+      else
+        ScoreValue::new(hits: hits + other.hits)
+      end
     end
 
     def to_s
