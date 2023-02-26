@@ -58,6 +58,9 @@ if Rails.env.development? || Rails.env.test?
         sh "docker build --tag pikaichu_production ."
         sh "docker tag pikaichu_production #{acr_server}/pikaichu:production"
         sh "docker push #{acr_server}/pikaichu:production"
+
+        sh "git tag -f previous_prod production"
+        sh "git tag -f production"
       end
 
       desc "Deploy Azure Foundation"
