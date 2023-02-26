@@ -1,0 +1,34 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Kinteki Classement Indiv") do |sheet|
+  @kinteki_participants.each do |participant|
+    sheet.add_row [
+      participant[:rank],
+      participant[:display_name],
+      participant[:club],
+      participant[:total].hits
+    ]
+  end
+end
+
+wb.add_worksheet(name: "Enteki Classement Indiv") do |sheet|
+  @enteki_participants.each do |participant|
+    sheet.add_row [
+      participant[:rank],
+      participant[:display_name],
+      participant[:club],
+      participant[:total].value
+    ]
+  end
+end
+
+wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
+  @taikais.each_with_index do |taikai, index|
+    sheet.add_row [
+      taikai.name,
+      taikai.scoring,
+      taikai.form,
+    ]
+  sheet.add_hyperlink location: "https://pikaichu.kyudo.fr/taikais/#{taikai.id}", ref: "A#{index + 1}"
+  end
+end

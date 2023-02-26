@@ -67,6 +67,10 @@ class Score < ApplicationRecord
       hits <=> other.hits
     end
 
+    def +(other)
+      ScoreValue::new(hits: hits + other.hits, value: value + other.value)
+    end
+
     def to_s
       "Score(hits: #{hits}, value: #{value})"
     end
