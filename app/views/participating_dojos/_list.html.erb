@@ -8,12 +8,13 @@
       <th class="has-text-right">
         <%= link_to new_taikai_participating_dojo_path(taikai),
           class: "button is-small has-background-light",
-          title: t('participating_dojos.new.title') do %>
+          title: t('participating_dojos.new.title'),
+          disabled: !taikai.distributed && taikai.participating_dojos.size > 0 do %>
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
           <span><%= t 'new' %></span>
-        <% end unless !taikai.distributed && taikai.participating_dojos.size > 0 %>
+        <% end %>
       </th>
     </tr>
   </thead>
