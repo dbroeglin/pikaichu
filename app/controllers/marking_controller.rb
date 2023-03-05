@@ -4,9 +4,7 @@ class MarkingController < ApplicationController
   end
 
   def show
-    @taikai = authorize(
-      Taikai.includes(participating_dojos: { participants: [ { scores: :results }] }).find(params[:id]),
-      :marking_show?)
+    @taikai = authorize(Taikai.find(params[:id]), :marking_show?)
 
     @match = nil
 
@@ -17,7 +15,9 @@ class MarkingController < ApplicationController
       @participating_dojos = @taikai.participating_dojos
                                     .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
                                     .joins(staffs: [:role])
-                                    .where('staffs.user_id': current_user, 'role.code': :dojo_admin)
+                                    .where(
+                                      'staffs.user_id': current_user,
+                                      'role.code': TaikaiPolicy::MARKING_ROLES)
     else
       raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
     end

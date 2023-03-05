@@ -7,6 +7,27 @@ participant<%= index %>_participating_dojo1_individual_12:
   club: C1
 <% end %>
 
+
+<% 3.times do |index| %>
+participant<%= index %>_participating_dojo1_individual_dist_12:
+  index: <%= index + 1 %>
+  participating_dojo: participating_dojo1_individual_dist_12
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: C1
+<% end %>
+
+
+<% 3.times do |index| %>
+participant<%= index %>_participating_dojo2_individual_dist_12:
+  index: <%= index + 4 %>
+  participating_dojo: participating_dojo2_individual_dist_12
+  firstname: <%= Faker::Name.first_name %>
+  lastname: <%= Faker::Name.last_name %>
+  club: C1
+<% end %>
+
+
 <% 3.times do |index| %>
 p<%= index + 1 %>_participating_dojo1_2in1_dist_12:
   participating_dojo: participating_dojo1_2in1_dist_12

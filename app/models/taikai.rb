@@ -283,6 +283,13 @@ class Taikai < ApplicationRecord
     next_state if allowed_transitions.index(next_state)
   end
 
+  def to_ascii
+    [
+      "Taikai #{shortname} (#id)",
+      participating_dojos.map { |participating_dojo| participating_dojo.to_ascii.gsub(/^/, "  ") }
+    ].flatten.join "\n"
+  end
+
   private
 
   # Used by NoChangeIfTaikaiDone concern

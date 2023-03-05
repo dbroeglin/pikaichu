@@ -1,9 +1,3 @@
-
-participating_dojo2_individual_dist_12:
-  taikai: individual_dist_12
-  dojo: dojo_hk
-  display_name: HK
-
 hk_2in112:
   taikai: 2in1_dist_12
   dojo: dojo_hk
@@ -32,6 +26,17 @@ AK_2in1_test:
   dojo: dojo_fr
   display_name: <%= label.titleize %>
 <%
+          if distributed
+            label = "participating_dojo2_#{form}#{distributed ? '_dist' : ''}_#{total_num_arrows}#{enteki ? '_enteki' : ''}"
+
+%>
+<%= label %>:
+  taikai: <%= form %><%= distributed ? '_dist' : '' %>_<%= total_num_arrows %><%= enteki ? '_enteki' : '' %>
+  dojo: dojo_jp
+  display_name: <%= label.titleize %>
+<%
+
+          end
         end
       end
     end

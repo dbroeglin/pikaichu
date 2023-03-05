@@ -103,8 +103,8 @@ class Match < ApplicationRecord
     [
     "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname})",
     (("  Winner: #{winner} - #{team(winner)&.shortname}") if winner),
-    (team1&.to_ascii(id) || "").prepend("  "),
-    (team2&.to_ascii(id) || "").prepend("  "),
+    (team1&.to_ascii(id) || "").gsub(/^/, "  "),
+    (team2&.to_ascii(id) || "").gsub(/^/, "  "),
     ].flatten.compact.join("\n")
   end
 

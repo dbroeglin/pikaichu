@@ -69,9 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_162450) do
     t.string "firstname"
     t.string "federation_id"
     t.string "federation_country_code"
+    t.string "federation_club"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "federation_club"
     t.index ["federation_id"], name: "by_federation_id", unique: true
   end
 

@@ -9,6 +9,7 @@ jean_bon:
   confirmation_sent_at: <%= Time.zone.now - 2.hours %>
 
 alain_terieur:
+  # Alain is a participating dojo administrator
   firstname: Alain
   lastname: Térieur
   email: alain.terieur@test.kyudo.fr

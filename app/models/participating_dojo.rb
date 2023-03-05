@@ -64,4 +64,12 @@ class ParticipatingDojo < ApplicationRecord
     # Note: used by RankedAssociationExtension
     taikai.in_state? *params
   end
+
+  def to_ascii
+    [
+      "Participating Dojo #{display_name} (#{id})",
+      "  Participants: #{participants.count}",
+      "  Teams: #{teams.count}",
+    ].flatten.join "\n"
+  end
 end

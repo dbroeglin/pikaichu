@@ -5,12 +5,12 @@ require "test_helper"
 class MarkingControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_12)
-    @taikai.current_user = users(:jean_bon)
-    @participant = participants(:participant1_participating_dojo1_individual_12).reload
+    @taikai = taikais(:individual_dist_12)
+    @taikai.current_user = users(:jean_bon) # for transitions
+    @participant = participants(:participant1_participating_dojo1_individual_dist_12).reload
   end
 
-  test "should get show" do
+  test "jean should hav access to marking" do
     get show_marking_url @taikai
 
     assert_response :redirect
@@ -20,7 +20,41 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     get show_marking_url @taikai
     assert_response :success
+
     assert_select "h1", "Feuille de marque - #{@taikai.shortname}"
+    assert_select "tbody tr th", "Participating Dojo1 Individual Dist 12"
+    assert_select "tbody tr:nth-of-type(4) th", "Participating Dojo2 Individual Dist 12"
+  end
+
+  test "alain_terieur should have access to marking for participating dojo 1" do
+    get show_marking_url @taikai
+
+    assert_response :redirect
+
+    @taikai.transition_to! :registration
+    @taikai.transition_to! :marking
+
+    sign_in users(:alain_terieur)
+    get show_marking_url @taikai
+
+    assert_response :success
+    assert_select "h1", "Feuille de marque - #{@taikai.shortname}"
+    assert_select "tbody th", "Participating Dojo1 Individual Dist 12"
+    assert_select "tbody tr:nth-of-type(4) th", 0
+  end
+
+  test "marie should not have access to marking" do
+    get show_marking_url @taikai
+
+    assert_response :redirect
+
+    @taikai.transition_to! :registration
+    @taikai.transition_to! :marking
+
+    sign_in users(:marie)
+
+    get show_marking_url @taikai
+    assert_response :redirect
   end
 
   test "should update first result" do
