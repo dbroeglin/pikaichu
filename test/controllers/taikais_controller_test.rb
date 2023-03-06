@@ -4,7 +4,7 @@ require 'test_helper'
 
 class TaikaisControllerTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:alex_terieur)
+    sign_in users(:jean_bon)
     @individual12 = taikais(:individual_dist_12)
     @other_taikai = taikais(:team_dist_12)
     @attributes = @individual12.attributes.delete_if { |key| key =~ /^(id|.*_date|.*_at|.*_by)$/ }
@@ -64,6 +64,8 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not be able to update taikai he is not admin of' do
+    sign_in users(:alex_terieur)
+
     patch taikai_url @other_taikai, params: { taikai: @other_attributes }
     assert_unauthorized
   end
@@ -74,7 +76,10 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not be able to delete taikai he is not admin of' do
+    sign_in users(:alex_terieur)
+
     delete taikai_url @other_taikai
+
     assert_unauthorized
   end
 

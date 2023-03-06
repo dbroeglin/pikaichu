@@ -21,7 +21,7 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
       post taikai_participating_dojos_url @taikai, params: {
         participating_dojo: {
           taikai_id: @taikai.id,
-          dojo_id: dojos(:dojo_jp).id,
+          dojo_id: dojos(:dojo_hk).id,
           display_name: "Customized dojo name",
         }
       }
