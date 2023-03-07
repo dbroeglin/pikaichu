@@ -60,6 +60,10 @@ fr:
           marking: Marquage
           tie_break: Tie-Break
           done: Terminé
+      taikai_event:
+        category:
+          rectification: Rectification
+          state_transition: Changement d'état
     attributes:
       user:
         firstname: Prénom
@@ -102,6 +106,7 @@ fr:
         role: Rôle
         user: Utilisateur
       taikai:
+        category: Catégorie
         distributed: À distance
         end_date: Date de fin
         form: Forme

@@ -164,6 +164,12 @@ fr:
       distributed: À distance
       infos: Informations
       type: Type
+      journal:
+        category: Catégorie
+        message: Message
+        title: Journal
+        time: Horodatage
+        user: Utilisateur
       participants:
         club: Club
         display_name: Nom

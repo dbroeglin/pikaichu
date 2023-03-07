@@ -14,7 +14,7 @@ individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
   form: individual
 
 team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: team<%= distributed ? '-dist-' : '' %>-<%= total_num_arrows %>
+  shortname: team<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
   name: Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
   start_date: <%= 10.days.from_now %>
   end_date: <%= 12.days.from_now %>
@@ -60,7 +60,7 @@ team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
   scoring: enteki
 
 2in1<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: 2in1<%= distributed ? 'dist' : '' %>-<%= total_num_arrows %>-enteki
+  shortname: 2in1<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
   name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
   start_date: <%= 16.days.from_now %>
   end_date: <%= 18.days.from_now %>

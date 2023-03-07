@@ -41,6 +41,12 @@
   sz: 12
 )
 
+@wrapped_table_cell_style = xlsx_package.workbook.styles.add_style(
+  alignment: { vertical: :center, horizontal: :left, wrap_text: true },
+  border: { style: :thin, color: 'FF000000' },
+  sz: 12
+)
+
 @result_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center },
   border: { style: :thin, color: 'FF000000' },
@@ -59,3 +65,4 @@ export_summary_sheet xlsx_package
 export_staff_sheet xlsx_package
 export_participants_sheet xlsx_package
 export_results_sheets xlsx_package
+export_journal_sheet xlsx_package

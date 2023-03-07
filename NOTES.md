@@ -7,7 +7,7 @@ Commands
 Automatically generate random results for all participants in a Taikai:
 
     Taikai.find_by(shortname: 'individual-12')
-      .participants.map(&:results).flatten
+      .participants.map {|participant| participant.score.results }.flatten
       .each { |r|
         r.status = ['hit', 'miss'].sample
         r.final = true

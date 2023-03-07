@@ -522,4 +522,29 @@ module AxlsxExportHelpers
     sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
   end
 
+  def export_journal_sheet(xlsx_package)
+    if @taikai.events.any?
+      xlsx_package.workbook.add_worksheet(name: t('.journal.title')) do |sheet|
+        sheet.column_widths 30, 25, 40, 20
+
+        sheet.add_row [
+          t('.journal.time'),
+          t('.journal.user'),
+          t('.journal.message'),
+          t('.journal.category'),
+          ], style: @header_row_style
+
+        @taikai.events.each do |event|
+          sheet.add_row [
+            I18n.l(event.created_at),
+            event.user&.display_name,
+            event.message,
+            TaikaiEvent.human_enum_value(:category, event.category),
+          ], style: [@table_cell_style, @table_cell_style, @wrapped_table_cell_style, @table_cell_style]
+        end
+
+        sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape
+      end
+    end
+  end
 end

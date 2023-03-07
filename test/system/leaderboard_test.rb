@@ -3,12 +3,15 @@ require 'taikais_test_helpers'
 
 class LeaderboardTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
+  extend TaikaisTestHelpers
 
   setup do
     sign_in_as users(:jean_bon)
   end
 
-  Taikai.all.each do |taikai|
+  TAIKAI_DATA.each do |data|
+    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+
     test "visiting #{taikai.shortname} leaderboard" do
       taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
@@ -26,7 +29,9 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-  Taikai.where("form <> 'matches'").each do |taikai|
+  TAIKAI_DATA.select {|data| data[0] != 'match'}.each do |data|
+    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+
     test "visiting #{taikai.shortname} public leaderboard" do
       taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
@@ -48,7 +53,9 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-  Taikai.where("form = 'matches'").each do |taikai|
+  TAIKAI_DATA.select {|data| data[0] == 'match'}.each do |data|
+    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+
     test "visiting #{taikai.shortname} public leaderboard" do
       skip "Public leaderboard for matches not implemented yet"
     end
