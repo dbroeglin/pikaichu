@@ -43,6 +43,11 @@ class Taikai < ApplicationRecord
           'participating_dojos.display_name': :asc,
         )
     end
+
+    def with_role(role)
+      joins(:role)
+        .where("staff_roles.code = ?", role)
+    end
   end
   has_many :matches, dependent: :destroy, inverse_of: :taikai
   has_many :participating_dojos, -> { order display_name: :asc },
@@ -286,7 +291,9 @@ class Taikai < ApplicationRecord
   def to_ascii
     [
       "Taikai #{shortname} (#id)",
-      participating_dojos.map { |participating_dojo| participating_dojo.to_ascii.gsub(/^/, "  ") }
+      participating_dojos.map { |participating_dojo| participating_dojo.to_ascii.gsub(/^/, "  ") },
+      "Staff:",
+      staffs.map { |staff| staff.to_ascii.gsub(/^/, "  ") },
     ].flatten.join "\n"
   end
 

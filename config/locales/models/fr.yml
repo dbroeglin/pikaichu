@@ -150,6 +150,8 @@ fr:
               already_finalized: Impossible de modifier un résultat finalisé
         staff:
           attributes:
+            base:
+              at_least_one_admin: "Il doit toujours y avoir au moins un Administrateur par Taikai"
             user:
               blank: doit être défini si son rôle nécessite l'utilisation de PiKaichu.
         taikai:
