@@ -73,6 +73,9 @@ GEM
       activerecord (>= 4.2)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    apparition (0.6.0)
+      capybara (~> 3.13, < 4)
+      websocket-driver (>= 0.6.5)
     ast (2.4.2)
     audited (5.2.0)
       activerecord (>= 5.0, < 7.1)
@@ -343,6 +346,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgres_enum (~> 2.0)
   acts_as_list
+  apparition
   audited
   bootsnap
   brakeman

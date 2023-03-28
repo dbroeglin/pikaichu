@@ -1,12 +1,38 @@
 require "test_helper"
+require "download_helpers"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  DRIVER = if ENV["DRIVER"]
-    ENV["DRIVER"].to_sym
+  driver = if ENV['CHROME_DEBUG'] == 'true'
+    Capybara.register_driver :chrome do |app|
+      Capybara::Selenium::Driver.new(app, browser: :chrome)
+    end
+    :chrome
   else
-    :headless_chrome
+    Capybara.register_driver :test do |app|
+      browser_options = ::Selenium::WebDriver::Chrome::Options.new
+      browser_options.add_argument('headless')
+      browser_options.add_argument('disable-gpu')
+      browser_options.add_argument('window-size=1400,1200')
+
+      browser_options.add_preference(:download,
+        "directory_upgrade" =>  true,
+        "prompt_for_download" => false,
+        "default_directory" => DownloadHelpers::PATH)
+      browser_options.add_preference("browser",
+        "set_download_behavior" => { "behavior" =>  'allow' })
+      browser_options.add_preference('download.default_directory', DownloadHelpers::PATH)
+
+      Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options, timeout: 30).tap do |driver|
+        driver.browser.download_path = DownloadHelpers::PATH
+      end
+    end
+    :test
   end
-  driven_by :selenium, using: DRIVER, screen_size: [1400, 1400]
+
+  # Selenium::WebDriver.logger.level = :debug
+  # Selenium::WebDriver.logger.output = $stderr
+
+  driven_by driver
 
   def sign_in_as(user)
     visit root_url

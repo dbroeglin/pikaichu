@@ -6,9 +6,29 @@ require 'taikais_test_helpers'
 class TaikaisExportTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
   extend TaikaisTestHelpers
+  include DownloadHelpers
+
 
   setup do
     sign_in_as users(:jean_bon)
+
+    ### Allow file downloads in Google Chrome when headless!!!
+    ### https://bugs.chromium.org/p/chromium/issues/detail?id=696481#c89
+    bridge = Capybara.current_session.driver.browser.send(:bridge)
+
+    path = '/session/:session_id/chromium/send_command'
+    path[':session_id'] = bridge.session_id
+
+    bridge.http.call(:post, path,
+      cmd: 'Page.setDownloadBehavior',
+      params: {
+        behavior: 'allow',
+        downloadPath: DownloadHelpers::PATH
+      })
+  end
+
+  teardown do
+    clear_downloads
   end
 
   TAIKAI_DATA.each do |data|
@@ -30,7 +50,7 @@ class TaikaisExportTest < ApplicationSystemTestCase
 
       find("a", exact_text: taikai.name).ancestor("tr").click_on("Export Excel")
 
-      expect(page.response_headers["Content-Disposition"]).to match "Receipt-#{receipt.id}.pdf"
+      assert_match /.*\/Taikai - #{taikai.shortname}\.xlsx$/, last_download
     end
   end
 
