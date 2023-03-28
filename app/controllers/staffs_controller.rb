@@ -33,7 +33,6 @@ class StaffsController < ApplicationController
     @staff = @taikai.staffs.find(params[:id])
 
     if !@staff.destroy
-      puts "COUCOU"
       flash[:alert] = @staff.errors.full_messages.join(', ')
     end
     redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: :see_other

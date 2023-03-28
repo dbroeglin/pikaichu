@@ -48,7 +48,6 @@ class ParticipatingDojo < ApplicationRecord
           count += 1
         end
         teams.where(index: nil).shuffle.each_with_index do |team, index|
-          puts
           team.update!(index: index + count + 1)
         end
       end
