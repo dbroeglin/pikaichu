@@ -9,7 +9,7 @@ class Taikai < ApplicationRecord
   attribute :tachi_size, default: 3
   attribute :distributed, default: false
 
-  CATEGORY_VALUES = %w(A B C).freeze
+  CATEGORY_VALUES = %w(A B C D).freeze
 
   enum form: {
     individual: 'individual',
