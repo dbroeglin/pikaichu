@@ -1,5 +1,5 @@
 class ParticipatingDojo < ApplicationRecord
-  include NoChangeIfTaikaiDone
+  include ValidateChangeBasedOnState
   audited
 
   belongs_to :taikai

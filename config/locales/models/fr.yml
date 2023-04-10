@@ -126,6 +126,7 @@ fr:
     errors:
       messages:
         no_change_if_taikai_is_done: Un Taikai à l'état terminé ne peut plus être modifié !
+        no_change_if_taikai_is_marking: Les paramètres et participants d'un Taikai ne peuvent plus être modifié après l'enregistrement !
       models:
         match:
           attributes:

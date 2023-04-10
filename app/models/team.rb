@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  include NoChangeIfTaikaiDone
+  include ValidateChangeBasedOnState
   include Scoreable
   audited
 

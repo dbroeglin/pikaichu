@@ -1,5 +1,5 @@
 class Taikai < ApplicationRecord
-  include NoChangeIfTaikaiDone
+  include ValidateChangeBasedOnState
   audited
 
   # Used to pass the current user to the model logic (statesman or model methods)
@@ -300,7 +300,7 @@ class Taikai < ApplicationRecord
 
   private
 
-  # Used by NoChangeIfTaikaiDone concern
+  # Used by ValidateChangeBasedOnState concern
   def taikai
     self
   end

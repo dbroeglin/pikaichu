@@ -1,5 +1,5 @@
 class Staff < ApplicationRecord
-  include NoChangeIfTaikaiDone
+  include ValidateChangeBasedOnState
   audited
 
   belongs_to :role, class_name: "StaffRole"
@@ -30,7 +30,7 @@ class Staff < ApplicationRecord
     end
   end
 
-  before_destroy do
+  before_destroy prepend: true do
     if role.taikai_admin? && taikai.staffs.with_role(:taikai_admin).count == 1
       errors.add(:base, :at_least_one_admin)
       throw :abort

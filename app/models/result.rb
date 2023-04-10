@@ -1,4 +1,5 @@
 class Result < ApplicationRecord
+  include ValidateChangeBasedOnState
   audited
 
   belongs_to :score
@@ -104,5 +105,9 @@ class Result < ApplicationRecord
     else
       s
     end
+  end
+
+  def taikai
+    score.taikai
   end
 end

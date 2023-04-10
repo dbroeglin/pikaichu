@@ -1,5 +1,5 @@
 class Score < ApplicationRecord
-  include NoChangeIfTaikaiDone
+  include ValidateChangeBasedOnState
   audited
 
 
