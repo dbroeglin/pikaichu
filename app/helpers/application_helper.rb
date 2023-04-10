@@ -28,13 +28,11 @@ module ApplicationHelper
       return '' if object.errors.empty?
 
       if object.errors[:base].present?
-        base_html = object.errors[:base].map do |error|
-          <<-HTML
+        base_html = <<-HTML
           <ul>
             <li>#{object.errors[:base].join(', ')}</li>
           </ul>
-          HTML
-        end.join("\n")
+        HTML
       end
 
       html = <<-HTML
