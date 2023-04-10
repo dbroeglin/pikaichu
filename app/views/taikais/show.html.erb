@@ -8,11 +8,14 @@
         </p>
 
         <p class="subtitle is-6">
-          <%= l @taikai.start_date %> - <%= l @taikai.end_date %> &#8212
-          <%= Taikai.human_enum_value :scoring, @taikai.scoring %> &#8212
-          <%= Taikai.human_enum_value :form, @taikai.form %> &#8212
-          <%= t("activerecord.booleans.taikai.distributed.#{@taikai.distributed}") %> &#8212
-          <%= t ".total_num_arrows", count: @taikai.total_num_arrows %>
+          <%= l @taikai.start_date %> - <%= l @taikai.end_date %>
+          &#8212 <%= Taikai.human_enum_value :scoring, @taikai.scoring %>
+          &#8212 <%= Taikai.human_enum_value :form, @taikai.form %>
+          &#8212 <%= t("activerecord.booleans.taikai.distributed.#{@taikai.distributed}") %>
+          &#8212 <%= t ".total_num_arrows", count: @taikai.total_num_arrows %>
+          <% if !@taikai.category.blank? %>
+          &#8212 <%= t ".category", category: @taikai.category  %>
+          <% end %>
         </p>
         <p><%= @taikai.description %></p>
       </div>

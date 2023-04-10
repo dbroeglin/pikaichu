@@ -31,6 +31,9 @@
               <span class="tag is-warning"><%= Taikai.human_enum_value :state, taikai.current_state %></span>
               <span class="tag is-dark"><%= Taikai.human_enum_value :form, taikai.form %></span>
               <span class="tag is-link"><%= Taikai.human_enum_value :scoring, taikai.scoring %></span>
+              <% if !taikai.category.blank? %>
+              <span class="tag is-success"><%= taikai.category %></span>
+              <% end %>
               <span class="tag is-info"><%= t("activerecord.booleans.taikai.distributed.#{taikai.distributed}") %></span>
               <span class="tag is-primary"><%= taikai.participants.size %></span>
             </div>
