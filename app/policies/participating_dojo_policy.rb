@@ -11,7 +11,15 @@ class ParticipatingDojoPolicy < ApplicationPolicy
     update?
   end
 
+  def destroy?
+    update?
+  end
+
   def edit?
+    update?
+  end
+
+  def import?
     update?
   end
 
@@ -20,14 +28,6 @@ class ParticipatingDojoPolicy < ApplicationPolicy
     user.admin? ||
       @participating_dojo.staffs.joins(:role).where(user: @user, 'role.code': :dojo_admin).any? ||
       @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
-  end
-
-  def import?
-    update?
-  end
-
-  def destroy?
-    update?
   end
 
   class Scope < Scope

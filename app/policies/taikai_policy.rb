@@ -14,10 +14,6 @@ class TaikaiPolicy < ApplicationPolicy
     user.admin? || taikai.has_roles?(user, ADMIN_ROLES)
   end
 
-  def draw?
-    update?
-  end
-
   def destroy?
     admin?
   end
@@ -38,10 +34,6 @@ class TaikaiPolicy < ApplicationPolicy
     !taikai.in_state?(:new, :registration) && show?
   end
 
-  def tie_break_show?
-    taikai.in_state?(:tie_break) && show?
-  end
-
   def marking_show?
     marking_update?
   end
@@ -56,6 +48,10 @@ class TaikaiPolicy < ApplicationPolicy
 
   def show?
     true
+  end
+
+  def tie_break_show?
+    taikai.in_state?(:tie_break) && show?
   end
 
   def tie_break_update?
