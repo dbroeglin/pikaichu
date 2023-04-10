@@ -63,6 +63,7 @@ class Taikai < ApplicationRecord
   has_many :events, -> { order created_at: :asc }, class_name: 'TaikaiEvent', dependent: :destroy
 
 
+  validates :category, inclusion: { in: CATEGORY_VALUES, allow_blank: true }
   validates :shortname,
             presence: true, length: { minimum: 3, maximum: 32 },
             uniqueness: { case_sensitive: false },
