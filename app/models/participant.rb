@@ -37,9 +37,7 @@ class Participant < ApplicationRecord
 
   def finalize_round(round, match_id)
     score = score(match_id)
-    @results = score.results.round(round)
-    @results.update_all(final: true)
-    score.recalculate_individual_score
+    score.finalize_round(round)
   end
 
   def marking?(match_id = nil)

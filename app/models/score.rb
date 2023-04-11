@@ -131,6 +131,16 @@ class Score < ApplicationRecord
     end
   end
 
+  def first(n)
+    raise "Score.first should be used only with finalized records" unless finalized?
+    first_results = results.first(n)
+
+    Score::new(
+      hits:  first_results.select(&:status_hit?).size,
+      value: first_results.map(&:value).compact.sum,
+    )
+  end
+
   def score_value(validated = true)
     if validated
       ScoreValue::new(hits: hits, value: value)
@@ -156,6 +166,11 @@ class Score < ApplicationRecord
     else
       results.any? && results.all?(&:final?)
     end
+  end
+
+  def finalize_round(round)
+    results.round(round).update_all(final: true)
+    recalculate_individual_score
   end
 
   def create_results(num_rounds, num_arrows)

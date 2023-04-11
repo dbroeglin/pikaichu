@@ -10,7 +10,7 @@ class ChampionshipController < ApplicationController
       .where("taikai_transitions.most_recent = true")
       .where("taikai_transitions.to_state = 'done'")
       .where("EXTRACT(year FROM taikais.start_date) = ?", params[:year])
-      #.where("taikais.category IN ('A')")
+      .where("taikais.category IN ('A', 'B', 'C')")
 
     @kinteki_taikais = @taikais
       .where("taikais.form IN ('individual', '2in1')")
@@ -23,15 +23,13 @@ class ChampionshipController < ApplicationController
       .includes(participating_dojo: :taikai)
       .where("participating_dojos.taikai_id IN (?)", @kinteki_taikais.pluck(:id))
       .map do |participant|
-        results = participant.score.results.first(12).select { |result| result.status == 'hit' }
-        [participant, Score::ScoreValue::new(hits: results.count, value: results.map(&:value).compact.sum)]
+        [participant, participant.score.first(12).score_value]
       end
     @enteki_participants  = Participant.joins(:participating_dojo)
       .includes(participating_dojo: :taikai)
       .where("participating_dojos.taikai_id IN (?)", @enteki_taikais.pluck(:id))
       .map do |participant|
-        results = participant.score.results.first(12).select { |result| result.status == 'hit' }
-        [participant, Score::ScoreValue::new(hits: results.count, value: results.map(&:value).compact.sum)]
+        [participant, participant.score.first(12).score_value]
       end
 
     @kinteki_individual = rank @kinteki_participants

@@ -90,7 +90,7 @@ wb.add_worksheet(name: "Enteki Results") do |sheet|
   ], style: header_row_style
 
   @enteki_participants.each do |participant, score|
-    taikai = participant.participating_dojo.taikai
+    taikai = participant.taikai
     sheet.add_row [
       taikai.name,
       taikai.category || "",
@@ -108,6 +108,9 @@ wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
     t('.taikai_name'),
     "Scoring",
     "Forme",
+    Taikai.human_attribute_name(:category),
+    Participant.name.pluralize,
+    "Nb. clubs"
   ], style: header_row_style
 
   (@kinteki_taikais + @enteki_taikais).each_with_index do |taikai, index|
@@ -115,6 +118,9 @@ wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
         taikai.name,
         taikai.scoring,
         taikai.form,
+        taikai.category || "",
+        taikai.participants.count,
+        taikai.participants.map(&:club).uniq.size,
       ], style: data_cell_style
     sheet.add_hyperlink location: "https://pikaichu.kyudo.fr/taikais/#{taikai.id}", ref: "A#{index + 2}"
   end

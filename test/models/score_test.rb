@@ -108,4 +108,21 @@ class ScoreTest < ActiveSupport::TestCase
 
     assert_equal Score::ScoreValue.new(hits: 4), score1 + score2
   end
+
+
+  test "score of N first arrows" do
+    %i(hit hit miss miss).each { |status| @score.add_result status }
+    @score.finalize_round 1
+    %i(hit miss hit miss).each { |status| @score.add_result status }
+    @score.finalize_round 2
+    %i(miss miss hit hit).each { |status| @score.add_result status }
+    @score.finalize_round 3
+
+    assert_equal 1, @score.first(1).hits
+    assert_equal 2, @score.first(2).hits
+    assert_equal 2, @score.first(3).hits
+    assert_equal 2, @score.first(4).hits
+    assert_equal 3, @score.first(5).hits
+    assert_equal 3, @score.first(6).hits
+  end
 end
