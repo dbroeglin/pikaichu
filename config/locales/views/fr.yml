@@ -233,14 +233,15 @@ fr:
       form_teams: Former les équipes
       teamed: "%{teamed} participants affectés sur %{total}."
   tie_break:
-    index:
+    edit:
       back: Retour au Taikai
-      display_name: Nom
+      title: Tie-Break
       individual: Tie-break individuels
+      team: Tie-break des équipes
+    form:
+      display_name: Nom
       intermediate_rank: Rang intermédiaire
       rank: Rang final
-      title: Tie-Break
-      team: Tie-break des équipes
   teaming:
     edit:
       add_team: Ajouter une équipe

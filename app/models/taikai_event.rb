@@ -79,4 +79,37 @@ class TaikaiEvent < ApplicationRecord
       data: data
     )
   end
+
+  def self.tie_break(taikai:, user:, rankable:)
+    message = I18n.t "tie_break.#{rankable.class.name.downcase}", user: user.display_name, taikai: taikai.name,
+                "#{rankable.class.name.downcase}": rankable.display_name,
+                intermediate_rank: rankable.intermediate_rank,
+                rank: rankable.rank,
+                scope: [ :templates, :taikai_event ]
+
+    data = {
+      taikai: {
+        id: taikai.id,
+        name: taikai.name
+      },
+      user: {
+        id: user.id,
+        display_name: user.display_name
+      },
+      "#{rankable.class.name.downcase}": {
+        id: rankable.id,
+        display_name: rankable.display_name
+      },
+      intermediate_rank: rankable.intermediate_rank,
+      rank: rankable.rank,
+    }
+
+    TaikaiEvent.create!(
+      taikai: taikai,
+      user: user,
+      category: :tie_break,
+      message: message,
+      data: data
+    )
+  end
 end

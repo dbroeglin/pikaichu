@@ -1,9 +1,39 @@
 class TieBreakController < ApplicationController
 
-  def index
-    @taikai = authorize(Taikai.find(params[:taikai_id]), :tie_break_update?)
+  def edit
+    @taikai = authorize(Taikai.find(params[:id]), :tie_break_update?)
 
-    @rankables = if @taikai.form_individual?
+    @rankables = rankables()
+  end
+
+  def update
+    @taikai = authorize(Taikai.find(params[:id]), :tie_break_update?)
+
+    params[:rank].each do |id, rank|
+      if params[:individual] == "true"
+        @rankable = @taikai.participants.find(id)
+      else
+        @rankable = @taikai.teams.find(id)
+      end
+
+      if @rankable.rank != rank.to_i
+        Taikai.transaction do
+          @rankable.update!(rank: rank.to_i)
+          TaikaiEvent.tie_break(taikai: @taikai, user: current_user, rankable: @rankable)
+        end
+      end
+    end
+
+    redirect_to taikai_url @taikai
+  rescue ActiveRecord::RecordInvalid
+    @rankables = rankables
+    render :edit, status: :unprocessable_entity
+  end
+
+  private
+
+  def rankables
+    if @taikai.form_individual?
       @individual = "true"
       @taikai.participants.intermediate_ranked
     elsif @taikai.form_2in1?
@@ -23,18 +53,4 @@ class TieBreakController < ApplicationController
       raise "Unknown taikai form: #{@taikai.form}"
     end
   end
-
-  def update
-    @taikai = authorize(Taikai.find(params[:taikai_id]), :tie_break_update?)
-    if params[:individual] == "true"
-      @rankable = Participant.find(params[:id])
-    else
-      @rankable = Team.find(params[:id])
-    end
-
-    @rankable.update(rank: params[:rank])
-
-    redirect_to action: :index, params: { individual: params[:individual] }
-  end
-
 end

@@ -54,6 +54,9 @@ fr:
       rectification:
         kinteki: "%{user} a rectifié le résultat du tir %{index} de la série %{round} de %{participant} à %{status} (précédemment: %{previous_status})."
         enteki: "%{user} a rectifié le résultat du tir %{index} de la série %{round} de %{participant} à %{value}/%{status} (précédemment %{previous_value}/%{previous_status}."
+      tie_break:
+        participant: "%{user} a départagé le participant %{participant} du rang provisoire %{intermediate_rank} au rang %{rank}."
+        team: "%{user} a départagé l'équipe %{team} du rang provisoire %{intermediate_rank} au rang %{rank}."
       state_transition:
         new_registration: "%{user} a passé '%{taikai}' de l'état 'Préparation' à l'état 'Enregistrement'."
         registration_new: "%{user} a retourné '%{taikai}' de l'état 'Enregistrement' à l'état 'Préparation'."

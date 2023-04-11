@@ -14,8 +14,12 @@ module ValidateChangeBasedOnState
     def no_change_if_taikai_is_marking
       case self
       when Participant, ParticipatingDojo, Taikai, Team
-        if changed? && !self.taikai.in_state?('new', 'registration', 'done')
+        if changed? &&
+          # Rank changes for Participant and Teams are allowed due to tie-breaks
+          (!changes.keys.one? { |k| k == 'rank' }) &&
           # We do not check in 'done' because it is immutable at that point
+          !self.taikai.in_state?('new', 'registration', 'done')
+
           errors.add(:base, :no_change_if_taikai_is_marking)
         end
       end

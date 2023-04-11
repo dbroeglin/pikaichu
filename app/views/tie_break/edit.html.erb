@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title"><%= t '.title' %></p>
+    </header>
+    <div class="card-content">
+      <p class="mb-3">
+        <% if @taikai.form_2in1? %>
+          <% if params[:individual] == "true" %>
+            <%= link_to t('.team'), tie_break_taikai_path(@taikai, params: {individual: false}), class: "button is-light" %>
+          <% else %>
+            <%= link_to t('.individual'), tie_break_taikai_path(@taikai, params: {individual: true}), class: "button is-light" %>
+          <% end %>
+        <% end %>
+      </p>
+      <%= render "form", taikai: @taikai, rankables: @rankables, rankable: @rankable, individual: @individual %>
+    </div>
+  </div>
+</div>

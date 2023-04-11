@@ -32,7 +32,7 @@
   </span>
 <% end if policy(taikai).rectification_update? %>
 
-<%= link_to taikai_tie_break_index_path(taikai),
+<%= link_to tie_break_taikai_path(taikai),
             class: "button #{size} has-background-light",
             title: t('taikais.tie_break.title') do %>
   <span class="icon <%= size %>">

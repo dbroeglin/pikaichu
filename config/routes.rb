@@ -14,13 +14,14 @@ Rails.application.routes.draw do
         to: 'marking#finalize',
         as: :finalize_round_marking
 
-  get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users', to: 'search#dojos',
-                                                                                          as: :taikai_participating_dojo_available_dojos
-  get '/taikais/:taikai_id/staffs/(:staff_id)/available_users', to: 'search#users',
-                                                                as: :taikai_staff_available_users
+  get '/taikais/:taikai_id/participating_dojos/(:participating_dojo_id)/available_users',
+      to: 'search#dojos',
+      as: :taikai_participating_dojo_available_dojos
+  get '/taikais/:taikai_id/staffs/(:staff_id)/available_users',
+      to: 'search#users',
+      as: :taikai_staff_available_users
 
-  get '/kyudojins/available', to: 'search#kyudojins',
-                              as: :search_kyudojins
+  get '/kyudojins/available', to: 'search#kyudojins', as: :search_kyudojins
 
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
@@ -30,8 +31,9 @@ Rails.application.routes.draw do
       get   'leaderboard/2in1',                 to: 'leaderboard#show_2in1'
       get   'leaderboard/public',               to: 'leaderboard#public'
       post  'transition_to'
+      get   'tie_break',                        to: 'tie_break#edit'
+      patch 'tie_break',                        to: 'tie_break#update'
     end
-    resources :tie_break, only: [:index, :update]
     resources :rectification, only: [:index, :edit, :update]
     resources :matches do
       member do
