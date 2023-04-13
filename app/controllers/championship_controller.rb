@@ -23,6 +23,7 @@ class ChampionshipController < ApplicationController
       .includes(participating_dojo: :taikai)
       .where("participating_dojos.taikai_id IN (?)", @kinteki_taikais.pluck(:id))
       .map do |participant|
+        puts "PARTICIPANT: #{participant.inspect}"
         [participant, participant.score.first(12).score_value]
       end
     @enteki_participants  = Participant.joins(:participating_dojo)

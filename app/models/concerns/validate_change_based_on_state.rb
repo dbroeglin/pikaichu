@@ -17,6 +17,7 @@ module ValidateChangeBasedOnState
         if changed? &&
           # Rank changes for Participant and Teams are allowed due to tie-breaks
           (!changes.keys.one? { |k| k == 'rank' }) &&
+
           # We do not check in 'done' because it is immutable at that point
           !self.taikai.in_state?('new', 'registration', 'done')
 

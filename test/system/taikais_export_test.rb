@@ -34,9 +34,21 @@ class TaikaisExportTest < ApplicationSystemTestCase
   TAIKAI_DATA.each do |data|
     taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
 
+    # TODO: refactor test data generation
+    taikai_admin = StaffRole.find_by!(code: 'taikai_admin')
+    roles = [
+      StaffRole.find_by!(code: 'chairman'),
+      StaffRole.find_by!(code: 'shajo_referee'),
+      StaffRole.find_by!(code: 'target_referee'),
+    ]
+
     test "Exporting #{taikai.shortname} XLSX" do
       taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
+      taikai.staffs.create!(firstname: "a", lastname: "b", role: taikai_admin, user: users(:jean_bon)) if taikai.staffs.size == 0
+      roles.each do |role|
+        taikai.staffs.create!(firstname: "a", lastname: "b", role: role)
+      end
       taikai.transition_to! :marking
       taikai.participants.map {|participant| participant.score.results }.flatten
       .each { |r|

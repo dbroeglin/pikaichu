@@ -280,13 +280,13 @@ class Taikai < ApplicationRecord
   end
 
   def previous_state
-    previous_state = TaikaiStateMachine.states[TaikaiStateMachine.states.index(current_state.to_s) - 1]
-    previous_state if allowed_transitions.index(previous_state)
+    previous_index = TaikaiStateMachine.states.index(current_state.to_s) - 1
+    TaikaiStateMachine.states[previous_index] if previous_index >= 0
   end
 
   def next_state
-    next_state = TaikaiStateMachine.states[TaikaiStateMachine.states.index(current_state.to_s) + 1]
-    next_state if allowed_transitions.index(next_state)
+    next_state = TaikaiStateMachine.states.index(current_state.to_s) + 1
+    TaikaiStateMachine.states[next_state] if next_state <= TaikaiStateMachine.states.size
   end
 
   def to_ascii

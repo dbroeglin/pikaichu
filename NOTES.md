@@ -68,3 +68,4 @@ Generate results for an Enteki Taikai:
 Reset all passwords:
 
     User.all.each { |u| u.update(encrypted_password: User.new.send(:password_digest, 'password')) }
+

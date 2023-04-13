@@ -213,11 +213,15 @@ fr:
     show:
       category: Catégorie %{category}
       generate: Générer la seconde partie
-      now: Maintenant
       overview: Vue d'ensemble de «%{description}»
       total_num_arrows:
         one: "%{count} flèche"
         other: "%{count} flèches"
+    states:
+      next_state: Étape suivante
+      previous_state: Étape précédente
+    timeline:
+      now: Maintenant
       you_are_here: Vous êtes ici!
   teams:
     destroy:

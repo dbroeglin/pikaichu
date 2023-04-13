@@ -66,3 +66,10 @@ fr:
         tie_break_marking: "%{user} a retourné '%{taikai}' de l'état 'Tie-Break' à l'état 'Marquage'."
         tie_break_done: "%{user} a passé '%{taikai}' de l'état 'Tie-Break' à l'état 'Terminé'."
         done_tie_break: "%{user} a retourné '%{taikai}' de l'état 'Terminé' à l'état 'Tie-Break'."
+    taikai_state_transitions_errors:
+      message: Impossible de passer à l'étape "%{target_state}".
+      registration_marking: >
+        Pour passer à l'étape "Marquage" le staff doit disposer au minimum d'un Directeur de tournoi, d'un
+        Juge de Shaho et d'un Juge de Cible.
+      marking_tie_break: >
+        Pour passer à l'étape "Tie-Break" tous les résultats de tous les Clubs hôtes doivent être validés.

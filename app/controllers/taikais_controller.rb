@@ -19,7 +19,6 @@ class TaikaisController < ApplicationController
         },
         staffs: :user
       ).find(params[:id])
-    @staffs = @taikai.staffs.ordered
   end
 
   def new
@@ -103,6 +102,13 @@ class TaikaisController < ApplicationController
     @taikai.transition_to! params[:state]
 
     redirect_to action: 'show', id: @taikai.id, status: :see_other
+
+  rescue Statesman::GuardFailedError
+    flash.now[:alert] = [
+      I18n.translate("message", scope: [ :templates, :taikai_state_transitions_errors ], target_state: t("activerecord.states.taikai.#{params[:state]}")),
+      I18n.translate("#{@taikai.current_state}_#{params[:state]}", scope: [ :templates, :taikai_state_transitions_errors ], default: ""),
+    ].join " "
+    render :show, status: :unprocessable_entity
   end
 
   private
@@ -123,7 +129,6 @@ class TaikaisController < ApplicationController
         :start_date,
         :tachi_size,
         :total_num_arrows,
-
       )
   end
 end
