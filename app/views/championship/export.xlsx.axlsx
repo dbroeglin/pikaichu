@@ -6,6 +6,11 @@ def display_name(participant)
   "#{participant.lastname.upcase} #{CapitalizeNames.capitalize(participant.firstname, format: :firstname)}"
 end
 
+
+def taikai_uri(id)
+  "https://pikaichu.kyudo.fr/taikais/#{id}"
+end
+
 header_row_style = wb.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true },
   border: { style: :thin, color: 'FF000000' },
@@ -56,7 +61,7 @@ wb.add_worksheet(name: "Enteki Classement Indiv") do |sheet|
   end
 end
 
-wb.add_worksheet(name: "Kinteki Resultats") do |sheet|
+wb.add_worksheet(name: "Kinteki Résultats") do |sheet|
   sheet.add_row [
     t('.taikai_name'),
     t('.category'),
@@ -66,7 +71,8 @@ wb.add_worksheet(name: "Kinteki Resultats") do |sheet|
     t('.rank'),
   ], style: header_row_style
 
-  @kinteki_participants.each do |participant, score|
+  @kinteki_participants.each_with_index do |pair, index|
+    participant, score = pair
     taikai = participant.participating_dojo.taikai
     sheet.add_row [
       taikai.name,
@@ -76,10 +82,12 @@ wb.add_worksheet(name: "Kinteki Resultats") do |sheet|
       score.hits,
       participant.rank,
     ], style: data_cell_style
+    sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end
+  sheet.auto_filter = "A1:F#{@kinteki_participants.size + 1}"
 end
 
-wb.add_worksheet(name: "Enteki Results") do |sheet|
+wb.add_worksheet(name: "Enteki Résultats") do |sheet|
   sheet.add_row [
     t('.taikai_name'),
     t('.category'),
@@ -89,7 +97,8 @@ wb.add_worksheet(name: "Enteki Results") do |sheet|
     t('.rank'),
   ], style: header_row_style
 
-  @enteki_participants.each do |participant, score|
+  @enteki_participants.each_with_index do |pair, index|
+    participant, score = pair
     taikai = participant.taikai
     sheet.add_row [
       taikai.name,
@@ -99,7 +108,10 @@ wb.add_worksheet(name: "Enteki Results") do |sheet|
       score.value,
       participant.rank,
     ], style: data_cell_style
+
+    sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end
+  sheet.auto_filter = "A1:F#{@enteki_participants.size + 1}"
 end
 
 
@@ -122,6 +134,7 @@ wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
         taikai.participants.count,
         taikai.participants.map(&:club).uniq.size,
       ], style: data_cell_style
-    sheet.add_hyperlink location: "https://pikaichu.kyudo.fr/taikais/#{taikai.id}", ref: "A#{index + 2}"
+    sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end
+  sheet.auto_filter = "A1:F#{@kinteki_taikais.size  + @enteki_taikais.size + 1}"
 end
