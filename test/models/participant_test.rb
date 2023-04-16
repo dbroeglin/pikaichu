@@ -4,7 +4,7 @@ require "test_helper"
 
 class ParticipantTest < ActiveSupport::TestCase
   setup do
-    @participant = participants(:participant1_participating_dojo1_individual_12)
+    @participant = participating_dojos(:participating_dojo1_individual_local_12_kinteki).participants.first
     @participant.create_empty_score_and_results
   end
 

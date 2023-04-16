@@ -23,4 +23,16 @@ class TestDataService
       raise "Unknown scoring method: #{taikai.scoring}"
     end
   end
+
+  def self.finalize_scores(taikai)
+    scope = Result.joins(score: { participant: { participating_dojo: :taikai}}).where("taikais.id = ?", taikai.id)
+
+    if taikai.scoring_kinteki?
+      scope.each { |result| result.update(status: 'miss', final: true) }
+    elsif taikai.scoring_enteki?
+      scope.each { |result| result.update(status: 'miss', value: 0, final: true) }
+    else
+      raise "Unknown scoring method: #{taikai.scoring}"
+    end
+  end
 end

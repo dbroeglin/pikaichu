@@ -4,23 +4,26 @@
 require "test_helper"
 
 class TeamingControllerTest < ActionDispatch::IntegrationTest
+  include FactoryBot::Syntax::Methods
+
   setup do
     sign_in users(:jean_bon)
 
-    @taikai = taikais(:'2in1_dist_12')
-    @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12)
-    @team_a = teams(:a_participating_dojo1_2in1_dist_12)
-    @team_b = teams(:b_participating_dojo1_2in1_dist_12) # empty
+    @taikai = taikais(:'2in1_dist_12_kinteki')
+    @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki)
+    @team_a = @participating_dojo.teams.first
+    @team_b = @participating_dojo.teams.second
+    @team_b.participants.clear
+
+    # TODO: use factories to make it faster?
 
     # team a:
-    @participant1 = participants(:p1_participating_dojo1_2in1_dist_12)
-    @participant2 = participants(:p2_participating_dojo1_2in1_dist_12)
-    @participant3 = participants(:p3_participating_dojo1_2in1_dist_12)
+    @participant1, @participant2, @participant3 = @team_a.participants.to_a
 
     # non assigned
-    @participant4 = participants(:p4_participating_dojo1_2in1_dist_12)
-    @participant5 = participants(:p5_participating_dojo1_2in1_dist_12)
-    @participant6 = participants(:p6_participating_dojo1_2in1_dist_12)
+    @participant4 = create(:participant, participating_dojo: @participating_dojo)
+    @participant5 = create(:participant, participating_dojo: @participating_dojo)
+    @participant6 = create(:participant, participating_dojo: @participating_dojo)
   end
 
   test "add participant in empty team" do

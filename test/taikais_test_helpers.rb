@@ -26,6 +26,6 @@ module TaikaisTestHelpers
   end
 
   def taikai_shortname(form, distributed, total_num_arrows, enteki)
-    "#{form}#{distributed ? "-dist" : ""}-#{total_num_arrows}#{enteki ? "-enteki" : ""}"
+    "#{form}-#{distributed ? "dist" : "local"}-#{total_num_arrows}-#{enteki ? "enteki" : "kinteki"}"
   end
 end

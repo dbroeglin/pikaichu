@@ -5,7 +5,7 @@ require "test_helper"
 class LeaderboardControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_dist_12)
+    @taikai = taikais(:individual_dist_12_kinteki)
     @taikai.current_user = users(:jean_bon)
   end
 

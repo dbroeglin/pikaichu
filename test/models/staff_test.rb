@@ -3,7 +3,7 @@ require "test_helper"
 class StaffTest < ActiveSupport::TestCase
 
   setup do
-    @taikai = taikais(:other_taikai)
+    @taikai = taikais(:'2in1_dist_12_enteki')
   end
 
   test "should not destroy last taikai admin" do

@@ -2,6 +2,8 @@ require "test_helper"
 require "download_helpers"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include FactoryBot::Syntax::Methods
+
   driver = if ENV['CHROME_DEBUG'] == 'true'
     Capybara.register_driver :chrome do |app|
       Capybara::Selenium::Driver.new(app, browser: :chrome)

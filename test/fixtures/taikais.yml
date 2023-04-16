@@ -1,132 +1,452 @@
-<%
-  [true, false].each do |distributed|
-    [12, 20].each do |total_num_arrows|
-%>
-individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: individual<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
-  name: Individual <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
-  start_date: <%= 5.days.from_now %>
-  end_date: <%= 6.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: individual
-
-team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: team<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
-  name: Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>
-  start_date: <%= 10.days.from_now %>
-  end_date: <%= 12.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: team
-
-2in1<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: 2in1<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
-  name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: 2in1
-
-individual<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: individual<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
-  name: "Individual <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: 2in1
-  scoring: enteki
-
-team<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: team<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
-  name: "Team <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: 2in1
-  scoring: enteki
-
-2in1<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: 2in1<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
-  name: "2 in 1 <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: 2in1
-  scoring: enteki
-
-<%
-    end
-  end
-%>
-
-<%
-  [true, false].each do |distributed|
-    [4].each do |total_num_arrows|
-%>
-
-matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>:
-  shortname: matches<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>
-  name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %>"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: matches
-
-matches<%= distributed ? '_dist' : '' %>_<%= total_num_arrows %>_enteki:
-  shortname: matches<%= distributed ? '-dist' : '' %>-<%= total_num_arrows %>-enteki
-  name: "Matches <%= distributed ? 'Distributed ' : '' %><%= total_num_arrows %> Enteki"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
-  num_targets: 6
-  total_num_arrows: <%= total_num_arrows %>
-  tachi_size: 3
-  distributed: <%= distributed %>
-  form: matches
-  scoring: enteki
-
-<%
-    end
-  end
-%>
-
-other_taikai: # Admin is Alain Térieur
-  shortname: other-taikai
-  name: Taikai 5
-  start_date: <%= 20.days.from_now %>
-  end_date: <%= 24.days.from_now %>
-  num_targets: 6
-  total_num_arrows: 12
-  tachi_size: 3
+---
+matches_dist_4_kinteki:
+  id: 1
+  shortname: matches-dist-4-kinteki
+  name: Matches Dist 4 Kinteki
+  description: Omnis accusantium reprehenderit. Qui nostrum voluptatem. Quibusdam
+    est nulla.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
   distributed: true
-  form: team
-
-2in1_test:
-  shortname: 2in1-test
-  name: "2 in 1 / test"
-  start_date: <%= 16.days.from_now %>
-  end_date: <%= 18.days.from_now %>
+  created_at: 2023-04-16 12:20:39.259712000 Z
+  updated_at: 2023-04-16 12:20:39.259712000 Z
+  num_targets: 6
+  total_num_arrows: 4
+  tachi_size: 3
+  form: matches
+  scoring: kinteki
+  category:
+2in1_dist_12_kinteki:
+  id: 2
+  shortname: 2in1-dist-12-kinteki
+  name: 2in1 Dist 12 Kinteki
+  description: Expedita exercitationem quia. Tenetur enim id. Quia repudiandae consequatur.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:39.704758000 Z
+  updated_at: 2023-04-16 12:20:39.704758000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
-  distributed: false
   form: 2in1
+  scoring: kinteki
+  category:
+individual_dist_12_kinteki:
+  id: 3
+  shortname: individual-dist-12-kinteki
+  name: Individual Dist 12 Kinteki
+  description: Impedit et aut. Odit rerum impedit. Asperiores id quia.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:40.046350000 Z
+  updated_at: 2023-04-16 12:20:40.046350000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: individual
+  scoring: kinteki
+  category:
+team_dist_12_kinteki:
+  id: 4
+  shortname: team-dist-12-kinteki
+  name: Team Dist 12 Kinteki
+  description: Laborum omnis sed. Odio nobis maiores. Voluptates modi ut.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:40.183073000 Z
+  updated_at: 2023-04-16 12:20:40.183073000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: team
+  scoring: kinteki
+  category:
+2in1_dist_20_kinteki:
+  id: 5
+  shortname: 2in1-dist-20-kinteki
+  name: 2in1 Dist 20 Kinteki
+  description: Ullam explicabo ipsam. In quod expedita. Fugiat nihil nesciunt.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:40.522692000 Z
+  updated_at: 2023-04-16 12:20:40.522692000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: 2in1
+  scoring: kinteki
+  category:
+individual_dist_20_kinteki:
+  id: 6
+  shortname: individual-dist-20-kinteki
+  name: Individual Dist 20 Kinteki
+  description: Dolor est similique. Fuga nisi molestiae. Qui velit quia.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:40.860463000 Z
+  updated_at: 2023-04-16 12:20:40.860463000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: individual
+  scoring: kinteki
+  category:
+team_dist_20_kinteki:
+  id: 7
+  shortname: team-dist-20-kinteki
+  name: Team Dist 20 Kinteki
+  description: Placeat deserunt distinctio. Unde architecto est. Porro illo est.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:40.996856000 Z
+  updated_at: 2023-04-16 12:20:40.996856000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: team
+  scoring: kinteki
+  category:
+matches_local_4_kinteki:
+  id: 8
+  shortname: matches-local-4-kinteki
+  name: Matches Local 4 Kinteki
+  description: Quia et omnis. Quis molestiae voluptate. In animi voluptas.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:41.336584000 Z
+  updated_at: 2023-04-16 12:20:41.336584000 Z
+  num_targets: 6
+  total_num_arrows: 4
+  tachi_size: 3
+  form: matches
+  scoring: kinteki
+  category:
+2in1_local_12_kinteki:
+  id: 9
+  shortname: 2in1-local-12-kinteki
+  name: 2in1 Local 12 Kinteki
+  description: Ut odit quo. Non omnis rerum. Adipisci nihil vel.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:41.533019000 Z
+  updated_at: 2023-04-16 12:20:41.533019000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: 2in1
+  scoring: kinteki
+  category:
+individual_local_12_kinteki:
+  id: 10
+  shortname: individual-local-12-kinteki
+  name: Individual Local 12 Kinteki
+  description: Amet provident animi. A possimus laudantium. Et ipsa mollitia.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:41.729783000 Z
+  updated_at: 2023-04-16 12:20:41.729783000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: individual
+  scoring: kinteki
+  category:
+team_local_12_kinteki:
+  id: 11
+  shortname: team-local-12-kinteki
+  name: Team Local 12 Kinteki
+  description: Dolorem eos consequuntur. Nesciunt et sunt. Quis voluptatibus dolorem.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:41.823449000 Z
+  updated_at: 2023-04-16 12:20:41.823449000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: team
+  scoring: kinteki
+  category:
+2in1_local_20_kinteki:
+  id: 12
+  shortname: 2in1-local-20-kinteki
+  name: 2in1 Local 20 Kinteki
+  description: Ex quas cupiditate. Ullam ea est. Assumenda voluptatem velit.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:42.021367000 Z
+  updated_at: 2023-04-16 12:20:42.021367000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: 2in1
+  scoring: kinteki
+  category:
+individual_local_20_kinteki:
+  id: 13
+  shortname: individual-local-20-kinteki
+  name: Individual Local 20 Kinteki
+  description: Nostrum fugiat aspernatur. Porro mollitia repellat. Accusantium temporibus
+    voluptatem.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:42.218904000 Z
+  updated_at: 2023-04-16 12:20:42.218904000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: individual
+  scoring: kinteki
+  category:
+team_local_20_kinteki:
+  id: 14
+  shortname: team-local-20-kinteki
+  name: Team Local 20 Kinteki
+  description: Quidem nulla distinctio. Et amet beatae. Ea doloribus inventore.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:42.312147000 Z
+  updated_at: 2023-04-16 12:20:42.312147000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: team
+  scoring: kinteki
+  category:
+matches_dist_4_enteki:
+  id: 15
+  shortname: matches-dist-4-enteki
+  name: Matches Dist 4 Enteki
+  description: Natus distinctio ipsa. Dolores delectus illum. Expedita et est.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:42.509130000 Z
+  updated_at: 2023-04-16 12:20:42.509130000 Z
+  num_targets: 6
+  total_num_arrows: 4
+  tachi_size: 3
+  form: matches
+  scoring: enteki
+  category:
+2in1_dist_12_enteki:
+  id: 16
+  shortname: 2in1-dist-12-enteki
+  name: 2in1 Dist 12 Enteki
+  description: Rem id voluptatibus. Et sit sunt. Atque rerum consequuntur.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:42.846231000 Z
+  updated_at: 2023-04-16 12:20:42.846231000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: 2in1
+  scoring: enteki
+  category:
+individual_dist_12_enteki:
+  id: 17
+  shortname: individual-dist-12-enteki
+  name: Individual Dist 12 Enteki
+  description: Molestiae ipsa blanditiis. Et dignissimos nostrum. Sit maxime delectus.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:43.241237000 Z
+  updated_at: 2023-04-16 12:20:43.241237000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: individual
+  scoring: enteki
+  category:
+team_dist_12_enteki:
+  id: 18
+  shortname: team-dist-12-enteki
+  name: Team Dist 12 Enteki
+  description: Quasi itaque iusto. Magnam sed aspernatur. Et magni omnis.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:43.374007000 Z
+  updated_at: 2023-04-16 12:20:43.374007000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: team
+  scoring: enteki
+  category:
+2in1_dist_20_enteki:
+  id: 19
+  shortname: 2in1-dist-20-enteki
+  name: 2in1 Dist 20 Enteki
+  description: Quas ea voluptas. Aut blanditiis eum. Fugiat eaque vel.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:43.709762000 Z
+  updated_at: 2023-04-16 12:20:43.709762000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: 2in1
+  scoring: enteki
+  category:
+individual_dist_20_enteki:
+  id: 20
+  shortname: individual-dist-20-enteki
+  name: Individual Dist 20 Enteki
+  description: A quia enim. Eum nihil rerum. Adipisci est minus.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:44.049439000 Z
+  updated_at: 2023-04-16 12:20:44.049439000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: individual
+  scoring: enteki
+  category:
+team_dist_20_enteki:
+  id: 21
+  shortname: team-dist-20-enteki
+  name: Team Dist 20 Enteki
+  description: Modi tenetur dignissimos. Quos voluptatibus autem. Repellat facilis
+    aliquam.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: true
+  created_at: 2023-04-16 12:20:44.180614000 Z
+  updated_at: 2023-04-16 12:20:44.180614000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: team
+  scoring: enteki
+  category:
+matches_local_4_enteki:
+  id: 22
+  shortname: matches-local-4-enteki
+  name: Matches Local 4 Enteki
+  description: Reiciendis atque placeat. Vel aut voluptate. Quos a possimus.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:44.530724000 Z
+  updated_at: 2023-04-16 12:20:44.530724000 Z
+  num_targets: 6
+  total_num_arrows: 4
+  tachi_size: 3
+  form: matches
+  scoring: enteki
+  category:
+2in1_local_12_enteki:
+  id: 23
+  shortname: 2in1-local-12-enteki
+  name: 2in1 Local 12 Enteki
+  description: Quod soluta voluptatibus. Laudantium culpa id. Sit dolorum nihil.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:44.733696000 Z
+  updated_at: 2023-04-16 12:20:44.733696000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: 2in1
+  scoring: enteki
+  category:
+individual_local_12_enteki:
+  id: 24
+  shortname: individual-local-12-enteki
+  name: Individual Local 12 Enteki
+  description: Quo ab illum. Quis quod rerum. A culpa enim.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:44.935489000 Z
+  updated_at: 2023-04-16 12:20:44.935489000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: individual
+  scoring: enteki
+  category:
+team_local_12_enteki:
+  id: 25
+  shortname: team-local-12-enteki
+  name: Team Local 12 Enteki
+  description: Aliquam iure non. Sint eius vero. Consequuntur doloribus temporibus.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:45.030593000 Z
+  updated_at: 2023-04-16 12:20:45.030593000 Z
+  num_targets: 6
+  total_num_arrows: 12
+  tachi_size: 3
+  form: team
+  scoring: enteki
+  category:
+2in1_local_20_enteki:
+  id: 26
+  shortname: 2in1-local-20-enteki
+  name: 2in1 Local 20 Enteki
+  description: Non beatae id. Quos rerum qui. Adipisci numquam id.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:45.228022000 Z
+  updated_at: 2023-04-16 12:20:45.228022000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: 2in1
+  scoring: enteki
+  category:
+individual_local_20_enteki:
+  id: 27
+  shortname: individual-local-20-enteki
+  name: Individual Local 20 Enteki
+  description: Vitae vel blanditiis. Fugit eius sequi. Dignissimos voluptas qui.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:45.427266000 Z
+  updated_at: 2023-04-16 12:20:45.427266000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: individual
+  scoring: enteki
+  category:
+team_local_20_enteki:
+  id: 28
+  shortname: team-local-20-enteki
+  name: Team Local 20 Enteki
+  description: Molestiae in facilis. Eum soluta occaecati. Deleniti rerum dolor.
+  start_date: 2023-04-21
+  end_date: 2023-04-21
+  distributed: false
+  created_at: 2023-04-16 12:20:45.520726000 Z
+  updated_at: 2023-04-16 12:20:45.520726000 Z
+  num_targets: 6
+  total_num_arrows: 20
+  tachi_size: 3
+  form: team
+  scoring: enteki
+  category:

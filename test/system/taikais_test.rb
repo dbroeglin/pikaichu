@@ -11,7 +11,7 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test "visiting taikais" do
-    taikai = taikais(:individual_12)
+    taikai = taikais(:individual_dist_12_kinteki)
 
     click_on "Gérer les Taikai"
 
@@ -19,7 +19,7 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test "visiting individual_12" do
-    taikai = taikais(:individual_12)
+    taikai = taikais(:individual_dist_12_kinteki)
 
     go_to_taikais
 
@@ -60,7 +60,7 @@ class TaikaisTest < ApplicationSystemTestCase
       assert_selector "p.subtitle.is-6", text: "#{total_num_arrows} flèches"
       assert_selector "p.subtitle.is-6", text: scoring_label
 
-      find("td", text: "Administrateur").assert_sibling("td", text: "Jean Bon")
+      find("td", text: "Taikai admin").assert_sibling("td", text: "Jean Bon")
     end
   end
 

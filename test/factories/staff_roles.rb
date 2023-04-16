@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :staff_role do
-    code { "Code" }
-    label_fr { "Label FR" }
-    description_fr { "Description FR" }
-    label_en { "Label EN" }
-    description_en { "Description EN" }
+    code { "code" }
+    label_fr { code.gsub(/_/, ' ').capitalize }
+    description_fr { "Description de #{code}" }
+    label_en { code.capitalize }
+    description_en { "Description of #{code}" }
   end
 end

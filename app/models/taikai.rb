@@ -100,7 +100,7 @@ class Taikai < ApplicationRecord
 
   after_create do
     throw "current_user must be set at creation time" unless self.current_user
-    staffs.create!(user: self.current_user, role: StaffRole.find_by_code(:taikai_admin))
+    staffs.create!(user: self.current_user, role: StaffRole.find_by!(code: :taikai_admin))
   end
 
   def num_arrows

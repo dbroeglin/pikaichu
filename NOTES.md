@@ -69,3 +69,9 @@ Reset all passwords:
 
     User.all.each { |u| u.update(encrypted_password: User.new.send(:password_digest, 'password')) }
 
+
+Rebuild fixtures:
+
+    rake spec:fixture_builder:rebuild
+    RAILS_ENV=test rake db:fixtures:load
+

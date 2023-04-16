@@ -49,11 +49,11 @@ class TaikaiStateMachine
   # "Forward" transitions call-backs
 
   before_transition(from: :registration, to: :marking) do |taikai, transition|
-    taikai.create_scores unless taikai.form_matches? if taikai.id > 74 # TODO: remove after migration
+    taikai.create_scores unless taikai.form_matches? #if taikai.id > 74 # TODO: remove after migration
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, transition|
-    taikai.delete_scores unless taikai.form_matches? if taikai.id > 74 # TODO: remove after migration
+    taikai.delete_scores unless taikai.form_matches? #if taikai.id > 74 # TODO: remove after migration
   end
 
   # "Backward" transitions call-backs

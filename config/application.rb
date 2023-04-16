@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module PiKaichu
   class Application < Rails::Application
+    ENV['FIXTURES_PATH'] = 'test/fixtures'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

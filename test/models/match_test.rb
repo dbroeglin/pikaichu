@@ -3,10 +3,10 @@ require "test_helper"
 class MatchTest < ActiveSupport::TestCase
   setup do
     @taikai = taikais(:matches_dist_4_enteki)
-    @participating_dojo = participating_dojos(:participating_dojo1_matches_dist_4_enteki)
-    @team1 = teams(:a_participating_dojo1_matches_dist_4_enteki)
-    @team2 = teams(:b_participating_dojo1_matches_dist_4_enteki)
-    @team3 = teams(:c_participating_dojo1_matches_dist_4_enteki)
+    @participating_dojo = @taikai.participating_dojos.first
+    @team1 = @participating_dojo.teams[0]
+    @team2 = @participating_dojo.teams[1]
+    @team3 = @participating_dojo.teams[2]
 
     @match = Match.create(
       taikai_id: @taikai.id,

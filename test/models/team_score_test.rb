@@ -6,8 +6,7 @@ class TeamScoreTest < ActiveSupport::TestCase
   setup do
     @taikai = taikais(:"2in1_dist_12_enteki")
     @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12_enteki)
-    @team1 = teams(:a_participating_dojo1_2in1_dist_12_enteki)
-    #@participant = participants(:p1_participating_dojo1_2in1_dist_12_enteki)
+    @team1 = @participating_dojo.teams.first
 
     @team1.participants.each do |participant|
       participant.create_empty_score_and_results

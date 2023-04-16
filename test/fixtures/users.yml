@@ -1,54 +1,134 @@
+---
 jean_bon:
-  # Jean is the administrator of the application. He has full access to all the data and users.
+  id: 1
+  email: jean.bon@test.kyudo.fr
+  encrypted_password: "$2a$12$7MDG/jujr1kud0L25hxbN.BLF0iIMN4rqBbmBerR./VU.CAPEzIr2"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:37.248422000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:37.260757000 Z
+  updated_at: 2023-04-16 12:20:37.260757000 Z
   firstname: Jean
   lastname: Bon
-  email: jean.bon@test.kyudo.fr
   admin: true
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
-
+marc_o_polo:
+  id: 2
+  email: marc.o.polo@test.kyudo.fr
+  encrypted_password: "$2a$12$RY3NWnRpIlZ5qIyKC4SZfOHgHA0MZFyhn0dmWQaCRCNM.NBeruxI2"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:37.583021000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:37.586621000 Z
+  updated_at: 2023-04-16 12:20:37.586621000 Z
+  firstname: Marc
+  lastname: O'Polo
+  admin: false
 alain_terieur:
-  # Alain is a participating dojo administrator
-  firstname: Alain
-  lastname: Térieur
+  id: 3
   email: alain.terieur@test.kyudo.fr
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
-
+  encrypted_password: "$2a$12$Ea2yFhin6DUrgDICBj9NJOD6NWMqjULyDc9H0J2ZdYDwuSQVCOZuG"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:37.885771000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:37.889544000 Z
+  updated_at: 2023-04-16 12:20:37.889544000 Z
+  firstname: Alain
+  lastname: Terieur
+  admin: false
 alex_terieur:
-  # Alex is a Taikai participant he accesses the application to visualize his results.
-  firstname: Alex
-  lastname: Térieur
+  id: 4
   email: alex.terieur@test.kyudo.fr
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
-
-pat:
-  # Pat is a federation official, her role is to validate (homologates) Taikais and results.
+  encrypted_password: "$2a$12$kXMAOPjpseD7w.FJyToHAuZU3ShfR0Q2Vx3Zl73kedjmpL0Nk.6W2"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:38.187623000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:38.192260000 Z
+  updated_at: 2023-04-16 12:20:38.192260000 Z
+  firstname: Alex
+  lastname: Terieur
+  admin: false
+pat_ronat:
+  id: 5
+  email: pat.ronat@test.kyudo.fr
+  encrypted_password: "$2a$12$.bF3cgy0br8z9jwcmcwzxOsRM5hCRP0AWPMv0hf5baPRo4vfl0/jK"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:38.489638000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:38.494026000 Z
+  updated_at: 2023-04-16 12:20:38.494026000 Z
   firstname: Pat
   lastname: Ronat
-  email: pat.ronat@test.kyudo.fr
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
-
-vince:
-  # Vince organizes Taikais. He knows the application well and understands Taikai organization and rules.
+  admin: false
+vince_santo:
+  id: 6
+  email: vince.santo@test.kyudo.fr
+  encrypted_password: "$2a$12$6HAUc9D2arsZ0nwt60SiL.CvOJOv9aK0gnkFbHZ0hYfgAwuB8sB2m"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:38.791989000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:38.796421000 Z
+  updated_at: 2023-04-16 12:20:38.796421000 Z
   firstname: Vince
   lastname: Santo
-  email: vince.santo@test.kyudo.fr
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
-
-marie:
-  # Marie is a Kyudo fan, she follows Taikais and the championship. She might be a participant at times.
+  admin: false
+marie_tournelle:
+  id: 7
+  email: marie.tournelle@test.kyudo.fr
+  encrypted_password: "$2a$12$yp8GjOODMiAxk.EMoNdZM.PHPZJeIWaugjYnV08eWpYL7SXP2Kh7i"
+  reset_password_token:
+  reset_password_sent_at:
+  remember_created_at:
+  confirmation_token:
+  confirmed_at: 2023-04-16 12:20:39.093223000 Z
+  confirmation_sent_at:
+  unconfirmed_email:
+  failed_attempts: 0
+  unlock_token:
+  locked_at:
+  created_at: 2023-04-16 12:20:39.095859000 Z
+  updated_at: 2023-04-16 12:20:39.095859000 Z
   firstname: Marie
   lastname: Tournelle
-  email: marie.tournelle@test.kyudo.fr
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  confirmed_at: <%= Time.zone.now - 1.hour %>
-  confirmation_sent_at: <%= Time.zone.now - 2.hours %>
+  admin: false

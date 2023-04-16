@@ -4,8 +4,9 @@ require "test_helper"
 
 class ResultTest < ActiveSupport::TestCase
   setup do
-    @kinteki_participant = participants(:participant_participating_dojo_2in1_12)
-    @enteki_participant  = participants(:participant_participating_dojo_2in1_12_enteki)
+    # TODO: we should test for teams also (teams scores are shared)
+    @kinteki_participant = taikais('individual_dist_12_kinteki').participants.first
+    @enteki_participant  = taikais('individual_dist_12_enteki').participants.first
     @kinteki_score = Score.new(participant: @kinteki_participant)
     @enteki_score = Score.new(participant: @enteki_participant)
 

@@ -4,8 +4,11 @@ require "test_helper"
 
 class ScoreTest < ActiveSupport::TestCase
   setup do
-    @score = scores(:score1_participant1_AK_2in1_test)
-    @score.create_results 3, 4
+    # TODO: replace this by factories?
+    @participant = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki).participants.first
+    @participant.team.create_empty_score
+    @participant.team.participants.each { |participant| participant.create_empty_score_and_results }
+    @score = @participant.scores.first
   end
 
   test "comparison" do

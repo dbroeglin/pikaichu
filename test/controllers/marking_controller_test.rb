@@ -5,9 +5,9 @@ require "test_helper"
 class MarkingControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_dist_12)
+    @taikai = taikais(:individual_dist_12_kinteki)
     @taikai.current_user = users(:jean_bon) # for transitions
-    @participant = participants(:participant1_participating_dojo1_individual_dist_12).reload
+    @participant = @taikai.participating_dojos.first.participants.first
   end
 
   test "jean should hav access to marking" do
@@ -22,8 +22,8 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     assert_select "h1", "Feuille de marque - #{@taikai.shortname}"
-    assert_select "tbody tr th", "Participating Dojo1 Individual Dist 12"
-    assert_select "tbody tr:nth-of-type(4) th", "Participating Dojo2 Individual Dist 12"
+    assert_select "tbody tr th", "Participating Dojo1 Individual Dist 12 Kinteki"
+    assert_select "tbody tr:nth-of-type(4) th", "Participating Dojo2 Individual Dist 12 Kinteki"
   end
 
   test "alain_terieur should have access to marking for participating dojo 1" do
@@ -39,7 +39,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "h1", "Feuille de marque - #{@taikai.shortname}"
-    assert_select "tbody th", "Participating Dojo1 Individual Dist 12"
+    assert_select "tbody th", "Participating Dojo1 Individual Dist 12 Kinteki"
     assert_select "tbody tr:nth-of-type(4) th", 0
   end
 
@@ -51,7 +51,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     @taikai.transition_to! :registration
     @taikai.transition_to! :marking
 
-    sign_in users(:marie)
+    sign_in users(:marie_tournelle)
 
     get show_marking_url @taikai
     assert_response :redirect

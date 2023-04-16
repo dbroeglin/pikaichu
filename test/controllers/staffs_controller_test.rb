@@ -5,8 +5,8 @@ require 'test_helper'
 class StaffsControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_12)
-    @test_staff = staffs(:staff1_individual_12)
+    @taikai = taikais(:individual_dist_12_kinteki)
+    @test_staff = @taikai.staffs.first
   end
 
   test 'should get new' do
@@ -20,9 +20,9 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
         firstname: "Dan",
         lastname: "Brown",
         taikai_id: @taikai.id,
-        user_id: users(:pat).id,
+        user_id: users(:pat_ronat).id,
         role_id: staff_roles(:taikai_admin),
-        participating_dojo_id: participating_dojos(:participating_dojo1_individual_12)
+        participating_dojo_id: @taikai.participating_dojos.first
       } }
     end
     assert_redirected_to edit_taikai_url @taikai

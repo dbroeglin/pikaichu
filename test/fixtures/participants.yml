@@ -1,110 +1,4285 @@
-<% 3.times do |index| %>
-participant<%= index %>_participating_dojo1_individual_12:
-  index: <%= index + 1 %>
-  participating_dojo: participating_dojo1_individual_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: C1
-<% end %>
-
-
-<% 3.times do |index| %>
-participant<%= index %>_participating_dojo1_individual_dist_12:
-  index: <%= index + 1 %>
-  participating_dojo: participating_dojo1_individual_dist_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: C1
-<% end %>
-
-
-<% 3.times do |index| %>
-participant<%= index %>_participating_dojo2_individual_dist_12:
-  index: <%= index + 4 %>
-  participating_dojo: participating_dojo2_individual_dist_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: C1
-<% end %>
-
-
-<% 3.times do |index| %>
-p<%= index + 1 %>_participating_dojo1_2in1_dist_12:
-  participating_dojo: participating_dojo1_2in1_dist_12
-  team: a_participating_dojo1_2in1_dist_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K1
-  index_in_team: <%= index + 1 %>
-<% end %>
-
-<% (4..12).each do |index| %>
-p<%= index %>_participating_dojo1_2in1_dist_12:
-  participating_dojo: participating_dojo1_2in1_dist_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K2
-<% end %>
-
-<% 3.times do |index| %>
-p<%= index + 1 %>_participating_dojo1_2in1_dist_12_enteki:
-  participating_dojo: participating_dojo1_2in1_dist_12_enteki
-  team: a_participating_dojo1_2in1_dist_12_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K1
-  index_in_team: <%= index + 1 %>
-<% end %>
-
-<% (4..12).each do |index| %>
-p<%= index %>_participating_dojo1_2in1_dist_12_enteki:
-  participating_dojo: participating_dojo1_2in1_dist_12_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K2
-<% end %>
-
-participant_participating_dojo_2in1_12:
-  participating_dojo: participating_dojo1_2in1_12
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: Club1
-
-participant_participating_dojo_2in1_12_enteki:
-  participating_dojo: participating_dojo1_2in1_12_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: Club1
-
-participant1_AK_2in1_test:
-  participating_dojo: AK_2in1_test
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: Club1
-
-# Participants for matches
-<% 3.times do |index| %>
-p<%= index + 1 %>_participating_dojo1_matches_dist_4_enteki:
-  participating_dojo: participating_dojo1_matches_dist_4_enteki
-  team: a_participating_dojo1_matches_dist_4_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K1
-  index_in_team: <%= index + 1 %>
-
-p<%= index + 4 %>_participating_dojo1_matches_dist_4_enteki:
-  participating_dojo: participating_dojo1_matches_dist_4_enteki
-  team: b_participating_dojo1_matches_dist_4_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K1
-  index_in_team: <%= index + 1 %>
-
-p<%= index + 7 %>_participating_dojo1_matches_dist_4_enteki:
-  participating_dojo: participating_dojo1_matches_dist_4_enteki
-  team: c_participating_dojo1_matches_dist_4_enteki
-  firstname: <%= Faker::Name.first_name %>
-  lastname: <%= Faker::Name.last_name %>
-  club: K1
-  index_in_team: <%= index + 1 %>
-<% end %>
+---
+participants_001:
+  id: 1
+  index:
+  firstname: Aymard
+  lastname: Huet
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.374798000 Z
+  updated_at: 2023-04-16 12:20:39.374798000 Z
+  team_id: 1
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_002:
+  id: 2
+  index:
+  firstname: Lucie
+  lastname: Aubert
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.387581000 Z
+  updated_at: 2023-04-16 12:20:39.387581000 Z
+  team_id: 1
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_003:
+  id: 3
+  index:
+  firstname: Nadège
+  lastname: Leroy
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.399502000 Z
+  updated_at: 2023-04-16 12:20:39.399502000 Z
+  team_id: 1
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_004:
+  id: 4
+  index:
+  firstname: Agnane
+  lastname: Denis
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.426268000 Z
+  updated_at: 2023-04-16 12:20:39.426268000 Z
+  team_id: 2
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_005:
+  id: 5
+  index:
+  firstname: Aristide
+  lastname: Marie
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.445107000 Z
+  updated_at: 2023-04-16 12:20:39.445107000 Z
+  team_id: 2
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_006:
+  id: 6
+  index:
+  firstname: Oriande
+  lastname: Adam
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.456408000 Z
+  updated_at: 2023-04-16 12:20:39.456408000 Z
+  team_id: 2
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_007:
+  id: 7
+  index:
+  firstname: Germaine
+  lastname: Prévost
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.478411000 Z
+  updated_at: 2023-04-16 12:20:39.478411000 Z
+  team_id: 3
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_008:
+  id: 8
+  index:
+  firstname: Isidore
+  lastname: Carpentier
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.488703000 Z
+  updated_at: 2023-04-16 12:20:39.488703000 Z
+  team_id: 3
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_009:
+  id: 9
+  index:
+  firstname: Alix
+  lastname: Meunier
+  participating_dojo_id: 1
+  created_at: 2023-04-16 12:20:39.500484000 Z
+  updated_at: 2023-04-16 12:20:39.500484000 Z
+  team_id: 3
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_010:
+  id: 10
+  index:
+  firstname: Béranger
+  lastname: André
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.533109000 Z
+  updated_at: 2023-04-16 12:20:39.533109000 Z
+  team_id: 4
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_011:
+  id: 11
+  index:
+  firstname: Tristan
+  lastname: Deschamps
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.546069000 Z
+  updated_at: 2023-04-16 12:20:39.546069000 Z
+  team_id: 4
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_012:
+  id: 12
+  index:
+  firstname: Flodoard
+  lastname: Dumas
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.557904000 Z
+  updated_at: 2023-04-16 12:20:39.557904000 Z
+  team_id: 4
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_013:
+  id: 13
+  index:
+  firstname: Laurence
+  lastname: Menard
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.579843000 Z
+  updated_at: 2023-04-16 12:20:39.579843000 Z
+  team_id: 5
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_014:
+  id: 14
+  index:
+  firstname: Rosalie
+  lastname: Fabre
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.590457000 Z
+  updated_at: 2023-04-16 12:20:39.590457000 Z
+  team_id: 5
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_015:
+  id: 15
+  index:
+  firstname: Valentine
+  lastname: Rémy
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.601958000 Z
+  updated_at: 2023-04-16 12:20:39.601958000 Z
+  team_id: 5
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_016:
+  id: 16
+  index:
+  firstname: Jules
+  lastname: Hubert
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.622829000 Z
+  updated_at: 2023-04-16 12:20:39.622829000 Z
+  team_id: 6
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_017:
+  id: 17
+  index:
+  firstname: Monique
+  lastname: Perrin
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.634576000 Z
+  updated_at: 2023-04-16 12:20:39.634576000 Z
+  team_id: 6
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_018:
+  id: 18
+  index:
+  firstname: Carine
+  lastname: Tessier
+  participating_dojo_id: 2
+  created_at: 2023-04-16 12:20:39.648337000 Z
+  updated_at: 2023-04-16 12:20:39.648337000 Z
+  team_id: 6
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_019:
+  id: 19
+  index:
+  firstname: Pénélope
+  lastname: Guerin
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.734490000 Z
+  updated_at: 2023-04-16 12:20:39.734490000 Z
+  team_id: 7
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_020:
+  id: 20
+  index:
+  firstname: Jocelyne
+  lastname: Dupuy
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.746074000 Z
+  updated_at: 2023-04-16 12:20:39.746074000 Z
+  team_id: 7
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_021:
+  id: 21
+  index:
+  firstname: Épiphane
+  lastname: Chevalier
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.758820000 Z
+  updated_at: 2023-04-16 12:20:39.758820000 Z
+  team_id: 7
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_022:
+  id: 22
+  index:
+  firstname: Martin
+  lastname: Barre
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.780990000 Z
+  updated_at: 2023-04-16 12:20:39.780990000 Z
+  team_id: 8
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_023:
+  id: 23
+  index:
+  firstname: Christian
+  lastname: Riviere
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.792549000 Z
+  updated_at: 2023-04-16 12:20:39.792549000 Z
+  team_id: 8
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_024:
+  id: 24
+  index:
+  firstname: Anémone
+  lastname: Marty
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.803861000 Z
+  updated_at: 2023-04-16 12:20:39.803861000 Z
+  team_id: 8
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_025:
+  id: 25
+  index:
+  firstname: Octave
+  lastname: Lamy
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.823949000 Z
+  updated_at: 2023-04-16 12:20:39.823949000 Z
+  team_id: 9
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_026:
+  id: 26
+  index:
+  firstname: Laurent
+  lastname: Vasseur
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.835445000 Z
+  updated_at: 2023-04-16 12:20:39.835445000 Z
+  team_id: 9
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_027:
+  id: 27
+  index:
+  firstname: Gontran
+  lastname: Lebrun
+  participating_dojo_id: 3
+  created_at: 2023-04-16 12:20:39.847526000 Z
+  updated_at: 2023-04-16 12:20:39.847526000 Z
+  team_id: 9
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_028:
+  id: 28
+  index:
+  firstname: Amandine
+  lastname: Cousin
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.879036000 Z
+  updated_at: 2023-04-16 12:20:39.879036000 Z
+  team_id: 10
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_029:
+  id: 29
+  index:
+  firstname: Ariel
+  lastname: Blanc
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.890419000 Z
+  updated_at: 2023-04-16 12:20:39.890419000 Z
+  team_id: 10
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_030:
+  id: 30
+  index:
+  firstname: Pétronille
+  lastname: Morin
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.901599000 Z
+  updated_at: 2023-04-16 12:20:39.901599000 Z
+  team_id: 10
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_031:
+  id: 31
+  index:
+  firstname: Césaire
+  lastname: Tessier
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.922145000 Z
+  updated_at: 2023-04-16 12:20:39.922145000 Z
+  team_id: 11
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_032:
+  id: 32
+  index:
+  firstname: Gwendoline
+  lastname: Lebrun
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.933500000 Z
+  updated_at: 2023-04-16 12:20:39.933500000 Z
+  team_id: 11
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_033:
+  id: 33
+  index:
+  firstname: Anastasie
+  lastname: Marchal
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.945504000 Z
+  updated_at: 2023-04-16 12:20:39.945504000 Z
+  team_id: 11
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_034:
+  id: 34
+  index:
+  firstname: Armeline
+  lastname: Pichon
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.969424000 Z
+  updated_at: 2023-04-16 12:20:39.969424000 Z
+  team_id: 12
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_035:
+  id: 35
+  index:
+  firstname: Albéric
+  lastname: Lopéz
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.981613000 Z
+  updated_at: 2023-04-16 12:20:39.981613000 Z
+  team_id: 12
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_036:
+  id: 36
+  index:
+  firstname: Ludolphe
+  lastname: Olivier
+  participating_dojo_id: 4
+  created_at: 2023-04-16 12:20:39.992864000 Z
+  updated_at: 2023-04-16 12:20:39.992864000 Z
+  team_id: 12
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_037:
+  id: 37
+  index:
+  firstname: Lucie
+  lastname: Roussel
+  participating_dojo_id: 5
+  created_at: 2023-04-16 12:20:40.068003000 Z
+  updated_at: 2023-04-16 12:20:40.068003000 Z
+  team_id:
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_038:
+  id: 38
+  index:
+  firstname: Bertrand
+  lastname: Dubois
+  participating_dojo_id: 5
+  created_at: 2023-04-16 12:20:40.078902000 Z
+  updated_at: 2023-04-16 12:20:40.078902000 Z
+  team_id:
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_039:
+  id: 39
+  index:
+  firstname: Roseline
+  lastname: Maillard
+  participating_dojo_id: 5
+  created_at: 2023-04-16 12:20:40.088903000 Z
+  updated_at: 2023-04-16 12:20:40.088903000 Z
+  team_id:
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_040:
+  id: 40
+  index:
+  firstname: Azalée
+  lastname: Brun
+  participating_dojo_id: 6
+  created_at: 2023-04-16 12:20:40.107968000 Z
+  updated_at: 2023-04-16 12:20:40.107968000 Z
+  team_id:
+  index_in_team: 4
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_041:
+  id: 41
+  index:
+  firstname: Bénigne
+  lastname: Joly
+  participating_dojo_id: 6
+  created_at: 2023-04-16 12:20:40.117892000 Z
+  updated_at: 2023-04-16 12:20:40.117892000 Z
+  team_id:
+  index_in_team: 5
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_042:
+  id: 42
+  index:
+  firstname: Michel
+  lastname: Laine
+  participating_dojo_id: 6
+  created_at: 2023-04-16 12:20:40.127515000 Z
+  updated_at: 2023-04-16 12:20:40.127515000 Z
+  team_id:
+  index_in_team: 6
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_043:
+  id: 43
+  index:
+  firstname: Géraud
+  lastname: Vasseur
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.213395000 Z
+  updated_at: 2023-04-16 12:20:40.213395000 Z
+  team_id: 13
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_044:
+  id: 44
+  index:
+  firstname: Brunehilde
+  lastname: Perrot
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.224154000 Z
+  updated_at: 2023-04-16 12:20:40.224154000 Z
+  team_id: 13
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_045:
+  id: 45
+  index:
+  firstname: Yolande
+  lastname: Gilbert
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.235255000 Z
+  updated_at: 2023-04-16 12:20:40.235255000 Z
+  team_id: 13
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_046:
+  id: 46
+  index:
+  firstname: Irène
+  lastname: Perez
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.256176000 Z
+  updated_at: 2023-04-16 12:20:40.256176000 Z
+  team_id: 14
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_047:
+  id: 47
+  index:
+  firstname: Marianne
+  lastname: Laine
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.267990000 Z
+  updated_at: 2023-04-16 12:20:40.267990000 Z
+  team_id: 14
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_048:
+  id: 48
+  index:
+  firstname: Monique
+  lastname: Morin
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.280690000 Z
+  updated_at: 2023-04-16 12:20:40.280690000 Z
+  team_id: 14
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_049:
+  id: 49
+  index:
+  firstname: Henriette
+  lastname: Morel
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.302658000 Z
+  updated_at: 2023-04-16 12:20:40.302658000 Z
+  team_id: 15
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_050:
+  id: 50
+  index:
+  firstname: Chrysole
+  lastname: Cousin
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.314044000 Z
+  updated_at: 2023-04-16 12:20:40.314044000 Z
+  team_id: 15
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_051:
+  id: 51
+  index:
+  firstname: Bon
+  lastname: Adam
+  participating_dojo_id: 7
+  created_at: 2023-04-16 12:20:40.325188000 Z
+  updated_at: 2023-04-16 12:20:40.325188000 Z
+  team_id: 15
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_052:
+  id: 52
+  index:
+  firstname: Audrey
+  lastname: Remy
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.353792000 Z
+  updated_at: 2023-04-16 12:20:40.353792000 Z
+  team_id: 16
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_053:
+  id: 53
+  index:
+  firstname: Romain
+  lastname: Cousin
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.366103000 Z
+  updated_at: 2023-04-16 12:20:40.366103000 Z
+  team_id: 16
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_054:
+  id: 54
+  index:
+  firstname: Agilberte
+  lastname: Dumas
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.378866000 Z
+  updated_at: 2023-04-16 12:20:40.378866000 Z
+  team_id: 16
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_055:
+  id: 55
+  index:
+  firstname: Céleste
+  lastname: Rodriguez
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.400552000 Z
+  updated_at: 2023-04-16 12:20:40.400552000 Z
+  team_id: 17
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_056:
+  id: 56
+  index:
+  firstname: Nine
+  lastname: Gautier
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.412538000 Z
+  updated_at: 2023-04-16 12:20:40.412538000 Z
+  team_id: 17
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_057:
+  id: 57
+  index:
+  firstname: Emma
+  lastname: Leveque
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.423156000 Z
+  updated_at: 2023-04-16 12:20:40.423156000 Z
+  team_id: 17
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_058:
+  id: 58
+  index:
+  firstname: Apolline
+  lastname: Hubert
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.444405000 Z
+  updated_at: 2023-04-16 12:20:40.444405000 Z
+  team_id: 18
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_059:
+  id: 59
+  index:
+  firstname: Céleste
+  lastname: Humbert
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.455271000 Z
+  updated_at: 2023-04-16 12:20:40.455271000 Z
+  team_id: 18
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_060:
+  id: 60
+  index:
+  firstname: Aldéric
+  lastname: Martinez
+  participating_dojo_id: 8
+  created_at: 2023-04-16 12:20:40.466664000 Z
+  updated_at: 2023-04-16 12:20:40.466664000 Z
+  team_id: 18
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_061:
+  id: 61
+  index:
+  firstname: Valère
+  lastname: Collin
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.552319000 Z
+  updated_at: 2023-04-16 12:20:40.552319000 Z
+  team_id: 19
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_062:
+  id: 62
+  index:
+  firstname: Axel
+  lastname: Renault
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.562925000 Z
+  updated_at: 2023-04-16 12:20:40.562925000 Z
+  team_id: 19
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_063:
+  id: 63
+  index:
+  firstname: Fortuné
+  lastname: Meyer
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.574875000 Z
+  updated_at: 2023-04-16 12:20:40.574875000 Z
+  team_id: 19
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_064:
+  id: 64
+  index:
+  firstname: Xavier
+  lastname: Pasquier
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.598260000 Z
+  updated_at: 2023-04-16 12:20:40.598260000 Z
+  team_id: 20
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_065:
+  id: 65
+  index:
+  firstname: Axel
+  lastname: Lopéz
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.609786000 Z
+  updated_at: 2023-04-16 12:20:40.609786000 Z
+  team_id: 20
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_066:
+  id: 66
+  index:
+  firstname: Athanase
+  lastname: Sanchez
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.620525000 Z
+  updated_at: 2023-04-16 12:20:40.620525000 Z
+  team_id: 20
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_067:
+  id: 67
+  index:
+  firstname: Jade
+  lastname: Boyer
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.641710000 Z
+  updated_at: 2023-04-16 12:20:40.641710000 Z
+  team_id: 21
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_068:
+  id: 68
+  index:
+  firstname: Ambre
+  lastname: Guichard
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.652673000 Z
+  updated_at: 2023-04-16 12:20:40.652673000 Z
+  team_id: 21
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_069:
+  id: 69
+  index:
+  firstname: Thierry
+  lastname: Bourgeois
+  participating_dojo_id: 9
+  created_at: 2023-04-16 12:20:40.665030000 Z
+  updated_at: 2023-04-16 12:20:40.665030000 Z
+  team_id: 21
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_070:
+  id: 70
+  index:
+  firstname: Laure
+  lastname: Gillet
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.696396000 Z
+  updated_at: 2023-04-16 12:20:40.696396000 Z
+  team_id: 22
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_071:
+  id: 71
+  index:
+  firstname: Michel
+  lastname: Fernandez
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.708667000 Z
+  updated_at: 2023-04-16 12:20:40.708667000 Z
+  team_id: 22
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_072:
+  id: 72
+  index:
+  firstname: Vianney
+  lastname: Etienne
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.719043000 Z
+  updated_at: 2023-04-16 12:20:40.719043000 Z
+  team_id: 22
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_073:
+  id: 73
+  index:
+  firstname: Aurèle
+  lastname: Tessier
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.740141000 Z
+  updated_at: 2023-04-16 12:20:40.740141000 Z
+  team_id: 23
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_074:
+  id: 74
+  index:
+  firstname: Aloïse
+  lastname: Millet
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.750943000 Z
+  updated_at: 2023-04-16 12:20:40.750943000 Z
+  team_id: 23
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_075:
+  id: 75
+  index:
+  firstname: Hubert
+  lastname: Le Gall
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.762510000 Z
+  updated_at: 2023-04-16 12:20:40.762510000 Z
+  team_id: 23
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_076:
+  id: 76
+  index:
+  firstname: Moïse
+  lastname: Roche
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.785993000 Z
+  updated_at: 2023-04-16 12:20:40.785993000 Z
+  team_id: 24
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_077:
+  id: 77
+  index:
+  firstname: Yvette
+  lastname: Nguyen
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.797972000 Z
+  updated_at: 2023-04-16 12:20:40.797972000 Z
+  team_id: 24
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_078:
+  id: 78
+  index:
+  firstname: Émilie
+  lastname: Dupuy
+  participating_dojo_id: 10
+  created_at: 2023-04-16 12:20:40.809934000 Z
+  updated_at: 2023-04-16 12:20:40.809934000 Z
+  team_id: 24
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_079:
+  id: 79
+  index:
+  firstname: Florestan
+  lastname: Lopez
+  participating_dojo_id: 11
+  created_at: 2023-04-16 12:20:40.882883000 Z
+  updated_at: 2023-04-16 12:20:40.882883000 Z
+  team_id:
+  index_in_team: 7
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_080:
+  id: 80
+  index:
+  firstname: Gaston
+  lastname: Pierre
+  participating_dojo_id: 11
+  created_at: 2023-04-16 12:20:40.893299000 Z
+  updated_at: 2023-04-16 12:20:40.893299000 Z
+  team_id:
+  index_in_team: 8
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_081:
+  id: 81
+  index:
+  firstname: Elsa
+  lastname: Le Roux
+  participating_dojo_id: 11
+  created_at: 2023-04-16 12:20:40.904494000 Z
+  updated_at: 2023-04-16 12:20:40.904494000 Z
+  team_id:
+  index_in_team: 9
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_082:
+  id: 82
+  index:
+  firstname: Annette
+  lastname: Fabre
+  participating_dojo_id: 12
+  created_at: 2023-04-16 12:20:40.922023000 Z
+  updated_at: 2023-04-16 12:20:40.922023000 Z
+  team_id:
+  index_in_team: 10
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_083:
+  id: 83
+  index:
+  firstname: Malo
+  lastname: Blanc
+  participating_dojo_id: 12
+  created_at: 2023-04-16 12:20:40.932520000 Z
+  updated_at: 2023-04-16 12:20:40.932520000 Z
+  team_id:
+  index_in_team: 11
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_084:
+  id: 84
+  index:
+  firstname: Euphrasie
+  lastname: Weber
+  participating_dojo_id: 12
+  created_at: 2023-04-16 12:20:40.943156000 Z
+  updated_at: 2023-04-16 12:20:40.943156000 Z
+  team_id:
+  index_in_team: 12
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_085:
+  id: 85
+  index:
+  firstname: Anicée
+  lastname: Paul
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.027316000 Z
+  updated_at: 2023-04-16 12:20:41.027316000 Z
+  team_id: 25
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_086:
+  id: 86
+  index:
+  firstname: Adéodat
+  lastname: Francois
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.038774000 Z
+  updated_at: 2023-04-16 12:20:41.038774000 Z
+  team_id: 25
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_087:
+  id: 87
+  index:
+  firstname: Hugues
+  lastname: Benard
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.049616000 Z
+  updated_at: 2023-04-16 12:20:41.049616000 Z
+  team_id: 25
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_088:
+  id: 88
+  index:
+  firstname: Brunehilde
+  lastname: Dupuis
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.070894000 Z
+  updated_at: 2023-04-16 12:20:41.070894000 Z
+  team_id: 26
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_089:
+  id: 89
+  index:
+  firstname: Anatole
+  lastname: Da silva
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.082004000 Z
+  updated_at: 2023-04-16 12:20:41.082004000 Z
+  team_id: 26
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_090:
+  id: 90
+  index:
+  firstname: Aimé
+  lastname: Cousin
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.094922000 Z
+  updated_at: 2023-04-16 12:20:41.094922000 Z
+  team_id: 26
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_091:
+  id: 91
+  index:
+  firstname: Épiphane
+  lastname: Dupont
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.116796000 Z
+  updated_at: 2023-04-16 12:20:41.116796000 Z
+  team_id: 27
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_092:
+  id: 92
+  index:
+  firstname: Philippe
+  lastname: Bertin
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.127941000 Z
+  updated_at: 2023-04-16 12:20:41.127941000 Z
+  team_id: 27
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_093:
+  id: 93
+  index:
+  firstname: Adenet
+  lastname: Lévêque
+  participating_dojo_id: 13
+  created_at: 2023-04-16 12:20:41.139631000 Z
+  updated_at: 2023-04-16 12:20:41.139631000 Z
+  team_id: 27
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_094:
+  id: 94
+  index:
+  firstname: Rose
+  lastname: Besson
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.168200000 Z
+  updated_at: 2023-04-16 12:20:41.168200000 Z
+  team_id: 28
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_095:
+  id: 95
+  index:
+  firstname: Sébastien
+  lastname: Germain
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.180335000 Z
+  updated_at: 2023-04-16 12:20:41.180335000 Z
+  team_id: 28
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_096:
+  id: 96
+  index:
+  firstname: Audran
+  lastname: Morin
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.193135000 Z
+  updated_at: 2023-04-16 12:20:41.193135000 Z
+  team_id: 28
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_097:
+  id: 97
+  index:
+  firstname: Alphée
+  lastname: Joly
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.214993000 Z
+  updated_at: 2023-04-16 12:20:41.214993000 Z
+  team_id: 29
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_098:
+  id: 98
+  index:
+  firstname: Azélie
+  lastname: Fournier
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.225957000 Z
+  updated_at: 2023-04-16 12:20:41.225957000 Z
+  team_id: 29
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_099:
+  id: 99
+  index:
+  firstname: Nine
+  lastname: Carlier
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.237255000 Z
+  updated_at: 2023-04-16 12:20:41.237255000 Z
+  team_id: 29
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_100:
+  id: 100
+  index:
+  firstname: Lazare
+  lastname: Lejeune
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.257839000 Z
+  updated_at: 2023-04-16 12:20:41.257839000 Z
+  team_id: 30
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_101:
+  id: 101
+  index:
+  firstname: Vigile
+  lastname: Fernandez
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.269664000 Z
+  updated_at: 2023-04-16 12:20:41.269664000 Z
+  team_id: 30
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_102:
+  id: 102
+  index:
+  firstname: Firmin
+  lastname: Marechal
+  participating_dojo_id: 14
+  created_at: 2023-04-16 12:20:41.282989000 Z
+  updated_at: 2023-04-16 12:20:41.282989000 Z
+  team_id: 30
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_103:
+  id: 103
+  index:
+  firstname: Tiphaine
+  lastname: Leclerc
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.365036000 Z
+  updated_at: 2023-04-16 12:20:41.365036000 Z
+  team_id: 31
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_104:
+  id: 104
+  index:
+  firstname: Ulrich
+  lastname: Paris
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.376994000 Z
+  updated_at: 2023-04-16 12:20:41.376994000 Z
+  team_id: 31
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_105:
+  id: 105
+  index:
+  firstname: Cédric
+  lastname: Colin
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.390057000 Z
+  updated_at: 2023-04-16 12:20:41.390057000 Z
+  team_id: 31
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_106:
+  id: 106
+  index:
+  firstname: Léandre
+  lastname: Poulain
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.412153000 Z
+  updated_at: 2023-04-16 12:20:41.412153000 Z
+  team_id: 32
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_107:
+  id: 107
+  index:
+  firstname: Amarande
+  lastname: Méunier
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.423198000 Z
+  updated_at: 2023-04-16 12:20:41.423198000 Z
+  team_id: 32
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_108:
+  id: 108
+  index:
+  firstname: Eugénie
+  lastname: Sanchez
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.434424000 Z
+  updated_at: 2023-04-16 12:20:41.434424000 Z
+  team_id: 32
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_109:
+  id: 109
+  index:
+  firstname: Gérard
+  lastname: Faure
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.454806000 Z
+  updated_at: 2023-04-16 12:20:41.454806000 Z
+  team_id: 33
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_110:
+  id: 110
+  index:
+  firstname: Vincent
+  lastname: Bouchet
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.465992000 Z
+  updated_at: 2023-04-16 12:20:41.465992000 Z
+  team_id: 33
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_111:
+  id: 111
+  index:
+  firstname: Gwendoline
+  lastname: Reynaud
+  participating_dojo_id: 15
+  created_at: 2023-04-16 12:20:41.479816000 Z
+  updated_at: 2023-04-16 12:20:41.479816000 Z
+  team_id: 33
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_112:
+  id: 112
+  index:
+  firstname: Juliette
+  lastname: Besson
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.561992000 Z
+  updated_at: 2023-04-16 12:20:41.561992000 Z
+  team_id: 34
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_113:
+  id: 113
+  index:
+  firstname: David
+  lastname: Pichon
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.573155000 Z
+  updated_at: 2023-04-16 12:20:41.573155000 Z
+  team_id: 34
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_114:
+  id: 114
+  index:
+  firstname: Alphonsine
+  lastname: Dubois
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.586005000 Z
+  updated_at: 2023-04-16 12:20:41.586005000 Z
+  team_id: 34
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_115:
+  id: 115
+  index:
+  firstname: Juste
+  lastname: Humbert
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.608600000 Z
+  updated_at: 2023-04-16 12:20:41.608600000 Z
+  team_id: 35
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_116:
+  id: 116
+  index:
+  firstname: Alizé
+  lastname: Cordier
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.619751000 Z
+  updated_at: 2023-04-16 12:20:41.619751000 Z
+  team_id: 35
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_117:
+  id: 117
+  index:
+  firstname: Édouard
+  lastname: Deschamps
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.630645000 Z
+  updated_at: 2023-04-16 12:20:41.630645000 Z
+  team_id: 35
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_118:
+  id: 118
+  index:
+  firstname: Agnès
+  lastname: Baron
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.651506000 Z
+  updated_at: 2023-04-16 12:20:41.651506000 Z
+  team_id: 36
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_119:
+  id: 119
+  index:
+  firstname: Thomas
+  lastname: Rivière
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.662762000 Z
+  updated_at: 2023-04-16 12:20:41.662762000 Z
+  team_id: 36
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_120:
+  id: 120
+  index:
+  firstname: René
+  lastname: Marty
+  participating_dojo_id: 16
+  created_at: 2023-04-16 12:20:41.675386000 Z
+  updated_at: 2023-04-16 12:20:41.675386000 Z
+  team_id: 36
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_121:
+  id: 121
+  index:
+  firstname: Maxellende
+  lastname: Andre
+  participating_dojo_id: 17
+  created_at: 2023-04-16 12:20:41.749792000 Z
+  updated_at: 2023-04-16 12:20:41.749792000 Z
+  team_id:
+  index_in_team: 13
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_122:
+  id: 122
+  index:
+  firstname: Angilran
+  lastname: Delaunay
+  participating_dojo_id: 17
+  created_at: 2023-04-16 12:20:41.759295000 Z
+  updated_at: 2023-04-16 12:20:41.759295000 Z
+  team_id:
+  index_in_team: 14
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_123:
+  id: 123
+  index:
+  firstname: Aglaé
+  lastname: Langlois
+  participating_dojo_id: 17
+  created_at: 2023-04-16 12:20:41.769491000 Z
+  updated_at: 2023-04-16 12:20:41.769491000 Z
+  team_id:
+  index_in_team: 15
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_124:
+  id: 124
+  index:
+  firstname: Aimable
+  lastname: Lemaitre
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.853017000 Z
+  updated_at: 2023-04-16 12:20:41.853017000 Z
+  team_id: 37
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_125:
+  id: 125
+  index:
+  firstname: Urbain
+  lastname: Noël
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.864168000 Z
+  updated_at: 2023-04-16 12:20:41.864168000 Z
+  team_id: 37
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_126:
+  id: 126
+  index:
+  firstname: Abdonie
+  lastname: David
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.876314000 Z
+  updated_at: 2023-04-16 12:20:41.876314000 Z
+  team_id: 37
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_127:
+  id: 127
+  index:
+  firstname: Rolande
+  lastname: Da Silva
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.900129000 Z
+  updated_at: 2023-04-16 12:20:41.900129000 Z
+  team_id: 38
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_128:
+  id: 128
+  index:
+  firstname: Jeanne
+  lastname: Gauthier
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.911618000 Z
+  updated_at: 2023-04-16 12:20:41.911618000 Z
+  team_id: 38
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_129:
+  id: 129
+  index:
+  firstname: Hilaire
+  lastname: Jean
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.922727000 Z
+  updated_at: 2023-04-16 12:20:41.922727000 Z
+  team_id: 38
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_130:
+  id: 130
+  index:
+  firstname: Zoé
+  lastname: Lemoine
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.944170000 Z
+  updated_at: 2023-04-16 12:20:41.944170000 Z
+  team_id: 39
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_131:
+  id: 131
+  index:
+  firstname: Sauveur
+  lastname: Fleury
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.954654000 Z
+  updated_at: 2023-04-16 12:20:41.954654000 Z
+  team_id: 39
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_132:
+  id: 132
+  index:
+  firstname: Cléandre
+  lastname: Rivière
+  participating_dojo_id: 18
+  created_at: 2023-04-16 12:20:41.965446000 Z
+  updated_at: 2023-04-16 12:20:41.965446000 Z
+  team_id: 39
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_133:
+  id: 133
+  index:
+  firstname: Agrippine
+  lastname: Fournier
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.051080000 Z
+  updated_at: 2023-04-16 12:20:42.051080000 Z
+  team_id: 40
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_134:
+  id: 134
+  index:
+  firstname: Marie
+  lastname: Lacroix
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.061900000 Z
+  updated_at: 2023-04-16 12:20:42.061900000 Z
+  team_id: 40
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_135:
+  id: 135
+  index:
+  firstname: Constance
+  lastname: Besson
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.073221000 Z
+  updated_at: 2023-04-16 12:20:42.073221000 Z
+  team_id: 40
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_136:
+  id: 136
+  index:
+  firstname: Bastien
+  lastname: Dumas
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.096153000 Z
+  updated_at: 2023-04-16 12:20:42.096153000 Z
+  team_id: 41
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_137:
+  id: 137
+  index:
+  firstname: Isaïe
+  lastname: Riviere
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.108001000 Z
+  updated_at: 2023-04-16 12:20:42.108001000 Z
+  team_id: 41
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_138:
+  id: 138
+  index:
+  firstname: Audeline
+  lastname: Renard
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.119303000 Z
+  updated_at: 2023-04-16 12:20:42.119303000 Z
+  team_id: 41
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_139:
+  id: 139
+  index:
+  firstname: Adegrin
+  lastname: Guillot
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.141172000 Z
+  updated_at: 2023-04-16 12:20:42.141172000 Z
+  team_id: 42
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_140:
+  id: 140
+  index:
+  firstname: Mélisse
+  lastname: Renard
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.151897000 Z
+  updated_at: 2023-04-16 12:20:42.151897000 Z
+  team_id: 42
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_141:
+  id: 141
+  index:
+  firstname: Eugène
+  lastname: Brunet
+  participating_dojo_id: 19
+  created_at: 2023-04-16 12:20:42.162907000 Z
+  updated_at: 2023-04-16 12:20:42.162907000 Z
+  team_id: 42
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_142:
+  id: 142
+  index:
+  firstname: Dorothée
+  lastname: Guérin
+  participating_dojo_id: 20
+  created_at: 2023-04-16 12:20:42.239063000 Z
+  updated_at: 2023-04-16 12:20:42.239063000 Z
+  team_id:
+  index_in_team: 16
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_143:
+  id: 143
+  index:
+  firstname: Tancrède
+  lastname: Pasquier
+  participating_dojo_id: 20
+  created_at: 2023-04-16 12:20:42.248676000 Z
+  updated_at: 2023-04-16 12:20:42.248676000 Z
+  team_id:
+  index_in_team: 17
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_144:
+  id: 144
+  index:
+  firstname: Bérangère
+  lastname: Langlois
+  participating_dojo_id: 20
+  created_at: 2023-04-16 12:20:42.258475000 Z
+  updated_at: 2023-04-16 12:20:42.258475000 Z
+  team_id:
+  index_in_team: 18
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_145:
+  id: 145
+  index:
+  firstname: Boniface
+  lastname: Lecomte
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.342284000 Z
+  updated_at: 2023-04-16 12:20:42.342284000 Z
+  team_id: 43
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_146:
+  id: 146
+  index:
+  firstname: Acace
+  lastname: Clement
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.352861000 Z
+  updated_at: 2023-04-16 12:20:42.352861000 Z
+  team_id: 43
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_147:
+  id: 147
+  index:
+  firstname: Annabelle
+  lastname: Bertrand
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.363831000 Z
+  updated_at: 2023-04-16 12:20:42.363831000 Z
+  team_id: 43
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_148:
+  id: 148
+  index:
+  firstname: Mélanie
+  lastname: Philippe
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.385553000 Z
+  updated_at: 2023-04-16 12:20:42.385553000 Z
+  team_id: 44
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_149:
+  id: 149
+  index:
+  firstname: Agnès
+  lastname: Fleury
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.398282000 Z
+  updated_at: 2023-04-16 12:20:42.398282000 Z
+  team_id: 44
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_150:
+  id: 150
+  index:
+  firstname: Maxime
+  lastname: Perrier
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.410565000 Z
+  updated_at: 2023-04-16 12:20:42.410565000 Z
+  team_id: 44
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_151:
+  id: 151
+  index:
+  firstname: Arsinoé
+  lastname: Martin
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.431822000 Z
+  updated_at: 2023-04-16 12:20:42.431822000 Z
+  team_id: 45
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_152:
+  id: 152
+  index:
+  firstname: Mamert
+  lastname: Chauvin
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.443549000 Z
+  updated_at: 2023-04-16 12:20:42.443549000 Z
+  team_id: 45
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_153:
+  id: 153
+  index:
+  firstname: Gabriel
+  lastname: Petit
+  participating_dojo_id: 21
+  created_at: 2023-04-16 12:20:42.454255000 Z
+  updated_at: 2023-04-16 12:20:42.454255000 Z
+  team_id: 45
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_154:
+  id: 154
+  index:
+  firstname: Guillemette
+  lastname: Leveque
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.538663000 Z
+  updated_at: 2023-04-16 12:20:42.538663000 Z
+  team_id: 46
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_155:
+  id: 155
+  index:
+  firstname: Perrine
+  lastname: Richard
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.549704000 Z
+  updated_at: 2023-04-16 12:20:42.549704000 Z
+  team_id: 46
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_156:
+  id: 156
+  index:
+  firstname: Edgard
+  lastname: Duval
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.560515000 Z
+  updated_at: 2023-04-16 12:20:42.560515000 Z
+  team_id: 46
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_157:
+  id: 157
+  index:
+  firstname: Léopoldine
+  lastname: Perrier
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.581641000 Z
+  updated_at: 2023-04-16 12:20:42.581641000 Z
+  team_id: 47
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_158:
+  id: 158
+  index:
+  firstname: Bohémond
+  lastname: Da Silva
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.594672000 Z
+  updated_at: 2023-04-16 12:20:42.594672000 Z
+  team_id: 47
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_159:
+  id: 159
+  index:
+  firstname: Christiane
+  lastname: Huet
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.606740000 Z
+  updated_at: 2023-04-16 12:20:42.606740000 Z
+  team_id: 47
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_160:
+  id: 160
+  index:
+  firstname: Annibal
+  lastname: Paris
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.627967000 Z
+  updated_at: 2023-04-16 12:20:42.627967000 Z
+  team_id: 48
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_161:
+  id: 161
+  index:
+  firstname: Christine
+  lastname: Besson
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.639987000 Z
+  updated_at: 2023-04-16 12:20:42.639987000 Z
+  team_id: 48
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_162:
+  id: 162
+  index:
+  firstname: Ozanne
+  lastname: Clement
+  participating_dojo_id: 22
+  created_at: 2023-04-16 12:20:42.650923000 Z
+  updated_at: 2023-04-16 12:20:42.650923000 Z
+  team_id: 48
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_163:
+  id: 163
+  index:
+  firstname: Aurian
+  lastname: Deschamps
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.680310000 Z
+  updated_at: 2023-04-16 12:20:42.680310000 Z
+  team_id: 49
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_164:
+  id: 164
+  index:
+  firstname: Magali
+  lastname: Huet
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.693367000 Z
+  updated_at: 2023-04-16 12:20:42.693367000 Z
+  team_id: 49
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_165:
+  id: 165
+  index:
+  firstname: Alban
+  lastname: Bertrand
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.705501000 Z
+  updated_at: 2023-04-16 12:20:42.705501000 Z
+  team_id: 49
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_166:
+  id: 166
+  index:
+  firstname: Lucie
+  lastname: Leblanc
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.726164000 Z
+  updated_at: 2023-04-16 12:20:42.726164000 Z
+  team_id: 50
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_167:
+  id: 167
+  index:
+  firstname: Brieuc
+  lastname: Bailly
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.737819000 Z
+  updated_at: 2023-04-16 12:20:42.737819000 Z
+  team_id: 50
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_168:
+  id: 168
+  index:
+  firstname: Mélissandre
+  lastname: Tessier
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.748551000 Z
+  updated_at: 2023-04-16 12:20:42.748551000 Z
+  team_id: 50
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_169:
+  id: 169
+  index:
+  firstname: Coline
+  lastname: Gillet
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.769597000 Z
+  updated_at: 2023-04-16 12:20:42.769597000 Z
+  team_id: 51
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_170:
+  id: 170
+  index:
+  firstname: Landry
+  lastname: Barthelemy
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.782789000 Z
+  updated_at: 2023-04-16 12:20:42.782789000 Z
+  team_id: 51
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_171:
+  id: 171
+  index:
+  firstname: Adrastée
+  lastname: Prevost
+  participating_dojo_id: 23
+  created_at: 2023-04-16 12:20:42.794202000 Z
+  updated_at: 2023-04-16 12:20:42.794202000 Z
+  team_id: 51
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_172:
+  id: 172
+  index:
+  firstname: Michèle
+  lastname: Masson
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.877506000 Z
+  updated_at: 2023-04-16 12:20:42.877506000 Z
+  team_id: 52
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_173:
+  id: 173
+  index:
+  firstname: Florian
+  lastname: Brun
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.888730000 Z
+  updated_at: 2023-04-16 12:20:42.888730000 Z
+  team_id: 52
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_174:
+  id: 174
+  index:
+  firstname: Julien
+  lastname: Leclerc
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.900572000 Z
+  updated_at: 2023-04-16 12:20:42.900572000 Z
+  team_id: 52
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_175:
+  id: 175
+  index:
+  firstname: Chrétien
+  lastname: Poulain
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.921835000 Z
+  updated_at: 2023-04-16 12:20:42.921835000 Z
+  team_id: 53
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_176:
+  id: 176
+  index:
+  firstname: Danielle
+  lastname: Garcia
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.932866000 Z
+  updated_at: 2023-04-16 12:20:42.932866000 Z
+  team_id: 53
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_177:
+  id: 177
+  index:
+  firstname: Herluin
+  lastname: Francois
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.944588000 Z
+  updated_at: 2023-04-16 12:20:42.944588000 Z
+  team_id: 53
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_178:
+  id: 178
+  index:
+  firstname: Innocent
+  lastname: Lemaitre
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.965560000 Z
+  updated_at: 2023-04-16 12:20:42.965560000 Z
+  team_id: 54
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_179:
+  id: 179
+  index:
+  firstname: Adenet
+  lastname: Schmitt
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.979539000 Z
+  updated_at: 2023-04-16 12:20:42.979539000 Z
+  team_id: 54
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_180:
+  id: 180
+  index:
+  firstname: Laureline
+  lastname: Berger
+  participating_dojo_id: 24
+  created_at: 2023-04-16 12:20:42.990764000 Z
+  updated_at: 2023-04-16 12:20:42.990764000 Z
+  team_id: 54
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_181:
+  id: 181
+  index:
+  firstname: Mahaut
+  lastname: Delaunay
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.019287000 Z
+  updated_at: 2023-04-16 12:20:43.019287000 Z
+  team_id: 55
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_182:
+  id: 182
+  index:
+  firstname: Anaïs
+  lastname: Pelletier
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.030461000 Z
+  updated_at: 2023-04-16 12:20:43.030461000 Z
+  team_id: 55
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_183:
+  id: 183
+  index:
+  firstname: Trajan
+  lastname: Roux
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.042139000 Z
+  updated_at: 2023-04-16 12:20:43.042139000 Z
+  team_id: 55
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_184:
+  id: 184
+  index:
+  firstname: Amandine
+  lastname: Robin
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.065005000 Z
+  updated_at: 2023-04-16 12:20:43.065005000 Z
+  team_id: 56
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_185:
+  id: 185
+  index:
+  firstname: Bernard
+  lastname: Remy
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.077400000 Z
+  updated_at: 2023-04-16 12:20:43.077400000 Z
+  team_id: 56
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_186:
+  id: 186
+  index:
+  firstname: Aloïse
+  lastname: Blanchard
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.088307000 Z
+  updated_at: 2023-04-16 12:20:43.088307000 Z
+  team_id: 56
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_187:
+  id: 187
+  index:
+  firstname: Pénélope
+  lastname: Le Roux
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.110400000 Z
+  updated_at: 2023-04-16 12:20:43.110400000 Z
+  team_id: 57
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_188:
+  id: 188
+  index:
+  firstname: Rodolphe
+  lastname: Adam
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.121582000 Z
+  updated_at: 2023-04-16 12:20:43.121582000 Z
+  team_id: 57
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_189:
+  id: 189
+  index:
+  firstname: Alizé
+  lastname: Lopéz
+  participating_dojo_id: 25
+  created_at: 2023-04-16 12:20:43.132685000 Z
+  updated_at: 2023-04-16 12:20:43.132685000 Z
+  team_id: 57
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_190:
+  id: 190
+  index:
+  firstname: Gilles
+  lastname: Le Gall
+  participating_dojo_id: 26
+  created_at: 2023-04-16 12:20:43.260455000 Z
+  updated_at: 2023-04-16 12:20:43.260455000 Z
+  team_id:
+  index_in_team: 19
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_191:
+  id: 191
+  index:
+  firstname: Gilles
+  lastname: Roy
+  participating_dojo_id: 26
+  created_at: 2023-04-16 12:20:43.270912000 Z
+  updated_at: 2023-04-16 12:20:43.270912000 Z
+  team_id:
+  index_in_team: 20
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_192:
+  id: 192
+  index:
+  firstname: Malo
+  lastname: Pierre
+  participating_dojo_id: 26
+  created_at: 2023-04-16 12:20:43.281520000 Z
+  updated_at: 2023-04-16 12:20:43.281520000 Z
+  team_id:
+  index_in_team: 21
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_193:
+  id: 193
+  index:
+  firstname: Angoustan
+  lastname: Da Silva
+  participating_dojo_id: 27
+  created_at: 2023-04-16 12:20:43.298570000 Z
+  updated_at: 2023-04-16 12:20:43.298570000 Z
+  team_id:
+  index_in_team: 22
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_194:
+  id: 194
+  index:
+  firstname: Savinien
+  lastname: Millet
+  participating_dojo_id: 27
+  created_at: 2023-04-16 12:20:43.310535000 Z
+  updated_at: 2023-04-16 12:20:43.310535000 Z
+  team_id:
+  index_in_team: 23
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_195:
+  id: 195
+  index:
+  firstname: Anémone
+  lastname: Jacob
+  participating_dojo_id: 27
+  created_at: 2023-04-16 12:20:43.321889000 Z
+  updated_at: 2023-04-16 12:20:43.321889000 Z
+  team_id:
+  index_in_team: 24
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_196:
+  id: 196
+  index:
+  firstname: Audrey
+  lastname: Klein
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.403198000 Z
+  updated_at: 2023-04-16 12:20:43.403198000 Z
+  team_id: 58
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_197:
+  id: 197
+  index:
+  firstname: Diane
+  lastname: Mercier
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.414637000 Z
+  updated_at: 2023-04-16 12:20:43.414637000 Z
+  team_id: 58
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_198:
+  id: 198
+  index:
+  firstname: Morgan
+  lastname: Gerard
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.426126000 Z
+  updated_at: 2023-04-16 12:20:43.426126000 Z
+  team_id: 58
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_199:
+  id: 199
+  index:
+  firstname: Walfroy
+  lastname: Leger
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.450106000 Z
+  updated_at: 2023-04-16 12:20:43.450106000 Z
+  team_id: 59
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_200:
+  id: 200
+  index:
+  firstname: Salomé
+  lastname: Michaud
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.461505000 Z
+  updated_at: 2023-04-16 12:20:43.461505000 Z
+  team_id: 59
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_201:
+  id: 201
+  index:
+  firstname: Thomas
+  lastname: Pasquier
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.473090000 Z
+  updated_at: 2023-04-16 12:20:43.473090000 Z
+  team_id: 59
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_202:
+  id: 202
+  index:
+  firstname: Fantine
+  lastname: Lemaitre
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.493178000 Z
+  updated_at: 2023-04-16 12:20:43.493178000 Z
+  team_id: 60
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_203:
+  id: 203
+  index:
+  firstname: Iseult
+  lastname: Renard
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.504660000 Z
+  updated_at: 2023-04-16 12:20:43.504660000 Z
+  team_id: 60
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_204:
+  id: 204
+  index:
+  firstname: Octave
+  lastname: Humbert
+  participating_dojo_id: 28
+  created_at: 2023-04-16 12:20:43.516902000 Z
+  updated_at: 2023-04-16 12:20:43.516902000 Z
+  team_id: 60
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_205:
+  id: 205
+  index:
+  firstname: Roseline
+  lastname: Gonzalez
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.548132000 Z
+  updated_at: 2023-04-16 12:20:43.548132000 Z
+  team_id: 61
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_206:
+  id: 206
+  index:
+  firstname: Ambroise
+  lastname: Gerard
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.559260000 Z
+  updated_at: 2023-04-16 12:20:43.559260000 Z
+  team_id: 61
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_207:
+  id: 207
+  index:
+  firstname: Aymeric
+  lastname: Duval
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.570913000 Z
+  updated_at: 2023-04-16 12:20:43.570913000 Z
+  team_id: 61
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_208:
+  id: 208
+  index:
+  firstname: Pauline
+  lastname: Germain
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.591181000 Z
+  updated_at: 2023-04-16 12:20:43.591181000 Z
+  team_id: 62
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_209:
+  id: 209
+  index:
+  firstname: Frédérique
+  lastname: Pierre
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.601981000 Z
+  updated_at: 2023-04-16 12:20:43.601981000 Z
+  team_id: 62
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_210:
+  id: 210
+  index:
+  firstname: Mélisande
+  lastname: Meunier
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.613247000 Z
+  updated_at: 2023-04-16 12:20:43.613247000 Z
+  team_id: 62
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_211:
+  id: 211
+  index:
+  firstname: Alizé
+  lastname: Cousin
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.635988000 Z
+  updated_at: 2023-04-16 12:20:43.635988000 Z
+  team_id: 63
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_212:
+  id: 212
+  index:
+  firstname: Rosalie
+  lastname: Lemaitre
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.648444000 Z
+  updated_at: 2023-04-16 12:20:43.648444000 Z
+  team_id: 63
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_213:
+  id: 213
+  index:
+  firstname: Astrée
+  lastname: Richard
+  participating_dojo_id: 29
+  created_at: 2023-04-16 12:20:43.659198000 Z
+  updated_at: 2023-04-16 12:20:43.659198000 Z
+  team_id: 63
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_214:
+  id: 214
+  index:
+  firstname: Rodolphe
+  lastname: Guillot
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.741684000 Z
+  updated_at: 2023-04-16 12:20:43.741684000 Z
+  team_id: 64
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_215:
+  id: 215
+  index:
+  firstname: Constantin
+  lastname: Legrand
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.752777000 Z
+  updated_at: 2023-04-16 12:20:43.752777000 Z
+  team_id: 64
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_216:
+  id: 216
+  index:
+  firstname: Justine
+  lastname: Cousin
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.763743000 Z
+  updated_at: 2023-04-16 12:20:43.763743000 Z
+  team_id: 64
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_217:
+  id: 217
+  index:
+  firstname: Chrysostome
+  lastname: Leroux
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.785385000 Z
+  updated_at: 2023-04-16 12:20:43.785385000 Z
+  team_id: 65
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_218:
+  id: 218
+  index:
+  firstname: Gonthier
+  lastname: Marie
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.795972000 Z
+  updated_at: 2023-04-16 12:20:43.795972000 Z
+  team_id: 65
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_219:
+  id: 219
+  index:
+  firstname: Fantin
+  lastname: Paris
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.807596000 Z
+  updated_at: 2023-04-16 12:20:43.807596000 Z
+  team_id: 65
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_220:
+  id: 220
+  index:
+  firstname: Orlane
+  lastname: Leger
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.828636000 Z
+  updated_at: 2023-04-16 12:20:43.828636000 Z
+  team_id: 66
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_221:
+  id: 221
+  index:
+  firstname: Clémence
+  lastname: Pasquier
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.842403000 Z
+  updated_at: 2023-04-16 12:20:43.842403000 Z
+  team_id: 66
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_222:
+  id: 222
+  index:
+  firstname: Eudoxie
+  lastname: Robert
+  participating_dojo_id: 30
+  created_at: 2023-04-16 12:20:43.853419000 Z
+  updated_at: 2023-04-16 12:20:43.853419000 Z
+  team_id: 66
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_223:
+  id: 223
+  index:
+  firstname: Anémone
+  lastname: Garcia
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.883328000 Z
+  updated_at: 2023-04-16 12:20:43.883328000 Z
+  team_id: 67
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_224:
+  id: 224
+  index:
+  firstname: Iris
+  lastname: Ménard
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.894171000 Z
+  updated_at: 2023-04-16 12:20:43.894171000 Z
+  team_id: 67
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_225:
+  id: 225
+  index:
+  firstname: Florian
+  lastname: Chauvin
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.905609000 Z
+  updated_at: 2023-04-16 12:20:43.905609000 Z
+  team_id: 67
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_226:
+  id: 226
+  index:
+  firstname: Timoléon
+  lastname: Morel
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.926806000 Z
+  updated_at: 2023-04-16 12:20:43.926806000 Z
+  team_id: 68
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_227:
+  id: 227
+  index:
+  firstname: Agnan
+  lastname: Lefevre
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.940442000 Z
+  updated_at: 2023-04-16 12:20:43.940442000 Z
+  team_id: 68
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_228:
+  id: 228
+  index:
+  firstname: Alliaume
+  lastname: Cousin
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.951377000 Z
+  updated_at: 2023-04-16 12:20:43.951377000 Z
+  team_id: 68
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_229:
+  id: 229
+  index:
+  firstname: Agathe
+  lastname: Roger
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.973521000 Z
+  updated_at: 2023-04-16 12:20:43.973521000 Z
+  team_id: 69
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_230:
+  id: 230
+  index:
+  firstname: Loïc
+  lastname: Bouchet
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.984109000 Z
+  updated_at: 2023-04-16 12:20:43.984109000 Z
+  team_id: 69
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_231:
+  id: 231
+  index:
+  firstname: Quentine
+  lastname: Boyer
+  participating_dojo_id: 31
+  created_at: 2023-04-16 12:20:43.995030000 Z
+  updated_at: 2023-04-16 12:20:43.995030000 Z
+  team_id: 69
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_232:
+  id: 232
+  index:
+  firstname: Amos
+  lastname: Renault
+  participating_dojo_id: 32
+  created_at: 2023-04-16 12:20:44.069420000 Z
+  updated_at: 2023-04-16 12:20:44.069420000 Z
+  team_id:
+  index_in_team: 25
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_233:
+  id: 233
+  index:
+  firstname: Audrey
+  lastname: Carlier
+  participating_dojo_id: 32
+  created_at: 2023-04-16 12:20:44.079894000 Z
+  updated_at: 2023-04-16 12:20:44.079894000 Z
+  team_id:
+  index_in_team: 26
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_234:
+  id: 234
+  index:
+  firstname: Marcelin
+  lastname: Leveque
+  participating_dojo_id: 32
+  created_at: 2023-04-16 12:20:44.090052000 Z
+  updated_at: 2023-04-16 12:20:44.090052000 Z
+  team_id:
+  index_in_team: 27
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_235:
+  id: 235
+  index:
+  firstname: Aleaume
+  lastname: Monnier
+  participating_dojo_id: 33
+  created_at: 2023-04-16 12:20:44.108041000 Z
+  updated_at: 2023-04-16 12:20:44.108041000 Z
+  team_id:
+  index_in_team: 28
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_236:
+  id: 236
+  index:
+  firstname: Oriande
+  lastname: Barbier
+  participating_dojo_id: 33
+  created_at: 2023-04-16 12:20:44.117700000 Z
+  updated_at: 2023-04-16 12:20:44.117700000 Z
+  team_id:
+  index_in_team: 29
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_237:
+  id: 237
+  index:
+  firstname: Lucien
+  lastname: Perret
+  participating_dojo_id: 33
+  created_at: 2023-04-16 12:20:44.127245000 Z
+  updated_at: 2023-04-16 12:20:44.127245000 Z
+  team_id:
+  index_in_team: 30
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_238:
+  id: 238
+  index:
+  firstname: Elsa
+  lastname: Noël
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.210163000 Z
+  updated_at: 2023-04-16 12:20:44.210163000 Z
+  team_id: 70
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_239:
+  id: 239
+  index:
+  firstname: Juliette
+  lastname: Le Roux
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.221764000 Z
+  updated_at: 2023-04-16 12:20:44.221764000 Z
+  team_id: 70
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_240:
+  id: 240
+  index:
+  firstname: Andrée
+  lastname: Meyer
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.232490000 Z
+  updated_at: 2023-04-16 12:20:44.232490000 Z
+  team_id: 70
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_241:
+  id: 241
+  index:
+  firstname: Virgile
+  lastname: Berger
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.256849000 Z
+  updated_at: 2023-04-16 12:20:44.256849000 Z
+  team_id: 71
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_242:
+  id: 242
+  index:
+  firstname: Évelyne
+  lastname: Le gall
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.268892000 Z
+  updated_at: 2023-04-16 12:20:44.268892000 Z
+  team_id: 71
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_243:
+  id: 243
+  index:
+  firstname: Aurélienne
+  lastname: Delaunay
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.281160000 Z
+  updated_at: 2023-04-16 12:20:44.281160000 Z
+  team_id: 71
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_244:
+  id: 244
+  index:
+  firstname: Cyrille
+  lastname: Girard
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.302557000 Z
+  updated_at: 2023-04-16 12:20:44.302557000 Z
+  team_id: 72
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_245:
+  id: 245
+  index:
+  firstname: Bénédicte
+  lastname: Pierre
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.317691000 Z
+  updated_at: 2023-04-16 12:20:44.317691000 Z
+  team_id: 72
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_246:
+  id: 246
+  index:
+  firstname: Cyprien
+  lastname: Louis
+  participating_dojo_id: 34
+  created_at: 2023-04-16 12:20:44.329477000 Z
+  updated_at: 2023-04-16 12:20:44.329477000 Z
+  team_id: 72
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_247:
+  id: 247
+  index:
+  firstname: Pascal
+  lastname: David
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.364432000 Z
+  updated_at: 2023-04-16 12:20:44.364432000 Z
+  team_id: 73
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_248:
+  id: 248
+  index:
+  firstname: Hilaire
+  lastname: Dvnis
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.376636000 Z
+  updated_at: 2023-04-16 12:20:44.376636000 Z
+  team_id: 73
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_249:
+  id: 249
+  index:
+  firstname: Olympe
+  lastname: Le Roux
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.388064000 Z
+  updated_at: 2023-04-16 12:20:44.388064000 Z
+  team_id: 73
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_250:
+  id: 250
+  index:
+  firstname: Jourdain
+  lastname: Philippe
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.409488000 Z
+  updated_at: 2023-04-16 12:20:44.409488000 Z
+  team_id: 74
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_251:
+  id: 251
+  index:
+  firstname: Dagobert
+  lastname: Deschamps
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.420297000 Z
+  updated_at: 2023-04-16 12:20:44.420297000 Z
+  team_id: 74
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_252:
+  id: 252
+  index:
+  firstname: Francette
+  lastname: Nicolas
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.431088000 Z
+  updated_at: 2023-04-16 12:20:44.431088000 Z
+  team_id: 74
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_253:
+  id: 253
+  index:
+  firstname: Abeline
+  lastname: Renaud
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.452395000 Z
+  updated_at: 2023-04-16 12:20:44.452395000 Z
+  team_id: 75
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_254:
+  id: 254
+  index:
+  firstname: Sophie
+  lastname: Lamy
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.465386000 Z
+  updated_at: 2023-04-16 12:20:44.465386000 Z
+  team_id: 75
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_255:
+  id: 255
+  index:
+  firstname: Andrée
+  lastname: Moulin
+  participating_dojo_id: 35
+  created_at: 2023-04-16 12:20:44.477970000 Z
+  updated_at: 2023-04-16 12:20:44.477970000 Z
+  team_id: 75
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_256:
+  id: 256
+  index:
+  firstname: Savin
+  lastname: Colin
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.561742000 Z
+  updated_at: 2023-04-16 12:20:44.561742000 Z
+  team_id: 76
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_257:
+  id: 257
+  index:
+  firstname: Gontran
+  lastname: Garcia
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.577227000 Z
+  updated_at: 2023-04-16 12:20:44.577227000 Z
+  team_id: 76
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_258:
+  id: 258
+  index:
+  firstname: Judith
+  lastname: Bertrand
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.590457000 Z
+  updated_at: 2023-04-16 12:20:44.590457000 Z
+  team_id: 76
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_259:
+  id: 259
+  index:
+  firstname: Carloman
+  lastname: Perrot
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.612613000 Z
+  updated_at: 2023-04-16 12:20:44.612613000 Z
+  team_id: 77
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_260:
+  id: 260
+  index:
+  firstname: Xavière
+  lastname: Garnier
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.623361000 Z
+  updated_at: 2023-04-16 12:20:44.623361000 Z
+  team_id: 77
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_261:
+  id: 261
+  index:
+  firstname: Hubert
+  lastname: Méunier
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.633954000 Z
+  updated_at: 2023-04-16 12:20:44.633954000 Z
+  team_id: 77
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_262:
+  id: 262
+  index:
+  firstname: Wandrille
+  lastname: Reynaud
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.656651000 Z
+  updated_at: 2023-04-16 12:20:44.656651000 Z
+  team_id: 78
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_263:
+  id: 263
+  index:
+  firstname: Amaliane
+  lastname: Laurent
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.669064000 Z
+  updated_at: 2023-04-16 12:20:44.669064000 Z
+  team_id: 78
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_264:
+  id: 264
+  index:
+  firstname: Abelin
+  lastname: Roy
+  participating_dojo_id: 36
+  created_at: 2023-04-16 12:20:44.681919000 Z
+  updated_at: 2023-04-16 12:20:44.681919000 Z
+  team_id: 78
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_265:
+  id: 265
+  index:
+  firstname: Amaury
+  lastname: Gérard
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.763538000 Z
+  updated_at: 2023-04-16 12:20:44.763538000 Z
+  team_id: 79
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_266:
+  id: 266
+  index:
+  firstname: Alcime
+  lastname: Le Goff
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.777666000 Z
+  updated_at: 2023-04-16 12:20:44.777666000 Z
+  team_id: 79
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_267:
+  id: 267
+  index:
+  firstname: Abraham
+  lastname: Humbert
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.789501000 Z
+  updated_at: 2023-04-16 12:20:44.789501000 Z
+  team_id: 79
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_268:
+  id: 268
+  index:
+  firstname: Léopoldine
+  lastname: Marie
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.811924000 Z
+  updated_at: 2023-04-16 12:20:44.811924000 Z
+  team_id: 80
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_269:
+  id: 269
+  index:
+  firstname: Céleste
+  lastname: Bonnet
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.823379000 Z
+  updated_at: 2023-04-16 12:20:44.823379000 Z
+  team_id: 80
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_270:
+  id: 270
+  index:
+  firstname: Aurélie
+  lastname: Tessier
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.834416000 Z
+  updated_at: 2023-04-16 12:20:44.834416000 Z
+  team_id: 80
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_271:
+  id: 271
+  index:
+  firstname: Mathurin
+  lastname: Louis
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.856387000 Z
+  updated_at: 2023-04-16 12:20:44.856387000 Z
+  team_id: 81
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_272:
+  id: 272
+  index:
+  firstname: Geoffroy
+  lastname: Renard
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.868764000 Z
+  updated_at: 2023-04-16 12:20:44.868764000 Z
+  team_id: 81
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_273:
+  id: 273
+  index:
+  firstname: Sibylle
+  lastname: Robert
+  participating_dojo_id: 37
+  created_at: 2023-04-16 12:20:44.882754000 Z
+  updated_at: 2023-04-16 12:20:44.882754000 Z
+  team_id: 81
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_274:
+  id: 274
+  index:
+  firstname: Emma
+  lastname: Fernandez
+  participating_dojo_id: 38
+  created_at: 2023-04-16 12:20:44.955658000 Z
+  updated_at: 2023-04-16 12:20:44.955658000 Z
+  team_id:
+  index_in_team: 31
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_275:
+  id: 275
+  index:
+  firstname: Salomé
+  lastname: Lejeune
+  participating_dojo_id: 38
+  created_at: 2023-04-16 12:20:44.965441000 Z
+  updated_at: 2023-04-16 12:20:44.965441000 Z
+  team_id:
+  index_in_team: 32
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_276:
+  id: 276
+  index:
+  firstname: Aurian
+  lastname: Mallet
+  participating_dojo_id: 38
+  created_at: 2023-04-16 12:20:44.976915000 Z
+  updated_at: 2023-04-16 12:20:44.976915000 Z
+  team_id:
+  index_in_team: 33
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_277:
+  id: 277
+  index:
+  firstname: Claire
+  lastname: Lambert
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.059940000 Z
+  updated_at: 2023-04-16 12:20:45.059940000 Z
+  team_id: 82
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_278:
+  id: 278
+  index:
+  firstname: Silvère
+  lastname: Robin
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.070884000 Z
+  updated_at: 2023-04-16 12:20:45.070884000 Z
+  team_id: 82
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_279:
+  id: 279
+  index:
+  firstname: Romuald
+  lastname: Menard
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.083024000 Z
+  updated_at: 2023-04-16 12:20:45.083024000 Z
+  team_id: 82
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_280:
+  id: 280
+  index:
+  firstname: Amélien
+  lastname: Marchal
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.107219000 Z
+  updated_at: 2023-04-16 12:20:45.107219000 Z
+  team_id: 83
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_281:
+  id: 281
+  index:
+  firstname: Gerberge
+  lastname: Gay
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.118031000 Z
+  updated_at: 2023-04-16 12:20:45.118031000 Z
+  team_id: 83
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_282:
+  id: 282
+  index:
+  firstname: Alpinien
+  lastname: Guichard
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.129354000 Z
+  updated_at: 2023-04-16 12:20:45.129354000 Z
+  team_id: 83
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_283:
+  id: 283
+  index:
+  firstname: Rosalie
+  lastname: Barbier
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.150088000 Z
+  updated_at: 2023-04-16 12:20:45.150088000 Z
+  team_id: 84
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_284:
+  id: 284
+  index:
+  firstname: Lucien
+  lastname: Germain
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.160993000 Z
+  updated_at: 2023-04-16 12:20:45.160993000 Z
+  team_id: 84
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_285:
+  id: 285
+  index:
+  firstname: Joséphine
+  lastname: Roy
+  participating_dojo_id: 39
+  created_at: 2023-04-16 12:20:45.172890000 Z
+  updated_at: 2023-04-16 12:20:45.172890000 Z
+  team_id: 84
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_286:
+  id: 286
+  index:
+  firstname: Nathanaël
+  lastname: Meyer
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.258715000 Z
+  updated_at: 2023-04-16 12:20:45.258715000 Z
+  team_id: 85
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_287:
+  id: 287
+  index:
+  firstname: Charles
+  lastname: Payet
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.269631000 Z
+  updated_at: 2023-04-16 12:20:45.269631000 Z
+  team_id: 85
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_288:
+  id: 288
+  index:
+  firstname: Galeran
+  lastname: André
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.280485000 Z
+  updated_at: 2023-04-16 12:20:45.280485000 Z
+  team_id: 85
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_289:
+  id: 289
+  index:
+  firstname: Marthe
+  lastname: Pichon
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.303556000 Z
+  updated_at: 2023-04-16 12:20:45.303556000 Z
+  team_id: 86
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_290:
+  id: 290
+  index:
+  firstname: Bohémond
+  lastname: Dubois
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.315800000 Z
+  updated_at: 2023-04-16 12:20:45.315800000 Z
+  team_id: 86
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_291:
+  id: 291
+  index:
+  firstname: Claudine
+  lastname: Gillet
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.326801000 Z
+  updated_at: 2023-04-16 12:20:45.326801000 Z
+  team_id: 86
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_292:
+  id: 292
+  index:
+  firstname: Bastien
+  lastname: Noël
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.348299000 Z
+  updated_at: 2023-04-16 12:20:45.348299000 Z
+  team_id: 87
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_293:
+  id: 293
+  index:
+  firstname: Hugues
+  lastname: Masson
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.360089000 Z
+  updated_at: 2023-04-16 12:20:45.360089000 Z
+  team_id: 87
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_294:
+  id: 294
+  index:
+  firstname: Capucine
+  lastname: Renaud
+  participating_dojo_id: 40
+  created_at: 2023-04-16 12:20:45.371597000 Z
+  updated_at: 2023-04-16 12:20:45.371597000 Z
+  team_id: 87
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_295:
+  id: 295
+  index:
+  firstname: Aurian
+  lastname: Jacob
+  participating_dojo_id: 41
+  created_at: 2023-04-16 12:20:45.447762000 Z
+  updated_at: 2023-04-16 12:20:45.447762000 Z
+  team_id:
+  index_in_team: 34
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_296:
+  id: 296
+  index:
+  firstname: Leu
+  lastname: Riviere
+  participating_dojo_id: 41
+  created_at: 2023-04-16 12:20:45.458188000 Z
+  updated_at: 2023-04-16 12:20:45.458188000 Z
+  team_id:
+  index_in_team: 35
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_297:
+  id: 297
+  index:
+  firstname: Alban
+  lastname: Andre
+  participating_dojo_id: 41
+  created_at: 2023-04-16 12:20:45.467780000 Z
+  updated_at: 2023-04-16 12:20:45.467780000 Z
+  team_id:
+  index_in_team: 36
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_298:
+  id: 298
+  index:
+  firstname: Dorothée
+  lastname: Da Silva
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.550172000 Z
+  updated_at: 2023-04-16 12:20:45.550172000 Z
+  team_id: 88
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_299:
+  id: 299
+  index:
+  firstname: Chrysostome
+  lastname: Marechal
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.561355000 Z
+  updated_at: 2023-04-16 12:20:45.561355000 Z
+  team_id: 88
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_300:
+  id: 300
+  index:
+  firstname: Nathanaël
+  lastname: Klein
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.572646000 Z
+  updated_at: 2023-04-16 12:20:45.572646000 Z
+  team_id: 88
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_301:
+  id: 301
+  index:
+  firstname: Margot
+  lastname: Perrin
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.593268000 Z
+  updated_at: 2023-04-16 12:20:45.593268000 Z
+  team_id: 89
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_302:
+  id: 302
+  index:
+  firstname: Roland
+  lastname: Garnier
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.607265000 Z
+  updated_at: 2023-04-16 12:20:45.607265000 Z
+  team_id: 89
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_303:
+  id: 303
+  index:
+  firstname: Arthurine
+  lastname: Charles
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.619405000 Z
+  updated_at: 2023-04-16 12:20:45.619405000 Z
+  team_id: 89
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_304:
+  id: 304
+  index:
+  firstname: Florent
+  lastname: Royer
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.641389000 Z
+  updated_at: 2023-04-16 12:20:45.641389000 Z
+  team_id: 90
+  index_in_team: 1
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_305:
+  id: 305
+  index:
+  firstname: Firmin
+  lastname: Lévêque
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.652218000 Z
+  updated_at: 2023-04-16 12:20:45.652218000 Z
+  team_id: 90
+  index_in_team: 2
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:
+participants_306:
+  id: 306
+  index:
+  firstname: Clotilde
+  lastname: Boulanger
+  participating_dojo_id: 42
+  created_at: 2023-04-16 12:20:45.663491000 Z
+  updated_at: 2023-04-16 12:20:45.663491000 Z
+  team_id: 90
+  index_in_team: 3
+  kyudojin_id:
+  club: ''
+  rank:
+  intermediate_rank:

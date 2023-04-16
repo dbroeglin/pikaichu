@@ -50,12 +50,8 @@ class TaikaisExportTest < ApplicationSystemTestCase
         taikai.staffs.create!(firstname: "a", lastname: "b", role: role)
       end
       taikai.transition_to! :marking
-      taikai.participants.map {|participant| participant.score.results }.flatten
-      .each { |r|
-        r.status = ['hit', 'miss'].sample
-        r.final = true
-        r.save
-      }
+      TestDataService.finalize_scores(taikai)
+
       taikai.transition_to! :tie_break
       taikai.transition_to! :done
       go_to_taikais

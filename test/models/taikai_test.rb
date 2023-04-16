@@ -2,13 +2,8 @@ require "test_helper"
 
 class TaikaiTest < ActiveSupport::TestCase
   setup do
-    @taikai = Taikai.new(
-      shortname: 'test-taikai',
-      name: 'Test Taikai',
-      start_date: Date.today,
-      end_date: Date.today,
-      current_user: users(:vince)
-    )
+    @taikai = taikais(:'2in1_dist_12_enteki')
+    @taikai.current_user = users(:jean_bon)
   end
 
   [
@@ -61,6 +56,7 @@ class TaikaiTest < ActiveSupport::TestCase
       @taikai.save!
       @taikai.transition_to!(:registration)
       @taikai.transition_to!(:marking)
+      TestDataService.finalize_scores(@taikai)
       @taikai.transition_to!(:tie_break)
       @taikai.transition_to!(:done)
     end
@@ -72,16 +68,18 @@ class TaikaiTest < ActiveSupport::TestCase
     @taikai.save!
     @taikai.transition_to!(:registration)
     @taikai.transition_to!(:marking)
+    TestDataService.finalize_scores(@taikai)
     @taikai.transition_to!(:tie_break)
     @taikai.transition_to!(:done)
   end
 
   test "cannot change once done" do
     @taikai.form = :'2in1'
-    @taikai.save!
-    %i(registration marking tie_break done).each do |state|
-      @taikai.transition_to!(state)
-    end
+    @taikai.transition_to!(:registration)
+    @taikai.transition_to!(:marking)
+    TestDataService.finalize_scores(@taikai)
+    @taikai.transition_to!(:tie_break)
+    @taikai.transition_to!(:done)
 
     # TODO: test that we cannot change the form, scoring, etc.
   end

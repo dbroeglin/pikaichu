@@ -1,39 +1,89 @@
+---
 taikai_admin:
+  id: 1
   code: taikai_admin
-  label: { 'fr': 'Administrateur', 'en': 'Administrator' }
-  description: { 'fr': 'Administrateur du Taikai', 'en': 'Taikai administrator' }
-
+  created_at: 2023-04-16 12:20:39.112345000 Z
+  updated_at: 2023-04-16 12:20:39.112345000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Taikai admin
+    en: Taikai_admin
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de taikai_admin
+    en: Description of taikai_admin
 dojo_admin:
+  id: 2
   code: dojo_admin
-  label: { 'fr': 'Administrateur de club', 'en': 'Dojo administrator' }
-  description: { 'fr': 'Administrateur de club participant', 'en': 'Participating Dojo administrator' }
-
+  created_at: 2023-04-16 12:20:39.120284000 Z
+  updated_at: 2023-04-16 12:20:39.120284000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Dojo admin
+    en: Dojo_admin
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de dojo_admin
+    en: Description of dojo_admin
 chairman:
+  id: 3
   code: chairman
-  label: { 'fr': 'Directeur du tournoi', 'en': 'Chairman' }
-  description: { 'fr': 'Directeur du tournoi', 'en': 'Taikai chairman' }
-
+  created_at: 2023-04-16 12:20:39.126965000 Z
+  updated_at: 2023-04-16 12:20:39.126965000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Chairman
+    en: Chairman
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de chairman
+    en: Description of chairman
 marking_referee:
+  id: 4
   code: marking_referee
-  label: { 'fr': 'Enregistreur', 'en': 'Marking Referee' }
-  description: { 'fr': 'Enregistreur des résultats', en: 'Marking Referee' }
-
+  created_at: 2023-04-16 12:20:39.134058000 Z
+  updated_at: 2023-04-16 12:20:39.134058000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Marking referee
+    en: Marking_referee
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de marking_referee
+    en: Description of marking_referee
 shajo_referee:
+  id: 5
   code: shajo_referee
-  label: { 'fr':'Juge de shajô','en':'Shajô Referee'}
-  description: { 'fr':'Juge de shajô','en':'Shajô Referee'}
-
+  created_at: 2023-04-16 12:20:39.141320000 Z
+  updated_at: 2023-04-16 12:20:39.141320000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Shajo referee
+    en: Shajo_referee
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de shajo_referee
+    en: Description of shajo_referee
 target_referee:
+  id: 6
   code: target_referee
-  label: { 'fr': 'Juge de cible', 'en': 'Matomae Referee' }
-  description: { 'fr': 'Juge de cible', 'en': 'Matomae Referee' }
-
+  created_at: 2023-04-16 12:20:39.147818000 Z
+  updated_at: 2023-04-16 12:20:39.147818000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Target referee
+    en: Target_referee
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de target_referee
+    en: Description of target_referee
 yatori:
+  id: 7
   code: yatori
-  label: { 'fr': 'Yatori', 'en': 'Yatori' }
-  description: { 'fr': 'Yatori', 'en': 'Yatori' }
-
+  created_at: 2023-04-16 12:20:39.154199000 Z
+  updated_at: 2023-04-16 12:20:39.154199000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Yatori
+    en: Yatori
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de yatori
+    en: Description of yatori
 operations_chairman:
+  id: 8
   code: operations_chairman
-  label: { 'fr': 'Responsable Logistique', 'en': 'Operations Chairman' }
-  description: { 'fr': 'Responsable Logistique', 'en': 'Operations Chairman' }
+  created_at: 2023-04-16 12:20:39.160733000 Z
+  updated_at: 2023-04-16 12:20:39.160733000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Operations chairman
+    en: Operations_chairman
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de operations_chairman
+    en: Description of operations_chairman
