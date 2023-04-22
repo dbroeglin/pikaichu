@@ -1,4 +1,6 @@
 class TeamingController < ApplicationController
+  layout 'taikai'
+
   before_action :set_taikai
   before_action :set_participating_dojo
 

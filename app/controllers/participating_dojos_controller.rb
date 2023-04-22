@@ -1,4 +1,6 @@
 class ParticipatingDojosController < ApplicationController
+  layout 'taikai'
+
   before_action :set_taikai
 
   def new

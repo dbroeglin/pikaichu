@@ -1,4 +1,6 @@
 class LeaderboardController < ApplicationController
+  layout 'taikai'
+
   skip_before_action :authenticate_user!, :only => [:public]
 
   def show

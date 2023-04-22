@@ -1,0 +1,7 @@
+<% content_for :content do %>
+    <%= render "taikais/title", taikai: @taikai %>
+    <%= render "taikais/states", taikai: @taikai %>
+    <hr/>
+  <%= yield %>
+<% end %>
+<%= render template: "layouts/application" %>

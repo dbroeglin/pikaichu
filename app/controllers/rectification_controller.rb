@@ -1,4 +1,5 @@
 class RectificationController < ApplicationController
+  layout 'taikai'
 
   def index
     @taikai = authorize Taikai.find(params[:taikai_id]), :rectification_update?

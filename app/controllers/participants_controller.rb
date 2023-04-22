@@ -1,6 +1,8 @@
 # rubocop:disable Metrics/ClassLength
 
 class ParticipantsController < ApplicationController
+  layout 'taikai'
+
   before_action :set_taikai
   before_action :set_participating_dojo
   before_action :set_team

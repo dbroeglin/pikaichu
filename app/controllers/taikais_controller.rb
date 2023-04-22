@@ -1,4 +1,6 @@
 class TaikaisController < ApplicationController
+  layout 'taikai', :except => [:index, :new, :create]
+
   def index
     @taikais =
       Taikai.all

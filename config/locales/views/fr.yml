@@ -214,15 +214,17 @@ fr:
       category: Catégorie %{category}
       generate: Générer la seconde partie
       overview: Vue d'ensemble de «%{description}»
-      total_num_arrows:
-        one: "%{count} flèche"
-        other: "%{count} flèches"
     states:
       next_state: Étape suivante
       previous_state: Étape précédente
     timeline:
+      title: Historique
       now: Maintenant
       you_are_here: Vous êtes ici!
+    title:
+      total_num_arrows:
+        one: "%{count} flèche"
+        other: "%{count} flèches"
   teams:
     destroy:
       title: Effacer une équipe

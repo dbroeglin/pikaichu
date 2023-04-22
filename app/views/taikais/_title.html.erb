@@ -1,0 +1,15 @@
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <p class="subtitle is-5">
+    <b><%= taikai.shortname %></b>
+      &#8212 <%= l taikai.start_date %> - <%= l taikai.end_date %>
+      &#8212 <%= Taikai.human_enum_value :scoring, taikai.scoring %>
+      &#8212 <%= Taikai.human_enum_value :form, taikai.form %>
+      &#8212 <%= t("activerecord.booleans.taikai.distributed.#{taikai.distributed}") %>
+      &#8212 <%= t ".total_num_arrows", count: taikai.total_num_arrows %>
+      <% if !taikai.category.blank? %>
+      &#8212 <%= t ".category", category: taikai.category  %>
+      <% end %>
+    </p>
+  </div>
+</nav>

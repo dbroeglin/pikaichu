@@ -1,202 +1,184 @@
-<div class="card">
-  <div class="card-content">
-    <%= render "states", taikai: @taikai %>
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">
-        <%= t '.overview', description: "#{@taikai.name} (#{@taikai.shortname})" %>
-        </p>
+<div class="media">
+  <div class="media-content has-text-centered">
+    <p class="title is-4"><%= t '.overview', description: "#{@taikai.name}" %></p>
 
-        <p class="subtitle is-6">
-          <%= l @taikai.start_date %> - <%= l @taikai.end_date %>
-          &#8212 <%= Taikai.human_enum_value :scoring, @taikai.scoring %>
-          &#8212 <%= Taikai.human_enum_value :form, @taikai.form %>
-          &#8212 <%= t("activerecord.booleans.taikai.distributed.#{@taikai.distributed}") %>
-          &#8212 <%= t ".total_num_arrows", count: @taikai.total_num_arrows %>
-          <% if !@taikai.category.blank? %>
-          &#8212 <%= t ".category", category: @taikai.category  %>
-          <% end %>
-        </p>
-        <p><%= @taikai.description %></p>
-      </div>
+    <p><%= @taikai.description %></p>
+  </div>
 
-      <div class="media-right">
-        <%= render "icons", taikai: @taikai, size: "" %>
-        <% if @taikai.form_2in1? %>
-          <%= bulma_form_with url: generate_taikai_path(@taikai),
-                              data: { turbo_method: 'post', turbo_confirm: t('confirm_html') } do |f| %>
-            <div class="field has-addons mt-3">
-              <p class="control">
-                <span class="select">
-                  <select name="bracket_size" id="bracket_size">
-                    <option>4</option>
-                    <option>8</option>
-                  </select>
-                </span>
-              </p>
-              <p class="control">
-                <button class="button"><%= t '.generate' %></button>
-              </p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="columns">
-        <div class="column">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                <%= Participant.model_name.human.pluralize %>
-              </p>
-            </header>
-            <div class="card-content">
-              <table class="table is-narrow">
-                <thead>
-                  <tr class="has-text-centered">
-                    <th><%= Participant.human_attribute_name :participating_dojo %></th>
-                    <% if @taikai.form_individual? %>
-                    <th><%= Team.human_attribute_name :index %></th>
-                    <% else %>
-                    <th><%= Participant.human_attribute_name :index %></th>
-                    <th><%= Participant.human_attribute_name :team %></th>
-                    <% end %>
-                    <th><%= Participant.human_attribute_name :display_name %></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% if @taikai.form_individual? %>
-                  <%
-                    @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
-                      participating_dojo.participants.includes(:kyudojin).each_with_index do |participant, participant_index|
-                  %>
-                  <tr>
-                    <% if participant_index == 0 %>
-                    <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
-                    <% end %>
-                    <td><%= participant.index %></td>
-                    <td><%= participant.display_name %></td>
-                    <td><% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %></td>
-                  </tr>
-                  <%
-                      end
-                    end
-                  %>
-                  <% else # team / 2in1 %>
-                  <%
-                    @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
-                      participating_dojo.teams.each_with_index do |team, team_index|
-                        team.participants.each_with_index do |participant, participant_index|
-                  %>
-                  <tr>
-                    <% if team_index == 0 && participant_index == 0 %>
-                      <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
-                    <% end %>
-                    <% if participant_index == 0 %>
-                      <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
-                      <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
-                    <% end %>
-                    <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
-                  </tr>
-                  <%
-                        end
-                      end
-                      participating_dojo.participants.unteamed.each do |participant|
-                  %>
-                    <tr>
-                      <td></td>
-                      <td>-</td>
-                      <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
-                    </tr>
-                  <%
-                      end
-                    end
-                  %>
-                  <% end %>
-                  <tr>
-                    <td></td>
-                    <% unless @taikai.form_individual? %>
-                      <td></td>
-                    <% end %>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+  <div class="media-right">
+    <%= render 'icons', taikai: @taikai, size: "" %>
+    <% if @taikai.form_2in1? && @taikai.in_state?(:done) %>
+      <%= bulma_form_with url: generate_taikai_path(@taikai),
+                          data: { turbo_method: 'post', turbo_confirm: t('confirm_html') } do |f| %>
+        <div class="field has-addons mt-3">
+          <p class="control">
+            <span class="select">
+              <select name="bracket_size" id="bracket_size">
+                <option>4</option>
+                <option>8</option>
+              </select>
+            </span>
+          </p>
+          <p class="control">
+            <button class="button"><%= t '.generate' %></button>
+          </p>
         </div>
-
-        <div class="column">
-          <div class="card mb-5">
-            <header class="card-header">
-              <p class="card-header-title"><%= ParticipatingDojo.model_name.human count: 2 %></p>
-            </header>
-            <div class="card-content">
-              <table class="table is-narrow">
-                <thead>
-                  <tr class="has-text-centered">
-                    <th><%= ParticipatingDojo.human_attribute_name :display_name %></th>
-                    <th><%= ParticipatingDojo.human_attribute_name :city %></th>
-                    <th><%= ParticipatingDojo.human_attribute_name :country %></th>
-                    <th title="<%= t('activerecord.attributes.participating_dojo.num_participants_title') %>"><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @taikai.participating_dojos.each do |participating_dojo| %>
-                  <tr>
-                    <td><%= participating_dojo.display_name %></td>
-                    <td><%= participating_dojo.dojo.city %></td>
-                    <td><%= participating_dojo.dojo.country_name %></td>
-                    <td><%= participating_dojo.participants.count %></td>
-                    <td>
-                      <%= link_to draw_taikai_participating_dojo_path(@taikai, participating_dojo),
-                                  class: "button is-small has-background-light ml-3",
-                                  data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
-                                  title: t('taikais.draw') do %>
-                        <span class="icon is-small">
-                          <i class="fas fa-dice"></i>
-                        </span>
-                      <% end if policy(participating_dojo).draw? %>
-                    </td>
-                  </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title"><%= Staff.model_name.human count: 2 %></p>
-            </header>
-            <div class="card-content">
-              <table class="table is-narrow">
-                <thead>
-                  <tr class="has-text-centered">
-                    <th><%= Staff.human_attribute_name :role %></th>
-                    <th><%= Staff.human_attribute_name :participating_dojo %></th>
-                    <th><%= Staff.human_attribute_name :name %></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @taikai.staffs.ordered.includes(:role).each do |staff| %>
-                  <tr>
-                    <td><%= staff.role.label %></td>
-                    <td><%= staff.participating_dojo&.display_name %></td>
-                    <td><%= staff.display_name %></td>
-                  </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr/>
-    <%= render 'timeline', taikai: @taikai %>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
+<div class="content">
+  <div class="columns">
+    <div class="column">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <%= Participant.model_name.human.pluralize %>
+          </p>
+        </header>
+        <div class="card-content">
+          <table class="table is-narrow">
+            <thead>
+              <tr class="has-text-centered">
+                <th><%= Participant.human_attribute_name :participating_dojo %></th>
+                <% if @taikai.form_individual? %>
+                <th><%= Team.human_attribute_name :index %></th>
+                <% else %>
+                <th><%= Participant.human_attribute_name :index %></th>
+                <th><%= Participant.human_attribute_name :team %></th>
+                <% end %>
+                <th><%= Participant.human_attribute_name :display_name %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @taikai.form_individual? %>
+              <%
+                @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
+                  participating_dojo.participants.includes(:kyudojin).each_with_index do |participant, participant_index|
+              %>
+              <tr>
+                <% if participant_index == 0 %>
+                <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
+                <% end %>
+                <td><%= participant.index %></td>
+                <td><%= participant.display_name %></td>
+                <td><% if participant.kyudojin %><i class="far fa-id-badge"></i><% end %></td>
+              </tr>
+              <%
+                  end
+                end
+              %>
+              <% else # team / 2in1 %>
+              <%
+                @taikai.participating_dojos.each_with_index do |participating_dojo, dojo_index|
+                  participating_dojo.teams.each_with_index do |team, team_index|
+                    team.participants.each_with_index do |participant, participant_index|
+              %>
+              <tr>
+                <% if team_index == 0 && participant_index == 0 %>
+                  <td rowspan="<%= participating_dojo.participants.size %>"><%= participating_dojo.display_name %></td>
+                <% end %>
+                <% if participant_index == 0 %>
+                  <td rowspan="<%= team.participants.size %>"><%= team.index %></td>
+                  <td rowspan="<%= team.participants.size %>"><%= team.shortname %></td>
+                <% end %>
+                <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
+              </tr>
+              <%
+                    end
+                  end
+                  participating_dojo.participants.unteamed.each do |participant|
+              %>
+                <tr>
+                  <td></td>
+                  <td>-</td>
+                  <td><%= participant.display_name %><%= participant.club.present? ? " (#{participant.club})" : "" %></td>
+                </tr>
+              <%
+                  end
+                end
+              %>
+              <% end %>
+              <tr>
+                <td></td>
+                <% unless @taikai.form_individual? %>
+                  <td></td>
+                <% end %>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card mb-5">
+        <header class="card-header">
+          <p class="card-header-title"><%= ParticipatingDojo.model_name.human count: 2 %></p>
+        </header>
+        <div class="card-content">
+          <table class="table is-narrow">
+            <thead>
+              <tr class="has-text-centered">
+                <th><%= ParticipatingDojo.human_attribute_name :display_name %></th>
+                <th><%= ParticipatingDojo.human_attribute_name :city %></th>
+                <th><%= ParticipatingDojo.human_attribute_name :country %></th>
+                <th title="<%= t('activerecord.attributes.participating_dojo.num_participants_title') %>"><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @taikai.participating_dojos.each do |participating_dojo| %>
+              <tr>
+                <td><%= participating_dojo.display_name %></td>
+                <td><%= participating_dojo.dojo.city %></td>
+                <td><%= participating_dojo.dojo.country_name %></td>
+                <td><%= participating_dojo.participants.count %></td>
+                <td>
+                  <%= link_to draw_taikai_participating_dojo_path(@taikai, participating_dojo),
+                              class: "button is-small has-background-light ml-3",
+                              data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
+                              title: t('taikais.draw') do %>
+                    <span class="icon is-small">
+                      <i class="fas fa-dice"></i>
+                    </span>
+                  <% end if policy(participating_dojo).draw? %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title"><%= Staff.model_name.human count: 2 %></p>
+        </header>
+        <div class="card-content">
+          <table class="table is-narrow">
+            <thead>
+              <tr class="has-text-centered">
+                <th><%= Staff.human_attribute_name :role %></th>
+                <th><%= Staff.human_attribute_name :participating_dojo %></th>
+                <th><%= Staff.human_attribute_name :name %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @taikai.staffs.ordered.includes(:role).each do |staff| %>
+              <tr>
+                <td><%= staff.role.label %></td>
+                <td><%= staff.participating_dojo&.display_name %></td>
+                <td><%= staff.display_name %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'timeline', taikai: @taikai %>
