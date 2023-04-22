@@ -43,6 +43,6 @@ class Staff < ApplicationRecord
   end
 
   def to_ascii
-    "#{display_name} - #{role.code} - #{participating_dojo&.display_name}"
+    "#{display_name} - #{role&.code} - #{participating_dojo&.display_name} (#{id})"
   end
 end

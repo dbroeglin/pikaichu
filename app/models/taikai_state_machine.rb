@@ -26,7 +26,7 @@ class TaikaiStateMachine
   # Guards
 
   guard_transition from: :registration, to: :marking do |taikai|
-    taikai.staffs.map { |staff| staff.role.code }.uniq.select do |role_code|
+    taikai.staffs.map { |staff| staff.role&.code }.uniq.select do |role_code|
       %w[chairman shajo_referee target_referee].include? role_code
     end.size == 3
   end
