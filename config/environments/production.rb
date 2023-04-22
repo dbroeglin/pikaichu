@@ -68,12 +68,12 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_URL'] }
+  config.action_mailer.default_url_options = { host: ENV.fetch('DEFAULT_URL', nil) }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => ENV['SENDGRID_DOMAIN'],
+    :user_name => ENV.fetch('SENDGRID_USERNAME', nil),
+    :password => ENV.fetch('SENDGRID_PASSWORD', nil),
+    :domain => ENV.fetch('SENDGRID_DOMAIN', nil),
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
@@ -88,7 +88,7 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = Logger::Formatter.new
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"

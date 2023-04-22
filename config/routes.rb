@@ -1,5 +1,3 @@
-# rubocop:disable Layout/LineLength
-
 Rails.application.routes.draw do
   devise_for :users
 
@@ -25,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
-      get   'export.xlsx',                      to: 'taikais#export', as: :taikai_export # TODO: refactor
+      get   'export.xlsx', to: 'taikais#export', as: :taikai_export # TODO: refactor
       post  'generate'
       get   'leaderboard',                      to: 'leaderboard#show'
       get   'leaderboard/2in1',                 to: 'leaderboard#show_2in1'

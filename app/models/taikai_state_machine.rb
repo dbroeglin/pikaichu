@@ -27,7 +27,7 @@ class TaikaiStateMachine
 
   guard_transition from: :registration, to: :marking do |taikai|
     taikai.staffs.map { |staff| staff.role.code }.uniq.select do |role_code|
-      %w[chairman shajo_referee target_referee ].include? role_code
+      %w[chairman shajo_referee target_referee].include? role_code
     end.size == 3
   end
 
@@ -43,26 +43,27 @@ class TaikaiStateMachine
       user: taikai.current_user,
       taikai: taikai,
       from: taikai.current_state,
-      to: transition.to_state)
+      to: transition.to_state
+    )
   end
 
   # "Forward" transitions call-backs
 
-  before_transition(from: :registration, to: :marking) do |taikai, transition|
-    taikai.create_scores unless taikai.form_matches? #if taikai.id > 74 # TODO: remove after migration
+  before_transition(from: :registration, to: :marking) do |taikai, _transition|
+    taikai.create_scores unless taikai.form_matches? # if taikai.id > 74 # TODO: remove after migration
   end
 
-  before_transition(from: :marking, to: :registration) do |taikai, transition|
-    taikai.delete_scores unless taikai.form_matches? #if taikai.id > 74 # TODO: remove after migration
+  before_transition(from: :marking, to: :registration) do |taikai, _transition|
+    taikai.delete_scores unless taikai.form_matches? # if taikai.id > 74 # TODO: remove after migration
   end
 
   # "Backward" transitions call-backs
 
-  before_transition(from: :marking, to: :tie_break) do |taikai, transition|
+  before_transition(from: :marking, to: :tie_break) do |taikai, _transition|
     Leaderboard.new(taikai_id: taikai.id, validated: true).compute_intermediate_ranks
   end
 
-  before_transition(from: :tie_break, to: :marking) do |taikai, transition|
+  before_transition(from: :tie_break, to: :marking) do |taikai, _transition|
     taikai.participants.clear_ranks
     taikai.teams.clear_ranks
   end

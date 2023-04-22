@@ -2,7 +2,6 @@ class Score < ApplicationRecord
   include ValidateChangeBasedOnState
   audited
 
-
   belongs_to :team, optional: true
   belongs_to :participant, optional: true
   belongs_to :match, optional: true
@@ -42,10 +41,12 @@ class Score < ApplicationRecord
   # ScoreValue is used for grouping and comparison of scores (validated or not)
   class ScoreValue
     attr_reader :hits, :value
+
     include Comparable
 
     def initialize(hits:, value: nil)
-      @hits, @value = hits, value
+      @hits = hits
+      @value = value
     end
 
     def eql?(other)
@@ -68,10 +69,10 @@ class Score < ApplicationRecord
     end
 
     def +(other)
-      if (value || other.value)
-        ScoreValue::new(hits: hits + other.hits, value: (value || 0) + other.value)
+      if value || other.value
+        ScoreValue.new(hits: hits + other.hits, value: (value || 0) + other.value)
       else
-        ScoreValue::new(hits: hits + other.hits)
+        ScoreValue.new(hits: hits + other.hits)
       end
     end
 
@@ -82,15 +83,10 @@ class Score < ApplicationRecord
 
   def add_result(status, value = nil)
     result = results.first_empty
-    if result
-      if previous_round_finalized?(result)
-        result.update!(status: status, value: value)
-      else
-        raise PreviousRoundNotValidatedError::new([1, result.round - 1].min)
-      end
-    else
-      raise UnableToFindUndefinedResultsError
-    end
+    raise UnableToFindUndefinedResultsError unless result
+    raise PreviousRoundNotValidatedError, [1, result.round - 1].min unless previous_round_finalized?(result)
+
+    result.update!(status: status, value: value)
 
     results.reload # TODO: better perf?
     result
@@ -123,7 +119,6 @@ class Score < ApplicationRecord
   end
 
   def previous_round_finalized?(result)
-
     if result.round == 1
       true
     else
@@ -133,19 +128,20 @@ class Score < ApplicationRecord
 
   def first(n)
     raise "Score.first should be used only with finalized records" unless finalized?
+
     first_results = results.first(n)
 
-    Score::new(
-      hits:  first_results.select(&:status_hit?).size,
+    Score.new(
+      hits: first_results.select(&:status_hit?).size,
       value: first_results.map(&:value).compact.sum,
     )
   end
 
   def score_value(validated = true)
     if validated
-      ScoreValue::new(hits: hits, value: value)
+      ScoreValue.new(hits: hits, value: value)
     else
-      ScoreValue::new(hits: intermediate_hits, value: intermediate_value)
+      ScoreValue.new(hits: intermediate_hits, value: intermediate_value)
     end
   end
 
@@ -157,7 +153,7 @@ class Score < ApplicationRecord
       (num_marked.zero? ||
         num_finalized == num_marked ||
           (num_marked % participant.participating_dojo.taikai.num_arrows != 0))
-          # TODO: could we reduce coupling here?
+    # TODO: could we reduce coupling here?
   end
 
   def finalized?

@@ -32,16 +32,14 @@ class Team < ApplicationRecord
     scores.create!(team_id: id, match_id: match_id)
   end
 
-
   def score(match_id = nil)
     scores.find_by(match_id: match_id)
   end
 
-
   def to_ascii(match_id = nil)
     [
-    "#{shortname}: #{score(match_id)&.to_ascii}",
-    participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
+      "#{shortname}: #{score(match_id)&.to_ascii}",
+      participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
     ].flatten.join("\n")
   end
 end

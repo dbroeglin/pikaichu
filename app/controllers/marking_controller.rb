@@ -10,14 +10,15 @@ class MarkingController < ApplicationController
 
     if policy(@taikai).admin?
       @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
+                                    .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
     elsif policy(@taikai).marking_show?
       @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: { scores: :results }}, teams: [participants: { scores: :results }])
+                                    .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
                                     .joins(staffs: [:role])
                                     .where(
                                       'staffs.user_id': current_user,
-                                      'role.code': TaikaiPolicy::MARKING_ROLES)
+                                      'role.code': TaikaiPolicy::MARKING_ROLES
+                                    )
     else
       raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
     end
@@ -28,10 +29,9 @@ class MarkingController < ApplicationController
     @match = @taikai.matches.find(params[:id])
   end
 
-
   def update
     # TODO: Optimize?
-    @taikai = Taikai.includes(participating_dojos: { participants: { scores: :results }}).find(params[:id])
+    @taikai = Taikai.includes(participating_dojos: { participants: { scores: :results } }).find(params[:id])
 
     authorize(@taikai, :marking_update?)
 
@@ -46,7 +46,7 @@ class MarkingController < ApplicationController
       respond_to do |format|
         format.html { redirect_to action: :show, id: @taikai.id }
         format.turbo_stream do
-          logger.warn"Participant #{@participant.id}'s previous round has not been validated yet"
+          logger.warn "Participant #{@participant.id}'s previous round has not been validated yet"
           @results = @participant.score(@match&.id).results.where(round: e.previous_round)
         end
       end

@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require "test_helper"
 
 class MarkingControllerTest < ActionDispatch::IntegrationTest

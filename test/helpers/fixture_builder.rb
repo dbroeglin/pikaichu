@@ -8,7 +8,7 @@ FixtureBuilder.configure do |fbuilder|
     "test/helper/fixture_builder.rb",
     "test/helper/create_fixtures.rb",
   ]
-  fbuilder.skip_tables = ['audits', 'taikai_transitions', 'ar_internal_metadata', 'schema_migrations']
+  fbuilder.skip_tables = %w[audits taikai_transitions ar_internal_metadata schema_migrations]
 
   # now declare objects
   fbuilder.factory do
@@ -17,6 +17,6 @@ FixtureBuilder.configure do |fbuilder|
 end
 
 # Have factory bot generate non-colliding sequences starting at 1000 for data created after the fixtures
-#FactoryBot.sequences.each do |seq|
+# FactoryBot.sequences.each do |seq|
 #  seq.instance_variable_set(:@value, FactoryBot::Sequence::EnumeratorAdapter.new(1000))
-#end
+# end

@@ -10,7 +10,6 @@ FactoryBot.define do
       index { nil }
 
       after(:create) do |team, evaluator|
-
         create_list(:participant, evaluator.participant_count,
                     participating_dojo: team.participating_dojo,
                     team: team)

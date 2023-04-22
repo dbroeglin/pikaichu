@@ -11,7 +11,7 @@ if Rails.env.development? || Rails.env.test?
       sh 'bin/rails ops:db:fixtures:full'
 
       sh 'bin/rails test test/controllers'
-      #sh 'bin/rails rubocop'
+      # sh 'bin/rails rubocop'
 
       sh 'git push staging'
 
@@ -38,7 +38,7 @@ if Rails.env.development? || Rails.env.test?
         raise "Set the PG_ADMIN_PASSWORD environment variable, pls." unless ENV['PG_ADMIN_PASSWORD']
         raise "Set the SECRET_KEY_BASE environment variable, pls." unless ENV['SECRET_KEY_BASE']
 
-        pg_url = "postgres://pikaichu:#{ENV['PG_ADMIN_PASSWORD']}@#{pg_name}.postgres.database.azure.com/postgres?sslmode=require"
+        pg_url = "postgres://pikaichu:#{ENV.fetch('PG_ADMIN_PASSWORD', nil)}@#{pg_name}.postgres.database.azure.com/postgres?sslmode=require"
       end
 
       desc "Deploy Azure Foundation"
@@ -53,7 +53,7 @@ if Rails.env.development? || Rails.env.test?
       end
 
       desc "Deploy Image to Azure ACR"
-      task :image do
+      task image: :env do
         sh "az acr login -n #{acr_name}"
         sh "docker build --tag pikaichu_production ."
         sh "docker tag pikaichu_production #{acr_server}/pikaichu:production"
@@ -66,7 +66,7 @@ if Rails.env.development? || Rails.env.test?
       desc "Deploy Azure Foundation"
       task postgresql: :foundation do
         sh %(
-          az postgres flexible-server create --resource-group #{rg_name} --name #{pg_name} --public #{public_ip}-#{public_ip} --admin-user pikaichu --admin-password #{ENV['PG_ADMIN_PASSWORD']} --output json
+          az postgres flexible-server create --resource-group #{rg_name} --name #{pg_name} --public #{public_ip}-#{public_ip} --admin-user pikaichu --admin-password #{ENV.fetch('PG_ADMIN_PASSWORD', nil)} --output json
           az postgres flexible-server firewall-rule create --resource-group #{rg_name} --name #{pg_name} -r azure --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 
           )
@@ -100,7 +100,7 @@ if Rails.env.development? || Rails.env.test?
         sh %(
           az webapp config appsettings set --settings RAILS_ENV=production --name #{webapp_name} --resource-group #{rg_name}
           az webapp config appsettings set --settings DATABASE_URL="#{pg_url}" --name #{webapp_name} --resource-group #{rg_name}
-          az webapp config appsettings set --settings SECRET_KEY_BASE="#{ENV['SECRET_KEY_BASE']}" --name #{webapp_name} --resource-group #{rg_name}
+          az webapp config appsettings set --settings SECRET_KEY_BASE="#{ENV.fetch('SECRET_KEY_BASE', nil)}" --name #{webapp_name} --resource-group #{rg_name}
 
         )
 
@@ -114,9 +114,9 @@ if Rails.env.development? || Rails.env.test?
 
         webhook_url = `az webapp deployment container config --name #{webapp_name} --resource-group #{rg_name} --enable-cd true --query CI_CD_URL --output tsv`.strip
 
-        sh "az acr webhook create --name pikaichu --registry #{acr_name}" \
-           " --resource-group #{rg_name} --actions push --uri '#{webhook_url}'" \
-           " --scope 'pikaichu:*'"
+        sh "az acr webhook create --name pikaichu --registry #{acr_name} " \
+           "--resource-group #{rg_name} --actions push --uri '#{webhook_url}' " \
+           "--scope 'pikaichu:*'"
       end
 
       desc "Deploy all"

@@ -1,4 +1,3 @@
-# rubocop:disable Naming/VariableNumber
 require "test_helper"
 
 class ParticipantsControllerTest < ActionDispatch::IntegrationTest

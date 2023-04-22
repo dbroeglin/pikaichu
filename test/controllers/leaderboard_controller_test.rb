@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require "test_helper"
 
 class LeaderboardControllerTest < ActionDispatch::IntegrationTest

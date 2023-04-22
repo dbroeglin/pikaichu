@@ -1,5 +1,4 @@
 module LeaderboardHelper
-
   def display_rank(taikai, rankable, calculated_rank)
     if taikai.in_state? :tie_break, :done
       rankable.rank

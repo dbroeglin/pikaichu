@@ -25,7 +25,8 @@ class Staff < ApplicationRecord
   end
 
   validate do |staff|
-    if !new_record? && !staff.role.taikai_admin? && taikai.staffs.with_role(:taikai_admin).where("staffs.id <> ?", staff.id).count == 0
+    if !new_record? && !staff.role.taikai_admin? && taikai.staffs.with_role(:taikai_admin).where("staffs.id <> ?",
+                                                                                                 staff.id).count == 0
       errors.add(:base, :at_least_one_admin)
     end
   end

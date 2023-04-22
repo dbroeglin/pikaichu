@@ -1,5 +1,3 @@
-# rubocop:disable Lint/BinaryOperatorWithIdenticalOperands
-
 require "test_helper"
 
 class TeamScoreTest < ActiveSupport::TestCase
@@ -8,14 +6,12 @@ class TeamScoreTest < ActiveSupport::TestCase
     @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12_enteki)
     @team1 = @participating_dojo.teams.first
 
-    @team1.participants.each do |participant|
-      participant.create_empty_score_and_results
-    end
+    @team1.participants.each(&:create_empty_score_and_results)
     @score = @team1.create_empty_score
   end
 
   test "team finalized" do
-    #puts @team1.to_ascii
+    # puts @team1.to_ascii
 
     @team1.participants.each do |participant|
       participant.add_result(nil, 'hit', 3)
@@ -24,7 +20,7 @@ class TeamScoreTest < ActiveSupport::TestCase
       participant.add_result(nil, 'hit', 10)
     end
 
-    #puts @team1.to_ascii
+    # puts @team1.to_ascii
 
     assert_score 0, 0, 25, 4, @team1.participants.first.score
     assert_score 0, 0, 75, 12, @team1.score
@@ -35,7 +31,7 @@ class TeamScoreTest < ActiveSupport::TestCase
 
     assert_not @team1.score.finalized?
 
-    (2..3).each.each do |index|
+    (2..3).each do |index|
       @team1.participants.each do |participant|
         participant.add_result(nil, 'hit', 3)
         participant.add_result(nil, 'hit', 5)

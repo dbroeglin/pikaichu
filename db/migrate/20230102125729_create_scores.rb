@@ -18,17 +18,17 @@ class CreateScores < ActiveRecord::Migration[7.0]
     add_reference :results, :score, null: true, foreign_key: true
 
     Result.all.where(round_type: :normal)
-      .group_by { |result| [result.participant_id, result.match_id] }
-      .each do |key, group|
-        participant_id, match_id = key
-        score = Participant.find(participant_id).score(true, match_id)
-        new_score = Score::create!(
-          participant_id: participant_id,
-          match_id: match_id,
-          hits: score&.hits || 0,
-          value: score&.value || 0
-        )
-        Result.where(id: group).update_all(score_id: new_score.id)
+          .group_by { |result| [result.participant_id, result.match_id] }
+          .each do |key, group|
+      participant_id, match_id = key
+      score = Participant.find(participant_id).score(true, match_id)
+      new_score = Score.create!(
+        participant_id: participant_id,
+        match_id: match_id,
+        hits: score&.hits || 0,
+        value: score&.value || 0
+      )
+      Result.where(id: group).update_all(score_id: new_score.id)
     end
 
     Team.joins(participating_dojo: :taikai).where("taikais.form <> 'matches'").each do |team|
@@ -43,18 +43,22 @@ class CreateScores < ActiveRecord::Migration[7.0]
     Match.all.each do |match|
       score1 = match.score1(true)
       score2 = match.score2(true)
-      Score.create!(
-        team_id: match.team1_id,
-        match_id: match.id,
-        hits: score1&.hits || 0,
-        value: score1&.value || 0
-      ) if match.team1_id
+      if match.team1_id
+        Score.create!(
+          team_id: match.team1_id,
+          match_id: match.id,
+          hits: score1&.hits || 0,
+          value: score1&.value || 0
+        )
+      end
+      next unless match.team2_id
+
       Score.create!(
         team_id: match.team2_id,
         match_id: match.id,
         hits: score2&.hits || 0,
         value: score2&.value || 0
-      ) if match.team2_id
+      )
     end
 
     # migration sanity checks

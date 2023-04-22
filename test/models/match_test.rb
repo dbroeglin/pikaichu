@@ -13,16 +13,19 @@ class MatchTest < ActiveSupport::TestCase
       team1_id: @team1.id,
       team2_id: @team2.id,
       level: 2,
-      index: 1)
+      index: 1
+    )
     @target_match1 = Match.create(
       taikai_id: @taikai.id,
       level: 1,
-      index: 1)
+      index: 1
+    )
     @target_match2 = Match.create(
       taikai_id: @taikai.id,
       level: 1,
-      index: 2)
-    end
+      index: 2
+    )
+  end
 
   test "select winner in quarter finals" do
     generate_results
@@ -69,7 +72,6 @@ class MatchTest < ActiveSupport::TestCase
     assert_score 36, 12, 36, 12, @match.score(2)
   end
 
-
   test "marking" do
     assert_equal 0, @match.score(1).hits
 
@@ -107,7 +109,6 @@ class MatchTest < ActiveSupport::TestCase
     end
   end
 
-
   test "swap teams" do
     @match.team1_id = @team2.id
     @match.team2_id = @team1.id
@@ -124,7 +125,6 @@ class MatchTest < ActiveSupport::TestCase
       end
     end
   end
-
 
   test "change team1" do
     @match.team1_id = @team3.id
@@ -158,10 +158,7 @@ class MatchTest < ActiveSupport::TestCase
     end
   end
 
-
-  def finalize_results
-
-  end
+  def finalize_results; end
 
   def generate_results
     @match.team1.participants.each do |participant|

@@ -1,5 +1,5 @@
 module TaikaisTestHelpers
-  TAIKAI_DATA = %I(individual team 2in1).map do |form|
+  TAIKAI_DATA = %I[individual team 2in1].map do |form|
     [false, true].map do |distributed|
       [12, 20].map do |total_num_arrows|
         [false, true].map do |enteki|
@@ -12,7 +12,7 @@ module TaikaisTestHelpers
   def go_to_taikais
     visit taikais_url(per: 50)
 
-    assert_selector "h1.title", text: "Liste des Taikai"
+    assert_selector 'h1.title', text: 'Liste des Taikai'
   end
 
   def go_to_taikai(label)
@@ -22,10 +22,10 @@ module TaikaisTestHelpers
 
     click_on taikai.name
 
-    assert_selector "p.title.is-4", text: "#{taikai.name} (#{taikai.shortname})"
+    assert_selector 'p.title.is-4', text: "#{taikai.name} (#{taikai.shortname})"
   end
 
   def taikai_shortname(form, distributed, total_num_arrows, enteki)
-    "#{form}-#{distributed ? "dist" : "local"}-#{total_num_arrows}-#{enteki ? "enteki" : "kinteki"}"
+    "#{form}-#{distributed ? 'dist' : 'local'}-#{total_num_arrows}-#{enteki ? 'enteki' : 'kinteki'}"
   end
 end

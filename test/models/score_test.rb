@@ -7,7 +7,7 @@ class ScoreTest < ActiveSupport::TestCase
     # TODO: replace this by factories?
     @participant = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki).participants.first
     @participant.team.create_empty_score
-    @participant.team.participants.each { |participant| participant.create_empty_score_and_results }
+    @participant.team.participants.each(&:create_empty_score_and_results)
     @score = @participant.scores.first
   end
 
@@ -71,7 +71,6 @@ class ScoreTest < ActiveSupport::TestCase
     assert @score.finalized?
   end
 
-
   test "previous_round_finalized? is true for 2.1 if 1.x are finalized" do
     @score.results.round(1).update_all(status: 'miss', final: true)
     @score.results.reload
@@ -84,7 +83,7 @@ class ScoreTest < ActiveSupport::TestCase
     @score.results.round(1).each { |result| result.update!(status: 'hit', final: true) }
     assert_score 0, 4, 0, 4, @score
 
-    result = @score.add_result :hit
+    @score.add_result :hit
     assert_score 0, 4, 0, 5, @score
   end
 
@@ -112,13 +111,12 @@ class ScoreTest < ActiveSupport::TestCase
     assert_equal Score::ScoreValue.new(hits: 4), score1 + score2
   end
 
-
   test "score of N first arrows" do
-    %i(hit hit miss miss).each { |status| @score.add_result status }
+    %i[hit hit miss miss].each { |status| @score.add_result status }
     @score.finalize_round 1
-    %i(hit miss hit miss).each { |status| @score.add_result status }
+    %i[hit miss hit miss].each { |status| @score.add_result status }
     @score.finalize_round 2
-    %i(miss miss hit hit).each { |status| @score.add_result status }
+    %i[miss miss hit hit].each { |status| @score.add_result status }
     @score.finalize_round 3
 
     assert_equal 1, @score.first(1).hits

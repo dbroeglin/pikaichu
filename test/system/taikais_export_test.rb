@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require 'application_system_test_case'
 require 'taikais_test_helpers'
 
@@ -7,7 +5,6 @@ class TaikaisExportTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
   extend TaikaisTestHelpers
   include DownloadHelpers
-
 
   setup do
     sign_in_as users(:jean_bon)
@@ -20,11 +17,11 @@ class TaikaisExportTest < ApplicationSystemTestCase
     path[':session_id'] = bridge.session_id
 
     bridge.http.call(:post, path,
-      cmd: 'Page.setDownloadBehavior',
-      params: {
-        behavior: 'allow',
-        downloadPath: DownloadHelpers::PATH
-      })
+                     cmd: 'Page.setDownloadBehavior',
+                     params: {
+                       behavior: 'allow',
+                       downloadPath: DownloadHelpers::PATH
+                     })
   end
 
   teardown do
@@ -45,7 +42,9 @@ class TaikaisExportTest < ApplicationSystemTestCase
     test "Exporting #{taikai.shortname} XLSX" do
       taikai.current_user = users(:jean_bon)
       taikai.transition_to! :registration
-      taikai.staffs.create!(firstname: "a", lastname: "b", role: taikai_admin, user: users(:jean_bon)) if taikai.staffs.size == 0
+      if taikai.staffs.empty?
+        taikai.staffs.create!(firstname: "a", lastname: "b", role: taikai_admin, user: users(:jean_bon))
+      end
       roles.each do |role|
         taikai.staffs.create!(firstname: "a", lastname: "b", role: role)
       end
@@ -58,8 +57,7 @@ class TaikaisExportTest < ApplicationSystemTestCase
 
       find("a", exact_text: taikai.name).ancestor("tr").click_on("Export Excel")
 
-      assert_match /.*\/Taikai - #{taikai.shortname}\.xlsx$/, last_download
+      assert_match(%r{.*/Taikai - #{taikai.shortname}\.xlsx$}, last_download)
     end
   end
-
 end

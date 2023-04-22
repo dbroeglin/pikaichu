@@ -8,6 +8,11 @@ class DojosController < ApplicationController
     @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
+  def edit
+    @dojo = Dojo.find(params[:id])
+    @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
+  end
+
   def create
     @dojo = Dojo.new(dojo_params)
 
@@ -16,11 +21,6 @@ class DojosController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @dojo = Dojo.find(params[:id])
-    @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
   def update

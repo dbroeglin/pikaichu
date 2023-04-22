@@ -42,9 +42,7 @@ class Participant < ApplicationRecord
 
   def marking?(match_id = nil)
     score = scores.find_by(match_id: match_id)
-    if score.nil?
-      return false
-    end
+    return false if score.nil?
 
     score.marking?
   end

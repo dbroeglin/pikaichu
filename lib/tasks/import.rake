@@ -18,8 +18,8 @@ namespace :import do
     raise "Please define KYUDOJINS_CSV_FILE" unless ENV['KYUDOJINS_CSV_FILE']
     raise "Please define DOJOS_CSV_FILE" unless ENV['DOJOS_CSV_FILE']
 
-    kyudojins_data = File.read(ENV['KYUDOJINS_CSV_FILE'], encoding: 'bom|utf-8')
-    dojos_data = File.read(ENV['DOJOS_CSV_FILE'], encoding: 'bom|utf-8')
+    kyudojins_data = File.read(ENV.fetch('KYUDOJINS_CSV_FILE', nil), encoding: 'bom|utf-8')
+    dojos_data = File.read(ENV.fetch('DOJOS_CSV_FILE', nil), encoding: 'bom|utf-8')
 
     num_lines = 0
 

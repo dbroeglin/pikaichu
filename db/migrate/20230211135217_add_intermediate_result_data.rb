@@ -6,30 +6,29 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
     Score.connection.schema_cache.clear!
     Score.reset_column_information
 
-    Taikai.where(form: ['2in1', 'team']).each do |taikai|
-      puts "Migration #{taikai.shortname}..."
+    Taikai.where(form: %w[2in1 team]).each do |taikai|
+      Rails.logger.info "Migration #{taikai.shortname}..."
       taikai.teams.each do |team|
-        if team.score.nil?
-          puts "  Creating score for team #{team.id} - #{team.shortname}..."
-          score = team.create_empty_score
-          puts "     Created: #{score&.id}"
-        end
+        next unless team.score.nil?
+
+        Rails.logger.info "  Creating score for team #{team.id} - #{team.shortname}..."
+        score = team.create_empty_score
+        Rails.logger.info "     Created: #{score&.id}"
       end
     end
 
     Taikai.where(form: ['matches']).each do |taikai|
-      puts "Matches migration #{taikai.shortname}..."
+      Rails.logger.info "Matches migration #{taikai.shortname}..."
       taikai.matches.each do |match|
         if match.team1 && match.score(1).nil?
-          puts "Creating score for team1 (#{match.team1.id}) #{match.team1.shortname}..."
+          Rails.logger.info "Creating score for team1 (#{match.team1.id}) #{match.team1.shortname}..."
           match.team1.create_empty_score(match_id: match.id)
 
         end
-        if match.team2 && match.score(2).nil?
+        next unless match.team2 && match.score(2).nil?
 
-          puts "Creating score for team2 (#{match.team2.id}) #{match.team2.shortname}..."
-          match.team2.create_empty_score(match_id: match.id)
-        end
+        Rails.logger.info "Creating score for team2 (#{match.team2.id}) #{match.team2.shortname}..."
+        match.team2.create_empty_score(match_id: match.id)
       end
     end
 
@@ -37,10 +36,9 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
     Participant.all.each do |participant|
       participant.scores.each do |score|
         score.recalculate_individual_score
-      rescue
+      rescue StandardError
         failed = true
-        puts "Failed for score  #{score.id} - #{score.participant.participating_dojo.taikai.shortname}"
-        p score
+        Rails.logger.info "Failed for score  #{score.id} - #{score.participant.participating_dojo.taikai.shortname}"
       end
     end
 

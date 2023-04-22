@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require 'application_system_test_case'
 require 'taikais_test_helpers'
 
@@ -11,8 +9,6 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test "visiting taikais" do
-    taikai = taikais(:individual_dist_12_kinteki)
-
     click_on "Gérer les Taikai"
 
     assert_selector "h1.title", text: "Liste des Taikai"
@@ -31,7 +27,7 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, enteki|
-    test "creating a #{form} #{distributed} #{total_num_arrows} arrows #{enteki ? "enteki " : ""}taikai" do
+    test "creating a #{form} #{distributed} #{total_num_arrows} arrows #{enteki ? 'enteki ' : ''}taikai" do
       shortname = "new-#{taikai_shortname form, distributed, total_num_arrows, enteki}"
 
       go_to_taikais

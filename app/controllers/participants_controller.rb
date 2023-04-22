@@ -14,6 +14,10 @@ class ParticipantsController < ApplicationController
     )
   end
 
+  def edit
+    @participant = @parent_association.find(params[:id])
+  end
+
   def create
     @participant = @parent_association.build(participant_params)
     @participant.participating_dojo = @participating_dojo if @team
@@ -29,10 +33,6 @@ class ParticipantsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @participant = @parent_association.find(params[:id])
   end
 
   def update

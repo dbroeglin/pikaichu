@@ -8,15 +8,14 @@ class Match < ApplicationRecord
 
   def team(index)
     raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
-    if index == 1
-      return team1
-    else
-      return team2
-    end
+    return team1 if index == 1
+
+    team2
   end
 
   def set_team(index, team)
     raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
+
     if index == 1
       self.team1 = team
     else
@@ -69,6 +68,7 @@ class Match < ApplicationRecord
 
   def select_winner(winner)
     raise "Winner can be only 1 or 2" if winner < 1 || 2 < winner
+
     self.winner = winner
     ActiveRecord::Base.transaction do
       save!
@@ -78,7 +78,7 @@ class Match < ApplicationRecord
           self.errors.add(:winner, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
-        match.set_team(index % 2 == 0 ? 2 : 1, team(winner))
+        match.set_team(index.even? ? 2 : 1, team(winner))
         match.save!
       end
       if level == 2
@@ -89,7 +89,7 @@ class Match < ApplicationRecord
           self.errors.add(:base, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
         end
-        match.set_team(index % 2 == 0 ? 2 : 1, team(winner == 1 ? 2 : 1))
+        match.set_team(index.even? ? 2 : 1, team(winner == 1 ? 2 : 1))
         match.save!
       end
     end
@@ -101,10 +101,10 @@ class Match < ApplicationRecord
 
   def to_ascii
     [
-    "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname})",
-    (("  Winner: #{winner} - #{team(winner)&.shortname}") if winner),
-    (team1&.to_ascii(id) || "").gsub(/^/, "  "),
-    (team2&.to_ascii(id) || "").gsub(/^/, "  "),
+      "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname})",
+      ("  Winner: #{winner} - #{team(winner)&.shortname}" if winner),
+      (team1&.to_ascii(id) || "").gsub(/^/, "  "),
+      (team2&.to_ascii(id) || "").gsub(/^/, "  "),
     ].flatten.compact.join("\n")
   end
 

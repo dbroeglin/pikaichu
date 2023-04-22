@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require 'application_system_test_case'
 require 'taikais_test_helpers'
 

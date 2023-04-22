@@ -25,26 +25,26 @@ FactoryBot.define do
     scoring { 'enteki' }
 
     shortname do
-      [ form, distributed ? "dist" : "local", total_num_arrows, scoring].join '-'
+      [form, distributed ? "dist" : "local", total_num_arrows, scoring].join '-'
     end
     name do
-      [ form, distributed ? "dist" : "local", total_num_arrows.to_s, scoring].map(&:capitalize).join ' '
+      [form, distributed ? "dist" : "local", total_num_arrows.to_s, scoring].map(&:capitalize).join ' '
     end
 
     factory :taikai_with_participating_dojo do
       after(:create) do |taikai, evaluator|
         Dojo.first(taikai.distributed ? 2 : 1).each_with_index do |dojo, index|
           create(:participating_dojo_with_participants,
-            # Do not change display_name, used for fixture naming
-            display_name: "Participating Dojo#{index + 1} #{taikai.name}",
-            dojo: dojo,
-            taikai: taikai)
+                 # Do not change display_name, used for fixture naming
+                 display_name: "Participating Dojo#{index + 1} #{taikai.name}",
+                 dojo: dojo,
+                 taikai: taikai)
         end
 
         create(:staff,
-          taikai: taikai,
-          role: StaffRole.find_by!(code: :chairman),
-          user: User.find_by(email: 'vince.santo@test.kyudo.fr'))
+               taikai: taikai,
+               role: StaffRole.find_by!(code: :chairman),
+               user: User.find_by(email: 'vince.santo@test.kyudo.fr'))
 
         if evaluator.with_staff
           taikai.participating_dojos.first(1).each do |participating_dojo|

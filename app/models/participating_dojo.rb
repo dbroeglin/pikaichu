@@ -4,22 +4,22 @@ class ParticipatingDojo < ApplicationRecord
 
   belongs_to :taikai
   belongs_to :dojo
-  has_many :participants, -> {
-      order index: :asc, lastname: :asc, firstname: :asc
-    },
-    extend: RankedAssociationExtension,
-    dependent: :destroy,
-    inverse_of: :participating_dojo do
-      def unteamed
-        where "team_id IS NULL"
-      end
+  has_many :participants, lambda {
+                            order index: :asc, lastname: :asc, firstname: :asc
+                          },
+           extend: RankedAssociationExtension,
+           dependent: :destroy,
+           inverse_of: :participating_dojo do
+    def unteamed
+      where "team_id IS NULL"
     end
-  has_many :teams, -> {
-      order index: :asc, shortname: :asc
-    },
-    extend: RankedAssociationExtension,
-    dependent: :destroy,
-    inverse_of: :participating_dojo
+  end
+  has_many :teams, lambda {
+                     order index: :asc, shortname: :asc
+                   },
+           extend: RankedAssociationExtension,
+           dependent: :destroy,
+           inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
 
   def draw
@@ -60,8 +60,8 @@ class ParticipatingDojo < ApplicationRecord
   end
 
   def in_state?(*params)
-    # Note: used by RankedAssociationExtension
-    taikai.in_state? *params
+    #  Note: used by RankedAssociationExtension
+    taikai.in_state?(*params)
   end
 
   def to_ascii

@@ -4,12 +4,13 @@ class Taikai < ApplicationRecord
 
   # Used to pass the current user to the model logic (statesman or model methods)
   attr_accessor :current_user
+
   attribute :total_num_arrows, default: 12
   attribute :num_targets, default: 6
   attribute :tachi_size, default: 3
   attribute :distributed, default: false
 
-  CATEGORY_VALUES = %w(A B C D).freeze
+  CATEGORY_VALUES = %w[A B C D].freeze
 
   enum form: {
     individual: 'individual',
@@ -31,8 +32,8 @@ class Taikai < ApplicationRecord
     initial_state: :new
   ]
   delegate :can_transition_to?,
-    :current_state, :history, :last_transition, :last_transition_to,
-    :transition_to!, :transition_to, :in_state?, :allowed_transitions, to: :state_machine
+           :current_state, :history, :last_transition, :last_transition_to,
+           :transition_to!, :transition_to, :in_state?, :allowed_transitions, to: :state_machine
 
   has_many :staffs, dependent: :destroy do
     def ordered
@@ -55,13 +56,12 @@ class Taikai < ApplicationRecord
            inverse_of: :taikai
 
   has_many :participants,
-    extend: RankedAssociationExtension,
-    through: :participating_dojos
+           extend: RankedAssociationExtension,
+           through: :participating_dojos
   has_many :teams,
-    extend: RankedAssociationExtension,
-    through: :participating_dojos
+           extend: RankedAssociationExtension,
+           through: :participating_dojos
   has_many :events, -> { order created_at: :asc }, class_name: 'TaikaiEvent', dependent: :destroy
-
 
   validates :category, inclusion: { in: CATEGORY_VALUES, allow_blank: true }
   validates :shortname,
@@ -123,43 +123,39 @@ class Taikai < ApplicationRecord
   end
 
   def create_scores
-    if form_matches?
-      # TODO: implement for matches
-      raise "Score creation is not implemented for matches"
-    else
-      teams.each do |team|
-        team.create_empty_score
-      end
-      participants.each do |participant|
-        participant.create_empty_score_and_results
-      end
-      save!
+    raise "Score creation is not implemented for matches" if form_matches?
+
+    # TODO: implement for matches
+
+    teams.each do |team|
+      team.create_empty_score
     end
+    participants.each do |participant|
+      participant.create_empty_score_and_results
+    end
+    save!
   end
 
   def delete_scores
-    if form_matches?
-      # TODO: implement for matches
-      raise "Score deletion is not implemented for matches"
-    else
-      participants.each do |participant|
-        participant.scores.destroy_all
-      end
+    raise "Score deletion is not implemented for matches" if form_matches?
+
+    # TODO: implement for matches
+
+    participants.each do |participant|
+      participant.scores.destroy_all
     end
   end
-
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
     taikai = Taikai.includes(
       {
         participating_dojos: [
-          { teams: :participants } ,
+          { teams: :participants },
           { participants: :kyudojin }
         ]
       },
       staffs: :user
     ).find(taikai_id)
-
 
     new_taikai = Taikai.new(
       shortname: "#{taikai.shortname}-#{shortname_suffix}",
@@ -180,12 +176,11 @@ class Taikai < ApplicationRecord
       return new_taikai
     end
 
-    unless new_taikai.save
-      return new_taikai
-    end
+    return new_taikai unless new_taikai.save
 
     taikai.staffs.each do |staff|
       next if current_user == staff.user && staff.role.taikai_admin?
+
       new_taikai.staffs.create!(
         role: staff.role,
         firstname: staff.firstname,
@@ -207,26 +202,26 @@ class Taikai < ApplicationRecord
     new_teams = []
     taikai
       .teams.ranked(true).values.flatten
-      .select{ |team| !team.mixed } # TODO: generate error if not enough teams
+      .select { |team| !team.mixed } # TODO: generate error if not enough teams
       .first(bracket_size)
       .each_with_index do |team, index|
-        logger.info "Creating new team #{team.shortname}"
-        new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
-          shortname: team.shortname,
-          index: index + 1
-          # TODO: index based on scoring of the current taikai
+      logger.info "Creating new team #{team.shortname}"
+      new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
+        shortname: team.shortname,
+        index: index + 1
+        # TODO: index based on scoring of the current taikai
+      )
+      new_teams << new_team
+      team.participants.each do |participant|
+        logger.info "  Creating new participant #{participant.display_name}"
+        new_team.participants.create!(
+          kyudojin: participant.kyudojin,
+          firstname: participant.firstname,
+          lastname: participant.lastname,
+          club: participant.club,
+          participating_dojo: new_participating_dojos[team.participating_dojo_id],
         )
-        new_teams << new_team
-        team.participants.each do |participant|
-          logger.info "  Creating new participant #{participant.display_name}"
-          new_team.participants.create!(
-            kyudojin: participant.kyudojin,
-            firstname: participant.firstname,
-            lastname: participant.lastname,
-            club: participant.club,
-            participating_dojo: new_participating_dojos[team.participating_dojo_id],
-          )
-        end
+      end
     end
     create_matches(new_taikai, new_teams)
 
@@ -274,9 +269,9 @@ class Taikai < ApplicationRecord
   end
 
   def number_of_dojos
-    if !distributed && participating_dojos.count > 1
-      errors.add(:distributed, :num_participating_dojos)
-    end
+    return unless !distributed && participating_dojos.count > 1
+
+    errors.add(:distributed, :num_participating_dojos)
   end
 
   def previous_state

@@ -1,6 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-# rubocop:disable Metrics/ClassLength
-
 require "test_helper"
 
 class TeamingControllerTest < ActionDispatch::IntegrationTest

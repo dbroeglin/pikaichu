@@ -8,6 +8,10 @@ class TeamsController < ApplicationController
     @team = @participating_dojo.teams.build
   end
 
+  def edit
+    @team = @participating_dojo.teams.find(params[:id])
+  end
+
   def create
     @team = @participating_dojo.teams.build(team_params)
 
@@ -16,10 +20,6 @@ class TeamsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @team = @participating_dojo.teams.find(params[:id])
   end
 
   def update

@@ -1,8 +1,8 @@
 class TaikaiPolicy < ApplicationPolicy
   attr_reader :user, :taikai
 
-  ADMIN_ROLES = [:taikai_admin]
-  MARKING_ROLES = ADMIN_ROLES + [:marking_referee, :target_referee, :dojo_admin]
+  ADMIN_ROLES = [:taikai_admin].freeze
+  MARKING_ROLES = ADMIN_ROLES + [:marking_referee, :target_referee, :dojo_admin].freeze
 
   def initialize(user, taikai)
     super
@@ -55,7 +55,8 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def tie_break_update?
-    taikai.in_state?(:tie_break) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES)) # TODO: double check if MARKING_ROLES is right
+    # TODO: double check if MARKING_ROLES is right
+    taikai.in_state?(:tie_break) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES))
   end
 
   def transition_to?

@@ -1,8 +1,8 @@
 module MarkingHelper
-
   def full_icon_from(result, final = false)
     if result.value.nil?
-      "<span class='icon is-small' title='#{Result.human_enum_value(:status, result.status)}'>#{icon_from(result, final)}</span>"
+      "<span class='icon is-small' title='#{Result.human_enum_value(:status,
+                                                                    result.status)}'>#{icon_from(result, final)}</span>"
     else
       icon_from(result, final)
     end.html_safe
@@ -10,6 +10,7 @@ module MarkingHelper
 
   def icon_from(result, final = false)
     return '' if result.nil? || final && !result.final?
+
     if result.value.nil?
       case result.status
       when 'hit' then '<i class="far fa-circle"></i>'
@@ -31,6 +32,7 @@ module MarkingHelper
     if score.nil?
       return enteki ? "0&nbsp;/&nbsp;0".html_safe : "0"
     end
+
     if enteki
       "#{score.value}&nbsp;/&nbsp;#{score.hits}".html_safe
     else
@@ -42,6 +44,7 @@ module MarkingHelper
     if score.nil?
       return enteki ? "0 / 0" : "0"
     end
+
     if enteki
       "#{score.value} / #{score.hits}".html_safe
     else

@@ -1,3 +1,3 @@
 task :log => :environment do
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.logger = Logger.new($stdout)
 end

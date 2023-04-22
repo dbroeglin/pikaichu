@@ -13,11 +13,11 @@ class TaikaiTest < ActiveSupport::TestCase
     [:kinteki, :individual, 20],
     [:kinteki, :team,       20],
     [:kinteki, :'2in1',     20],
-    [:kinteki, :matches,     4],
+    [:kinteki, :matches, 4],
     [:enteki,  :individual, 12],
     [:enteki,  :team,       12],
     [:enteki,  :'2in1',     12],
-    [:enteki,  :matches,     4],
+    [:enteki,  :matches, 4],
     [:enteki,  :individual, 13],
     [:enteki,  :individual, 22],
   ].each do |scoring, form, total_num_arrows|
@@ -49,7 +49,7 @@ class TaikaiTest < ActiveSupport::TestCase
     end
   end
 
-  %i(2in1 matches individual team).each do |form|
+  %i[2in1 matches individual team].each do |form|
     test "transitions for #{form}" do
       @taikai.form = form
       @taikai.total_num_arrows = form == :matches ? 4 : 12
@@ -61,7 +61,6 @@ class TaikaiTest < ActiveSupport::TestCase
       @taikai.transition_to!(:done)
     end
   end
-
 
   test "transitions" do
     @taikai.form = :'2in1'
@@ -83,5 +82,4 @@ class TaikaiTest < ActiveSupport::TestCase
 
     # TODO: test that we cannot change the form, scoring, etc.
   end
-
 end

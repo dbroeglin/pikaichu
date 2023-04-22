@@ -8,9 +8,9 @@ class Result < ApplicationRecord
   ENTEKI_VALUES = [0, 3, 5, 7, 9, 10]
   validates :status, presence: true, if: -> { value.present? }
   validates :value,
-    if: -> { score.participant.taikai.scoring == 'enteki' },
-    presence: true,
-    inclusion: { in: ENTEKI_VALUES }
+            if: -> { score.participant.taikai.scoring == 'enteki' },
+            presence: true,
+            inclusion: { in: ENTEKI_VALUES }
   validate :cannot_update_if_finalized, on: :update
 
   after_save do
@@ -27,9 +27,9 @@ class Result < ApplicationRecord
 
   def value=(value)
     super(value)
-    if !value.nil?
-      self.status = self.value.zero? ? 'miss' : 'hit'
-    end
+    return if value.nil?
+
+    self.status = self.value.zero? ? 'miss' : 'hit'
   end
 
   def known?
@@ -46,38 +46,34 @@ class Result < ApplicationRecord
 
   def rotate_status(all_marked)
     self.status = case status
-    when 'hit' then 'miss'
-    when 'miss' then all_marked ? 'hit' : 'unknown'
-    when 'unknown' then 'hit'
-    else raise "Cannot change value of a result that has not been marked yet"
-    end
+                  when 'hit' then 'miss'
+                  when 'miss' then all_marked ? 'hit' : 'unknown'
+                  when 'unknown' then 'hit'
+                  else raise "Cannot change value of a result that has not been marked yet"
+                  end
 
     self
   end
 
   def override_status(status)
     self.status = status
-    if changes[:status]
-      self.overriden = true
-    end
+    self.overriden = true if changes[:status]
 
     !changes[:status].nil?
   end
 
   def override_value(value)
     self.value = value
-    if changes[:value]
-      self.overriden = true
-    end
+    self.overriden = true if changes[:value]
 
     !changes[:value].nil?
   end
 
   def rotate_value
     self.value = (Result::ENTEKI_VALUES + [0])
-      .each_cons(2)
-      .find {|pair| pair.first == self.value }
-      .last
+                 .each_cons(2)
+                 .find { |pair| pair.first == self.value }
+                 .last
 
     self
   end
@@ -92,14 +88,14 @@ class Result < ApplicationRecord
 
   def to_s
     s = if status_hit?
-      "◯"
-    elsif status_miss?
-      "⨯"
-    elsif status_unknown?
-      "?"
-    else
-      " "
-    end
+          "◯"
+        elsif status_miss?
+          "⨯"
+        elsif status_unknown?
+          "?"
+        else
+          " "
+        end
     if value
       "#{s}/#{value}"
     else
@@ -107,7 +103,5 @@ class Result < ApplicationRecord
     end
   end
 
-  def taikai
-    score.taikai
-  end
+  delegate :taikai, to: :score
 end

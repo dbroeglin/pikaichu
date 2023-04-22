@@ -1,26 +1,25 @@
 class TieBreakController < ApplicationController
-
   def edit
     @taikai = authorize(Taikai.find(params[:id]), :tie_break_update?)
 
-    @rankables = rankables()
+    @rankables = rankables
   end
 
   def update
     @taikai = authorize(Taikai.find(params[:id]), :tie_break_update?)
 
     params[:rank].each do |id, rank|
-      if params[:individual] == "true"
-        @rankable = @taikai.participants.find(id)
-      else
-        @rankable = @taikai.teams.find(id)
-      end
+      @rankable = if params[:individual] == "true"
+                    @taikai.participants.find(id)
+                  else
+                    @taikai.teams.find(id)
+                  end
 
-      if @rankable.rank != rank.to_i
-        Taikai.transaction do
-          @rankable.update!(rank: rank.to_i)
-          TaikaiEvent.tie_break(taikai: @taikai, user: current_user, rankable: @rankable)
-        end
+      next unless @rankable.rank != rank.to_i
+
+      Taikai.transaction do
+        @rankable.update!(rank: rank.to_i)
+        TaikaiEvent.tie_break(taikai: @taikai, user: current_user, rankable: @rankable)
       end
     end
 

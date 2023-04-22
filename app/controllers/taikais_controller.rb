@@ -4,10 +4,10 @@ class TaikaisController < ApplicationController
   def index
     @taikais =
       Taikai.all
-        .order(start_date: :desc, end_date: :desc, shortname: :asc)
-        .includes(:participants)
-        .page params[:page]
-      @taikais = @taikais.per params[:per] if params[:per]
+            .order(start_date: :desc, end_date: :desc, shortname: :asc)
+            .includes(:participants)
+            .page params[:page]
+    @taikais = @taikais.per params[:per] if params[:per]
   end
 
   def show
@@ -15,7 +15,7 @@ class TaikaisController < ApplicationController
       Taikai.includes(
         {
           participating_dojos: [
-            { teams: { participants: { scores: :results }}},
+            { teams: { participants: { scores: :results } } },
             { participants: [{ scores: :results }, :kyudojin] }
           ]
         },
@@ -27,6 +27,10 @@ class TaikaisController < ApplicationController
     @taikai = Taikai.new
   end
 
+  def edit
+    @taikai = Taikai.includes([participating_dojos: :dojo], { staffs: [:role, :user] }).find(params[:id])
+  end
+
   def create
     @taikai = Taikai.new(taikai_params)
     @taikai.current_user = current_user
@@ -36,10 +40,6 @@ class TaikaisController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @taikai = Taikai.includes([participating_dojos: :dojo], { staffs: [:role, :user] }).find(params[:id])
   end
 
   def update
@@ -77,7 +77,8 @@ class TaikaisController < ApplicationController
   def export
     @taikai =
       Taikai
-      .includes({ participating_dojos: [{ teams: { participants: { scores: :results }}}, { participants:  { scores: :results }}] }, :staffs)
+      .includes({ participating_dojos: [{ teams: { participants: { scores: :results } } },
+                                        { participants: { scores: :results } }] }, :staffs)
       .find(params[:id])
 
     render xlsx: 'export', filename: "Taikai - #{@taikai.shortname}.xlsx"
@@ -98,17 +99,19 @@ class TaikaisController < ApplicationController
 
   def transition_to
     raise unless TaikaiStateMachine.states.include?(params[:state])
+
     @taikai = authorize Taikai.find(params[:id])
 
     @taikai.current_user = current_user
     @taikai.transition_to! params[:state]
 
     redirect_to action: 'show', id: @taikai.id, status: :see_other
-
   rescue Statesman::GuardFailedError
     flash.now[:alert] = [
-      I18n.translate("message", scope: [ :templates, :taikai_state_transitions_errors ], target_state: t("activerecord.states.taikai.#{params[:state]}")),
-      I18n.translate("#{@taikai.current_state}_#{params[:state]}", scope: [ :templates, :taikai_state_transitions_errors ], default: ""),
+      I18n.translate('templates.taikai_state_transitions_errors.message',
+                     target_state: t("activerecord.states.taikai.#{params[:state]}")),
+      I18n.translate("#{@taikai.current_state}_#{params[:state]}",
+                     scope: [:templates, :taikai_state_transitions_errors], default: ""),
     ].join " "
     render :show, status: :unprocessable_entity
   end

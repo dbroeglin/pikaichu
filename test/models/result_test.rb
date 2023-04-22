@@ -1,5 +1,3 @@
-# rubocop:disable Naming/VariableNumber
-
 require "test_helper"
 
 class ResultTest < ActiveSupport::TestCase
@@ -19,7 +17,6 @@ class ResultTest < ActiveSupport::TestCase
   end
 
   test "value cannot be empty for enteki" do
-
     assert @enteki_result.invalid?, 'should not validate'
     assert @enteki_result.errors.added? :value, :blank
   end
@@ -153,5 +150,5 @@ class ResultTest < ActiveSupport::TestCase
 
     assert_equal false, @enteki_result.override_value("10")
     assert_equal false, @enteki_result.save
- end
+  end
 end

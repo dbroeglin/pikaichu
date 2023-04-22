@@ -6,7 +6,6 @@ def display_name(participant)
   "#{participant.lastname.upcase} #{CapitalizeNames.capitalize(participant.firstname, format: :firstname)}"
 end
 
-
 def taikai_uri(id)
   "https://pikaichu.kyudo.fr/taikais/#{id}"
 end
@@ -23,7 +22,6 @@ data_cell_style = xlsx_package.workbook.styles.add_style(
   border: { style: :thin, color: 'FF000000' },
   sz: 12
 )
-
 
 wb.add_worksheet(name: "Kinteki Classement Indiv") do |sheet|
   sheet.add_row [
@@ -114,7 +112,6 @@ wb.add_worksheet(name: "Enteki Résultats") do |sheet|
   sheet.auto_filter = "A1:F#{@enteki_participants.size + 1}"
 end
 
-
 wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
   sheet.add_row [
     t('.taikai_name'),
@@ -126,15 +123,15 @@ wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
   ], style: header_row_style
 
   (@kinteki_taikais + @enteki_taikais).each_with_index do |taikai, index|
-      sheet.add_row [
-        taikai.name,
-        taikai.scoring,
-        taikai.form,
-        taikai.category || "",
-        taikai.participants.count,
-        taikai.participants.map(&:club).uniq.size,
-      ], style: data_cell_style
+    sheet.add_row [
+      taikai.name,
+      taikai.scoring,
+      taikai.form,
+      taikai.category || "",
+      taikai.participants.count,
+      taikai.participants.map(&:club).uniq.size,
+    ], style: data_cell_style
     sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end
-  sheet.auto_filter = "A1:F#{@kinteki_taikais.size  + @enteki_taikais.size + 1}"
+  sheet.auto_filter = "A1:F#{@kinteki_taikais.size + @enteki_taikais.size + 1}"
 end

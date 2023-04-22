@@ -41,24 +41,23 @@ class CreateFixtures
     end
   end
 
-
   def create_dojos
     create :dojo,
-      name: 'dojo_fr',
-      city: 'Montpelier',
-      country_code: 'FR'
+           name: 'dojo_fr',
+           city: 'Montpelier',
+           country_code: 'FR'
     create :dojo,
-      name: 'dojo_hk',
-      city: 'Hong-Kong',
-      country_code: 'HK'
+           name: 'dojo_hk',
+           city: 'Hong-Kong',
+           country_code: 'HK'
     create :dojo,
-      name: 'dojo_jp',
-      city: 'Kyoto',
-      country_code: 'JP'
+           name: 'dojo_jp',
+           city: 'Kyoto',
+           country_code: 'JP'
     create :dojo,
-      name: 'Dojo To Delete',
-      city: 'Kyoto',
-      country_code: 'JP'
+           name: 'Dojo To Delete',
+           city: 'Kyoto',
+           country_code: 'JP'
   end
 
   def create_users
@@ -89,43 +88,43 @@ class CreateFixtures
   def create_staff_roles
     models[:staff_roles] = {}.with_indifferent_access
 
-    %w(taikai_admin dojo_admin chairman marking_referee shajo_referee target_referee yatori operations_chairman).each do |code|
+    %w[taikai_admin dojo_admin chairman marking_referee shajo_referee target_referee yatori
+       operations_chairman].each do |code|
       models[:staff_roles][code] = create(:staff_role, code: code)
     end
   end
 
-
   def create_taikais
-    %w(kinteki enteki).each do |scoring|
+    %w[kinteki enteki].each do |scoring|
       [true, false].each do |distributed|
         create :taikai_with_participating_dojo,
-          user: models[:users]['marc_o_polo'],
-          form: 'matches',
-          distributed: distributed,
-          total_num_arrows: 4,
-          scoring: scoring
+               user: models[:users]['marc_o_polo'],
+               form: 'matches',
+               distributed: distributed,
+               total_num_arrows: 4,
+               scoring: scoring
 
         [12, 20].each do |total_num_arrows|
           create :taikai_with_participating_dojo,
-            form: '2in1',
-            user: models[:users]['marc_o_polo'],
-            distributed: distributed,
-            total_num_arrows: total_num_arrows,
-            scoring: scoring
+                 form: '2in1',
+                 user: models[:users]['marc_o_polo'],
+                 distributed: distributed,
+                 total_num_arrows: total_num_arrows,
+                 scoring: scoring
 
           create :taikai_with_participating_dojo,
-            form: 'individual',
-            user: models[:users]['marc_o_polo'],
-            distributed: distributed,
-            total_num_arrows: total_num_arrows,
-            scoring: scoring
+                 form: 'individual',
+                 user: models[:users]['marc_o_polo'],
+                 distributed: distributed,
+                 total_num_arrows: total_num_arrows,
+                 scoring: scoring
 
           create :taikai_with_participating_dojo,
-            form: 'team',
-            user: models[:users]['marc_o_polo'],
-            distributed: distributed,
-            total_num_arrows: total_num_arrows,
-            scoring: scoring
+                 form: 'team',
+                 user: models[:users]['marc_o_polo'],
+                 distributed: distributed,
+                 total_num_arrows: total_num_arrows,
+                 scoring: scoring
         end
       end
     end
@@ -135,4 +134,4 @@ class CreateFixtures
   # * custom naming rules via #name_model_with
   # * set up associations by storing created model records in a hash so you can retrieve them
   # etc... (hopefully some of these helper patterns can be standardized and included in the gem in the future)
- end
+end

@@ -37,7 +37,7 @@ module ApplicationHelper
 
       html = <<-HTML
       <div class="content notification is-danger">
-          <p>#{I18n::t 'errors.template.header', model: object.class.model_name.human.titlecase, count: object.errors.size}</p>
+          <p>#{I18n.t 'errors.template.header', model: object.class.model_name.human.titlecase, count: object.errors.size}</p>
           #{base_html}
       </div>
       HTML
@@ -279,10 +279,10 @@ module ApplicationHelper
     end
   end
 
-  def bulma_form_for(name, *args, &block)
+  def bulma_form_for(name, *args, &)
     options = args.extract_options!
     args << options.merge(builder: BulmaFormBuilder)
-    form_for(name, *args, &block)
+    form_for(name, *args, &)
   end
 
   def bulma_form_with(

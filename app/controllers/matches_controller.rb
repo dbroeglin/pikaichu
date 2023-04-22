@@ -3,15 +3,15 @@ class MatchesController < ApplicationController
 
   def index
     @matches = @taikai.matches
-      .group_by(&:level)
-      .each { |_, matches| matches.sort_by!(&:index) }
+                      .group_by(&:level)
+                      .each { |_, matches| matches.sort_by!(&:index) }
   end
 
   def edit
     @match = @taikai.matches.find(params[:id])
     @teams = @taikai
-      .participating_dojos.map(&:teams).flatten
-      .sort_by(&:shortname)
+             .participating_dojos.map(&:teams).flatten
+             .sort_by(&:shortname)
   end
 
   def update
@@ -20,8 +20,8 @@ class MatchesController < ApplicationController
 
     if @match.errors.any?
       @teams = @taikai
-        .participating_dojos.map(&:teams).flatten
-        .sort_by(&:shortname)
+               .participating_dojos.map(&:teams).flatten
+               .sort_by(&:shortname)
       render :edit, status: :unprocessable_entity
       return
     end

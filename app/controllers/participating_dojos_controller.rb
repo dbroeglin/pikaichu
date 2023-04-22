@@ -7,6 +7,13 @@ class ParticipatingDojosController < ApplicationController
     @participating_dojo = @taikai.participating_dojos.build
   end
 
+  def edit
+    @participating_dojo = authorize @taikai
+                          .participating_dojos
+                          .includes({ participants: :kyudojin }, :teams)
+                          .find(params[:id])
+  end
+
   def create
     @participating_dojo = @taikai.participating_dojos.build(participating_dojo_params)
     @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
@@ -17,13 +24,6 @@ class ParticipatingDojosController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @participating_dojo = authorize @taikai
-                          .participating_dojos
-                          .includes({ participants: :kyudojin }, :teams)
-                          .find(params[:id])
   end
 
   def update
@@ -45,8 +45,8 @@ class ParticipatingDojosController < ApplicationController
 
     if @participating_dojo.staffs.any?
       flash[:alert] =
-        "Unable to remove participating dojo '#{@participating_dojo.display_name}' because" \
-        " it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ', '}"
+        "Unable to remove participating dojo '#{@participating_dojo.display_name}' because " \
+        "it is associated to staff members #{@participating_dojo.staffs.map(&:display_name).join ', '}"
     elsif !@participating_dojo.destroy
       flash[:alert] = "Unable to remove participating dojo #{@participating_dojo.display_name}"
     end

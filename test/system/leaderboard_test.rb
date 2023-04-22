@@ -29,7 +29,7 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-  TAIKAI_DATA.select {|data| data[0] != 'match'}.each do |data|
+  TAIKAI_DATA.reject { |data| data[0] == 'match' }.each do |data|
     taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
 
     test "visiting #{taikai.shortname} public leaderboard" do
@@ -47,13 +47,11 @@ class LeaderboardTest < ApplicationSystemTestCase
 
       assert_selector "h1.title", text: "Tableau des résultats - #{taikai.shortname}"
 
-      if taikai.form_2in1?
-        click_on "Afficher les résultats en équipe"
-      end
+      click_on "Afficher les résultats en équipe" if taikai.form_2in1?
     end
   end
 
-  TAIKAI_DATA.select {|data| data[0] == 'match'}.each do |data|
+  TAIKAI_DATA.select { |data| data[0] == 'match' }.each do |data|
     taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
 
     test "visiting #{taikai.shortname} public leaderboard" do
