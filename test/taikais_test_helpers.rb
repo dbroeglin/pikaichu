@@ -22,10 +22,15 @@ module TaikaisTestHelpers
 
     click_on taikai.name
 
-    assert_selector 'p.title.is-4', text: "#{taikai.name} (#{taikai.shortname})"
+    assert_selector 'p.subtitle.is-5 b', text: "#{taikai.shortname}"
+    assert_taikai_title taikai.name
   end
 
   def taikai_shortname(form, distributed, total_num_arrows, enteki)
     "#{form}-#{distributed ? 'dist' : 'local'}-#{total_num_arrows}-#{enteki ? 'enteki' : 'kinteki'}"
+  end
+
+  def assert_taikai_title(name)
+    assert_selector 'p.title.is-4', text: name
   end
 end

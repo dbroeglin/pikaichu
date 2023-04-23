@@ -7,8 +7,8 @@ staffs_001:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:39.287344000 Z
-  updated_at: 2023-04-16 12:20:39.287344000 Z
+  created_at: 2023-04-23 08:26:14.027139000 Z
+  updated_at: 2023-04-23 08:26:14.027139000 Z
 staffs_002:
   id: 2
   firstname: Vince
@@ -17,8 +17,8 @@ staffs_002:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:39.664039000 Z
-  updated_at: 2023-04-16 12:20:39.664039000 Z
+  created_at: 2023-04-23 08:26:14.295568000 Z
+  updated_at: 2023-04-23 08:26:14.295568000 Z
 staffs_003:
   id: 3
   firstname: Alain
@@ -27,8 +27,8 @@ staffs_003:
   role_id: 2
   user_id: 3
   participating_dojo_id: 1
-  created_at: 2023-04-16 12:20:39.675849000 Z
-  updated_at: 2023-04-16 12:20:39.675849000 Z
+  created_at: 2023-04-23 08:26:14.304632000 Z
+  updated_at: 2023-04-23 08:26:14.304632000 Z
 staffs_004:
   id: 4
   firstname: Pat
@@ -37,18 +37,18 @@ staffs_004:
   role_id: 5
   user_id: 5
   participating_dojo_id: 1
-  created_at: 2023-04-16 12:20:39.684673000 Z
-  updated_at: 2023-04-16 12:20:39.684673000 Z
+  created_at: 2023-04-23 08:26:14.311014000 Z
+  updated_at: 2023-04-23 08:26:14.311014000 Z
 staffs_005:
   id: 5
   firstname: Larry
   lastname: Golade
   taikai_id: 1
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 1
-  created_at: 2023-04-16 12:20:39.692596000 Z
-  updated_at: 2023-04-16 12:20:39.692596000 Z
+  created_at: 2023-04-23 08:26:14.316550000 Z
+  updated_at: 2023-04-23 08:26:14.316550000 Z
 staffs_006:
   id: 6
   firstname: Marc
@@ -57,8 +57,8 @@ staffs_006:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:39.711591000 Z
-  updated_at: 2023-04-16 12:20:39.711591000 Z
+  created_at: 2023-04-23 08:26:14.328690000 Z
+  updated_at: 2023-04-23 08:26:14.328690000 Z
 staffs_007:
   id: 7
   firstname: Vince
@@ -67,8 +67,8 @@ staffs_007:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.007734000 Z
-  updated_at: 2023-04-16 12:20:40.007734000 Z
+  created_at: 2023-04-23 08:26:14.524661000 Z
+  updated_at: 2023-04-23 08:26:14.524661000 Z
 staffs_008:
   id: 8
   firstname: Alain
@@ -77,8 +77,8 @@ staffs_008:
   role_id: 2
   user_id: 3
   participating_dojo_id: 3
-  created_at: 2023-04-16 12:20:40.017741000 Z
-  updated_at: 2023-04-16 12:20:40.017741000 Z
+  created_at: 2023-04-23 08:26:14.531517000 Z
+  updated_at: 2023-04-23 08:26:14.531517000 Z
 staffs_009:
   id: 9
   firstname: Pat
@@ -87,18 +87,18 @@ staffs_009:
   role_id: 5
   user_id: 5
   participating_dojo_id: 3
-  created_at: 2023-04-16 12:20:40.026260000 Z
-  updated_at: 2023-04-16 12:20:40.026260000 Z
+  created_at: 2023-04-23 08:26:14.538739000 Z
+  updated_at: 2023-04-23 08:26:14.538739000 Z
 staffs_010:
   id: 10
   firstname: Larry
   lastname: Golade
   taikai_id: 2
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 3
-  created_at: 2023-04-16 12:20:40.034389000 Z
-  updated_at: 2023-04-16 12:20:40.034389000 Z
+  created_at: 2023-04-23 08:26:14.544429000 Z
+  updated_at: 2023-04-23 08:26:14.544429000 Z
 staffs_011:
   id: 11
   firstname: Marc
@@ -107,8 +107,8 @@ staffs_011:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.052121000 Z
-  updated_at: 2023-04-16 12:20:40.052121000 Z
+  created_at: 2023-04-23 08:26:14.557214000 Z
+  updated_at: 2023-04-23 08:26:14.557214000 Z
 staffs_012:
   id: 12
   firstname: Vince
@@ -117,8 +117,8 @@ staffs_012:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.141276000 Z
-  updated_at: 2023-04-16 12:20:40.141276000 Z
+  created_at: 2023-04-23 08:26:14.617238000 Z
+  updated_at: 2023-04-23 08:26:14.617238000 Z
 staffs_013:
   id: 13
   firstname: Alain
@@ -127,8 +127,8 @@ staffs_013:
   role_id: 2
   user_id: 3
   participating_dojo_id: 5
-  created_at: 2023-04-16 12:20:40.151653000 Z
-  updated_at: 2023-04-16 12:20:40.151653000 Z
+  created_at: 2023-04-23 08:26:14.625991000 Z
+  updated_at: 2023-04-23 08:26:14.625991000 Z
 staffs_014:
   id: 14
   firstname: Pat
@@ -137,18 +137,18 @@ staffs_014:
   role_id: 5
   user_id: 5
   participating_dojo_id: 5
-  created_at: 2023-04-16 12:20:40.161134000 Z
-  updated_at: 2023-04-16 12:20:40.161134000 Z
+  created_at: 2023-04-23 08:26:14.632848000 Z
+  updated_at: 2023-04-23 08:26:14.632848000 Z
 staffs_015:
   id: 15
   firstname: Larry
   lastname: Golade
   taikai_id: 3
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 5
-  created_at: 2023-04-16 12:20:40.169115000 Z
-  updated_at: 2023-04-16 12:20:40.169115000 Z
+  created_at: 2023-04-23 08:26:14.638608000 Z
+  updated_at: 2023-04-23 08:26:14.638608000 Z
 staffs_016:
   id: 16
   firstname: Marc
@@ -157,8 +157,8 @@ staffs_016:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.189391000 Z
-  updated_at: 2023-04-16 12:20:40.189391000 Z
+  created_at: 2023-04-23 08:26:14.651228000 Z
+  updated_at: 2023-04-23 08:26:14.651228000 Z
 staffs_017:
   id: 17
   firstname: Vince
@@ -167,8 +167,8 @@ staffs_017:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.484730000 Z
-  updated_at: 2023-04-16 12:20:40.484730000 Z
+  created_at: 2023-04-23 08:26:14.847838000 Z
+  updated_at: 2023-04-23 08:26:14.847838000 Z
 staffs_018:
   id: 18
   firstname: Alain
@@ -177,8 +177,8 @@ staffs_018:
   role_id: 2
   user_id: 3
   participating_dojo_id: 7
-  created_at: 2023-04-16 12:20:40.494935000 Z
-  updated_at: 2023-04-16 12:20:40.494935000 Z
+  created_at: 2023-04-23 08:26:14.854309000 Z
+  updated_at: 2023-04-23 08:26:14.854309000 Z
 staffs_019:
   id: 19
   firstname: Pat
@@ -187,18 +187,18 @@ staffs_019:
   role_id: 5
   user_id: 5
   participating_dojo_id: 7
-  created_at: 2023-04-16 12:20:40.504359000 Z
-  updated_at: 2023-04-16 12:20:40.504359000 Z
+  created_at: 2023-04-23 08:26:14.860291000 Z
+  updated_at: 2023-04-23 08:26:14.860291000 Z
 staffs_020:
   id: 20
   firstname: Larry
   lastname: Golade
   taikai_id: 4
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 7
-  created_at: 2023-04-16 12:20:40.512008000 Z
-  updated_at: 2023-04-16 12:20:40.512008000 Z
+  created_at: 2023-04-23 08:26:14.865456000 Z
+  updated_at: 2023-04-23 08:26:14.865456000 Z
 staffs_021:
   id: 21
   firstname: Marc
@@ -207,8 +207,8 @@ staffs_021:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.528717000 Z
-  updated_at: 2023-04-16 12:20:40.528717000 Z
+  created_at: 2023-04-23 08:26:14.878766000 Z
+  updated_at: 2023-04-23 08:26:14.878766000 Z
 staffs_022:
   id: 22
   firstname: Vince
@@ -217,8 +217,8 @@ staffs_022:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.823275000 Z
-  updated_at: 2023-04-16 12:20:40.823275000 Z
+  created_at: 2023-04-23 08:26:15.080473000 Z
+  updated_at: 2023-04-23 08:26:15.080473000 Z
 staffs_023:
   id: 23
   firstname: Alain
@@ -227,8 +227,8 @@ staffs_023:
   role_id: 2
   user_id: 3
   participating_dojo_id: 9
-  created_at: 2023-04-16 12:20:40.833267000 Z
-  updated_at: 2023-04-16 12:20:40.833267000 Z
+  created_at: 2023-04-23 08:26:15.087810000 Z
+  updated_at: 2023-04-23 08:26:15.087810000 Z
 staffs_024:
   id: 24
   firstname: Pat
@@ -237,18 +237,18 @@ staffs_024:
   role_id: 5
   user_id: 5
   participating_dojo_id: 9
-  created_at: 2023-04-16 12:20:40.842239000 Z
-  updated_at: 2023-04-16 12:20:40.842239000 Z
+  created_at: 2023-04-23 08:26:15.093714000 Z
+  updated_at: 2023-04-23 08:26:15.093714000 Z
 staffs_025:
   id: 25
   firstname: Larry
   lastname: Golade
   taikai_id: 5
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 9
-  created_at: 2023-04-16 12:20:40.849679000 Z
-  updated_at: 2023-04-16 12:20:40.849679000 Z
+  created_at: 2023-04-23 08:26:15.098182000 Z
+  updated_at: 2023-04-23 08:26:15.098182000 Z
 staffs_026:
   id: 26
   firstname: Marc
@@ -257,8 +257,8 @@ staffs_026:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.867306000 Z
-  updated_at: 2023-04-16 12:20:40.867306000 Z
+  created_at: 2023-04-23 08:26:15.109542000 Z
+  updated_at: 2023-04-23 08:26:15.109542000 Z
 staffs_027:
   id: 27
   firstname: Vince
@@ -267,8 +267,8 @@ staffs_027:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:40.955961000 Z
-  updated_at: 2023-04-16 12:20:40.955961000 Z
+  created_at: 2023-04-23 08:26:15.176475000 Z
+  updated_at: 2023-04-23 08:26:15.176475000 Z
 staffs_028:
   id: 28
   firstname: Alain
@@ -277,8 +277,8 @@ staffs_028:
   role_id: 2
   user_id: 3
   participating_dojo_id: 11
-  created_at: 2023-04-16 12:20:40.965856000 Z
-  updated_at: 2023-04-16 12:20:40.965856000 Z
+  created_at: 2023-04-23 08:26:15.183508000 Z
+  updated_at: 2023-04-23 08:26:15.183508000 Z
 staffs_029:
   id: 29
   firstname: Pat
@@ -287,18 +287,18 @@ staffs_029:
   role_id: 5
   user_id: 5
   participating_dojo_id: 11
-  created_at: 2023-04-16 12:20:40.975566000 Z
-  updated_at: 2023-04-16 12:20:40.975566000 Z
+  created_at: 2023-04-23 08:26:15.189279000 Z
+  updated_at: 2023-04-23 08:26:15.189279000 Z
 staffs_030:
   id: 30
   firstname: Larry
   lastname: Golade
   taikai_id: 6
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 11
-  created_at: 2023-04-16 12:20:40.984837000 Z
-  updated_at: 2023-04-16 12:20:40.984837000 Z
+  created_at: 2023-04-23 08:26:15.194314000 Z
+  updated_at: 2023-04-23 08:26:15.194314000 Z
 staffs_031:
   id: 31
   firstname: Marc
@@ -307,8 +307,8 @@ staffs_031:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.003998000 Z
-  updated_at: 2023-04-16 12:20:41.003998000 Z
+  created_at: 2023-04-23 08:26:15.206025000 Z
+  updated_at: 2023-04-23 08:26:15.206025000 Z
 staffs_032:
   id: 32
   firstname: Vince
@@ -317,8 +317,8 @@ staffs_032:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.297334000 Z
-  updated_at: 2023-04-16 12:20:41.297334000 Z
+  created_at: 2023-04-23 08:26:15.404913000 Z
+  updated_at: 2023-04-23 08:26:15.404913000 Z
 staffs_033:
   id: 33
   firstname: Alain
@@ -327,8 +327,8 @@ staffs_033:
   role_id: 2
   user_id: 3
   participating_dojo_id: 13
-  created_at: 2023-04-16 12:20:41.308037000 Z
-  updated_at: 2023-04-16 12:20:41.308037000 Z
+  created_at: 2023-04-23 08:26:15.413185000 Z
+  updated_at: 2023-04-23 08:26:15.413185000 Z
 staffs_034:
   id: 34
   firstname: Pat
@@ -337,18 +337,18 @@ staffs_034:
   role_id: 5
   user_id: 5
   participating_dojo_id: 13
-  created_at: 2023-04-16 12:20:41.316903000 Z
-  updated_at: 2023-04-16 12:20:41.316903000 Z
+  created_at: 2023-04-23 08:26:15.419475000 Z
+  updated_at: 2023-04-23 08:26:15.419475000 Z
 staffs_035:
   id: 35
   firstname: Larry
   lastname: Golade
   taikai_id: 7
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 13
-  created_at: 2023-04-16 12:20:41.324107000 Z
-  updated_at: 2023-04-16 12:20:41.324107000 Z
+  created_at: 2023-04-23 08:26:15.424592000 Z
+  updated_at: 2023-04-23 08:26:15.424592000 Z
 staffs_036:
   id: 36
   firstname: Marc
@@ -357,8 +357,8 @@ staffs_036:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.342942000 Z
-  updated_at: 2023-04-16 12:20:41.342942000 Z
+  created_at: 2023-04-23 08:26:15.437213000 Z
+  updated_at: 2023-04-23 08:26:15.437213000 Z
 staffs_037:
   id: 37
   firstname: Vince
@@ -367,8 +367,8 @@ staffs_037:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.494722000 Z
-  updated_at: 2023-04-16 12:20:41.494722000 Z
+  created_at: 2023-04-23 08:26:15.529973000 Z
+  updated_at: 2023-04-23 08:26:15.529973000 Z
 staffs_038:
   id: 38
   firstname: Alain
@@ -377,8 +377,8 @@ staffs_038:
   role_id: 2
   user_id: 3
   participating_dojo_id: 15
-  created_at: 2023-04-16 12:20:41.505325000 Z
-  updated_at: 2023-04-16 12:20:41.505325000 Z
+  created_at: 2023-04-23 08:26:15.537537000 Z
+  updated_at: 2023-04-23 08:26:15.537537000 Z
 staffs_039:
   id: 39
   firstname: Pat
@@ -387,18 +387,18 @@ staffs_039:
   role_id: 5
   user_id: 5
   participating_dojo_id: 15
-  created_at: 2023-04-16 12:20:41.514290000 Z
-  updated_at: 2023-04-16 12:20:41.514290000 Z
+  created_at: 2023-04-23 08:26:15.544103000 Z
+  updated_at: 2023-04-23 08:26:15.544103000 Z
 staffs_040:
   id: 40
   firstname: Larry
   lastname: Golade
   taikai_id: 8
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 15
-  created_at: 2023-04-16 12:20:41.521392000 Z
-  updated_at: 2023-04-16 12:20:41.521392000 Z
+  created_at: 2023-04-23 08:26:15.550268000 Z
+  updated_at: 2023-04-23 08:26:15.550268000 Z
 staffs_041:
   id: 41
   firstname: Marc
@@ -407,8 +407,8 @@ staffs_041:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.539707000 Z
-  updated_at: 2023-04-16 12:20:41.539707000 Z
+  created_at: 2023-04-23 08:26:15.562598000 Z
+  updated_at: 2023-04-23 08:26:15.562598000 Z
 staffs_042:
   id: 42
   firstname: Vince
@@ -417,8 +417,8 @@ staffs_042:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.691042000 Z
-  updated_at: 2023-04-16 12:20:41.691042000 Z
+  created_at: 2023-04-23 08:26:15.658662000 Z
+  updated_at: 2023-04-23 08:26:15.658662000 Z
 staffs_043:
   id: 43
   firstname: Alain
@@ -427,8 +427,8 @@ staffs_043:
   role_id: 2
   user_id: 3
   participating_dojo_id: 16
-  created_at: 2023-04-16 12:20:41.701702000 Z
-  updated_at: 2023-04-16 12:20:41.701702000 Z
+  created_at: 2023-04-23 08:26:15.664831000 Z
+  updated_at: 2023-04-23 08:26:15.664831000 Z
 staffs_044:
   id: 44
   firstname: Pat
@@ -437,18 +437,18 @@ staffs_044:
   role_id: 5
   user_id: 5
   participating_dojo_id: 16
-  created_at: 2023-04-16 12:20:41.710595000 Z
-  updated_at: 2023-04-16 12:20:41.710595000 Z
+  created_at: 2023-04-23 08:26:15.670231000 Z
+  updated_at: 2023-04-23 08:26:15.670231000 Z
 staffs_045:
   id: 45
   firstname: Larry
   lastname: Golade
   taikai_id: 9
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 16
-  created_at: 2023-04-16 12:20:41.718188000 Z
-  updated_at: 2023-04-16 12:20:41.718188000 Z
+  created_at: 2023-04-23 08:26:15.675008000 Z
+  updated_at: 2023-04-23 08:26:15.675008000 Z
 staffs_046:
   id: 46
   firstname: Marc
@@ -457,8 +457,8 @@ staffs_046:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.736464000 Z
-  updated_at: 2023-04-16 12:20:41.736464000 Z
+  created_at: 2023-04-23 08:26:15.685597000 Z
+  updated_at: 2023-04-23 08:26:15.685597000 Z
 staffs_047:
   id: 47
   firstname: Vince
@@ -467,8 +467,8 @@ staffs_047:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.782484000 Z
-  updated_at: 2023-04-16 12:20:41.782484000 Z
+  created_at: 2023-04-23 08:26:15.713249000 Z
+  updated_at: 2023-04-23 08:26:15.713249000 Z
 staffs_048:
   id: 48
   firstname: Alain
@@ -477,8 +477,8 @@ staffs_048:
   role_id: 2
   user_id: 3
   participating_dojo_id: 17
-  created_at: 2023-04-16 12:20:41.794551000 Z
-  updated_at: 2023-04-16 12:20:41.794551000 Z
+  created_at: 2023-04-23 08:26:15.719916000 Z
+  updated_at: 2023-04-23 08:26:15.719916000 Z
 staffs_049:
   id: 49
   firstname: Pat
@@ -487,18 +487,18 @@ staffs_049:
   role_id: 5
   user_id: 5
   participating_dojo_id: 17
-  created_at: 2023-04-16 12:20:41.803786000 Z
-  updated_at: 2023-04-16 12:20:41.803786000 Z
+  created_at: 2023-04-23 08:26:15.725659000 Z
+  updated_at: 2023-04-23 08:26:15.725659000 Z
 staffs_050:
   id: 50
   firstname: Larry
   lastname: Golade
   taikai_id: 10
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 17
-  created_at: 2023-04-16 12:20:41.811588000 Z
-  updated_at: 2023-04-16 12:20:41.811588000 Z
+  created_at: 2023-04-23 08:26:15.730648000 Z
+  updated_at: 2023-04-23 08:26:15.730648000 Z
 staffs_051:
   id: 51
   firstname: Marc
@@ -507,8 +507,8 @@ staffs_051:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.829610000 Z
-  updated_at: 2023-04-16 12:20:41.829610000 Z
+  created_at: 2023-04-23 08:26:15.742332000 Z
+  updated_at: 2023-04-23 08:26:15.742332000 Z
 staffs_052:
   id: 52
   firstname: Vince
@@ -517,8 +517,8 @@ staffs_052:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:41.980405000 Z
-  updated_at: 2023-04-16 12:20:41.980405000 Z
+  created_at: 2023-04-23 08:26:15.837275000 Z
+  updated_at: 2023-04-23 08:26:15.837275000 Z
 staffs_053:
   id: 53
   firstname: Alain
@@ -527,8 +527,8 @@ staffs_053:
   role_id: 2
   user_id: 3
   participating_dojo_id: 18
-  created_at: 2023-04-16 12:20:41.992276000 Z
-  updated_at: 2023-04-16 12:20:41.992276000 Z
+  created_at: 2023-04-23 08:26:15.845089000 Z
+  updated_at: 2023-04-23 08:26:15.845089000 Z
 staffs_054:
   id: 54
   firstname: Pat
@@ -537,18 +537,18 @@ staffs_054:
   role_id: 5
   user_id: 5
   participating_dojo_id: 18
-  created_at: 2023-04-16 12:20:42.001596000 Z
-  updated_at: 2023-04-16 12:20:42.001596000 Z
+  created_at: 2023-04-23 08:26:15.851044000 Z
+  updated_at: 2023-04-23 08:26:15.851044000 Z
 staffs_055:
   id: 55
   firstname: Larry
   lastname: Golade
   taikai_id: 11
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 18
-  created_at: 2023-04-16 12:20:42.009823000 Z
-  updated_at: 2023-04-16 12:20:42.009823000 Z
+  created_at: 2023-04-23 08:26:15.856228000 Z
+  updated_at: 2023-04-23 08:26:15.856228000 Z
 staffs_056:
   id: 56
   firstname: Marc
@@ -557,8 +557,8 @@ staffs_056:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.027453000 Z
-  updated_at: 2023-04-16 12:20:42.027453000 Z
+  created_at: 2023-04-23 08:26:15.868579000 Z
+  updated_at: 2023-04-23 08:26:15.868579000 Z
 staffs_057:
   id: 57
   firstname: Vince
@@ -567,8 +567,8 @@ staffs_057:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.178198000 Z
-  updated_at: 2023-04-16 12:20:42.178198000 Z
+  created_at: 2023-04-23 08:26:15.964534000 Z
+  updated_at: 2023-04-23 08:26:15.964534000 Z
 staffs_058:
   id: 58
   firstname: Alain
@@ -577,8 +577,8 @@ staffs_058:
   role_id: 2
   user_id: 3
   participating_dojo_id: 19
-  created_at: 2023-04-16 12:20:42.189882000 Z
-  updated_at: 2023-04-16 12:20:42.189882000 Z
+  created_at: 2023-04-23 08:26:15.971036000 Z
+  updated_at: 2023-04-23 08:26:15.971036000 Z
 staffs_059:
   id: 59
   firstname: Pat
@@ -587,18 +587,18 @@ staffs_059:
   role_id: 5
   user_id: 5
   participating_dojo_id: 19
-  created_at: 2023-04-16 12:20:42.198878000 Z
-  updated_at: 2023-04-16 12:20:42.198878000 Z
+  created_at: 2023-04-23 08:26:15.977188000 Z
+  updated_at: 2023-04-23 08:26:15.977188000 Z
 staffs_060:
   id: 60
   firstname: Larry
   lastname: Golade
   taikai_id: 12
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 19
-  created_at: 2023-04-16 12:20:42.207120000 Z
-  updated_at: 2023-04-16 12:20:42.207120000 Z
+  created_at: 2023-04-23 08:26:15.982428000 Z
+  updated_at: 2023-04-23 08:26:15.982428000 Z
 staffs_061:
   id: 61
   firstname: Marc
@@ -607,8 +607,8 @@ staffs_061:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.225037000 Z
-  updated_at: 2023-04-16 12:20:42.225037000 Z
+  created_at: 2023-04-23 08:26:15.992935000 Z
+  updated_at: 2023-04-23 08:26:15.992935000 Z
 staffs_062:
   id: 62
   firstname: Vince
@@ -617,8 +617,8 @@ staffs_062:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.271502000 Z
-  updated_at: 2023-04-16 12:20:42.271502000 Z
+  created_at: 2023-04-23 08:26:16.020325000 Z
+  updated_at: 2023-04-23 08:26:16.020325000 Z
 staffs_063:
   id: 63
   firstname: Alain
@@ -627,8 +627,8 @@ staffs_063:
   role_id: 2
   user_id: 3
   participating_dojo_id: 20
-  created_at: 2023-04-16 12:20:42.281397000 Z
-  updated_at: 2023-04-16 12:20:42.281397000 Z
+  created_at: 2023-04-23 08:26:16.026833000 Z
+  updated_at: 2023-04-23 08:26:16.026833000 Z
 staffs_064:
   id: 64
   firstname: Pat
@@ -637,18 +637,18 @@ staffs_064:
   role_id: 5
   user_id: 5
   participating_dojo_id: 20
-  created_at: 2023-04-16 12:20:42.289319000 Z
-  updated_at: 2023-04-16 12:20:42.289319000 Z
+  created_at: 2023-04-23 08:26:16.032507000 Z
+  updated_at: 2023-04-23 08:26:16.032507000 Z
 staffs_065:
   id: 65
   firstname: Larry
   lastname: Golade
   taikai_id: 13
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 20
-  created_at: 2023-04-16 12:20:42.299304000 Z
-  updated_at: 2023-04-16 12:20:42.299304000 Z
+  created_at: 2023-04-23 08:26:16.037075000 Z
+  updated_at: 2023-04-23 08:26:16.037075000 Z
 staffs_066:
   id: 66
   firstname: Marc
@@ -657,8 +657,8 @@ staffs_066:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.318164000 Z
-  updated_at: 2023-04-16 12:20:42.318164000 Z
+  created_at: 2023-04-23 08:26:16.048478000 Z
+  updated_at: 2023-04-23 08:26:16.048478000 Z
 staffs_067:
   id: 67
   firstname: Vince
@@ -667,8 +667,8 @@ staffs_067:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.468042000 Z
-  updated_at: 2023-04-16 12:20:42.468042000 Z
+  created_at: 2023-04-23 08:26:16.155730000 Z
+  updated_at: 2023-04-23 08:26:16.155730000 Z
 staffs_068:
   id: 68
   firstname: Alain
@@ -677,8 +677,8 @@ staffs_068:
   role_id: 2
   user_id: 3
   participating_dojo_id: 21
-  created_at: 2023-04-16 12:20:42.478930000 Z
-  updated_at: 2023-04-16 12:20:42.478930000 Z
+  created_at: 2023-04-23 08:26:16.165964000 Z
+  updated_at: 2023-04-23 08:26:16.165964000 Z
 staffs_069:
   id: 69
   firstname: Pat
@@ -687,18 +687,18 @@ staffs_069:
   role_id: 5
   user_id: 5
   participating_dojo_id: 21
-  created_at: 2023-04-16 12:20:42.488415000 Z
-  updated_at: 2023-04-16 12:20:42.488415000 Z
+  created_at: 2023-04-23 08:26:16.172856000 Z
+  updated_at: 2023-04-23 08:26:16.172856000 Z
 staffs_070:
   id: 70
   firstname: Larry
   lastname: Golade
   taikai_id: 14
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 21
-  created_at: 2023-04-16 12:20:42.496362000 Z
-  updated_at: 2023-04-16 12:20:42.496362000 Z
+  created_at: 2023-04-23 08:26:16.178192000 Z
+  updated_at: 2023-04-23 08:26:16.178192000 Z
 staffs_071:
   id: 71
   firstname: Marc
@@ -707,8 +707,8 @@ staffs_071:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.515380000 Z
-  updated_at: 2023-04-16 12:20:42.515380000 Z
+  created_at: 2023-04-23 08:26:16.190537000 Z
+  updated_at: 2023-04-23 08:26:16.190537000 Z
 staffs_072:
   id: 72
   firstname: Vince
@@ -717,8 +717,8 @@ staffs_072:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.809309000 Z
-  updated_at: 2023-04-16 12:20:42.809309000 Z
+  created_at: 2023-04-23 08:26:16.385916000 Z
+  updated_at: 2023-04-23 08:26:16.385916000 Z
 staffs_073:
   id: 73
   firstname: Alain
@@ -727,8 +727,8 @@ staffs_073:
   role_id: 2
   user_id: 3
   participating_dojo_id: 22
-  created_at: 2023-04-16 12:20:42.818905000 Z
-  updated_at: 2023-04-16 12:20:42.818905000 Z
+  created_at: 2023-04-23 08:26:16.392384000 Z
+  updated_at: 2023-04-23 08:26:16.392384000 Z
 staffs_074:
   id: 74
   firstname: Pat
@@ -737,18 +737,18 @@ staffs_074:
   role_id: 5
   user_id: 5
   participating_dojo_id: 22
-  created_at: 2023-04-16 12:20:42.827300000 Z
-  updated_at: 2023-04-16 12:20:42.827300000 Z
+  created_at: 2023-04-23 08:26:16.398186000 Z
+  updated_at: 2023-04-23 08:26:16.398186000 Z
 staffs_075:
   id: 75
   firstname: Larry
   lastname: Golade
   taikai_id: 15
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 22
-  created_at: 2023-04-16 12:20:42.834945000 Z
-  updated_at: 2023-04-16 12:20:42.834945000 Z
+  created_at: 2023-04-23 08:26:16.404268000 Z
+  updated_at: 2023-04-23 08:26:16.404268000 Z
 staffs_076:
   id: 76
   firstname: Marc
@@ -757,8 +757,8 @@ staffs_076:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:42.852143000 Z
-  updated_at: 2023-04-16 12:20:42.852143000 Z
+  created_at: 2023-04-23 08:26:16.419090000 Z
+  updated_at: 2023-04-23 08:26:16.419090000 Z
 staffs_077:
   id: 77
   firstname: Vince
@@ -767,8 +767,8 @@ staffs_077:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.158842000 Z
-  updated_at: 2023-04-16 12:20:43.158842000 Z
+  created_at: 2023-04-23 08:26:16.613436000 Z
+  updated_at: 2023-04-23 08:26:16.613436000 Z
 staffs_078:
   id: 78
   firstname: Alain
@@ -777,8 +777,8 @@ staffs_078:
   role_id: 2
   user_id: 3
   participating_dojo_id: 24
-  created_at: 2023-04-16 12:20:43.212015000 Z
-  updated_at: 2023-04-16 12:20:43.212015000 Z
+  created_at: 2023-04-23 08:26:16.620391000 Z
+  updated_at: 2023-04-23 08:26:16.620391000 Z
 staffs_079:
   id: 79
   firstname: Pat
@@ -787,18 +787,18 @@ staffs_079:
   role_id: 5
   user_id: 5
   participating_dojo_id: 24
-  created_at: 2023-04-16 12:20:43.221001000 Z
-  updated_at: 2023-04-16 12:20:43.221001000 Z
+  created_at: 2023-04-23 08:26:16.626069000 Z
+  updated_at: 2023-04-23 08:26:16.626069000 Z
 staffs_080:
   id: 80
   firstname: Larry
   lastname: Golade
   taikai_id: 16
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 24
-  created_at: 2023-04-16 12:20:43.229499000 Z
-  updated_at: 2023-04-16 12:20:43.229499000 Z
+  created_at: 2023-04-23 08:26:16.631213000 Z
+  updated_at: 2023-04-23 08:26:16.631213000 Z
 staffs_081:
   id: 81
   firstname: Marc
@@ -807,8 +807,8 @@ staffs_081:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.247231000 Z
-  updated_at: 2023-04-16 12:20:43.247231000 Z
+  created_at: 2023-04-23 08:26:16.643342000 Z
+  updated_at: 2023-04-23 08:26:16.643342000 Z
 staffs_082:
   id: 82
   firstname: Vince
@@ -817,8 +817,8 @@ staffs_082:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.335457000 Z
-  updated_at: 2023-04-16 12:20:43.335457000 Z
+  created_at: 2023-04-23 08:26:16.697806000 Z
+  updated_at: 2023-04-23 08:26:16.697806000 Z
 staffs_083:
   id: 83
   firstname: Alain
@@ -827,8 +827,8 @@ staffs_083:
   role_id: 2
   user_id: 3
   participating_dojo_id: 26
-  created_at: 2023-04-16 12:20:43.346530000 Z
-  updated_at: 2023-04-16 12:20:43.346530000 Z
+  created_at: 2023-04-23 08:26:16.706014000 Z
+  updated_at: 2023-04-23 08:26:16.706014000 Z
 staffs_084:
   id: 84
   firstname: Pat
@@ -837,18 +837,18 @@ staffs_084:
   role_id: 5
   user_id: 5
   participating_dojo_id: 26
-  created_at: 2023-04-16 12:20:43.354864000 Z
-  updated_at: 2023-04-16 12:20:43.354864000 Z
+  created_at: 2023-04-23 08:26:16.712011000 Z
+  updated_at: 2023-04-23 08:26:16.712011000 Z
 staffs_085:
   id: 85
   firstname: Larry
   lastname: Golade
   taikai_id: 17
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 26
-  created_at: 2023-04-16 12:20:43.362158000 Z
-  updated_at: 2023-04-16 12:20:43.362158000 Z
+  created_at: 2023-04-23 08:26:16.717511000 Z
+  updated_at: 2023-04-23 08:26:16.717511000 Z
 staffs_086:
   id: 86
   firstname: Marc
@@ -857,8 +857,8 @@ staffs_086:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.380074000 Z
-  updated_at: 2023-04-16 12:20:43.380074000 Z
+  created_at: 2023-04-23 08:26:16.730035000 Z
+  updated_at: 2023-04-23 08:26:16.730035000 Z
 staffs_087:
   id: 87
   firstname: Vince
@@ -867,8 +867,8 @@ staffs_087:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.673218000 Z
-  updated_at: 2023-04-16 12:20:43.673218000 Z
+  created_at: 2023-04-23 08:26:16.984809000 Z
+  updated_at: 2023-04-23 08:26:16.984809000 Z
 staffs_088:
   id: 88
   firstname: Alain
@@ -877,8 +877,8 @@ staffs_088:
   role_id: 2
   user_id: 3
   participating_dojo_id: 28
-  created_at: 2023-04-16 12:20:43.683095000 Z
-  updated_at: 2023-04-16 12:20:43.683095000 Z
+  created_at: 2023-04-23 08:26:16.991797000 Z
+  updated_at: 2023-04-23 08:26:16.991797000 Z
 staffs_089:
   id: 89
   firstname: Pat
@@ -887,18 +887,18 @@ staffs_089:
   role_id: 5
   user_id: 5
   participating_dojo_id: 28
-  created_at: 2023-04-16 12:20:43.691173000 Z
-  updated_at: 2023-04-16 12:20:43.691173000 Z
+  created_at: 2023-04-23 08:26:16.996812000 Z
+  updated_at: 2023-04-23 08:26:16.996812000 Z
 staffs_090:
   id: 90
   firstname: Larry
   lastname: Golade
   taikai_id: 18
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 28
-  created_at: 2023-04-16 12:20:43.698371000 Z
-  updated_at: 2023-04-16 12:20:43.698371000 Z
+  created_at: 2023-04-23 08:26:17.001863000 Z
+  updated_at: 2023-04-23 08:26:17.001863000 Z
 staffs_091:
   id: 91
   firstname: Marc
@@ -907,8 +907,8 @@ staffs_091:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:43.715471000 Z
-  updated_at: 2023-04-16 12:20:43.715471000 Z
+  created_at: 2023-04-23 08:26:17.013433000 Z
+  updated_at: 2023-04-23 08:26:17.013433000 Z
 staffs_092:
   id: 92
   firstname: Vince
@@ -917,8 +917,8 @@ staffs_092:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.009244000 Z
-  updated_at: 2023-04-16 12:20:44.009244000 Z
+  created_at: 2023-04-23 08:26:17.224039000 Z
+  updated_at: 2023-04-23 08:26:17.224039000 Z
 staffs_093:
   id: 93
   firstname: Alain
@@ -927,8 +927,8 @@ staffs_093:
   role_id: 2
   user_id: 3
   participating_dojo_id: 30
-  created_at: 2023-04-16 12:20:44.019216000 Z
-  updated_at: 2023-04-16 12:20:44.019216000 Z
+  created_at: 2023-04-23 08:26:17.230839000 Z
+  updated_at: 2023-04-23 08:26:17.230839000 Z
 staffs_094:
   id: 94
   firstname: Pat
@@ -937,18 +937,18 @@ staffs_094:
   role_id: 5
   user_id: 5
   participating_dojo_id: 30
-  created_at: 2023-04-16 12:20:44.027472000 Z
-  updated_at: 2023-04-16 12:20:44.027472000 Z
+  created_at: 2023-04-23 08:26:17.237797000 Z
+  updated_at: 2023-04-23 08:26:17.237797000 Z
 staffs_095:
   id: 95
   firstname: Larry
   lastname: Golade
   taikai_id: 19
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 30
-  created_at: 2023-04-16 12:20:44.037330000 Z
-  updated_at: 2023-04-16 12:20:44.037330000 Z
+  created_at: 2023-04-23 08:26:17.244017000 Z
+  updated_at: 2023-04-23 08:26:17.244017000 Z
 staffs_096:
   id: 96
   firstname: Marc
@@ -957,8 +957,8 @@ staffs_096:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.055332000 Z
-  updated_at: 2023-04-16 12:20:44.055332000 Z
+  created_at: 2023-04-23 08:26:17.258790000 Z
+  updated_at: 2023-04-23 08:26:17.258790000 Z
 staffs_097:
   id: 97
   firstname: Vince
@@ -967,8 +967,8 @@ staffs_097:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.142069000 Z
-  updated_at: 2023-04-16 12:20:44.142069000 Z
+  created_at: 2023-04-23 08:26:17.315138000 Z
+  updated_at: 2023-04-23 08:26:17.315138000 Z
 staffs_098:
   id: 98
   firstname: Alain
@@ -977,8 +977,8 @@ staffs_098:
   role_id: 2
   user_id: 3
   participating_dojo_id: 32
-  created_at: 2023-04-16 12:20:44.151959000 Z
-  updated_at: 2023-04-16 12:20:44.151959000 Z
+  created_at: 2023-04-23 08:26:17.321706000 Z
+  updated_at: 2023-04-23 08:26:17.321706000 Z
 staffs_099:
   id: 99
   firstname: Pat
@@ -987,18 +987,18 @@ staffs_099:
   role_id: 5
   user_id: 5
   participating_dojo_id: 32
-  created_at: 2023-04-16 12:20:44.161349000 Z
-  updated_at: 2023-04-16 12:20:44.161349000 Z
+  created_at: 2023-04-23 08:26:17.328254000 Z
+  updated_at: 2023-04-23 08:26:17.328254000 Z
 staffs_100:
   id: 100
   firstname: Larry
   lastname: Golade
   taikai_id: 20
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 32
-  created_at: 2023-04-16 12:20:44.169066000 Z
-  updated_at: 2023-04-16 12:20:44.169066000 Z
+  created_at: 2023-04-23 08:26:17.334141000 Z
+  updated_at: 2023-04-23 08:26:17.334141000 Z
 staffs_101:
   id: 101
   firstname: Marc
@@ -1007,8 +1007,8 @@ staffs_101:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.186647000 Z
-  updated_at: 2023-04-16 12:20:44.186647000 Z
+  created_at: 2023-04-23 08:26:17.346400000 Z
+  updated_at: 2023-04-23 08:26:17.346400000 Z
 staffs_102:
   id: 102
   firstname: Vince
@@ -1017,8 +1017,8 @@ staffs_102:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.491808000 Z
-  updated_at: 2023-04-16 12:20:44.491808000 Z
+  created_at: 2023-04-23 08:26:17.537772000 Z
+  updated_at: 2023-04-23 08:26:17.537772000 Z
 staffs_103:
   id: 103
   firstname: Alain
@@ -1027,8 +1027,8 @@ staffs_103:
   role_id: 2
   user_id: 3
   participating_dojo_id: 34
-  created_at: 2023-04-16 12:20:44.501548000 Z
-  updated_at: 2023-04-16 12:20:44.501548000 Z
+  created_at: 2023-04-23 08:26:17.544598000 Z
+  updated_at: 2023-04-23 08:26:17.544598000 Z
 staffs_104:
   id: 104
   firstname: Pat
@@ -1037,18 +1037,18 @@ staffs_104:
   role_id: 5
   user_id: 5
   participating_dojo_id: 34
-  created_at: 2023-04-16 12:20:44.510862000 Z
-  updated_at: 2023-04-16 12:20:44.510862000 Z
+  created_at: 2023-04-23 08:26:17.550266000 Z
+  updated_at: 2023-04-23 08:26:17.550266000 Z
 staffs_105:
   id: 105
   firstname: Larry
   lastname: Golade
   taikai_id: 21
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 34
-  created_at: 2023-04-16 12:20:44.518916000 Z
-  updated_at: 2023-04-16 12:20:44.518916000 Z
+  created_at: 2023-04-23 08:26:17.555480000 Z
+  updated_at: 2023-04-23 08:26:17.555480000 Z
 staffs_106:
   id: 106
   firstname: Marc
@@ -1057,8 +1057,8 @@ staffs_106:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.537778000 Z
-  updated_at: 2023-04-16 12:20:44.537778000 Z
+  created_at: 2023-04-23 08:26:17.567482000 Z
+  updated_at: 2023-04-23 08:26:17.567482000 Z
 staffs_107:
   id: 107
   firstname: Vince
@@ -1067,8 +1067,8 @@ staffs_107:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.695806000 Z
-  updated_at: 2023-04-16 12:20:44.695806000 Z
+  created_at: 2023-04-23 08:26:17.673442000 Z
+  updated_at: 2023-04-23 08:26:17.673442000 Z
 staffs_108:
   id: 108
   firstname: Alain
@@ -1077,8 +1077,8 @@ staffs_108:
   role_id: 2
   user_id: 3
   participating_dojo_id: 36
-  created_at: 2023-04-16 12:20:44.706631000 Z
-  updated_at: 2023-04-16 12:20:44.706631000 Z
+  created_at: 2023-04-23 08:26:17.680235000 Z
+  updated_at: 2023-04-23 08:26:17.680235000 Z
 staffs_109:
   id: 109
   firstname: Pat
@@ -1087,18 +1087,18 @@ staffs_109:
   role_id: 5
   user_id: 5
   participating_dojo_id: 36
-  created_at: 2023-04-16 12:20:44.714980000 Z
-  updated_at: 2023-04-16 12:20:44.714980000 Z
+  created_at: 2023-04-23 08:26:17.685829000 Z
+  updated_at: 2023-04-23 08:26:17.685829000 Z
 staffs_110:
   id: 110
   firstname: Larry
   lastname: Golade
   taikai_id: 22
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 36
-  created_at: 2023-04-16 12:20:44.722396000 Z
-  updated_at: 2023-04-16 12:20:44.722396000 Z
+  created_at: 2023-04-23 08:26:17.690138000 Z
+  updated_at: 2023-04-23 08:26:17.690138000 Z
 staffs_111:
   id: 111
   firstname: Marc
@@ -1107,8 +1107,8 @@ staffs_111:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.740967000 Z
-  updated_at: 2023-04-16 12:20:44.740967000 Z
+  created_at: 2023-04-23 08:26:17.700324000 Z
+  updated_at: 2023-04-23 08:26:17.700324000 Z
 staffs_112:
   id: 112
   firstname: Vince
@@ -1117,8 +1117,8 @@ staffs_112:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.898033000 Z
-  updated_at: 2023-04-16 12:20:44.898033000 Z
+  created_at: 2023-04-23 08:26:17.802321000 Z
+  updated_at: 2023-04-23 08:26:17.802321000 Z
 staffs_113:
   id: 113
   firstname: Alain
@@ -1127,8 +1127,8 @@ staffs_113:
   role_id: 2
   user_id: 3
   participating_dojo_id: 37
-  created_at: 2023-04-16 12:20:44.908329000 Z
-  updated_at: 2023-04-16 12:20:44.908329000 Z
+  created_at: 2023-04-23 08:26:17.809126000 Z
+  updated_at: 2023-04-23 08:26:17.809126000 Z
 staffs_114:
   id: 114
   firstname: Pat
@@ -1137,18 +1137,18 @@ staffs_114:
   role_id: 5
   user_id: 5
   participating_dojo_id: 37
-  created_at: 2023-04-16 12:20:44.916836000 Z
-  updated_at: 2023-04-16 12:20:44.916836000 Z
+  created_at: 2023-04-23 08:26:17.814787000 Z
+  updated_at: 2023-04-23 08:26:17.814787000 Z
 staffs_115:
   id: 115
   firstname: Larry
   lastname: Golade
   taikai_id: 23
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 37
-  created_at: 2023-04-16 12:20:44.924275000 Z
-  updated_at: 2023-04-16 12:20:44.924275000 Z
+  created_at: 2023-04-23 08:26:17.819768000 Z
+  updated_at: 2023-04-23 08:26:17.819768000 Z
 staffs_116:
   id: 116
   firstname: Marc
@@ -1157,8 +1157,8 @@ staffs_116:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.942555000 Z
-  updated_at: 2023-04-16 12:20:44.942555000 Z
+  created_at: 2023-04-23 08:26:17.832051000 Z
+  updated_at: 2023-04-23 08:26:17.832051000 Z
 staffs_117:
   id: 117
   firstname: Vince
@@ -1167,8 +1167,8 @@ staffs_117:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:44.991832000 Z
-  updated_at: 2023-04-16 12:20:44.991832000 Z
+  created_at: 2023-04-23 08:26:17.868391000 Z
+  updated_at: 2023-04-23 08:26:17.868391000 Z
 staffs_118:
   id: 118
   firstname: Alain
@@ -1177,8 +1177,8 @@ staffs_118:
   role_id: 2
   user_id: 3
   participating_dojo_id: 38
-  created_at: 2023-04-16 12:20:45.001899000 Z
-  updated_at: 2023-04-16 12:20:45.001899000 Z
+  created_at: 2023-04-23 08:26:17.875655000 Z
+  updated_at: 2023-04-23 08:26:17.875655000 Z
 staffs_119:
   id: 119
   firstname: Pat
@@ -1187,18 +1187,18 @@ staffs_119:
   role_id: 5
   user_id: 5
   participating_dojo_id: 38
-  created_at: 2023-04-16 12:20:45.011327000 Z
-  updated_at: 2023-04-16 12:20:45.011327000 Z
+  created_at: 2023-04-23 08:26:17.882518000 Z
+  updated_at: 2023-04-23 08:26:17.882518000 Z
 staffs_120:
   id: 120
   firstname: Larry
   lastname: Golade
   taikai_id: 24
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 38
-  created_at: 2023-04-16 12:20:45.018717000 Z
-  updated_at: 2023-04-16 12:20:45.018717000 Z
+  created_at: 2023-04-23 08:26:17.887409000 Z
+  updated_at: 2023-04-23 08:26:17.887409000 Z
 staffs_121:
   id: 121
   firstname: Marc
@@ -1207,8 +1207,8 @@ staffs_121:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.036824000 Z
-  updated_at: 2023-04-16 12:20:45.036824000 Z
+  created_at: 2023-04-23 08:26:17.899011000 Z
+  updated_at: 2023-04-23 08:26:17.899011000 Z
 staffs_122:
   id: 122
   firstname: Vince
@@ -1217,8 +1217,8 @@ staffs_122:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.188850000 Z
-  updated_at: 2023-04-16 12:20:45.188850000 Z
+  created_at: 2023-04-23 08:26:18.005277000 Z
+  updated_at: 2023-04-23 08:26:18.005277000 Z
 staffs_123:
   id: 123
   firstname: Alain
@@ -1227,8 +1227,8 @@ staffs_123:
   role_id: 2
   user_id: 3
   participating_dojo_id: 39
-  created_at: 2023-04-16 12:20:45.199622000 Z
-  updated_at: 2023-04-16 12:20:45.199622000 Z
+  created_at: 2023-04-23 08:26:18.012136000 Z
+  updated_at: 2023-04-23 08:26:18.012136000 Z
 staffs_124:
   id: 124
   firstname: Pat
@@ -1237,18 +1237,18 @@ staffs_124:
   role_id: 5
   user_id: 5
   participating_dojo_id: 39
-  created_at: 2023-04-16 12:20:45.209015000 Z
-  updated_at: 2023-04-16 12:20:45.209015000 Z
+  created_at: 2023-04-23 08:26:18.017865000 Z
+  updated_at: 2023-04-23 08:26:18.017865000 Z
 staffs_125:
   id: 125
   firstname: Larry
   lastname: Golade
   taikai_id: 25
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 39
-  created_at: 2023-04-16 12:20:45.216406000 Z
-  updated_at: 2023-04-16 12:20:45.216406000 Z
+  created_at: 2023-04-23 08:26:18.023005000 Z
+  updated_at: 2023-04-23 08:26:18.023005000 Z
 staffs_126:
   id: 126
   firstname: Marc
@@ -1257,8 +1257,8 @@ staffs_126:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.234938000 Z
-  updated_at: 2023-04-16 12:20:45.234938000 Z
+  created_at: 2023-04-23 08:26:18.034318000 Z
+  updated_at: 2023-04-23 08:26:18.034318000 Z
 staffs_127:
   id: 127
   firstname: Vince
@@ -1267,8 +1267,8 @@ staffs_127:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.386074000 Z
-  updated_at: 2023-04-16 12:20:45.386074000 Z
+  created_at: 2023-04-23 08:26:18.146318000 Z
+  updated_at: 2023-04-23 08:26:18.146318000 Z
 staffs_128:
   id: 128
   firstname: Alain
@@ -1277,8 +1277,8 @@ staffs_128:
   role_id: 2
   user_id: 3
   participating_dojo_id: 40
-  created_at: 2023-04-16 12:20:45.397934000 Z
-  updated_at: 2023-04-16 12:20:45.397934000 Z
+  created_at: 2023-04-23 08:26:18.153614000 Z
+  updated_at: 2023-04-23 08:26:18.153614000 Z
 staffs_129:
   id: 129
   firstname: Pat
@@ -1287,18 +1287,18 @@ staffs_129:
   role_id: 5
   user_id: 5
   participating_dojo_id: 40
-  created_at: 2023-04-16 12:20:45.407535000 Z
-  updated_at: 2023-04-16 12:20:45.407535000 Z
+  created_at: 2023-04-23 08:26:18.160076000 Z
+  updated_at: 2023-04-23 08:26:18.160076000 Z
 staffs_130:
   id: 130
   firstname: Larry
   lastname: Golade
   taikai_id: 26
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 40
-  created_at: 2023-04-16 12:20:45.415347000 Z
-  updated_at: 2023-04-16 12:20:45.415347000 Z
+  created_at: 2023-04-23 08:26:18.165318000 Z
+  updated_at: 2023-04-23 08:26:18.165318000 Z
 staffs_131:
   id: 131
   firstname: Marc
@@ -1307,8 +1307,8 @@ staffs_131:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.433203000 Z
-  updated_at: 2023-04-16 12:20:45.433203000 Z
+  created_at: 2023-04-23 08:26:18.178652000 Z
+  updated_at: 2023-04-23 08:26:18.178652000 Z
 staffs_132:
   id: 132
   firstname: Vince
@@ -1317,8 +1317,8 @@ staffs_132:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.480500000 Z
-  updated_at: 2023-04-16 12:20:45.480500000 Z
+  created_at: 2023-04-23 08:26:18.214840000 Z
+  updated_at: 2023-04-23 08:26:18.214840000 Z
 staffs_133:
   id: 133
   firstname: Alain
@@ -1327,8 +1327,8 @@ staffs_133:
   role_id: 2
   user_id: 3
   participating_dojo_id: 41
-  created_at: 2023-04-16 12:20:45.490082000 Z
-  updated_at: 2023-04-16 12:20:45.490082000 Z
+  created_at: 2023-04-23 08:26:18.222187000 Z
+  updated_at: 2023-04-23 08:26:18.222187000 Z
 staffs_134:
   id: 134
   firstname: Pat
@@ -1337,18 +1337,18 @@ staffs_134:
   role_id: 5
   user_id: 5
   participating_dojo_id: 41
-  created_at: 2023-04-16 12:20:45.497872000 Z
-  updated_at: 2023-04-16 12:20:45.497872000 Z
+  created_at: 2023-04-23 08:26:18.228240000 Z
+  updated_at: 2023-04-23 08:26:18.228240000 Z
 staffs_135:
   id: 135
   firstname: Larry
   lastname: Golade
   taikai_id: 27
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 41
-  created_at: 2023-04-16 12:20:45.508574000 Z
-  updated_at: 2023-04-16 12:20:45.508574000 Z
+  created_at: 2023-04-23 08:26:18.233540000 Z
+  updated_at: 2023-04-23 08:26:18.233540000 Z
 staffs_136:
   id: 136
   firstname: Marc
@@ -1357,8 +1357,8 @@ staffs_136:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.527098000 Z
-  updated_at: 2023-04-16 12:20:45.527098000 Z
+  created_at: 2023-04-23 08:26:18.245740000 Z
+  updated_at: 2023-04-23 08:26:18.245740000 Z
 staffs_137:
   id: 137
   firstname: Vince
@@ -1367,8 +1367,8 @@ staffs_137:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2023-04-16 12:20:45.678399000 Z
-  updated_at: 2023-04-16 12:20:45.678399000 Z
+  created_at: 2023-04-23 08:26:18.353134000 Z
+  updated_at: 2023-04-23 08:26:18.353134000 Z
 staffs_138:
   id: 138
   firstname: Alain
@@ -1377,8 +1377,8 @@ staffs_138:
   role_id: 2
   user_id: 3
   participating_dojo_id: 42
-  created_at: 2023-04-16 12:20:45.688369000 Z
-  updated_at: 2023-04-16 12:20:45.688369000 Z
+  created_at: 2023-04-23 08:26:18.360116000 Z
+  updated_at: 2023-04-23 08:26:18.360116000 Z
 staffs_139:
   id: 139
   firstname: Pat
@@ -1387,15 +1387,15 @@ staffs_139:
   role_id: 5
   user_id: 5
   participating_dojo_id: 42
-  created_at: 2023-04-16 12:20:45.697585000 Z
-  updated_at: 2023-04-16 12:20:45.697585000 Z
+  created_at: 2023-04-23 08:26:18.366433000 Z
+  updated_at: 2023-04-23 08:26:18.366433000 Z
 staffs_140:
   id: 140
   firstname: Larry
   lastname: Golade
   taikai_id: 28
-  role_id: 6
+  role_id: 7
   user_id:
   participating_dojo_id: 42
-  created_at: 2023-04-16 12:20:45.707120000 Z
-  updated_at: 2023-04-16 12:20:45.707120000 Z
+  created_at: 2023-04-23 08:26:18.371528000 Z
+  updated_at: 2023-04-23 08:26:18.371528000 Z

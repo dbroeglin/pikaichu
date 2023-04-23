@@ -2,32 +2,32 @@
 taikai_admin:
   id: 1
   code: taikai_admin
-  created_at: 2023-04-16 12:20:39.112345000 Z
-  updated_at: 2023-04-16 12:20:39.112345000 Z
+  created_at: 2023-04-23 08:26:13.887764000 Z
+  updated_at: 2023-04-23 08:26:13.887764000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Taikai admin
-    en: Taikai_admin
+    fr: Administrateur
+    en: Administrator
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de taikai_admin
     en: Description of taikai_admin
 dojo_admin:
   id: 2
   code: dojo_admin
-  created_at: 2023-04-16 12:20:39.120284000 Z
-  updated_at: 2023-04-16 12:20:39.120284000 Z
+  created_at: 2023-04-23 08:26:13.893212000 Z
+  updated_at: 2023-04-23 08:26:13.893212000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Dojo admin
-    en: Dojo_admin
+    fr: Administrateur de club
+    en: Dojo Administrator
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de dojo_admin
     en: Description of dojo_admin
 chairman:
   id: 3
   code: chairman
-  created_at: 2023-04-16 12:20:39.126965000 Z
-  updated_at: 2023-04-16 12:20:39.126965000 Z
+  created_at: 2023-04-23 08:26:13.898497000 Z
+  updated_at: 2023-04-23 08:26:13.898497000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Chairman
+    fr: Directeur du tournoi
     en: Chairman
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de chairman
@@ -35,54 +35,54 @@ chairman:
 marking_referee:
   id: 4
   code: marking_referee
-  created_at: 2023-04-16 12:20:39.134058000 Z
-  updated_at: 2023-04-16 12:20:39.134058000 Z
+  created_at: 2023-04-23 08:26:13.902830000 Z
+  updated_at: 2023-04-23 08:26:13.902830000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Marking referee
-    en: Marking_referee
+    fr: Enregistreur
+    en: Marking Referee
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de marking_referee
     en: Description of marking_referee
 shajo_referee:
   id: 5
   code: shajo_referee
-  created_at: 2023-04-16 12:20:39.141320000 Z
-  updated_at: 2023-04-16 12:20:39.141320000 Z
+  created_at: 2023-04-23 08:26:13.909942000 Z
+  updated_at: 2023-04-23 08:26:13.909942000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Shajo referee
-    en: Shajo_referee
+    fr: Juge de shajo
+    en: Shajo Referee
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de shajo_referee
     en: Description of shajo_referee
-target_referee:
-  id: 6
-  code: target_referee
-  created_at: 2023-04-16 12:20:39.147818000 Z
-  updated_at: 2023-04-16 12:20:39.147818000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Target referee
-    en: Target_referee
-  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Description de target_referee
-    en: Description of target_referee
 yatori:
-  id: 7
+  id: 6
   code: yatori
-  created_at: 2023-04-16 12:20:39.154199000 Z
-  updated_at: 2023-04-16 12:20:39.154199000 Z
+  created_at: 2023-04-23 08:26:13.916030000 Z
+  updated_at: 2023-04-23 08:26:13.916030000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Yatori
     en: Yatori
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de yatori
     en: Description of yatori
+target_referee:
+  id: 7
+  code: target_referee
+  created_at: 2023-04-23 08:26:13.920980000 Z
+  updated_at: 2023-04-23 08:26:13.920980000 Z
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Juge de Cible
+    en: Target_referee
+  description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Description de target_referee
+    en: Description of target_referee
 operations_chairman:
   id: 8
   code: operations_chairman
-  created_at: 2023-04-16 12:20:39.160733000 Z
-  updated_at: 2023-04-16 12:20:39.160733000 Z
+  created_at: 2023-04-23 08:26:13.926053000 Z
+  updated_at: 2023-04-23 08:26:13.926053000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Operations chairman
+    fr: Responsable Logistique
     en: Operations_chairman
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de operations_chairman

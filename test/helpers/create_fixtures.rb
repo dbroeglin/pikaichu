@@ -86,12 +86,54 @@ class CreateFixtures
   end
 
   def create_staff_roles
-    models[:staff_roles] = {}.with_indifferent_access
+    staff_roles = models[:staff_roles] = {}.with_indifferent_access
 
-    %w[taikai_admin dojo_admin chairman marking_referee shajo_referee target_referee yatori
-       operations_chairman].each do |code|
-      models[:staff_roles][code] = create(:staff_role, code: code)
-    end
+    staff_roles['taikai_admin'] = create(
+      :staff_role,
+      code: :taikai_admin,
+      label_fr: 'Administrateur',
+      label_en: 'Administrator'
+    )
+    staff_roles['dojo_admin'] = create(
+      :staff_role,
+      code: :dojo_admin,
+      label_fr: 'Administrateur de club',
+      label_en: 'Dojo Administrator'
+    )
+    staff_roles['chairman'] = create(
+      :staff_role,
+      code: :chairman,
+      label_fr: 'Directeur du tournoi',
+      label_en: 'Chairman'
+    )
+    staff_roles['marking_referee'] = create(
+      :staff_role,
+      code: :marking_referee,
+      label_fr: 'Enregistreur',
+      label_en: 'Marking Referee'
+    )
+    staff_roles['shajo_referee'] = create(
+      :staff_role,
+      code: :shajo_referee,
+      label_fr: 'Juge de shajo',
+      label_en: 'Shajo Referee'
+    )
+    staff_roles['yatori'] = create(
+      :staff_role,
+      code: :yatori,
+      label_fr: 'Yatori',
+      label_en: 'Yatori'
+    )
+    staff_roles['target_referee'] = create(
+      :staff_role,
+      code: :target_referee,
+      label_fr: 'Juge de Cible',
+    )
+    staff_roles['operations_chairman'] = create(
+      :staff_role,
+      code: :operations_chairman,
+      label_fr: 'Responsable Logistique',
+    )
   end
 
   def create_taikais

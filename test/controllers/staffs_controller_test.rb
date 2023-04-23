@@ -3,12 +3,13 @@ require 'test_helper'
 class StaffsControllerTest < ActionDispatch::IntegrationTest
   setup do
     sign_in users(:jean_bon)
-    @taikai = taikais(:individual_dist_12_kinteki)
+    @taikai = taikais(:'2in1_dist_12_enteki')
     @test_staff = @taikai.staffs.first
   end
 
   test 'should get new' do
     get new_taikai_staff_url @taikai
+
     assert_response :success
   end
 

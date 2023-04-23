@@ -26,7 +26,7 @@ class MarkingTest < ApplicationSystemTestCase
 
       click_on "Retour au Taikai"
 
-      assert_selector "p.title.is-4", text: taikai.name
+      assert_taikai_title taikai.name
     end
   end
 end
