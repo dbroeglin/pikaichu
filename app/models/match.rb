@@ -4,7 +4,7 @@ class Match < ApplicationRecord
   belongs_to :taikai
   belongs_to :team1, class_name: "Team", optional: true
   belongs_to :team2, class_name: "Team", optional: true
-  has_many :results
+  has_many :results, dependent: nil
 
   def team(index)
     raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
@@ -27,7 +27,7 @@ class Match < ApplicationRecord
     team(index)&.scores&.find_by(match_id: id)
   end
 
-  def is_winner?(index)
+  def winner?(index)
     winner == index
   end
 
@@ -36,7 +36,7 @@ class Match < ApplicationRecord
   end
 
   def finalized?
-    !results.where(final: false).any?
+    results.where(final: false).none?
   end
 
   def decided?
@@ -44,7 +44,7 @@ class Match < ApplicationRecord
   end
 
   def ordered_teams
-    if is_winner? 1
+    if winner? 1
       [team1, team2]
     else
       [team2, team1]
@@ -60,14 +60,14 @@ class Match < ApplicationRecord
     team1_change = changes[:team1_id]
     team2_change = changes[:team2_id]
 
-    clean_team(team1_change.first) if team1_change && team1_change.first
-    clean_team(team2_change.first) if team2_change && team2_change.first
-    initialize_team(1) if team1_change && team1_change.second
-    initialize_team(2) if team2_change && team2_change.second
+    clean_team(team1_change.first) if team1_change&.first
+    clean_team(team2_change.first) if team2_change&.first
+    initialize_team(1) if team1_change&.second
+    initialize_team(2) if team2_change&.second
   end
 
   def select_winner(winner)
-    raise "Winner can be only 1 or 2" if winner < 1 || 2 < winner
+    raise "Winner can be only 1 or 2" if winner < 1 || winner > 2
 
     self.winner = winner
     ActiveRecord::Base.transaction do

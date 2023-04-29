@@ -1,7 +1,7 @@
 <div class="box has-background-light p-2">
   <table class="table is-fullwidth is-narrow">
     <tbody>
-      <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 1 %>>
+      <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.winner? 1 %>>
         <td><%= match.team1&.shortname || "-" %></td>
         <td class="is-vcentered">
           <% match.team1.participants.each do |participant| %>
@@ -14,7 +14,7 @@
         <td rowspan="2" style="border-bottom: 0px">
         </td>
       </tr>
-      <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.is_winner? 2 %>>
+      <tr <%= 'style="border-left: 3pt solid #3273dc;"'.html_safe if match.winner? 2 %>>
         <td><%= match.team2&.shortname || "-" %></td>
         <td>
           <% match.team2.participants.each do |participant| %>

@@ -41,12 +41,12 @@ class ParticipatingDojo < ApplicationRecord
       else
         teams.update_all(index: nil)
         count = 0
-        teams.select do |team|
-          team.participants.size >= taikai.tachi_size
-        end.shuffle.each_with_index do |team, index|
-          team.update!(index: index + 1)
-          count += 1
-        end
+        teams.select { |team| team.participants.size >= taikai.tachi_size }
+             .shuffle
+             .each_with_index do |team, index|
+               team.update!(index: index + 1)
+               count += 1
+             end
         teams.where(index: nil).shuffle.each_with_index do |team, index|
           team.update!(index: index + count + 1)
         end

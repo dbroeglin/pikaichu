@@ -1,8 +1,4 @@
 namespace :ops do
-  index = "001"
-  acr_name = "acrpikaichu#{index}"
-  acr_server = "#{acr_name}.azurecr.io"
-
   def pg_dump
     var_name = "AZURE_DATABASE_URL"
     raise "Set the #{var_name} environment variable, pls." unless ENV[var_name]

@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/ClassLength
-
 class ParticipantsController < ApplicationController
   layout 'taikai'
 

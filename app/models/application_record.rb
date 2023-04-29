@@ -24,20 +24,21 @@ class ApplicationRecord < ActiveRecord::Base
     end
 
     def intermediate_ranked
-      sort_by { |rankable| rankable.intermediate_rank }
-        .group_by { |rankable| rankable.intermediate_rank }
+      sort_by(&:intermediate_rank)
+        .group_by(&:intermediate_rank)
         .each { |_, rankable| rankable.sort_by!(&:index) }
     end
 
     def ranked(validated = true)
       if proxy_association.owner.in_state? :tie_break, :done
-        sort_by { |rankable| rankable.rank }
-          .group_by { |rankable| rankable.rank }
+        sort_by(&:rank)
+          .group_by(&:rank)
           .each { |_, rankable| rankable.sort_by!(&:index) }
       else
-        sort_by { |scoreable| scoreable.score.score_value(validated) }.reverse
-                                                                      .group_by { |scoreable| scoreable.score.score_value(validated) } # group_by works on eq? & hash
-                                                                      .each { |_, scoreables| scoreables.sort_by!(&:index) }
+        sort_by { |scoreable| scoreable.score.score_value(validated) }
+          .reverse
+          .group_by { |scoreable| scoreable.score.score_value(validated) } # group_by works on eq? & hash
+          .each { |_, scoreables| scoreables.sort_by!(&:index) }
       end
     end
   end

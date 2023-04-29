@@ -5,7 +5,7 @@ class Result < ApplicationRecord
   belongs_to :score
   belongs_to :match, optional: true
 
-  ENTEKI_VALUES = [0, 3, 5, 7, 9, 10]
+  ENTEKI_VALUES = [0, 3, 5, 7, 9, 10].freeze
   validates :status, presence: true, if: -> { value.present? }
   validates :value,
             if: -> { score.participant.taikai.scoring == 'enteki' },

@@ -10,15 +10,19 @@ class MarkingController < ApplicationController
 
     if policy(@taikai).admin?
       @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
+                                    .includes({
+                                                participants: { scores: :results }
+                                              },
+                                              teams: [participants: { scores: :results }])
     elsif policy(@taikai).marking_show?
-      @participating_dojos = @taikai.participating_dojos
-                                    .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
-                                    .joins(staffs: [:role])
-                                    .where(
-                                      'staffs.user_id': current_user,
-                                      'role.code': TaikaiPolicy::MARKING_ROLES
-                                    )
+      @participating_dojos =
+        @taikai.participating_dojos
+               .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
+               .joins(staffs: [:role])
+               .where(
+                 'staffs.user_id': current_user,
+                 'role.code': TaikaiPolicy::MARKING_ROLES
+               )
     else
       raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
     end
@@ -63,7 +67,11 @@ class MarkingController < ApplicationController
     @match = Match.find_by(id: params[:match_id])
 
     if @taikai.scoring_kinteki?
-      @result.rotate_status(@participant.scores.find_by(match_id: @match&.id).results.round(@result.round).count(&:marked?) == 4)
+      @result
+        .rotate_status(@participant.scores.find_by(match_id: @match&.id)
+        .results
+        .round(@result.round)
+        .count(&:marked?) == 4)
     else
       @result.rotate_value
     end

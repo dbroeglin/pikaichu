@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/ClassLength
-
 module ApplicationHelper
   class BulmaFormBuilder < ActionView::Helpers::FormBuilder
     delegate :tag, :safe_join, to: :@template

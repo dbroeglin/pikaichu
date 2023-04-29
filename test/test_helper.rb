@@ -36,7 +36,7 @@ end
 
 module AuthorizationHelpers
   def assert_unauthorized
-    assert_equal "You are not permitted to execute this action.", flash[:alert]
+    assert_equal "Vous n'êtes pas autorisé à exécuter cette action.", flash[:alert]
     assert_redirected_to root_url
   end
 end

@@ -1,4 +1,4 @@
-# rubocop:disable Rails/HelperInstanceVariable
+# rubocop:disable Rails/HelperInstanceVariable, Metrics/ModuleLength
 
 module AxlsxExportHelpers
   def taikai_form_icon(taikai)
@@ -96,7 +96,11 @@ module AxlsxExportHelpers
           staff.lastname,
           staff.firstname,
           staff.role.label,
-          staff.participating_dojo.nil? ? "" : "#{staff.participating_dojo.display_name} (#{staff.participating_dojo.dojo.shortname})"
+          if staff.participating_dojo.nil?
+            ""
+          else
+            "#{staff.participating_dojo.display_name} (#{staff.participating_dojo.dojo.shortname})"
+          end
         ]
 
         sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
@@ -228,6 +232,9 @@ module AxlsxExportHelpers
                  [@result_cell_style] * @taikai.total_num_arrows +
                  [@total_cell_style, @result_cell_style]
 
+    col_styles = [@vert_header_row_style] +
+                 [@header_row_style] * (3 + @taikai.total_num_arrows) +
+                 [@vert_header_row_style]
     sheet.add_row [
       t('.results.rank'),
       t('.results.index'),
@@ -239,7 +246,9 @@ module AxlsxExportHelpers
       end
     ).flatten + [
       t('.results.score'),
-    ], style: [@vert_header_row_style] + [@header_row_style] * (3 + @taikai.total_num_arrows) + [@vert_header_row_style], height: 50
+    ],
+                  style: col_styles,
+                  height: 50
 
     columns = ('E'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
@@ -454,7 +463,7 @@ module AxlsxExportHelpers
     end
     last_column = columns[@taikai.total_num_arrows + 1]
 
-    teams_by_score, matches = Leaderboard.new(taikai_id: @taikai.id, validated: true).compute_matches_leaderboard
+    teams_by_score = Leaderboard.new(taikai_id: @taikai.id, validated: true).compute_matches_leaderboard
 
     current_rank = rank = 1
     team_start_line = exaequo_start_line = @current_row + 1

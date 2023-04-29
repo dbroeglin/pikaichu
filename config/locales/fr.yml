@@ -48,6 +48,8 @@ fr:
     one: "%{names} n'a pas été trouvé.e dans la base FFJDA."
     other: "Les kyudojin suivants n'ont pas été trouvés dans la base FFJDA : %{names}."
   or_divider: Ou
+  pundit:
+    not_authorized: Vous n'êtes pas autorisé à exécuter cette action.
   search_results: Résultats de la recherche
   templates:
     taikai_event:

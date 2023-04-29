@@ -30,7 +30,7 @@ class Score < ApplicationRecord
   class PreviousRoundNotValidatedError < StandardError
     attr_reader :previous_round
 
-    def initialize(message = nil, previous_round)
+    def initialize(previous_round, message = nil)
       super(message || "Round #{previous_round} has not been validated")
       @previous_round = previous_round
     end
@@ -56,7 +56,7 @@ class Score < ApplicationRecord
     end
 
     def hash
-      (hits + 100 * (value || 0)).hash
+      [hits, value || 0].hash
     end
 
     def <=>(other)
@@ -103,7 +103,7 @@ class Score < ApplicationRecord
     self.intermediate_value = intermediate_hit_results.map(&:value).compact.sum
 
     save!
-    participant.team.score(match_id).recalculate_team_score if participant.team
+    participant.team&.score(match_id)&.recalculate_team_score
   end
 
   def recalculate_team_score
@@ -126,10 +126,10 @@ class Score < ApplicationRecord
     end
   end
 
-  def first(n)
+  def first(index)
     raise "Score.first should be used only with finalized records" unless finalized?
 
-    first_results = results.first(n)
+    first_results = results.first(index)
 
     Score.new(
       hits: first_results.select(&:status_hit?).size,
@@ -200,6 +200,6 @@ class Score < ApplicationRecord
   def team_xor_participant
     return if team_id.nil? ^ participant_id.nil?
 
-    errors.add(:base, 'Specify a participant or a team, not both: ' + self.inspect)
+    errors.add(:base, "Specify a participant or a team, not both: #{self.inspect}")
   end
 end

@@ -11,7 +11,7 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def admin?
-    user.admin? || taikai.has_roles?(user, ADMIN_ROLES)
+    user.admin? || taikai.roles?(user, ADMIN_ROLES)
   end
 
   def destroy?
@@ -39,11 +39,11 @@ class TaikaiPolicy < ApplicationPolicy
   end
 
   def marking_update?
-    taikai.in_state?(:marking) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES))
+    taikai.in_state?(:marking) && (user.admin? || taikai.roles?(user, MARKING_ROLES))
   end
 
   def rectification_update?
-    taikai.in_state?(:marking) && (user.admin? || taikai.has_roles?(user, ADMIN_ROLES))
+    taikai.in_state?(:marking) && (user.admin? || taikai.roles?(user, ADMIN_ROLES))
   end
 
   def show?
@@ -56,7 +56,7 @@ class TaikaiPolicy < ApplicationPolicy
 
   def tie_break_update?
     # TODO: double check if MARKING_ROLES is right
-    taikai.in_state?(:tie_break) && (user.admin? || taikai.has_roles?(user, MARKING_ROLES))
+    taikai.in_state?(:tie_break) && (user.admin? || taikai.roles?(user, MARKING_ROLES))
   end
 
   def transition_to?

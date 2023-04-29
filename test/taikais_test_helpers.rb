@@ -22,7 +22,7 @@ module TaikaisTestHelpers
 
     click_on taikai.name
 
-    assert_selector 'p.subtitle.is-5 b', text: "#{taikai.shortname}"
+    assert_selector 'p.subtitle.is-5 b', text: taikai.shortname
     assert_taikai_title taikai.name
   end
 

@@ -72,8 +72,8 @@ class TeamingController < ApplicationController
           mixed: true
         )
 
-        group.compact.each_with_index do |participant, index|
-          participant.index_in_team = index + 1
+        group.compact.each_with_index do |participant, participant_index|
+          participant.index_in_team = participant_index + 1
           team.participants << participant
         end
 

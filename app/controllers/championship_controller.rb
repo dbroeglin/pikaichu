@@ -21,7 +21,6 @@ class ChampionshipController < ApplicationController
                                        .includes(participating_dojo: :taikai)
                                        .where("participating_dojos.taikai_id IN (?)", @kinteki_taikais.pluck(:id))
                                        .map do |participant|
-      puts "PARTICIPANT: #{participant.inspect}"
       [participant, participant.score.first(12).score_value]
     end
     @enteki_participants = Participant.joins(:participating_dojo)
@@ -34,7 +33,7 @@ class ChampionshipController < ApplicationController
     @kinteki_individual = rank @kinteki_participants
     @enteki_individual = rank @enteki_participants
 
-    render xlsx: 'export', filename: "Championat #{params[:year]} au #{Date.today.to_fs(:iso8601)}.xlsx"
+    render xlsx: 'export', filename: "Championat #{params[:year]} au #{Time.zone.today.to_fs(:iso8601)}.xlsx"
   end
 
   private
@@ -43,17 +42,20 @@ class ChampionshipController < ApplicationController
     result = participants
              .group_by { |participant, _| participant.display_name }
              .map do |_display_name, pairs|
-               best_3 = pairs
-                        .sort_by { |_participant, score| score }
-                        .last(3)
+               best3 = pairs
+                       .sort_by { |_participant, score| score }
+                       .last(3)
 
                {
-                 participant: best_3.first.first,
-                 club: best_3.first.first.club,
-                 total: best_3.sum(Score::ScoreValue.new(hits: 0)) { |_participant, score_value| score_value }
+                 participant: best3.first.first,
+                 club: best3.first.first.club,
+                 total: best3.sum(Score::ScoreValue.new(hits: 0)) { |_participant, score_value| score_value }
                }
              end
-             .sort_by { |participant| participant[:total] }.reverse
+
+    result = result
+             .sort_by { |participant| participant[:total] }
+             .reverse
 
     result.each_with_index do |participant, index|
       participant[:rank] = index + 1

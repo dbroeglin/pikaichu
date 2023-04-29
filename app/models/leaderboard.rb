@@ -54,14 +54,15 @@ class Leaderboard
     raise "compute_matches_leaderboard works only 'matches' taikais" unless @taikai.form_matches?
 
     # TODO: refactor to taikai
-    @teams_by_score = Match.where(taikai: @taikai, level: 1)
-                           .order(index: :asc)
-                           .map do |match|
-                        match.ordered_teams.compact.map { |team| [team, match] }
-                      end.flatten(1).compact
-                           .map do |team, match|
-      [team, match, team.score(match.id).score_value]
-    end
+    @teams_by_score = Match
+                      .where(taikai: @taikai, level: 1)
+                      .order(index: :asc)
+                      .map { |match| match.ordered_teams.compact.map { |team| [team, match] } }
+                      .flatten(1)
+                      .compact
+                      .map do |team, match|
+                        [team, match, team.score(match.id).score_value]
+                      end
     @matches = @taikai.matches
                       .group_by(&:level)
                       .each { |_, matches| matches.sort_by!(&:index) }

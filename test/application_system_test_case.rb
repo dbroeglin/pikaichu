@@ -27,8 +27,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
                browser_options.add_preference('download.default_directory', DownloadHelpers::PATH)
 
                Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options,
-                                                   timeout: 30).tap do |driver|
-                 driver.browser.download_path = DownloadHelpers::PATH
+                                                   timeout: 30).tap do |drv|
+                 drv.browser.download_path = DownloadHelpers::PATH
                end
              end
              :test

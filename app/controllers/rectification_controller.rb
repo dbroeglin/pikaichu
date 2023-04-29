@@ -7,12 +7,16 @@ class RectificationController < ApplicationController
 
   def edit
     @taikai = authorize Taikai.find(params[:taikai_id]), :rectification_update?
-    @result = Result.joins(score: { participant: { participating_dojo: :taikai } }).where("taikai.id": @taikai.id).find(params[:id])
+    @result = Result
+              .joins(score: { participant: { participating_dojo: :taikai } })
+              .where("taikai.id": @taikai.id).find(params[:id])
   end
 
   def update
     @taikai = authorize Taikai.find(params[:taikai_id]), :rectification_update?
-    @result = Result.joins(score: { participant: { participating_dojo: :taikai } }).where("taikai.id": @taikai.id).find(params[:id])
+    @result = Result
+              .joins(score: { participant: { participating_dojo: :taikai } })
+              .where("taikai.id": @taikai.id).find(params[:id])
 
     previous_status = @result.status
     previous_value = @result.value

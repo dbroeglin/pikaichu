@@ -5,8 +5,6 @@ class RemoveParticipantFromResult < ActiveRecord::Migration[7.0]
         raise "Error with #{result.score} AND #{result.score.inspect}"
       end
       raise "Nil #{result.inspect}" if result.participant_id.nil?
-
-      nil
     end
 
     remove_column :results, :participant_id

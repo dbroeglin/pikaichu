@@ -211,7 +211,6 @@ fr:
     new:
       title: Ajouter un Taikai
     show:
-      category: Catégorie %{category}
       generate: Générer la seconde partie
       overview: Vue d'ensemble de «%{description}»
     states:
@@ -222,6 +221,7 @@ fr:
       now: Maintenant
       you_are_here: Vous êtes ici!
     title:
+      category: Catégorie %{category}
       total_num_arrows:
         one: "%{count} flèche"
         other: "%{count} flèches"

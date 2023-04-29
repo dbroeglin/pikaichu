@@ -61,7 +61,11 @@ class Taikai < ApplicationRecord
   has_many :teams,
            extend: RankedAssociationExtension,
            through: :participating_dojos
-  has_many :events, -> { order created_at: :asc }, class_name: 'TaikaiEvent', dependent: :destroy
+  has_many :events,
+           -> { order created_at: :asc },
+           class_name: 'TaikaiEvent',
+           inverse_of: :taikai,
+           dependent: :destroy
 
   validates :category, inclusion: { in: CATEGORY_VALUES, allow_blank: true }
   validates :shortname,
@@ -111,15 +115,15 @@ class Taikai < ApplicationRecord
     total_num_arrows / num_arrows
   end
 
-  def has_roles?(user, roles)
+  def roles?(user, roles)
     staffs.joins(:role).where(user: user, 'role.code': roles).any?
   end
 
   def finalized?
-    !Result
+    Result
       .joins(score: { participant: :participating_dojo })
       .where("participating_dojos.id": participating_dojos.pluck(:id))
-      .where(final: false).any?
+      .where(final: false).none?
   end
 
   def create_scores
@@ -127,12 +131,8 @@ class Taikai < ApplicationRecord
 
     # TODO: implement for matches
 
-    teams.each do |team|
-      team.create_empty_score
-    end
-    participants.each do |participant|
-      participant.create_empty_score_and_results
-    end
+    teams.each(&:create_empty_score)
+    participants.each(&:create_empty_score_and_results)
     save!
   end
 
@@ -202,7 +202,7 @@ class Taikai < ApplicationRecord
     new_teams = []
     taikai
       .teams.ranked(true).values.flatten
-      .select { |team| !team.mixed } # TODO: generate error if not enough teams
+      .reject(&:mixed) # TODO: generate error if not enough teams
       .first(bracket_size)
       .each_with_index do |team, index|
       logger.info "Creating new team #{team.shortname}"

@@ -1,9 +1,10 @@
+# rubocop:disable Layout/CommentIndentation
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-directories %w[app lib config test]
-  .select { |d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist") }
+directories(%w[app lib config test]
+  .select { |d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist") })
 
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
@@ -19,7 +20,8 @@ directories %w[app lib config test]
 # daemon: false                        # runs the server as a daemon.
 # debugger: false                      # enable ruby-debug gem.
 # environment: 'development'           # changes server environment.
-# force_run: false                     # kills any process that's holding the listen port before attempting to (re)start Rails.
+# force_run: false                     # kills any process that's holding the listen
+                                       #   port before attempting to (re)start Rails.
 # pid_file: 'tmp/pids/[RAILS_ENV].pid' # specify your pid_file.
 # host: 'localhost'                    # server hostname.
 # port: 3000                           # server port number.
