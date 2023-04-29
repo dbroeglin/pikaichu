@@ -98,9 +98,7 @@ class ParticipantsController < ApplicationController
           notices << "#{row['Prénom']} #{row['Nom']}"
         end
 
-        if @participant.save
-          @participant.create_empty_score_and_results
-        else
+        if !@participant.save
           alerts << "#{row['Prénom']} #{row['Nom']}"
         end
       end
