@@ -39,8 +39,11 @@ class ChampionshipController < ApplicationController
   private
 
   def rank(participants)
+    # participants are only from Taikais in categories A, B or C
     result = participants
              .group_by { |participant, _| participant.display_name }
+             # Participants must have at least 3 participations to be ranked
+             .select { |_display_name, pairs| pairs.size >= 3 }
              .map do |_display_name, pairs|
                best3 = pairs
                        .sort_by { |_participant, score| score }

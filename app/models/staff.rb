@@ -36,7 +36,7 @@ class Staff < ApplicationRecord
     if role.taikai_admin? && taikai.staffs.with_role(:taikai_admin).count == 1
       errors.add(:base, :at_least_one_admin)
       throw :abort
-    end
+    end unless destroyed_by_association
   end
 
   def display_name

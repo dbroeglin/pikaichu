@@ -68,7 +68,7 @@ class TaikaisController < ApplicationController
         .where("participating_dojos.taikai_id": @taikai.id)
         .delete_all
 
-      @taikai.destroy
+      @taikai.destroy!
     end
 
     redirect_to action: 'index', status: :see_other
