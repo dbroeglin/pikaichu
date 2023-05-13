@@ -108,6 +108,11 @@ class Match < ApplicationRecord
     ].flatten.compact.join("\n")
   end
 
+  def create_empty_score_and_results
+    initialize_team(1) if team(1)
+    initialize_team(2) if team(2)
+  end
+
   private
 
   def clean_team(team_id)
@@ -118,7 +123,7 @@ class Match < ApplicationRecord
       errors.add(:base, :cant_change_teams_if_results_exist)
       throw :abort
     end
-    team.scores.find_by(match_id: id).destroy!
+    team.score(id).destroy!
     team.participants.each do |participant|
       participant.scores.find_by(match_id: id).destroy!
     end

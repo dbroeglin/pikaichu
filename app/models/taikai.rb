@@ -127,22 +127,28 @@ class Taikai < ApplicationRecord
   end
 
   def create_scores
-    raise "Score creation is not implemented for matches" if form_matches?
-
-    # TODO: implement for matches
-
-    teams.each(&:create_empty_score)
-    participants.each(&:create_empty_score_and_results)
+    if form_matches?
+      matches.each do |match|
+        match.create_empty_score_and_results
+      end
+    else
+      teams.each(&:create_empty_score)
+      participants.each(&:create_empty_score_and_results)
+    end
     save!
   end
 
   def delete_scores
-    raise "Score deletion is not implemented for matches" if form_matches?
-
-    # TODO: implement for matches
-
     participants.each do |participant|
       participant.scores.destroy_all
+    end
+    teams.each do |team|
+      team.scores.destroy_all
+    end
+    if form_matches?
+      matches.each do |match|
+        match.update!(winner: nil)
+      end  
     end
   end
 

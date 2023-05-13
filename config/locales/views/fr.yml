@@ -2,7 +2,7 @@ fr:
   confirm_html: Êtes-vous certain.e&nbsp;?
   confirm_draw_html: Êtes-vous certain.e de vouloir effectuer le tirage au sort&nbsp;?
   confirm_previous_state_html: Êtes-vous certain.e de vouloir revenir à l'état précédent&nbsp;? Vous risquez de perdre les données de l'état courant!
-  confirm_next_state_html: Êtes-vous certain.e de vouloir avancer à l'état suivant&nbsp;?
+  confirm_next_state_html: Êtes-vous certain.e de vouloir avancer à l'état suivant&nbsp;? Revenir à l'état précédent peut vous faire perdre des données!
   edit: Modifier
   destroy: Effacer
   new: Ajouter

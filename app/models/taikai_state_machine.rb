@@ -26,8 +26,6 @@ class TaikaiStateMachine
   # Guards
 
   guard_transition from: :registration, to: :marking do |taikai|
-    # TODO: remove after migration
-    # taikai.id <= 74 || 
     taikai.staffs.map { |staff| staff.role&.code }.uniq.select do |role_code|
       %w[chairman shajo_referee target_referee].include? role_code
     end.size == 3
@@ -36,7 +34,6 @@ class TaikaiStateMachine
   guard_transition from: :marking, to: :tie_break do |taikai|
     # all participating dojos have finalized results
     taikai.participating_dojos.all?(&:finalized?)
-    
   end
 
   # All transitions call-backs
@@ -53,11 +50,11 @@ class TaikaiStateMachine
   # "Forward" transitions call-backs
 
   before_transition(from: :registration, to: :marking) do |taikai, _transition|
-    taikai.create_scores unless taikai.form_matches? # if taikai.id > 74 # TODO: remove after migration
+    taikai.create_scores
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, _transition|
-    taikai.delete_scores unless taikai.form_matches? # if taikai.id > 74 # TODO: remove after migration
+    taikai.delete_scores
   end
 
   # "Backward" transitions call-backs

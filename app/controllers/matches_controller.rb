@@ -16,21 +16,22 @@ class MatchesController < ApplicationController
 
   def update
     @match = Match.find(params[:id])
-    @match.update(match_params)
-
-    if @match.errors.any?
-      @teams = @taikai
-               .participating_dojos.map(&:teams).flatten
-               .sort_by(&:shortname)
-      render :edit, status: :unprocessable_entity
-      return
+    
+    Taikai.transaction do
+      @match.assign_attributes(match_params)
+      changed_winner = @match.changes[:winner]
+      @match.save!
+      if changed_winner
+        @match.select_winner(@match.winner)
+      end
     end
 
-    if @match.update(match_params)
-      redirect_to action: 'index'
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    redirect_to action: 'index'
+  rescue ActiveRecord::RecordInvalid
+    @teams = @taikai
+              .participating_dojos.map(&:teams).flatten
+              .sort_by(&:shortname)
+    render :edit, status: :unprocessable_entity    
   end
 
   def select_winner
