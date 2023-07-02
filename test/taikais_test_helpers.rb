@@ -30,6 +30,14 @@ module TaikaisTestHelpers
     "#{form}-#{distributed ? 'dist' : 'local'}-#{total_num_arrows}-#{enteki ? 'enteki' : 'kinteki'}"
   end
 
+  def find_test_taikai(*data)
+    begin
+      Taikai.find_by!(shortname: taikai_shortname(*data))
+    rescue ActiveRecord::RecordNotFound
+      raise "Taikai #{taikai_shortname(*data)} not found in test database"
+    end
+  end
+
   def assert_taikai_title(name)
     assert_selector 'p.title.is-4', text: name
   end

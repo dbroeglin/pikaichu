@@ -10,7 +10,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   TAIKAI_DATA.each do |data|
-    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+    taikai = find_test_taikai(*data)
 
     test "visiting #{taikai.shortname} leaderboard" do
       taikai.current_user = users(:jean_bon)
@@ -30,7 +30,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   TAIKAI_DATA.reject { |data| data[0] == 'match' }.each do |data|
-    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+    taikai = find_test_taikai(*data)
 
     test "visiting #{taikai.shortname} public leaderboard" do
       taikai.current_user = users(:jean_bon)
@@ -52,7 +52,7 @@ class LeaderboardTest < ApplicationSystemTestCase
   end
 
   TAIKAI_DATA.select { |data| data[0] == 'match' }.each do |data|
-    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+    taikai = find_test_taikai(*data)
 
     test "visiting #{taikai.shortname} public leaderboard" do
       skip "Public leaderboard for matches not implemented yet"

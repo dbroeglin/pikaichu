@@ -29,7 +29,7 @@ class TaikaisExportTest < ApplicationSystemTestCase
   end
 
   TAIKAI_DATA.each do |data|
-    taikai = Taikai.find_by!(shortname: taikai_shortname(*data))
+    taikai = find_test_taikai(*data)
 
     # TODO: refactor test data generation
     taikai_admin = StaffRole.find_by!(code: 'taikai_admin')
