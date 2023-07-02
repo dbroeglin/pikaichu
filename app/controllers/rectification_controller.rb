@@ -42,7 +42,8 @@ class RectificationController < ApplicationController
     end
 
     if ok
-      redirect_to action: :index, params: { taikai_id: @taikai.id }
+      redirect_to show_marking_path(@taikai.id), 
+        notice: t('result_rectified', index: @result.index, round: @result.round, participant: @result.score.participant.display_name, result: @result.to_s)
     else
       render :edit, status: :unprocessable_entity
     end

@@ -41,6 +41,7 @@ fr:
         my_account: Mon compte
   draw_ok: Le tirage au sort a été effectué.
   file_missing: Aucun fichier importé.
+  result_rectified: "Le résultat du tir %{index} de la série %{round} de %{participant} a été rectifié à %{result}."
   import_alerts:
     one: "%{names} n'a pas pu être importé.e."
     other: "Les kyudojin suivants n'ont pas pu être importés : %{names}."
