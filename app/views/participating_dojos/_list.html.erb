@@ -6,10 +6,11 @@
       <th><%= ParticipatingDojo.human_attribute_name :country %></th>
       <th title="<%= t('activerecord.attributes.participating_dojo.num_participants_title') %>"><%= ParticipatingDojo.human_attribute_name :num_participants %></th>
       <th class="has-text-right">
-        <%= link_to new_taikai_participating_dojo_path(taikai),
+        <%- new_is_disabled = !taikai.distributed && taikai.participating_dojos.size > 0 %> 
+        <%= link_to (new_is_disabled ? '#' : new_taikai_participating_dojo_path(taikai)),
           class: "button is-small has-background-light",
           title: t('participating_dojos.new.title'),
-          disabled: !taikai.distributed && taikai.participating_dojos.size > 0 do %>
+          disabled: new_is_disabled do %>
           <span class="icon is-small">
             <i class="fas fa-plus"></i>
           </span>
