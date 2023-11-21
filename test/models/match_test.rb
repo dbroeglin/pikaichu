@@ -3,28 +3,19 @@ require "test_helper"
 class MatchTest < ActiveSupport::TestCase
   setup do
     @taikai = taikais(:matches_dist_4_enteki)
+
     @participating_dojo = @taikai.participating_dojos.first
     @team1 = @participating_dojo.teams[0]
     @team2 = @participating_dojo.teams[1]
     @team3 = @participating_dojo.teams[2]
 
-    @match = Match.create(
-      taikai_id: @taikai.id,
+    @match = Match.find_by(taikai_id: @taikai.id, level: 2, index: 1).build_empty_score_and_results
+    @match.update(
       team1_id: @team1.id,
-      team2_id: @team2.id,
-      level: 2,
-      index: 1
+      team2_id: @team2.id
     )
-    @target_match1 = Match.create(
-      taikai_id: @taikai.id,
-      level: 1,
-      index: 1
-    )
-    @target_match2 = Match.create(
-      taikai_id: @taikai.id,
-      level: 1,
-      index: 2
-    )
+    @target_match1 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 1).build_empty_score_and_results
+    @target_match2 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 2).build_empty_score_and_results
   end
 
   test "select winner in quarter finals" do
@@ -34,10 +25,6 @@ class MatchTest < ActiveSupport::TestCase
     @match.select_winner 1
     @target_match1.reload
     @target_match2.reload
-
-    # puts @match.to_ascii
-    # puts @target_match1.to_ascii
-    # puts @target_match2.to_ascii
 
     assert_equal @team1, @target_match1.team1
     assert_score 0, 0, 0, 0, @target_match1.score(1)
@@ -143,6 +130,9 @@ class MatchTest < ActiveSupport::TestCase
   end
 
   test "change team2" do
+    assert_equal @team1, @match.team1
+    assert_equal @team2, @match.team2
+
     @match.team2_id = @team3.id
     @match.save!
 

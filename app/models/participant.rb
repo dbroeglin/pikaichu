@@ -52,7 +52,7 @@ class Participant < ApplicationRecord
     score && score.results.where('status IS NOT NULL').any?
   end
 
-  def create_empty_score_and_results(match_id = nil)
+  def build_empty_score_and_results(match_id = nil)
     if defined_results?(match_id)
       throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
     end
@@ -60,6 +60,8 @@ class Participant < ApplicationRecord
     score = scores.create!(participant_id: id, match_id: match_id)
     score.create_results taikai.num_rounds, taikai.num_arrows
     scores.reload
+
+    self
   end
 
   def finalized?

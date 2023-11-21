@@ -144,7 +144,16 @@ class CreateFixtures
                form: 'matches',
                distributed: distributed,
                total_num_arrows: 4,
-               scoring: scoring
+               scoring: scoring do |taikai|
+            taikai.matches.create!(index: 1, level: 3, team1: taikai.teams.first, team2: taikai.teams.second)
+            taikai.matches.create!(index: 2, level: 3)
+            taikai.matches.create!(index: 3, level: 3)
+            taikai.matches.create!(index: 4, level: 3)
+            taikai.matches.create!(index: 1, level: 2)
+            taikai.matches.create!(index: 2, level: 2)
+            taikai.matches.create!(index: 1, level: 1)
+            taikai.matches.create!(index: 2, level: 1)
+        end
 
         [12, 20].each do |total_num_arrows|
           create :taikai_with_participating_dojo,

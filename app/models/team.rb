@@ -28,8 +28,10 @@ class Team < ApplicationRecord
     shortname
   end
 
-  def create_empty_score(match_id: nil)
+  def build_empty_score(match_id: nil)
     scores.create!(team_id: id, match_id: match_id)
+
+    self
   end
 
   def score(match_id = nil)

@@ -6,8 +6,8 @@ class TeamScoreTest < ActiveSupport::TestCase
     @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12_enteki)
     @team1 = @participating_dojo.teams.first
 
-    @team1.participants.each(&:create_empty_score_and_results)
-    @score = @team1.create_empty_score
+    @team1.participants.each(&:build_empty_score_and_results)
+    @score = @team1.build_empty_score
   end
 
   test "team finalized" do

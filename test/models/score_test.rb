@@ -6,8 +6,8 @@ class ScoreTest < ActiveSupport::TestCase
   setup do
     # TODO: replace this by factories?
     @participant = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki).participants.first
-    @participant.team.create_empty_score
-    @participant.team.participants.each(&:create_empty_score_and_results)
+    @participant.team.build_empty_score
+    @participant.team.participants.each(&:build_empty_score_and_results)
     @score = @participant.scores.first
   end
 

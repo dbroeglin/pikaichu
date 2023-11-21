@@ -8,7 +8,7 @@ FixtureBuilder.configure do |fbuilder|
     "test/helper/fixture_builder.rb",
     "test/helper/create_fixtures.rb",
   ]
-  fbuilder.skip_tables = %w[audits taikai_transitions ar_internal_metadata schema_migrations]
+  fbuilder.skip_tables = %w[audits ar_internal_metadata schema_migrations]
 
   # now declare objects
   fbuilder.factory do

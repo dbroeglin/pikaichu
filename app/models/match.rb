@@ -51,11 +51,6 @@ class Match < ApplicationRecord
     end
   end
 
-  after_create do
-    initialize_team(1) if team(1)
-    initialize_team(2) if team(2)
-  end
-
   before_update do
     team1_change = changes[:team1_id]
     team2_change = changes[:team2_id]
@@ -73,7 +68,9 @@ class Match < ApplicationRecord
     ActiveRecord::Base.transaction do
       save!
       if level > 1
+        
         match = Match.find_by(taikai_id: taikai_id, level: level - 1, index: ((index - 1) / 2) + 1)
+
         if match.defined_results?
           self.errors.add(:winner, :defined_results_for_target_match)
           raise ActiveRecord::Rollback
@@ -101,16 +98,18 @@ class Match < ApplicationRecord
 
   def to_ascii
     [
-      "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname})",
+      "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname}) [#{id}]",
       ("  Winner: #{winner} - #{team(winner)&.shortname}" if winner),
       (team1&.to_ascii(id) || "").gsub(/^/, "  "),
       (team2&.to_ascii(id) || "").gsub(/^/, "  "),
     ].flatten.compact.join("\n")
   end
 
-  def create_empty_score_and_results
+  def build_empty_score_and_results
     initialize_team(1) if team(1)
     initialize_team(2) if team(2)
+
+    self
   end
 
   private
@@ -131,10 +130,11 @@ class Match < ApplicationRecord
 
   def initialize_team(index)
     t = team(index)
-    t.create_empty_score match_id: id
+    t.build_empty_score match_id: id
     t.participants.each do |participant|
-      participant.create_empty_score_and_results id
+      participant.build_empty_score_and_results id
     end
+
     t.save!
   end
 end

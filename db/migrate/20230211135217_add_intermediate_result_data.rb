@@ -12,7 +12,7 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
         next unless team.score.nil?
 
         Rails.logger.info "  Creating score for team #{team.id} - #{team.shortname}..."
-        score = team.create_empty_score
+        score = team.build_empty_score
         Rails.logger.info "     Created: #{score&.id}"
       end
     end
@@ -22,13 +22,13 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
       taikai.matches.each do |match|
         if match.team1 && match.score(1).nil?
           Rails.logger.info "Creating score for team1 (#{match.team1.id}) #{match.team1.shortname}..."
-          match.team1.create_empty_score(match_id: match.id)
+          match.team1.build_empty_score(match_id: match.id)
 
         end
         next unless match.team2 && match.score(2).nil?
 
         Rails.logger.info "Creating score for team2 (#{match.team2.id}) #{match.team2.shortname}..."
-        match.team2.create_empty_score(match_id: match.id)
+        match.team2.build_empty_score(match_id: match.id)
       end
     end
 

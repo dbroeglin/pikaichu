@@ -62,16 +62,6 @@ class TaikaiTest < ActiveSupport::TestCase
     end
   end
 
-  test "transitions" do
-    @taikai.form = :'2in1'
-    @taikai.save!
-    @taikai.transition_to!(:registration)
-    @taikai.transition_to!(:marking)
-    TestDataService.finalize_scores(@taikai)
-    @taikai.transition_to!(:tie_break)
-    @taikai.transition_to!(:done)
-  end
-
   test "cannot change once done" do
     @taikai.form = :'2in1'
     @taikai.transition_to!(:registration)

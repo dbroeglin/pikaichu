@@ -33,7 +33,7 @@ namespace :ops do
     namespace :fixtures do
       desc "Load fixtures and post-process"
       task full: :'db:fixtures:load' do
-        Participant.all.each(&:create_empty_score_and_results)
+        Participant.all.each(&:build_empty_score_and_results)
       end
     end
   end

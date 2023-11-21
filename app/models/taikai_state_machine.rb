@@ -47,8 +47,6 @@ class TaikaiStateMachine
     )
   end
 
-  # "Forward" transitions call-backs
-
   before_transition(from: :registration, to: :marking) do |taikai, _transition|
     taikai.create_scores
   end
@@ -56,8 +54,6 @@ class TaikaiStateMachine
   before_transition(from: :marking, to: :registration) do |taikai, _transition|
     taikai.delete_scores
   end
-
-  # "Backward" transitions call-backs
 
   before_transition(from: :marking, to: :tie_break) do |taikai, _transition|
     Leaderboard.new(taikai_id: taikai.id, validated: true).compute_intermediate_ranks

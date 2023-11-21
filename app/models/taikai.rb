@@ -129,11 +129,11 @@ class Taikai < ApplicationRecord
   def create_scores
     if form_matches?
       matches.each do |match|
-        match.create_empty_score_and_results
+        match.build_empty_score_and_results
       end
     else
-      teams.each(&:create_empty_score)
-      participants.each(&:create_empty_score_and_results)
+      teams.each(&:build_empty_score)
+      participants.each(&:build_empty_score_and_results)
     end
     save!
   end
@@ -172,6 +172,7 @@ class Taikai < ApplicationRecord
       num_targets: taikai.num_targets,
       tachi_size: taikai.tachi_size,
       distributed: taikai.distributed,
+      category: taikai.category,
       form: 'matches',
       scoring: taikai.scoring,
       current_user: current_user,
