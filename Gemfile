@@ -120,5 +120,4 @@ group :test do
   gem 'apparition'
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
 end
