@@ -1,32 +1,23 @@
 require "test_helper"
+require 'taikais_test_helpers'
 
 class TaikaiTest < ActiveSupport::TestCase
+  include TaikaisTestHelpers
+  extend TaikaisTestHelpers
+
   setup do
     @taikai = taikais(:'2in1_dist_12_enteki')
     @taikai.current_user = users(:jean_bon)
   end
 
-  [
-    [:kinteki, :individual, 12],
-    [:kinteki, :team,       12],
-    [:kinteki, :'2in1',     12],
-    [:kinteki, :individual, 20],
-    [:kinteki, :team,       20],
-    [:kinteki, :'2in1',     20],
-    [:kinteki, :matches, 4],
-    [:enteki,  :individual, 12],
-    [:enteki,  :team,       12],
-    [:enteki,  :'2in1',     12],
-    [:enteki,  :matches, 4],
-    [:enteki,  :individual, 13],
-    [:enteki,  :individual, 22],
-  ].each do |scoring, form, total_num_arrows|
-    test "#{scoring} #{form} #{total_num_arrows} validates" do
+  TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
+    test "#{form} #{distributed ? :distributed : :local} #{total_num_arrows} #{scoring} validates" do
       @taikai.scoring = scoring
+      @taikai.distributed = distributed
       @taikai.form = form
       @taikai.total_num_arrows = total_num_arrows
       @taikai.save!
-    end
+    end if distributed
   end
 
   [

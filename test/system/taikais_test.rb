@@ -26,9 +26,9 @@ class TaikaisTest < ApplicationSystemTestCase
     assert_taikai_title taikai.name
   end
 
-  TAIKAI_DATA.each do |form, distributed, total_num_arrows, enteki|
-    test "creating a #{form} #{distributed} #{total_num_arrows} arrows #{enteki ? 'enteki ' : ''}taikai" do
-      shortname = "new-#{taikai_shortname form, distributed, total_num_arrows, enteki}"
+  TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
+    test "creating a #{form} #{distributed ? :distributed : :local} #{total_num_arrows} arrows #{scoring} taikai" do
+      shortname = "new-#{taikai_shortname form, distributed, total_num_arrows, scoring}"
 
       go_to_taikais
 
@@ -37,7 +37,7 @@ class TaikaisTest < ApplicationSystemTestCase
       assert_selector 'p.title', text: 'Ajouter un Taikai'
 
       form_label = { individual: 'Individuel', team: 'En équipe', '2in1': '2 en 1' }[form]
-      scoring_label = enteki ? 'Enteki' : 'Kinteki'
+      scoring_label = scoring.to_s
 
       fill_in_taikai shortname, form_label, distributed, total_num_arrows, scoring_label
       uncheck 'À distance' unless distributed

@@ -2,12 +2,20 @@ module TaikaisTestHelpers
   TAIKAI_DATA = %I[individual team 2in1].map do |form|
     [false, true].map do |distributed|
       [12, 20].map do |total_num_arrows|
-        [false, true].map do |enteki|
-          [form, distributed, total_num_arrows, enteki]
+        [:enteki, :kinteki].map do |scoring|
+          [form, distributed, total_num_arrows, scoring]
         end
       end
     end
-  end.flatten 3
+  end.concat(%I[matches].map do |form|
+    [false, true].map do |distributed|
+      [4].map do |total_num_arrows|
+        [:enteki, :kinteki].map do |scoring|
+          [form, distributed, total_num_arrows, scoring]
+        end
+      end
+    end
+  end).flatten 3
 
   def go_to_taikais
     visit taikais_url(per: 50)
@@ -26,8 +34,8 @@ module TaikaisTestHelpers
     assert_taikai_title taikai.name
   end
 
-  def taikai_shortname(form, distributed, total_num_arrows, enteki)
-    "#{form}-#{distributed ? 'dist' : 'local'}-#{total_num_arrows}-#{enteki ? 'enteki' : 'kinteki'}"
+  def taikai_shortname(form, distributed, total_num_arrows, scoring)
+    "#{form}-#{distributed ? 'dist' : 'local'}-#{total_num_arrows}-#{scoring}"
   end
 
   def find_test_taikai(*data)

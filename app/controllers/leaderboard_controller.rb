@@ -39,6 +39,8 @@ class LeaderboardController < ApplicationController
       @participants_by_score, @score_by_participating_dojo = leaderboard.compute_individual_leaderboard
     elsif @taikai.form_team?
       @teams_by_score, @score_by_participating_dojo = leaderboard.compute_team_leaderboard
+    elsif @taikai.form_matches?
+      @teams_by_score, @matches = leaderboard.compute_matches_leaderboard
     else
       raise "Unknown taikai form: #{@taikai.form}"
     end
