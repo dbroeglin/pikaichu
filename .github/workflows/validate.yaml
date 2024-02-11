@@ -1,0 +1,64 @@
+name: Validate Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci_validation:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+
+    services:
+      postgres:
+        image: postgres:alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
+          cache-version: 1
+
+      - name: Test
+        run: bundle exec rspec
+      
+      - name: Upload Coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage
+      
+      - name: Lint
+        run: bundle exec rubocop
+      
+      - name: Validate Coverage
+        run: |
+          covered_percent=$(cat coverage/coverage.json | jq -r '.metrics.covered_percent');
+          re='^[+-]?[0-9]+([.||,][0-9]+)?$';
+          if ! [[ $covered_percent =~ $re ]]; then 
+            echo "WARNING :: Couldn't get coverage from artifact.";
+            exit 0
+          fi
+          required_coverage=${{env.MINIMUM_COVERAGE}};
+          if [ $covered_percent -le $required_coverage ]; then
+            echo "Coverage ($covered_percent%) is below the required threshold of $required_coverage%.";
+            exit 1
+          else
+            echo "Coverage ($covered_percent%) passed the required threshold of $required_coverage%."
+          fi
