@@ -21,7 +21,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "h1", "Feuille de marque - #{@taikai.shortname}"
     assert_select "tbody tr th", "Participating Dojo1 Individual Dist 12 Kinteki"
-    assert_select "tbody tr:nth-of-type(4) th", "Participating Dojo2 Individual Dist 12 Kinteki"
+    assert_select "tbody tr:nth-of-type(13) th", "Participating Dojo2 Individual Dist 12 Kinteki"
   end
 
   test "alain_terieur should have access to marking for participating dojo 1" do
