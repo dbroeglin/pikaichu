@@ -38,7 +38,7 @@ FactoryBot.define do
                  # Do not change display_name, used for fixture naming
                  display_name: "Participating Dojo#{index + 1} #{taikai.name}",
                  dojo: dojo,
-                 taikai: taikai)                 
+                 taikai: taikai)         
         end
 
         create(:staff,

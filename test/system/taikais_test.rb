@@ -36,9 +36,9 @@ class TaikaisTest < ApplicationSystemTestCase
 
       assert_selector 'p.title', text: 'Ajouter un Taikai'
 
-      form_label = { 
-        individual: 'Individuel', 
-        team: 'En équipe', 
+      form_label = {
+        individual: 'Individuel',
+        team: 'En équipe',
         '2in1': '2 en 1',
         matches: 'Matchs'
       }[form]

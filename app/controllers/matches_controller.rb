@@ -16,22 +16,20 @@ class MatchesController < ApplicationController
 
   def update
     @match = Match.find(params[:id])
-    
+
     Taikai.transaction do
       @match.assign_attributes(match_params)
       changed_winner = @match.changes[:winner]
       @match.save!
-      if changed_winner
-        @match.select_winner(@match.winner)
-      end
+      @match.select_winner(@match.winner) if changed_winner
     end
 
     redirect_to action: 'index'
   rescue ActiveRecord::RecordInvalid
     @teams = @taikai
-              .participating_dojos.map(&:teams).flatten
-              .sort_by(&:shortname)
-    render :edit, status: :unprocessable_entity    
+             .participating_dojos.map(&:teams).flatten
+             .sort_by(&:shortname)
+    render :edit, status: :unprocessable_entity
   end
 
   def select_winner

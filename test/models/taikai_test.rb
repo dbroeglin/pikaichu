@@ -11,7 +11,8 @@ class TaikaiTest < ActiveSupport::TestCase
   end
 
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
-    test "#{form} #{distributed ? :distributed : :local} #{total_num_arrows} #{scoring} validates" do
+    dist = distributed ? :distributed : :local
+    test "#{form} #{dist} #{total_num_arrows} #{scoring} validates" do
       @taikai.scoring = scoring
       @taikai.distributed = distributed
       @taikai.form = form

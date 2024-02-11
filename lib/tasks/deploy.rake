@@ -1,6 +1,5 @@
 # rubocop:disable Layout/LineLength
 
-
 namespace :deploy do
   desc "Deploy staging"
   task staging: :environment do
@@ -135,7 +134,7 @@ namespace :deploy do
           --resource-group #{rg_name} \
           --location #{region}
       )
-    
+
       sh %(
         az containerapp create \
           --name #{ca_name} \
@@ -181,7 +180,7 @@ namespace :deploy do
           --client-type none \
           --secret name=pikaichu secret-uri=https://#{kv_name}.vault.azure.net/secrets/#{secret_name} \
           --customized-keys AZURE_POSTGRESQL_PASSWORD=DATABASE_URL
-      ) 
+      )
 
       sh %(
         az containerapp registry set \

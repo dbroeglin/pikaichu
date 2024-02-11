@@ -11,8 +11,12 @@ class LeaderboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
-    test "#{form} #{distributed ? :distributed : :local} #{total_num_arrows} #{scoring} should get show" do
-      @taikai = Taikai.find_by(form: form, distributed: distributed, total_num_arrows: total_num_arrows, scoring: scoring)
+    dist = distributed ? :distributed : :local
+    test "#{form} #{dist} #{total_num_arrows} #{scoring} should get show" do
+      @taikai = Taikai.find_by(form: form,
+                               distributed: distributed,
+                               total_num_arrows: total_num_arrows,
+                               scoring: scoring)
       @taikai.current_user = users(:jean_bon)
 
       @taikai.transition_to! :registration
