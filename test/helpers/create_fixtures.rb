@@ -149,10 +149,10 @@ class CreateFixtures
             taikai.matches.create!(index: 2, level: 3, team1: taikai.teams[2], team2: taikai.teams[3])
             taikai.matches.create!(index: 3, level: 3, team1: taikai.teams[4], team2: taikai.teams[5])
             taikai.matches.create!(index: 4, level: 3, team1: taikai.teams[6], team2: taikai.teams[7])
-            taikai.matches.create!(index: 1, level: 2, team1: taikai.teams[0], team2: taikai.teams[1])
-            taikai.matches.create!(index: 2, level: 2, team1: taikai.teams[2], team2: taikai.teams[3])
-            taikai.matches.create!(index: 1, level: 1, team1: taikai.teams[0], team2: taikai.teams[1])
-            taikai.matches.create!(index: 2, level: 1, team1: taikai.teams[2], team2: taikai.teams[3])
+            taikai.matches.create!(index: 1, level: 2)
+            taikai.matches.create!(index: 2, level: 2)
+            taikai.matches.create!(index: 1, level: 1)
+            taikai.matches.create!(index: 2, level: 1)
         end
 
         [12, 20].each do |total_num_arrows|

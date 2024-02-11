@@ -4,10 +4,10 @@ FactoryBot.define do
 
     factory :participating_dojo_with_participants do
       transient do
-        participant_count { 24 }
+        participant_count { 12 }
       end
       transient do
-        team_count { 8 }
+        team_count { 4 }
       end
 
       after(:create) do |participating_dojo, evaluator|
