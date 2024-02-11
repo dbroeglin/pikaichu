@@ -19,7 +19,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev curl
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -33,6 +33,24 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
+RUN \
+  NODE_VERSION="20.11.0" \
+  && NODE_DL_URL="https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" \
+  && echo "Downloading Node.js binary from ${NODE_DL_URL}" \
+  && curl -fSL ${NODE_DL_URL} -o /tmp/nodejs.tar.xz \
+  # extract to /opt
+  && mkdir /opt/nodejs \
+  && tar -xf /tmp/nodejs.tar.xz -C /opt/nodejs --strip-components=1 \
+  && rm -rf /opt/nodejs/include \
+  && rm -f /tmp/nodejs.tar.xz \
+  # install the binaries in the path \
+  && ln -s /opt/nodejs/bin/* /usr/local/bin/ \
+  && echo "Done installing NodeJS"
+
+RUN npm install --global yarn \
+  && ln -s /opt/nodejs/bin/yarn /usr/local/bin/ \
+  && echo "Done installing Yarn"
+
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
@@ -42,7 +60,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq5 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
