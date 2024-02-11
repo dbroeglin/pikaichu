@@ -28,7 +28,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
                Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options,
                                                    timeout: 30).tap do |drv|
-                 drv.browser.download_path = DownloadHelpers::PATH
+                 #drv.download_path = DownloadHelpers::PATH
                end
              end
              :test

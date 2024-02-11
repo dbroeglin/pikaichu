@@ -8,10 +8,13 @@ Bundler.require(*Rails.groups)
 
 module PiKaichu
   class Application < Rails::Application
-    ENV['FIXTURES_PATH'] = 'test/fixtures'
-
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w(assets tasks))
 
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}')]
 

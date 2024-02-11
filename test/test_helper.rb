@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "taikais_test_helpers"
 
 Faker::Config.random = Random.new(42)
 

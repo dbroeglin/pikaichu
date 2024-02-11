@@ -1,44 +1,62 @@
-FROM ruby:3.2.2-slim-bullseye
+# syntax = docker/dockerfile:1
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    postgresql-client \
-   nodejs npm \
-    git \
-    && npm install -g yarn \
-    && gem update --system \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
+ARG RUBY_VERSION=3.3.0
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
-# use a global path instead of vendor
-ENV GEM_HOME="/usr/local/bundle"
-ENV BUNDLE_PATH="$GEM_HOME"
-ENV BUNDLE_SILENCE_ROOT_WARNING=1
-ENV BUNDLE_DEPLOYMENT=1
-ENV BUNDLE_APP_CONFIG="$GEM_HOME"
-ENV BUNDLE_WITHOUT='development:test'
-ENV PATH="$GEM_HOME/bin:$BUNDLE_PATH/gems/bin:${PATH}"
-ENV RAILS_ENV=production
-ENV RAILS_SERVE_STATIC_FILES=true
-ENV PORT=80
+# Rails app lives here
+WORKDIR /rails
 
-# make 'docker logs' work
-ENV RAILS_LOG_TO_STDOUT=true
+# Set production environment
+ENV RAILS_ENV="production" \
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development"
 
-WORKDIR /app
 
-COPY Gemfile Gemfile.lock /app/
-RUN bundle install -j4
+# Throw-away build stage to reduce size of final image
+FROM base as build
 
-COPY package.json yarn.lock /app/
-RUN yarn install
+# Install packages needed to build gems
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config
 
-COPY . /app
-RUN rm -f tmp/pids/server.pid
-RUN mkdir -p tmp/pids
-RUN bin/rails assets:precompile
+# Install application gems
+COPY Gemfile Gemfile.lock ./
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    bundle exec bootsnap precompile --gemfile
 
-ARG BUILD_VERSION
-ENV APP_VERSION="v$BUILD_VERSION"
+# Copy application code
+COPY . .
 
-CMD bundle exec puma -C config/puma.rb
+# Precompile bootsnap code for faster boot times
+RUN bundle exec bootsnap precompile app/ lib/
+
+# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+
+
+# Final stage for app image
+FROM base
+
+# Install packages needed for deployment
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Copy built artifacts: gems, application
+COPY --from=build /usr/local/bundle /usr/local/bundle
+COPY --from=build /rails /rails
+
+# Run and own only the runtime files as a non-root user for security
+RUN useradd rails --create-home --shell /bin/bash && \
+    chown -R rails:rails db log storage tmp
+USER rails:rails
+
+# Entrypoint prepares the database.
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
+# Start the server by default, this can be overwritten at runtime
+EXPOSE 3000
+CMD ["./bin/rails", "server"]
