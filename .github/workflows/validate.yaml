@@ -36,7 +36,7 @@ jobs:
           cache-version: 1
 
       - name: Test
-        run: bundle exec rspec
+        run: bundle exec rails test:models test:controllers test:integration
       
       - name: Upload Coverage
         uses: actions/upload-artifact@v3
