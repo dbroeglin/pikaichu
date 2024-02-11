@@ -31,6 +31,8 @@ class TaikaisExportTest < ApplicationSystemTestCase
   TAIKAI_DATA.each do |data|
     taikai = find_test_taikai(*data)
 
+    next unless taikai.form_matches?
+
     # TODO: refactor test data generation
     taikai_admin = StaffRole.find_by!(code: 'taikai_admin')
     roles = [

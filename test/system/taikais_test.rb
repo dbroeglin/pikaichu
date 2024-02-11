@@ -36,8 +36,13 @@ class TaikaisTest < ApplicationSystemTestCase
 
       assert_selector 'p.title', text: 'Ajouter un Taikai'
 
-      form_label = { individual: 'Individuel', team: 'En équipe', '2in1': '2 en 1' }[form]
-      scoring_label = scoring.to_s
+      form_label = { 
+        individual: 'Individuel', 
+        team: 'En équipe', 
+        '2in1': '2 en 1',
+        matches: 'Matchs'
+      }[form]
+      scoring_label = scoring.to_s.capitalize
 
       fill_in_taikai shortname, form_label, distributed, total_num_arrows, scoring_label
       uncheck 'À distance' unless distributed

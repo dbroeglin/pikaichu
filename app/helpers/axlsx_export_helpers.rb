@@ -417,7 +417,8 @@ module AxlsxExportHelpers
 
       sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
 
-      export_matches_results_table sheet, @taikai.participating_dojos
+      # TODO: should we fix this and display results? 
+      #export_matches_results_table sheet, @taikai.participating_dojos
 
       # if @taikai.distributed?
       #   @taikai.participating_dojos.each do |participating_dojo|
