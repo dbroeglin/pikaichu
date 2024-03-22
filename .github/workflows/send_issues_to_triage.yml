@@ -1,0 +1,30 @@
+name: Add new issues to To triage column
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-project-column:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project column
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+            const projectId = '1'; // Replace with your Project ID
+            const columnId = '2'; // Replace with your Column ID
+
+            // Get the issue
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
+            // Add the issue to the project column
+            await github.rest.projects.createCard({
+              column_id: columnId,
+              content_id: issue.id,
+              content_type: 'Issue',
+            });
