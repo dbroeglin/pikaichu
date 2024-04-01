@@ -73,6 +73,6 @@ fr:
       message: Impossible de passer à l'étape "%{target_state}".
       registration_marking: >
         Pour passer à l'étape "Marquage" le staff doit disposer au minimum d'un Directeur de tournoi, d'un
-        Juge de Shaho et d'un Juge de Cible.
+        Juge de Shajo et d'un Juge de Cible.
       marking_tie_break: >
         Pour passer à l'étape "Tie-Break" tous les résultats de tous les Clubs hôtes doivent être validés.
