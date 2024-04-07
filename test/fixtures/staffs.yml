@@ -7,8 +7,8 @@ staffs_001:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:53.670766000 Z
-  updated_at: 2024-02-11 14:39:53.670766000 Z
+  created_at: 2024-04-07 09:11:01.561496000 Z
+  updated_at: 2024-04-07 09:11:01.561496000 Z
 staffs_002:
   id: 2
   firstname: Vince
@@ -17,8 +17,8 @@ staffs_002:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.120886000 Z
-  updated_at: 2024-02-11 14:39:54.120886000 Z
+  created_at: 2024-04-07 09:11:01.710882000 Z
+  updated_at: 2024-04-07 09:11:01.710882000 Z
 staffs_003:
   id: 3
   firstname: Alain
@@ -27,8 +27,8 @@ staffs_003:
   role_id: 2
   user_id: 3
   participating_dojo_id: 1
-  created_at: 2024-02-11 14:39:54.134191000 Z
-  updated_at: 2024-02-11 14:39:54.134191000 Z
+  created_at: 2024-04-07 09:11:01.717033000 Z
+  updated_at: 2024-04-07 09:11:01.717033000 Z
 staffs_004:
   id: 4
   firstname: Pat
@@ -37,8 +37,8 @@ staffs_004:
   role_id: 5
   user_id: 5
   participating_dojo_id: 1
-  created_at: 2024-02-11 14:39:54.143686000 Z
-  updated_at: 2024-02-11 14:39:54.143686000 Z
+  created_at: 2024-04-07 09:11:01.720496000 Z
+  updated_at: 2024-04-07 09:11:01.720496000 Z
 staffs_005:
   id: 5
   firstname: Larry
@@ -47,8 +47,8 @@ staffs_005:
   role_id: 7
   user_id:
   participating_dojo_id: 1
-  created_at: 2024-02-11 14:39:54.152170000 Z
-  updated_at: 2024-02-11 14:39:54.152170000 Z
+  created_at: 2024-04-07 09:11:01.723151000 Z
+  updated_at: 2024-04-07 09:11:01.723151000 Z
 staffs_006:
   id: 6
   firstname: Marc
@@ -57,8 +57,8 @@ staffs_006:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.269072000 Z
-  updated_at: 2024-02-11 14:39:54.269072000 Z
+  created_at: 2024-04-07 09:11:01.757322000 Z
+  updated_at: 2024-04-07 09:11:01.757322000 Z
 staffs_007:
   id: 7
   firstname: Vince
@@ -67,8 +67,8 @@ staffs_007:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.604193000 Z
-  updated_at: 2024-02-11 14:39:54.604193000 Z
+  created_at: 2024-04-07 09:11:01.873246000 Z
+  updated_at: 2024-04-07 09:11:01.873246000 Z
 staffs_008:
   id: 8
   firstname: Alain
@@ -77,8 +77,8 @@ staffs_008:
   role_id: 2
   user_id: 3
   participating_dojo_id: 3
-  created_at: 2024-02-11 14:39:54.613436000 Z
-  updated_at: 2024-02-11 14:39:54.613436000 Z
+  created_at: 2024-04-07 09:11:01.876290000 Z
+  updated_at: 2024-04-07 09:11:01.876290000 Z
 staffs_009:
   id: 9
   firstname: Pat
@@ -87,8 +87,8 @@ staffs_009:
   role_id: 5
   user_id: 5
   participating_dojo_id: 3
-  created_at: 2024-02-11 14:39:54.621042000 Z
-  updated_at: 2024-02-11 14:39:54.621042000 Z
+  created_at: 2024-04-07 09:11:01.879198000 Z
+  updated_at: 2024-04-07 09:11:01.879198000 Z
 staffs_010:
   id: 10
   firstname: Larry
@@ -97,8 +97,8 @@ staffs_010:
   role_id: 7
   user_id:
   participating_dojo_id: 3
-  created_at: 2024-02-11 14:39:54.627853000 Z
-  updated_at: 2024-02-11 14:39:54.627853000 Z
+  created_at: 2024-04-07 09:11:01.882492000 Z
+  updated_at: 2024-04-07 09:11:01.882492000 Z
 staffs_011:
   id: 11
   firstname: Marc
@@ -107,8 +107,8 @@ staffs_011:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.642566000 Z
-  updated_at: 2024-02-11 14:39:54.642566000 Z
+  created_at: 2024-04-07 09:11:01.888359000 Z
+  updated_at: 2024-04-07 09:11:01.888359000 Z
 staffs_012:
   id: 12
   firstname: Vince
@@ -117,8 +117,8 @@ staffs_012:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.864901000 Z
-  updated_at: 2024-02-11 14:39:54.864901000 Z
+  created_at: 2024-04-07 09:11:01.970849000 Z
+  updated_at: 2024-04-07 09:11:01.970849000 Z
 staffs_013:
   id: 13
   firstname: Alain
@@ -127,8 +127,8 @@ staffs_013:
   role_id: 2
   user_id: 3
   participating_dojo_id: 5
-  created_at: 2024-02-11 14:39:54.873760000 Z
-  updated_at: 2024-02-11 14:39:54.873760000 Z
+  created_at: 2024-04-07 09:11:01.974054000 Z
+  updated_at: 2024-04-07 09:11:01.974054000 Z
 staffs_014:
   id: 14
   firstname: Pat
@@ -137,8 +137,8 @@ staffs_014:
   role_id: 5
   user_id: 5
   participating_dojo_id: 5
-  created_at: 2024-02-11 14:39:54.879692000 Z
-  updated_at: 2024-02-11 14:39:54.879692000 Z
+  created_at: 2024-04-07 09:11:01.976715000 Z
+  updated_at: 2024-04-07 09:11:01.976715000 Z
 staffs_015:
   id: 15
   firstname: Larry
@@ -147,8 +147,8 @@ staffs_015:
   role_id: 7
   user_id:
   participating_dojo_id: 5
-  created_at: 2024-02-11 14:39:54.886239000 Z
-  updated_at: 2024-02-11 14:39:54.886239000 Z
+  created_at: 2024-04-07 09:11:01.978863000 Z
+  updated_at: 2024-04-07 09:11:01.978863000 Z
 staffs_016:
   id: 16
   firstname: Marc
@@ -157,8 +157,8 @@ staffs_016:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:54.899458000 Z
-  updated_at: 2024-02-11 14:39:54.899458000 Z
+  created_at: 2024-04-07 09:11:01.986624000 Z
+  updated_at: 2024-04-07 09:11:01.986624000 Z
 staffs_017:
   id: 17
   firstname: Vince
@@ -167,8 +167,8 @@ staffs_017:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:55.204514000 Z
-  updated_at: 2024-02-11 14:39:55.204514000 Z
+  created_at: 2024-04-07 09:11:02.100674000 Z
+  updated_at: 2024-04-07 09:11:02.100674000 Z
 staffs_018:
   id: 18
   firstname: Alain
@@ -177,8 +177,8 @@ staffs_018:
   role_id: 2
   user_id: 3
   participating_dojo_id: 7
-  created_at: 2024-02-11 14:39:55.213329000 Z
-  updated_at: 2024-02-11 14:39:55.213329000 Z
+  created_at: 2024-04-07 09:11:02.103670000 Z
+  updated_at: 2024-04-07 09:11:02.103670000 Z
 staffs_019:
   id: 19
   firstname: Pat
@@ -187,8 +187,8 @@ staffs_019:
   role_id: 5
   user_id: 5
   participating_dojo_id: 7
-  created_at: 2024-02-11 14:39:55.220806000 Z
-  updated_at: 2024-02-11 14:39:55.220806000 Z
+  created_at: 2024-04-07 09:11:02.107131000 Z
+  updated_at: 2024-04-07 09:11:02.107131000 Z
 staffs_020:
   id: 20
   firstname: Larry
@@ -197,8 +197,8 @@ staffs_020:
   role_id: 7
   user_id:
   participating_dojo_id: 7
-  created_at: 2024-02-11 14:39:55.227609000 Z
-  updated_at: 2024-02-11 14:39:55.227609000 Z
+  created_at: 2024-04-07 09:11:02.109402000 Z
+  updated_at: 2024-04-07 09:11:02.109402000 Z
 staffs_021:
   id: 21
   firstname: Marc
@@ -207,8 +207,8 @@ staffs_021:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:55.242264000 Z
-  updated_at: 2024-02-11 14:39:55.242264000 Z
+  created_at: 2024-04-07 09:11:02.115402000 Z
+  updated_at: 2024-04-07 09:11:02.115402000 Z
 staffs_022:
   id: 22
   firstname: Vince
@@ -217,8 +217,8 @@ staffs_022:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:55.541726000 Z
-  updated_at: 2024-02-11 14:39:55.541726000 Z
+  created_at: 2024-04-07 09:11:02.222417000 Z
+  updated_at: 2024-04-07 09:11:02.222417000 Z
 staffs_023:
   id: 23
   firstname: Alain
@@ -227,8 +227,8 @@ staffs_023:
   role_id: 2
   user_id: 3
   participating_dojo_id: 9
-  created_at: 2024-02-11 14:39:55.548863000 Z
-  updated_at: 2024-02-11 14:39:55.548863000 Z
+  created_at: 2024-04-07 09:11:02.226642000 Z
+  updated_at: 2024-04-07 09:11:02.226642000 Z
 staffs_024:
   id: 24
   firstname: Pat
@@ -237,8 +237,8 @@ staffs_024:
   role_id: 5
   user_id: 5
   participating_dojo_id: 9
-  created_at: 2024-02-11 14:39:55.555048000 Z
-  updated_at: 2024-02-11 14:39:55.555048000 Z
+  created_at: 2024-04-07 09:11:02.229586000 Z
+  updated_at: 2024-04-07 09:11:02.229586000 Z
 staffs_025:
   id: 25
   firstname: Larry
@@ -247,8 +247,8 @@ staffs_025:
   role_id: 7
   user_id:
   participating_dojo_id: 9
-  created_at: 2024-02-11 14:39:55.560364000 Z
-  updated_at: 2024-02-11 14:39:55.560364000 Z
+  created_at: 2024-04-07 09:11:02.232000000 Z
+  updated_at: 2024-04-07 09:11:02.232000000 Z
 staffs_026:
   id: 26
   firstname: Marc
@@ -257,8 +257,8 @@ staffs_026:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:55.572217000 Z
-  updated_at: 2024-02-11 14:39:55.572217000 Z
+  created_at: 2024-04-07 09:11:02.237922000 Z
+  updated_at: 2024-04-07 09:11:02.237922000 Z
 staffs_027:
   id: 27
   firstname: Vince
@@ -267,8 +267,8 @@ staffs_027:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.042363000 Z
-  updated_at: 2024-02-11 14:39:56.042363000 Z
+  created_at: 2024-04-07 09:11:02.314005000 Z
+  updated_at: 2024-04-07 09:11:02.314005000 Z
 staffs_028:
   id: 28
   firstname: Alain
@@ -277,8 +277,8 @@ staffs_028:
   role_id: 2
   user_id: 3
   participating_dojo_id: 11
-  created_at: 2024-02-11 14:39:56.051034000 Z
-  updated_at: 2024-02-11 14:39:56.051034000 Z
+  created_at: 2024-04-07 09:11:02.317354000 Z
+  updated_at: 2024-04-07 09:11:02.317354000 Z
 staffs_029:
   id: 29
   firstname: Pat
@@ -287,8 +287,8 @@ staffs_029:
   role_id: 5
   user_id: 5
   participating_dojo_id: 11
-  created_at: 2024-02-11 14:39:56.059713000 Z
-  updated_at: 2024-02-11 14:39:56.059713000 Z
+  created_at: 2024-04-07 09:11:02.320017000 Z
+  updated_at: 2024-04-07 09:11:02.320017000 Z
 staffs_030:
   id: 30
   firstname: Larry
@@ -297,8 +297,8 @@ staffs_030:
   role_id: 7
   user_id:
   participating_dojo_id: 11
-  created_at: 2024-02-11 14:39:56.065780000 Z
-  updated_at: 2024-02-11 14:39:56.065780000 Z
+  created_at: 2024-04-07 09:11:02.322173000 Z
+  updated_at: 2024-04-07 09:11:02.322173000 Z
 staffs_031:
   id: 31
   firstname: Marc
@@ -307,8 +307,8 @@ staffs_031:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.079645000 Z
-  updated_at: 2024-02-11 14:39:56.079645000 Z
+  created_at: 2024-04-07 09:11:02.328323000 Z
+  updated_at: 2024-04-07 09:11:02.328323000 Z
 staffs_032:
   id: 32
   firstname: Vince
@@ -317,8 +317,8 @@ staffs_032:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.393950000 Z
-  updated_at: 2024-02-11 14:39:56.393950000 Z
+  created_at: 2024-04-07 09:11:02.435812000 Z
+  updated_at: 2024-04-07 09:11:02.435812000 Z
 staffs_033:
   id: 33
   firstname: Alain
@@ -327,8 +327,8 @@ staffs_033:
   role_id: 2
   user_id: 3
   participating_dojo_id: 13
-  created_at: 2024-02-11 14:39:56.403642000 Z
-  updated_at: 2024-02-11 14:39:56.403642000 Z
+  created_at: 2024-04-07 09:11:02.439605000 Z
+  updated_at: 2024-04-07 09:11:02.439605000 Z
 staffs_034:
   id: 34
   firstname: Pat
@@ -337,8 +337,8 @@ staffs_034:
   role_id: 5
   user_id: 5
   participating_dojo_id: 13
-  created_at: 2024-02-11 14:39:56.412133000 Z
-  updated_at: 2024-02-11 14:39:56.412133000 Z
+  created_at: 2024-04-07 09:11:02.442207000 Z
+  updated_at: 2024-04-07 09:11:02.442207000 Z
 staffs_035:
   id: 35
   firstname: Larry
@@ -347,8 +347,8 @@ staffs_035:
   role_id: 7
   user_id:
   participating_dojo_id: 13
-  created_at: 2024-02-11 14:39:56.418967000 Z
-  updated_at: 2024-02-11 14:39:56.418967000 Z
+  created_at: 2024-04-07 09:11:02.444358000 Z
+  updated_at: 2024-04-07 09:11:02.444358000 Z
 staffs_036:
   id: 36
   firstname: Marc
@@ -357,8 +357,8 @@ staffs_036:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.436464000 Z
-  updated_at: 2024-02-11 14:39:56.436464000 Z
+  created_at: 2024-04-07 09:11:02.449774000 Z
+  updated_at: 2024-04-07 09:11:02.449774000 Z
 staffs_037:
   id: 37
   firstname: Vince
@@ -367,8 +367,8 @@ staffs_037:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.606807000 Z
-  updated_at: 2024-02-11 14:39:56.606807000 Z
+  created_at: 2024-04-07 09:11:02.505934000 Z
+  updated_at: 2024-04-07 09:11:02.505934000 Z
 staffs_038:
   id: 38
   firstname: Alain
@@ -377,8 +377,8 @@ staffs_038:
   role_id: 2
   user_id: 3
   participating_dojo_id: 15
-  created_at: 2024-02-11 14:39:56.617700000 Z
-  updated_at: 2024-02-11 14:39:56.617700000 Z
+  created_at: 2024-04-07 09:11:02.509160000 Z
+  updated_at: 2024-04-07 09:11:02.509160000 Z
 staffs_039:
   id: 39
   firstname: Pat
@@ -387,8 +387,8 @@ staffs_039:
   role_id: 5
   user_id: 5
   participating_dojo_id: 15
-  created_at: 2024-02-11 14:39:56.627186000 Z
-  updated_at: 2024-02-11 14:39:56.627186000 Z
+  created_at: 2024-04-07 09:11:02.511806000 Z
+  updated_at: 2024-04-07 09:11:02.511806000 Z
 staffs_040:
   id: 40
   firstname: Larry
@@ -397,8 +397,8 @@ staffs_040:
   role_id: 7
   user_id:
   participating_dojo_id: 15
-  created_at: 2024-02-11 14:39:56.635253000 Z
-  updated_at: 2024-02-11 14:39:56.635253000 Z
+  created_at: 2024-04-07 09:11:02.513914000 Z
+  updated_at: 2024-04-07 09:11:02.513914000 Z
 staffs_041:
   id: 41
   firstname: Marc
@@ -407,8 +407,8 @@ staffs_041:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.710354000 Z
-  updated_at: 2024-02-11 14:39:56.710354000 Z
+  created_at: 2024-04-07 09:11:02.537948000 Z
+  updated_at: 2024-04-07 09:11:02.537948000 Z
 staffs_042:
   id: 42
   firstname: Vince
@@ -417,8 +417,8 @@ staffs_042:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.851885000 Z
-  updated_at: 2024-02-11 14:39:56.851885000 Z
+  created_at: 2024-04-07 09:11:02.593108000 Z
+  updated_at: 2024-04-07 09:11:02.593108000 Z
 staffs_043:
   id: 43
   firstname: Alain
@@ -427,8 +427,8 @@ staffs_043:
   role_id: 2
   user_id: 3
   participating_dojo_id: 16
-  created_at: 2024-02-11 14:39:56.859297000 Z
-  updated_at: 2024-02-11 14:39:56.859297000 Z
+  created_at: 2024-04-07 09:11:02.595992000 Z
+  updated_at: 2024-04-07 09:11:02.595992000 Z
 staffs_044:
   id: 44
   firstname: Pat
@@ -437,8 +437,8 @@ staffs_044:
   role_id: 5
   user_id: 5
   participating_dojo_id: 16
-  created_at: 2024-02-11 14:39:56.865278000 Z
-  updated_at: 2024-02-11 14:39:56.865278000 Z
+  created_at: 2024-04-07 09:11:02.598391000 Z
+  updated_at: 2024-04-07 09:11:02.598391000 Z
 staffs_045:
   id: 45
   firstname: Larry
@@ -447,8 +447,8 @@ staffs_045:
   role_id: 7
   user_id:
   participating_dojo_id: 16
-  created_at: 2024-02-11 14:39:56.870161000 Z
-  updated_at: 2024-02-11 14:39:56.870161000 Z
+  created_at: 2024-04-07 09:11:02.600483000 Z
+  updated_at: 2024-04-07 09:11:02.600483000 Z
 staffs_046:
   id: 46
   firstname: Marc
@@ -457,8 +457,8 @@ staffs_046:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.886565000 Z
-  updated_at: 2024-02-11 14:39:56.886565000 Z
+  created_at: 2024-04-07 09:11:02.607360000 Z
+  updated_at: 2024-04-07 09:11:02.607360000 Z
 staffs_047:
   id: 47
   firstname: Vince
@@ -467,8 +467,8 @@ staffs_047:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:56.996293000 Z
-  updated_at: 2024-02-11 14:39:56.996293000 Z
+  created_at: 2024-04-07 09:11:02.652975000 Z
+  updated_at: 2024-04-07 09:11:02.652975000 Z
 staffs_048:
   id: 48
   firstname: Alain
@@ -477,8 +477,8 @@ staffs_048:
   role_id: 2
   user_id: 3
   participating_dojo_id: 17
-  created_at: 2024-02-11 14:39:57.007240000 Z
-  updated_at: 2024-02-11 14:39:57.007240000 Z
+  created_at: 2024-04-07 09:11:02.657739000 Z
+  updated_at: 2024-04-07 09:11:02.657739000 Z
 staffs_049:
   id: 49
   firstname: Pat
@@ -487,8 +487,8 @@ staffs_049:
   role_id: 5
   user_id: 5
   participating_dojo_id: 17
-  created_at: 2024-02-11 14:39:57.014597000 Z
-  updated_at: 2024-02-11 14:39:57.014597000 Z
+  created_at: 2024-04-07 09:11:02.661255000 Z
+  updated_at: 2024-04-07 09:11:02.661255000 Z
 staffs_050:
   id: 50
   firstname: Larry
@@ -497,8 +497,8 @@ staffs_050:
   role_id: 7
   user_id:
   participating_dojo_id: 17
-  created_at: 2024-02-11 14:39:57.022227000 Z
-  updated_at: 2024-02-11 14:39:57.022227000 Z
+  created_at: 2024-04-07 09:11:02.664015000 Z
+  updated_at: 2024-04-07 09:11:02.664015000 Z
 staffs_051:
   id: 51
   firstname: Marc
@@ -507,8 +507,8 @@ staffs_051:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.039099000 Z
-  updated_at: 2024-02-11 14:39:57.039099000 Z
+  created_at: 2024-04-07 09:11:02.670391000 Z
+  updated_at: 2024-04-07 09:11:02.670391000 Z
 staffs_052:
   id: 52
   firstname: Vince
@@ -517,8 +517,8 @@ staffs_052:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.205208000 Z
-  updated_at: 2024-02-11 14:39:57.205208000 Z
+  created_at: 2024-04-07 09:11:02.730243000 Z
+  updated_at: 2024-04-07 09:11:02.730243000 Z
 staffs_053:
   id: 53
   firstname: Alain
@@ -527,8 +527,8 @@ staffs_053:
   role_id: 2
   user_id: 3
   participating_dojo_id: 18
-  created_at: 2024-02-11 14:39:57.214141000 Z
-  updated_at: 2024-02-11 14:39:57.214141000 Z
+  created_at: 2024-04-07 09:11:02.733951000 Z
+  updated_at: 2024-04-07 09:11:02.733951000 Z
 staffs_054:
   id: 54
   firstname: Pat
@@ -537,8 +537,8 @@ staffs_054:
   role_id: 5
   user_id: 5
   participating_dojo_id: 18
-  created_at: 2024-02-11 14:39:57.223973000 Z
-  updated_at: 2024-02-11 14:39:57.223973000 Z
+  created_at: 2024-04-07 09:11:02.737493000 Z
+  updated_at: 2024-04-07 09:11:02.737493000 Z
 staffs_055:
   id: 55
   firstname: Larry
@@ -547,8 +547,8 @@ staffs_055:
   role_id: 7
   user_id:
   participating_dojo_id: 18
-  created_at: 2024-02-11 14:39:57.232186000 Z
-  updated_at: 2024-02-11 14:39:57.232186000 Z
+  created_at: 2024-04-07 09:11:02.740251000 Z
+  updated_at: 2024-04-07 09:11:02.740251000 Z
 staffs_056:
   id: 56
   firstname: Marc
@@ -557,8 +557,8 @@ staffs_056:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.250014000 Z
-  updated_at: 2024-02-11 14:39:57.250014000 Z
+  created_at: 2024-04-07 09:11:02.746376000 Z
+  updated_at: 2024-04-07 09:11:02.746376000 Z
 staffs_057:
   id: 57
   firstname: Vince
@@ -567,8 +567,8 @@ staffs_057:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.397237000 Z
-  updated_at: 2024-02-11 14:39:57.397237000 Z
+  created_at: 2024-04-07 09:11:02.807430000 Z
+  updated_at: 2024-04-07 09:11:02.807430000 Z
 staffs_058:
   id: 58
   firstname: Alain
@@ -577,8 +577,8 @@ staffs_058:
   role_id: 2
   user_id: 3
   participating_dojo_id: 19
-  created_at: 2024-02-11 14:39:57.404480000 Z
-  updated_at: 2024-02-11 14:39:57.404480000 Z
+  created_at: 2024-04-07 09:11:02.810921000 Z
+  updated_at: 2024-04-07 09:11:02.810921000 Z
 staffs_059:
   id: 59
   firstname: Pat
@@ -587,8 +587,8 @@ staffs_059:
   role_id: 5
   user_id: 5
   participating_dojo_id: 19
-  created_at: 2024-02-11 14:39:57.410771000 Z
-  updated_at: 2024-02-11 14:39:57.410771000 Z
+  created_at: 2024-04-07 09:11:02.813545000 Z
+  updated_at: 2024-04-07 09:11:02.813545000 Z
 staffs_060:
   id: 60
   firstname: Larry
@@ -597,8 +597,8 @@ staffs_060:
   role_id: 7
   user_id:
   participating_dojo_id: 19
-  created_at: 2024-02-11 14:39:57.416160000 Z
-  updated_at: 2024-02-11 14:39:57.416160000 Z
+  created_at: 2024-04-07 09:11:02.816112000 Z
+  updated_at: 2024-04-07 09:11:02.816112000 Z
 staffs_061:
   id: 61
   firstname: Marc
@@ -607,8 +607,8 @@ staffs_061:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.430168000 Z
-  updated_at: 2024-02-11 14:39:57.430168000 Z
+  created_at: 2024-04-07 09:11:02.822979000 Z
+  updated_at: 2024-04-07 09:11:02.822979000 Z
 staffs_062:
   id: 62
   firstname: Vince
@@ -617,8 +617,8 @@ staffs_062:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.523622000 Z
-  updated_at: 2024-02-11 14:39:57.523622000 Z
+  created_at: 2024-04-07 09:11:02.862767000 Z
+  updated_at: 2024-04-07 09:11:02.862767000 Z
 staffs_063:
   id: 63
   firstname: Alain
@@ -627,8 +627,8 @@ staffs_063:
   role_id: 2
   user_id: 3
   participating_dojo_id: 20
-  created_at: 2024-02-11 14:39:57.530767000 Z
-  updated_at: 2024-02-11 14:39:57.530767000 Z
+  created_at: 2024-04-07 09:11:02.865881000 Z
+  updated_at: 2024-04-07 09:11:02.865881000 Z
 staffs_064:
   id: 64
   firstname: Pat
@@ -637,8 +637,8 @@ staffs_064:
   role_id: 5
   user_id: 5
   participating_dojo_id: 20
-  created_at: 2024-02-11 14:39:57.539406000 Z
-  updated_at: 2024-02-11 14:39:57.539406000 Z
+  created_at: 2024-04-07 09:11:02.869268000 Z
+  updated_at: 2024-04-07 09:11:02.869268000 Z
 staffs_065:
   id: 65
   firstname: Larry
@@ -647,8 +647,8 @@ staffs_065:
   role_id: 7
   user_id:
   participating_dojo_id: 20
-  created_at: 2024-02-11 14:39:57.547719000 Z
-  updated_at: 2024-02-11 14:39:57.547719000 Z
+  created_at: 2024-04-07 09:11:02.871481000 Z
+  updated_at: 2024-04-07 09:11:02.871481000 Z
 staffs_066:
   id: 66
   firstname: Marc
@@ -657,8 +657,8 @@ staffs_066:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.561386000 Z
-  updated_at: 2024-02-11 14:39:57.561386000 Z
+  created_at: 2024-04-07 09:11:02.876792000 Z
+  updated_at: 2024-04-07 09:11:02.876792000 Z
 staffs_067:
   id: 67
   firstname: Vince
@@ -667,8 +667,8 @@ staffs_067:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.717026000 Z
-  updated_at: 2024-02-11 14:39:57.717026000 Z
+  created_at: 2024-04-07 09:11:02.933031000 Z
+  updated_at: 2024-04-07 09:11:02.933031000 Z
 staffs_068:
   id: 68
   firstname: Alain
@@ -677,8 +677,8 @@ staffs_068:
   role_id: 2
   user_id: 3
   participating_dojo_id: 21
-  created_at: 2024-02-11 14:39:57.726515000 Z
-  updated_at: 2024-02-11 14:39:57.726515000 Z
+  created_at: 2024-04-07 09:11:02.935981000 Z
+  updated_at: 2024-04-07 09:11:02.935981000 Z
 staffs_069:
   id: 69
   firstname: Pat
@@ -687,8 +687,8 @@ staffs_069:
   role_id: 5
   user_id: 5
   participating_dojo_id: 21
-  created_at: 2024-02-11 14:39:57.737640000 Z
-  updated_at: 2024-02-11 14:39:57.737640000 Z
+  created_at: 2024-04-07 09:11:02.939326000 Z
+  updated_at: 2024-04-07 09:11:02.939326000 Z
 staffs_070:
   id: 70
   firstname: Larry
@@ -697,8 +697,8 @@ staffs_070:
   role_id: 7
   user_id:
   participating_dojo_id: 21
-  created_at: 2024-02-11 14:39:57.746049000 Z
-  updated_at: 2024-02-11 14:39:57.746049000 Z
+  created_at: 2024-04-07 09:11:02.942696000 Z
+  updated_at: 2024-04-07 09:11:02.942696000 Z
 staffs_071:
   id: 71
   firstname: Marc
@@ -707,8 +707,8 @@ staffs_071:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:57.765124000 Z
-  updated_at: 2024-02-11 14:39:57.765124000 Z
+  created_at: 2024-04-07 09:11:02.948211000 Z
+  updated_at: 2024-04-07 09:11:02.948211000 Z
 staffs_072:
   id: 72
   firstname: Vince
@@ -717,8 +717,8 @@ staffs_072:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.121348000 Z
-  updated_at: 2024-02-11 14:39:58.121348000 Z
+  created_at: 2024-04-07 09:11:03.059973000 Z
+  updated_at: 2024-04-07 09:11:03.059973000 Z
 staffs_073:
   id: 73
   firstname: Alain
@@ -727,8 +727,8 @@ staffs_073:
   role_id: 2
   user_id: 3
   participating_dojo_id: 22
-  created_at: 2024-02-11 14:39:58.132668000 Z
-  updated_at: 2024-02-11 14:39:58.132668000 Z
+  created_at: 2024-04-07 09:11:03.062943000 Z
+  updated_at: 2024-04-07 09:11:03.062943000 Z
 staffs_074:
   id: 74
   firstname: Pat
@@ -737,8 +737,8 @@ staffs_074:
   role_id: 5
   user_id: 5
   participating_dojo_id: 22
-  created_at: 2024-02-11 14:39:58.142703000 Z
-  updated_at: 2024-02-11 14:39:58.142703000 Z
+  created_at: 2024-04-07 09:11:03.066530000 Z
+  updated_at: 2024-04-07 09:11:03.066530000 Z
 staffs_075:
   id: 75
   firstname: Larry
@@ -747,8 +747,8 @@ staffs_075:
   role_id: 7
   user_id:
   participating_dojo_id: 22
-  created_at: 2024-02-11 14:39:58.149044000 Z
-  updated_at: 2024-02-11 14:39:58.149044000 Z
+  created_at: 2024-04-07 09:11:03.069107000 Z
+  updated_at: 2024-04-07 09:11:03.069107000 Z
 staffs_076:
   id: 76
   firstname: Marc
@@ -757,8 +757,8 @@ staffs_076:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.216960000 Z
-  updated_at: 2024-02-11 14:39:58.216960000 Z
+  created_at: 2024-04-07 09:11:03.092189000 Z
+  updated_at: 2024-04-07 09:11:03.092189000 Z
 staffs_077:
   id: 77
   firstname: Vince
@@ -767,8 +767,8 @@ staffs_077:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.515472000 Z
-  updated_at: 2024-02-11 14:39:58.515472000 Z
+  created_at: 2024-04-07 09:11:03.200337000 Z
+  updated_at: 2024-04-07 09:11:03.200337000 Z
 staffs_078:
   id: 78
   firstname: Alain
@@ -777,8 +777,8 @@ staffs_078:
   role_id: 2
   user_id: 3
   participating_dojo_id: 24
-  created_at: 2024-02-11 14:39:58.526851000 Z
-  updated_at: 2024-02-11 14:39:58.526851000 Z
+  created_at: 2024-04-07 09:11:03.203193000 Z
+  updated_at: 2024-04-07 09:11:03.203193000 Z
 staffs_079:
   id: 79
   firstname: Pat
@@ -787,8 +787,8 @@ staffs_079:
   role_id: 5
   user_id: 5
   participating_dojo_id: 24
-  created_at: 2024-02-11 14:39:58.592828000 Z
-  updated_at: 2024-02-11 14:39:58.592828000 Z
+  created_at: 2024-04-07 09:11:03.206853000 Z
+  updated_at: 2024-04-07 09:11:03.206853000 Z
 staffs_080:
   id: 80
   firstname: Larry
@@ -797,8 +797,8 @@ staffs_080:
   role_id: 7
   user_id:
   participating_dojo_id: 24
-  created_at: 2024-02-11 14:39:58.601509000 Z
-  updated_at: 2024-02-11 14:39:58.601509000 Z
+  created_at: 2024-04-07 09:11:03.209423000 Z
+  updated_at: 2024-04-07 09:11:03.209423000 Z
 staffs_081:
   id: 81
   firstname: Marc
@@ -807,8 +807,8 @@ staffs_081:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.617967000 Z
-  updated_at: 2024-02-11 14:39:58.617967000 Z
+  created_at: 2024-04-07 09:11:03.215824000 Z
+  updated_at: 2024-04-07 09:11:03.215824000 Z
 staffs_082:
   id: 82
   firstname: Vince
@@ -817,8 +817,8 @@ staffs_082:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.845782000 Z
-  updated_at: 2024-02-11 14:39:58.845782000 Z
+  created_at: 2024-04-07 09:11:03.296654000 Z
+  updated_at: 2024-04-07 09:11:03.296654000 Z
 staffs_083:
   id: 83
   firstname: Alain
@@ -827,8 +827,8 @@ staffs_083:
   role_id: 2
   user_id: 3
   participating_dojo_id: 26
-  created_at: 2024-02-11 14:39:58.852513000 Z
-  updated_at: 2024-02-11 14:39:58.852513000 Z
+  created_at: 2024-04-07 09:11:03.299747000 Z
+  updated_at: 2024-04-07 09:11:03.299747000 Z
 staffs_084:
   id: 84
   firstname: Pat
@@ -837,8 +837,8 @@ staffs_084:
   role_id: 5
   user_id: 5
   participating_dojo_id: 26
-  created_at: 2024-02-11 14:39:58.858221000 Z
-  updated_at: 2024-02-11 14:39:58.858221000 Z
+  created_at: 2024-04-07 09:11:03.302214000 Z
+  updated_at: 2024-04-07 09:11:03.302214000 Z
 staffs_085:
   id: 85
   firstname: Larry
@@ -847,8 +847,8 @@ staffs_085:
   role_id: 7
   user_id:
   participating_dojo_id: 26
-  created_at: 2024-02-11 14:39:58.863175000 Z
-  updated_at: 2024-02-11 14:39:58.863175000 Z
+  created_at: 2024-04-07 09:11:03.304384000 Z
+  updated_at: 2024-04-07 09:11:03.304384000 Z
 staffs_086:
   id: 86
   firstname: Marc
@@ -857,8 +857,8 @@ staffs_086:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:58.875258000 Z
-  updated_at: 2024-02-11 14:39:58.875258000 Z
+  created_at: 2024-04-07 09:11:03.310618000 Z
+  updated_at: 2024-04-07 09:11:03.310618000 Z
 staffs_087:
   id: 87
   firstname: Vince
@@ -867,8 +867,8 @@ staffs_087:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.166711000 Z
-  updated_at: 2024-02-11 14:39:59.166711000 Z
+  created_at: 2024-04-07 09:11:03.419776000 Z
+  updated_at: 2024-04-07 09:11:03.419776000 Z
 staffs_088:
   id: 88
   firstname: Alain
@@ -877,8 +877,8 @@ staffs_088:
   role_id: 2
   user_id: 3
   participating_dojo_id: 28
-  created_at: 2024-02-11 14:39:59.176089000 Z
-  updated_at: 2024-02-11 14:39:59.176089000 Z
+  created_at: 2024-04-07 09:11:03.423036000 Z
+  updated_at: 2024-04-07 09:11:03.423036000 Z
 staffs_089:
   id: 89
   firstname: Pat
@@ -887,8 +887,8 @@ staffs_089:
   role_id: 5
   user_id: 5
   participating_dojo_id: 28
-  created_at: 2024-02-11 14:39:59.184464000 Z
-  updated_at: 2024-02-11 14:39:59.184464000 Z
+  created_at: 2024-04-07 09:11:03.425764000 Z
+  updated_at: 2024-04-07 09:11:03.425764000 Z
 staffs_090:
   id: 90
   firstname: Larry
@@ -897,8 +897,8 @@ staffs_090:
   role_id: 7
   user_id:
   participating_dojo_id: 28
-  created_at: 2024-02-11 14:39:59.191630000 Z
-  updated_at: 2024-02-11 14:39:59.191630000 Z
+  created_at: 2024-04-07 09:11:03.427935000 Z
+  updated_at: 2024-04-07 09:11:03.427935000 Z
 staffs_091:
   id: 91
   firstname: Marc
@@ -907,8 +907,8 @@ staffs_091:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.208777000 Z
-  updated_at: 2024-02-11 14:39:59.208777000 Z
+  created_at: 2024-04-07 09:11:03.434161000 Z
+  updated_at: 2024-04-07 09:11:03.434161000 Z
 staffs_092:
   id: 92
   firstname: Vince
@@ -917,8 +917,8 @@ staffs_092:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.475673000 Z
-  updated_at: 2024-02-11 14:39:59.475673000 Z
+  created_at: 2024-04-07 09:11:03.544162000 Z
+  updated_at: 2024-04-07 09:11:03.544162000 Z
 staffs_093:
   id: 93
   firstname: Alain
@@ -927,8 +927,8 @@ staffs_093:
   role_id: 2
   user_id: 3
   participating_dojo_id: 30
-  created_at: 2024-02-11 14:39:59.482220000 Z
-  updated_at: 2024-02-11 14:39:59.482220000 Z
+  created_at: 2024-04-07 09:11:03.548060000 Z
+  updated_at: 2024-04-07 09:11:03.548060000 Z
 staffs_094:
   id: 94
   firstname: Pat
@@ -937,8 +937,8 @@ staffs_094:
   role_id: 5
   user_id: 5
   participating_dojo_id: 30
-  created_at: 2024-02-11 14:39:59.488723000 Z
-  updated_at: 2024-02-11 14:39:59.488723000 Z
+  created_at: 2024-04-07 09:11:03.551036000 Z
+  updated_at: 2024-04-07 09:11:03.551036000 Z
 staffs_095:
   id: 95
   firstname: Larry
@@ -947,8 +947,8 @@ staffs_095:
   role_id: 7
   user_id:
   participating_dojo_id: 30
-  created_at: 2024-02-11 14:39:59.496194000 Z
-  updated_at: 2024-02-11 14:39:59.496194000 Z
+  created_at: 2024-04-07 09:11:03.553227000 Z
+  updated_at: 2024-04-07 09:11:03.553227000 Z
 staffs_096:
   id: 96
   firstname: Marc
@@ -957,8 +957,8 @@ staffs_096:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.509293000 Z
-  updated_at: 2024-02-11 14:39:59.509293000 Z
+  created_at: 2024-04-07 09:11:03.559087000 Z
+  updated_at: 2024-04-07 09:11:03.559087000 Z
 staffs_097:
   id: 97
   firstname: Vince
@@ -967,8 +967,8 @@ staffs_097:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.702278000 Z
-  updated_at: 2024-02-11 14:39:59.702278000 Z
+  created_at: 2024-04-07 09:11:03.636805000 Z
+  updated_at: 2024-04-07 09:11:03.636805000 Z
 staffs_098:
   id: 98
   firstname: Alain
@@ -977,8 +977,8 @@ staffs_098:
   role_id: 2
   user_id: 3
   participating_dojo_id: 32
-  created_at: 2024-02-11 14:39:59.709368000 Z
-  updated_at: 2024-02-11 14:39:59.709368000 Z
+  created_at: 2024-04-07 09:11:03.639717000 Z
+  updated_at: 2024-04-07 09:11:03.639717000 Z
 staffs_099:
   id: 99
   firstname: Pat
@@ -987,8 +987,8 @@ staffs_099:
   role_id: 5
   user_id: 5
   participating_dojo_id: 32
-  created_at: 2024-02-11 14:39:59.716684000 Z
-  updated_at: 2024-02-11 14:39:59.716684000 Z
+  created_at: 2024-04-07 09:11:03.642129000 Z
+  updated_at: 2024-04-07 09:11:03.642129000 Z
 staffs_100:
   id: 100
   firstname: Larry
@@ -997,8 +997,8 @@ staffs_100:
   role_id: 7
   user_id:
   participating_dojo_id: 32
-  created_at: 2024-02-11 14:39:59.722529000 Z
-  updated_at: 2024-02-11 14:39:59.722529000 Z
+  created_at: 2024-04-07 09:11:03.645242000 Z
+  updated_at: 2024-04-07 09:11:03.645242000 Z
 staffs_101:
   id: 101
   firstname: Marc
@@ -1007,8 +1007,8 @@ staffs_101:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:39:59.734698000 Z
-  updated_at: 2024-02-11 14:39:59.734698000 Z
+  created_at: 2024-04-07 09:11:03.651289000 Z
+  updated_at: 2024-04-07 09:11:03.651289000 Z
 staffs_102:
   id: 102
   firstname: Vince
@@ -1017,8 +1017,8 @@ staffs_102:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.015713000 Z
-  updated_at: 2024-02-11 14:40:00.015713000 Z
+  created_at: 2024-04-07 09:11:03.761350000 Z
+  updated_at: 2024-04-07 09:11:03.761350000 Z
 staffs_103:
   id: 103
   firstname: Alain
@@ -1027,8 +1027,8 @@ staffs_103:
   role_id: 2
   user_id: 3
   participating_dojo_id: 34
-  created_at: 2024-02-11 14:40:00.027278000 Z
-  updated_at: 2024-02-11 14:40:00.027278000 Z
+  created_at: 2024-04-07 09:11:03.764989000 Z
+  updated_at: 2024-04-07 09:11:03.764989000 Z
 staffs_104:
   id: 104
   firstname: Pat
@@ -1037,8 +1037,8 @@ staffs_104:
   role_id: 5
   user_id: 5
   participating_dojo_id: 34
-  created_at: 2024-02-11 14:40:00.037197000 Z
-  updated_at: 2024-02-11 14:40:00.037197000 Z
+  created_at: 2024-04-07 09:11:03.767882000 Z
+  updated_at: 2024-04-07 09:11:03.767882000 Z
 staffs_105:
   id: 105
   firstname: Larry
@@ -1047,8 +1047,8 @@ staffs_105:
   role_id: 7
   user_id:
   participating_dojo_id: 34
-  created_at: 2024-02-11 14:40:00.044990000 Z
-  updated_at: 2024-02-11 14:40:00.044990000 Z
+  created_at: 2024-04-07 09:11:03.770156000 Z
+  updated_at: 2024-04-07 09:11:03.770156000 Z
 staffs_106:
   id: 106
   firstname: Marc
@@ -1057,8 +1057,8 @@ staffs_106:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.061643000 Z
-  updated_at: 2024-02-11 14:40:00.061643000 Z
+  created_at: 2024-04-07 09:11:03.775826000 Z
+  updated_at: 2024-04-07 09:11:03.775826000 Z
 staffs_107:
   id: 107
   firstname: Vince
@@ -1067,8 +1067,8 @@ staffs_107:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.222019000 Z
-  updated_at: 2024-02-11 14:40:00.222019000 Z
+  created_at: 2024-04-07 09:11:03.836433000 Z
+  updated_at: 2024-04-07 09:11:03.836433000 Z
 staffs_108:
   id: 108
   firstname: Alain
@@ -1077,8 +1077,8 @@ staffs_108:
   role_id: 2
   user_id: 3
   participating_dojo_id: 36
-  created_at: 2024-02-11 14:40:00.231041000 Z
-  updated_at: 2024-02-11 14:40:00.231041000 Z
+  created_at: 2024-04-07 09:11:03.839707000 Z
+  updated_at: 2024-04-07 09:11:03.839707000 Z
 staffs_109:
   id: 109
   firstname: Pat
@@ -1087,8 +1087,8 @@ staffs_109:
   role_id: 5
   user_id: 5
   participating_dojo_id: 36
-  created_at: 2024-02-11 14:40:00.238307000 Z
-  updated_at: 2024-02-11 14:40:00.238307000 Z
+  created_at: 2024-04-07 09:11:03.842171000 Z
+  updated_at: 2024-04-07 09:11:03.842171000 Z
 staffs_110:
   id: 110
   firstname: Larry
@@ -1097,8 +1097,8 @@ staffs_110:
   role_id: 7
   user_id:
   participating_dojo_id: 36
-  created_at: 2024-02-11 14:40:00.245022000 Z
-  updated_at: 2024-02-11 14:40:00.245022000 Z
+  created_at: 2024-04-07 09:11:03.844312000 Z
+  updated_at: 2024-04-07 09:11:03.844312000 Z
 staffs_111:
   id: 111
   firstname: Marc
@@ -1107,8 +1107,8 @@ staffs_111:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.308927000 Z
-  updated_at: 2024-02-11 14:40:00.308927000 Z
+  created_at: 2024-04-07 09:11:03.870448000 Z
+  updated_at: 2024-04-07 09:11:03.870448000 Z
 staffs_112:
   id: 112
   firstname: Vince
@@ -1117,8 +1117,8 @@ staffs_112:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.463133000 Z
-  updated_at: 2024-02-11 14:40:00.463133000 Z
+  created_at: 2024-04-07 09:11:03.935618000 Z
+  updated_at: 2024-04-07 09:11:03.935618000 Z
 staffs_113:
   id: 113
   firstname: Alain
@@ -1127,8 +1127,8 @@ staffs_113:
   role_id: 2
   user_id: 3
   participating_dojo_id: 37
-  created_at: 2024-02-11 14:40:00.471540000 Z
-  updated_at: 2024-02-11 14:40:00.471540000 Z
+  created_at: 2024-04-07 09:11:03.939159000 Z
+  updated_at: 2024-04-07 09:11:03.939159000 Z
 staffs_114:
   id: 114
   firstname: Pat
@@ -1137,8 +1137,8 @@ staffs_114:
   role_id: 5
   user_id: 5
   participating_dojo_id: 37
-  created_at: 2024-02-11 14:40:00.479133000 Z
-  updated_at: 2024-02-11 14:40:00.479133000 Z
+  created_at: 2024-04-07 09:11:03.942482000 Z
+  updated_at: 2024-04-07 09:11:03.942482000 Z
 staffs_115:
   id: 115
   firstname: Larry
@@ -1147,8 +1147,8 @@ staffs_115:
   role_id: 7
   user_id:
   participating_dojo_id: 37
-  created_at: 2024-02-11 14:40:00.487794000 Z
-  updated_at: 2024-02-11 14:40:00.487794000 Z
+  created_at: 2024-04-07 09:11:03.945053000 Z
+  updated_at: 2024-04-07 09:11:03.945053000 Z
 staffs_116:
   id: 116
   firstname: Marc
@@ -1157,8 +1157,8 @@ staffs_116:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.503963000 Z
-  updated_at: 2024-02-11 14:40:00.503963000 Z
+  created_at: 2024-04-07 09:11:03.950760000 Z
+  updated_at: 2024-04-07 09:11:03.950760000 Z
 staffs_117:
   id: 117
   firstname: Vince
@@ -1167,8 +1167,8 @@ staffs_117:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.633597000 Z
-  updated_at: 2024-02-11 14:40:00.633597000 Z
+  created_at: 2024-04-07 09:11:03.993487000 Z
+  updated_at: 2024-04-07 09:11:03.993487000 Z
 staffs_118:
   id: 118
   firstname: Alain
@@ -1177,8 +1177,8 @@ staffs_118:
   role_id: 2
   user_id: 3
   participating_dojo_id: 38
-  created_at: 2024-02-11 14:40:00.642666000 Z
-  updated_at: 2024-02-11 14:40:00.642666000 Z
+  created_at: 2024-04-07 09:11:03.996746000 Z
+  updated_at: 2024-04-07 09:11:03.996746000 Z
 staffs_119:
   id: 119
   firstname: Pat
@@ -1187,8 +1187,8 @@ staffs_119:
   role_id: 5
   user_id: 5
   participating_dojo_id: 38
-  created_at: 2024-02-11 14:40:00.650781000 Z
-  updated_at: 2024-02-11 14:40:00.650781000 Z
+  created_at: 2024-04-07 09:11:03.999510000 Z
+  updated_at: 2024-04-07 09:11:03.999510000 Z
 staffs_120:
   id: 120
   firstname: Larry
@@ -1197,8 +1197,8 @@ staffs_120:
   role_id: 7
   user_id:
   participating_dojo_id: 38
-  created_at: 2024-02-11 14:40:00.661364000 Z
-  updated_at: 2024-02-11 14:40:00.661364000 Z
+  created_at: 2024-04-07 09:11:04.001968000 Z
+  updated_at: 2024-04-07 09:11:04.001968000 Z
 staffs_121:
   id: 121
   firstname: Marc
@@ -1207,8 +1207,8 @@ staffs_121:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.679184000 Z
-  updated_at: 2024-02-11 14:40:00.679184000 Z
+  created_at: 2024-04-07 09:11:04.008261000 Z
+  updated_at: 2024-04-07 09:11:04.008261000 Z
 staffs_122:
   id: 122
   firstname: Vince
@@ -1217,8 +1217,8 @@ staffs_122:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.844500000 Z
-  updated_at: 2024-02-11 14:40:00.844500000 Z
+  created_at: 2024-04-07 09:11:04.065247000 Z
+  updated_at: 2024-04-07 09:11:04.065247000 Z
 staffs_123:
   id: 123
   firstname: Alain
@@ -1227,8 +1227,8 @@ staffs_123:
   role_id: 2
   user_id: 3
   participating_dojo_id: 39
-  created_at: 2024-02-11 14:40:00.852368000 Z
-  updated_at: 2024-02-11 14:40:00.852368000 Z
+  created_at: 2024-04-07 09:11:04.068473000 Z
+  updated_at: 2024-04-07 09:11:04.068473000 Z
 staffs_124:
   id: 124
   firstname: Pat
@@ -1237,8 +1237,8 @@ staffs_124:
   role_id: 5
   user_id: 5
   participating_dojo_id: 39
-  created_at: 2024-02-11 14:40:00.859145000 Z
-  updated_at: 2024-02-11 14:40:00.859145000 Z
+  created_at: 2024-04-07 09:11:04.072051000 Z
+  updated_at: 2024-04-07 09:11:04.072051000 Z
 staffs_125:
   id: 125
   firstname: Larry
@@ -1247,8 +1247,8 @@ staffs_125:
   role_id: 7
   user_id:
   participating_dojo_id: 39
-  created_at: 2024-02-11 14:40:00.867345000 Z
-  updated_at: 2024-02-11 14:40:00.867345000 Z
+  created_at: 2024-04-07 09:11:04.074366000 Z
+  updated_at: 2024-04-07 09:11:04.074366000 Z
 staffs_126:
   id: 126
   firstname: Marc
@@ -1257,8 +1257,8 @@ staffs_126:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:00.887291000 Z
-  updated_at: 2024-02-11 14:40:00.887291000 Z
+  created_at: 2024-04-07 09:11:04.079952000 Z
+  updated_at: 2024-04-07 09:11:04.079952000 Z
 staffs_127:
   id: 127
   firstname: Vince
@@ -1267,8 +1267,8 @@ staffs_127:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:01.087267000 Z
-  updated_at: 2024-02-11 14:40:01.087267000 Z
+  created_at: 2024-04-07 09:11:04.140987000 Z
+  updated_at: 2024-04-07 09:11:04.140987000 Z
 staffs_128:
   id: 128
   firstname: Alain
@@ -1277,8 +1277,8 @@ staffs_128:
   role_id: 2
   user_id: 3
   participating_dojo_id: 40
-  created_at: 2024-02-11 14:40:01.099545000 Z
-  updated_at: 2024-02-11 14:40:01.099545000 Z
+  created_at: 2024-04-07 09:11:04.144057000 Z
+  updated_at: 2024-04-07 09:11:04.144057000 Z
 staffs_129:
   id: 129
   firstname: Pat
@@ -1287,8 +1287,8 @@ staffs_129:
   role_id: 5
   user_id: 5
   participating_dojo_id: 40
-  created_at: 2024-02-11 14:40:01.107691000 Z
-  updated_at: 2024-02-11 14:40:01.107691000 Z
+  created_at: 2024-04-07 09:11:04.147692000 Z
+  updated_at: 2024-04-07 09:11:04.147692000 Z
 staffs_130:
   id: 130
   firstname: Larry
@@ -1297,8 +1297,8 @@ staffs_130:
   role_id: 7
   user_id:
   participating_dojo_id: 40
-  created_at: 2024-02-11 14:40:01.115578000 Z
-  updated_at: 2024-02-11 14:40:01.115578000 Z
+  created_at: 2024-04-07 09:11:04.150229000 Z
+  updated_at: 2024-04-07 09:11:04.150229000 Z
 staffs_131:
   id: 131
   firstname: Marc
@@ -1307,8 +1307,8 @@ staffs_131:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:01.135364000 Z
-  updated_at: 2024-02-11 14:40:01.135364000 Z
+  created_at: 2024-04-07 09:11:04.157068000 Z
+  updated_at: 2024-04-07 09:11:04.157068000 Z
 staffs_132:
   id: 132
   firstname: Vince
@@ -1317,8 +1317,8 @@ staffs_132:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:01.255518000 Z
-  updated_at: 2024-02-11 14:40:01.255518000 Z
+  created_at: 2024-04-07 09:11:04.199496000 Z
+  updated_at: 2024-04-07 09:11:04.199496000 Z
 staffs_133:
   id: 133
   firstname: Alain
@@ -1327,8 +1327,8 @@ staffs_133:
   role_id: 2
   user_id: 3
   participating_dojo_id: 41
-  created_at: 2024-02-11 14:40:01.266519000 Z
-  updated_at: 2024-02-11 14:40:01.266519000 Z
+  created_at: 2024-04-07 09:11:04.203666000 Z
+  updated_at: 2024-04-07 09:11:04.203666000 Z
 staffs_134:
   id: 134
   firstname: Pat
@@ -1337,8 +1337,8 @@ staffs_134:
   role_id: 5
   user_id: 5
   participating_dojo_id: 41
-  created_at: 2024-02-11 14:40:01.277480000 Z
-  updated_at: 2024-02-11 14:40:01.277480000 Z
+  created_at: 2024-04-07 09:11:04.206311000 Z
+  updated_at: 2024-04-07 09:11:04.206311000 Z
 staffs_135:
   id: 135
   firstname: Larry
@@ -1347,8 +1347,8 @@ staffs_135:
   role_id: 7
   user_id:
   participating_dojo_id: 41
-  created_at: 2024-02-11 14:40:01.285414000 Z
-  updated_at: 2024-02-11 14:40:01.285414000 Z
+  created_at: 2024-04-07 09:11:04.208578000 Z
+  updated_at: 2024-04-07 09:11:04.208578000 Z
 staffs_136:
   id: 136
   firstname: Marc
@@ -1357,8 +1357,8 @@ staffs_136:
   role_id: 1
   user_id: 2
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:01.305673000 Z
-  updated_at: 2024-02-11 14:40:01.305673000 Z
+  created_at: 2024-04-07 09:11:04.215799000 Z
+  updated_at: 2024-04-07 09:11:04.215799000 Z
 staffs_137:
   id: 137
   firstname: Vince
@@ -1367,8 +1367,8 @@ staffs_137:
   role_id: 3
   user_id: 6
   participating_dojo_id:
-  created_at: 2024-02-11 14:40:01.483951000 Z
-  updated_at: 2024-02-11 14:40:01.483951000 Z
+  created_at: 2024-04-07 09:11:04.276116000 Z
+  updated_at: 2024-04-07 09:11:04.276116000 Z
 staffs_138:
   id: 138
   firstname: Alain
@@ -1377,8 +1377,8 @@ staffs_138:
   role_id: 2
   user_id: 3
   participating_dojo_id: 42
-  created_at: 2024-02-11 14:40:01.491916000 Z
-  updated_at: 2024-02-11 14:40:01.491916000 Z
+  created_at: 2024-04-07 09:11:04.280567000 Z
+  updated_at: 2024-04-07 09:11:04.280567000 Z
 staffs_139:
   id: 139
   firstname: Pat
@@ -1387,8 +1387,8 @@ staffs_139:
   role_id: 5
   user_id: 5
   participating_dojo_id: 42
-  created_at: 2024-02-11 14:40:01.498766000 Z
-  updated_at: 2024-02-11 14:40:01.498766000 Z
+  created_at: 2024-04-07 09:11:04.283522000 Z
+  updated_at: 2024-04-07 09:11:04.283522000 Z
 staffs_140:
   id: 140
   firstname: Larry
@@ -1397,5 +1397,5 @@ staffs_140:
   role_id: 7
   user_id:
   participating_dojo_id: 42
-  created_at: 2024-02-11 14:40:01.504653000 Z
-  updated_at: 2024-02-11 14:40:01.504653000 Z
+  created_at: 2024-04-07 09:11:04.286111000 Z
+  updated_at: 2024-04-07 09:11:04.286111000 Z

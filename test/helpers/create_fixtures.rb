@@ -128,11 +128,13 @@ class CreateFixtures
       :staff_role,
       code: :target_referee,
       label_fr: 'Juge de Cible',
+      label_en: 'Target Referee'
     )
     staff_roles['operations_chairman'] = create(
       :staff_role,
       code: :operations_chairman,
       label_fr: 'Responsable Logistique',
+      label_en: 'Operations Chairman'
     )
   end
 

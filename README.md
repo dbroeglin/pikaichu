@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Documentation
+
+- [Useful Notes](docs/NOTES.md)
+- [Staff Roles](docs/STAFF_ROLES.md)
