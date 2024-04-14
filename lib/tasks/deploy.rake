@@ -223,7 +223,7 @@ namespace :deploy do
     end
 
     desc "Deploy all"
-    task all: [:docker, :foundation, :postgresql, :webapp] do
+    task all: [:foundation, :postgresql, :containerapp, :deploy] do
     end
   end
 end
