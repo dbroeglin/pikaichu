@@ -121,3 +121,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "azd", "~> 0.9.1", :group => :development

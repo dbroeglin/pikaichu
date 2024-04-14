@@ -89,6 +89,8 @@ GEM
     audited (5.4.3)
       activerecord (>= 5.0, < 7.2)
       request_store (~> 1.2)
+    azd (0.9.1)
+      railties (>= 3, < 99)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.6)
@@ -396,6 +398,7 @@ DEPENDENCIES
   acts_as_list
   apparition
   audited
+  azd (~> 0.9.1)
   bootsnap
   brakeman
   bundler-audit
