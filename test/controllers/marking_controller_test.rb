@@ -8,7 +8,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     @participant = @taikai.participating_dojos.first.participants.first
   end
 
-  test "jean should hav access to marking" do
+  test "jean should have access to marking" do
     get show_marking_url @taikai
 
     assert_response :redirect
