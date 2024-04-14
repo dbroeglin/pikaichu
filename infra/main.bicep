@@ -61,7 +61,7 @@ var resourceToken = toLower(uniqueString(subscription().id, environmentName, loc
 //   Microsoft.Web/sites for appservice, function
 // Example usage:
 //   tags: union(tags, { 'azd-service-name': apiServiceName })
-var appServiceName = 'azure-rails-starter'
+var appServiceName = 'app'
 
 // Organize resources in a resource group
 resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
@@ -148,11 +148,11 @@ module keyVault './core/security/keyvault.bicep' = {
   }
 }
 
-module keyVaultAccess './core/security/keyvault-access.bicep' = {
-  name: 'keyvault-access'
+module keyVaultRoleAssignment './core/security/role.bicep' = {
+  name: 'keyvault-role-assignment'
   scope: resourceGroup
   params: {
-    keyVaultName: keyVault.outputs.name
+    roleDefinitionId: '4633458b-17de-408a-b874-0445c86b69e6'
     principalId: railsIdentity.outputs.principalId
   }
 }
@@ -214,7 +214,7 @@ module rails 'rails.bicep' = {
   dependsOn: [
     keyVaultSecretDatabaseUrl
     keyVaultSecretSecretKeyBase
-    keyVaultAccess
+    keyVaultRoleAssignment
   ]
 }
 

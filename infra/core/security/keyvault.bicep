@@ -16,13 +16,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   properties: {
     tenantId: subscription().tenantId
     sku: { family: 'A', name: 'standard' }
-    accessPolicies: !empty(userIdentity.properties.principalId) ? [
-      {
-        objectId: userIdentity.properties.principalId
-        permissions: { secrets: [ 'get', 'list' ] }
-        tenantId: subscription().tenantId
-      }
-    ] : []
+    enableRbacAuthorization: true
   }
 }
 

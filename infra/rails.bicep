@@ -17,7 +17,7 @@ param containerAppsEnvironmentName string
 param containerRegistryName string
 
 @description('Service name (will be added as tag "azd-service-name")')
-param serviceName string = 'rails'
+param serviceName string
 
 @description('If true re-use existing Azure Container App')
 param exists bool

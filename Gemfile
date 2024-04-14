@@ -122,4 +122,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "azd", "~> 0.9.1", :group => :development
+gem "azd", "~> 0.9", :group => :development
