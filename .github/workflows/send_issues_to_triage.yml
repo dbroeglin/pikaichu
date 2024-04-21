@@ -10,6 +10,7 @@ jobs:
       - name: Add issue to project column
         uses: actions/github-script@v5
         with:
+          github-token: ${{ secrets.PROJECT_PAT }}
           script: |
             const issueNumber = context.issue.number;
             const projectId = '1'; // Replace with your Project ID
