@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       get   'leaderboard',                      to: 'leaderboard#show'
       get   'leaderboard/2in1',                 to: 'leaderboard#show_2in1'
       get   'leaderboard/public',               to: 'leaderboard#public'
+      get   'leaderboard/ajax_public',          to: 'leaderboard#ajax_public'
       post  'transition_to'
       get   'tie_break',                        to: 'tie_break#edit'
       patch 'tie_break',                        to: 'tie_break#update'
