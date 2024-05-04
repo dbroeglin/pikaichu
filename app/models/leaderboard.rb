@@ -85,6 +85,28 @@ class Leaderboard
     end
   end
 
+  def build_leaderboard_json_data
+    leaderboard_data = nil
+
+    if @taikai.form_2in1?
+      if params[:individual]
+        leaderboard_data = build_individual_leaderboard_data
+      else
+        leaderboard_data = build_team_leaderboard_data
+      end
+    elsif @taikai.form_individual?
+      leaderboard_data = build_individual_leaderboard_data
+    elsif @taikai.form_team?
+      leaderboard_data = build_team_leaderboard_data
+    elsif @taikai.form_matches?
+      leaderboard_data = build_matches_leaderboard_data
+    else
+      raise "Unknown taikai form: #{@taikai.form}"
+    end
+
+    return leaderboard_data
+  end
+
   private
 
   def compute_individual_intermediate_ranks
@@ -124,5 +146,45 @@ class Leaderboard
 
       team_rank += 1
     end
+  end
+
+  def build_individual_leaderboard_data
+    leaderboard_data = { 'num_rounds': @taikai.num_rounds, 'num_arrows': @taikai.num_arrows, 'ranks' => [] }
+    rank_participants = nil
+
+    rank = 0
+    @participants_by_score.each_pair do |score, participants|
+      participants.each_with_index do |participant, index|
+        rank += 1
+
+        if index == 0
+          rank_participants = { 'score' => { 'hits': participant.score.hits, 'value': participant.score.value }, 'participants' => [] }
+        end
+
+        participant_data = {
+          'dojo' => @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
+          'name' => participant.display_name,
+          'results' => []
+        }
+        participant.score.results.each do |result|
+          participant_data['results'] << result.status
+        end
+        rank_participants['participants'] << participant_data
+
+        if index == 0
+          leaderboard_data['ranks'] << rank_participants
+        end
+      end
+    end
+
+    leaderboard_data
+  end
+
+  def build_matches_leaderboard_data
+    leaderboard_data = { 'num_rounds': @taikai.num_rounds, 'num_arrows': @taikai.num_arrows, 'ranks' => [] }
+  end
+
+  def build_team_leaderboard_data
+    leaderboard_data = { 'num_rounds': @taikai.num_rounds, 'num_arrows': @taikai.num_arrows, 'ranks' => [] }
   end
 end
