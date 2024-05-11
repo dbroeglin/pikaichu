@@ -155,6 +155,7 @@ GEM
       activerecord (>= 2)
       activesupport (>= 2)
       hashdiff
+    foreman (0.88.1)
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -413,6 +414,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   fixture_builder
+  foreman
   guard
   guard-minitest
   guard-rails

@@ -90,6 +90,8 @@ group :development, :test do
   gem "factory_bot_rails"
   gem 'faker'
   gem 'fixture_builder'
+
+  gem 'foreman' # used to run bin/dev
 end
 
 group :development do
