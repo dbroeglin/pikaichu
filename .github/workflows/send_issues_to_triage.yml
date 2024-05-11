@@ -13,5 +13,3 @@ jobs:
         with:
           project-url: https://github.com/users/dbroeglin/projects/1
           github-token: ${{ secrets.PIKAICHU_PROJECT }}
-          labeled: needs-triage
-          label-operator: OR
