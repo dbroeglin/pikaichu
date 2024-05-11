@@ -4,14 +4,14 @@ class TestDataService
     raise "Cannot generate scores for 'matches'" if taikai.form_matches?
 
     if taikai.scoring_kinteki?
-      taikai.participants.map(&:results).flatten
+      taikai.participants.map(&:scores).flatten.map(&:results).flatten
             .each do |r|
         r.status = %w[hit miss].sample
         r.final = true
         r.save
       end
     elsif taikai.scoring_enteki?
-      taikai.participants.map(&:results).flatten
+      taikai.participants..map(&:scores).flatten.map(&:results).flatten
             .each do |r|
         r.value = [0, 3, 5, 7, 9, 10].sample
         r.status = r.value.zero? ? 'miss' : 'hit'
@@ -24,7 +24,7 @@ class TestDataService
   end
 
   def self.finalize_scores(taikai)
-    
+
 
     if taikai.form_matches?
       taikai.matches.each do |match|
