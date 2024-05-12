@@ -1,5 +1,274 @@
 en:
+  confirm_html: Are you sure?
+  confirm_draw_html: Are you sure you want to perform the draw?
+  confirm_previous_state_html: Are you sure you want to go back to the previous step? You may lose data from the current step!
+  confirm_next_state_html: Are you sure you want to advance to the next step? Going back to the previous step may cause data loss!
+  edit: Edit
+  destroy: Delete
+  new: Add
+  save: Save
+  cancel: Cancel
+  back: Back
+  import: Import
+
   home:
     index:
-      dojos_summary: We currently have %{nb} active dojos.
-      taikai_summary: We currently have %{nb} active taikais.
+      dojos_summary: "%{nb} Managed Clubs."
+      dojos: Clubs
+      manage_dojos: "Manage Clubs"
+      manage_taikais: "Manage Taikai"
+      taikais_summary: "%{nb} Managed Taikai."
+      taikais: Taikai
+  championship:
+    export:
+      category: Category
+      club: Club
+      display_name: Name Surname
+      rank: Rank
+      taikai_name: Taikai Name
+      total: Total
+  dojos:
+    index:
+      title: List of Clubs
+    destroy:
+      title: Delete a club
+    edit:
+      title: Edit a club
+    new:
+      title: Add a club
+  leaderboard:
+    show:
+      2in1: Team Results
+      all: All clubs
+      back: Back to Taikai
+      no_participants_yet: No participants registered.
+      public: Public Results
+      title: "Intermediate Results Table - %{taikai}"
+    show_2in1:
+      all: All clubs
+      back: Back to Taikai
+      individual: Individual Results
+      no_participants_yet: No participants registered.
+      title: "Intermediate Results Table - %{taikai}"
+    individual:
+      name: Name
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      team_score: Total
+    team:
+      name: Name
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      team_score: Total
+      tie_break: Tie-break
+    matches:
+      name: Name
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      team_score: Total
+    public:
+      name: Name
+      individual: Show Individual Results
+      team: Show Team Results
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      team_score: Total
+      title: "Results Table - %{taikai}"
+  marking:
+    choice_kinteki:
+      mark_hit: Mark as "Hit"
+      mark_missed: Mark as "Missed"
+      mark_unknown: Mark as "Unknown"
+    choice_enteki:
+      mark_hit: Mark as "Hit"
+      mark_missed: Mark as "Missed"
+      mark_unknown: Mark as "Unknown"
+    round_results:
+      finalize_round: "Finalize Round %{index}"
+    show:
+      all: All rounds
+      back: Back to Taikai
+      input: Input
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      title: "Score Sheet - %{taikai}"
+    show_match:
+      back: Back to match
+      input: Input
+      rank: Rank
+      round: Round %{index}
+      score: Score
+      title: "Score Sheet - %{taikai}"
+  matches:
+    index:
+      back: Back to Taikai
+      title: "Match Table - %{taikai}"
+    edit:
+      title: Edit a match
+  participants:
+    edit:
+      title: Edit a participant
+    destroy:
+      title: Remove a participant
+    new:
+      title: Add a participant
+    form:
+      search_kyudojin: Search in the federation database
+      placeholders:
+        kyudojin: Start typing a name...
+      help:
+        kyudojin: Type a part of a name or surname to search in the federation database. If you select a kyudojin registered in the federation, it is unnecessary to fill in the fields below.
+  participating_dojos:
+    destroy:
+      title: Delete a host club
+    edit:
+      title: Edit a host club
+      import: Import participant list
+      file: CNKyudo Excel File
+      placeholders:
+        choose_a_file: Choose a file
+        no_file_uploaded: No file uploaded
+    new:
+      title: Add a host club
+    form:
+      placeholders:
+        dojo: Start typing a name...
+        display_name: Leave blank to use the club name
+  rectification:
+    index:
+      back: Back to Taikai
+      index: ID
+      round: Round %{index}
+    edit:
+      back: Back to results list
+      description: Description
+      description_template: Round %{round}, Arrow %{index}
+      participant: Participant
+      title: Rectification of a result
+  taikais:
+    draw: Draw
+    marking_sheet:
+      title: Score Sheet
+    leaderboard:
+      title: Results Table
+    rectification:
+      title: Rectification
+    tie_break:
+      title: Tie-Break
+    export:
+      distributed: Remote
+      infos: Information
+      type: Type
+      journal:
+        category: Category
+        message: Message
+        title: Journal
+        time: Timestamp
+        user: User
+      participants:
+        club: Club
+        display_name: Name
+        index: "#"
+        participating_dojo: Org. Club
+        team: Team
+        title: Participants
+      results:
+        club: Club
+        display_name: Name
+        index: "#"
+        participating_dojo: Org. Club
+        rank: Rank
+        round: Round %{count}
+        score: Score
+        team: Team
+        team_score: Total
+        title:
+          individual: Individual Results
+          team: Team Results
+          matches: Match Results
+      staff:
+        firstname: Firstname
+        lastname: Lastname
+        role: Role
+        participating_dojo: Org. Club
+        title: Staff
+      summary: Summary
+      title: Excel Export
+      total_num_arrows: Total Number of Arrows
+    index:
+      dates: Dates
+      distributed: Remote
+      num_participants: '#'
+      teams: Team
+      title: List of Taikai
+    edit:
+      title: Taikai Modification
+    new:
+      title: Add a Taikai
+    show:
+      generate: Generate the second part
+      overview: Overview of "%{description}"
+    states:
+      next_state: Next Step
+      previous_state: Previous Step
+    timeline:
+      title: History
+      now: Now
+      you_are_here: You are here!
+    title:
+      category: Category %{category}
+      total_num_arrows:
+        one: "%{count} arrow"
+        other: "%{count} arrows"
+  teams:
+    destroy:
+      title: Delete a team
+    edit:
+      title: Edit a team
+    new:
+      title: Add a team
+    form:
+      placeholders:
+        index: Leave blank for default choice...
+    list:
+      form_teams: Form teams
+      teamed: "%{teamed} participants assigned out of %{total}."
+  tie_break:
+    edit:
+      back: Back to Taikai
+      title: Tie-Break
+      individual: Individual Tie-breaks
+      team: Team Tie-breaks
+    form:
+      display_name: Name
+      intermediate_rank: Intermediate Rank
+      rank: Final Rank
+  teaming:
+    edit:
+      add_team: Add a team
+      clear_all: Clear teams
+      empty_team_prefix: Team name prefix cannot be empty.
+      empty_team_shortname: Team name cannot be empty.
+      form_randomly: Form randomly
+      unassigned: Unassigned
+      taken_team_shortname: A team with the name '%{shortname}' already exists.
+      placeholders:
+        team_shortname: Team name
+        team_prefix: Prefix
+  staffs:
+    destroy:
+      title: Delete a staff
+    edit:
+      title: Edit a staff
+    new:
+      title: Add a staff
+    form:
+      placeholders:
+        user: Start typing a name/surname...
+        firstname: Leave blank to copy the user's firstname
+        lastname: Leave blank to copy the user's lastname

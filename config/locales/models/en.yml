@@ -1,27 +1,180 @@
 en:
   activerecord:
-    models:
-      taikai: Taikai
-    enums:
-    attributes:
-      dojo:
-        shortname: Code
-        name: Name
-        country_code: Country
+    states:
       taikai:
-        shortname: Code
+        new: Preparation
+        registration: Registration  
+        marking: Marking
+        tie_break: Tie-Break
+        done: Done
+    models:
+      dojo:
+        one: Club
+        other: Clubs
+      participant:
+        one: Participant
+        other: Participants
+      participating_dojo:
+        one: Participating Dojo
+        other: Participating Dojos
+      result:
+        one: Result
+        other: Results
+      taikai:
+        one: Taikai
+        other: Taikai
+      team:
+        one: Team
+        other: Teams
+      staff:
+        one: Staff
+        other: Staffs
+    booleans:
+      taikai:
+        distributed:
+          'true': Remote
+          'false': Local
+    enums:
+      match:
+        level:
+          "1": Finals
+          "2": Semi-finals
+          "3": Quarter-finals
+      result:
+        status:
+          hit: Hit
+          miss: Missed
+          unknown: Unknown
+      taikai:
+        form:
+          2in1: 2 in 1
+          individual: Individual
+          team: Teams
+          matches: Matches
+        scoring:
+          kinteki: Kinteki
+          enteki: Enteki
+        state:
+          new: Preparation
+          registration: Registration
+          marking: Marking
+          tie_break: Tie-Break
+          done: Done
+      taikai_event:
+        category:
+          rectification: Rectification
+          state_transition: Step transition
+    attributes:
+      user:
+        firstname: Firstname
+        lastname: Lastname
+      dojo:
+        city: City
+        country_code: Country
+        country_name: Country
+        name: Full name
+        shortname: Short name
+      match:
+        level: level
+        index: Index
+        winner: Winner
+        team1_id: Team 1
+        team2_id: Team 2
+      participant:
+        club: Club
+        display_name: Name
+        firstname: Firstname
+        index_in_team: Index in team
+        index_title: Participant number
+        index: Nb
+        kyudojin: Kyudojin
+        lastname: Lastname
+        participating_dojo: Participating Dojo
+        team: Team
+      participating_dojo:
+        city: City
+        display_name: Short name
+        dojo: Dojo
+        num_participants_title: Number of participants
+        num_participants: Nb.
+        pays: Country
+      staff:
+        display_name: Name
+        firstname: Firstname
+        lastname: Lastname
+        participating_dojo: Participating Dojo
+        role: Role
+        user: User
+      taikai:
+        category: Category
+        distributed: Remote
+        end_date: End date
+        form: Form
+        name: Name
+        num_arrows: Number of arrows
+        num_targets: Number of targets/shooters
+        scoring: Scoring type
+        shortname: Short name
+        start_date: Start date
+        tachi_size: Tachi size
+        total_num_arrows: Total number of arrows
+      team:
+        index: Index
+        shortname: Shortname
+        num_participants: Nb.
+        mixed: Mixed
     errors:
+      messages:
+        no_change_if_taikai_is_done: A Taikai in the done state cannot be modified anymore!
+        no_change_if_taikai_is_marking: The parameters and participants of a Taikai cannot be modified after registration!
+
       models:
         match:
           attributes:
+            base:
+              cant_change_teams_if_results_exist: Cannot change teams after setting results
             winner:
-              defined_results_for_target_match: cannot be declared when target match already has results
+              defined_results_for_target_match: cannot be declared when target matches already have results
         participant:
           attributes:
             index_in_team:
-              blank: must be defined if participant is a team member
-              taken: must be unique within a team
+              blank: must be defined if the participant is part of a team.
+              taken: must be unique within a team.
+            kyudojin:
+              taken: is already a participant.
+        participating_dojo:
+          attributes:
+            base:
+              unteamed: Cannot draw until all participants are member of a team.
+        result:
+          attributes:
+            base:
+              already_finalized: Cannot modify a finalized result.
+        staff:
+          attributes:
+            base:
+              at_least_one_admin: "There must always be at least one Administrator per Taikai."
+            user:
+              blank: must be defined if their role requires the use of PiKaichu.
         team:
           attributes:
             index:
-              taken: must be unique within a participating dojo
+              taken: must be unique for a host club.
+        taikai:
+          attributes:
+            base:
+              not_finalized: All results must be finalized before creating the team tournament.
+            total_num_arrows:
+              inclusion: must be 8, 12, or 20 for kinteki, 4 for matches, and any for enteki.
+            tachi_size:
+              inclusion: must be 3 or 6.
+            num_targets:
+              inclusion: must be 3, 5, 6, or 10.
+            shortname:
+              invalid: can only contain alphabetical letters, numbers, and hyphens (no spaces).
+            distributed:
+              num_participating_dojos: must be checked if there are multiple participating clubs.
+        team:
+          attributes:
+            index:
+              taken: must be unique for a Participating Dojo.

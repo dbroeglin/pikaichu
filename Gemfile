@@ -115,6 +115,7 @@ group :development do
   gem 'guard-rails'
 
   gem 'terminal-table'
+  gem 'i18n-tasks', '~> 1.0.14'
 end
 
 group :test do
