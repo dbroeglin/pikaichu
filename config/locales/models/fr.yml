@@ -163,7 +163,7 @@ fr:
             total_num_arrows:
               inclusion: "doit être 8, 12 ou 20 pour kinteki, 4 pour des les matches et libre pour enteki."
             tachi_size:
-              inclusion: doit être 3 ou 6.
+              inclusion: doit être 3 ou 5.
             num_targets:
               inclusion: doit être 3, 5, 6 ou 10.
             shortname:

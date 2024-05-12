@@ -167,7 +167,7 @@ en:
             total_num_arrows:
               inclusion: must be 8, 12, or 20 for kinteki, 4 for matches, and any for enteki.
             tachi_size:
-              inclusion: must be 3 or 6.
+              inclusion: must be 3 or 5.
             num_targets:
               inclusion: must be 3, 5, 6, or 10.
             shortname:
