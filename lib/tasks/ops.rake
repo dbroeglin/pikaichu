@@ -22,9 +22,10 @@ namespace :ops do
       desc "Backup production database"
       task production: :environment do
         my_ip = my_ip()
-        # TODO: make less brittle
+        rg_name = 'rg-pikaichu-production-002'
+        server_name = `az postgres flexible-server list --resource-group #{rg_name} --query '[0].name' --output tsv`.strip
         sh "az postgres flexible-server firewall-rule update " \
-          "--name pg-pikaichu-production-001 --resource-group rg-pikaichu-production-001 " \
+          "--name #{server_name} --resource-group #{rg_name} " \
           "--rule-name Backup --start-ip-address #{my_ip} --end-ip-address #{my_ip}"
         sh "#{pg_dump} | gzip -9 > ../backups/pikaichu_#{DateTime.now.strftime('%Y-%m-%d_%H-%M-%S')}.sql.gz"
       end
