@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 fr:
+  language_name: Français
   date:
     formats:
       shorter: '%d/%m/%y'

@@ -68,6 +68,7 @@ fr:
       user:
         firstname: Prénom
         lastname: Nom
+        locale: Langue
       dojo:
         city: Ville
         country_code: Pays

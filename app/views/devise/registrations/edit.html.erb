@@ -29,6 +29,9 @@
             <%= f.input :current_password, autocomplete: "current-password",
                         help: t('.we_need_your_current_password_to_confirm_your_changes') %>
 
+            <%= f.input :locale, as: :select, collection: I18n::available_locales.map {|l| [l, t('language_name', locale: l)]},
+                        value_method: :first, text_method: :last %>
+
             <%= f.button t('.update'), class: "button has-background-light" %>
           <% end %>
         </div>

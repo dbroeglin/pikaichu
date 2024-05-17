@@ -7,6 +7,7 @@ class User < ApplicationRecord
   audited
 
   validates :firstname, :lastname, presence: true
+  validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }, presence: true
 
   self.non_audited_columns = [:encrypted_password]
 

@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname, :email])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname, :email, :locale])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :email, :locale])
   end
 
   def user_not_authorized(_)
@@ -23,10 +23,9 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, method: :get
   end
 
-  around_action :switch_locale
-
   def switch_locale(&action)
-    locale = params[:locale] || I18n.default_locale
+    locale = params[:locale] || current_user&.locale || I18n.default_locale
+
     I18n.with_locale(locale, &action)
   end
 end

@@ -68,6 +68,7 @@ en:
       user:
         firstname: Firstname
         lastname: Lastname
+        locale: Language
       dojo:
         city: City
         country_code: Country
