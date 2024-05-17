@@ -11,6 +11,10 @@ fr:
   back: Retour
   import: Importer
 
+  application:
+    nav:
+      guide: Guide
+      tutorial: Tutoriel
   home:
     index:
       dojos_summary: "%{nb} Clubs gérés."

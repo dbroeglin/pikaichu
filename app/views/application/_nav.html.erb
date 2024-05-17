@@ -26,7 +26,21 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
+      <% if user_signed_in? %>
+        <%= link_to '/docs/guide.pdf', target: '_blank', class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
+          <span class="icon is-medium">
+            <i class="fas fa-compass"></i>
+          </span>
+          <span><%= t '.guide' %></span>
+        <% end %>
+        <%= link_to '/docs/tutorial.pdf', target: '_blank', class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
+          <span class="icon is-medium">
+            <i class="fas fa-circle-question"></i>
+          </span>
+          <span><%= t '.tutorial' %></span>
+        <% end %>
+      <% end %>
+        <div class="navbar-item">
         <div class="buttons">
           <% if (!user_signed_in?) %>
             <%= link_to new_user_session_path, class: "button is-normal" do %>
@@ -34,13 +48,13 @@
                 <i class="fas fa-sign-in-alt"></i>
               </span>
               <span><%= t 'devise.sessions.new.sign_in' %></span>
-            <% end%>
+            <% end %>
             <%= link_to new_user_registration_path, class: "button" do %>
               <span class="icon is-medium">
                 <i class="fas fa-user-plus"></i>
               </span>
               <span><%= t 'devise.registrations.new.sign_up' %></span>
-            <% end%>
+            <% end %>
           <% else %>
 
 

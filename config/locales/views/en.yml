@@ -11,6 +11,10 @@ en:
   back: Back
   import: Import
 
+  application:
+    nav:
+      guide: Guide
+      tutorial: Tutorial
   home:
     index:
       dojos_summary: "%{nb} Managed Clubs."
