@@ -39,9 +39,9 @@ en:
     registrations:
       edit:
         my_account: My Account
-  draw_ok: Users have been drawns.
+  draw_ok: The draw was carried out.
   file_missing: No file was imported.
-  result_rectified: "Result of shoot %{index} in round %{round} of %{participant} has been changed to %{result}."
+  result_rectified: "Result of shot %{index} in series %{round} by %{participant} has been corrected to %{result}."
   import_alerts:
     one: "Unable to import %{names}."
     other: "The following kyudojin's could not be imported : %{names}."
@@ -55,8 +55,8 @@ en:
   templates:
       taikai_event:
         rectification:
-          kinteki: "%{user} has rectified the result of shot %{index} of the series %{round} of %{participant} to %{status} (previously: %{previous_status})."
-          enteki: "%{user} has rectified the result of shot %{index} of the series %{round} of %{participant} to %{value}/%{status} (previously %{previous_value}/%{previous_status})."
+          kinteki: "%{user} has corrected the result of shot %{index} of series %{round} of %{participant} to %{status} (previously: %{previous_status})."
+          enteki: "%{user} has corrected the result of shot %{index} of series %{round} of %{participant} to %{value}/%{status} (previously %{previous_value}/%{previous_status})."
         tie_break:
           participant: "%{user} has broken the tie for participant %{participant} from provisional rank %{intermediate_rank} to rank %{rank}."
           team: "%{user} has broken the tie for team %{team} from provisional rank %{intermediate_rank} to rank %{rank}."
@@ -70,8 +70,8 @@ en:
           tie_break_done: "%{user} has moved '%{taikai}' from the 'Tie-Break' state to the 'Finished' state."
           done_tie_break: "%{user} has returned '%{taikai}' from the 'Finished' state to the 'Tie-Break' state."
       taikai_state_transitions_errors:
-        message: Unable to move to the step "%{target_state}".
+        message: Unable to move to step "%{target_state}".
         registration_marking: >
-          To move to the "Marking" step, the staff must have at least one Tournament Director, a Shajo Judge, and a Target Judge.
+          To move to the "Marking" step, Staff must have at least one Tournament Director, a Shajo Judge, and a Target Judge.
         marking_tie_break: >
           To move to the "Tie-Break" step, all results from all host clubs must be validated.
