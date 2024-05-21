@@ -150,6 +150,10 @@ GEM
       railties (>= 5.0.0)
     faker (3.3.1)
       i18n (>= 1.8.11, < 2)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
     ffi (1.16.3)
     fixture_builder (0.5.2)
       activerecord (>= 2)
@@ -237,6 +241,8 @@ GEM
     msgpack (1.7.2)
     mutex_m (0.2.0)
     nenv (0.3.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.11)
       date
       net-protocol
@@ -390,6 +396,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unaccent (0.4.0)
     unicode-display_width (2.5.0)
+    uri (0.13.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -432,6 +439,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  faraday (~> 2.9)
   fixture_builder
   foreman
   guard

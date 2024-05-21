@@ -83,6 +83,8 @@ gem 'kaminari'
 
 gem 'capitalize-names'
 
+gem "faraday", "~> 2.9"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
@@ -92,6 +94,8 @@ group :development, :test do
   gem 'fixture_builder'
 
   gem 'foreman' # used to run bin/dev
+
+  gem "azd", "~> 0.9", :group => :development
 end
 
 group :development do
@@ -125,4 +129,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "azd", "~> 0.9", :group => :development
