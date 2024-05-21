@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :dojos, only: [:index, :new, :create, :edit, :update, :destroy]
-
   get  '/taikais/:id/marking',                          to: 'marking#show',                as: :show_marking
   post '/taikais/:id/marking/:participant_id/update',   to: 'marking#update',              as: :update_marking
   patch '/taikais/:id/marking/:participant_id/result/:result_id',
@@ -21,6 +19,8 @@ Rails.application.routes.draw do
 
   get '/kyudojins/available', to: 'search#kyudojins', as: :search_kyudojins
 
+  patch '/users/account', to: 'users#update'
+  resources :dojos, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :taikais, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       get   'export.xlsx', to: 'taikais#export', as: :taikai_export # TODO: refactor
