@@ -16,6 +16,9 @@
                   autocomplete: "new-password",
                   help: t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
 
+            <%= f.input :locale, as: :select, collection: I18n::available_locales.map {|l| [l, t('language_name', locale: l)]},
+                        value_method: :first, text_method: :last %>
+                        
             <%= f.button t('.sign_up'), class: "button has-background-light" %>
           <% end %>
         </div>
