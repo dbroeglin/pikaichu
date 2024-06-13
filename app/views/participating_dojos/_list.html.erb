@@ -15,7 +15,7 @@
             <i class="fas fa-plus"></i>
           </span>
           <span><%= t 'new' %></span>
-        <% end %>
+        <% end if policy(taikai).update? %>
       </th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
       <td><%= participating_dojo.dojo.country_name %></td>
       <td><%= participating_dojo.participants.count %></td>
       <td class="has-text-right">
-        <%= link_to draw_taikai_participating_dojo_path(@taikai, participating_dojo),
+        <%= link_to draw_taikai_participating_dojo_path(taikai, participating_dojo),
                     class: "button is-small has-background-light",
                     data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
                     title: t('taikais.draw') do %>

@@ -98,9 +98,7 @@ class ParticipantsController < ApplicationController
           notices << "#{row['Prénom']} #{row['Nom']}"
         end
 
-        
         alerts << "#{row['Prénom']} #{row['Nom']}" unless @participant.save
-        
       end
       flash[:notice] = t :import_notices, names: notices.join(', '), count: notices.size if notices.any?
       flash[:alert] = t :import_alerts, names: alerts.join(', '), count: alerts.size if alerts.any?

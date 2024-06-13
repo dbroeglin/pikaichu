@@ -12,7 +12,8 @@ class ParticipatingDojoPolicy < ApplicationPolicy
   end
 
   def destroy?
-    update?
+    user.admin? ||
+      @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
   end
 
   def edit?
@@ -25,9 +26,8 @@ class ParticipatingDojoPolicy < ApplicationPolicy
 
   def update?
     # TODO: optimize?
-    user.admin? ||
-      @participating_dojo.staffs.joins(:role).where(user: @user, 'role.code': :dojo_admin).any? ||
-      @participating_dojo.taikai.staffs.joins(:role).where(user: @user, 'role.code': :taikai_admin).any?
+    destroy? ||
+      @participating_dojo.staffs.joins(:role).where(user: @user, 'role.code': :dojo_admin).any?
   end
 
   class Scope < Scope
