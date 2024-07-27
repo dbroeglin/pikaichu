@@ -1,5 +1,3 @@
-# rubocop:disable Layout/LineLength
-
 namespace :deploy do
   namespace :azure do
     desc "Deploy"
