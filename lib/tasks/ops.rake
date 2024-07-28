@@ -24,6 +24,9 @@ namespace :ops do
         my_ip = my_ip()
         rg_name = 'rg-pikaichu-production-002'
         server_name = `az postgres flexible-server list --resource-group #{rg_name} --query '[0].name' --output tsv`.strip
+
+        raise "Unable to get server name from Azure" if server_name.empty?
+
         sh "az postgres flexible-server firewall-rule update " \
           "--name #{server_name} --resource-group #{rg_name} " \
           "--rule-name Backup --start-ip-address #{my_ip} --end-ip-address #{my_ip}"

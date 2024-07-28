@@ -145,14 +145,16 @@ class Taikai < ApplicationRecord
     teams.each do |team|
       team.scores.destroy_all
     end
-    if form_matches?
-      matches.each do |match|
-        match.update!(winner: nil)
-      end  
+    return unless form_matches?
+
+    matches.each do |match|
+      match.update!(winner: nil)
     end
   end
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
+    logger.info "Creating new '#{name_suffix}' Taikai from 2in1 Taikai #{taikai_id} with suffix #{shortname_suffix}"
+
     taikai = Taikai.includes(
       {
         participating_dojos: [
@@ -183,6 +185,19 @@ class Taikai < ApplicationRecord
       return new_taikai
     end
 
+    old_teams = taikai.teams.ranked(true).values.flatten
+    if old_teams.size < bracket_size
+      new_taikai.errors.add(:base, :not_enough_teams, bracket_size: bracket_size)
+      return new_taikai
+    end
+
+    old_teams = old_teams.reject(&:mixed).take(bracket_size)
+    if old_teams.size < bracket_size
+      new_taikai.errors.add(:base, :not_enough_non_mixed_teams_html,
+                            bracket_size: bracket_size)
+      return new_taikai
+    end
+
     return new_taikai unless new_taikai.save
 
     taikai.staffs.each do |staff|
@@ -207,11 +222,7 @@ class Taikai < ApplicationRecord
 
     # TODO: select only the 4/8 best teams to copy
     new_teams = []
-    taikai
-      .teams.ranked(true).values.flatten
-      .reject(&:mixed) # TODO: generate error if not enough teams
-      .first(bracket_size)
-      .each_with_index do |team, index|
+    old_teams.each_with_index do |team, index|
       logger.info "Creating new team #{team.shortname}"
       new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
         shortname: team.shortname,

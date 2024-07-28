@@ -160,7 +160,9 @@ fr:
         taikai:
           attributes:
             base:
-              not_finalized: Tous les résultats doivent être finalisés avant de créer le tournoi par équipe.
+              not_finalized: Tous les résultats doivent être finalisés avant de créer le tournoi en matchs.
+              not_enough_teams: Il n'y a pas assez d'équipes pour créer un tournoi en matchs de %{bracket_size} équipes.
+              not_enough_non_mixed_teams_html: Il n'y a pas assez d'équipes <b>non mixtes</b> pour créer un tournoi en matchs de %{bracket_size} équipes.
             total_num_arrows:
               inclusion: "doit être 8, 12 ou 20 pour kinteki, 4 pour des les matches et libre pour enteki."
             tachi_size:

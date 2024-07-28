@@ -39,14 +39,21 @@ module TaikaisTestHelpers
   end
 
   def find_test_taikai(*data)
-    begin
-      Taikai.find_by!(shortname: taikai_shortname(*data))
-    rescue ActiveRecord::RecordNotFound
-      raise "Taikai #{taikai_shortname(*data)} not found in test database"
-    end
+    Taikai.find_by!(shortname: taikai_shortname(*data))
+  rescue ActiveRecord::RecordNotFound
+    raise "Taikai #{taikai_shortname(*data)} not found in test database"
   end
 
   def assert_taikai_title(name)
     assert_selector 'p.title.is-4', text: name
+  end
+
+  def generate_taikai_results(taikai)
+    scope = Result.joins(score: { participant: :taikai }).where('taikais.id = ?', taikai.id)
+    if taikai.scoring == 'kinteki'
+      scope.update_all(status: :hit, final: true)
+    elsif taikai.scoring == 'enteki'
+      scope.update_all(status: :hit, value: 3, final: true)
+    end
   end
 end

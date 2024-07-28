@@ -17,13 +17,13 @@
         <% if notice %>
         <div class="notification is-info mb-5">
           <button class="delete"></button>
-          <%= notice %>
+          <%= sanitize(notice) %>
         </div>
         <% end %>
         <% if alert %>
         <div class="notification is-danger mb-5">
           <button class="delete"></button>
-          <%= alert %>
+          <%= sanitize(alert) %>
         </div>
         <% end %>
       </div>

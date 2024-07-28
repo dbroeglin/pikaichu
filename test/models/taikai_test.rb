@@ -12,13 +12,15 @@ class TaikaiTest < ActiveSupport::TestCase
 
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
     dist = distributed ? :distributed : :local
+    next unless distributed
+
     test "#{form} #{dist} #{total_num_arrows} #{scoring} validates" do
       @taikai.scoring = scoring
       @taikai.distributed = distributed
       @taikai.form = form
       @taikai.total_num_arrows = total_num_arrows
       @taikai.save!
-    end if distributed
+    end
   end
 
   [
@@ -63,5 +65,46 @@ class TaikaiTest < ActiveSupport::TestCase
     @taikai.transition_to!(:done)
 
     # TODO: test that we cannot change the form, scoring, etc.
+  end
+
+  test "cannot create part two without enough teams" do
+    @taikai = taikais(:'2in1_dist_12_kinteki')
+    @taikai.current_user = users(:jean_bon)
+    @taikai.transition_to!(:registration)
+    @taikai.teams.last.destroy!
+    @taikai.transition_to!(:marking)
+    generate_taikai_results(@taikai)
+    @taikai.transition_to!(:tie_break)
+    @taikai.transition_to!(:done)
+    new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
+
+    assert_equal :not_enough_teams, new_taikai.errors.details[:base].first[:error]
+  end
+
+  test "cannot create part two without enough non-mixed teams" do
+    @taikai = taikais(:'2in1_dist_12_kinteki')
+    @taikai.current_user = users(:jean_bon)
+    @taikai.transition_to!(:registration)
+    @taikai.teams.each { |team| team.update(mixed: true) }
+    @taikai.transition_to!(:marking)
+    generate_taikai_results(@taikai)
+    @taikai.transition_to!(:tie_break)
+    @taikai.transition_to!(:done)
+    new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
+
+    assert_equal :not_enough_non_mixed_teams_html, new_taikai.errors.details[:base].first[:error]
+  end
+
+  test "can create part two" do
+    @taikai = taikais(:'2in1_dist_12_kinteki')
+    @taikai.current_user = users(:jean_bon)
+    @taikai.transition_to!(:registration)
+    @taikai.transition_to!(:marking)
+    generate_taikai_results(@taikai)
+    @taikai.transition_to!(:tie_break)
+    @taikai.transition_to!(:done)
+    new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
+
+    assert new_taikai.errors.empty?
   end
 end
