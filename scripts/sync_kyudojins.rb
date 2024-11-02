@@ -14,11 +14,10 @@ conn = Faraday.new(options) do |faraday|
   faraday.response :json
 end
 
-response = conn.get("#{ENV.fetch('FEDERATION_API_URL', nil)}/kyudo_prod/api.svc/licenciesSaison/2023_2024")
+response = conn.get("#{ENV.fetch('FEDERATION_API_URL', nil)}/kyudo_prod/api.svc/licenciesSaison/2024_2025")
 body = response.body
 
-result = Kyudojin.upsert_all(
-  body['licencies'].map do |licencie|
+kyudojins = body['licencies'].map do |licencie|
     {
       firstname: licencie['prenom'],
       lastname: licencie['nom'],
@@ -26,7 +25,11 @@ result = Kyudojin.upsert_all(
       federation_club: licencie['licences'].first['clubNom'],
       federation_country_code: 'fr'
     }
-  end,
+  end
+
+puts "Number of kyudojins to update: #{kyudojins.size}"
+result = Kyudojin.upsert_all(
+  kyudojins,
   unique_by: [:license_id],
   update_only: [:firstname, :lastname, :federation_club, :federation_country_code],
   record_timestamps: true
