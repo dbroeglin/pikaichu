@@ -12,18 +12,18 @@ class Taikai < ApplicationRecord
 
   CATEGORY_VALUES = %w[A B C D].freeze
 
-  enum form: {
+  enum :form, {
     individual: 'individual',
     team: 'team',
     '2in1': '2in1',
     matches: 'matches',
-  }, _prefix: :form
+  }, prefix: :form
   human_enum :form
 
-  enum scoring: {
+  enum :scoring, {
     kinteki: 'kinteki',
     enteki: 'enteki',
-  }, _prefix: :scoring
+  }, prefix: :scoring
   human_enum :scoring
 
   has_many :taikai_transitions, autosave: false, class_name: :TaikaiTransition, dependent: :destroy

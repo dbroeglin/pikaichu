@@ -9,6 +9,11 @@ class LeaderboardTest < ApplicationSystemTestCase
     sign_in_as users(:jean_bon)
   end
 
+  teardown do
+    # Hack to avoid starting tests with a session from previous tests
+    visit destroy_user_session_url
+  end
+
   TAIKAI_DATA.each do |data|
     taikai = find_test_taikai(*data)
 

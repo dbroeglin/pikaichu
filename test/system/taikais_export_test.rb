@@ -62,4 +62,9 @@ class TaikaisExportTest < ApplicationSystemTestCase
       assert_match(%r{.*/Taikai - #{taikai.shortname}\.xlsx$}, last_download)
     end
   end
+
+  teardown do
+    # Hack to avoid starting tests with a session from previous tests
+    visit destroy_user_session_url
+  end
 end

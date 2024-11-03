@@ -17,11 +17,11 @@ class Result < ApplicationRecord
     score.recalculate_individual_score
   end
 
-  enum status: {
+  enum :status, {
     hit: 'hit',
     miss: 'miss',
     unknown: 'unknown'
-  }, _prefix: :status
+  }, prefix: :status
 
   human_enum :status
 

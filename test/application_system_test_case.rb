@@ -2,6 +2,8 @@ require "test_helper"
 require "download_helpers"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  parallelize(workers: 1)
+
   include FactoryBot::Syntax::Methods
 
   driver = if ENV['CHROME_DEBUG'] == 'true'
@@ -41,6 +43,9 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def sign_in_as(user)
     visit root_url
+
+    # Hack to avoid starting tests with a session from previous tests
+    find("a", exact_text: "Déconnexion").click if has_selector?("a", exact_text: "Déconnexion")
 
     assert_selector 'button', text: "Connexion"
 

@@ -22,4 +22,9 @@ class UsersTest < ApplicationSystemTestCase
 
     click_on "Déconnexion"
   end
+
+  teardown do
+    # Hack to avoid starting tests with a session from previous tests
+    visit destroy_user_session_url
+  end
 end

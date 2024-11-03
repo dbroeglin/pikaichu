@@ -20,6 +20,9 @@ class TaikaiTest < ActiveSupport::TestCase
       @taikai.form = form
       @taikai.total_num_arrows = total_num_arrows
       @taikai.save!
+
+      assert_empty @taikai.errors
+      assert_not_nil @taikai.id
     end
   end
 
@@ -49,10 +52,17 @@ class TaikaiTest < ActiveSupport::TestCase
       @taikai.total_num_arrows = form == :matches ? 4 : 12
       @taikai.save!
       @taikai.transition_to!(:registration)
+      assert @taikai.in_state? :registration
+
       @taikai.transition_to!(:marking)
+      assert @taikai.in_state? :marking
+
       TestDataService.finalize_scores(@taikai)
       @taikai.transition_to!(:tie_break)
+      assert @taikai.in_state? :tie_break
+
       @taikai.transition_to!(:done)
+      assert @taikai.in_state? :done
     end
   end
 
@@ -64,7 +74,9 @@ class TaikaiTest < ActiveSupport::TestCase
     @taikai.transition_to!(:tie_break)
     @taikai.transition_to!(:done)
 
-    # TODO: test that we cannot change the form, scoring, etc.
+    assert_raises ActiveRecord::RecordInvalid do
+      @taikai.update!(shortname: "newshortname")
+    end
   end
 
   test "cannot create part two without enough teams" do
