@@ -33,12 +33,5 @@ namespace :ops do
         sh "#{pg_dump} | gzip -9 > ../backups/pikaichu_#{DateTime.now.strftime('%Y-%m-%d_%H-%M-%S')}.sql.gz"
       end
     end
-
-    namespace :fixtures do
-      desc "Load fixtures and post-process"
-      task full: :'db:fixtures:load' do
-        Participant.all.each(&:build_empty_score_and_results)
-      end
-    end
   end
 end

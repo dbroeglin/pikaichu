@@ -25,6 +25,14 @@ class Result < ApplicationRecord
 
   human_enum :status
 
+  def status_code
+    {
+      'hit' => 'X',
+      'miss' => 'O',
+      'unknown' => '?'
+    }[status.to_s]
+  end
+
   def value=(value)
     super(value)
     return if value.nil?

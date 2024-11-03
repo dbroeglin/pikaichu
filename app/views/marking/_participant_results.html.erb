@@ -1,7 +1,7 @@
 <% if taikai.form_individual? %>
   <td class="has-text-left <%= first %>"><%= participant.index %></td>
 <% end %>
-<td class="has-text-left <%= first %>"><%= participant.display_name %></td>
+<td class="has-text-left <%= first %>"><%= participant.index %> - <%= participant.display_name %></td>
 <td class="has-text-centered <%= first %>">
   <%= render "choice", taikai: @taikai, participant: participant, match: local_assigns[:match] %>
 </td>

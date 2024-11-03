@@ -65,6 +65,8 @@ Rails.application.routes.draw do
     resources :staffs
   end
 
+  get '/scoreboard/:api_key', to: 'scoreboard#show', as: :scoreboard
+
   get '/championship',              to: 'championship#index'
   get '/championship/:year/export', to: 'championship#export', as: :championship_export
 

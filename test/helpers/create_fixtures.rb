@@ -29,6 +29,7 @@ class CreateFixtures
     create_staff_roles
     create_dojos
     create_taikais
+    create_scoreboards
     reset_pk_sequences
   end
 
@@ -139,14 +140,16 @@ class CreateFixtures
   end
 
   def create_taikais
+    taikais = models[:taikais] = {}.with_indifferent_access
     %w[kinteki enteki].each do |scoring|
       [true, false].each do |distributed|
-        create :taikai_with_participating_dojo,
-               user: models[:users]['marc_o_polo'],
-               form: 'matches',
-               distributed: distributed,
-               total_num_arrows: 4,
-               scoring: scoring do |taikai|
+        fixture_name = ['matches', distributed ? "dist" : "local", 4, scoring].join '_'
+        taikais[fixture_name] = create :taikai_with_participating_dojo,
+                                       user: models[:users]['marc_o_polo'],
+                                       form: 'matches',
+                                       distributed: distributed,
+                                       total_num_arrows: 4,
+                                       scoring: scoring do |taikai|
           taikai.matches.create!(index: 1, level: 3, team1: taikai.teams[0], team2: taikai.teams[1])
           taikai.matches.create!(index: 2, level: 3, team1: taikai.teams[2], team2: taikai.teams[3])
           taikai.matches.create!(index: 3, level: 3, team1: taikai.teams[4], team2: taikai.teams[5])
@@ -158,29 +161,37 @@ class CreateFixtures
         end
 
         [12, 20].each do |total_num_arrows|
-          create :taikai_with_participating_dojo,
-                 form: '2in1',
-                 user: models[:users]['marc_o_polo'],
-                 distributed: distributed,
-                 total_num_arrows: total_num_arrows,
-                 scoring: scoring
+          fixture_name = ['2in1', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+          taikais[fixture_name] = create :taikai_with_participating_dojo,
+                                         form: '2in1',
+                                         user: models[:users]['marc_o_polo'],
+                                         distributed: distributed,
+                                         total_num_arrows: total_num_arrows,
+                                         scoring: scoring
 
-          create :taikai_with_participating_dojo,
-                 form: 'individual',
-                 user: models[:users]['marc_o_polo'],
-                 distributed: distributed,
-                 total_num_arrows: total_num_arrows,
-                 scoring: scoring
+          fixture_name = ['individual', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+          taikais[fixture_name] = create :taikai_with_participating_dojo,
+                                         form: 'individual',
+                                         user: models[:users]['marc_o_polo'],
+                                         distributed: distributed,
+                                         total_num_arrows: total_num_arrows,
+                                         scoring: scoring
 
-          create :taikai_with_participating_dojo,
-                 form: 'team',
-                 user: models[:users]['marc_o_polo'],
-                 distributed: distributed,
-                 total_num_arrows: total_num_arrows,
-                 scoring: scoring
+          fixture_name = ['team', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+          taikais[fixture_name] = create :taikai_with_participating_dojo,
+                                         form: 'team',
+                                         user: models[:users]['marc_o_polo'],
+                                         distributed: distributed,
+                                         total_num_arrows: total_num_arrows,
+                                         scoring: scoring
         end
       end
     end
+  end
+
+  def create_scoreboards
+    create :scoreboard, api_key: 'dummy',
+                        participating_dojo: models[:taikais]['2in1_dist_12_kinteki'].participating_dojos.first
   end
 
   # other creation and helper methods to abstract common logic, e.g.

@@ -21,6 +21,7 @@ class ParticipatingDojo < ApplicationRecord
            dependent: :destroy,
            inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
+  has_many :shadans, inverse_of: :participating_dojo, dependent: :destroy
 
   def draw
     case taikai.form
@@ -33,6 +34,9 @@ class ParticipatingDojo < ApplicationRecord
       teams.update_all(index: nil)
       teams.shuffle.each_with_index do |team, index|
         team.update!(index: index + 1)
+      end
+      teams.map(&:participants).flatten.each_with_index do |participant, index|
+        participant.update!(index: index + 1)
       end
     when '2in1'
       if participants.unteamed.any?
@@ -50,9 +54,23 @@ class ParticipatingDojo < ApplicationRecord
         teams.where(index: nil).shuffle.each_with_index do |team, index|
           team.update!(index: index + count + 1)
         end
+        teams.map(&:participants).flatten.each_with_index do |participant, index|
+          participant.update!(index: index + 1)
+        end
       end
     end
     true
+  end
+
+  def drawn?
+    case taikai.form
+    when 'individual'
+      participants.all? { |participant| participant.index.present? }
+    when 'team', '2in1'
+      teams.all? { |team| team.index.present? }
+    when 'matches'
+      true # For matches we do not need to draw, returning true
+    end
   end
 
   def finalized?
@@ -62,6 +80,30 @@ class ParticipatingDojo < ApplicationRecord
   def in_state?(*params)
     #  Note: used by RankedAssociationExtension
     taikai.in_state?(*params)
+  end
+
+  def current_shadan
+    shadans.where(finished: false).order(:round, :index).first
+  end
+
+  def create_shadans
+    case taikai.form
+    when 'individual', 'team', '2in1'
+      taikai.num_rounds.times do |round|
+        participants.draw_ordered.in_groups_of(taikai.num_targets).each_with_index do |_, index|
+          Shadan.create!(participating_dojo: self, round: round + 1, index: index + 1)
+        end
+      end
+    when 'matches'
+      raise 'Cannot create shadans for matches Taikais'
+    end
+  end
+
+  def delete_shadans
+    shadans.destroy_all
+  end
+
+  def update_shadan
   end
 
   def to_ascii

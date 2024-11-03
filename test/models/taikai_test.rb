@@ -40,6 +40,7 @@ class TaikaiTest < ActiveSupport::TestCase
       @taikai.scoring = scoring
       @taikai.form = form
       @taikai.total_num_arrows = total_num_arrows
+
       assert_raises ActiveRecord::RecordInvalid do
         @taikai.save!
       end

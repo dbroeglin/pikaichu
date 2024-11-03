@@ -2,133 +2,140 @@
 jean_bon:
   id: 1
   email: jean.bon@test.kyudo.fr
-  encrypted_password: "$2a$12$tROj7uhuZ0nMQgguvOPTVekY1MnstmPVJg9nJs8u5pSoe0MSKQh92"
+  encrypted_password: "$2a$12$JGuCidmh4kNl/zhjsXn1HOSySbpPx/cQzoZ9PD7M1LHOU0okbCHhe"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:10:59.785933000 Z
+  confirmed_at: 2024-11-03 12:41:44.946936000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:10:59.790690000 Z
-  updated_at: 2024-04-07 09:10:59.790690000 Z
+  created_at: 2024-11-03 12:41:44.966183000 Z
+  updated_at: 2024-11-03 12:41:44.966183000 Z
   firstname: Jean
   lastname: Bon
   admin: true
+  locale: fr
 marc_o_polo:
   id: 2
   email: marc.o.polo@test.kyudo.fr
-  encrypted_password: "$2a$12$AypaOXD9lE0ir7Ele4VEpek6M/1qBhA3iPfa9LIyEKYCoaJ.d0hhy"
+  encrypted_password: "$2a$12$Jv3kvBJwjkABvguLFEmPYuGcWhHMLgFfyDKdQdlpIgzcK1Zk1d8km"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:00.064677000 Z
+  confirmed_at: 2024-11-03 12:41:45.208264000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:00.065789000 Z
-  updated_at: 2024-04-07 09:11:00.065789000 Z
+  created_at: 2024-11-03 12:41:45.212290000 Z
+  updated_at: 2024-11-03 12:41:45.212290000 Z
   firstname: Marc
   lastname: O'Polo
   admin: false
+  locale: fr
 alain_terieur:
   id: 3
   email: alain.terieur@test.kyudo.fr
-  encrypted_password: "$2a$12$Hp2FyNNGwWsHPAty4eEQu.e15CE3YDbwofp2DEXtFoHvjw/cA0Cei"
+  encrypted_password: "$2a$12$MQ3qJQzog95PqeC1u7yQyurYUf1glDZJR5TgtbRA5464HrsyzYjuO"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:00.327536000 Z
+  confirmed_at: 2024-11-03 12:41:45.423030000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:00.328995000 Z
-  updated_at: 2024-04-07 09:11:00.328995000 Z
+  created_at: 2024-11-03 12:41:45.425893000 Z
+  updated_at: 2024-11-03 12:41:45.425893000 Z
   firstname: Alain
   lastname: Terieur
   admin: false
+  locale: fr
 alex_terieur:
   id: 4
   email: alex.terieur@test.kyudo.fr
-  encrypted_password: "$2a$12$FtbwO9l6PjedWvAjzMr07.PT6va625zJSwWhzvSj/vE56SrQ8b.HK"
+  encrypted_password: "$2a$12$2b1MWMM459WHy.v95iA9r.uzj2CDR6HJvgdeIexIhFvB5Uhp33UrS"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:00.591252000 Z
+  confirmed_at: 2024-11-03 12:41:45.651605000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:00.592498000 Z
-  updated_at: 2024-04-07 09:11:00.592498000 Z
+  created_at: 2024-11-03 12:41:45.655050000 Z
+  updated_at: 2024-11-03 12:41:45.655050000 Z
   firstname: Alex
   lastname: Terieur
   admin: false
+  locale: fr
 pat_ronat:
   id: 5
   email: pat.ronat@test.kyudo.fr
-  encrypted_password: "$2a$12$vpYSWgi8DJJzrFcRteppAeVHxThDcNttQM.3wzVWyFZA.Nm85YH.6"
+  encrypted_password: "$2a$12$SjjGsuk5juIj2mx0z6yyueMPo5JL2jNRKEEC/V3n01ThQwxOYJ4Jm"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:00.852459000 Z
+  confirmed_at: 2024-11-03 12:41:45.867073000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:00.853431000 Z
-  updated_at: 2024-04-07 09:11:00.853431000 Z
+  created_at: 2024-11-03 12:41:45.870942000 Z
+  updated_at: 2024-11-03 12:41:45.870942000 Z
   firstname: Pat
   lastname: Ronat
   admin: false
+  locale: fr
 vince_santo:
   id: 6
   email: vince.santo@test.kyudo.fr
-  encrypted_password: "$2a$12$d4ku5JmsSFzXuQneE8jvguEJ21CUpkq1HZuRUCCg6IQP6rH5cbNIS"
+  encrypted_password: "$2a$12$93kmpQuvC6IBj2mPC0afiur2iJHPMy2x4TfCWfgMILUZSowVs/bgq"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:01.114567000 Z
+  confirmed_at: 2024-11-03 12:41:46.071302000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:01.115732000 Z
-  updated_at: 2024-04-07 09:11:01.115732000 Z
+  created_at: 2024-11-03 12:41:46.073852000 Z
+  updated_at: 2024-11-03 12:41:46.073852000 Z
   firstname: Vince
   lastname: Santo
   admin: false
+  locale: fr
 marie_tournelle:
   id: 7
   email: marie.tournelle@test.kyudo.fr
-  encrypted_password: "$2a$12$uT/LySPdFdr1clL/a.3mxOBxhyvr8IXNkWFuu6rq.PbQ2CLE9Oqqu"
+  encrypted_password: "$2a$12$PPk/TZwgRz.WPZ9JeIn8WeKoaRaIobx/f8eiZlnKakcsBjANF7.36"
   reset_password_token:
   reset_password_sent_at:
   remember_created_at:
   confirmation_token:
-  confirmed_at: 2024-04-07 09:11:01.376908000 Z
+  confirmed_at: 2024-11-03 12:41:46.302499000 Z
   confirmation_sent_at:
   unconfirmed_email:
   failed_attempts: 0
   unlock_token:
   locked_at:
-  created_at: 2024-04-07 09:11:01.385209000 Z
-  updated_at: 2024-04-07 09:11:01.385209000 Z
+  created_at: 2024-11-03 12:41:46.313753000 Z
+  updated_at: 2024-11-03 12:41:46.313753000 Z
   firstname: Marie
   lastname: Tournelle
   admin: false
+  locale: fr

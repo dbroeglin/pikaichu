@@ -73,6 +73,7 @@ en:
       taikai_state_transitions_errors:
         message: Unable to move to step "%{target_state}".
         registration_marking: >
-          To move to the "Marking" step, Staff must have at least one Chairman a Shajo Referee, and a Target Referee.
+          To move to the "Marking" step, Staff must have at least one Chairman a Shajo Referee, and a Target Referee AND 
+          the draw must have been carried out.
         marking_tie_break: >
           To move to the "Tie-Break" step, all results from all host clubs must be validated.

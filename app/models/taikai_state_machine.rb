@@ -26,9 +26,9 @@ class TaikaiStateMachine
   # Guards
 
   guard_transition from: :registration, to: :marking do |taikai|
-    taikai.staffs.map { |staff| staff.role&.code }.uniq.select do |role_code|
+    (taikai.staffs.map { |staff| staff.role&.code }.uniq.select do |role_code|
       %w[chairman shajo_referee target_referee].include? role_code
-    end.size == 3
+    end.size == 3) && taikai.participating_dojos.all?(&:drawn?)
   end
 
   guard_transition from: :marking, to: :tie_break do |taikai|
@@ -48,11 +48,11 @@ class TaikaiStateMachine
   end
 
   before_transition(from: :registration, to: :marking) do |taikai, _transition|
-    taikai.create_scores
+    taikai.create_shadan_and_scores
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, _transition|
-    taikai.delete_scores
+    taikai.delete_shadans_and_scores
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, _transition|

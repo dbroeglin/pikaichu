@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_183609) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_03_161041) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -138,6 +138,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_183609) do
     t.index ["score_id"], name: "index_results_on_score_id"
   end
 
+  create_table "scoreboards", force: :cascade do |t|
+    t.string "api_key"
+    t.integer "nb_participants"
+    t.bigint "participating_dojo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["api_key"], name: "index_scoreboards_on_api_key", unique: true
+    t.index ["participating_dojo_id"], name: "index_scoreboards_on_participating_dojo_id"
+  end
+
   create_table "scores", force: :cascade do |t|
     t.bigint "participant_id"
     t.bigint "team_id"
@@ -153,6 +163,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_183609) do
     t.index ["participant_id"], name: "index_scores_on_participant_id"
     t.index ["team_id", "match_id"], name: "by_team_id_match_id", unique: true
     t.index ["team_id"], name: "index_scores_on_team_id"
+  end
+
+  create_table "shadans", force: :cascade do |t|
+    t.integer "index", null: false
+    t.integer "round", null: false
+    t.boolean "finished", default: false, null: false
+    t.bigint "participating_dojo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["participating_dojo_id", "index", "round"], name: "index_shadans_on_participating_dojo_id_and_index_and_round", unique: true
+    t.index ["participating_dojo_id"], name: "index_shadans_on_participating_dojo_id"
   end
 
   create_table "staff_roles", force: :cascade do |t|
@@ -271,9 +292,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_183609) do
   add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
   add_foreign_key "results", "scores"
+  add_foreign_key "scoreboards", "participating_dojos"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"
+  add_foreign_key "shadans", "participating_dojos"
   add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
