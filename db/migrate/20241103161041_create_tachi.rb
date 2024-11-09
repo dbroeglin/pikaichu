@@ -1,6 +1,6 @@
-class CreateShadan < ActiveRecord::Migration[7.2]
+class CreateTachi < ActiveRecord::Migration[7.2]
   def change
-    create_table :shadans do |t|
+    create_table :tachis do |t|
       t.integer :index, null: false
       t.integer :round, null: false
       t.boolean :finished, null: false, default: false
@@ -9,6 +9,6 @@ class CreateShadan < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :shadans, %i[participating_dojo_id index round], unique: true
+    add_index :tachis, %i[participating_dojo_id index round], unique: true
   end
 end

@@ -6,7 +6,7 @@ class ScoreboardController < ApplicationController
   def show
     @scoreboard = Scoreboard.find_by!(api_key: params[:api_key])
 
-    @scores = @shadan.current_results
+    @scores = @tachi.current_results
 
     # answer different formats
     respond_to do |format|

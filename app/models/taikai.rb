@@ -126,14 +126,14 @@ class Taikai < ApplicationRecord
       .where(final: false).none?
   end
 
-  def create_shadan_and_scores
+  def create_tachi_and_scores
     if form_matches?
       matches.each do |match|
         match.build_empty_score_and_results
       end
     else
       participating_dojos.each do |participating_dojo|
-        participating_dojo.create_shadans
+        participating_dojo.create_tachis
       end
       teams.each(&:build_empty_score)
       participants.each(&:build_empty_score_and_results)
@@ -141,9 +141,9 @@ class Taikai < ApplicationRecord
     save!
   end
 
-  def delete_shadans_and_scores
+  def delete_tachis_and_scores
     participating_dojos.each do |participating_dojo|
-      participating_dojo.delete_shadans
+      participating_dojo.delete_tachis
     end
     participants.each do |participant|
       participant.scores.destroy_all

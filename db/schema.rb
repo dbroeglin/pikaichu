@@ -165,17 +165,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_03_161041) do
     t.index ["team_id"], name: "index_scores_on_team_id"
   end
 
-  create_table "shadans", force: :cascade do |t|
-    t.integer "index", null: false
-    t.integer "round", null: false
-    t.boolean "finished", default: false, null: false
-    t.bigint "participating_dojo_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["participating_dojo_id", "index", "round"], name: "index_shadans_on_participating_dojo_id_and_index_and_round", unique: true
-    t.index ["participating_dojo_id"], name: "index_shadans_on_participating_dojo_id"
-  end
-
   create_table "staff_roles", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
@@ -198,6 +187,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_03_161041) do
     t.index ["role_id"], name: "index_staffs_on_role_id"
     t.index ["taikai_id"], name: "index_staffs_on_taikai_id"
     t.index ["user_id"], name: "index_staffs_on_user_id"
+  end
+
+  create_table "tachis", force: :cascade do |t|
+    t.integer "index", null: false
+    t.integer "round", null: false
+    t.boolean "finished", default: false, null: false
+    t.bigint "participating_dojo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["participating_dojo_id", "index", "round"], name: "index_tachis_on_participating_dojo_id_and_index_and_round", unique: true
+    t.index ["participating_dojo_id"], name: "index_tachis_on_participating_dojo_id"
   end
 
   create_table "taikai_events", force: :cascade do |t|
@@ -296,11 +296,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_03_161041) do
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"
-  add_foreign_key "shadans", "participating_dojos"
   add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
+  add_foreign_key "tachis", "participating_dojos"
   add_foreign_key "taikai_events", "taikais"
   add_foreign_key "taikai_events", "users"
   add_foreign_key "taikai_transitions", "taikais"

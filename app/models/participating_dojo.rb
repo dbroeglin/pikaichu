@@ -21,7 +21,7 @@ class ParticipatingDojo < ApplicationRecord
            dependent: :destroy,
            inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
-  has_many :shadans, inverse_of: :participating_dojo, dependent: :destroy
+  has_many :tachis, inverse_of: :participating_dojo, dependent: :destroy
 
   def draw
     case taikai.form
@@ -82,28 +82,28 @@ class ParticipatingDojo < ApplicationRecord
     taikai.in_state?(*params)
   end
 
-  def current_shadan
-    shadans.where(finished: false).order(:round, :index).first
+  def current_tachi
+    tachis.where(finished: false).order(:round, :index).first
   end
 
-  def create_shadans
+  def create_tachis
     case taikai.form
     when 'individual', 'team', '2in1'
       taikai.num_rounds.times do |round|
         participants.draw_ordered.in_groups_of(taikai.num_targets).each_with_index do |_, index|
-          Shadan.create!(participating_dojo: self, round: round + 1, index: index + 1)
+          Tachi.create!(participating_dojo: self, round: round + 1, index: index + 1)
         end
       end
     when 'matches'
-      raise 'Cannot create shadans for matches Taikais'
+      raise 'Cannot create tachis for matches Taikais'
     end
   end
 
-  def delete_shadans
-    shadans.destroy_all
+  def delete_tachis
+    tachis.destroy_all
   end
 
-  def update_shadan
+  def update_tachi
   end
 
   def to_ascii

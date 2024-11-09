@@ -48,11 +48,11 @@ class TaikaiStateMachine
   end
 
   before_transition(from: :registration, to: :marking) do |taikai, _transition|
-    taikai.create_shadan_and_scores
+    taikai.create_tachi_and_scores
   end
 
   before_transition(from: :marking, to: :registration) do |taikai, _transition|
-    taikai.delete_shadans_and_scores
+    taikai.delete_tachis_and_scores
   end
 
   before_transition(from: :marking, to: :tie_break) do |taikai, _transition|

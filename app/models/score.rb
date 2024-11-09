@@ -104,7 +104,7 @@ class Score < ApplicationRecord
 
     save!
     participant.team&.score(match_id)&.recalculate_team_score
-    participant.participating_dojo.update_shadan
+    participant.participating_dojo.update_tachi
   end
 
   def recalculate_team_score

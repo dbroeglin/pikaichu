@@ -2,8 +2,8 @@
 taikai_admin:
   id: 1
   code: taikai_admin
-  created_at: 2024-11-03 12:41:46.371246000 Z
-  updated_at: 2024-11-03 12:41:46.371246000 Z
+  created_at: 2024-11-09 13:29:28.802755000 Z
+  updated_at: 2024-11-09 13:29:28.802755000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Administrateur
     en: Administrator
@@ -13,8 +13,8 @@ taikai_admin:
 dojo_admin:
   id: 2
   code: dojo_admin
-  created_at: 2024-11-03 12:41:46.422332000 Z
-  updated_at: 2024-11-03 12:41:46.422332000 Z
+  created_at: 2024-11-09 13:29:28.830063000 Z
+  updated_at: 2024-11-09 13:29:28.830063000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Administrateur de club
     en: Dojo Administrator
@@ -24,8 +24,8 @@ dojo_admin:
 chairman:
   id: 3
   code: chairman
-  created_at: 2024-11-03 12:41:46.436715000 Z
-  updated_at: 2024-11-03 12:41:46.436715000 Z
+  created_at: 2024-11-09 13:29:28.836985000 Z
+  updated_at: 2024-11-09 13:29:28.836985000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Directeur du tournoi
     en: Chairman
@@ -35,8 +35,8 @@ chairman:
 marking_referee:
   id: 4
   code: marking_referee
-  created_at: 2024-11-03 12:41:46.449210000 Z
-  updated_at: 2024-11-03 12:41:46.449210000 Z
+  created_at: 2024-11-09 13:29:28.845705000 Z
+  updated_at: 2024-11-09 13:29:28.845705000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Enregistreur
     en: Marking Referee
@@ -46,8 +46,8 @@ marking_referee:
 shajo_referee:
   id: 5
   code: shajo_referee
-  created_at: 2024-11-03 12:41:46.473723000 Z
-  updated_at: 2024-11-03 12:41:46.473723000 Z
+  created_at: 2024-11-09 13:29:28.863490000 Z
+  updated_at: 2024-11-09 13:29:28.863490000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Juge de shajo
     en: Shajo Referee
@@ -57,8 +57,8 @@ shajo_referee:
 yatori:
   id: 6
   code: yatori
-  created_at: 2024-11-03 12:41:46.488482000 Z
-  updated_at: 2024-11-03 12:41:46.488482000 Z
+  created_at: 2024-11-09 13:29:28.884942000 Z
+  updated_at: 2024-11-09 13:29:28.884942000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Yatori
     en: Yatori
@@ -68,8 +68,8 @@ yatori:
 target_referee:
   id: 7
   code: target_referee
-  created_at: 2024-11-03 12:41:46.497505000 Z
-  updated_at: 2024-11-03 12:41:46.497505000 Z
+  created_at: 2024-11-09 13:29:28.892296000 Z
+  updated_at: 2024-11-09 13:29:28.892296000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Juge de Cible
     en: Target Referee
@@ -79,8 +79,8 @@ target_referee:
 operations_chairman:
   id: 8
   code: operations_chairman
-  created_at: 2024-11-03 12:41:46.509050000 Z
-  updated_at: 2024-11-03 12:41:46.509050000 Z
+  created_at: 2024-11-09 13:29:28.900446000 Z
+  updated_at: 2024-11-09 13:29:28.900446000 Z
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Responsable Logistique
     en: Operations Chairman

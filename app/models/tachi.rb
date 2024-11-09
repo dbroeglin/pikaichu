@@ -1,4 +1,4 @@
-class Shadan < ApplicationRecord
+class Tachi < ApplicationRecord
   audited
 
   belongs_to :participating_dojo

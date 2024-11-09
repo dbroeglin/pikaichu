@@ -5,8 +5,8 @@ participants_001:
   firstname: Aymard
   lastname: Huet
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.203461000 Z
-  updated_at: 2024-11-03 12:41:47.203461000 Z
+  created_at: 2024-11-09 13:29:29.532192000 Z
+  updated_at: 2024-11-09 13:29:29.532192000 Z
   team_id: 1
   index_in_team: 1
   kyudojin_id:
@@ -19,8 +19,8 @@ participants_002:
   firstname: Lucie
   lastname: Aubert
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.232070000 Z
-  updated_at: 2024-11-03 12:41:47.232070000 Z
+  created_at: 2024-11-09 13:29:29.558064000 Z
+  updated_at: 2024-11-09 13:29:29.558064000 Z
   team_id: 1
   index_in_team: 2
   kyudojin_id:
@@ -33,8 +33,8 @@ participants_003:
   firstname: Nadège
   lastname: Leroy
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.249388000 Z
-  updated_at: 2024-11-03 12:41:47.249388000 Z
+  created_at: 2024-11-09 13:29:29.572929000 Z
+  updated_at: 2024-11-09 13:29:29.572929000 Z
   team_id: 1
   index_in_team: 3
   kyudojin_id:
@@ -47,8 +47,8 @@ participants_004:
   firstname: Agnane
   lastname: Denis
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.295399000 Z
-  updated_at: 2024-11-03 12:41:47.295399000 Z
+  created_at: 2024-11-09 13:29:29.626638000 Z
+  updated_at: 2024-11-09 13:29:29.626638000 Z
   team_id: 2
   index_in_team: 1
   kyudojin_id:
@@ -61,8 +61,8 @@ participants_005:
   firstname: Aristide
   lastname: Marie
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.312208000 Z
-  updated_at: 2024-11-03 12:41:47.312208000 Z
+  created_at: 2024-11-09 13:29:29.638093000 Z
+  updated_at: 2024-11-09 13:29:29.638093000 Z
   team_id: 2
   index_in_team: 2
   kyudojin_id:
@@ -75,8 +75,8 @@ participants_006:
   firstname: Oriande
   lastname: Adam
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.348382000 Z
-  updated_at: 2024-11-03 12:41:47.348382000 Z
+  created_at: 2024-11-09 13:29:29.650513000 Z
+  updated_at: 2024-11-09 13:29:29.650513000 Z
   team_id: 2
   index_in_team: 3
   kyudojin_id:
@@ -89,8 +89,8 @@ participants_007:
   firstname: Germaine
   lastname: Prévost
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.411867000 Z
-  updated_at: 2024-11-03 12:41:47.411867000 Z
+  created_at: 2024-11-09 13:29:29.707124000 Z
+  updated_at: 2024-11-09 13:29:29.707124000 Z
   team_id: 3
   index_in_team: 1
   kyudojin_id:
@@ -103,8 +103,8 @@ participants_008:
   firstname: Isidore
   lastname: Carpentier
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.544776000 Z
-  updated_at: 2024-11-03 12:41:47.544776000 Z
+  created_at: 2024-11-09 13:29:29.718521000 Z
+  updated_at: 2024-11-09 13:29:29.718521000 Z
   team_id: 3
   index_in_team: 2
   kyudojin_id:
@@ -117,8 +117,8 @@ participants_009:
   firstname: Alix
   lastname: Meunier
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.635213000 Z
-  updated_at: 2024-11-03 12:41:47.635213000 Z
+  created_at: 2024-11-09 13:29:29.746387000 Z
+  updated_at: 2024-11-09 13:29:29.746387000 Z
   team_id: 3
   index_in_team: 3
   kyudojin_id:
@@ -131,8 +131,8 @@ participants_010:
   firstname: Béranger
   lastname: André
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.672948000 Z
-  updated_at: 2024-11-03 12:41:47.672948000 Z
+  created_at: 2024-11-09 13:29:29.780356000 Z
+  updated_at: 2024-11-09 13:29:29.780356000 Z
   team_id: 4
   index_in_team: 1
   kyudojin_id:
@@ -145,8 +145,8 @@ participants_011:
   firstname: Tristan
   lastname: Deschamps
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.685392000 Z
-  updated_at: 2024-11-03 12:41:47.685392000 Z
+  created_at: 2024-11-09 13:29:29.792563000 Z
+  updated_at: 2024-11-09 13:29:29.792563000 Z
   team_id: 4
   index_in_team: 2
   kyudojin_id:
@@ -159,8 +159,8 @@ participants_012:
   firstname: Flodoard
   lastname: Dumas
   participating_dojo_id: 1
-  created_at: 2024-11-03 12:41:47.696150000 Z
-  updated_at: 2024-11-03 12:41:47.696150000 Z
+  created_at: 2024-11-09 13:29:29.803290000 Z
+  updated_at: 2024-11-09 13:29:29.803290000 Z
   team_id: 4
   index_in_team: 3
   kyudojin_id:
@@ -173,8 +173,8 @@ participants_013:
   firstname: Laurence
   lastname: Menard
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.748522000 Z
-  updated_at: 2024-11-03 12:41:47.748522000 Z
+  created_at: 2024-11-09 13:29:29.853271000 Z
+  updated_at: 2024-11-09 13:29:29.853271000 Z
   team_id: 5
   index_in_team: 1
   kyudojin_id:
@@ -187,8 +187,8 @@ participants_014:
   firstname: Rosalie
   lastname: Fabre
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.761304000 Z
-  updated_at: 2024-11-03 12:41:47.761304000 Z
+  created_at: 2024-11-09 13:29:29.865338000 Z
+  updated_at: 2024-11-09 13:29:29.865338000 Z
   team_id: 5
   index_in_team: 2
   kyudojin_id:
@@ -201,8 +201,8 @@ participants_015:
   firstname: Valentine
   lastname: Rémy
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.775282000 Z
-  updated_at: 2024-11-03 12:41:47.775282000 Z
+  created_at: 2024-11-09 13:29:29.877768000 Z
+  updated_at: 2024-11-09 13:29:29.877768000 Z
   team_id: 5
   index_in_team: 3
   kyudojin_id:
@@ -215,8 +215,8 @@ participants_016:
   firstname: Jules
   lastname: Hubert
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.814026000 Z
-  updated_at: 2024-11-03 12:41:47.814026000 Z
+  created_at: 2024-11-09 13:29:29.906575000 Z
+  updated_at: 2024-11-09 13:29:29.906575000 Z
   team_id: 6
   index_in_team: 1
   kyudojin_id:
@@ -229,8 +229,8 @@ participants_017:
   firstname: Monique
   lastname: Perrin
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.823040000 Z
-  updated_at: 2024-11-03 12:41:47.823040000 Z
+  created_at: 2024-11-09 13:29:29.918605000 Z
+  updated_at: 2024-11-09 13:29:29.918605000 Z
   team_id: 6
   index_in_team: 2
   kyudojin_id:
@@ -243,8 +243,8 @@ participants_018:
   firstname: Carine
   lastname: Tessier
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.835321000 Z
-  updated_at: 2024-11-03 12:41:47.835321000 Z
+  created_at: 2024-11-09 13:29:29.931003000 Z
+  updated_at: 2024-11-09 13:29:29.931003000 Z
   team_id: 6
   index_in_team: 3
   kyudojin_id:
@@ -257,8 +257,8 @@ participants_019:
   firstname: Armide
   lastname: David
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.855862000 Z
-  updated_at: 2024-11-03 12:41:47.855862000 Z
+  created_at: 2024-11-09 13:29:29.952104000 Z
+  updated_at: 2024-11-09 13:29:29.952104000 Z
   team_id: 7
   index_in_team: 1
   kyudojin_id:
@@ -271,8 +271,8 @@ participants_020:
   firstname: Rachel
   lastname: Louis
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.864229000 Z
-  updated_at: 2024-11-03 12:41:47.864229000 Z
+  created_at: 2024-11-09 13:29:29.960448000 Z
+  updated_at: 2024-11-09 13:29:29.960448000 Z
   team_id: 7
   index_in_team: 2
   kyudojin_id:
@@ -285,8 +285,8 @@ participants_021:
   firstname: Hélier
   lastname: Girard
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.891061000 Z
-  updated_at: 2024-11-03 12:41:47.891061000 Z
+  created_at: 2024-11-09 13:29:29.984697000 Z
+  updated_at: 2024-11-09 13:29:29.984697000 Z
   team_id: 7
   index_in_team: 3
   kyudojin_id:
@@ -299,8 +299,8 @@ participants_022:
   firstname: Guérin
   lastname: Denis
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.917018000 Z
-  updated_at: 2024-11-03 12:41:47.917018000 Z
+  created_at: 2024-11-09 13:29:30.008396000 Z
+  updated_at: 2024-11-09 13:29:30.008396000 Z
   team_id: 8
   index_in_team: 1
   kyudojin_id:
@@ -313,8 +313,8 @@ participants_023:
   firstname: Gabriel
   lastname: Colin
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.924343000 Z
-  updated_at: 2024-11-03 12:41:47.924343000 Z
+  created_at: 2024-11-09 13:29:30.015599000 Z
+  updated_at: 2024-11-09 13:29:30.015599000 Z
   team_id: 8
   index_in_team: 2
   kyudojin_id:
@@ -327,8 +327,8 @@ participants_024:
   firstname: Arsinoé
   lastname: Menard
   participating_dojo_id: 2
-  created_at: 2024-11-03 12:41:47.944621000 Z
-  updated_at: 2024-11-03 12:41:47.944621000 Z
+  created_at: 2024-11-09 13:29:30.033844000 Z
+  updated_at: 2024-11-09 13:29:30.033844000 Z
   team_id: 8
   index_in_team: 3
   kyudojin_id:
@@ -341,8 +341,8 @@ participants_025:
   firstname: Marceline
   lastname: Lecomte
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.344269000 Z
-  updated_at: 2024-11-03 12:41:48.344269000 Z
+  created_at: 2024-11-09 13:29:30.478893000 Z
+  updated_at: 2024-11-09 13:29:30.478893000 Z
   team_id: 9
   index_in_team: 1
   kyudojin_id:
@@ -355,8 +355,8 @@ participants_026:
   firstname: Coralie
   lastname: Mercier
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.353196000 Z
-  updated_at: 2024-11-03 12:41:48.353196000 Z
+  created_at: 2024-11-09 13:29:30.490464000 Z
+  updated_at: 2024-11-09 13:29:30.490464000 Z
   team_id: 9
   index_in_team: 2
   kyudojin_id:
@@ -369,8 +369,8 @@ participants_027:
   firstname: Adalbéron
   lastname: Rousseau
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.360004000 Z
-  updated_at: 2024-11-03 12:41:48.360004000 Z
+  created_at: 2024-11-09 13:29:30.498064000 Z
+  updated_at: 2024-11-09 13:29:30.498064000 Z
   team_id: 9
   index_in_team: 3
   kyudojin_id:
@@ -383,8 +383,8 @@ participants_028:
   firstname: Rictrude
   lastname: Pons
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.377435000 Z
-  updated_at: 2024-11-03 12:41:48.377435000 Z
+  created_at: 2024-11-09 13:29:30.522897000 Z
+  updated_at: 2024-11-09 13:29:30.522897000 Z
   team_id: 10
   index_in_team: 1
   kyudojin_id:
@@ -397,8 +397,8 @@ participants_029:
   firstname: Vigile
   lastname: Chauvin
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.384751000 Z
-  updated_at: 2024-11-03 12:41:48.384751000 Z
+  created_at: 2024-11-09 13:29:30.535553000 Z
+  updated_at: 2024-11-09 13:29:30.535553000 Z
   team_id: 10
   index_in_team: 2
   kyudojin_id:
@@ -411,8 +411,8 @@ participants_030:
   firstname: Charline
   lastname: Guichard
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.396063000 Z
-  updated_at: 2024-11-03 12:41:48.396063000 Z
+  created_at: 2024-11-09 13:29:30.542835000 Z
+  updated_at: 2024-11-09 13:29:30.542835000 Z
   team_id: 10
   index_in_team: 3
   kyudojin_id:
@@ -425,8 +425,8 @@ participants_031:
   firstname: Mégane
   lastname: Perez
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.414832000 Z
-  updated_at: 2024-11-03 12:41:48.414832000 Z
+  created_at: 2024-11-09 13:29:30.557844000 Z
+  updated_at: 2024-11-09 13:29:30.557844000 Z
   team_id: 11
   index_in_team: 1
   kyudojin_id:
@@ -439,8 +439,8 @@ participants_032:
   firstname: Anne
   lastname: Le Gall
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.423212000 Z
-  updated_at: 2024-11-03 12:41:48.423212000 Z
+  created_at: 2024-11-09 13:29:30.566438000 Z
+  updated_at: 2024-11-09 13:29:30.566438000 Z
   team_id: 11
   index_in_team: 2
   kyudojin_id:
@@ -453,8 +453,8 @@ participants_033:
   firstname: Léopold
   lastname: Guyot
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.430772000 Z
-  updated_at: 2024-11-03 12:41:48.430772000 Z
+  created_at: 2024-11-09 13:29:30.573461000 Z
+  updated_at: 2024-11-09 13:29:30.573461000 Z
   team_id: 11
   index_in_team: 3
   kyudojin_id:
@@ -467,8 +467,8 @@ participants_034:
   firstname: Amarande
   lastname: Chevallier
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.446589000 Z
-  updated_at: 2024-11-03 12:41:48.446589000 Z
+  created_at: 2024-11-09 13:29:30.588432000 Z
+  updated_at: 2024-11-09 13:29:30.588432000 Z
   team_id: 12
   index_in_team: 1
   kyudojin_id:
@@ -481,8 +481,8 @@ participants_035:
   firstname: Ève
   lastname: Caron
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.456442000 Z
-  updated_at: 2024-11-03 12:41:48.456442000 Z
+  created_at: 2024-11-09 13:29:30.595580000 Z
+  updated_at: 2024-11-09 13:29:30.595580000 Z
   team_id: 12
   index_in_team: 2
   kyudojin_id:
@@ -495,8 +495,8 @@ participants_036:
   firstname: Mauricette
   lastname: Noel
   participating_dojo_id: 3
-  created_at: 2024-11-03 12:41:48.464311000 Z
-  updated_at: 2024-11-03 12:41:48.464311000 Z
+  created_at: 2024-11-09 13:29:30.606090000 Z
+  updated_at: 2024-11-09 13:29:30.606090000 Z
   team_id: 12
   index_in_team: 3
   kyudojin_id:
@@ -509,8 +509,8 @@ participants_037:
   firstname: Ambre
   lastname: Da Silva
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.503996000 Z
-  updated_at: 2024-11-03 12:41:48.503996000 Z
+  created_at: 2024-11-09 13:29:30.637233000 Z
+  updated_at: 2024-11-09 13:29:30.637233000 Z
   team_id: 13
   index_in_team: 1
   kyudojin_id:
@@ -523,8 +523,8 @@ participants_038:
   firstname: Alix
   lastname: Guérin
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.512666000 Z
-  updated_at: 2024-11-03 12:41:48.512666000 Z
+  created_at: 2024-11-09 13:29:30.643614000 Z
+  updated_at: 2024-11-09 13:29:30.643614000 Z
   team_id: 13
   index_in_team: 2
   kyudojin_id:
@@ -537,8 +537,8 @@ participants_039:
   firstname: Élie
   lastname: Méunier
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.546113000 Z
-  updated_at: 2024-11-03 12:41:48.546113000 Z
+  created_at: 2024-11-09 13:29:30.669635000 Z
+  updated_at: 2024-11-09 13:29:30.669635000 Z
   team_id: 13
   index_in_team: 3
   kyudojin_id:
@@ -551,8 +551,8 @@ participants_040:
   firstname: Aurelle
   lastname: Collin
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.568327000 Z
-  updated_at: 2024-11-03 12:41:48.568327000 Z
+  created_at: 2024-11-09 13:29:30.689570000 Z
+  updated_at: 2024-11-09 13:29:30.689570000 Z
   team_id: 14
   index_in_team: 1
   kyudojin_id:
@@ -565,8 +565,8 @@ participants_041:
   firstname: Albérade
   lastname: Boucher
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.579642000 Z
-  updated_at: 2024-11-03 12:41:48.579642000 Z
+  created_at: 2024-11-09 13:29:30.701634000 Z
+  updated_at: 2024-11-09 13:29:30.701634000 Z
   team_id: 14
   index_in_team: 2
   kyudojin_id:
@@ -579,8 +579,8 @@ participants_042:
   firstname: Nathanaël
   lastname: Petit
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.587824000 Z
-  updated_at: 2024-11-03 12:41:48.587824000 Z
+  created_at: 2024-11-09 13:29:30.713202000 Z
+  updated_at: 2024-11-09 13:29:30.713202000 Z
   team_id: 14
   index_in_team: 3
   kyudojin_id:
@@ -593,8 +593,8 @@ participants_043:
   firstname: Annette
   lastname: Humbert
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.603895000 Z
-  updated_at: 2024-11-03 12:41:48.603895000 Z
+  created_at: 2024-11-09 13:29:30.727177000 Z
+  updated_at: 2024-11-09 13:29:30.727177000 Z
   team_id: 15
   index_in_team: 1
   kyudojin_id:
@@ -607,8 +607,8 @@ participants_044:
   firstname: Adélie
   lastname: Chevalier
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.612870000 Z
-  updated_at: 2024-11-03 12:41:48.612870000 Z
+  created_at: 2024-11-09 13:29:30.734083000 Z
+  updated_at: 2024-11-09 13:29:30.734083000 Z
   team_id: 15
   index_in_team: 2
   kyudojin_id:
@@ -621,8 +621,8 @@ participants_045:
   firstname: Alizé
   lastname: Méunier
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.628167000 Z
-  updated_at: 2024-11-03 12:41:48.628167000 Z
+  created_at: 2024-11-09 13:29:30.742375000 Z
+  updated_at: 2024-11-09 13:29:30.742375000 Z
   team_id: 15
   index_in_team: 3
   kyudojin_id:
@@ -635,8 +635,8 @@ participants_046:
   firstname: Odette
   lastname: Hubert
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.651706000 Z
-  updated_at: 2024-11-03 12:41:48.651706000 Z
+  created_at: 2024-11-09 13:29:30.759928000 Z
+  updated_at: 2024-11-09 13:29:30.759928000 Z
   team_id: 16
   index_in_team: 1
   kyudojin_id:
@@ -649,8 +649,8 @@ participants_047:
   firstname: Naudet
   lastname: Morin
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.665226000 Z
-  updated_at: 2024-11-03 12:41:48.665226000 Z
+  created_at: 2024-11-09 13:29:30.769453000 Z
+  updated_at: 2024-11-09 13:29:30.769453000 Z
   team_id: 16
   index_in_team: 2
   kyudojin_id:
@@ -663,8 +663,8 @@ participants_048:
   firstname: Stéphanie
   lastname: Riviere
   participating_dojo_id: 4
-  created_at: 2024-11-03 12:41:48.676722000 Z
-  updated_at: 2024-11-03 12:41:48.676722000 Z
+  created_at: 2024-11-09 13:29:30.777799000 Z
+  updated_at: 2024-11-09 13:29:30.777799000 Z
   team_id: 16
   index_in_team: 3
   kyudojin_id:
@@ -677,8 +677,8 @@ participants_049:
   firstname: Anastasie
   lastname: Paul
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.787241000 Z
-  updated_at: 2024-11-03 12:41:48.787241000 Z
+  created_at: 2024-11-09 13:29:30.880609000 Z
+  updated_at: 2024-11-09 13:29:30.880609000 Z
   team_id:
   index_in_team: 1
   kyudojin_id:
@@ -691,8 +691,8 @@ participants_050:
   firstname: Brice
   lastname: Herve
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.801846000 Z
-  updated_at: 2024-11-03 12:41:48.801846000 Z
+  created_at: 2024-11-09 13:29:30.893800000 Z
+  updated_at: 2024-11-09 13:29:30.893800000 Z
   team_id:
   index_in_team: 2
   kyudojin_id:
@@ -705,8 +705,8 @@ participants_051:
   firstname: Maud
   lastname: Blanc
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.809729000 Z
-  updated_at: 2024-11-03 12:41:48.809729000 Z
+  created_at: 2024-11-09 13:29:30.899872000 Z
+  updated_at: 2024-11-09 13:29:30.899872000 Z
   team_id:
   index_in_team: 3
   kyudojin_id:
@@ -719,8 +719,8 @@ participants_052:
   firstname: Toussaint
   lastname: Leveque
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.815845000 Z
-  updated_at: 2024-11-03 12:41:48.815845000 Z
+  created_at: 2024-11-09 13:29:30.904884000 Z
+  updated_at: 2024-11-09 13:29:30.904884000 Z
   team_id:
   index_in_team: 4
   kyudojin_id:
@@ -733,8 +733,8 @@ participants_053:
   firstname: Gabrielle
   lastname: Lemaitre
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.822059000 Z
-  updated_at: 2024-11-03 12:41:48.822059000 Z
+  created_at: 2024-11-09 13:29:30.911647000 Z
+  updated_at: 2024-11-09 13:29:30.911647000 Z
   team_id:
   index_in_team: 5
   kyudojin_id:
@@ -747,8 +747,8 @@ participants_054:
   firstname: Jacqueline
   lastname: Arnaud
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.829437000 Z
-  updated_at: 2024-11-03 12:41:48.829437000 Z
+  created_at: 2024-11-09 13:29:30.917763000 Z
+  updated_at: 2024-11-09 13:29:30.917763000 Z
   team_id:
   index_in_team: 6
   kyudojin_id:
@@ -761,8 +761,8 @@ participants_055:
   firstname: Mathurin
   lastname: Lemaitre
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.836710000 Z
-  updated_at: 2024-11-03 12:41:48.836710000 Z
+  created_at: 2024-11-09 13:29:30.922986000 Z
+  updated_at: 2024-11-09 13:29:30.922986000 Z
   team_id:
   index_in_team: 7
   kyudojin_id:
@@ -775,8 +775,8 @@ participants_056:
   firstname: Ghislain
   lastname: Millet
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.842576000 Z
-  updated_at: 2024-11-03 12:41:48.842576000 Z
+  created_at: 2024-11-09 13:29:30.928595000 Z
+  updated_at: 2024-11-09 13:29:30.928595000 Z
   team_id:
   index_in_team: 8
   kyudojin_id:
@@ -789,8 +789,8 @@ participants_057:
   firstname: Annonciade
   lastname: Lopéz
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.848529000 Z
-  updated_at: 2024-11-03 12:41:48.848529000 Z
+  created_at: 2024-11-09 13:29:30.934529000 Z
+  updated_at: 2024-11-09 13:29:30.934529000 Z
   team_id:
   index_in_team: 9
   kyudojin_id:
@@ -803,8 +803,8 @@ participants_058:
   firstname: Betty
   lastname: Prévost
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.858050000 Z
-  updated_at: 2024-11-03 12:41:48.858050000 Z
+  created_at: 2024-11-09 13:29:30.942503000 Z
+  updated_at: 2024-11-09 13:29:30.942503000 Z
   team_id:
   index_in_team: 10
   kyudojin_id:
@@ -817,8 +817,8 @@ participants_059:
   firstname: Annabelle
   lastname: Marechal
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.891182000 Z
-  updated_at: 2024-11-03 12:41:48.891182000 Z
+  created_at: 2024-11-09 13:29:30.969619000 Z
+  updated_at: 2024-11-09 13:29:30.969619000 Z
   team_id:
   index_in_team: 11
   kyudojin_id:
@@ -831,8 +831,8 @@ participants_060:
   firstname: Gonzague
   lastname: Jean
   participating_dojo_id: 5
-  created_at: 2024-11-03 12:41:48.902731000 Z
-  updated_at: 2024-11-03 12:41:48.902731000 Z
+  created_at: 2024-11-09 13:29:30.982205000 Z
+  updated_at: 2024-11-09 13:29:30.982205000 Z
   team_id:
   index_in_team: 12
   kyudojin_id:
@@ -845,8 +845,8 @@ participants_061:
   firstname: Océane
   lastname: Lefevre
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.924146000 Z
-  updated_at: 2024-11-03 12:41:48.924146000 Z
+  created_at: 2024-11-09 13:29:31.003109000 Z
+  updated_at: 2024-11-09 13:29:31.003109000 Z
   team_id:
   index_in_team: 13
   kyudojin_id:
@@ -859,8 +859,8 @@ participants_062:
   firstname: Séraphin
   lastname: Lefevre
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.930445000 Z
-  updated_at: 2024-11-03 12:41:48.930445000 Z
+  created_at: 2024-11-09 13:29:31.009458000 Z
+  updated_at: 2024-11-09 13:29:31.009458000 Z
   team_id:
   index_in_team: 14
   kyudojin_id:
@@ -873,8 +873,8 @@ participants_063:
   firstname: Andy
   lastname: Le Roux
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.935830000 Z
-  updated_at: 2024-11-03 12:41:48.935830000 Z
+  created_at: 2024-11-09 13:29:31.014823000 Z
+  updated_at: 2024-11-09 13:29:31.014823000 Z
   team_id:
   index_in_team: 15
   kyudojin_id:
@@ -887,8 +887,8 @@ participants_064:
   firstname: Achaire
   lastname: Méunier
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.942498000 Z
-  updated_at: 2024-11-03 12:41:48.942498000 Z
+  created_at: 2024-11-09 13:29:31.020980000 Z
+  updated_at: 2024-11-09 13:29:31.020980000 Z
   team_id:
   index_in_team: 16
   kyudojin_id:
@@ -901,8 +901,8 @@ participants_065:
   firstname: Valentin
   lastname: Gonzalez
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.951452000 Z
-  updated_at: 2024-11-03 12:41:48.951452000 Z
+  created_at: 2024-11-09 13:29:31.027485000 Z
+  updated_at: 2024-11-09 13:29:31.027485000 Z
   team_id:
   index_in_team: 17
   kyudojin_id:
@@ -915,8 +915,8 @@ participants_066:
   firstname: André
   lastname: Vidal
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.958051000 Z
-  updated_at: 2024-11-03 12:41:48.958051000 Z
+  created_at: 2024-11-09 13:29:31.032732000 Z
+  updated_at: 2024-11-09 13:29:31.032732000 Z
   team_id:
   index_in_team: 18
   kyudojin_id:
@@ -929,8 +929,8 @@ participants_067:
   firstname: Archange
   lastname: Masson
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.963411000 Z
-  updated_at: 2024-11-03 12:41:48.963411000 Z
+  created_at: 2024-11-09 13:29:31.038840000 Z
+  updated_at: 2024-11-09 13:29:31.038840000 Z
   team_id:
   index_in_team: 19
   kyudojin_id:
@@ -943,8 +943,8 @@ participants_068:
   firstname: Oger
   lastname: Nicolas
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.986278000 Z
-  updated_at: 2024-11-03 12:41:48.986278000 Z
+  created_at: 2024-11-09 13:29:31.056157000 Z
+  updated_at: 2024-11-09 13:29:31.056157000 Z
   team_id:
   index_in_team: 20
   kyudojin_id:
@@ -957,8 +957,8 @@ participants_069:
   firstname: Éliane
   lastname: Vasseur
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.992798000 Z
-  updated_at: 2024-11-03 12:41:48.992798000 Z
+  created_at: 2024-11-09 13:29:31.061402000 Z
+  updated_at: 2024-11-09 13:29:31.061402000 Z
   team_id:
   index_in_team: 21
   kyudojin_id:
@@ -971,8 +971,8 @@ participants_070:
   firstname: Maxime
   lastname: Paul
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:48.999070000 Z
-  updated_at: 2024-11-03 12:41:48.999070000 Z
+  created_at: 2024-11-09 13:29:31.068339000 Z
+  updated_at: 2024-11-09 13:29:31.068339000 Z
   team_id:
   index_in_team: 22
   kyudojin_id:
@@ -985,8 +985,8 @@ participants_071:
   firstname: Clémence
   lastname: Lucas
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:49.004473000 Z
-  updated_at: 2024-11-03 12:41:49.004473000 Z
+  created_at: 2024-11-09 13:29:31.076515000 Z
+  updated_at: 2024-11-09 13:29:31.076515000 Z
   team_id:
   index_in_team: 23
   kyudojin_id:
@@ -999,8 +999,8 @@ participants_072:
   firstname: Girart
   lastname: Picard
   participating_dojo_id: 6
-  created_at: 2024-11-03 12:41:49.010704000 Z
-  updated_at: 2024-11-03 12:41:49.010704000 Z
+  created_at: 2024-11-09 13:29:31.083038000 Z
+  updated_at: 2024-11-09 13:29:31.083038000 Z
   team_id:
   index_in_team: 24
   kyudojin_id:
@@ -1013,8 +1013,8 @@ participants_073:
   firstname: Landry
   lastname: Perret
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.097308000 Z
-  updated_at: 2024-11-03 12:41:49.097308000 Z
+  created_at: 2024-11-09 13:29:31.163900000 Z
+  updated_at: 2024-11-09 13:29:31.163900000 Z
   team_id: 17
   index_in_team: 1
   kyudojin_id:
@@ -1027,8 +1027,8 @@ participants_074:
   firstname: Amandin
   lastname: Cordier
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.106723000 Z
-  updated_at: 2024-11-03 12:41:49.106723000 Z
+  created_at: 2024-11-09 13:29:31.172048000 Z
+  updated_at: 2024-11-09 13:29:31.172048000 Z
   team_id: 17
   index_in_team: 2
   kyudojin_id:
@@ -1041,8 +1041,8 @@ participants_075:
   firstname: Aloïs
   lastname: Marty
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.112216000 Z
-  updated_at: 2024-11-03 12:41:49.112216000 Z
+  created_at: 2024-11-09 13:29:31.177689000 Z
+  updated_at: 2024-11-09 13:29:31.177689000 Z
   team_id: 17
   index_in_team: 3
   kyudojin_id:
@@ -1055,8 +1055,8 @@ participants_076:
   firstname: Job
   lastname: Giraud
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.123829000 Z
-  updated_at: 2024-11-03 12:41:49.123829000 Z
+  created_at: 2024-11-09 13:29:31.189155000 Z
+  updated_at: 2024-11-09 13:29:31.189155000 Z
   team_id: 18
   index_in_team: 1
   kyudojin_id:
@@ -1069,8 +1069,8 @@ participants_077:
   firstname: Léopold
   lastname: Klein
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.130547000 Z
-  updated_at: 2024-11-03 12:41:49.130547000 Z
+  created_at: 2024-11-09 13:29:31.196427000 Z
+  updated_at: 2024-11-09 13:29:31.196427000 Z
   team_id: 18
   index_in_team: 2
   kyudojin_id:
@@ -1083,8 +1083,8 @@ participants_078:
   firstname: Fulgence
   lastname: Barbier
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.135950000 Z
-  updated_at: 2024-11-03 12:41:49.135950000 Z
+  created_at: 2024-11-09 13:29:31.202652000 Z
+  updated_at: 2024-11-09 13:29:31.202652000 Z
   team_id: 18
   index_in_team: 3
   kyudojin_id:
@@ -1097,8 +1097,8 @@ participants_079:
   firstname: Alice
   lastname: Bertin
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.147207000 Z
-  updated_at: 2024-11-03 12:41:49.147207000 Z
+  created_at: 2024-11-09 13:29:31.215378000 Z
+  updated_at: 2024-11-09 13:29:31.215378000 Z
   team_id: 19
   index_in_team: 1
   kyudojin_id:
@@ -1111,8 +1111,8 @@ participants_080:
   firstname: Ambre
   lastname: Nicolas
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.156468000 Z
-  updated_at: 2024-11-03 12:41:49.156468000 Z
+  created_at: 2024-11-09 13:29:31.222263000 Z
+  updated_at: 2024-11-09 13:29:31.222263000 Z
   team_id: 19
   index_in_team: 2
   kyudojin_id:
@@ -1125,8 +1125,8 @@ participants_081:
   firstname: Romane
   lastname: Rémy
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.162709000 Z
-  updated_at: 2024-11-03 12:41:49.162709000 Z
+  created_at: 2024-11-09 13:29:31.227804000 Z
+  updated_at: 2024-11-09 13:29:31.227804000 Z
   team_id: 19
   index_in_team: 3
   kyudojin_id:
@@ -1139,8 +1139,8 @@ participants_082:
   firstname: Mathilde
   lastname: Legrand
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.174565000 Z
-  updated_at: 2024-11-03 12:41:49.174565000 Z
+  created_at: 2024-11-09 13:29:31.238731000 Z
+  updated_at: 2024-11-09 13:29:31.238731000 Z
   team_id: 20
   index_in_team: 1
   kyudojin_id:
@@ -1153,8 +1153,8 @@ participants_083:
   firstname: Cassandre
   lastname: Laine
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.180291000 Z
-  updated_at: 2024-11-03 12:41:49.180291000 Z
+  created_at: 2024-11-09 13:29:31.244193000 Z
+  updated_at: 2024-11-09 13:29:31.244193000 Z
   team_id: 20
   index_in_team: 2
   kyudojin_id:
@@ -1167,8 +1167,8 @@ participants_084:
   firstname: Valère
   lastname: Prevost
   participating_dojo_id: 7
-  created_at: 2024-11-03 12:41:49.187469000 Z
-  updated_at: 2024-11-03 12:41:49.187469000 Z
+  created_at: 2024-11-09 13:29:31.251836000 Z
+  updated_at: 2024-11-09 13:29:31.251836000 Z
   team_id: 20
   index_in_team: 3
   kyudojin_id:
@@ -1181,8 +1181,8 @@ participants_085:
   firstname: Titien
   lastname: Moreau
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.207445000 Z
-  updated_at: 2024-11-03 12:41:49.207445000 Z
+  created_at: 2024-11-09 13:29:31.272406000 Z
+  updated_at: 2024-11-09 13:29:31.272406000 Z
   team_id: 21
   index_in_team: 1
   kyudojin_id:
@@ -1195,8 +1195,8 @@ participants_086:
   firstname: France
   lastname: Reynaud
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.213051000 Z
-  updated_at: 2024-11-03 12:41:49.213051000 Z
+  created_at: 2024-11-09 13:29:31.280723000 Z
+  updated_at: 2024-11-09 13:29:31.280723000 Z
   team_id: 21
   index_in_team: 2
   kyudojin_id:
@@ -1209,8 +1209,8 @@ participants_087:
   firstname: Chantal
   lastname: Grondin
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.220774000 Z
-  updated_at: 2024-11-03 12:41:49.220774000 Z
+  created_at: 2024-11-09 13:29:31.287804000 Z
+  updated_at: 2024-11-09 13:29:31.287804000 Z
   team_id: 21
   index_in_team: 3
   kyudojin_id:
@@ -1223,8 +1223,8 @@ participants_088:
   firstname: Charlotte
   lastname: Pelletier
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.234347000 Z
-  updated_at: 2024-11-03 12:41:49.234347000 Z
+  created_at: 2024-11-09 13:29:31.301190000 Z
+  updated_at: 2024-11-09 13:29:31.301190000 Z
   team_id: 22
   index_in_team: 1
   kyudojin_id:
@@ -1237,8 +1237,8 @@ participants_089:
   firstname: Turold
   lastname: Fernandez
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.240352000 Z
-  updated_at: 2024-11-03 12:41:49.240352000 Z
+  created_at: 2024-11-09 13:29:31.310015000 Z
+  updated_at: 2024-11-09 13:29:31.310015000 Z
   team_id: 22
   index_in_team: 2
   kyudojin_id:
@@ -1251,8 +1251,8 @@ participants_090:
   firstname: Tiphaine
   lastname: Gilbert
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.246032000 Z
-  updated_at: 2024-11-03 12:41:49.246032000 Z
+  created_at: 2024-11-09 13:29:31.316584000 Z
+  updated_at: 2024-11-09 13:29:31.316584000 Z
   team_id: 22
   index_in_team: 3
   kyudojin_id:
@@ -1265,8 +1265,8 @@ participants_091:
   firstname: Soline
   lastname: Noel
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.260322000 Z
-  updated_at: 2024-11-03 12:41:49.260322000 Z
+  created_at: 2024-11-09 13:29:31.328341000 Z
+  updated_at: 2024-11-09 13:29:31.328341000 Z
   team_id: 23
   index_in_team: 1
   kyudojin_id:
@@ -1279,8 +1279,8 @@ participants_092:
   firstname: Martine
   lastname: Leclercq
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.267361000 Z
-  updated_at: 2024-11-03 12:41:49.267361000 Z
+  created_at: 2024-11-09 13:29:31.335655000 Z
+  updated_at: 2024-11-09 13:29:31.335655000 Z
   team_id: 23
   index_in_team: 2
   kyudojin_id:
@@ -1293,8 +1293,8 @@ participants_093:
   firstname: Valérie
   lastname: Andre
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.272789000 Z
-  updated_at: 2024-11-03 12:41:49.272789000 Z
+  created_at: 2024-11-09 13:29:31.342360000 Z
+  updated_at: 2024-11-09 13:29:31.342360000 Z
   team_id: 23
   index_in_team: 3
   kyudojin_id:
@@ -1307,8 +1307,8 @@ participants_094:
   firstname: Delphine
   lastname: Renaud
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.287800000 Z
-  updated_at: 2024-11-03 12:41:49.287800000 Z
+  created_at: 2024-11-09 13:29:31.354934000 Z
+  updated_at: 2024-11-09 13:29:31.354934000 Z
   team_id: 24
   index_in_team: 1
   kyudojin_id:
@@ -1321,8 +1321,8 @@ participants_095:
   firstname: Guillemette
   lastname: Marchal
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.294676000 Z
-  updated_at: 2024-11-03 12:41:49.294676000 Z
+  created_at: 2024-11-09 13:29:31.359933000 Z
+  updated_at: 2024-11-09 13:29:31.359933000 Z
   team_id: 24
   index_in_team: 2
   kyudojin_id:
@@ -1335,8 +1335,8 @@ participants_096:
   firstname: Ernest
   lastname: Leclerc
   participating_dojo_id: 8
-  created_at: 2024-11-03 12:41:49.301959000 Z
-  updated_at: 2024-11-03 12:41:49.301959000 Z
+  created_at: 2024-11-09 13:29:31.366093000 Z
+  updated_at: 2024-11-09 13:29:31.366093000 Z
   team_id: 24
   index_in_team: 3
   kyudojin_id:
@@ -1349,8 +1349,8 @@ participants_097:
   firstname: Olive
   lastname: Girard
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.363270000 Z
-  updated_at: 2024-11-03 12:41:49.363270000 Z
+  created_at: 2024-11-09 13:29:31.431832000 Z
+  updated_at: 2024-11-09 13:29:31.431832000 Z
   team_id: 25
   index_in_team: 1
   kyudojin_id:
@@ -1363,8 +1363,8 @@ participants_098:
   firstname: Barnabé
   lastname: Weber
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.369855000 Z
-  updated_at: 2024-11-03 12:41:49.369855000 Z
+  created_at: 2024-11-09 13:29:31.440882000 Z
+  updated_at: 2024-11-09 13:29:31.440882000 Z
   team_id: 25
   index_in_team: 2
   kyudojin_id:
@@ -1377,8 +1377,8 @@ participants_099:
   firstname: Charles
   lastname: Laporte
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.376839000 Z
-  updated_at: 2024-11-03 12:41:49.376839000 Z
+  created_at: 2024-11-09 13:29:31.451491000 Z
+  updated_at: 2024-11-09 13:29:31.451491000 Z
   team_id: 25
   index_in_team: 3
   kyudojin_id:
@@ -1391,8 +1391,8 @@ participants_100:
   firstname: Zacharie
   lastname: Fernandez
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.390585000 Z
-  updated_at: 2024-11-03 12:41:49.390585000 Z
+  created_at: 2024-11-09 13:29:31.468293000 Z
+  updated_at: 2024-11-09 13:29:31.468293000 Z
   team_id: 26
   index_in_team: 1
   kyudojin_id:
@@ -1405,8 +1405,8 @@ participants_101:
   firstname: Ursule
   lastname: Lemaire
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.396999000 Z
-  updated_at: 2024-11-03 12:41:49.396999000 Z
+  created_at: 2024-11-09 13:29:31.478544000 Z
+  updated_at: 2024-11-09 13:29:31.478544000 Z
   team_id: 26
   index_in_team: 2
   kyudojin_id:
@@ -1419,8 +1419,8 @@ participants_102:
   firstname: Hugues
   lastname: Chevallier
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.404142000 Z
-  updated_at: 2024-11-03 12:41:49.404142000 Z
+  created_at: 2024-11-09 13:29:31.487777000 Z
+  updated_at: 2024-11-09 13:29:31.487777000 Z
   team_id: 26
   index_in_team: 3
   kyudojin_id:
@@ -1433,8 +1433,8 @@ participants_103:
   firstname: Zénobe
   lastname: Bouchet
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.416953000 Z
-  updated_at: 2024-11-03 12:41:49.416953000 Z
+  created_at: 2024-11-09 13:29:31.502089000 Z
+  updated_at: 2024-11-09 13:29:31.502089000 Z
   team_id: 27
   index_in_team: 1
   kyudojin_id:
@@ -1447,8 +1447,8 @@ participants_104:
   firstname: Jeanne
   lastname: Pierre
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.424730000 Z
-  updated_at: 2024-11-03 12:41:49.424730000 Z
+  created_at: 2024-11-09 13:29:31.509988000 Z
+  updated_at: 2024-11-09 13:29:31.509988000 Z
   team_id: 27
   index_in_team: 2
   kyudojin_id:
@@ -1461,8 +1461,8 @@ participants_105:
   firstname: Benjamin
   lastname: Boucher
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.431383000 Z
-  updated_at: 2024-11-03 12:41:49.431383000 Z
+  created_at: 2024-11-09 13:29:31.521165000 Z
+  updated_at: 2024-11-09 13:29:31.521165000 Z
   team_id: 27
   index_in_team: 3
   kyudojin_id:
@@ -1475,8 +1475,8 @@ participants_106:
   firstname: Gabrielle
   lastname: Petit
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.444645000 Z
-  updated_at: 2024-11-03 12:41:49.444645000 Z
+  created_at: 2024-11-09 13:29:31.535047000 Z
+  updated_at: 2024-11-09 13:29:31.535047000 Z
   team_id: 28
   index_in_team: 1
   kyudojin_id:
@@ -1489,8 +1489,8 @@ participants_107:
   firstname: Fortunée
   lastname: Poulain
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.450753000 Z
-  updated_at: 2024-11-03 12:41:49.450753000 Z
+  created_at: 2024-11-09 13:29:31.543645000 Z
+  updated_at: 2024-11-09 13:29:31.543645000 Z
   team_id: 28
   index_in_team: 2
   kyudojin_id:
@@ -1503,8 +1503,8 @@ participants_108:
   firstname: Lucille
   lastname: Louis
   participating_dojo_id: 9
-  created_at: 2024-11-03 12:41:49.457872000 Z
-  updated_at: 2024-11-03 12:41:49.457872000 Z
+  created_at: 2024-11-09 13:29:31.551944000 Z
+  updated_at: 2024-11-09 13:29:31.551944000 Z
   team_id: 28
   index_in_team: 3
   kyudojin_id:
@@ -1517,8 +1517,8 @@ participants_109:
   firstname: Valentine
   lastname: Giraud
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.477499000 Z
-  updated_at: 2024-11-03 12:41:49.477499000 Z
+  created_at: 2024-11-09 13:29:31.573611000 Z
+  updated_at: 2024-11-09 13:29:31.573611000 Z
   team_id: 29
   index_in_team: 1
   kyudojin_id:
@@ -1531,8 +1531,8 @@ participants_110:
   firstname: Prudence
   lastname: Perrin
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.483282000 Z
-  updated_at: 2024-11-03 12:41:49.483282000 Z
+  created_at: 2024-11-09 13:29:31.581636000 Z
+  updated_at: 2024-11-09 13:29:31.581636000 Z
   team_id: 29
   index_in_team: 2
   kyudojin_id:
@@ -1545,8 +1545,8 @@ participants_111:
   firstname: Zaché
   lastname: Gauthier
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.491017000 Z
-  updated_at: 2024-11-03 12:41:49.491017000 Z
+  created_at: 2024-11-09 13:29:31.592945000 Z
+  updated_at: 2024-11-09 13:29:31.592945000 Z
   team_id: 29
   index_in_team: 3
   kyudojin_id:
@@ -1559,8 +1559,8 @@ participants_112:
   firstname: Catherine
   lastname: Reynaud
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.510316000 Z
-  updated_at: 2024-11-03 12:41:49.510316000 Z
+  created_at: 2024-11-09 13:29:31.636408000 Z
+  updated_at: 2024-11-09 13:29:31.636408000 Z
   team_id: 30
   index_in_team: 1
   kyudojin_id:
@@ -1573,8 +1573,8 @@ participants_113:
   firstname: Jules
   lastname: Brun
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.516678000 Z
-  updated_at: 2024-11-03 12:41:49.516678000 Z
+  created_at: 2024-11-09 13:29:31.645124000 Z
+  updated_at: 2024-11-09 13:29:31.645124000 Z
   team_id: 30
   index_in_team: 2
   kyudojin_id:
@@ -1587,8 +1587,8 @@ participants_114:
   firstname: Artémis
   lastname: Méunier
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.522341000 Z
-  updated_at: 2024-11-03 12:41:49.522341000 Z
+  created_at: 2024-11-09 13:29:31.655365000 Z
+  updated_at: 2024-11-09 13:29:31.655365000 Z
   team_id: 30
   index_in_team: 3
   kyudojin_id:
@@ -1601,8 +1601,8 @@ participants_115:
   firstname: Philothée
   lastname: Lecomte
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.535486000 Z
-  updated_at: 2024-11-03 12:41:49.535486000 Z
+  created_at: 2024-11-09 13:29:31.676811000 Z
+  updated_at: 2024-11-09 13:29:31.676811000 Z
   team_id: 31
   index_in_team: 1
   kyudojin_id:
@@ -1615,8 +1615,8 @@ participants_116:
   firstname: Alix
   lastname: Bernard
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.540872000 Z
-  updated_at: 2024-11-03 12:41:49.540872000 Z
+  created_at: 2024-11-09 13:29:31.686209000 Z
+  updated_at: 2024-11-09 13:29:31.686209000 Z
   team_id: 31
   index_in_team: 2
   kyudojin_id:
@@ -1629,8 +1629,8 @@ participants_117:
   firstname: Lorraine
   lastname: Masson
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.546162000 Z
-  updated_at: 2024-11-03 12:41:49.546162000 Z
+  created_at: 2024-11-09 13:29:31.693202000 Z
+  updated_at: 2024-11-09 13:29:31.693202000 Z
   team_id: 31
   index_in_team: 3
   kyudojin_id:
@@ -1643,8 +1643,8 @@ participants_118:
   firstname: Ancelin
   lastname: Brunet
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.559179000 Z
-  updated_at: 2024-11-03 12:41:49.559179000 Z
+  created_at: 2024-11-09 13:29:31.718907000 Z
+  updated_at: 2024-11-09 13:29:31.718907000 Z
   team_id: 32
   index_in_team: 1
   kyudojin_id:
@@ -1657,8 +1657,8 @@ participants_119:
   firstname: Timoléon
   lastname: Morel
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.565584000 Z
-  updated_at: 2024-11-03 12:41:49.565584000 Z
+  created_at: 2024-11-09 13:29:31.728801000 Z
+  updated_at: 2024-11-09 13:29:31.728801000 Z
   team_id: 32
   index_in_team: 2
   kyudojin_id:
@@ -1671,8 +1671,8 @@ participants_120:
   firstname: Avoye
   lastname: Baron
   participating_dojo_id: 10
-  created_at: 2024-11-03 12:41:49.577274000 Z
-  updated_at: 2024-11-03 12:41:49.577274000 Z
+  created_at: 2024-11-09 13:29:31.746294000 Z
+  updated_at: 2024-11-09 13:29:31.746294000 Z
   team_id: 32
   index_in_team: 3
   kyudojin_id:
@@ -1685,8 +1685,8 @@ participants_121:
   firstname: Xavier
   lastname: Garnier
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.650535000 Z
-  updated_at: 2024-11-03 12:41:49.650535000 Z
+  created_at: 2024-11-09 13:29:31.866194000 Z
+  updated_at: 2024-11-09 13:29:31.866194000 Z
   team_id:
   index_in_team: 25
   kyudojin_id:
@@ -1699,8 +1699,8 @@ participants_122:
   firstname: Mélodie
   lastname: Noël
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.667067000 Z
-  updated_at: 2024-11-03 12:41:49.667067000 Z
+  created_at: 2024-11-09 13:29:31.891993000 Z
+  updated_at: 2024-11-09 13:29:31.891993000 Z
   team_id:
   index_in_team: 26
   kyudojin_id:
@@ -1713,8 +1713,8 @@ participants_123:
   firstname: Claire
   lastname: Robin
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.673720000 Z
-  updated_at: 2024-11-03 12:41:49.673720000 Z
+  created_at: 2024-11-09 13:29:31.902675000 Z
+  updated_at: 2024-11-09 13:29:31.902675000 Z
   team_id:
   index_in_team: 27
   kyudojin_id:
@@ -1727,8 +1727,8 @@ participants_124:
   firstname: Améthyste
   lastname: Fournier
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.680809000 Z
-  updated_at: 2024-11-03 12:41:49.680809000 Z
+  created_at: 2024-11-09 13:29:31.910397000 Z
+  updated_at: 2024-11-09 13:29:31.910397000 Z
   team_id:
   index_in_team: 28
   kyudojin_id:
@@ -1741,8 +1741,8 @@ participants_125:
   firstname: Armandine
   lastname: Rodriguez
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.686927000 Z
-  updated_at: 2024-11-03 12:41:49.686927000 Z
+  created_at: 2024-11-09 13:29:31.919583000 Z
+  updated_at: 2024-11-09 13:29:31.919583000 Z
   team_id:
   index_in_team: 29
   kyudojin_id:
@@ -1755,8 +1755,8 @@ participants_126:
   firstname: Tancrède
   lastname: Roux
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.692388000 Z
-  updated_at: 2024-11-03 12:41:49.692388000 Z
+  created_at: 2024-11-09 13:29:31.929481000 Z
+  updated_at: 2024-11-09 13:29:31.929481000 Z
   team_id:
   index_in_team: 30
   kyudojin_id:
@@ -1769,8 +1769,8 @@ participants_127:
   firstname: Thaddée
   lastname: Marty
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.697724000 Z
-  updated_at: 2024-11-03 12:41:49.697724000 Z
+  created_at: 2024-11-09 13:29:31.950664000 Z
+  updated_at: 2024-11-09 13:29:31.950664000 Z
   team_id:
   index_in_team: 31
   kyudojin_id:
@@ -1783,8 +1783,8 @@ participants_128:
   firstname: Pécine
   lastname: Dupont
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.704199000 Z
-  updated_at: 2024-11-03 12:41:49.704199000 Z
+  created_at: 2024-11-09 13:29:31.963574000 Z
+  updated_at: 2024-11-09 13:29:31.963574000 Z
   team_id:
   index_in_team: 32
   kyudojin_id:
@@ -1797,8 +1797,8 @@ participants_129:
   firstname: Jocelyn
   lastname: Le roux
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.709595000 Z
-  updated_at: 2024-11-03 12:41:49.709595000 Z
+  created_at: 2024-11-09 13:29:31.972940000 Z
+  updated_at: 2024-11-09 13:29:31.972940000 Z
   team_id:
   index_in_team: 33
   kyudojin_id:
@@ -1811,8 +1811,8 @@ participants_130:
   firstname: Brunon
   lastname: Meyer
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.715382000 Z
-  updated_at: 2024-11-03 12:41:49.715382000 Z
+  created_at: 2024-11-09 13:29:31.982770000 Z
+  updated_at: 2024-11-09 13:29:31.982770000 Z
   team_id:
   index_in_team: 34
   kyudojin_id:
@@ -1825,8 +1825,8 @@ participants_131:
   firstname: Adenet
   lastname: Roger
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.720559000 Z
-  updated_at: 2024-11-03 12:41:49.720559000 Z
+  created_at: 2024-11-09 13:29:31.995477000 Z
+  updated_at: 2024-11-09 13:29:31.995477000 Z
   team_id:
   index_in_team: 35
   kyudojin_id:
@@ -1839,8 +1839,8 @@ participants_132:
   firstname: Estelle
   lastname: Fabre
   participating_dojo_id: 11
-  created_at: 2024-11-03 12:41:49.729232000 Z
-  updated_at: 2024-11-03 12:41:49.729232000 Z
+  created_at: 2024-11-09 13:29:32.007602000 Z
+  updated_at: 2024-11-09 13:29:32.007602000 Z
   team_id:
   index_in_team: 36
   kyudojin_id:
@@ -1853,8 +1853,8 @@ participants_133:
   firstname: Apollinaire
   lastname: Rivière
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.742485000 Z
-  updated_at: 2024-11-03 12:41:49.742485000 Z
+  created_at: 2024-11-09 13:29:32.028285000 Z
+  updated_at: 2024-11-09 13:29:32.028285000 Z
   team_id:
   index_in_team: 37
   kyudojin_id:
@@ -1867,8 +1867,8 @@ participants_134:
   firstname: Béatrice
   lastname: Marty
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.748690000 Z
-  updated_at: 2024-11-03 12:41:49.748690000 Z
+  created_at: 2024-11-09 13:29:32.039131000 Z
+  updated_at: 2024-11-09 13:29:32.039131000 Z
   team_id:
   index_in_team: 38
   kyudojin_id:
@@ -1881,8 +1881,8 @@ participants_135:
   firstname: Yoann
   lastname: Michel
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.754137000 Z
-  updated_at: 2024-11-03 12:41:49.754137000 Z
+  created_at: 2024-11-09 13:29:32.050342000 Z
+  updated_at: 2024-11-09 13:29:32.050342000 Z
   team_id:
   index_in_team: 39
   kyudojin_id:
@@ -1895,8 +1895,8 @@ participants_136:
   firstname: Benjamin
   lastname: Picard
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.759758000 Z
-  updated_at: 2024-11-03 12:41:49.759758000 Z
+  created_at: 2024-11-09 13:29:32.061752000 Z
+  updated_at: 2024-11-09 13:29:32.061752000 Z
   team_id:
   index_in_team: 40
   kyudojin_id:
@@ -1909,8 +1909,8 @@ participants_137:
   firstname: Gabriel
   lastname: Aubry
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.766461000 Z
-  updated_at: 2024-11-03 12:41:49.766461000 Z
+  created_at: 2024-11-09 13:29:32.071279000 Z
+  updated_at: 2024-11-09 13:29:32.071279000 Z
   team_id:
   index_in_team: 41
   kyudojin_id:
@@ -1923,8 +1923,8 @@ participants_138:
   firstname: Fanny
   lastname: Pichon
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.772317000 Z
-  updated_at: 2024-11-03 12:41:49.772317000 Z
+  created_at: 2024-11-09 13:29:32.082094000 Z
+  updated_at: 2024-11-09 13:29:32.082094000 Z
   team_id:
   index_in_team: 42
   kyudojin_id:
@@ -1937,8 +1937,8 @@ participants_139:
   firstname: Élisabeth
   lastname: Guerin
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.777945000 Z
-  updated_at: 2024-11-03 12:41:49.777945000 Z
+  created_at: 2024-11-09 13:29:32.095407000 Z
+  updated_at: 2024-11-09 13:29:32.095407000 Z
   team_id:
   index_in_team: 43
   kyudojin_id:
@@ -1951,8 +1951,8 @@ participants_140:
   firstname: Christelle
   lastname: Sanchez
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.783208000 Z
-  updated_at: 2024-11-03 12:41:49.783208000 Z
+  created_at: 2024-11-09 13:29:32.107311000 Z
+  updated_at: 2024-11-09 13:29:32.107311000 Z
   team_id:
   index_in_team: 44
   kyudojin_id:
@@ -1965,8 +1965,8 @@ participants_141:
   firstname: Fanny
   lastname: Leblanc
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.790712000 Z
-  updated_at: 2024-11-03 12:41:49.790712000 Z
+  created_at: 2024-11-09 13:29:32.118507000 Z
+  updated_at: 2024-11-09 13:29:32.118507000 Z
   team_id:
   index_in_team: 45
   kyudojin_id:
@@ -1979,8 +1979,8 @@ participants_142:
   firstname: Archange
   lastname: Le gall
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.797041000 Z
-  updated_at: 2024-11-03 12:41:49.797041000 Z
+  created_at: 2024-11-09 13:29:32.129187000 Z
+  updated_at: 2024-11-09 13:29:32.129187000 Z
   team_id:
   index_in_team: 46
   kyudojin_id:
@@ -1993,8 +1993,8 @@ participants_143:
   firstname: Parfait
   lastname: Denis
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.803114000 Z
-  updated_at: 2024-11-03 12:41:49.803114000 Z
+  created_at: 2024-11-09 13:29:32.139036000 Z
+  updated_at: 2024-11-09 13:29:32.139036000 Z
   team_id:
   index_in_team: 47
   kyudojin_id:
@@ -2007,8 +2007,8 @@ participants_144:
   firstname: Henryane
   lastname: Dvnis
   participating_dojo_id: 12
-  created_at: 2024-11-03 12:41:49.809024000 Z
-  updated_at: 2024-11-03 12:41:49.809024000 Z
+  created_at: 2024-11-09 13:29:32.146887000 Z
+  updated_at: 2024-11-09 13:29:32.146887000 Z
   team_id:
   index_in_team: 48
   kyudojin_id:
@@ -2021,8 +2021,8 @@ participants_145:
   firstname: Dorothée
   lastname: Roche
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.863010000 Z
-  updated_at: 2024-11-03 12:41:49.863010000 Z
+  created_at: 2024-11-09 13:29:32.218744000 Z
+  updated_at: 2024-11-09 13:29:32.218744000 Z
   team_id: 33
   index_in_team: 1
   kyudojin_id:
@@ -2035,8 +2035,8 @@ participants_146:
   firstname: Christine
   lastname: Klein
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.869381000 Z
-  updated_at: 2024-11-03 12:41:49.869381000 Z
+  created_at: 2024-11-09 13:29:32.239539000 Z
+  updated_at: 2024-11-09 13:29:32.239539000 Z
   team_id: 33
   index_in_team: 2
   kyudojin_id:
@@ -2049,8 +2049,8 @@ participants_147:
   firstname: Hippolyte
   lastname: Antoine
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.875435000 Z
-  updated_at: 2024-11-03 12:41:49.875435000 Z
+  created_at: 2024-11-09 13:29:32.246771000 Z
+  updated_at: 2024-11-09 13:29:32.246771000 Z
   team_id: 33
   index_in_team: 3
   kyudojin_id:
@@ -2063,8 +2063,8 @@ participants_148:
   firstname: Vianney
   lastname: Chevallier
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.888117000 Z
-  updated_at: 2024-11-03 12:41:49.888117000 Z
+  created_at: 2024-11-09 13:29:32.267041000 Z
+  updated_at: 2024-11-09 13:29:32.267041000 Z
   team_id: 34
   index_in_team: 1
   kyudojin_id:
@@ -2077,8 +2077,8 @@ participants_149:
   firstname: Coralie
   lastname: Barthelemy
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.895082000 Z
-  updated_at: 2024-11-03 12:41:49.895082000 Z
+  created_at: 2024-11-09 13:29:32.275602000 Z
+  updated_at: 2024-11-09 13:29:32.275602000 Z
   team_id: 34
   index_in_team: 2
   kyudojin_id:
@@ -2091,8 +2091,8 @@ participants_150:
   firstname: Claire
   lastname: Renaud
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.901068000 Z
-  updated_at: 2024-11-03 12:41:49.901068000 Z
+  created_at: 2024-11-09 13:29:32.283379000 Z
+  updated_at: 2024-11-09 13:29:32.283379000 Z
   team_id: 34
   index_in_team: 3
   kyudojin_id:
@@ -2105,8 +2105,8 @@ participants_151:
   firstname: Léon
   lastname: Philippe
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.913245000 Z
-  updated_at: 2024-11-03 12:41:49.913245000 Z
+  created_at: 2024-11-09 13:29:32.298772000 Z
+  updated_at: 2024-11-09 13:29:32.298772000 Z
   team_id: 35
   index_in_team: 1
   kyudojin_id:
@@ -2119,8 +2119,8 @@ participants_152:
   firstname: Innocent
   lastname: Boulanger
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.921940000 Z
-  updated_at: 2024-11-03 12:41:49.921940000 Z
+  created_at: 2024-11-09 13:29:32.306053000 Z
+  updated_at: 2024-11-09 13:29:32.306053000 Z
   team_id: 35
   index_in_team: 2
   kyudojin_id:
@@ -2133,8 +2133,8 @@ participants_153:
   firstname: Timothée
   lastname: Clément
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.928472000 Z
-  updated_at: 2024-11-03 12:41:49.928472000 Z
+  created_at: 2024-11-09 13:29:32.314036000 Z
+  updated_at: 2024-11-09 13:29:32.314036000 Z
   team_id: 35
   index_in_team: 3
   kyudojin_id:
@@ -2147,8 +2147,8 @@ participants_154:
   firstname: Odile
   lastname: Le roux
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.940763000 Z
-  updated_at: 2024-11-03 12:41:49.940763000 Z
+  created_at: 2024-11-09 13:29:32.330682000 Z
+  updated_at: 2024-11-09 13:29:32.330682000 Z
   team_id: 36
   index_in_team: 1
   kyudojin_id:
@@ -2161,8 +2161,8 @@ participants_155:
   firstname: Flore
   lastname: Roussel
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.947495000 Z
-  updated_at: 2024-11-03 12:41:49.947495000 Z
+  created_at: 2024-11-09 13:29:32.338434000 Z
+  updated_at: 2024-11-09 13:29:32.338434000 Z
   team_id: 36
   index_in_team: 2
   kyudojin_id:
@@ -2175,8 +2175,8 @@ participants_156:
   firstname: Félicie
   lastname: Lacroix
   participating_dojo_id: 13
-  created_at: 2024-11-03 12:41:49.954598000 Z
-  updated_at: 2024-11-03 12:41:49.954598000 Z
+  created_at: 2024-11-09 13:29:32.345993000 Z
+  updated_at: 2024-11-09 13:29:32.345993000 Z
   team_id: 36
   index_in_team: 3
   kyudojin_id:
@@ -2189,8 +2189,8 @@ participants_157:
   firstname: Clément
   lastname: Monnier
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:49.970626000 Z
-  updated_at: 2024-11-03 12:41:49.970626000 Z
+  created_at: 2024-11-09 13:29:32.365722000 Z
+  updated_at: 2024-11-09 13:29:32.365722000 Z
   team_id: 37
   index_in_team: 1
   kyudojin_id:
@@ -2203,8 +2203,8 @@ participants_158:
   firstname: Adelphe
   lastname: Noel
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:49.978121000 Z
-  updated_at: 2024-11-03 12:41:49.978121000 Z
+  created_at: 2024-11-09 13:29:32.374382000 Z
+  updated_at: 2024-11-09 13:29:32.374382000 Z
   team_id: 37
   index_in_team: 2
   kyudojin_id:
@@ -2217,8 +2217,8 @@ participants_159:
   firstname: Ernest
   lastname: Baron
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:49.984624000 Z
-  updated_at: 2024-11-03 12:41:49.984624000 Z
+  created_at: 2024-11-09 13:29:32.381016000 Z
+  updated_at: 2024-11-09 13:29:32.381016000 Z
   team_id: 37
   index_in_team: 3
   kyudojin_id:
@@ -2231,8 +2231,8 @@ participants_160:
   firstname: Herluin
   lastname: Chevalier
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.005447000 Z
-  updated_at: 2024-11-03 12:41:50.005447000 Z
+  created_at: 2024-11-09 13:29:32.395412000 Z
+  updated_at: 2024-11-09 13:29:32.395412000 Z
   team_id: 38
   index_in_team: 1
   kyudojin_id:
@@ -2245,8 +2245,8 @@ participants_161:
   firstname: Yvonne
   lastname: Lefevre
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.020891000 Z
-  updated_at: 2024-11-03 12:41:50.020891000 Z
+  created_at: 2024-11-09 13:29:32.403282000 Z
+  updated_at: 2024-11-09 13:29:32.403282000 Z
   team_id: 38
   index_in_team: 2
   kyudojin_id:
@@ -2259,8 +2259,8 @@ participants_162:
   firstname: Ronan
   lastname: Lemaitre
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.028916000 Z
-  updated_at: 2024-11-03 12:41:50.028916000 Z
+  created_at: 2024-11-09 13:29:32.410497000 Z
+  updated_at: 2024-11-09 13:29:32.410497000 Z
   team_id: 38
   index_in_team: 3
   kyudojin_id:
@@ -2273,8 +2273,8 @@ participants_163:
   firstname: Émeric
   lastname: Breton
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.043764000 Z
-  updated_at: 2024-11-03 12:41:50.043764000 Z
+  created_at: 2024-11-09 13:29:32.423801000 Z
+  updated_at: 2024-11-09 13:29:32.423801000 Z
   team_id: 39
   index_in_team: 1
   kyudojin_id:
@@ -2287,8 +2287,8 @@ participants_164:
   firstname: Betty
   lastname: Girard
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.051458000 Z
-  updated_at: 2024-11-03 12:41:50.051458000 Z
+  created_at: 2024-11-09 13:29:32.431685000 Z
+  updated_at: 2024-11-09 13:29:32.431685000 Z
   team_id: 39
   index_in_team: 2
   kyudojin_id:
@@ -2301,8 +2301,8 @@ participants_165:
   firstname: Rodolphe
   lastname: Louis
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.058414000 Z
-  updated_at: 2024-11-03 12:41:50.058414000 Z
+  created_at: 2024-11-09 13:29:32.437757000 Z
+  updated_at: 2024-11-09 13:29:32.437757000 Z
   team_id: 39
   index_in_team: 3
   kyudojin_id:
@@ -2315,8 +2315,8 @@ participants_166:
   firstname: Azeline
   lastname: Tessier
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.077603000 Z
-  updated_at: 2024-11-03 12:41:50.077603000 Z
+  created_at: 2024-11-09 13:29:32.452053000 Z
+  updated_at: 2024-11-09 13:29:32.452053000 Z
   team_id: 40
   index_in_team: 1
   kyudojin_id:
@@ -2329,8 +2329,8 @@ participants_167:
   firstname: Lazare
   lastname: Gauthier
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.089770000 Z
-  updated_at: 2024-11-03 12:41:50.089770000 Z
+  created_at: 2024-11-09 13:29:32.458768000 Z
+  updated_at: 2024-11-09 13:29:32.458768000 Z
   team_id: 40
   index_in_team: 2
   kyudojin_id:
@@ -2343,8 +2343,8 @@ participants_168:
   firstname: Cyrille
   lastname: Moulin
   participating_dojo_id: 14
-  created_at: 2024-11-03 12:41:50.113452000 Z
-  updated_at: 2024-11-03 12:41:50.113452000 Z
+  created_at: 2024-11-09 13:29:32.474755000 Z
+  updated_at: 2024-11-09 13:29:32.474755000 Z
   team_id: 40
   index_in_team: 3
   kyudojin_id:
@@ -2357,8 +2357,8 @@ participants_169:
   firstname: Frédéric
   lastname: Riviere
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.216035000 Z
-  updated_at: 2024-11-03 12:41:50.216035000 Z
+  created_at: 2024-11-09 13:29:32.548350000 Z
+  updated_at: 2024-11-09 13:29:32.548350000 Z
   team_id: 41
   index_in_team: 1
   kyudojin_id:
@@ -2371,8 +2371,8 @@ participants_170:
   firstname: Athénaïs
   lastname: Garnier
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.223255000 Z
-  updated_at: 2024-11-03 12:41:50.223255000 Z
+  created_at: 2024-11-09 13:29:32.555255000 Z
+  updated_at: 2024-11-09 13:29:32.555255000 Z
   team_id: 41
   index_in_team: 2
   kyudojin_id:
@@ -2385,8 +2385,8 @@ participants_171:
   firstname: Chloé
   lastname: Duval
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.230068000 Z
-  updated_at: 2024-11-03 12:41:50.230068000 Z
+  created_at: 2024-11-09 13:29:32.561876000 Z
+  updated_at: 2024-11-09 13:29:32.561876000 Z
   team_id: 41
   index_in_team: 3
   kyudojin_id:
@@ -2399,8 +2399,8 @@ participants_172:
   firstname: Clélie
   lastname: Legrand
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.244986000 Z
-  updated_at: 2024-11-03 12:41:50.244986000 Z
+  created_at: 2024-11-09 13:29:32.575955000 Z
+  updated_at: 2024-11-09 13:29:32.575955000 Z
   team_id: 42
   index_in_team: 1
   kyudojin_id:
@@ -2413,8 +2413,8 @@ participants_173:
   firstname: Philothée
   lastname: Da Silva
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.253736000 Z
-  updated_at: 2024-11-03 12:41:50.253736000 Z
+  created_at: 2024-11-09 13:29:32.582102000 Z
+  updated_at: 2024-11-09 13:29:32.582102000 Z
   team_id: 42
   index_in_team: 2
   kyudojin_id:
@@ -2427,8 +2427,8 @@ participants_174:
   firstname: Damien
   lastname: Prévost
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.260538000 Z
-  updated_at: 2024-11-03 12:41:50.260538000 Z
+  created_at: 2024-11-09 13:29:32.588528000 Z
+  updated_at: 2024-11-09 13:29:32.588528000 Z
   team_id: 42
   index_in_team: 3
   kyudojin_id:
@@ -2441,8 +2441,8 @@ participants_175:
   firstname: Toussaint
   lastname: Laporte
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.279570000 Z
-  updated_at: 2024-11-03 12:41:50.279570000 Z
+  created_at: 2024-11-09 13:29:32.604226000 Z
+  updated_at: 2024-11-09 13:29:32.604226000 Z
   team_id: 43
   index_in_team: 1
   kyudojin_id:
@@ -2455,8 +2455,8 @@ participants_176:
   firstname: Archange
   lastname: Bertin
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.290329000 Z
-  updated_at: 2024-11-03 12:41:50.290329000 Z
+  created_at: 2024-11-09 13:29:32.611341000 Z
+  updated_at: 2024-11-09 13:29:32.611341000 Z
   team_id: 43
   index_in_team: 2
   kyudojin_id:
@@ -2469,8 +2469,8 @@ participants_177:
   firstname: Clodion
   lastname: Gilbert
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.318052000 Z
-  updated_at: 2024-11-03 12:41:50.318052000 Z
+  created_at: 2024-11-09 13:29:32.617126000 Z
+  updated_at: 2024-11-09 13:29:32.617126000 Z
   team_id: 43
   index_in_team: 3
   kyudojin_id:
@@ -2483,8 +2483,8 @@ participants_178:
   firstname: Malo
   lastname: Gerard
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.338458000 Z
-  updated_at: 2024-11-03 12:41:50.338458000 Z
+  created_at: 2024-11-09 13:29:32.630200000 Z
+  updated_at: 2024-11-09 13:29:32.630200000 Z
   team_id: 44
   index_in_team: 1
   kyudojin_id:
@@ -2497,8 +2497,8 @@ participants_179:
   firstname: Althée
   lastname: Charles
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.352105000 Z
-  updated_at: 2024-11-03 12:41:50.352105000 Z
+  created_at: 2024-11-09 13:29:32.635847000 Z
+  updated_at: 2024-11-09 13:29:32.635847000 Z
   team_id: 44
   index_in_team: 2
   kyudojin_id:
@@ -2511,8 +2511,8 @@ participants_180:
   firstname: Quitterie
   lastname: Prévost
   participating_dojo_id: 15
-  created_at: 2024-11-03 12:41:50.361762000 Z
-  updated_at: 2024-11-03 12:41:50.361762000 Z
+  created_at: 2024-11-09 13:29:32.642021000 Z
+  updated_at: 2024-11-09 13:29:32.642021000 Z
   team_id: 44
   index_in_team: 3
   kyudojin_id:
@@ -2525,8 +2525,8 @@ participants_181:
   firstname: Émeline
   lastname: Gillet
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.522410000 Z
-  updated_at: 2024-11-03 12:41:50.522410000 Z
+  created_at: 2024-11-09 13:29:32.777939000 Z
+  updated_at: 2024-11-09 13:29:32.777939000 Z
   team_id: 45
   index_in_team: 1
   kyudojin_id:
@@ -2539,8 +2539,8 @@ participants_182:
   firstname: Régis
   lastname: Antoine
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.530061000 Z
-  updated_at: 2024-11-03 12:41:50.530061000 Z
+  created_at: 2024-11-09 13:29:32.785250000 Z
+  updated_at: 2024-11-09 13:29:32.785250000 Z
   team_id: 45
   index_in_team: 2
   kyudojin_id:
@@ -2553,8 +2553,8 @@ participants_183:
   firstname: Jeannot
   lastname: Boulanger
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.537330000 Z
-  updated_at: 2024-11-03 12:41:50.537330000 Z
+  created_at: 2024-11-09 13:29:32.791275000 Z
+  updated_at: 2024-11-09 13:29:32.791275000 Z
   team_id: 45
   index_in_team: 3
   kyudojin_id:
@@ -2567,8 +2567,8 @@ participants_184:
   firstname: Auguste
   lastname: Renault
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.553405000 Z
-  updated_at: 2024-11-03 12:41:50.553405000 Z
+  created_at: 2024-11-09 13:29:32.809036000 Z
+  updated_at: 2024-11-09 13:29:32.809036000 Z
   team_id: 46
   index_in_team: 1
   kyudojin_id:
@@ -2581,8 +2581,8 @@ participants_185:
   firstname: Azeline
   lastname: Paris
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.560835000 Z
-  updated_at: 2024-11-03 12:41:50.560835000 Z
+  created_at: 2024-11-09 13:29:32.817500000 Z
+  updated_at: 2024-11-09 13:29:32.817500000 Z
   team_id: 46
   index_in_team: 2
   kyudojin_id:
@@ -2595,8 +2595,8 @@ participants_186:
   firstname: Emmanuelle
   lastname: Julien
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.567726000 Z
-  updated_at: 2024-11-03 12:41:50.567726000 Z
+  created_at: 2024-11-09 13:29:32.824970000 Z
+  updated_at: 2024-11-09 13:29:32.824970000 Z
   team_id: 46
   index_in_team: 3
   kyudojin_id:
@@ -2609,8 +2609,8 @@ participants_187:
   firstname: Victoire
   lastname: Paul
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.585353000 Z
-  updated_at: 2024-11-03 12:41:50.585353000 Z
+  created_at: 2024-11-09 13:29:32.840032000 Z
+  updated_at: 2024-11-09 13:29:32.840032000 Z
   team_id: 47
   index_in_team: 1
   kyudojin_id:
@@ -2623,8 +2623,8 @@ participants_188:
   firstname: Corentin
   lastname: Gérard
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.593951000 Z
-  updated_at: 2024-11-03 12:41:50.593951000 Z
+  created_at: 2024-11-09 13:29:32.846324000 Z
+  updated_at: 2024-11-09 13:29:32.846324000 Z
   team_id: 47
   index_in_team: 2
   kyudojin_id:
@@ -2637,8 +2637,8 @@ participants_189:
   firstname: Nicole
   lastname: Adam
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.603754000 Z
-  updated_at: 2024-11-03 12:41:50.603754000 Z
+  created_at: 2024-11-09 13:29:32.852784000 Z
+  updated_at: 2024-11-09 13:29:32.852784000 Z
   team_id: 47
   index_in_team: 3
   kyudojin_id:
@@ -2651,8 +2651,8 @@ participants_190:
   firstname: Hélier
   lastname: Laporte
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.620066000 Z
-  updated_at: 2024-11-03 12:41:50.620066000 Z
+  created_at: 2024-11-09 13:29:32.868797000 Z
+  updated_at: 2024-11-09 13:29:32.868797000 Z
   team_id: 48
   index_in_team: 1
   kyudojin_id:
@@ -2665,8 +2665,8 @@ participants_191:
   firstname: Sébastien
   lastname: Payet
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.628720000 Z
-  updated_at: 2024-11-03 12:41:50.628720000 Z
+  created_at: 2024-11-09 13:29:32.877211000 Z
+  updated_at: 2024-11-09 13:29:32.877211000 Z
   team_id: 48
   index_in_team: 2
   kyudojin_id:
@@ -2679,8 +2679,8 @@ participants_192:
   firstname: Aphélie
   lastname: Da silva
   participating_dojo_id: 16
-  created_at: 2024-11-03 12:41:50.635998000 Z
-  updated_at: 2024-11-03 12:41:50.635998000 Z
+  created_at: 2024-11-09 13:29:32.884028000 Z
+  updated_at: 2024-11-09 13:29:32.884028000 Z
   team_id: 48
   index_in_team: 3
   kyudojin_id:
@@ -2693,8 +2693,8 @@ participants_193:
   firstname: Annette
   lastname: Marechal
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.701155000 Z
-  updated_at: 2024-11-03 12:41:50.701155000 Z
+  created_at: 2024-11-09 13:29:32.941443000 Z
+  updated_at: 2024-11-09 13:29:32.941443000 Z
   team_id:
   index_in_team: 49
   kyudojin_id:
@@ -2707,8 +2707,8 @@ participants_194:
   firstname: Régine
   lastname: Benoit
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.709988000 Z
-  updated_at: 2024-11-03 12:41:50.709988000 Z
+  created_at: 2024-11-09 13:29:32.948345000 Z
+  updated_at: 2024-11-09 13:29:32.948345000 Z
   team_id:
   index_in_team: 50
   kyudojin_id:
@@ -2721,8 +2721,8 @@ participants_195:
   firstname: Raphaëlle
   lastname: Germain
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.716958000 Z
-  updated_at: 2024-11-03 12:41:50.716958000 Z
+  created_at: 2024-11-09 13:29:32.954368000 Z
+  updated_at: 2024-11-09 13:29:32.954368000 Z
   team_id:
   index_in_team: 51
   kyudojin_id:
@@ -2735,8 +2735,8 @@ participants_196:
   firstname: Antonin
   lastname: Paris
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.723600000 Z
-  updated_at: 2024-11-03 12:41:50.723600000 Z
+  created_at: 2024-11-09 13:29:32.961339000 Z
+  updated_at: 2024-11-09 13:29:32.961339000 Z
   team_id:
   index_in_team: 52
   kyudojin_id:
@@ -2749,8 +2749,8 @@ participants_197:
   firstname: Olive
   lastname: Lopéz
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.730651000 Z
-  updated_at: 2024-11-03 12:41:50.730651000 Z
+  created_at: 2024-11-09 13:29:32.967395000 Z
+  updated_at: 2024-11-09 13:29:32.967395000 Z
   team_id:
   index_in_team: 53
   kyudojin_id:
@@ -2763,8 +2763,8 @@ participants_198:
   firstname: Audran
   lastname: Martin
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.740211000 Z
-  updated_at: 2024-11-03 12:41:50.740211000 Z
+  created_at: 2024-11-09 13:29:32.974010000 Z
+  updated_at: 2024-11-09 13:29:32.974010000 Z
   team_id:
   index_in_team: 54
   kyudojin_id:
@@ -2777,8 +2777,8 @@ participants_199:
   firstname: Alaïs
   lastname: Lefèvre
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.748703000 Z
-  updated_at: 2024-11-03 12:41:50.748703000 Z
+  created_at: 2024-11-09 13:29:32.981891000 Z
+  updated_at: 2024-11-09 13:29:32.981891000 Z
   team_id:
   index_in_team: 55
   kyudojin_id:
@@ -2791,8 +2791,8 @@ participants_200:
   firstname: Aymonde
   lastname: Leveque
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.757230000 Z
-  updated_at: 2024-11-03 12:41:50.757230000 Z
+  created_at: 2024-11-09 13:29:32.989197000 Z
+  updated_at: 2024-11-09 13:29:32.989197000 Z
   team_id:
   index_in_team: 56
   kyudojin_id:
@@ -2805,8 +2805,8 @@ participants_201:
   firstname: Maureen
   lastname: Guyot
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.764604000 Z
-  updated_at: 2024-11-03 12:41:50.764604000 Z
+  created_at: 2024-11-09 13:29:32.995428000 Z
+  updated_at: 2024-11-09 13:29:32.995428000 Z
   team_id:
   index_in_team: 57
   kyudojin_id:
@@ -2819,8 +2819,8 @@ participants_202:
   firstname: Thierry
   lastname: Perret
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.770989000 Z
-  updated_at: 2024-11-03 12:41:50.770989000 Z
+  created_at: 2024-11-09 13:29:33.001018000 Z
+  updated_at: 2024-11-09 13:29:33.001018000 Z
   team_id:
   index_in_team: 58
   kyudojin_id:
@@ -2833,8 +2833,8 @@ participants_203:
   firstname: Apollinaire
   lastname: Benoit
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.778511000 Z
-  updated_at: 2024-11-03 12:41:50.778511000 Z
+  created_at: 2024-11-09 13:29:33.006708000 Z
+  updated_at: 2024-11-09 13:29:33.006708000 Z
   team_id:
   index_in_team: 59
   kyudojin_id:
@@ -2847,8 +2847,8 @@ participants_204:
   firstname: Morgan
   lastname: Dvnis
   participating_dojo_id: 17
-  created_at: 2024-11-03 12:41:50.786115000 Z
-  updated_at: 2024-11-03 12:41:50.786115000 Z
+  created_at: 2024-11-09 13:29:33.013145000 Z
+  updated_at: 2024-11-09 13:29:33.013145000 Z
   team_id:
   index_in_team: 60
   kyudojin_id:
@@ -2861,8 +2861,8 @@ participants_205:
   firstname: Charlaine
   lastname: Lamy
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.854144000 Z
-  updated_at: 2024-11-03 12:41:50.854144000 Z
+  created_at: 2024-11-09 13:29:33.073698000 Z
+  updated_at: 2024-11-09 13:29:33.073698000 Z
   team_id: 49
   index_in_team: 1
   kyudojin_id:
@@ -2875,8 +2875,8 @@ participants_206:
   firstname: Flavien
   lastname: Barbier
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.862526000 Z
-  updated_at: 2024-11-03 12:41:50.862526000 Z
+  created_at: 2024-11-09 13:29:33.080173000 Z
+  updated_at: 2024-11-09 13:29:33.080173000 Z
   team_id: 49
   index_in_team: 2
   kyudojin_id:
@@ -2889,8 +2889,8 @@ participants_207:
   firstname: Dieudonnée
   lastname: Masson
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.869085000 Z
-  updated_at: 2024-11-03 12:41:50.869085000 Z
+  created_at: 2024-11-09 13:29:33.087662000 Z
+  updated_at: 2024-11-09 13:29:33.087662000 Z
   team_id: 49
   index_in_team: 3
   kyudojin_id:
@@ -2903,8 +2903,8 @@ participants_208:
   firstname: Guillemette
   lastname: Aubert
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.885314000 Z
-  updated_at: 2024-11-03 12:41:50.885314000 Z
+  created_at: 2024-11-09 13:29:33.100808000 Z
+  updated_at: 2024-11-09 13:29:33.100808000 Z
   team_id: 50
   index_in_team: 1
   kyudojin_id:
@@ -2917,8 +2917,8 @@ participants_209:
   firstname: Axelle
   lastname: Etienne
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.892766000 Z
-  updated_at: 2024-11-03 12:41:50.892766000 Z
+  created_at: 2024-11-09 13:29:33.106753000 Z
+  updated_at: 2024-11-09 13:29:33.106753000 Z
   team_id: 50
   index_in_team: 2
   kyudojin_id:
@@ -2931,8 +2931,8 @@ participants_210:
   firstname: Laureline
   lastname: Lopez
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.900003000 Z
-  updated_at: 2024-11-03 12:41:50.900003000 Z
+  created_at: 2024-11-09 13:29:33.113905000 Z
+  updated_at: 2024-11-09 13:29:33.113905000 Z
   team_id: 50
   index_in_team: 3
   kyudojin_id:
@@ -2945,8 +2945,8 @@ participants_211:
   firstname: Eulalie
   lastname: Renault
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.913459000 Z
-  updated_at: 2024-11-03 12:41:50.913459000 Z
+  created_at: 2024-11-09 13:29:33.130862000 Z
+  updated_at: 2024-11-09 13:29:33.130862000 Z
   team_id: 51
   index_in_team: 1
   kyudojin_id:
@@ -2959,8 +2959,8 @@ participants_212:
   firstname: Romain
   lastname: Perret
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.919516000 Z
-  updated_at: 2024-11-03 12:41:50.919516000 Z
+  created_at: 2024-11-09 13:29:33.138448000 Z
+  updated_at: 2024-11-09 13:29:33.138448000 Z
   team_id: 51
   index_in_team: 2
   kyudojin_id:
@@ -2973,8 +2973,8 @@ participants_213:
   firstname: Astérie
   lastname: Moulin
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.926765000 Z
-  updated_at: 2024-11-03 12:41:50.926765000 Z
+  created_at: 2024-11-09 13:29:33.146392000 Z
+  updated_at: 2024-11-09 13:29:33.146392000 Z
   team_id: 51
   index_in_team: 3
   kyudojin_id:
@@ -2987,8 +2987,8 @@ participants_214:
   firstname: Eugène
   lastname: Dufour
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.938751000 Z
-  updated_at: 2024-11-03 12:41:50.938751000 Z
+  created_at: 2024-11-09 13:29:33.158716000 Z
+  updated_at: 2024-11-09 13:29:33.158716000 Z
   team_id: 52
   index_in_team: 1
   kyudojin_id:
@@ -3001,8 +3001,8 @@ participants_215:
   firstname: Béranger
   lastname: Leroux
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.946726000 Z
-  updated_at: 2024-11-03 12:41:50.946726000 Z
+  created_at: 2024-11-09 13:29:33.164437000 Z
+  updated_at: 2024-11-09 13:29:33.164437000 Z
   team_id: 52
   index_in_team: 2
   kyudojin_id:
@@ -3015,8 +3015,8 @@ participants_216:
   firstname: Jeannel
   lastname: Gautier
   participating_dojo_id: 18
-  created_at: 2024-11-03 12:41:50.953745000 Z
-  updated_at: 2024-11-03 12:41:50.953745000 Z
+  created_at: 2024-11-09 13:29:33.169739000 Z
+  updated_at: 2024-11-09 13:29:33.169739000 Z
   team_id: 52
   index_in_team: 3
   kyudojin_id:
@@ -3029,8 +3029,8 @@ participants_217:
   firstname: Marie
   lastname: Gay
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.020499000 Z
-  updated_at: 2024-11-03 12:41:51.020499000 Z
+  created_at: 2024-11-09 13:29:33.223149000 Z
+  updated_at: 2024-11-09 13:29:33.223149000 Z
   team_id: 53
   index_in_team: 1
   kyudojin_id:
@@ -3043,8 +3043,8 @@ participants_218:
   firstname: Orlane
   lastname: Jean
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.029134000 Z
-  updated_at: 2024-11-03 12:41:51.029134000 Z
+  created_at: 2024-11-09 13:29:33.228846000 Z
+  updated_at: 2024-11-09 13:29:33.228846000 Z
   team_id: 53
   index_in_team: 2
   kyudojin_id:
@@ -3057,8 +3057,8 @@ participants_219:
   firstname: Christelle
   lastname: Fontaine
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.037163000 Z
-  updated_at: 2024-11-03 12:41:51.037163000 Z
+  created_at: 2024-11-09 13:29:33.234274000 Z
+  updated_at: 2024-11-09 13:29:33.234274000 Z
   team_id: 53
   index_in_team: 3
   kyudojin_id:
@@ -3071,8 +3071,8 @@ participants_220:
   firstname: Samuel
   lastname: Mercier
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.052677000 Z
-  updated_at: 2024-11-03 12:41:51.052677000 Z
+  created_at: 2024-11-09 13:29:33.250303000 Z
+  updated_at: 2024-11-09 13:29:33.250303000 Z
   team_id: 54
   index_in_team: 1
   kyudojin_id:
@@ -3085,8 +3085,8 @@ participants_221:
   firstname: Éric
   lastname: Meunier
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.084680000 Z
-  updated_at: 2024-11-03 12:41:51.084680000 Z
+  created_at: 2024-11-09 13:29:33.259399000 Z
+  updated_at: 2024-11-09 13:29:33.259399000 Z
   team_id: 54
   index_in_team: 2
   kyudojin_id:
@@ -3099,8 +3099,8 @@ participants_222:
   firstname: Adrienne
   lastname: Millet
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.091261000 Z
-  updated_at: 2024-11-03 12:41:51.091261000 Z
+  created_at: 2024-11-09 13:29:33.268493000 Z
+  updated_at: 2024-11-09 13:29:33.268493000 Z
   team_id: 54
   index_in_team: 3
   kyudojin_id:
@@ -3113,8 +3113,8 @@ participants_223:
   firstname: Agnane
   lastname: Cousin
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.106917000 Z
-  updated_at: 2024-11-03 12:41:51.106917000 Z
+  created_at: 2024-11-09 13:29:33.286025000 Z
+  updated_at: 2024-11-09 13:29:33.286025000 Z
   team_id: 55
   index_in_team: 1
   kyudojin_id:
@@ -3127,8 +3127,8 @@ participants_224:
   firstname: Émeric
   lastname: Marechal
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.116086000 Z
-  updated_at: 2024-11-03 12:41:51.116086000 Z
+  created_at: 2024-11-09 13:29:33.293101000 Z
+  updated_at: 2024-11-09 13:29:33.293101000 Z
   team_id: 55
   index_in_team: 2
   kyudojin_id:
@@ -3141,8 +3141,8 @@ participants_225:
   firstname: Thérèse
   lastname: Noël
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.123672000 Z
-  updated_at: 2024-11-03 12:41:51.123672000 Z
+  created_at: 2024-11-09 13:29:33.299133000 Z
+  updated_at: 2024-11-09 13:29:33.299133000 Z
   team_id: 55
   index_in_team: 3
   kyudojin_id:
@@ -3155,8 +3155,8 @@ participants_226:
   firstname: Suzon
   lastname: Philippe
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.139308000 Z
-  updated_at: 2024-11-03 12:41:51.139308000 Z
+  created_at: 2024-11-09 13:29:33.315538000 Z
+  updated_at: 2024-11-09 13:29:33.315538000 Z
   team_id: 56
   index_in_team: 1
   kyudojin_id:
@@ -3169,8 +3169,8 @@ participants_227:
   firstname: Julie
   lastname: Laporte
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.146513000 Z
-  updated_at: 2024-11-03 12:41:51.146513000 Z
+  created_at: 2024-11-09 13:29:33.322197000 Z
+  updated_at: 2024-11-09 13:29:33.322197000 Z
   team_id: 56
   index_in_team: 2
   kyudojin_id:
@@ -3183,8 +3183,8 @@ participants_228:
   firstname: Théophraste
   lastname: Noel
   participating_dojo_id: 19
-  created_at: 2024-11-03 12:41:51.154455000 Z
-  updated_at: 2024-11-03 12:41:51.154455000 Z
+  created_at: 2024-11-09 13:29:33.329138000 Z
+  updated_at: 2024-11-09 13:29:33.329138000 Z
   team_id: 56
   index_in_team: 3
   kyudojin_id:
@@ -3197,8 +3197,8 @@ participants_229:
   firstname: Agnan
   lastname: Deschamps
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.215141000 Z
-  updated_at: 2024-11-03 12:41:51.215141000 Z
+  created_at: 2024-11-09 13:29:33.396425000 Z
+  updated_at: 2024-11-09 13:29:33.396425000 Z
   team_id:
   index_in_team: 61
   kyudojin_id:
@@ -3211,8 +3211,8 @@ participants_230:
   firstname: Eusébie
   lastname: Dupont
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.222157000 Z
-  updated_at: 2024-11-03 12:41:51.222157000 Z
+  created_at: 2024-11-09 13:29:33.404830000 Z
+  updated_at: 2024-11-09 13:29:33.404830000 Z
   team_id:
   index_in_team: 62
   kyudojin_id:
@@ -3225,8 +3225,8 @@ participants_231:
   firstname: Félix
   lastname: Picard
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.229819000 Z
-  updated_at: 2024-11-03 12:41:51.229819000 Z
+  created_at: 2024-11-09 13:29:33.410645000 Z
+  updated_at: 2024-11-09 13:29:33.410645000 Z
   team_id:
   index_in_team: 63
   kyudojin_id:
@@ -3239,8 +3239,8 @@ participants_232:
   firstname: Aphélie
   lastname: Rey
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.235995000 Z
-  updated_at: 2024-11-03 12:41:51.235995000 Z
+  created_at: 2024-11-09 13:29:33.415754000 Z
+  updated_at: 2024-11-09 13:29:33.415754000 Z
   team_id:
   index_in_team: 64
   kyudojin_id:
@@ -3253,8 +3253,8 @@ participants_233:
   firstname: Gondebaud
   lastname: Blanchard
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.242418000 Z
-  updated_at: 2024-11-03 12:41:51.242418000 Z
+  created_at: 2024-11-09 13:29:33.420980000 Z
+  updated_at: 2024-11-09 13:29:33.420980000 Z
   team_id:
   index_in_team: 65
   kyudojin_id:
@@ -3267,8 +3267,8 @@ participants_234:
   firstname: Marc
   lastname: Paris
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.252076000 Z
-  updated_at: 2024-11-03 12:41:51.252076000 Z
+  created_at: 2024-11-09 13:29:33.429952000 Z
+  updated_at: 2024-11-09 13:29:33.429952000 Z
   team_id:
   index_in_team: 66
   kyudojin_id:
@@ -3281,8 +3281,8 @@ participants_235:
   firstname: Arthurine
   lastname: Collet
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.260689000 Z
-  updated_at: 2024-11-03 12:41:51.260689000 Z
+  created_at: 2024-11-09 13:29:33.436121000 Z
+  updated_at: 2024-11-09 13:29:33.436121000 Z
   team_id:
   index_in_team: 67
   kyudojin_id:
@@ -3295,8 +3295,8 @@ participants_236:
   firstname: Fulcran
   lastname: Rousseau
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.267682000 Z
-  updated_at: 2024-11-03 12:41:51.267682000 Z
+  created_at: 2024-11-09 13:29:33.442970000 Z
+  updated_at: 2024-11-09 13:29:33.442970000 Z
   team_id:
   index_in_team: 68
   kyudojin_id:
@@ -3309,8 +3309,8 @@ participants_237:
   firstname: Alban
   lastname: Petit
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.275252000 Z
-  updated_at: 2024-11-03 12:41:51.275252000 Z
+  created_at: 2024-11-09 13:29:33.449128000 Z
+  updated_at: 2024-11-09 13:29:33.449128000 Z
   team_id:
   index_in_team: 69
   kyudojin_id:
@@ -3323,8 +3323,8 @@ participants_238:
   firstname: Germaine
   lastname: Gerard
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.282426000 Z
-  updated_at: 2024-11-03 12:41:51.282426000 Z
+  created_at: 2024-11-09 13:29:33.455724000 Z
+  updated_at: 2024-11-09 13:29:33.455724000 Z
   team_id:
   index_in_team: 70
   kyudojin_id:
@@ -3337,8 +3337,8 @@ participants_239:
   firstname: Angèle
   lastname: Pelletier
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.289291000 Z
-  updated_at: 2024-11-03 12:41:51.289291000 Z
+  created_at: 2024-11-09 13:29:33.460782000 Z
+  updated_at: 2024-11-09 13:29:33.460782000 Z
   team_id:
   index_in_team: 71
   kyudojin_id:
@@ -3351,8 +3351,8 @@ participants_240:
   firstname: Hermine
   lastname: Lemaire
   participating_dojo_id: 20
-  created_at: 2024-11-03 12:41:51.297348000 Z
-  updated_at: 2024-11-03 12:41:51.297348000 Z
+  created_at: 2024-11-09 13:29:33.465625000 Z
+  updated_at: 2024-11-09 13:29:33.465625000 Z
   team_id:
   index_in_team: 72
   kyudojin_id:
@@ -3365,8 +3365,8 @@ participants_241:
   firstname: Sixtine
   lastname: Royer
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.363452000 Z
-  updated_at: 2024-11-03 12:41:51.363452000 Z
+  created_at: 2024-11-09 13:29:33.516507000 Z
+  updated_at: 2024-11-09 13:29:33.516507000 Z
   team_id: 57
   index_in_team: 1
   kyudojin_id:
@@ -3379,8 +3379,8 @@ participants_242:
   firstname: Émérance
   lastname: Le Goff
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.371318000 Z
-  updated_at: 2024-11-03 12:41:51.371318000 Z
+  created_at: 2024-11-09 13:29:33.522646000 Z
+  updated_at: 2024-11-09 13:29:33.522646000 Z
   team_id: 57
   index_in_team: 2
   kyudojin_id:
@@ -3393,8 +3393,8 @@ participants_243:
   firstname: Francette
   lastname: Leclercq
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.378213000 Z
-  updated_at: 2024-11-03 12:41:51.378213000 Z
+  created_at: 2024-11-09 13:29:33.528189000 Z
+  updated_at: 2024-11-09 13:29:33.528189000 Z
   team_id: 57
   index_in_team: 3
   kyudojin_id:
@@ -3407,8 +3407,8 @@ participants_244:
   firstname: Alphonsine
   lastname: Leclerc
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.395330000 Z
-  updated_at: 2024-11-03 12:41:51.395330000 Z
+  created_at: 2024-11-09 13:29:33.539504000 Z
+  updated_at: 2024-11-09 13:29:33.539504000 Z
   team_id: 58
   index_in_team: 1
   kyudojin_id:
@@ -3421,8 +3421,8 @@ participants_245:
   firstname: Arcade
   lastname: Rousseau
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.403085000 Z
-  updated_at: 2024-11-03 12:41:51.403085000 Z
+  created_at: 2024-11-09 13:29:33.545539000 Z
+  updated_at: 2024-11-09 13:29:33.545539000 Z
   team_id: 58
   index_in_team: 2
   kyudojin_id:
@@ -3435,8 +3435,8 @@ participants_246:
   firstname: Émeline
   lastname: Guillaume
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.410845000 Z
-  updated_at: 2024-11-03 12:41:51.410845000 Z
+  created_at: 2024-11-09 13:29:33.550901000 Z
+  updated_at: 2024-11-09 13:29:33.550901000 Z
   team_id: 58
   index_in_team: 3
   kyudojin_id:
@@ -3449,8 +3449,8 @@ participants_247:
   firstname: Waleran
   lastname: Dvnis
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.425491000 Z
-  updated_at: 2024-11-03 12:41:51.425491000 Z
+  created_at: 2024-11-09 13:29:33.564762000 Z
+  updated_at: 2024-11-09 13:29:33.564762000 Z
   team_id: 59
   index_in_team: 1
   kyudojin_id:
@@ -3463,8 +3463,8 @@ participants_248:
   firstname: Muriel
   lastname: Morin
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.434099000 Z
-  updated_at: 2024-11-03 12:41:51.434099000 Z
+  created_at: 2024-11-09 13:29:33.570814000 Z
+  updated_at: 2024-11-09 13:29:33.570814000 Z
   team_id: 59
   index_in_team: 2
   kyudojin_id:
@@ -3477,8 +3477,8 @@ participants_249:
   firstname: Isaac
   lastname: Henry
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.440684000 Z
-  updated_at: 2024-11-03 12:41:51.440684000 Z
+  created_at: 2024-11-09 13:29:33.577001000 Z
+  updated_at: 2024-11-09 13:29:33.577001000 Z
   team_id: 59
   index_in_team: 3
   kyudojin_id:
@@ -3491,8 +3491,8 @@ participants_250:
   firstname: Childebert
   lastname: Rodriguez
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.458729000 Z
-  updated_at: 2024-11-03 12:41:51.458729000 Z
+  created_at: 2024-11-09 13:29:33.589352000 Z
+  updated_at: 2024-11-09 13:29:33.589352000 Z
   team_id: 60
   index_in_team: 1
   kyudojin_id:
@@ -3505,8 +3505,8 @@ participants_251:
   firstname: Sigismond
   lastname: Renaud
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.466846000 Z
-  updated_at: 2024-11-03 12:41:51.466846000 Z
+  created_at: 2024-11-09 13:29:33.594034000 Z
+  updated_at: 2024-11-09 13:29:33.594034000 Z
   team_id: 60
   index_in_team: 2
   kyudojin_id:
@@ -3519,8 +3519,8 @@ participants_252:
   firstname: Théodore
   lastname: Rey
   participating_dojo_id: 21
-  created_at: 2024-11-03 12:41:51.473879000 Z
-  updated_at: 2024-11-03 12:41:51.473879000 Z
+  created_at: 2024-11-09 13:29:33.601762000 Z
+  updated_at: 2024-11-09 13:29:33.601762000 Z
   team_id: 60
   index_in_team: 3
   kyudojin_id:
@@ -3533,8 +3533,8 @@ participants_253:
   firstname: Achaire
   lastname: Charles
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.542769000 Z
-  updated_at: 2024-11-03 12:41:51.542769000 Z
+  created_at: 2024-11-09 13:29:33.666630000 Z
+  updated_at: 2024-11-09 13:29:33.666630000 Z
   team_id: 61
   index_in_team: 1
   kyudojin_id:
@@ -3547,8 +3547,8 @@ participants_254:
   firstname: Célestin
   lastname: Payet
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.550370000 Z
-  updated_at: 2024-11-03 12:41:51.550370000 Z
+  created_at: 2024-11-09 13:29:33.673615000 Z
+  updated_at: 2024-11-09 13:29:33.673615000 Z
   team_id: 61
   index_in_team: 2
   kyudojin_id:
@@ -3561,8 +3561,8 @@ participants_255:
   firstname: Virginie
   lastname: Marchand
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.557209000 Z
-  updated_at: 2024-11-03 12:41:51.557209000 Z
+  created_at: 2024-11-09 13:29:33.679555000 Z
+  updated_at: 2024-11-09 13:29:33.679555000 Z
   team_id: 61
   index_in_team: 3
   kyudojin_id:
@@ -3575,8 +3575,8 @@ participants_256:
   firstname: Amandin
   lastname: Blanchard
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.571785000 Z
-  updated_at: 2024-11-03 12:41:51.571785000 Z
+  created_at: 2024-11-09 13:29:33.692230000 Z
+  updated_at: 2024-11-09 13:29:33.692230000 Z
   team_id: 62
   index_in_team: 1
   kyudojin_id:
@@ -3589,8 +3589,8 @@ participants_257:
   firstname: Vincent
   lastname: Berger
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.578080000 Z
-  updated_at: 2024-11-03 12:41:51.578080000 Z
+  created_at: 2024-11-09 13:29:33.697510000 Z
+  updated_at: 2024-11-09 13:29:33.697510000 Z
   team_id: 62
   index_in_team: 2
   kyudojin_id:
@@ -3603,8 +3603,8 @@ participants_258:
   firstname: Alain
   lastname: Simon
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.584093000 Z
-  updated_at: 2024-11-03 12:41:51.584093000 Z
+  created_at: 2024-11-09 13:29:33.702362000 Z
+  updated_at: 2024-11-09 13:29:33.702362000 Z
   team_id: 62
   index_in_team: 3
   kyudojin_id:
@@ -3617,8 +3617,8 @@ participants_259:
   firstname: Amalthée
   lastname: Duval
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.599367000 Z
-  updated_at: 2024-11-03 12:41:51.599367000 Z
+  created_at: 2024-11-09 13:29:33.717372000 Z
+  updated_at: 2024-11-09 13:29:33.717372000 Z
   team_id: 63
   index_in_team: 1
   kyudojin_id:
@@ -3631,8 +3631,8 @@ participants_260:
   firstname: Astride
   lastname: Delaunay
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.606716000 Z
-  updated_at: 2024-11-03 12:41:51.606716000 Z
+  created_at: 2024-11-09 13:29:33.723128000 Z
+  updated_at: 2024-11-09 13:29:33.723128000 Z
   team_id: 63
   index_in_team: 2
   kyudojin_id:
@@ -3645,8 +3645,8 @@ participants_261:
   firstname: Pauline
   lastname: Olivier
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.613798000 Z
-  updated_at: 2024-11-03 12:41:51.613798000 Z
+  created_at: 2024-11-09 13:29:33.728894000 Z
+  updated_at: 2024-11-09 13:29:33.728894000 Z
   team_id: 63
   index_in_team: 3
   kyudojin_id:
@@ -3659,8 +3659,8 @@ participants_262:
   firstname: Gaëlle
   lastname: Vincent
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.626702000 Z
-  updated_at: 2024-11-03 12:41:51.626702000 Z
+  created_at: 2024-11-09 13:29:33.741162000 Z
+  updated_at: 2024-11-09 13:29:33.741162000 Z
   team_id: 64
   index_in_team: 1
   kyudojin_id:
@@ -3673,8 +3673,8 @@ participants_263:
   firstname: Zéphirin
   lastname: Leroux
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.633738000 Z
-  updated_at: 2024-11-03 12:41:51.633738000 Z
+  created_at: 2024-11-09 13:29:33.747372000 Z
+  updated_at: 2024-11-09 13:29:33.747372000 Z
   team_id: 64
   index_in_team: 2
   kyudojin_id:
@@ -3687,8 +3687,8 @@ participants_264:
   firstname: Émile
   lastname: Masson
   participating_dojo_id: 22
-  created_at: 2024-11-03 12:41:51.640103000 Z
-  updated_at: 2024-11-03 12:41:51.640103000 Z
+  created_at: 2024-11-09 13:29:33.754972000 Z
+  updated_at: 2024-11-09 13:29:33.754972000 Z
   team_id: 64
   index_in_team: 3
   kyudojin_id:
@@ -3701,8 +3701,8 @@ participants_265:
   firstname: Maxime
   lastname: Laine
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.662385000 Z
-  updated_at: 2024-11-03 12:41:51.662385000 Z
+  created_at: 2024-11-09 13:29:33.775328000 Z
+  updated_at: 2024-11-09 13:29:33.775328000 Z
   team_id: 65
   index_in_team: 1
   kyudojin_id:
@@ -3715,8 +3715,8 @@ participants_266:
   firstname: Chrysole
   lastname: Bourgeois
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.669340000 Z
-  updated_at: 2024-11-03 12:41:51.669340000 Z
+  created_at: 2024-11-09 13:29:33.780978000 Z
+  updated_at: 2024-11-09 13:29:33.780978000 Z
   team_id: 65
   index_in_team: 2
   kyudojin_id:
@@ -3729,8 +3729,8 @@ participants_267:
   firstname: Marjorie
   lastname: Humbert
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.676806000 Z
-  updated_at: 2024-11-03 12:41:51.676806000 Z
+  created_at: 2024-11-09 13:29:33.788218000 Z
+  updated_at: 2024-11-09 13:29:33.788218000 Z
   team_id: 65
   index_in_team: 3
   kyudojin_id:
@@ -3743,8 +3743,8 @@ participants_268:
   firstname: Ameline
   lastname: Dubois
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.690872000 Z
-  updated_at: 2024-11-03 12:41:51.690872000 Z
+  created_at: 2024-11-09 13:29:33.803154000 Z
+  updated_at: 2024-11-09 13:29:33.803154000 Z
   team_id: 66
   index_in_team: 1
   kyudojin_id:
@@ -3757,8 +3757,8 @@ participants_269:
   firstname: Armeline
   lastname: Fleury
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.699174000 Z
-  updated_at: 2024-11-03 12:41:51.699174000 Z
+  created_at: 2024-11-09 13:29:33.812540000 Z
+  updated_at: 2024-11-09 13:29:33.812540000 Z
   team_id: 66
   index_in_team: 2
   kyudojin_id:
@@ -3771,8 +3771,8 @@ participants_270:
   firstname: Edmée
   lastname: Meyer
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.705427000 Z
-  updated_at: 2024-11-03 12:41:51.705427000 Z
+  created_at: 2024-11-09 13:29:33.818389000 Z
+  updated_at: 2024-11-09 13:29:33.818389000 Z
   team_id: 66
   index_in_team: 3
   kyudojin_id:
@@ -3785,8 +3785,8 @@ participants_271:
   firstname: Martin
   lastname: Millet
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.722893000 Z
-  updated_at: 2024-11-03 12:41:51.722893000 Z
+  created_at: 2024-11-09 13:29:33.830161000 Z
+  updated_at: 2024-11-09 13:29:33.830161000 Z
   team_id: 67
   index_in_team: 1
   kyudojin_id:
@@ -3799,8 +3799,8 @@ participants_272:
   firstname: Marthe
   lastname: Muller
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.729939000 Z
-  updated_at: 2024-11-03 12:41:51.729939000 Z
+  created_at: 2024-11-09 13:29:33.836710000 Z
+  updated_at: 2024-11-09 13:29:33.836710000 Z
   team_id: 67
   index_in_team: 2
   kyudojin_id:
@@ -3813,8 +3813,8 @@ participants_273:
   firstname: Priscille
   lastname: Etienne
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.737191000 Z
-  updated_at: 2024-11-03 12:41:51.737191000 Z
+  created_at: 2024-11-09 13:29:33.842144000 Z
+  updated_at: 2024-11-09 13:29:33.842144000 Z
   team_id: 67
   index_in_team: 3
   kyudojin_id:
@@ -3827,8 +3827,8 @@ participants_274:
   firstname: Suzanne
   lastname: Bourgeois
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.752194000 Z
-  updated_at: 2024-11-03 12:41:51.752194000 Z
+  created_at: 2024-11-09 13:29:33.854787000 Z
+  updated_at: 2024-11-09 13:29:33.854787000 Z
   team_id: 68
   index_in_team: 1
   kyudojin_id:
@@ -3841,8 +3841,8 @@ participants_275:
   firstname: Louis
   lastname: Thomas
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.760595000 Z
-  updated_at: 2024-11-03 12:41:51.760595000 Z
+  created_at: 2024-11-09 13:29:33.860288000 Z
+  updated_at: 2024-11-09 13:29:33.860288000 Z
   team_id: 68
   index_in_team: 2
   kyudojin_id:
@@ -3855,8 +3855,8 @@ participants_276:
   firstname: Pétronille
   lastname: Julien
   participating_dojo_id: 23
-  created_at: 2024-11-03 12:41:51.767562000 Z
-  updated_at: 2024-11-03 12:41:51.767562000 Z
+  created_at: 2024-11-09 13:29:33.865111000 Z
+  updated_at: 2024-11-09 13:29:33.865111000 Z
   team_id: 68
   index_in_team: 3
   kyudojin_id:
@@ -3869,8 +3869,8 @@ participants_277:
   firstname: Gustavine
   lastname: Louis
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.902315000 Z
-  updated_at: 2024-11-03 12:41:51.902315000 Z
+  created_at: 2024-11-09 13:29:33.955322000 Z
+  updated_at: 2024-11-09 13:29:33.955322000 Z
   team_id: 69
   index_in_team: 1
   kyudojin_id:
@@ -3883,8 +3883,8 @@ participants_278:
   firstname: Géraud
   lastname: Dubois
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.908950000 Z
-  updated_at: 2024-11-03 12:41:51.908950000 Z
+  created_at: 2024-11-09 13:29:33.961405000 Z
+  updated_at: 2024-11-09 13:29:33.961405000 Z
   team_id: 69
   index_in_team: 2
   kyudojin_id:
@@ -3897,8 +3897,8 @@ participants_279:
   firstname: Anastasie
   lastname: Leroy
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.916497000 Z
-  updated_at: 2024-11-03 12:41:51.916497000 Z
+  created_at: 2024-11-09 13:29:33.971252000 Z
+  updated_at: 2024-11-09 13:29:33.971252000 Z
   team_id: 69
   index_in_team: 3
   kyudojin_id:
@@ -3911,8 +3911,8 @@ participants_280:
   firstname: Juste
   lastname: Louis
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.930592000 Z
-  updated_at: 2024-11-03 12:41:51.930592000 Z
+  created_at: 2024-11-09 13:29:33.999163000 Z
+  updated_at: 2024-11-09 13:29:33.999163000 Z
   team_id: 70
   index_in_team: 1
   kyudojin_id:
@@ -3925,8 +3925,8 @@ participants_281:
   firstname: Céleste
   lastname: Meunier
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.940952000 Z
-  updated_at: 2024-11-03 12:41:51.940952000 Z
+  created_at: 2024-11-09 13:29:34.038582000 Z
+  updated_at: 2024-11-09 13:29:34.038582000 Z
   team_id: 70
   index_in_team: 2
   kyudojin_id:
@@ -3939,8 +3939,8 @@ participants_282:
   firstname: Isaac
   lastname: Bouvier
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.949922000 Z
-  updated_at: 2024-11-03 12:41:51.949922000 Z
+  created_at: 2024-11-09 13:29:34.046272000 Z
+  updated_at: 2024-11-09 13:29:34.046272000 Z
   team_id: 70
   index_in_team: 3
   kyudojin_id:
@@ -3953,8 +3953,8 @@ participants_283:
   firstname: Étienne
   lastname: Klein
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.964686000 Z
-  updated_at: 2024-11-03 12:41:51.964686000 Z
+  created_at: 2024-11-09 13:29:34.060753000 Z
+  updated_at: 2024-11-09 13:29:34.060753000 Z
   team_id: 71
   index_in_team: 1
   kyudojin_id:
@@ -3967,8 +3967,8 @@ participants_284:
   firstname: Bérangère
   lastname: Jacquet
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.975485000 Z
-  updated_at: 2024-11-03 12:41:51.975485000 Z
+  created_at: 2024-11-09 13:29:34.066820000 Z
+  updated_at: 2024-11-09 13:29:34.066820000 Z
   team_id: 71
   index_in_team: 2
   kyudojin_id:
@@ -3981,8 +3981,8 @@ participants_285:
   firstname: Moïse
   lastname: Lefèvre
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.983136000 Z
-  updated_at: 2024-11-03 12:41:51.983136000 Z
+  created_at: 2024-11-09 13:29:34.072310000 Z
+  updated_at: 2024-11-09 13:29:34.072310000 Z
   team_id: 71
   index_in_team: 3
   kyudojin_id:
@@ -3995,8 +3995,8 @@ participants_286:
   firstname: Ozanne
   lastname: Olivier
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:51.998281000 Z
-  updated_at: 2024-11-03 12:41:51.998281000 Z
+  created_at: 2024-11-09 13:29:34.084916000 Z
+  updated_at: 2024-11-09 13:29:34.084916000 Z
   team_id: 72
   index_in_team: 1
   kyudojin_id:
@@ -4009,8 +4009,8 @@ participants_287:
   firstname: Herluin
   lastname: Hoarau
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:52.007075000 Z
-  updated_at: 2024-11-03 12:41:52.007075000 Z
+  created_at: 2024-11-09 13:29:34.090418000 Z
+  updated_at: 2024-11-09 13:29:34.090418000 Z
   team_id: 72
   index_in_team: 2
   kyudojin_id:
@@ -4023,8 +4023,8 @@ participants_288:
   firstname: Lucien
   lastname: Lefèvre
   participating_dojo_id: 24
-  created_at: 2024-11-03 12:41:52.014413000 Z
-  updated_at: 2024-11-03 12:41:52.014413000 Z
+  created_at: 2024-11-09 13:29:34.097881000 Z
+  updated_at: 2024-11-09 13:29:34.097881000 Z
   team_id: 72
   index_in_team: 3
   kyudojin_id:
@@ -4037,8 +4037,8 @@ participants_289:
   firstname: Ella
   lastname: Da silva
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.034076000 Z
-  updated_at: 2024-11-03 12:41:52.034076000 Z
+  created_at: 2024-11-09 13:29:34.113629000 Z
+  updated_at: 2024-11-09 13:29:34.113629000 Z
   team_id: 73
   index_in_team: 1
   kyudojin_id:
@@ -4051,8 +4051,8 @@ participants_290:
   firstname: Ernest
   lastname: Richard
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.040885000 Z
-  updated_at: 2024-11-03 12:41:52.040885000 Z
+  created_at: 2024-11-09 13:29:34.123605000 Z
+  updated_at: 2024-11-09 13:29:34.123605000 Z
   team_id: 73
   index_in_team: 2
   kyudojin_id:
@@ -4065,8 +4065,8 @@ participants_291:
   firstname: Dominique
   lastname: Chevallier
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.048061000 Z
-  updated_at: 2024-11-03 12:41:52.048061000 Z
+  created_at: 2024-11-09 13:29:34.131570000 Z
+  updated_at: 2024-11-09 13:29:34.131570000 Z
   team_id: 73
   index_in_team: 3
   kyudojin_id:
@@ -4079,8 +4079,8 @@ participants_292:
   firstname: Arabelle
   lastname: Clément
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.060922000 Z
-  updated_at: 2024-11-03 12:41:52.060922000 Z
+  created_at: 2024-11-09 13:29:34.145152000 Z
+  updated_at: 2024-11-09 13:29:34.145152000 Z
   team_id: 74
   index_in_team: 1
   kyudojin_id:
@@ -4093,8 +4093,8 @@ participants_293:
   firstname: Marion
   lastname: Etienne
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.069481000 Z
-  updated_at: 2024-11-03 12:41:52.069481000 Z
+  created_at: 2024-11-09 13:29:34.151016000 Z
+  updated_at: 2024-11-09 13:29:34.151016000 Z
   team_id: 74
   index_in_team: 2
   kyudojin_id:
@@ -4107,8 +4107,8 @@ participants_294:
   firstname: Camillien
   lastname: Leroy
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.076755000 Z
-  updated_at: 2024-11-03 12:41:52.076755000 Z
+  created_at: 2024-11-09 13:29:34.158261000 Z
+  updated_at: 2024-11-09 13:29:34.158261000 Z
   team_id: 74
   index_in_team: 3
   kyudojin_id:
@@ -4121,8 +4121,8 @@ participants_295:
   firstname: Hélier
   lastname: Blanc
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.090987000 Z
-  updated_at: 2024-11-03 12:41:52.090987000 Z
+  created_at: 2024-11-09 13:29:34.169823000 Z
+  updated_at: 2024-11-09 13:29:34.169823000 Z
   team_id: 75
   index_in_team: 1
   kyudojin_id:
@@ -4135,8 +4135,8 @@ participants_296:
   firstname: Renaud
   lastname: David
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.098451000 Z
-  updated_at: 2024-11-03 12:41:52.098451000 Z
+  created_at: 2024-11-09 13:29:34.175045000 Z
+  updated_at: 2024-11-09 13:29:34.175045000 Z
   team_id: 75
   index_in_team: 2
   kyudojin_id:
@@ -4149,8 +4149,8 @@ participants_297:
   firstname: Ysaline
   lastname: André
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.107401000 Z
-  updated_at: 2024-11-03 12:41:52.107401000 Z
+  created_at: 2024-11-09 13:29:34.180518000 Z
+  updated_at: 2024-11-09 13:29:34.180518000 Z
   team_id: 75
   index_in_team: 3
   kyudojin_id:
@@ -4163,8 +4163,8 @@ participants_298:
   firstname: Odile
   lastname: Le roux
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.121762000 Z
-  updated_at: 2024-11-03 12:41:52.121762000 Z
+  created_at: 2024-11-09 13:29:34.194075000 Z
+  updated_at: 2024-11-09 13:29:34.194075000 Z
   team_id: 76
   index_in_team: 1
   kyudojin_id:
@@ -4177,8 +4177,8 @@ participants_299:
   firstname: Aldonce
   lastname: Lopéz
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.131219000 Z
-  updated_at: 2024-11-03 12:41:52.131219000 Z
+  created_at: 2024-11-09 13:29:34.200244000 Z
+  updated_at: 2024-11-09 13:29:34.200244000 Z
   team_id: 76
   index_in_team: 2
   kyudojin_id:
@@ -4191,8 +4191,8 @@ participants_300:
   firstname: Adeline
   lastname: Fleury
   participating_dojo_id: 25
-  created_at: 2024-11-03 12:41:52.139668000 Z
-  updated_at: 2024-11-03 12:41:52.139668000 Z
+  created_at: 2024-11-09 13:29:34.206432000 Z
+  updated_at: 2024-11-09 13:29:34.206432000 Z
   team_id: 76
   index_in_team: 3
   kyudojin_id:
@@ -4205,8 +4205,8 @@ participants_301:
   firstname: Victorin
   lastname: Pelletier
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.203434000 Z
-  updated_at: 2024-11-03 12:41:52.203434000 Z
+  created_at: 2024-11-09 13:29:34.257962000 Z
+  updated_at: 2024-11-09 13:29:34.257962000 Z
   team_id:
   index_in_team: 73
   kyudojin_id:
@@ -4219,8 +4219,8 @@ participants_302:
   firstname: Roland
   lastname: Carre
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.211388000 Z
-  updated_at: 2024-11-03 12:41:52.211388000 Z
+  created_at: 2024-11-09 13:29:34.264491000 Z
+  updated_at: 2024-11-09 13:29:34.264491000 Z
   team_id:
   index_in_team: 74
   kyudojin_id:
@@ -4233,8 +4233,8 @@ participants_303:
   firstname: Yolande
   lastname: Daniel
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.218755000 Z
-  updated_at: 2024-11-03 12:41:52.218755000 Z
+  created_at: 2024-11-09 13:29:34.273600000 Z
+  updated_at: 2024-11-09 13:29:34.273600000 Z
   team_id:
   index_in_team: 75
   kyudojin_id:
@@ -4247,8 +4247,8 @@ participants_304:
   firstname: Abelin
   lastname: Perrin
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.226058000 Z
-  updated_at: 2024-11-03 12:41:52.226058000 Z
+  created_at: 2024-11-09 13:29:34.280130000 Z
+  updated_at: 2024-11-09 13:29:34.280130000 Z
   team_id:
   index_in_team: 76
   kyudojin_id:
@@ -4261,8 +4261,8 @@ participants_305:
   firstname: Julien
   lastname: Adam
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.232998000 Z
-  updated_at: 2024-11-03 12:41:52.232998000 Z
+  created_at: 2024-11-09 13:29:34.286748000 Z
+  updated_at: 2024-11-09 13:29:34.286748000 Z
   team_id:
   index_in_team: 77
   kyudojin_id:
@@ -4275,8 +4275,8 @@ participants_306:
   firstname: Pauline
   lastname: Le Roux
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.241433000 Z
-  updated_at: 2024-11-03 12:41:52.241433000 Z
+  created_at: 2024-11-09 13:29:34.294442000 Z
+  updated_at: 2024-11-09 13:29:34.294442000 Z
   team_id:
   index_in_team: 78
   kyudojin_id:
@@ -4289,8 +4289,8 @@ participants_307:
   firstname: Solange
   lastname: Marchal
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.248282000 Z
-  updated_at: 2024-11-03 12:41:52.248282000 Z
+  created_at: 2024-11-09 13:29:34.300684000 Z
+  updated_at: 2024-11-09 13:29:34.300684000 Z
   team_id:
   index_in_team: 79
   kyudojin_id:
@@ -4303,8 +4303,8 @@ participants_308:
   firstname: Ludolphe
   lastname: Baron
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.254697000 Z
-  updated_at: 2024-11-03 12:41:52.254697000 Z
+  created_at: 2024-11-09 13:29:34.306543000 Z
+  updated_at: 2024-11-09 13:29:34.306543000 Z
   team_id:
   index_in_team: 80
   kyudojin_id:
@@ -4317,8 +4317,8 @@ participants_309:
   firstname: Adrien
   lastname: Gonzalez
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.263606000 Z
-  updated_at: 2024-11-03 12:41:52.263606000 Z
+  created_at: 2024-11-09 13:29:34.313018000 Z
+  updated_at: 2024-11-09 13:29:34.313018000 Z
   team_id:
   index_in_team: 81
   kyudojin_id:
@@ -4331,8 +4331,8 @@ participants_310:
   firstname: Brice
   lastname: Joly
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.270950000 Z
-  updated_at: 2024-11-03 12:41:52.270950000 Z
+  created_at: 2024-11-09 13:29:34.319598000 Z
+  updated_at: 2024-11-09 13:29:34.319598000 Z
   team_id:
   index_in_team: 82
   kyudojin_id:
@@ -4345,8 +4345,8 @@ participants_311:
   firstname: Merlin
   lastname: Aubert
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.281777000 Z
-  updated_at: 2024-11-03 12:41:52.281777000 Z
+  created_at: 2024-11-09 13:29:34.325141000 Z
+  updated_at: 2024-11-09 13:29:34.325141000 Z
   team_id:
   index_in_team: 83
   kyudojin_id:
@@ -4359,8 +4359,8 @@ participants_312:
   firstname: Lothaire
   lastname: Humbert
   participating_dojo_id: 26
-  created_at: 2024-11-03 12:41:52.293476000 Z
-  updated_at: 2024-11-03 12:41:52.293476000 Z
+  created_at: 2024-11-09 13:29:34.330646000 Z
+  updated_at: 2024-11-09 13:29:34.330646000 Z
   team_id:
   index_in_team: 84
   kyudojin_id:
@@ -4373,8 +4373,8 @@ participants_313:
   firstname: Adéodat
   lastname: Breton
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.310677000 Z
-  updated_at: 2024-11-03 12:41:52.310677000 Z
+  created_at: 2024-11-09 13:29:34.346707000 Z
+  updated_at: 2024-11-09 13:29:34.346707000 Z
   team_id:
   index_in_team: 85
   kyudojin_id:
@@ -4387,8 +4387,8 @@ participants_314:
   firstname: Grégoire
   lastname: Rivière
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.320694000 Z
-  updated_at: 2024-11-03 12:41:52.320694000 Z
+  created_at: 2024-11-09 13:29:34.353137000 Z
+  updated_at: 2024-11-09 13:29:34.353137000 Z
   team_id:
   index_in_team: 86
   kyudojin_id:
@@ -4401,8 +4401,8 @@ participants_315:
   firstname: Gervais
   lastname: Guerin
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.328546000 Z
-  updated_at: 2024-11-03 12:41:52.328546000 Z
+  created_at: 2024-11-09 13:29:34.358714000 Z
+  updated_at: 2024-11-09 13:29:34.358714000 Z
   team_id:
   index_in_team: 87
   kyudojin_id:
@@ -4415,8 +4415,8 @@ participants_316:
   firstname: Guérin
   lastname: Marechal
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.335263000 Z
-  updated_at: 2024-11-03 12:41:52.335263000 Z
+  created_at: 2024-11-09 13:29:34.363467000 Z
+  updated_at: 2024-11-09 13:29:34.363467000 Z
   team_id:
   index_in_team: 88
   kyudojin_id:
@@ -4429,8 +4429,8 @@ participants_317:
   firstname: Apollinaire
   lastname: André
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.344998000 Z
-  updated_at: 2024-11-03 12:41:52.344998000 Z
+  created_at: 2024-11-09 13:29:34.368435000 Z
+  updated_at: 2024-11-09 13:29:34.368435000 Z
   team_id:
   index_in_team: 89
   kyudojin_id:
@@ -4443,8 +4443,8 @@ participants_318:
   firstname: Tonnin
   lastname: Leveque
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.353185000 Z
-  updated_at: 2024-11-03 12:41:52.353185000 Z
+  created_at: 2024-11-09 13:29:34.373719000 Z
+  updated_at: 2024-11-09 13:29:34.373719000 Z
   team_id:
   index_in_team: 90
   kyudojin_id:
@@ -4457,8 +4457,8 @@ participants_319:
   firstname: Félicité
   lastname: Paris
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.362804000 Z
-  updated_at: 2024-11-03 12:41:52.362804000 Z
+  created_at: 2024-11-09 13:29:34.379195000 Z
+  updated_at: 2024-11-09 13:29:34.379195000 Z
   team_id:
   index_in_team: 91
   kyudojin_id:
@@ -4471,8 +4471,8 @@ participants_320:
   firstname: Quitterie
   lastname: Leger
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.370130000 Z
-  updated_at: 2024-11-03 12:41:52.370130000 Z
+  created_at: 2024-11-09 13:29:34.383965000 Z
+  updated_at: 2024-11-09 13:29:34.383965000 Z
   team_id:
   index_in_team: 92
   kyudojin_id:
@@ -4485,8 +4485,8 @@ participants_321:
   firstname: Loïc
   lastname: Rodriguez
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.386699000 Z
-  updated_at: 2024-11-03 12:41:52.386699000 Z
+  created_at: 2024-11-09 13:29:34.390494000 Z
+  updated_at: 2024-11-09 13:29:34.390494000 Z
   team_id:
   index_in_team: 93
   kyudojin_id:
@@ -4499,8 +4499,8 @@ participants_322:
   firstname: Fleur
   lastname: Gérard
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.435591000 Z
-  updated_at: 2024-11-03 12:41:52.435591000 Z
+  created_at: 2024-11-09 13:29:34.395470000 Z
+  updated_at: 2024-11-09 13:29:34.395470000 Z
   team_id:
   index_in_team: 94
   kyudojin_id:
@@ -4513,8 +4513,8 @@ participants_323:
   firstname: Dieudonné
   lastname: Gay
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.444711000 Z
-  updated_at: 2024-11-03 12:41:52.444711000 Z
+  created_at: 2024-11-09 13:29:34.403832000 Z
+  updated_at: 2024-11-09 13:29:34.403832000 Z
   team_id:
   index_in_team: 95
   kyudojin_id:
@@ -4527,8 +4527,8 @@ participants_324:
   firstname: Odile
   lastname: Riviere
   participating_dojo_id: 27
-  created_at: 2024-11-03 12:41:52.458337000 Z
-  updated_at: 2024-11-03 12:41:52.458337000 Z
+  created_at: 2024-11-09 13:29:34.411443000 Z
+  updated_at: 2024-11-09 13:29:34.411443000 Z
   team_id:
   index_in_team: 96
   kyudojin_id:
@@ -4541,8 +4541,8 @@ participants_325:
   firstname: Rodolphe
   lastname: Adam
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.588298000 Z
-  updated_at: 2024-11-03 12:41:52.588298000 Z
+  created_at: 2024-11-09 13:29:34.471378000 Z
+  updated_at: 2024-11-09 13:29:34.471378000 Z
   team_id: 77
   index_in_team: 1
   kyudojin_id:
@@ -4555,8 +4555,8 @@ participants_326:
   firstname: Anatole
   lastname: Gerard
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.598084000 Z
-  updated_at: 2024-11-03 12:41:52.598084000 Z
+  created_at: 2024-11-09 13:29:34.477287000 Z
+  updated_at: 2024-11-09 13:29:34.477287000 Z
   team_id: 77
   index_in_team: 2
   kyudojin_id:
@@ -4569,8 +4569,8 @@ participants_327:
   firstname: Waleran
   lastname: Mercier
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.606085000 Z
-  updated_at: 2024-11-03 12:41:52.606085000 Z
+  created_at: 2024-11-09 13:29:34.482587000 Z
+  updated_at: 2024-11-09 13:29:34.482587000 Z
   team_id: 77
   index_in_team: 3
   kyudojin_id:
@@ -4583,8 +4583,8 @@ participants_328:
   firstname: Marion
   lastname: Fleury
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.623767000 Z
-  updated_at: 2024-11-03 12:41:52.623767000 Z
+  created_at: 2024-11-09 13:29:34.494643000 Z
+  updated_at: 2024-11-09 13:29:34.494643000 Z
   team_id: 78
   index_in_team: 1
   kyudojin_id:
@@ -4597,8 +4597,8 @@ participants_329:
   firstname: Clarence
   lastname: Rolland
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.631333000 Z
-  updated_at: 2024-11-03 12:41:52.631333000 Z
+  created_at: 2024-11-09 13:29:34.499401000 Z
+  updated_at: 2024-11-09 13:29:34.499401000 Z
   team_id: 78
   index_in_team: 2
   kyudojin_id:
@@ -4611,8 +4611,8 @@ participants_330:
   firstname: Suzanne
   lastname: Leveque
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.639445000 Z
-  updated_at: 2024-11-03 12:41:52.639445000 Z
+  created_at: 2024-11-09 13:29:34.506091000 Z
+  updated_at: 2024-11-09 13:29:34.506091000 Z
   team_id: 78
   index_in_team: 3
   kyudojin_id:
@@ -4625,8 +4625,8 @@ participants_331:
   firstname: Gwenaëlle
   lastname: Renaud
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.653565000 Z
-  updated_at: 2024-11-03 12:41:52.653565000 Z
+  created_at: 2024-11-09 13:29:34.518121000 Z
+  updated_at: 2024-11-09 13:29:34.518121000 Z
   team_id: 79
   index_in_team: 1
   kyudojin_id:
@@ -4639,8 +4639,8 @@ participants_332:
   firstname: Aldegonde
   lastname: Marie
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.662872000 Z
-  updated_at: 2024-11-03 12:41:52.662872000 Z
+  created_at: 2024-11-09 13:29:34.522995000 Z
+  updated_at: 2024-11-09 13:29:34.522995000 Z
   team_id: 79
   index_in_team: 2
   kyudojin_id:
@@ -4653,8 +4653,8 @@ participants_333:
   firstname: Aurèle
   lastname: Aubry
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.670470000 Z
-  updated_at: 2024-11-03 12:41:52.670470000 Z
+  created_at: 2024-11-09 13:29:34.530119000 Z
+  updated_at: 2024-11-09 13:29:34.530119000 Z
   team_id: 79
   index_in_team: 3
   kyudojin_id:
@@ -4667,8 +4667,8 @@ participants_334:
   firstname: Iris
   lastname: Renault
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.684621000 Z
-  updated_at: 2024-11-03 12:41:52.684621000 Z
+  created_at: 2024-11-09 13:29:34.543051000 Z
+  updated_at: 2024-11-09 13:29:34.543051000 Z
   team_id: 80
   index_in_team: 1
   kyudojin_id:
@@ -4681,8 +4681,8 @@ participants_335:
   firstname: Liétald
   lastname: Dupuy
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.691009000 Z
-  updated_at: 2024-11-03 12:41:52.691009000 Z
+  created_at: 2024-11-09 13:29:34.549635000 Z
+  updated_at: 2024-11-09 13:29:34.549635000 Z
   team_id: 80
   index_in_team: 2
   kyudojin_id:
@@ -4695,8 +4695,8 @@ participants_336:
   firstname: Julien
   lastname: Pasquier
   participating_dojo_id: 28
-  created_at: 2024-11-03 12:41:52.698273000 Z
-  updated_at: 2024-11-03 12:41:52.698273000 Z
+  created_at: 2024-11-09 13:29:34.556483000 Z
+  updated_at: 2024-11-09 13:29:34.556483000 Z
   team_id: 80
   index_in_team: 3
   kyudojin_id:
@@ -4709,8 +4709,8 @@ participants_337:
   firstname: Régis
   lastname: Gilbert
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.720020000 Z
-  updated_at: 2024-11-03 12:41:52.720020000 Z
+  created_at: 2024-11-09 13:29:34.576376000 Z
+  updated_at: 2024-11-09 13:29:34.576376000 Z
   team_id: 81
   index_in_team: 1
   kyudojin_id:
@@ -4723,8 +4723,8 @@ participants_338:
   firstname: Amandin
   lastname: Denis
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.727705000 Z
-  updated_at: 2024-11-03 12:41:52.727705000 Z
+  created_at: 2024-11-09 13:29:34.582537000 Z
+  updated_at: 2024-11-09 13:29:34.582537000 Z
   team_id: 81
   index_in_team: 2
   kyudojin_id:
@@ -4737,8 +4737,8 @@ participants_339:
   firstname: Iris
   lastname: Rivière
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.735141000 Z
-  updated_at: 2024-11-03 12:41:52.735141000 Z
+  created_at: 2024-11-09 13:29:34.588320000 Z
+  updated_at: 2024-11-09 13:29:34.588320000 Z
   team_id: 81
   index_in_team: 3
   kyudojin_id:
@@ -4751,8 +4751,8 @@ participants_340:
   firstname: Alcidie
   lastname: Boucher
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.764779000 Z
-  updated_at: 2024-11-03 12:41:52.764779000 Z
+  created_at: 2024-11-09 13:29:34.598700000 Z
+  updated_at: 2024-11-09 13:29:34.598700000 Z
   team_id: 82
   index_in_team: 1
   kyudojin_id:
@@ -4765,8 +4765,8 @@ participants_341:
   firstname: Alphonsine
   lastname: Rolland
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.775078000 Z
-  updated_at: 2024-11-03 12:41:52.775078000 Z
+  created_at: 2024-11-09 13:29:34.604542000 Z
+  updated_at: 2024-11-09 13:29:34.604542000 Z
   team_id: 82
   index_in_team: 2
   kyudojin_id:
@@ -4779,8 +4779,8 @@ participants_342:
   firstname: Noémie
   lastname: Leclercq
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.783263000 Z
-  updated_at: 2024-11-03 12:41:52.783263000 Z
+  created_at: 2024-11-09 13:29:34.609506000 Z
+  updated_at: 2024-11-09 13:29:34.609506000 Z
   team_id: 82
   index_in_team: 3
   kyudojin_id:
@@ -4793,8 +4793,8 @@ participants_343:
   firstname: Matthias
   lastname: Renard
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.805797000 Z
-  updated_at: 2024-11-03 12:41:52.805797000 Z
+  created_at: 2024-11-09 13:29:34.623232000 Z
+  updated_at: 2024-11-09 13:29:34.623232000 Z
   team_id: 83
   index_in_team: 1
   kyudojin_id:
@@ -4807,8 +4807,8 @@ participants_344:
   firstname: Flavie
   lastname: Masson
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.813642000 Z
-  updated_at: 2024-11-03 12:41:52.813642000 Z
+  created_at: 2024-11-09 13:29:34.629397000 Z
+  updated_at: 2024-11-09 13:29:34.629397000 Z
   team_id: 83
   index_in_team: 2
   kyudojin_id:
@@ -4821,8 +4821,8 @@ participants_345:
   firstname: Oury
   lastname: Mallet
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.822504000 Z
-  updated_at: 2024-11-03 12:41:52.822504000 Z
+  created_at: 2024-11-09 13:29:34.637704000 Z
+  updated_at: 2024-11-09 13:29:34.637704000 Z
   team_id: 83
   index_in_team: 3
   kyudojin_id:
@@ -4835,8 +4835,8 @@ participants_346:
   firstname: Marceau
   lastname: Langlois
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.843664000 Z
-  updated_at: 2024-11-03 12:41:52.843664000 Z
+  created_at: 2024-11-09 13:29:34.649558000 Z
+  updated_at: 2024-11-09 13:29:34.649558000 Z
   team_id: 84
   index_in_team: 1
   kyudojin_id:
@@ -4849,8 +4849,8 @@ participants_347:
   firstname: Althée
   lastname: Benoit
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.851517000 Z
-  updated_at: 2024-11-03 12:41:52.851517000 Z
+  created_at: 2024-11-09 13:29:34.656562000 Z
+  updated_at: 2024-11-09 13:29:34.656562000 Z
   team_id: 84
   index_in_team: 2
   kyudojin_id:
@@ -4863,8 +4863,8 @@ participants_348:
   firstname: Martial
   lastname: Michel
   participating_dojo_id: 29
-  created_at: 2024-11-03 12:41:52.861895000 Z
-  updated_at: 2024-11-03 12:41:52.861895000 Z
+  created_at: 2024-11-09 13:29:34.662555000 Z
+  updated_at: 2024-11-09 13:29:34.662555000 Z
   team_id: 84
   index_in_team: 3
   kyudojin_id:
@@ -4877,8 +4877,8 @@ participants_349:
   firstname: Huguette
   lastname: Morel
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.937906000 Z
-  updated_at: 2024-11-03 12:41:52.937906000 Z
+  created_at: 2024-11-09 13:29:34.719770000 Z
+  updated_at: 2024-11-09 13:29:34.719770000 Z
   team_id: 85
   index_in_team: 1
   kyudojin_id:
@@ -4891,8 +4891,8 @@ participants_350:
   firstname: Yves
   lastname: Pichon
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.949018000 Z
-  updated_at: 2024-11-03 12:41:52.949018000 Z
+  created_at: 2024-11-09 13:29:34.728315000 Z
+  updated_at: 2024-11-09 13:29:34.728315000 Z
   team_id: 85
   index_in_team: 2
   kyudojin_id:
@@ -4905,8 +4905,8 @@ participants_351:
   firstname: Évrard
   lastname: Martin
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.958371000 Z
-  updated_at: 2024-11-03 12:41:52.958371000 Z
+  created_at: 2024-11-09 13:29:34.736825000 Z
+  updated_at: 2024-11-09 13:29:34.736825000 Z
   team_id: 85
   index_in_team: 3
   kyudojin_id:
@@ -4919,8 +4919,8 @@ participants_352:
   firstname: Archibald
   lastname: Daniel
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.975852000 Z
-  updated_at: 2024-11-03 12:41:52.975852000 Z
+  created_at: 2024-11-09 13:29:34.751596000 Z
+  updated_at: 2024-11-09 13:29:34.751596000 Z
   team_id: 86
   index_in_team: 1
   kyudojin_id:
@@ -4933,8 +4933,8 @@ participants_353:
   firstname: Virgile
   lastname: Lévêque
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.983367000 Z
-  updated_at: 2024-11-03 12:41:52.983367000 Z
+  created_at: 2024-11-09 13:29:34.759000000 Z
+  updated_at: 2024-11-09 13:29:34.759000000 Z
   team_id: 86
   index_in_team: 2
   kyudojin_id:
@@ -4947,8 +4947,8 @@ participants_354:
   firstname: Mélissandre
   lastname: Lemoine
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:52.993497000 Z
-  updated_at: 2024-11-03 12:41:52.993497000 Z
+  created_at: 2024-11-09 13:29:34.765536000 Z
+  updated_at: 2024-11-09 13:29:34.765536000 Z
   team_id: 86
   index_in_team: 3
   kyudojin_id:
@@ -4961,8 +4961,8 @@ participants_355:
   firstname: Urbain
   lastname: Marchal
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.010478000 Z
-  updated_at: 2024-11-03 12:41:53.010478000 Z
+  created_at: 2024-11-09 13:29:34.779171000 Z
+  updated_at: 2024-11-09 13:29:34.779171000 Z
   team_id: 87
   index_in_team: 1
   kyudojin_id:
@@ -4975,8 +4975,8 @@ participants_356:
   firstname: Zélie
   lastname: Chauvin
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.021471000 Z
-  updated_at: 2024-11-03 12:41:53.021471000 Z
+  created_at: 2024-11-09 13:29:34.786268000 Z
+  updated_at: 2024-11-09 13:29:34.786268000 Z
   team_id: 87
   index_in_team: 2
   kyudojin_id:
@@ -4989,8 +4989,8 @@ participants_357:
   firstname: Cyriaque
   lastname: David
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.030692000 Z
-  updated_at: 2024-11-03 12:41:53.030692000 Z
+  created_at: 2024-11-09 13:29:34.794733000 Z
+  updated_at: 2024-11-09 13:29:34.794733000 Z
   team_id: 87
   index_in_team: 3
   kyudojin_id:
@@ -5003,8 +5003,8 @@ participants_358:
   firstname: Florian
   lastname: Fabre
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.048870000 Z
-  updated_at: 2024-11-03 12:41:53.048870000 Z
+  created_at: 2024-11-09 13:29:34.807165000 Z
+  updated_at: 2024-11-09 13:29:34.807165000 Z
   team_id: 88
   index_in_team: 1
   kyudojin_id:
@@ -5017,8 +5017,8 @@ participants_359:
   firstname: Blanche
   lastname: Hubert
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.057524000 Z
-  updated_at: 2024-11-03 12:41:53.057524000 Z
+  created_at: 2024-11-09 13:29:34.812524000 Z
+  updated_at: 2024-11-09 13:29:34.812524000 Z
   team_id: 88
   index_in_team: 2
   kyudojin_id:
@@ -5031,8 +5031,8 @@ participants_360:
   firstname: Martin
   lastname: Perez
   participating_dojo_id: 30
-  created_at: 2024-11-03 12:41:53.064739000 Z
-  updated_at: 2024-11-03 12:41:53.064739000 Z
+  created_at: 2024-11-09 13:29:34.817581000 Z
+  updated_at: 2024-11-09 13:29:34.817581000 Z
   team_id: 88
   index_in_team: 3
   kyudojin_id:
@@ -5045,8 +5045,8 @@ participants_361:
   firstname: Faustine
   lastname: Garcia
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.089516000 Z
-  updated_at: 2024-11-03 12:41:53.089516000 Z
+  created_at: 2024-11-09 13:29:34.832933000 Z
+  updated_at: 2024-11-09 13:29:34.832933000 Z
   team_id: 89
   index_in_team: 1
   kyudojin_id:
@@ -5059,8 +5059,8 @@ participants_362:
   firstname: Andrée
   lastname: Dumas
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.098667000 Z
-  updated_at: 2024-11-03 12:41:53.098667000 Z
+  created_at: 2024-11-09 13:29:34.837698000 Z
+  updated_at: 2024-11-09 13:29:34.837698000 Z
   team_id: 89
   index_in_team: 2
   kyudojin_id:
@@ -5073,8 +5073,8 @@ participants_363:
   firstname: Catherine
   lastname: Clément
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.106626000 Z
-  updated_at: 2024-11-03 12:41:53.106626000 Z
+  created_at: 2024-11-09 13:29:34.845694000 Z
+  updated_at: 2024-11-09 13:29:34.845694000 Z
   team_id: 89
   index_in_team: 3
   kyudojin_id:
@@ -5087,8 +5087,8 @@ participants_364:
   firstname: Gonzague
   lastname: Antoine
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.128172000 Z
-  updated_at: 2024-11-03 12:41:53.128172000 Z
+  created_at: 2024-11-09 13:29:34.863037000 Z
+  updated_at: 2024-11-09 13:29:34.863037000 Z
   team_id: 90
   index_in_team: 1
   kyudojin_id:
@@ -5101,8 +5101,8 @@ participants_365:
   firstname: Martial
   lastname: Joly
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.135202000 Z
-  updated_at: 2024-11-03 12:41:53.135202000 Z
+  created_at: 2024-11-09 13:29:34.869681000 Z
+  updated_at: 2024-11-09 13:29:34.869681000 Z
   team_id: 90
   index_in_team: 2
   kyudojin_id:
@@ -5115,8 +5115,8 @@ participants_366:
   firstname: Marthe
   lastname: Picard
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.142725000 Z
-  updated_at: 2024-11-03 12:41:53.142725000 Z
+  created_at: 2024-11-09 13:29:34.875301000 Z
+  updated_at: 2024-11-09 13:29:34.875301000 Z
   team_id: 90
   index_in_team: 3
   kyudojin_id:
@@ -5129,8 +5129,8 @@ participants_367:
   firstname: Edmond
   lastname: Rivière
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.162415000 Z
-  updated_at: 2024-11-03 12:41:53.162415000 Z
+  created_at: 2024-11-09 13:29:34.888330000 Z
+  updated_at: 2024-11-09 13:29:34.888330000 Z
   team_id: 91
   index_in_team: 1
   kyudojin_id:
@@ -5143,8 +5143,8 @@ participants_368:
   firstname: Gaël
   lastname: Gilbert
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.174410000 Z
-  updated_at: 2024-11-03 12:41:53.174410000 Z
+  created_at: 2024-11-09 13:29:34.893844000 Z
+  updated_at: 2024-11-09 13:29:34.893844000 Z
   team_id: 91
   index_in_team: 2
   kyudojin_id:
@@ -5157,8 +5157,8 @@ participants_369:
   firstname: Amant
   lastname: Pasquier
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.186425000 Z
-  updated_at: 2024-11-03 12:41:53.186425000 Z
+  created_at: 2024-11-09 13:29:34.900531000 Z
+  updated_at: 2024-11-09 13:29:34.900531000 Z
   team_id: 91
   index_in_team: 3
   kyudojin_id:
@@ -5171,8 +5171,8 @@ participants_370:
   firstname: Abélard
   lastname: Michel
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.202989000 Z
-  updated_at: 2024-11-03 12:41:53.202989000 Z
+  created_at: 2024-11-09 13:29:34.915594000 Z
+  updated_at: 2024-11-09 13:29:34.915594000 Z
   team_id: 92
   index_in_team: 1
   kyudojin_id:
@@ -5185,8 +5185,8 @@ participants_371:
   firstname: Évangéline
   lastname: Gautier
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.209892000 Z
-  updated_at: 2024-11-03 12:41:53.209892000 Z
+  created_at: 2024-11-09 13:29:34.922468000 Z
+  updated_at: 2024-11-09 13:29:34.922468000 Z
   team_id: 92
   index_in_team: 2
   kyudojin_id:
@@ -5199,8 +5199,8 @@ participants_372:
   firstname: Aldéric
   lastname: Boucher
   participating_dojo_id: 31
-  created_at: 2024-11-03 12:41:53.217248000 Z
-  updated_at: 2024-11-03 12:41:53.217248000 Z
+  created_at: 2024-11-09 13:29:34.929818000 Z
+  updated_at: 2024-11-09 13:29:34.929818000 Z
   team_id: 92
   index_in_team: 3
   kyudojin_id:
@@ -5213,8 +5213,8 @@ participants_373:
   firstname: Ysaline
   lastname: Marty
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.283609000 Z
-  updated_at: 2024-11-03 12:41:53.283609000 Z
+  created_at: 2024-11-09 13:29:34.980425000 Z
+  updated_at: 2024-11-09 13:29:34.980425000 Z
   team_id:
   index_in_team: 97
   kyudojin_id:
@@ -5227,8 +5227,8 @@ participants_374:
   firstname: Fidèle
   lastname: Gonzalez
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.293016000 Z
-  updated_at: 2024-11-03 12:41:53.293016000 Z
+  created_at: 2024-11-09 13:29:34.986049000 Z
+  updated_at: 2024-11-09 13:29:34.986049000 Z
   team_id:
   index_in_team: 98
   kyudojin_id:
@@ -5241,8 +5241,8 @@ participants_375:
   firstname: Alix
   lastname: Faure
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.300390000 Z
-  updated_at: 2024-11-03 12:41:53.300390000 Z
+  created_at: 2024-11-09 13:29:34.991542000 Z
+  updated_at: 2024-11-09 13:29:34.991542000 Z
   team_id:
   index_in_team: 99
   kyudojin_id:
@@ -5255,8 +5255,8 @@ participants_376:
   firstname: Chrétien
   lastname: Lemoine
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.307730000 Z
-  updated_at: 2024-11-03 12:41:53.307730000 Z
+  created_at: 2024-11-09 13:29:34.997294000 Z
+  updated_at: 2024-11-09 13:29:34.997294000 Z
   team_id:
   index_in_team: 100
   kyudojin_id:
@@ -5269,8 +5269,8 @@ participants_377:
   firstname: Florie
   lastname: Faure
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.315437000 Z
-  updated_at: 2024-11-03 12:41:53.315437000 Z
+  created_at: 2024-11-09 13:29:35.003239000 Z
+  updated_at: 2024-11-09 13:29:35.003239000 Z
   team_id:
   index_in_team: 101
   kyudojin_id:
@@ -5283,8 +5283,8 @@ participants_378:
   firstname: Marlène
   lastname: Carlier
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.322492000 Z
-  updated_at: 2024-11-03 12:41:53.322492000 Z
+  created_at: 2024-11-09 13:29:35.010145000 Z
+  updated_at: 2024-11-09 13:29:35.010145000 Z
   team_id:
   index_in_team: 102
   kyudojin_id:
@@ -5297,8 +5297,8 @@ participants_379:
   firstname: Arlette
   lastname: Marchal
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.330431000 Z
-  updated_at: 2024-11-03 12:41:53.330431000 Z
+  created_at: 2024-11-09 13:29:35.017719000 Z
+  updated_at: 2024-11-09 13:29:35.017719000 Z
   team_id:
   index_in_team: 103
   kyudojin_id:
@@ -5311,8 +5311,8 @@ participants_380:
   firstname: Alban
   lastname: Benoit
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.337035000 Z
-  updated_at: 2024-11-03 12:41:53.337035000 Z
+  created_at: 2024-11-09 13:29:35.024398000 Z
+  updated_at: 2024-11-09 13:29:35.024398000 Z
   team_id:
   index_in_team: 104
   kyudojin_id:
@@ -5325,8 +5325,8 @@ participants_381:
   firstname: Émérencie
   lastname: Le Roux
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.343445000 Z
-  updated_at: 2024-11-03 12:41:53.343445000 Z
+  created_at: 2024-11-09 13:29:35.031151000 Z
+  updated_at: 2024-11-09 13:29:35.031151000 Z
   team_id:
   index_in_team: 105
   kyudojin_id:
@@ -5339,8 +5339,8 @@ participants_382:
   firstname: Arsène
   lastname: Carlier
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.352364000 Z
-  updated_at: 2024-11-03 12:41:53.352364000 Z
+  created_at: 2024-11-09 13:29:35.036910000 Z
+  updated_at: 2024-11-09 13:29:35.036910000 Z
   team_id:
   index_in_team: 106
   kyudojin_id:
@@ -5353,8 +5353,8 @@ participants_383:
   firstname: Astolphe
   lastname: Bertin
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.361392000 Z
-  updated_at: 2024-11-03 12:41:53.361392000 Z
+  created_at: 2024-11-09 13:29:35.042528000 Z
+  updated_at: 2024-11-09 13:29:35.042528000 Z
   team_id:
   index_in_team: 107
   kyudojin_id:
@@ -5367,8 +5367,8 @@ participants_384:
   firstname: Adélaïde
   lastname: Gérard
   participating_dojo_id: 32
-  created_at: 2024-11-03 12:41:53.369304000 Z
-  updated_at: 2024-11-03 12:41:53.369304000 Z
+  created_at: 2024-11-09 13:29:35.048919000 Z
+  updated_at: 2024-11-09 13:29:35.048919000 Z
   team_id:
   index_in_team: 108
   kyudojin_id:
@@ -5381,8 +5381,8 @@ participants_385:
   firstname: Assomption
   lastname: Renault
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.384926000 Z
-  updated_at: 2024-11-03 12:41:53.384926000 Z
+  created_at: 2024-11-09 13:29:35.058774000 Z
+  updated_at: 2024-11-09 13:29:35.058774000 Z
   team_id:
   index_in_team: 109
   kyudojin_id:
@@ -5395,8 +5395,8 @@ participants_386:
   firstname: Maureen
   lastname: Dupuis
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.394396000 Z
-  updated_at: 2024-11-03 12:41:53.394396000 Z
+  created_at: 2024-11-09 13:29:35.066003000 Z
+  updated_at: 2024-11-09 13:29:35.066003000 Z
   team_id:
   index_in_team: 110
   kyudojin_id:
@@ -5409,8 +5409,8 @@ participants_387:
   firstname: Géraud
   lastname: Lambert
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.402366000 Z
-  updated_at: 2024-11-03 12:41:53.402366000 Z
+  created_at: 2024-11-09 13:29:35.073504000 Z
+  updated_at: 2024-11-09 13:29:35.073504000 Z
   team_id:
   index_in_team: 111
   kyudojin_id:
@@ -5423,8 +5423,8 @@ participants_388:
   firstname: Aurèle
   lastname: Benard
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.408981000 Z
-  updated_at: 2024-11-03 12:41:53.408981000 Z
+  created_at: 2024-11-09 13:29:35.081526000 Z
+  updated_at: 2024-11-09 13:29:35.081526000 Z
   team_id:
   index_in_team: 112
   kyudojin_id:
@@ -5437,8 +5437,8 @@ participants_389:
   firstname: Jehanne
   lastname: Vincent
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.418408000 Z
-  updated_at: 2024-11-03 12:41:53.418408000 Z
+  created_at: 2024-11-09 13:29:35.087728000 Z
+  updated_at: 2024-11-09 13:29:35.087728000 Z
   team_id:
   index_in_team: 113
   kyudojin_id:
@@ -5451,8 +5451,8 @@ participants_390:
   firstname: Marthe
   lastname: Dufour
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.426066000 Z
-  updated_at: 2024-11-03 12:41:53.426066000 Z
+  created_at: 2024-11-09 13:29:35.095699000 Z
+  updated_at: 2024-11-09 13:29:35.095699000 Z
   team_id:
   index_in_team: 114
   kyudojin_id:
@@ -5465,8 +5465,8 @@ participants_391:
   firstname: Emmanuelle
   lastname: Delaunay
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.433928000 Z
-  updated_at: 2024-11-03 12:41:53.433928000 Z
+  created_at: 2024-11-09 13:29:35.102840000 Z
+  updated_at: 2024-11-09 13:29:35.102840000 Z
   team_id:
   index_in_team: 115
   kyudojin_id:
@@ -5479,8 +5479,8 @@ participants_392:
   firstname: Cyrille
   lastname: Girard
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.440302000 Z
-  updated_at: 2024-11-03 12:41:53.440302000 Z
+  created_at: 2024-11-09 13:29:35.110406000 Z
+  updated_at: 2024-11-09 13:29:35.110406000 Z
   team_id:
   index_in_team: 116
   kyudojin_id:
@@ -5493,8 +5493,8 @@ participants_393:
   firstname: Bénédicte
   lastname: Pierre
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.448463000 Z
-  updated_at: 2024-11-03 12:41:53.448463000 Z
+  created_at: 2024-11-09 13:29:35.116689000 Z
+  updated_at: 2024-11-09 13:29:35.116689000 Z
   team_id:
   index_in_team: 117
   kyudojin_id:
@@ -5507,8 +5507,8 @@ participants_394:
   firstname: Cyprien
   lastname: Louis
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.456522000 Z
-  updated_at: 2024-11-03 12:41:53.456522000 Z
+  created_at: 2024-11-09 13:29:35.123827000 Z
+  updated_at: 2024-11-09 13:29:35.123827000 Z
   team_id:
   index_in_team: 118
   kyudojin_id:
@@ -5521,8 +5521,8 @@ participants_395:
   firstname: Pascal
   lastname: David
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.464362000 Z
-  updated_at: 2024-11-03 12:41:53.464362000 Z
+  created_at: 2024-11-09 13:29:35.133251000 Z
+  updated_at: 2024-11-09 13:29:35.133251000 Z
   team_id:
   index_in_team: 119
   kyudojin_id:
@@ -5535,8 +5535,8 @@ participants_396:
   firstname: Hilaire
   lastname: Dvnis
   participating_dojo_id: 33
-  created_at: 2024-11-03 12:41:53.471019000 Z
-  updated_at: 2024-11-03 12:41:53.471019000 Z
+  created_at: 2024-11-09 13:29:35.142264000 Z
+  updated_at: 2024-11-09 13:29:35.142264000 Z
   team_id:
   index_in_team: 120
   kyudojin_id:
@@ -5549,8 +5549,8 @@ participants_397:
   firstname: Xénophon
   lastname: Lemaire
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.563146000 Z
-  updated_at: 2024-11-03 12:41:53.563146000 Z
+  created_at: 2024-11-09 13:29:35.214151000 Z
+  updated_at: 2024-11-09 13:29:35.214151000 Z
   team_id: 93
   index_in_team: 1
   kyudojin_id:
@@ -5563,8 +5563,8 @@ participants_398:
   firstname: Bertille
   lastname: Perez
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.571057000 Z
-  updated_at: 2024-11-03 12:41:53.571057000 Z
+  created_at: 2024-11-09 13:29:35.220554000 Z
+  updated_at: 2024-11-09 13:29:35.220554000 Z
   team_id: 93
   index_in_team: 2
   kyudojin_id:
@@ -5577,8 +5577,8 @@ participants_399:
   firstname: Albane
   lastname: Herve
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.579043000 Z
-  updated_at: 2024-11-03 12:41:53.579043000 Z
+  created_at: 2024-11-09 13:29:35.227476000 Z
+  updated_at: 2024-11-09 13:29:35.227476000 Z
   team_id: 93
   index_in_team: 3
   kyudojin_id:
@@ -5591,8 +5591,8 @@ participants_400:
   firstname: Jeanne
   lastname: Carlier
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.595668000 Z
-  updated_at: 2024-11-03 12:41:53.595668000 Z
+  created_at: 2024-11-09 13:29:35.266387000 Z
+  updated_at: 2024-11-09 13:29:35.266387000 Z
   team_id: 94
   index_in_team: 1
   kyudojin_id:
@@ -5605,8 +5605,8 @@ participants_401:
   firstname: Sixte
   lastname: Paris
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.603892000 Z
-  updated_at: 2024-11-03 12:41:53.603892000 Z
+  created_at: 2024-11-09 13:29:35.275378000 Z
+  updated_at: 2024-11-09 13:29:35.275378000 Z
   team_id: 94
   index_in_team: 2
   kyudojin_id:
@@ -5619,8 +5619,8 @@ participants_402:
   firstname: Savin
   lastname: Colin
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.611296000 Z
-  updated_at: 2024-11-03 12:41:53.611296000 Z
+  created_at: 2024-11-09 13:29:35.281925000 Z
+  updated_at: 2024-11-09 13:29:35.281925000 Z
   team_id: 94
   index_in_team: 3
   kyudojin_id:
@@ -5633,8 +5633,8 @@ participants_403:
   firstname: Gontran
   lastname: Garcia
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.630218000 Z
-  updated_at: 2024-11-03 12:41:53.630218000 Z
+  created_at: 2024-11-09 13:29:35.297311000 Z
+  updated_at: 2024-11-09 13:29:35.297311000 Z
   team_id: 95
   index_in_team: 1
   kyudojin_id:
@@ -5647,8 +5647,8 @@ participants_404:
   firstname: Judith
   lastname: Bertrand
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.638025000 Z
-  updated_at: 2024-11-03 12:41:53.638025000 Z
+  created_at: 2024-11-09 13:29:35.305619000 Z
+  updated_at: 2024-11-09 13:29:35.305619000 Z
   team_id: 95
   index_in_team: 2
   kyudojin_id:
@@ -5661,8 +5661,8 @@ participants_405:
   firstname: Carloman
   lastname: Perrot
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.645233000 Z
-  updated_at: 2024-11-03 12:41:53.645233000 Z
+  created_at: 2024-11-09 13:29:35.312012000 Z
+  updated_at: 2024-11-09 13:29:35.312012000 Z
   team_id: 95
   index_in_team: 3
   kyudojin_id:
@@ -5675,8 +5675,8 @@ participants_406:
   firstname: Xavière
   lastname: Garnier
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.662945000 Z
-  updated_at: 2024-11-03 12:41:53.662945000 Z
+  created_at: 2024-11-09 13:29:35.326058000 Z
+  updated_at: 2024-11-09 13:29:35.326058000 Z
   team_id: 96
   index_in_team: 1
   kyudojin_id:
@@ -5689,8 +5689,8 @@ participants_407:
   firstname: Hubert
   lastname: Méunier
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.669537000 Z
-  updated_at: 2024-11-03 12:41:53.669537000 Z
+  created_at: 2024-11-09 13:29:35.331920000 Z
+  updated_at: 2024-11-09 13:29:35.331920000 Z
   team_id: 96
   index_in_team: 2
   kyudojin_id:
@@ -5703,8 +5703,8 @@ participants_408:
   firstname: Wandrille
   lastname: Reynaud
   participating_dojo_id: 34
-  created_at: 2024-11-03 12:41:53.678557000 Z
-  updated_at: 2024-11-03 12:41:53.678557000 Z
+  created_at: 2024-11-09 13:29:35.338494000 Z
+  updated_at: 2024-11-09 13:29:35.338494000 Z
   team_id: 96
   index_in_team: 3
   kyudojin_id:
@@ -5717,8 +5717,8 @@ participants_409:
   firstname: Amaliane
   lastname: Laurent
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.699686000 Z
-  updated_at: 2024-11-03 12:41:53.699686000 Z
+  created_at: 2024-11-09 13:29:35.392112000 Z
+  updated_at: 2024-11-09 13:29:35.392112000 Z
   team_id: 97
   index_in_team: 1
   kyudojin_id:
@@ -5731,8 +5731,8 @@ participants_410:
   firstname: Abelin
   lastname: Roy
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.706796000 Z
-  updated_at: 2024-11-03 12:41:53.706796000 Z
+  created_at: 2024-11-09 13:29:35.399393000 Z
+  updated_at: 2024-11-09 13:29:35.399393000 Z
   team_id: 97
   index_in_team: 2
   kyudojin_id:
@@ -5745,8 +5745,8 @@ participants_411:
   firstname: Raymonde
   lastname: Gilbert
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.714427000 Z
-  updated_at: 2024-11-03 12:41:53.714427000 Z
+  created_at: 2024-11-09 13:29:35.405835000 Z
+  updated_at: 2024-11-09 13:29:35.405835000 Z
   team_id: 97
   index_in_team: 3
   kyudojin_id:
@@ -5759,8 +5759,8 @@ participants_412:
   firstname: Bénigne
   lastname: Nicolas
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.728098000 Z
-  updated_at: 2024-11-03 12:41:53.728098000 Z
+  created_at: 2024-11-09 13:29:35.418437000 Z
+  updated_at: 2024-11-09 13:29:35.418437000 Z
   team_id: 98
   index_in_team: 1
   kyudojin_id:
@@ -5773,8 +5773,8 @@ participants_413:
   firstname: Bénédicte
   lastname: Barthelemy
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.738197000 Z
-  updated_at: 2024-11-03 12:41:53.738197000 Z
+  created_at: 2024-11-09 13:29:35.424458000 Z
+  updated_at: 2024-11-09 13:29:35.424458000 Z
   team_id: 98
   index_in_team: 2
   kyudojin_id:
@@ -5787,8 +5787,8 @@ participants_414:
   firstname: Gatien
   lastname: Joly
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.745008000 Z
-  updated_at: 2024-11-03 12:41:53.745008000 Z
+  created_at: 2024-11-09 13:29:35.432218000 Z
+  updated_at: 2024-11-09 13:29:35.432218000 Z
   team_id: 98
   index_in_team: 3
   kyudojin_id:
@@ -5801,8 +5801,8 @@ participants_415:
   firstname: Dieudonné
   lastname: Roux
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.760489000 Z
-  updated_at: 2024-11-03 12:41:53.760489000 Z
+  created_at: 2024-11-09 13:29:35.445338000 Z
+  updated_at: 2024-11-09 13:29:35.445338000 Z
   team_id: 99
   index_in_team: 1
   kyudojin_id:
@@ -5815,8 +5815,8 @@ participants_416:
   firstname: Philothée
   lastname: Perrier
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.768503000 Z
-  updated_at: 2024-11-03 12:41:53.768503000 Z
+  created_at: 2024-11-09 13:29:35.450994000 Z
+  updated_at: 2024-11-09 13:29:35.450994000 Z
   team_id: 99
   index_in_team: 2
   kyudojin_id:
@@ -5829,8 +5829,8 @@ participants_417:
   firstname: Aquiline
   lastname: Royer
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.776085000 Z
-  updated_at: 2024-11-03 12:41:53.776085000 Z
+  created_at: 2024-11-09 13:29:35.455959000 Z
+  updated_at: 2024-11-09 13:29:35.455959000 Z
   team_id: 99
   index_in_team: 3
   kyudojin_id:
@@ -5843,8 +5843,8 @@ participants_418:
   firstname: Amande
   lastname: Cordier
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.792637000 Z
-  updated_at: 2024-11-03 12:41:53.792637000 Z
+  created_at: 2024-11-09 13:29:35.470912000 Z
+  updated_at: 2024-11-09 13:29:35.470912000 Z
   team_id: 100
   index_in_team: 1
   kyudojin_id:
@@ -5857,8 +5857,8 @@ participants_419:
   firstname: Guérin
   lastname: David
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.800576000 Z
-  updated_at: 2024-11-03 12:41:53.800576000 Z
+  created_at: 2024-11-09 13:29:35.476334000 Z
+  updated_at: 2024-11-09 13:29:35.476334000 Z
   team_id: 100
   index_in_team: 2
   kyudojin_id:
@@ -5871,8 +5871,8 @@ participants_420:
   firstname: Alcyone
   lastname: Gilbert
   participating_dojo_id: 35
-  created_at: 2024-11-03 12:41:53.808162000 Z
-  updated_at: 2024-11-03 12:41:53.808162000 Z
+  created_at: 2024-11-09 13:29:35.484334000 Z
+  updated_at: 2024-11-09 13:29:35.484334000 Z
   team_id: 100
   index_in_team: 3
   kyudojin_id:
@@ -5885,8 +5885,8 @@ participants_421:
   firstname: Arnould
   lastname: Guérin
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.871292000 Z
-  updated_at: 2024-11-03 12:41:53.871292000 Z
+  created_at: 2024-11-09 13:29:35.537801000 Z
+  updated_at: 2024-11-09 13:29:35.537801000 Z
   team_id: 101
   index_in_team: 1
   kyudojin_id:
@@ -5899,8 +5899,8 @@ participants_422:
   firstname: Sophie
   lastname: Noel
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.885448000 Z
-  updated_at: 2024-11-03 12:41:53.885448000 Z
+  created_at: 2024-11-09 13:29:35.544921000 Z
+  updated_at: 2024-11-09 13:29:35.544921000 Z
   team_id: 101
   index_in_team: 2
   kyudojin_id:
@@ -5913,8 +5913,8 @@ participants_423:
   firstname: Agathon
   lastname: Ménard
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.905020000 Z
-  updated_at: 2024-11-03 12:41:53.905020000 Z
+  created_at: 2024-11-09 13:29:35.551468000 Z
+  updated_at: 2024-11-09 13:29:35.551468000 Z
   team_id: 101
   index_in_team: 3
   kyudojin_id:
@@ -5927,8 +5927,8 @@ participants_424:
   firstname: Basilisse
   lastname: Pichon
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.954949000 Z
-  updated_at: 2024-11-03 12:41:53.954949000 Z
+  created_at: 2024-11-09 13:29:35.564549000 Z
+  updated_at: 2024-11-09 13:29:35.564549000 Z
   team_id: 102
   index_in_team: 1
   kyudojin_id:
@@ -5941,8 +5941,8 @@ participants_425:
   firstname: Aleaume
   lastname: Gaillard
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.963567000 Z
-  updated_at: 2024-11-03 12:41:53.963567000 Z
+  created_at: 2024-11-09 13:29:35.572062000 Z
+  updated_at: 2024-11-09 13:29:35.572062000 Z
   team_id: 102
   index_in_team: 2
   kyudojin_id:
@@ -5955,8 +5955,8 @@ participants_426:
   firstname: Jocelyne
   lastname: Royer
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.971508000 Z
-  updated_at: 2024-11-03 12:41:53.971508000 Z
+  created_at: 2024-11-09 13:29:35.578038000 Z
+  updated_at: 2024-11-09 13:29:35.578038000 Z
   team_id: 102
   index_in_team: 3
   kyudojin_id:
@@ -5969,8 +5969,8 @@ participants_427:
   firstname: Réjean
   lastname: Girard
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.987205000 Z
-  updated_at: 2024-11-03 12:41:53.987205000 Z
+  created_at: 2024-11-09 13:29:35.591271000 Z
+  updated_at: 2024-11-09 13:29:35.591271000 Z
   team_id: 103
   index_in_team: 1
   kyudojin_id:
@@ -5983,8 +5983,8 @@ participants_428:
   firstname: Jérémie
   lastname: Robin
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:53.994455000 Z
-  updated_at: 2024-11-03 12:41:53.994455000 Z
+  created_at: 2024-11-09 13:29:35.597912000 Z
+  updated_at: 2024-11-09 13:29:35.597912000 Z
   team_id: 103
   index_in_team: 2
   kyudojin_id:
@@ -5997,8 +5997,8 @@ participants_429:
   firstname: Élise
   lastname: Masson
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:54.002855000 Z
-  updated_at: 2024-11-03 12:41:54.002855000 Z
+  created_at: 2024-11-09 13:29:35.604534000 Z
+  updated_at: 2024-11-09 13:29:35.604534000 Z
   team_id: 103
   index_in_team: 3
   kyudojin_id:
@@ -6011,8 +6011,8 @@ participants_430:
   firstname: Almire
   lastname: Andre
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:54.017031000 Z
-  updated_at: 2024-11-03 12:41:54.017031000 Z
+  created_at: 2024-11-09 13:29:35.616329000 Z
+  updated_at: 2024-11-09 13:29:35.616329000 Z
   team_id: 104
   index_in_team: 1
   kyudojin_id:
@@ -6025,8 +6025,8 @@ participants_431:
   firstname: Léonard
   lastname: Benoit
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:54.023852000 Z
-  updated_at: 2024-11-03 12:41:54.023852000 Z
+  created_at: 2024-11-09 13:29:35.623034000 Z
+  updated_at: 2024-11-09 13:29:35.623034000 Z
   team_id: 104
   index_in_team: 2
   kyudojin_id:
@@ -6039,8 +6039,8 @@ participants_432:
   firstname: Hortense
   lastname: Ménard
   participating_dojo_id: 36
-  created_at: 2024-11-03 12:41:54.033249000 Z
-  updated_at: 2024-11-03 12:41:54.033249000 Z
+  created_at: 2024-11-09 13:29:35.628918000 Z
+  updated_at: 2024-11-09 13:29:35.628918000 Z
   team_id: 104
   index_in_team: 3
   kyudojin_id:
@@ -6053,8 +6053,8 @@ participants_433:
   firstname: Zéphirin
   lastname: Leblanc
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.144099000 Z
-  updated_at: 2024-11-03 12:41:54.144099000 Z
+  created_at: 2024-11-09 13:29:35.720550000 Z
+  updated_at: 2024-11-09 13:29:35.720550000 Z
   team_id: 105
   index_in_team: 1
   kyudojin_id:
@@ -6067,8 +6067,8 @@ participants_434:
   firstname: Bérangère
   lastname: Dumas
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.150994000 Z
-  updated_at: 2024-11-03 12:41:54.150994000 Z
+  created_at: 2024-11-09 13:29:35.727003000 Z
+  updated_at: 2024-11-09 13:29:35.727003000 Z
   team_id: 105
   index_in_team: 2
   kyudojin_id:
@@ -6081,8 +6081,8 @@ participants_435:
   firstname: Kévin
   lastname: Leroy
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.158887000 Z
-  updated_at: 2024-11-03 12:41:54.158887000 Z
+  created_at: 2024-11-09 13:29:35.732018000 Z
+  updated_at: 2024-11-09 13:29:35.732018000 Z
   team_id: 105
   index_in_team: 3
   kyudojin_id:
@@ -6095,8 +6095,8 @@ participants_436:
   firstname: Angilberte
   lastname: Fleury
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.172203000 Z
-  updated_at: 2024-11-03 12:41:54.172203000 Z
+  created_at: 2024-11-09 13:29:35.744174000 Z
+  updated_at: 2024-11-09 13:29:35.744174000 Z
   team_id: 106
   index_in_team: 1
   kyudojin_id:
@@ -6109,8 +6109,8 @@ participants_437:
   firstname: Léopold
   lastname: Bonnet
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.178922000 Z
-  updated_at: 2024-11-03 12:41:54.178922000 Z
+  created_at: 2024-11-09 13:29:35.750889000 Z
+  updated_at: 2024-11-09 13:29:35.750889000 Z
   team_id: 106
   index_in_team: 2
   kyudojin_id:
@@ -6123,8 +6123,8 @@ participants_438:
   firstname: Christodule
   lastname: Lefèvre
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.188116000 Z
-  updated_at: 2024-11-03 12:41:54.188116000 Z
+  created_at: 2024-11-09 13:29:35.756621000 Z
+  updated_at: 2024-11-09 13:29:35.756621000 Z
   team_id: 106
   index_in_team: 3
   kyudojin_id:
@@ -6137,8 +6137,8 @@ participants_439:
   firstname: Arnould
   lastname: Perret
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.207470000 Z
-  updated_at: 2024-11-03 12:41:54.207470000 Z
+  created_at: 2024-11-09 13:29:35.768645000 Z
+  updated_at: 2024-11-09 13:29:35.768645000 Z
   team_id: 107
   index_in_team: 1
   kyudojin_id:
@@ -6151,8 +6151,8 @@ participants_440:
   firstname: Céleste
   lastname: Pelletier
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.214322000 Z
-  updated_at: 2024-11-03 12:41:54.214322000 Z
+  created_at: 2024-11-09 13:29:35.775324000 Z
+  updated_at: 2024-11-09 13:29:35.775324000 Z
   team_id: 107
   index_in_team: 2
   kyudojin_id:
@@ -6165,8 +6165,8 @@ participants_441:
   firstname: Marjorie
   lastname: Chauvin
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.220924000 Z
-  updated_at: 2024-11-03 12:41:54.220924000 Z
+  created_at: 2024-11-09 13:29:35.781925000 Z
+  updated_at: 2024-11-09 13:29:35.781925000 Z
   team_id: 107
   index_in_team: 3
   kyudojin_id:
@@ -6179,8 +6179,8 @@ participants_442:
   firstname: Marie
   lastname: Etienne
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.235235000 Z
-  updated_at: 2024-11-03 12:41:54.235235000 Z
+  created_at: 2024-11-09 13:29:35.799363000 Z
+  updated_at: 2024-11-09 13:29:35.799363000 Z
   team_id: 108
   index_in_team: 1
   kyudojin_id:
@@ -6193,8 +6193,8 @@ participants_443:
   firstname: Adhémar
   lastname: Roux
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.241687000 Z
-  updated_at: 2024-11-03 12:41:54.241687000 Z
+  created_at: 2024-11-09 13:29:35.805534000 Z
+  updated_at: 2024-11-09 13:29:35.805534000 Z
   team_id: 108
   index_in_team: 2
   kyudojin_id:
@@ -6207,8 +6207,8 @@ participants_444:
   firstname: Dorothée
   lastname: Picard
   participating_dojo_id: 37
-  created_at: 2024-11-03 12:41:54.247989000 Z
-  updated_at: 2024-11-03 12:41:54.247989000 Z
+  created_at: 2024-11-09 13:29:35.812433000 Z
+  updated_at: 2024-11-09 13:29:35.812433000 Z
   team_id: 108
   index_in_team: 3
   kyudojin_id:
@@ -6221,8 +6221,8 @@ participants_445:
   firstname: Émeric
   lastname: Paris
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.303317000 Z
-  updated_at: 2024-11-03 12:41:54.303317000 Z
+  created_at: 2024-11-09 13:29:35.862385000 Z
+  updated_at: 2024-11-09 13:29:35.862385000 Z
   team_id:
   index_in_team: 121
   kyudojin_id:
@@ -6235,8 +6235,8 @@ participants_446:
   firstname: Ursule
   lastname: Benard
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.311359000 Z
-  updated_at: 2024-11-03 12:41:54.311359000 Z
+  created_at: 2024-11-09 13:29:35.871030000 Z
+  updated_at: 2024-11-09 13:29:35.871030000 Z
   team_id:
   index_in_team: 122
   kyudojin_id:
@@ -6249,8 +6249,8 @@ participants_447:
   firstname: Gui
   lastname: Olivier
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.316956000 Z
-  updated_at: 2024-11-03 12:41:54.316956000 Z
+  created_at: 2024-11-09 13:29:35.876874000 Z
+  updated_at: 2024-11-09 13:29:35.876874000 Z
   team_id:
   index_in_team: 123
   kyudojin_id:
@@ -6263,8 +6263,8 @@ participants_448:
   firstname: Élisée
   lastname: Mallet
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.322651000 Z
-  updated_at: 2024-11-03 12:41:54.322651000 Z
+  created_at: 2024-11-09 13:29:35.883590000 Z
+  updated_at: 2024-11-09 13:29:35.883590000 Z
   team_id:
   index_in_team: 124
   kyudojin_id:
@@ -6277,8 +6277,8 @@ participants_449:
   firstname: Aymon
   lastname: Roy
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.328525000 Z
-  updated_at: 2024-11-03 12:41:54.328525000 Z
+  created_at: 2024-11-09 13:29:35.888709000 Z
+  updated_at: 2024-11-09 13:29:35.888709000 Z
   team_id:
   index_in_team: 125
   kyudojin_id:
@@ -6291,8 +6291,8 @@ participants_450:
   firstname: Frédéric
   lastname: Adam
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.336630000 Z
-  updated_at: 2024-11-03 12:41:54.336630000 Z
+  created_at: 2024-11-09 13:29:35.894025000 Z
+  updated_at: 2024-11-09 13:29:35.894025000 Z
   team_id:
   index_in_team: 126
   kyudojin_id:
@@ -6305,8 +6305,8 @@ participants_451:
   firstname: Astolphe
   lastname: Perrier
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.343712000 Z
-  updated_at: 2024-11-03 12:41:54.343712000 Z
+  created_at: 2024-11-09 13:29:35.901116000 Z
+  updated_at: 2024-11-09 13:29:35.901116000 Z
   team_id:
   index_in_team: 127
   kyudojin_id:
@@ -6319,8 +6319,8 @@ participants_452:
   firstname: Léopoldine
   lastname: Marechal
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.350037000 Z
-  updated_at: 2024-11-03 12:41:54.350037000 Z
+  created_at: 2024-11-09 13:29:35.906988000 Z
+  updated_at: 2024-11-09 13:29:35.906988000 Z
   team_id:
   index_in_team: 128
   kyudojin_id:
@@ -6333,8 +6333,8 @@ participants_453:
   firstname: Aubertine
   lastname: Moreau
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.356402000 Z
-  updated_at: 2024-11-03 12:41:54.356402000 Z
+  created_at: 2024-11-09 13:29:35.912434000 Z
+  updated_at: 2024-11-09 13:29:35.912434000 Z
   team_id:
   index_in_team: 129
   kyudojin_id:
@@ -6347,8 +6347,8 @@ participants_454:
   firstname: Emmanuelle
   lastname: Marie
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.362823000 Z
-  updated_at: 2024-11-03 12:41:54.362823000 Z
+  created_at: 2024-11-09 13:29:35.917917000 Z
+  updated_at: 2024-11-09 13:29:35.917917000 Z
   team_id:
   index_in_team: 130
   kyudojin_id:
@@ -6361,8 +6361,8 @@ participants_455:
   firstname: Acace
   lastname: Brunet
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.368647000 Z
-  updated_at: 2024-11-03 12:41:54.368647000 Z
+  created_at: 2024-11-09 13:29:35.923645000 Z
+  updated_at: 2024-11-09 13:29:35.923645000 Z
   team_id:
   index_in_team: 131
   kyudojin_id:
@@ -6375,8 +6375,8 @@ participants_456:
   firstname: Samuel
   lastname: Fleury
   participating_dojo_id: 38
-  created_at: 2024-11-03 12:41:54.375748000 Z
-  updated_at: 2024-11-03 12:41:54.375748000 Z
+  created_at: 2024-11-09 13:29:35.929865000 Z
+  updated_at: 2024-11-09 13:29:35.929865000 Z
   team_id:
   index_in_team: 132
   kyudojin_id:
@@ -6389,8 +6389,8 @@ participants_457:
   firstname: Angilbe
   lastname: Fleury
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.441915000 Z
-  updated_at: 2024-11-03 12:41:54.441915000 Z
+  created_at: 2024-11-09 13:29:35.986257000 Z
+  updated_at: 2024-11-09 13:29:35.986257000 Z
   team_id: 109
   index_in_team: 1
   kyudojin_id:
@@ -6403,8 +6403,8 @@ participants_458:
   firstname: Lazare
   lastname: Denis
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.449373000 Z
-  updated_at: 2024-11-03 12:41:54.449373000 Z
+  created_at: 2024-11-09 13:29:35.991924000 Z
+  updated_at: 2024-11-09 13:29:35.991924000 Z
   team_id: 109
   index_in_team: 2
   kyudojin_id:
@@ -6417,8 +6417,8 @@ participants_459:
   firstname: Anastase
   lastname: Gonzalez
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.455740000 Z
-  updated_at: 2024-11-03 12:41:54.455740000 Z
+  created_at: 2024-11-09 13:29:35.999951000 Z
+  updated_at: 2024-11-09 13:29:35.999951000 Z
   team_id: 109
   index_in_team: 3
   kyudojin_id:
@@ -6431,8 +6431,8 @@ participants_460:
   firstname: Hardouin
   lastname: Paul
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.468665000 Z
-  updated_at: 2024-11-03 12:41:54.468665000 Z
+  created_at: 2024-11-09 13:29:36.015367000 Z
+  updated_at: 2024-11-09 13:29:36.015367000 Z
   team_id: 110
   index_in_team: 1
   kyudojin_id:
@@ -6445,8 +6445,8 @@ participants_461:
   firstname: Lorraine
   lastname: Robin
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.477937000 Z
-  updated_at: 2024-11-03 12:41:54.477937000 Z
+  created_at: 2024-11-09 13:29:36.021885000 Z
+  updated_at: 2024-11-09 13:29:36.021885000 Z
   team_id: 110
   index_in_team: 2
   kyudojin_id:
@@ -6459,8 +6459,8 @@ participants_462:
   firstname: Diane
   lastname: Lopéz
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.485861000 Z
-  updated_at: 2024-11-03 12:41:54.485861000 Z
+  created_at: 2024-11-09 13:29:36.028566000 Z
+  updated_at: 2024-11-09 13:29:36.028566000 Z
   team_id: 110
   index_in_team: 3
   kyudojin_id:
@@ -6473,8 +6473,8 @@ participants_463:
   firstname: Adrien
   lastname: Simon
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.500550000 Z
-  updated_at: 2024-11-03 12:41:54.500550000 Z
+  created_at: 2024-11-09 13:29:36.040039000 Z
+  updated_at: 2024-11-09 13:29:36.040039000 Z
   team_id: 111
   index_in_team: 1
   kyudojin_id:
@@ -6487,8 +6487,8 @@ participants_464:
   firstname: Arielle
   lastname: Le Roux
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.507575000 Z
-  updated_at: 2024-11-03 12:41:54.507575000 Z
+  created_at: 2024-11-09 13:29:36.047542000 Z
+  updated_at: 2024-11-09 13:29:36.047542000 Z
   team_id: 111
   index_in_team: 2
   kyudojin_id:
@@ -6501,8 +6501,8 @@ participants_465:
   firstname: Hardouin
   lastname: Lefèvre
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.514787000 Z
-  updated_at: 2024-11-03 12:41:54.514787000 Z
+  created_at: 2024-11-09 13:29:36.053710000 Z
+  updated_at: 2024-11-09 13:29:36.053710000 Z
   team_id: 111
   index_in_team: 3
   kyudojin_id:
@@ -6515,8 +6515,8 @@ participants_466:
   firstname: Emmanuelle
   lastname: Michaud
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.530059000 Z
-  updated_at: 2024-11-03 12:41:54.530059000 Z
+  created_at: 2024-11-09 13:29:36.068843000 Z
+  updated_at: 2024-11-09 13:29:36.068843000 Z
   team_id: 112
   index_in_team: 1
   kyudojin_id:
@@ -6529,8 +6529,8 @@ participants_467:
   firstname: Émérance
   lastname: Leger
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.536916000 Z
-  updated_at: 2024-11-03 12:41:54.536916000 Z
+  created_at: 2024-11-09 13:29:36.075706000 Z
+  updated_at: 2024-11-09 13:29:36.075706000 Z
   team_id: 112
   index_in_team: 2
   kyudojin_id:
@@ -6543,8 +6543,8 @@ participants_468:
   firstname: Bérangère
   lastname: Philippe
   participating_dojo_id: 39
-  created_at: 2024-11-03 12:41:54.544311000 Z
-  updated_at: 2024-11-03 12:41:54.544311000 Z
+  created_at: 2024-11-09 13:29:36.082892000 Z
+  updated_at: 2024-11-09 13:29:36.082892000 Z
   team_id: 112
   index_in_team: 3
   kyudojin_id:
@@ -6557,8 +6557,8 @@ participants_469:
   firstname: Noélie
   lastname: Gay
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.617703000 Z
-  updated_at: 2024-11-03 12:41:54.617703000 Z
+  created_at: 2024-11-09 13:29:36.134283000 Z
+  updated_at: 2024-11-09 13:29:36.134283000 Z
   team_id: 113
   index_in_team: 1
   kyudojin_id:
@@ -6571,8 +6571,8 @@ participants_470:
   firstname: Évariste
   lastname: Morin
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.624653000 Z
-  updated_at: 2024-11-03 12:41:54.624653000 Z
+  created_at: 2024-11-09 13:29:36.139171000 Z
+  updated_at: 2024-11-09 13:29:36.139171000 Z
   team_id: 113
   index_in_team: 2
   kyudojin_id:
@@ -6585,8 +6585,8 @@ participants_471:
   firstname: Charline
   lastname: Denis
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.634010000 Z
-  updated_at: 2024-11-03 12:41:54.634010000 Z
+  created_at: 2024-11-09 13:29:36.145631000 Z
+  updated_at: 2024-11-09 13:29:36.145631000 Z
   team_id: 113
   index_in_team: 3
   kyudojin_id:
@@ -6599,8 +6599,8 @@ participants_472:
   firstname: Foulques
   lastname: Roussel
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.649882000 Z
-  updated_at: 2024-11-03 12:41:54.649882000 Z
+  created_at: 2024-11-09 13:29:36.157614000 Z
+  updated_at: 2024-11-09 13:29:36.157614000 Z
   team_id: 114
   index_in_team: 1
   kyudojin_id:
@@ -6613,8 +6613,8 @@ participants_473:
   firstname: Blanche
   lastname: Besson
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.657536000 Z
-  updated_at: 2024-11-03 12:41:54.657536000 Z
+  created_at: 2024-11-09 13:29:36.162785000 Z
+  updated_at: 2024-11-09 13:29:36.162785000 Z
   team_id: 114
   index_in_team: 2
   kyudojin_id:
@@ -6627,8 +6627,8 @@ participants_474:
   firstname: Évariste
   lastname: Blanchard
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.665616000 Z
-  updated_at: 2024-11-03 12:41:54.665616000 Z
+  created_at: 2024-11-09 13:29:36.168628000 Z
+  updated_at: 2024-11-09 13:29:36.168628000 Z
   team_id: 114
   index_in_team: 3
   kyudojin_id:
@@ -6641,8 +6641,8 @@ participants_475:
   firstname: Sidoine
   lastname: Moreau
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.681608000 Z
-  updated_at: 2024-11-03 12:41:54.681608000 Z
+  created_at: 2024-11-09 13:29:36.179175000 Z
+  updated_at: 2024-11-09 13:29:36.179175000 Z
   team_id: 115
   index_in_team: 1
   kyudojin_id:
@@ -6655,8 +6655,8 @@ participants_476:
   firstname: Agathe
   lastname: Blanc
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.688486000 Z
-  updated_at: 2024-11-03 12:41:54.688486000 Z
+  created_at: 2024-11-09 13:29:36.186497000 Z
+  updated_at: 2024-11-09 13:29:36.186497000 Z
   team_id: 115
   index_in_team: 2
   kyudojin_id:
@@ -6669,8 +6669,8 @@ participants_477:
   firstname: Régis
   lastname: Lebrun
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.695347000 Z
-  updated_at: 2024-11-03 12:41:54.695347000 Z
+  created_at: 2024-11-09 13:29:36.192105000 Z
+  updated_at: 2024-11-09 13:29:36.192105000 Z
   team_id: 115
   index_in_team: 3
   kyudojin_id:
@@ -6683,8 +6683,8 @@ participants_478:
   firstname: Bernadette
   lastname: Antoine
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.715953000 Z
-  updated_at: 2024-11-03 12:41:54.715953000 Z
+  created_at: 2024-11-09 13:29:36.206319000 Z
+  updated_at: 2024-11-09 13:29:36.206319000 Z
   team_id: 116
   index_in_team: 1
   kyudojin_id:
@@ -6697,8 +6697,8 @@ participants_479:
   firstname: Isabelle
   lastname: Gerard
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.723645000 Z
-  updated_at: 2024-11-03 12:41:54.723645000 Z
+  created_at: 2024-11-09 13:29:36.211282000 Z
+  updated_at: 2024-11-09 13:29:36.211282000 Z
   team_id: 116
   index_in_team: 2
   kyudojin_id:
@@ -6711,8 +6711,8 @@ participants_480:
   firstname: Brigitte
   lastname: Gauthier
   participating_dojo_id: 40
-  created_at: 2024-11-03 12:41:54.731503000 Z
-  updated_at: 2024-11-03 12:41:54.731503000 Z
+  created_at: 2024-11-09 13:29:36.218730000 Z
+  updated_at: 2024-11-09 13:29:36.218730000 Z
   team_id: 116
   index_in_team: 3
   kyudojin_id:
@@ -6725,8 +6725,8 @@ participants_481:
   firstname: Laurine
   lastname: Brun
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.789593000 Z
-  updated_at: 2024-11-03 12:41:54.789593000 Z
+  created_at: 2024-11-09 13:29:36.264879000 Z
+  updated_at: 2024-11-09 13:29:36.264879000 Z
   team_id:
   index_in_team: 133
   kyudojin_id:
@@ -6739,8 +6739,8 @@ participants_482:
   firstname: Régis
   lastname: Dupont
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.797361000 Z
-  updated_at: 2024-11-03 12:41:54.797361000 Z
+  created_at: 2024-11-09 13:29:36.269780000 Z
+  updated_at: 2024-11-09 13:29:36.269780000 Z
   team_id:
   index_in_team: 134
   kyudojin_id:
@@ -6753,8 +6753,8 @@ participants_483:
   firstname: Calixte
   lastname: Moulin
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.804744000 Z
-  updated_at: 2024-11-03 12:41:54.804744000 Z
+  created_at: 2024-11-09 13:29:36.275163000 Z
+  updated_at: 2024-11-09 13:29:36.275163000 Z
   team_id:
   index_in_team: 135
   kyudojin_id:
@@ -6767,8 +6767,8 @@ participants_484:
   firstname: Arian
   lastname: Da silva
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.811763000 Z
-  updated_at: 2024-11-03 12:41:54.811763000 Z
+  created_at: 2024-11-09 13:29:36.282832000 Z
+  updated_at: 2024-11-09 13:29:36.282832000 Z
   team_id:
   index_in_team: 136
   kyudojin_id:
@@ -6781,8 +6781,8 @@ participants_485:
   firstname: Mathilde
   lastname: Lopéz
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.818380000 Z
-  updated_at: 2024-11-03 12:41:54.818380000 Z
+  created_at: 2024-11-09 13:29:36.288771000 Z
+  updated_at: 2024-11-09 13:29:36.288771000 Z
   team_id:
   index_in_team: 137
   kyudojin_id:
@@ -6795,8 +6795,8 @@ participants_486:
   firstname: Évariste
   lastname: Bernard
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.825507000 Z
-  updated_at: 2024-11-03 12:41:54.825507000 Z
+  created_at: 2024-11-09 13:29:36.294174000 Z
+  updated_at: 2024-11-09 13:29:36.294174000 Z
   team_id:
   index_in_team: 138
   kyudojin_id:
@@ -6809,8 +6809,8 @@ participants_487:
   firstname: Denis
   lastname: Pichon
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.833413000 Z
-  updated_at: 2024-11-03 12:41:54.833413000 Z
+  created_at: 2024-11-09 13:29:36.300093000 Z
+  updated_at: 2024-11-09 13:29:36.300093000 Z
   team_id:
   index_in_team: 139
   kyudojin_id:
@@ -6823,8 +6823,8 @@ participants_488:
   firstname: Juste
   lastname: Payet
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.840063000 Z
-  updated_at: 2024-11-03 12:41:54.840063000 Z
+  created_at: 2024-11-09 13:29:36.306311000 Z
+  updated_at: 2024-11-09 13:29:36.306311000 Z
   team_id:
   index_in_team: 140
   kyudojin_id:
@@ -6837,8 +6837,8 @@ participants_489:
   firstname: Côme
   lastname: Girard
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.846614000 Z
-  updated_at: 2024-11-03 12:41:54.846614000 Z
+  created_at: 2024-11-09 13:29:36.311680000 Z
+  updated_at: 2024-11-09 13:29:36.311680000 Z
   team_id:
   index_in_team: 141
   kyudojin_id:
@@ -6851,8 +6851,8 @@ participants_490:
   firstname: Catherine
   lastname: Hubert
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.852788000 Z
-  updated_at: 2024-11-03 12:41:54.852788000 Z
+  created_at: 2024-11-09 13:29:36.316304000 Z
+  updated_at: 2024-11-09 13:29:36.316304000 Z
   team_id:
   index_in_team: 142
   kyudojin_id:
@@ -6865,8 +6865,8 @@ participants_491:
   firstname: Anaïs
   lastname: Garcia
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.861912000 Z
-  updated_at: 2024-11-03 12:41:54.861912000 Z
+  created_at: 2024-11-09 13:29:36.323266000 Z
+  updated_at: 2024-11-09 13:29:36.323266000 Z
   team_id:
   index_in_team: 143
   kyudojin_id:
@@ -6879,8 +6879,8 @@ participants_492:
   firstname: Brigitte
   lastname: Pichon
   participating_dojo_id: 41
-  created_at: 2024-11-03 12:41:54.869320000 Z
-  updated_at: 2024-11-03 12:41:54.869320000 Z
+  created_at: 2024-11-09 13:29:36.328577000 Z
+  updated_at: 2024-11-09 13:29:36.328577000 Z
   team_id:
   index_in_team: 144
   kyudojin_id:
@@ -6893,8 +6893,8 @@ participants_493:
   firstname: Garnier
   lastname: Pelletier
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.931279000 Z
-  updated_at: 2024-11-03 12:41:54.931279000 Z
+  created_at: 2024-11-09 13:29:36.427001000 Z
+  updated_at: 2024-11-09 13:29:36.427001000 Z
   team_id: 117
   index_in_team: 1
   kyudojin_id:
@@ -6907,8 +6907,8 @@ participants_494:
   firstname: Ascelin
   lastname: Masson
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.939090000 Z
-  updated_at: 2024-11-03 12:41:54.939090000 Z
+  created_at: 2024-11-09 13:29:36.433379000 Z
+  updated_at: 2024-11-09 13:29:36.433379000 Z
   team_id: 117
   index_in_team: 2
   kyudojin_id:
@@ -6921,8 +6921,8 @@ participants_495:
   firstname: Félicité
   lastname: Lefevre
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.946845000 Z
-  updated_at: 2024-11-03 12:41:54.946845000 Z
+  created_at: 2024-11-09 13:29:36.439658000 Z
+  updated_at: 2024-11-09 13:29:36.439658000 Z
   team_id: 117
   index_in_team: 3
   kyudojin_id:
@@ -6935,8 +6935,8 @@ participants_496:
   firstname: Léandre
   lastname: Schneider
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.961568000 Z
-  updated_at: 2024-11-03 12:41:54.961568000 Z
+  created_at: 2024-11-09 13:29:36.452754000 Z
+  updated_at: 2024-11-09 13:29:36.452754000 Z
   team_id: 118
   index_in_team: 1
   kyudojin_id:
@@ -6949,8 +6949,8 @@ participants_497:
   firstname: Christodule
   lastname: Bernard
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.968339000 Z
-  updated_at: 2024-11-03 12:41:54.968339000 Z
+  created_at: 2024-11-09 13:29:36.458667000 Z
+  updated_at: 2024-11-09 13:29:36.458667000 Z
   team_id: 118
   index_in_team: 2
   kyudojin_id:
@@ -6963,8 +6963,8 @@ participants_498:
   firstname: Aliénor
   lastname: Charpentier
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.976204000 Z
-  updated_at: 2024-11-03 12:41:54.976204000 Z
+  created_at: 2024-11-09 13:29:36.464328000 Z
+  updated_at: 2024-11-09 13:29:36.464328000 Z
   team_id: 118
   index_in_team: 3
   kyudojin_id:
@@ -6977,8 +6977,8 @@ participants_499:
   firstname: Assomption
   lastname: Mathieu
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.990118000 Z
-  updated_at: 2024-11-03 12:41:54.990118000 Z
+  created_at: 2024-11-09 13:29:36.479525000 Z
+  updated_at: 2024-11-09 13:29:36.479525000 Z
   team_id: 119
   index_in_team: 1
   kyudojin_id:
@@ -6991,8 +6991,8 @@ participants_500:
   firstname: Joëlle
   lastname: Marie
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:54.998876000 Z
-  updated_at: 2024-11-03 12:41:54.998876000 Z
+  created_at: 2024-11-09 13:29:36.486617000 Z
+  updated_at: 2024-11-09 13:29:36.486617000 Z
   team_id: 119
   index_in_team: 2
   kyudojin_id:
@@ -7005,8 +7005,8 @@ participants_501:
   firstname: Charlotte
   lastname: Dupuy
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:55.007170000 Z
-  updated_at: 2024-11-03 12:41:55.007170000 Z
+  created_at: 2024-11-09 13:29:36.493546000 Z
+  updated_at: 2024-11-09 13:29:36.493546000 Z
   team_id: 119
   index_in_team: 3
   kyudojin_id:
@@ -7019,8 +7019,8 @@ participants_502:
   firstname: Anthelmette
   lastname: Remy
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:55.031070000 Z
-  updated_at: 2024-11-03 12:41:55.031070000 Z
+  created_at: 2024-11-09 13:29:36.513827000 Z
+  updated_at: 2024-11-09 13:29:36.513827000 Z
   team_id: 120
   index_in_team: 1
   kyudojin_id:
@@ -7033,8 +7033,8 @@ participants_503:
   firstname: Gilberte
   lastname: Prevost
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:55.038565000 Z
-  updated_at: 2024-11-03 12:41:55.038565000 Z
+  created_at: 2024-11-09 13:29:36.519516000 Z
+  updated_at: 2024-11-09 13:29:36.519516000 Z
   team_id: 120
   index_in_team: 2
   kyudojin_id:
@@ -7047,8 +7047,8 @@ participants_504:
   firstname: Réjeanne
   lastname: Cousin
   participating_dojo_id: 42
-  created_at: 2024-11-03 12:41:55.046747000 Z
-  updated_at: 2024-11-03 12:41:55.046747000 Z
+  created_at: 2024-11-09 13:29:36.525969000 Z
+  updated_at: 2024-11-09 13:29:36.525969000 Z
   team_id: 120
   index_in_team: 3
   kyudojin_id:
