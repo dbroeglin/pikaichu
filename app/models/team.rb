@@ -40,7 +40,7 @@ class Team < ApplicationRecord
 
   def to_ascii(match_id = nil)
     [
-      "#{shortname}: #{score(match_id)&.to_ascii}",
+      "#{index} - #{shortname}: #{score(match_id)&.to_ascii}",
       participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
     ].flatten.join("\n")
   end

@@ -70,6 +70,6 @@ class Participant < ApplicationRecord
 
   def to_ascii(match_id = nil)
     s = score(match_id)
-    "#{display_name.rjust(20)}: #{s&.to_ascii} | #{s&.results&.map(&:to_ascii)&.join ','} |"
+    "#{index} - #{display_name.rjust(20)}: #{s&.to_ascii} | #{s&.results&.map(&:to_ascii)&.join ','} |"
   end
 end

@@ -19,8 +19,7 @@ class LeaderboardControllerTest < ActionDispatch::IntegrationTest
                                scoring: scoring)
       @taikai.current_user = users(:jean_bon)
 
-      @taikai.transition_to! :registration
-      @taikai.transition_to! :marking
+      transition_taikai_to(@taikai, :marking)
 
       get leaderboard_taikai_url @taikai
       assert_response :success

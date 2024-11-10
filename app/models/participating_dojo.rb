@@ -21,7 +21,11 @@ class ParticipatingDojo < ApplicationRecord
            dependent: :destroy,
            inverse_of: :participating_dojo
   has_many :staffs, inverse_of: :participating_dojo, dependent: nil
-  has_many :tachis, inverse_of: :participating_dojo, dependent: :destroy
+  has_many :tachis, lambda {
+                      order round: :asc, index: :asc
+                    },
+           inverse_of: :participating_dojo,
+           dependent: :destroy
 
   def draw
     case taikai.form
@@ -35,9 +39,8 @@ class ParticipatingDojo < ApplicationRecord
       teams.shuffle.each_with_index do |team, index|
         team.update!(index: index + 1)
       end
-      teams.map(&:participants).flatten.each_with_index do |participant, index|
-        participant.update!(index: index + 1)
-      end
+      teams.reload
+      set_participant_index_from_teams
     when '2in1'
       if participants.unteamed.any?
         errors.add(:base, :unteamed)
@@ -54,9 +57,8 @@ class ParticipatingDojo < ApplicationRecord
         teams.where(index: nil).shuffle.each_with_index do |team, index|
           team.update!(index: index + count + 1)
         end
-        teams.map(&:participants).flatten.each_with_index do |participant, index|
-          participant.update!(index: index + 1)
-        end
+        teams.reload
+        set_participant_index_from_teams
       end
     end
     true
@@ -83,14 +85,14 @@ class ParticipatingDojo < ApplicationRecord
   end
 
   def current_tachi
-    tachis.where(finished: false).order(:round, :index).first
+    tachis.where(finished: false).first
   end
 
   def create_tachis
     case taikai.form
     when 'individual', 'team', '2in1'
       taikai.num_rounds.times do |round|
-        participants.draw_ordered.in_groups_of(taikai.num_targets).each_with_index do |_, index|
+        tachi_groups.each_with_index do |_, index|
           Tachi.create!(participating_dojo: self, round: round + 1, index: index + 1)
         end
       end
@@ -99,11 +101,26 @@ class ParticipatingDojo < ApplicationRecord
     end
   end
 
+  def tachi_groups
+    participants.draw_ordered.in_groups_of(taikai.num_targets)
+  end
+
   def delete_tachis
     tachis.destroy_all
   end
 
-  def update_tachi
+  def update_tachi(score, round)
+    tachi = get_tachi_by_participant_and_round(score.participant, round)
+    tachi.participants.all? do |participants|
+      participants.score(score.match_id).round_finalized?(tachi.round)
+    end && tachi.update!(finished: true)
+  end
+
+  def get_tachi_by_participant_and_round(participant, round)
+    tachi_groups.each_with_index do |group, index|
+      return tachis.where(round: round, index: index + 1).first if group.include?(participant)
+    end
+    raise "Tachi not found for participant #{participant.id} and round #{round}"
   end
 
   def to_ascii
@@ -112,5 +129,14 @@ class ParticipatingDojo < ApplicationRecord
       "  Participants: #{participants.count}",
       "  Teams: #{teams.count}",
     ].flatten.join "\n"
+  end
+
+  private
+
+  def set_participant_index_from_teams
+    participants.update_all(index: nil)
+    teams.map(&:participants).flatten.each_with_index do |participant, index|
+      participant.update!(index: index + 1)
+    end
   end
 end

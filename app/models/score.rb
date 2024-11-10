@@ -104,7 +104,6 @@ class Score < ApplicationRecord
 
     save!
     participant.team&.score(match_id)&.recalculate_team_score
-    participant.participating_dojo.update_tachi
   end
 
   def recalculate_team_score
@@ -165,9 +164,15 @@ class Score < ApplicationRecord
     end
   end
 
+  def round_finalized?(round)
+    round_results = results.round(round)
+    round_results.any? && round_results.all?(&:final?)
+  end
+
   def finalize_round(round)
     results.round(round).update_all(final: true)
     recalculate_individual_score
+    participant.participating_dojo.update_tachi(self, round) unless match_id
   end
 
   def create_results(num_rounds, num_arrows)

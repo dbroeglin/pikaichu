@@ -1,6 +1,10 @@
 require "test_helper"
+require 'taikais_test_helpers'
 
 class MarkingControllerTest < ActionDispatch::IntegrationTest
+  include TaikaisTestHelpers
+  extend TaikaisTestHelpers
+
   setup do
     sign_in users(:jean_bon)
     @taikai = taikais(:individual_dist_12_kinteki)
@@ -13,8 +17,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
 
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     get show_marking_url @taikai
     assert_response :success
@@ -29,8 +32,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
 
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     sign_in users(:alain_terieur)
     get show_marking_url @taikai
@@ -46,8 +48,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
 
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     sign_in users(:marie_tournelle)
 
@@ -56,8 +57,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update first result" do
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
     post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream
     assert_response :success
 
@@ -68,8 +68,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should refuse to update if first round not validated" do
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     5.times do
       post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream
@@ -86,8 +85,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should rotate first result" do
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     result = @participant.score.results.find_by!(round: 1, index: 1)
     result.update!(status: 'hit')
@@ -97,8 +95,7 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should finalize first round" do
-    @taikai.transition_to! :registration
-    @taikai.transition_to! :marking
+    transition_taikai_to(@taikai, :marking)
 
     4.times do
       post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream

@@ -56,4 +56,30 @@ module TaikaisTestHelpers
       scope.update_all(status: :hit, value: 3, final: true)
     end
   end
+
+  def transition_taikai_to(taikai, state)
+    raise "Taikai current_user must be set before transitions" unless taikai.current_user
+
+    if taikai.in_state? :new
+      taikai.transition_to!(:registration)
+      return if state == :registration
+    end
+
+    if taikai.in_state? :registration
+      taikai.teams.each { |team| team.update(mixed: true) }
+      taikai.participating_dojos.each(&:draw)
+      taikai.transition_to!(:marking)
+      return if state == :marking
+    end
+
+    if taikai.in_state? :marking
+      generate_taikai_results(@taikai)
+      taikai.transition_to!(:tie_break)
+      return if state == :tie_break
+    end
+
+    return unless taikai.in_state? :tie_break
+
+    taikai.transition_to!(:done)
+  end
 end

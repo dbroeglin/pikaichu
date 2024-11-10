@@ -5,9 +5,10 @@ class TeamScoreTest < ActiveSupport::TestCase
     @taikai = taikais(:"2in1_dist_12_enteki")
     @participating_dojo = participating_dojos(:participating_dojo1_2in1_dist_12_enteki)
     @team1 = @participating_dojo.teams.first
+    @participating_dojo.build_empty_score_and_results
 
-    @team1.participants.each(&:build_empty_score_and_results)
-    @score = @team1.build_empty_score
+    # @team1.participants.each(&:build_empty_score_and_results)
+    # @score = @team1.build_empty_score
   end
 
   test "team finalized" do
@@ -44,5 +45,3 @@ class TeamScoreTest < ActiveSupport::TestCase
     assert @team1.score.finalized?
   end
 end
-
-

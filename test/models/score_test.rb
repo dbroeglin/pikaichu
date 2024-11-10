@@ -1,8 +1,12 @@
 # rubocop:disable Lint/BinaryOperatorWithIdenticalOperands
 
-require "test_helper"
+require 'test_helper'
+require 'taikais_test_helpers'
 
 class ScoreTest < ActiveSupport::TestCase
+  include TaikaisTestHelpers
+  extend TaikaisTestHelpers
+
   setup do
     # TODO: replace this by factories?
     @participant = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki).participants.first
