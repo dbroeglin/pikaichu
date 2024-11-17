@@ -1,0 +1,63 @@
+{
+    "name": "Azure Developer CLI / Rails Starter",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "rails",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        // See https://containers.dev/features for list of features
+        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+            "username": "vscode",
+            "plugins": "ruby rails bundler yarn"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/azure/azure-dev/azd:latest": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "libpq-dev, libvips, postgresql-client-13"
+        },
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "3.3.5"
+          },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": 21
+          },        
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "username": "vscode",
+            "userUid": 1000,
+            "userGid": 1000,
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "configureZshAsDefaultShell": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Shopify.ruby-extensions-pack",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "GitHub.vscode-github-actions",
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-azuretools.vscode-docker",
+                "ms-azuretools.vscode-azure-github-copilot"
+            ]
+        }
+    },
+    "forwardPorts": [
+        3000
+    ],
+    "postCreateCommand": ".devcontainer/post-create.sh",
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "4gb"
+    },
+    "portsAttributes": {
+        "3000": {
+            "label": "rails"
+        }
+    },
+
+}
