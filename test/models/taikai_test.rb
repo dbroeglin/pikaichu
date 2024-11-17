@@ -115,6 +115,6 @@ class TaikaiTest < ActiveSupport::TestCase
 
     new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
 
-    assert new_taikai.errors.empty?
+    assert_equal [], new_taikai.errors
   end
 end

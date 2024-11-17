@@ -10,6 +10,9 @@ class ScoreboardController < ApplicationController
 
     # answer different formats
     respond_to do |format|
+      format.html do
+        @taikai = @scoreboard.participating_dojo.taikai
+      end
       format.json do
         taikai = @scoreboard.participating_dojo.taikai
 
