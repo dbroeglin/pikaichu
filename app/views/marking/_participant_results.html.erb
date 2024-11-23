@@ -8,7 +8,7 @@
 <%# Here we should not have multiple scores. TODO: make it less brittle %>
 <% participant.score(local_assigns[:match]&.id).results.group_by(&:round).each_pair do |round_index, results| %>
   <% if params[:round].nil? || params[:round].to_i == (round_index-1) %>
-    <td class="has-text-left <%= first %>">
+    <td class="has-text-left is-danger <%= first %>">
       <%= render "round_results", participant: participant, round_index: round_index, results: results, match: local_assigns[:match] %>
     </td>
     <td class="<%= first %> is-bold">
