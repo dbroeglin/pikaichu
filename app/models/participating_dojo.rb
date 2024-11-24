@@ -88,6 +88,10 @@ class ParticipatingDojo < ApplicationRecord
     tachis.where(finished: false).first
   end
 
+  def previous_tachi
+    tachis.where(finished: true).last
+  end
+
   def create_tachis
     case taikai.form
     when 'individual', 'team', '2in1'

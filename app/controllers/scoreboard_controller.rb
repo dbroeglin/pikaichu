@@ -6,58 +6,70 @@ class ScoreboardController < ApplicationController
   def show
     @scoreboard = Scoreboard.find_by!(api_key: params[:api_key])
 
-    @tachi = @scoreboard.participating_dojo.current_tachi
+    @previous_tachi = @scoreboard.participating_dojo.previous_tachi
+    @current_tachi = @scoreboard.participating_dojo.current_tachi
     @taikai = @scoreboard.participating_dojo.taikai
 
-    # answer different formats
+    @display_tachi = if @previous_tachi && @previous_tachi.updated_at > @scoreboard.delay.seconds.ago
+                       @previous_tachi
+                     else
+                       @current_tachi
+                     end
+
     respond_to do |format|
       format.html do
       end
       format.json do
-        data = {
-          taikai: {
-            name: @taikai.name,
-            shortname: @taikai.shortname,
-            form: @taikai.form,
-            num_targets: @taikai.num_targets,
-            num_arrows: @taikai.num_arrows,
-            num_rounds: @taikai.num_rounds,
-            scoring: @taikai.scoring,
-            total_num_arrows: @taikai.total_num_arrows
-          },
-        }
-        if @tachi            
-          data.merge!(
-            tachi: {
-              index: @tachi.index,
-              round: @tachi.round,
-              participating_dojo: {
-                name: @scoreboard.participating_dojo.display_name,
-              },
-              participants: @tachi.participants.map do |participant|
-                score = participant.scores.first
-                {
-                  name: participant.display_name,
-                  index: participant.index,
-                  score: {
-                    results: score.results.round(@tachi.round).map do |result|
-                      {
-                        status: result.status,
-                        value: result.value,
-                        final: result.final
-                      }
-                    end
-                  },
-                  team: {
-                    shortname: participant.team.shortname,
-                    index: participant.team.index
-                  },
-                }
-              end
-            })
-        end
-        render json: data 
+        render json: format_tachi(@display_tachi)
       end
     end
+  end
+
+  def format_tachi(tachi)
+    data = {
+      taikai: {
+        name: @taikai.name,
+        shortname: @taikai.shortname,
+        form: @taikai.form,
+        num_targets: @taikai.num_targets,
+        num_arrows: @taikai.num_arrows,
+        num_rounds: @taikai.num_rounds,
+        scoring: @taikai.scoring,
+        total_num_arrows: @taikai.total_num_arrows
+      },
+    }
+    if tachi
+      data.merge!(
+        tachi: {
+          index: tachi.index,
+          round: tachi.round,
+          participating_dojo: {
+            name: @scoreboard.participating_dojo.display_name,
+          },
+          participants: tachi.participants.map do |participant|
+            score = participant.scores.first
+            {
+              name: participant.display_name,
+              index: participant.index,
+              score: {
+                results: score.results.round(tachi.round).map do |result|
+                  {
+                    status: result.status,
+                    value: result.value,
+                    final: result.final
+                  }
+                end
+              },
+              team: {
+                shortname: participant.team.shortname,
+                index: participant.team.index
+              },
+            }
+          end,
+          updated_at: tachi.updated_at
+        }
+      )
+    end
+    data
   end
 end
