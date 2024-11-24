@@ -28,6 +28,10 @@ class ParticipatingDojo < ApplicationRecord
            dependent: :destroy
 
   def draw
+    unless in_state?(:registration)
+      errors.add(:base, :no_change_if_taikai_is_marking)
+      return false
+    end
     case taikai.form
     when 'individual'
       participants.update_all(index: nil)
