@@ -4,7 +4,7 @@ class Tachi < ApplicationRecord
   belongs_to :participating_dojo
 
   def participants
-    participating_dojo.participants.in_groups_of(participating_dojo.taikai.num_targets)[index - 1]
+    participating_dojo.participants.in_groups_of(participating_dojo.taikai.num_targets, false)[index - 1]
   end
 
   def to_ascii(match_id = nil)
