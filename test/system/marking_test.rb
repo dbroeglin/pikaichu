@@ -11,8 +11,7 @@ class MarkingTest < ApplicationSystemTestCase
   Taikai.all.each do |taikai|
     test "visiting #{taikai.shortname} marking sheet" do
       taikai.current_user = users(:jean_bon)
-      taikai.transition_to! :registration
-      taikai.transition_to! :marking
+      transition_taikai_to(taikai, :marking)
       go_to_taikais
 
       find("td", exact_text: taikai.name).ancestor("tr").click_on("Feuille de marque")

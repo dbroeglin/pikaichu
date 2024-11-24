@@ -66,7 +66,6 @@ module TaikaisTestHelpers
     end
 
     if taikai.in_state? :registration
-      taikai.teams.each { |team| team.update(mixed: true) }
       taikai.participating_dojos.each(&:draw)
       taikai.transition_to!(:marking)
       return if state == :marking

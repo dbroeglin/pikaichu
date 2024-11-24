@@ -6,7 +6,7 @@ class TachiTest < ActiveSupport::TestCase
   extend TaikaisTestHelpers
 
   setup do
-    @taikai = taikais(:'2in1_dist_12_enteki')
+    @taikai = taikais(:'2in1_dist_12_kinteki')
     @taikai.current_user = users(:jean_bon)
     transition_taikai_to(@taikai, :marking)
   end
@@ -17,6 +17,16 @@ class TachiTest < ActiveSupport::TestCase
       assert_equal false, participating_dojo.current_tachi.finished
       assert_equal 1, participating_dojo.current_tachi.index
       assert_equal 1, participating_dojo.current_tachi.round
+    end
+  end
+
+  test "participants of each tachi" do
+    @taikai.participating_dojos.each do |participating_dojo|
+      participating_dojo.tachis.each do |tachi|
+        participants = participating_dojo.participants
+                                         .order(:index)[((tachi.index - 1) * @taikai.num_targets)..(tachi.index * @taikai.num_targets - 1)]
+        assert_equal participants, tachi.participants
+      end
     end
   end
 
@@ -67,7 +77,7 @@ class TachiTest < ActiveSupport::TestCase
       score.finalize_round(1)
     end
 
-    assert participating_dojo.tachis.first.finished
+    assert_equal true, participating_dojo.tachis.first.finished
 
     tachi = participating_dojo.current_tachi
     assert_not_nil tachi

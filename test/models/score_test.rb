@@ -11,7 +11,7 @@ class ScoreTest < ActiveSupport::TestCase
     # TODO: replace this by factories?
     @participant = participating_dojos(:participating_dojo1_2in1_dist_12_kinteki).participants.first
     @participant.team.build_empty_score
-    @participant.team.participants.each(&:build_empty_score_and_results)
+    @participant.taikai.create_tachi_and_scores
     @score = @participant.scores.first
   end
 

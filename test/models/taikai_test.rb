@@ -70,11 +70,7 @@ class TaikaiTest < ActiveSupport::TestCase
 
   test "cannot change once done" do
     @taikai.form = :'2in1'
-    @taikai.transition_to!(:registration)
-    @taikai.transition_to!(:marking)
-    TestDataService.finalize_scores(@taikai)
-    @taikai.transition_to!(:tie_break)
-    @taikai.transition_to!(:done)
+    transition_taikai_to(@taikai, :done)
 
     assert_raises ActiveRecord::RecordInvalid do
       @taikai.update!(shortname: "newshortname")
@@ -97,12 +93,9 @@ class TaikaiTest < ActiveSupport::TestCase
   test "cannot create part two without enough non-mixed teams" do
     @taikai = taikais(:'2in1_dist_12_kinteki')
     @taikai.current_user = users(:jean_bon)
-    @taikai.transition_to!(:registration)
+    transition_taikai_to(@taikai, :registration)
     @taikai.teams.each { |team| team.update(mixed: true) }
-    @taikai.transition_to!(:marking)
-    generate_taikai_results(@taikai)
-    @taikai.transition_to!(:tie_break)
-    @taikai.transition_to!(:done)
+    transition_taikai_to(@taikai, :done)
     new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
 
     assert_equal :not_enough_non_mixed_teams_html, new_taikai.errors.details[:base].first[:error]
@@ -115,6 +108,6 @@ class TaikaiTest < ActiveSupport::TestCase
 
     new_taikai = Taikai.create_from_2in1(@taikai.id, users(:jean_bon), "part2", "partie 2", 8)
 
-    assert_equal [], new_taikai.errors
+    assert new_taikai.errors.empty?
   end
 end

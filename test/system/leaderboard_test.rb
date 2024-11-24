@@ -19,8 +19,7 @@ class LeaderboardTest < ApplicationSystemTestCase
 
     test "visiting #{taikai.shortname} leaderboard" do
       taikai.current_user = users(:jean_bon)
-      taikai.transition_to! :registration
-      taikai.transition_to! :marking
+      transition_taikai_to(taikai, :marking)
       go_to_taikais
 
       find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")
@@ -39,8 +38,7 @@ class LeaderboardTest < ApplicationSystemTestCase
 
     test "visiting #{taikai.shortname} public leaderboard" do
       taikai.current_user = users(:jean_bon)
-      taikai.transition_to! :registration
-      taikai.transition_to! :marking
+      transition_taikai_to(taikai, :marking)
       go_to_taikais
 
       find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")

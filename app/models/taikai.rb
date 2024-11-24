@@ -194,7 +194,8 @@ class Taikai < ApplicationRecord
     old_teams = old_teams.reject(&:mixed).take(bracket_size)
     if old_teams.size < bracket_size
       new_taikai.errors.add(:base, :not_enough_non_mixed_teams_html,
-                            bracket_size: bracket_size)
+                            bracket_size: bracket_size,
+                            old_teams_size: old_teams.size)
       return new_taikai
     end
 
