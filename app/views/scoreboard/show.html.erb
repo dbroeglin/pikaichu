@@ -1,0 +1,16 @@
+<% if @display_tachi %>
+<table>
+  <tr>
+    <th>Participant</th>
+    <th>Score</th>
+  </tr>
+  <% @display_tachi.participants.each do |participant| %>
+    <tr>
+      <td><%= participant.display_name %></td>
+      <td><%= participant.score.hits %></td>
+    </tr>
+  <% end %>
+
+<% else %>
+NONE
+<% end %>
