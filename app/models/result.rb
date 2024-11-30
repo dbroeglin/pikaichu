@@ -27,8 +27,8 @@ class Result < ApplicationRecord
 
   def status_code
     {
-      'hit' => 'X',
-      'miss' => 'O',
+      'hit' => 'O',
+      'miss' => 'X',
       'unknown' => '?'
     }[status.to_s]
   end
