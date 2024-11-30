@@ -1,16 +1,20 @@
 <% if @display_tachi %>
-<table>
+<table class="table">
   <tr>
     <th>Participant</th>
-    <th>Score</th>
+    <th colspan="4">Score</th>
   </tr>
   <% @display_tachi.participants.each do |participant| %>
     <tr>
       <td><%= participant.display_name %></td>
-      <td><%= participant.score.hits %></td>
+      <% participant.score.results.round(@display_tachi.round).each do |result| %>
+      <td>
+        <% if !result.score.nil? %>
+          <%= result.status_code %>
+        <% end %>
+      </td>
+      <% end %>
     </tr>
   <% end %>
-
 <% else %>
-NONE
 <% end %>

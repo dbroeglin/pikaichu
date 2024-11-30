@@ -60,10 +60,6 @@ class ScoreboardController < ApplicationController
                   }
                 end
               },
-              team: {
-                shortname: participant.team.shortname,
-                index: participant.team.index
-              },
             }
           end,
           updated_at: tachi.updated_at
