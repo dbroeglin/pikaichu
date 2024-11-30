@@ -1,0 +1,27 @@
+<% @tachis.each do |tachi| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+      <%= tachi.id %> - <%= tachi.finished ? "Finished" : "Not finished" %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <th>Participant</th>
+          <th colspan="4">Score</th>
+        </tr>
+        <% tachi.participants.each do |participant| %>
+          <tr>
+            <td><%= participant.display_name %></td>
+            <% participant.score&.results&.round(tachi.round)&.each do |result| %>
+            <td>
+              <%= result.status_code %>
+            </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% end %>

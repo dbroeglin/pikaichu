@@ -61,6 +61,10 @@ class Match < ApplicationRecord
     initialize_team(2) if team2_change&.second
   end
 
+  before_commit do
+    Tachi.find_by(match_id: id).update!(finished: true) if decided?
+  end
+
   def select_winner(winner)
     raise "Winner can be only 1 or 2" if winner < 1 || winner > 2
 
@@ -68,7 +72,7 @@ class Match < ApplicationRecord
     ActiveRecord::Base.transaction do
       save!
       if level > 1
-        
+
         match = Match.find_by(taikai_id: taikai_id, level: level - 1, index: ((index - 1) / 2) + 1)
 
         if match.defined_results?

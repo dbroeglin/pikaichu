@@ -127,10 +127,10 @@ class Taikai < ApplicationRecord
   end
 
   def create_tachi_and_scores
+    participating_dojos.each(&:create_tachis)
     if form_matches?
       matches.each(&:build_empty_score_and_results)
     else
-      participating_dojos.each(&:create_tachis)
       teams.each(&:build_empty_score)
       participants.each(&:build_empty_score_and_results)
     end

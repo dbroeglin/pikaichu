@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_24_113530) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -197,6 +197,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_24_113530) do
     t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "match_id"
+    t.index ["match_id"], name: "index_tachis_on_match_id"
     t.index ["participating_dojo_id", "index", "round"], name: "index_tachis_on_participating_dojo_id_and_index_and_round", unique: true
     t.index ["participating_dojo_id"], name: "index_tachis_on_participating_dojo_id"
   end
@@ -301,6 +303,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_24_113530) do
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
+  add_foreign_key "tachis", "matches"
   add_foreign_key "tachis", "participating_dojos"
   add_foreign_key "taikai_events", "taikais"
   add_foreign_key "taikai_events", "users"

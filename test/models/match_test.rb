@@ -1,21 +1,26 @@
 require "test_helper"
 
 class MatchTest < ActiveSupport::TestCase
+  include TaikaisTestHelpers
+  extend TaikaisTestHelpers
+
   setup do
     @taikai = taikais(:matches_dist_4_enteki)
+    @taikai.current_user = users(:jean_bon)
+    transition_taikai_to(@taikai, :marking)
 
     @participating_dojo = @taikai.participating_dojos.first
     @team1 = @participating_dojo.teams[0]
     @team2 = @participating_dojo.teams[1]
     @team3 = @participating_dojo.teams[2]
 
-    @match = Match.find_by(taikai_id: @taikai.id, level: 2, index: 1).build_empty_score_and_results
+    @match = Match.find_by(taikai_id: @taikai.id, level: 2, index: 1)
     @match.update(
       team1_id: @team1.id,
       team2_id: @team2.id
     )
-    @target_match1 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 1).build_empty_score_and_results
-    @target_match2 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 2).build_empty_score_and_results
+    @target_match1 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 1)
+    @target_match2 = Match.find_by(taikai_id: @taikai.id, level: 1, index: 2)
   end
 
   test "select winner in quarter finals" do

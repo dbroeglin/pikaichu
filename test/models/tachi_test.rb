@@ -11,6 +11,63 @@ class TachiTest < ActiveSupport::TestCase
     transition_taikai_to(@taikai, :marking)
   end
 
+  test "tachi for matches taikai" do
+    @taikai = taikais('matches_dist_4_kinteki')
+    @taikai.current_user = users(:jean_bon)
+    transition_taikai_to(@taikai, :marking)
+    @taikai.participating_dojos.each do |participating_dojo|
+      assert_not_nil participating_dojo.current_tachi
+      assert_equal false, participating_dojo.current_tachi.finished
+      assert_equal 1, participating_dojo.current_tachi.index
+      assert_equal 3, participating_dojo.current_tachi.match.level
+      assert_equal 1, participating_dojo.current_tachi.match.index
+    end
+  end
+
+  test "tachi is finished when match is decided" do
+    @taikai = taikais('matches_dist_4_kinteki')
+    @taikai.current_user = users(:jean_bon)
+    transition_taikai_to(@taikai, :marking)
+    participating_dojo = @taikai.participating_dojos.first
+
+    @taikai.matches.where(level: 3).each do |match|
+      tachi = participating_dojo.current_tachi
+      assert_equal match, tachi.match
+      match.select_winner(1)
+      tachi.reload
+      assert_equal true, tachi.finished
+      assert_not_nil participating_dojo.current_tachi
+      assert_equal false, participating_dojo.current_tachi.finished
+      assert_not_equal tachi, participating_dojo.current_tachi
+      assert_participants(tachi, match)
+    end
+    @taikai.matches.where(level: 2).each do |match|
+      tachi = participating_dojo.current_tachi
+      assert_equal match, tachi.match
+      match.select_winner(1)
+      tachi.reload
+      assert_equal true, tachi.finished
+      assert_not_nil participating_dojo.current_tachi
+      assert_equal false, participating_dojo.current_tachi.finished
+      assert_not_equal tachi, participating_dojo.current_tachi
+      assert_participants(tachi, match)
+    end
+    (final, semi_final) = @taikai.matches.where(level: 1)
+    tachi = participating_dojo.current_tachi
+    assert_equal semi_final, tachi.match
+    tachi.match.select_winner(1)
+    tachi.reload
+    assert_equal true, tachi.finished
+    assert_participants(tachi, semi_final)
+
+    tachi = participating_dojo.current_tachi
+    assert_equal final, tachi.match
+    tachi.match.select_winner(1)
+    tachi.reload
+    assert_equal true, tachi.finished
+    assert_participants(tachi, final)
+  end
+
   test "initial tachi has index 1 and round 1" do
     @taikai.participating_dojos.each do |participating_dojo|
       assert_not_nil participating_dojo.current_tachi
@@ -84,5 +141,17 @@ class TachiTest < ActiveSupport::TestCase
     assert_equal false, tachi.finished
     assert_equal 2, tachi.index
     assert_equal 1, tachi.round
+  end
+
+  private
+
+  def assert_participants(tachi, match)
+    i = -1
+    assert_equal match.team1.participants[0], tachi.participants[i += 1]
+    assert_equal match.team1.participants[1], tachi.participants[i += 1]
+    assert_equal match.team1.participants[2], tachi.participants[i += 1]
+    assert_equal match.team2.participants[0], tachi.participants[i += 1]
+    assert_equal match.team2.participants[1], tachi.participants[i += 1]
+    assert_equal match.team2.participants[2], tachi.participants[i += 1]
   end
 end

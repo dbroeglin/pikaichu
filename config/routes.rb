@@ -61,6 +61,7 @@ Rails.application.routes.draw do
           end
         end
       end
+      resources :tachis, only: [:index]
     end
     resources :staffs
   end

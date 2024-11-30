@@ -105,7 +105,12 @@ class ParticipatingDojo < ApplicationRecord
         end
       end
     when 'matches'
-      raise 'Cannot create tachis for matches Taikais'
+      nb = taikai.matches.where("level IN(3, 2)").each_with_index do |match, index|
+        Tachi.create!(participating_dojo: self, round: 1, index: index + 1, match: match)
+      end.size
+      (final, semi_final) = taikai.matches.where(level: 1)
+      Tachi.create!(participating_dojo: self, round: 1, index: nb + 2, match: semi_final)
+      Tachi.create!(participating_dojo: self, round: 1, index: nb + 3, match: final)
     end
   end
 

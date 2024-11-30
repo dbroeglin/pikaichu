@@ -1,4 +1,5 @@
 require "test_helper"
+require 'taikais_test_helpers'
 
 class LeaderboardControllerTest < ActionDispatch::IntegrationTest
   include TaikaisTestHelpers
