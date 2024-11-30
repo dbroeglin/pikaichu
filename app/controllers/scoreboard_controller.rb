@@ -47,19 +47,23 @@ class ScoreboardController < ApplicationController
             name: @scoreboard.participating_dojo.display_name,
           },
           participants: tachi.participants.map do |participant|
-            score = participant.scores.first
+            score = participant.score(tachi.match_id)
             {
               name: participant.display_name,
               index: participant.index,
-              score: {
-                results: score.results.round(tachi.round).map do |result|
-                  {
-                    status: result.status,
-                    value: result.value,
-                    final: result.final
-                  }
-                end
-              },
+              score: if score
+                       {
+                         results: score.results.round(tachi.round).map do |result|
+                           {
+                             status: result.status,
+                             value: result.value,
+                             final: result.final
+                           }
+                         end
+                       }
+                     else
+                       { results: [] }
+                     end
             }
           end,
           updated_at: tachi.updated_at

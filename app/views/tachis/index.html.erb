@@ -14,7 +14,7 @@
         <% tachi.participants.each do |participant| %>
           <tr>
             <td><%= participant.display_name %></td>
-            <% participant.score&.results&.round(tachi.round)&.each do |result| %>
+            <% participant.score(tachi.match&.id)&.results&.round(tachi.round)&.each do |result| %>
             <td>
               <%= result.status_code %>
             </td>
