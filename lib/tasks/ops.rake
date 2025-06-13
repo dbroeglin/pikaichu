@@ -3,7 +3,7 @@ namespace :ops do
     var_name = "AZURE_DATABASE_URL"
     raise "Set the #{var_name} environment variable, pls." unless ENV[var_name]
 
-    "pg_dump --clean --if-exists --no-owner --no-privileges --no-comments --schema public #{ENV.fetch(var_name, nil)}"
+    "pg_dump --clean --if-exists --no-owner --no-privileges --no-comments --schema public '#{ENV.fetch(var_name, nil)}'"
   end
 
   def my_ip

@@ -166,6 +166,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
     t.index ["team_id"], name: "index_scores_on_team_id"
   end
 
+  create_table "shadans", force: :cascade do |t|
+    t.integer "index", null: false
+    t.integer "round", null: false
+    t.boolean "finished", default: false, null: false
+    t.bigint "participating_dojo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["participating_dojo_id", "index", "round"], name: "index_shadans_on_participating_dojo_id_and_index_and_round", unique: true
+    t.index ["participating_dojo_id"], name: "index_shadans_on_participating_dojo_id"
+  end
+
   create_table "staff_roles", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
@@ -289,24 +300,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   add_foreign_key "matches", "teams", column: "team1_id"
   add_foreign_key "matches", "teams", column: "team2_id"
   add_foreign_key "participants", "kyudojins"
-  add_foreign_key "participants", "participating_dojos"
   add_foreign_key "participants", "teams"
   add_foreign_key "participating_dojos", "dojos"
-  add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
   add_foreign_key "results", "scores"
-  add_foreign_key "scoreboards", "participating_dojos"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"
-  add_foreign_key "staffs", "participating_dojos"
+  add_foreign_key "shadans", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
   add_foreign_key "tachis", "matches"
-  add_foreign_key "tachis", "participating_dojos"
   add_foreign_key "taikai_events", "taikais"
   add_foreign_key "taikai_events", "users"
   add_foreign_key "taikai_transitions", "taikais"
-  add_foreign_key "teams", "participating_dojos"
 end
