@@ -5,11 +5,11 @@ matches_dist_4_kinteki:
   name: Matches Dist 4 Kinteki
   description: Omnis accusantium reprehenderit. Qui nostrum voluptatem. Quibusdam
     est nulla.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:29.336156000 Z
-  updated_at: 2024-11-09 13:29:29.336156000 Z
+  created_at: 2025-11-14 21:58:21.216529000 Z
+  updated_at: 2025-11-14 21:58:21.216529000 Z
   num_targets: 6
   total_num_arrows: 4
   tachi_size: 3
@@ -21,11 +21,11 @@ matches_dist_4_kinteki:
   shortname: 2in1-dist-12-kinteki
   name: 2in1 Dist 12 Kinteki
   description: Odit esse tempore. Quia maiores sint. Veniam aut sunt.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:30.389782000 Z
-  updated_at: 2024-11-09 13:29:30.389782000 Z
+  created_at: 2025-11-14 21:58:21.847027000 Z
+  updated_at: 2025-11-14 21:58:21.847027000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -37,11 +37,11 @@ individual_dist_12_kinteki:
   shortname: individual-dist-12-kinteki
   name: Individual Dist 12 Kinteki
   description: Hic autem veritatis. Porro et sed. Non quas porro.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:30.844342000 Z
-  updated_at: 2024-11-09 13:29:30.844342000 Z
+  created_at: 2025-11-14 21:58:22.302854000 Z
+  updated_at: 2025-11-14 21:58:22.302854000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -53,11 +53,11 @@ team_dist_12_kinteki:
   shortname: team-dist-12-kinteki
   name: Team Dist 12 Kinteki
   description: Rerum sit in. Sed voluptatum dolores. Quibusdam quis numquam.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:31.124040000 Z
-  updated_at: 2024-11-09 13:29:31.124040000 Z
+  created_at: 2025-11-14 21:58:22.632314000 Z
+  updated_at: 2025-11-14 21:58:22.632314000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -70,11 +70,11 @@ team_dist_12_kinteki:
   name: 2in1 Dist 20 Kinteki
   description: Voluptate veniam corporis. Mollitia cupiditate magnam. Magnam laboriosam
     explicabo.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:31.401995000 Z
-  updated_at: 2024-11-09 13:29:31.401995000 Z
+  created_at: 2025-11-14 21:58:23.075035000 Z
+  updated_at: 2025-11-14 21:58:23.075035000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -86,11 +86,11 @@ individual_dist_20_kinteki:
   shortname: individual-dist-20-kinteki
   name: Individual Dist 20 Kinteki
   description: Laborum repudiandae nesciunt. Est excepturi debitis. Eius et rerum.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:31.841334000 Z
-  updated_at: 2024-11-09 13:29:31.841334000 Z
+  created_at: 2025-11-14 21:58:23.515415000 Z
+  updated_at: 2025-11-14 21:58:23.515415000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -102,11 +102,11 @@ team_dist_20_kinteki:
   shortname: team-dist-20-kinteki
   name: Team Dist 20 Kinteki
   description: Et fugiat recusandae. Aperiam pariatur ea. Facere quia recusandae.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:32.188812000 Z
-  updated_at: 2024-11-09 13:29:32.188812000 Z
+  created_at: 2025-11-14 21:58:23.840892000 Z
+  updated_at: 2025-11-14 21:58:23.840892000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -119,11 +119,11 @@ matches_local_4_kinteki:
   name: Matches Local 4 Kinteki
   description: Labore perspiciatis voluptates. Et et perferendis. Perspiciatis itaque
     sit.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:32.523116000 Z
-  updated_at: 2024-11-09 13:29:32.523116000 Z
+  created_at: 2025-11-14 21:58:24.287428000 Z
+  updated_at: 2025-11-14 21:58:24.287428000 Z
   num_targets: 6
   total_num_arrows: 4
   tachi_size: 3
@@ -136,11 +136,11 @@ matches_local_4_kinteki:
   name: 2in1 Local 12 Kinteki
   description: Consectetur impedit vel. Dignissimos voluptates ut. Voluptatem quo
     quo.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:32.754191000 Z
-  updated_at: 2024-11-09 13:29:32.754191000 Z
+  created_at: 2025-11-14 21:58:24.611757000 Z
+  updated_at: 2025-11-14 21:58:24.611757000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -152,11 +152,11 @@ individual_local_12_kinteki:
   shortname: individual-local-12-kinteki
   name: Individual Local 12 Kinteki
   description: Eum et dolorem. Facilis esse fugit. Voluptatem ex aut.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:32.925148000 Z
-  updated_at: 2024-11-09 13:29:32.925148000 Z
+  created_at: 2025-11-14 21:58:24.876506000 Z
+  updated_at: 2025-11-14 21:58:24.876506000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -168,11 +168,11 @@ team_local_12_kinteki:
   shortname: team-local-12-kinteki
   name: Team Local 12 Kinteki
   description: Accusantium vitae quam. Quas dolorem id. Quisquam sed est.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:33.047358000 Z
-  updated_at: 2024-11-09 13:29:33.047358000 Z
+  created_at: 2025-11-14 21:58:25.078767000 Z
+  updated_at: 2025-11-14 21:58:25.078767000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -184,11 +184,11 @@ team_local_12_kinteki:
   shortname: 2in1-local-20-kinteki
   name: 2in1 Local 20 Kinteki
   description: Non deserunt impedit. Officia et dolore. Qui earum molestias.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:33.202448000 Z
-  updated_at: 2024-11-09 13:29:33.202448000 Z
+  created_at: 2025-11-14 21:58:25.332687000 Z
+  updated_at: 2025-11-14 21:58:25.332687000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -200,11 +200,11 @@ individual_local_20_kinteki:
   shortname: individual-local-20-kinteki
   name: Individual Local 20 Kinteki
   description: Molestias et voluptatem. Eligendi ad quae. Recusandae voluptatem tenetur.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:33.382836000 Z
-  updated_at: 2024-11-09 13:29:33.382836000 Z
+  created_at: 2025-11-14 21:58:25.598636000 Z
+  updated_at: 2025-11-14 21:58:25.598636000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -216,11 +216,11 @@ team_local_20_kinteki:
   shortname: team-local-20-kinteki
   name: Team Local 20 Kinteki
   description: In et corporis. Beatae quam vitae. Dolores a consequatur.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:33.499478000 Z
-  updated_at: 2024-11-09 13:29:33.499478000 Z
+  created_at: 2025-11-14 21:58:25.800949000 Z
+  updated_at: 2025-11-14 21:58:25.800949000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -232,11 +232,11 @@ matches_dist_4_enteki:
   shortname: matches-dist-4-enteki
   name: Matches Dist 4 Enteki
   description: Quo iusto expedita. Maiores omnis et. Minima optio velit.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:33.640240000 Z
-  updated_at: 2024-11-09 13:29:33.640240000 Z
+  created_at: 2025-11-14 21:58:26.055877000 Z
+  updated_at: 2025-11-14 21:58:26.055877000 Z
   num_targets: 6
   total_num_arrows: 4
   tachi_size: 3
@@ -248,11 +248,11 @@ matches_dist_4_enteki:
   shortname: 2in1-dist-12-enteki
   name: 2in1 Dist 12 Enteki
   description: Ut at voluptatem. Qui ipsa optio. Et dignissimos nostrum.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:33.936114000 Z
-  updated_at: 2024-11-09 13:29:33.936114000 Z
+  created_at: 2025-11-14 21:58:26.562092000 Z
+  updated_at: 2025-11-14 21:58:26.562092000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -264,11 +264,11 @@ individual_dist_12_enteki:
   shortname: individual-dist-12-enteki
   name: Individual Dist 12 Enteki
   description: Nemo est eligendi. Odit possimus neque. Consequatur veniam magnam.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:34.244017000 Z
-  updated_at: 2024-11-09 13:29:34.244017000 Z
+  created_at: 2025-11-14 21:58:27.007292000 Z
+  updated_at: 2025-11-14 21:58:27.007292000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -280,11 +280,11 @@ team_dist_12_enteki:
   shortname: team-dist-12-enteki
   name: Team Dist 12 Enteki
   description: Aut earum odio. Nisi vero et. Facilis iste repellat.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:34.450507000 Z
-  updated_at: 2024-11-09 13:29:34.450507000 Z
+  created_at: 2025-11-14 21:58:27.335686000 Z
+  updated_at: 2025-11-14 21:58:27.335686000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -296,11 +296,11 @@ team_dist_12_enteki:
   shortname: 2in1-dist-20-enteki
   name: 2in1 Dist 20 Enteki
   description: Eligendi iste facere. Perferendis dolorem omnis. Qui et voluptas.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:34.701894000 Z
-  updated_at: 2024-11-09 13:29:34.701894000 Z
+  created_at: 2025-11-14 21:58:27.773663000 Z
+  updated_at: 2025-11-14 21:58:27.773663000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -312,11 +312,11 @@ individual_dist_20_enteki:
   shortname: individual-dist-20-enteki
   name: Individual Dist 20 Enteki
   description: Veritatis possimus quod. Eveniet sint qui. Aspernatur veniam ad.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:34.967423000 Z
-  updated_at: 2024-11-09 13:29:34.967423000 Z
+  created_at: 2025-11-14 21:58:28.218388000 Z
+  updated_at: 2025-11-14 21:58:28.218388000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -328,11 +328,11 @@ team_dist_20_enteki:
   shortname: team-dist-20-enteki
   name: Team Dist 20 Enteki
   description: Ut voluptatem sit. Aut impedit quae. Hic voluptatem reiciendis.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: true
-  created_at: 2024-11-09 13:29:35.190296000 Z
-  updated_at: 2024-11-09 13:29:35.190296000 Z
+  created_at: 2025-11-14 21:58:28.613013000 Z
+  updated_at: 2025-11-14 21:58:28.613013000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -344,11 +344,11 @@ matches_local_4_enteki:
   shortname: matches-local-4-enteki
   name: Matches Local 4 Enteki
   description: Quia beatae iusto. Quam aut est. Et minus nesciunt.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:35.517147000 Z
-  updated_at: 2024-11-09 13:29:35.517147000 Z
+  created_at: 2025-11-14 21:58:29.062911000 Z
+  updated_at: 2025-11-14 21:58:29.062911000 Z
   num_targets: 6
   total_num_arrows: 4
   tachi_size: 3
@@ -360,11 +360,11 @@ matches_local_4_enteki:
   shortname: 2in1-local-12-enteki
   name: 2in1 Local 12 Enteki
   description: Officia ut nihil. A ab excepturi. Ipsa nobis rerum.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:35.702474000 Z
-  updated_at: 2024-11-09 13:29:35.702474000 Z
+  created_at: 2025-11-14 21:58:29.381065000 Z
+  updated_at: 2025-11-14 21:58:29.381065000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -376,11 +376,11 @@ individual_local_12_enteki:
   shortname: individual-local-12-enteki
   name: Individual Local 12 Enteki
   description: Labore at cum. Quam rerum est. Vero recusandae tempore.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:35.846347000 Z
-  updated_at: 2024-11-09 13:29:35.846347000 Z
+  created_at: 2025-11-14 21:58:29.628939000 Z
+  updated_at: 2025-11-14 21:58:29.628939000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -392,11 +392,11 @@ team_local_12_enteki:
   shortname: team-local-12-enteki
   name: Team Local 12 Enteki
   description: Cumque explicabo error. Ipsum voluptates et. Veritatis velit sit.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:35.967547000 Z
-  updated_at: 2024-11-09 13:29:35.967547000 Z
+  created_at: 2025-11-14 21:58:29.827581000 Z
+  updated_at: 2025-11-14 21:58:29.827581000 Z
   num_targets: 6
   total_num_arrows: 12
   tachi_size: 3
@@ -408,11 +408,11 @@ team_local_12_enteki:
   shortname: 2in1-local-20-enteki
   name: 2in1 Local 20 Enteki
   description: Quia iure voluptas. Non dolorem molestiae. Sed esse dolores.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:36.117120000 Z
-  updated_at: 2024-11-09 13:29:36.117120000 Z
+  created_at: 2025-11-14 21:58:30.081000000 Z
+  updated_at: 2025-11-14 21:58:30.081000000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -424,11 +424,11 @@ individual_local_20_enteki:
   shortname: individual-local-20-enteki
   name: Individual Local 20 Enteki
   description: Amet omnis est. Odit corporis et. Id dolor quia.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:36.252436000 Z
-  updated_at: 2024-11-09 13:29:36.252436000 Z
+  created_at: 2025-11-14 21:58:30.330744000 Z
+  updated_at: 2025-11-14 21:58:30.330744000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
@@ -440,11 +440,11 @@ team_local_20_enteki:
   shortname: team-local-20-enteki
   name: Team Local 20 Enteki
   description: Consectetur et velit. Enim eos nihil. Ipsum nisi qui.
-  start_date: 2024-11-14
-  end_date: 2024-11-14
+  start_date: 2025-11-19
+  end_date: 2025-11-19
   distributed: false
-  created_at: 2024-11-09 13:29:36.374898000 Z
-  updated_at: 2024-11-09 13:29:36.374898000 Z
+  created_at: 2025-11-14 21:58:30.524769000 Z
+  updated_at: 2025-11-14 21:58:30.524769000 Z
   num_targets: 6
   total_num_arrows: 20
   tachi_size: 3
