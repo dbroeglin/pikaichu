@@ -56,7 +56,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'main'
 
 gem "pundit"
 
@@ -66,7 +66,7 @@ gem 'activerecord-postgres_enum', "~> 2.0"
 
 gem 'country_select'
 
-gem 'caxlsx', "3.1.0"
+gem 'caxlsx'
 
 gem 'caxlsx_rails'
 
