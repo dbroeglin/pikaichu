@@ -8,7 +8,7 @@
     "bulma": "^0.9.3",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.5",
-    "esbuild": "^0.14.8",
+    "esbuild": "^0.25.0",
     "sass": "^1.45.1",
     "sortablejs": "^1.14.0",
     "stimulus-autocomplete": "^3.0.0-rc.5"
