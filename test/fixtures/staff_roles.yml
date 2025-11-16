@@ -2,88 +2,88 @@
 taikai_admin:
   id: 1
   code: taikai_admin
-  created_at: 2025-11-14 21:58:20.769795000 Z
-  updated_at: 2025-11-14 21:58:20.769795000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Administrateur
-    en: Administrator
+  created_at: 2025-11-16 20:03:33.552260000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de taikai_admin
     en: Description of taikai_admin
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Administrateur
+    en: Administrator
+  updated_at: 2025-11-16 20:03:33.552260000 Z
 dojo_admin:
   id: 2
   code: dojo_admin
-  created_at: 2025-11-14 21:58:20.780893000 Z
-  updated_at: 2025-11-14 21:58:20.780893000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Administrateur de club
-    en: Dojo Administrator
+  created_at: 2025-11-16 20:03:33.560641000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de dojo_admin
     en: Description of dojo_admin
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Administrateur de club
+    en: Dojo Administrator
+  updated_at: 2025-11-16 20:03:33.560641000 Z
 chairman:
   id: 3
   code: chairman
-  created_at: 2025-11-14 21:58:20.789787000 Z
-  updated_at: 2025-11-14 21:58:20.789787000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Directeur du tournoi
-    en: Chairman
+  created_at: 2025-11-16 20:03:33.568281000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de chairman
     en: Description of chairman
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Directeur du tournoi
+    en: Chairman
+  updated_at: 2025-11-16 20:03:33.568281000 Z
 marking_referee:
   id: 4
   code: marking_referee
-  created_at: 2025-11-14 21:58:20.797582000 Z
-  updated_at: 2025-11-14 21:58:20.797582000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Enregistreur
-    en: Marking Referee
+  created_at: 2025-11-16 20:03:33.575860000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de marking_referee
     en: Description of marking_referee
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Enregistreur
+    en: Marking Referee
+  updated_at: 2025-11-16 20:03:33.575860000 Z
 shajo_referee:
   id: 5
   code: shajo_referee
-  created_at: 2025-11-14 21:58:20.805160000 Z
-  updated_at: 2025-11-14 21:58:20.805160000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Juge de shajo
-    en: Shajo Referee
+  created_at: 2025-11-16 20:03:33.583547000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de shajo_referee
     en: Description of shajo_referee
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Juge de shajo
+    en: Shajo Referee
+  updated_at: 2025-11-16 20:03:33.583547000 Z
 yatori:
   id: 6
   code: yatori
-  created_at: 2025-11-14 21:58:20.812800000 Z
-  updated_at: 2025-11-14 21:58:20.812800000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Yatori
-    en: Yatori
+  created_at: 2025-11-16 20:03:33.591218000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de yatori
     en: Description of yatori
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Yatori
+    en: Yatori
+  updated_at: 2025-11-16 20:03:33.591218000 Z
 target_referee:
   id: 7
   code: target_referee
-  created_at: 2025-11-14 21:58:20.820739000 Z
-  updated_at: 2025-11-14 21:58:20.820739000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Juge de Cible
-    en: Target Referee
+  created_at: 2025-11-16 20:03:33.598930000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de target_referee
     en: Description of target_referee
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Juge de Cible
+    en: Target Referee
+  updated_at: 2025-11-16 20:03:33.598930000 Z
 operations_chairman:
   id: 8
   code: operations_chairman
-  created_at: 2025-11-14 21:58:20.828703000 Z
-  updated_at: 2025-11-14 21:58:20.828703000 Z
-  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Responsable Logistique
-    en: Operations Chairman
+  created_at: 2025-11-16 20:03:33.606499000 Z
   description: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
     fr: Description de operations_chairman
     en: Description of operations_chairman
+  label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    fr: Responsable Logistique
+    en: Operations Chairman
+  updated_at: 2025-11-16 20:03:33.606499000 Z

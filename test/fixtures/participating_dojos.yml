@@ -1,295 +1,295 @@
 ---
 participating_dojo1_matches_dist_4_kinteki:
   id: 1
+  created_at: 2025-11-16 20:03:34.112681000 Z
   display_name: Participating Dojo1 Matches Dist 4 Kinteki
-  taikai_id: 1
   dojo_id: 1
-  created_at: 2025-11-14 21:58:21.265247000 Z
-  updated_at: 2025-11-14 21:58:21.265247000 Z
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.112681000 Z
 participating_dojo2_matches_dist_4_kinteki:
   id: 2
+  created_at: 2025-11-16 20:03:34.401208000 Z
   display_name: Participating Dojo2 Matches Dist 4 Kinteki
-  taikai_id: 1
   dojo_id: 2
-  created_at: 2025-11-14 21:58:21.512850000 Z
-  updated_at: 2025-11-14 21:58:21.512850000 Z
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.401208000 Z
 participating_dojo1_2in1_dist_12_kinteki:
   id: 3
+  created_at: 2025-11-16 20:03:34.759908000 Z
   display_name: Participating Dojo1 2in1 Dist 12 Kinteki
-  taikai_id: 2
   dojo_id: 1
-  created_at: 2025-11-14 21:58:21.861533000 Z
-  updated_at: 2025-11-14 21:58:21.861533000 Z
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:34.759908000 Z
 participating_dojo2_2in1_dist_12_kinteki:
   id: 4
+  created_at: 2025-11-16 20:03:34.953383000 Z
   display_name: Participating Dojo2 2in1 Dist 12 Kinteki
-  taikai_id: 2
   dojo_id: 2
-  created_at: 2025-11-14 21:58:22.060121000 Z
-  updated_at: 2025-11-14 21:58:22.060121000 Z
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:34.953383000 Z
 participating_dojo1_individual_dist_12_kinteki:
   id: 5
+  created_at: 2025-11-16 20:03:35.206865000 Z
   display_name: Participating Dojo1 Individual Dist 12 Kinteki
-  taikai_id: 3
   dojo_id: 1
-  created_at: 2025-11-14 21:58:22.317642000 Z
-  updated_at: 2025-11-14 21:58:22.317642000 Z
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.206865000 Z
 participating_dojo2_individual_dist_12_kinteki:
   id: 6
+  created_at: 2025-11-16 20:03:35.344148000 Z
   display_name: Participating Dojo2 Individual Dist 12 Kinteki
-  taikai_id: 3
   dojo_id: 2
-  created_at: 2025-11-14 21:58:22.453278000 Z
-  updated_at: 2025-11-14 21:58:22.453278000 Z
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.344148000 Z
 participating_dojo1_team_dist_12_kinteki:
   id: 7
+  created_at: 2025-11-16 20:03:35.537926000 Z
   display_name: Participating Dojo1 Team Dist 12 Kinteki
-  taikai_id: 4
   dojo_id: 1
-  created_at: 2025-11-14 21:58:22.647029000 Z
-  updated_at: 2025-11-14 21:58:22.647029000 Z
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.537926000 Z
 participating_dojo2_team_dist_12_kinteki:
   id: 8
+  created_at: 2025-11-16 20:03:35.733951000 Z
   display_name: Participating Dojo2 Team Dist 12 Kinteki
-  taikai_id: 4
   dojo_id: 2
-  created_at: 2025-11-14 21:58:22.838583000 Z
-  updated_at: 2025-11-14 21:58:22.838583000 Z
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.733951000 Z
 participating_dojo1_2in1_dist_20_kinteki:
   id: 9
+  created_at: 2025-11-16 20:03:35.990946000 Z
   display_name: Participating Dojo1 2in1 Dist 20 Kinteki
-  taikai_id: 5
   dojo_id: 1
-  created_at: 2025-11-14 21:58:23.088694000 Z
-  updated_at: 2025-11-14 21:58:23.088694000 Z
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:35.990946000 Z
 participating_dojo2_2in1_dist_20_kinteki:
   id: 10
+  created_at: 2025-11-16 20:03:36.182736000 Z
   display_name: Participating Dojo2 2in1 Dist 20 Kinteki
-  taikai_id: 5
   dojo_id: 2
-  created_at: 2025-11-14 21:58:23.277018000 Z
-  updated_at: 2025-11-14 21:58:23.277018000 Z
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:36.182736000 Z
 participating_dojo1_individual_dist_20_kinteki:
   id: 11
+  created_at: 2025-11-16 20:03:36.443779000 Z
   display_name: Participating Dojo1 Individual Dist 20 Kinteki
-  taikai_id: 6
   dojo_id: 1
-  created_at: 2025-11-14 21:58:23.530377000 Z
-  updated_at: 2025-11-14 21:58:23.530377000 Z
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.443779000 Z
 participating_dojo2_individual_dist_20_kinteki:
   id: 12
+  created_at: 2025-11-16 20:03:36.577248000 Z
   display_name: Participating Dojo2 Individual Dist 20 Kinteki
-  taikai_id: 6
   dojo_id: 2
-  created_at: 2025-11-14 21:58:23.659317000 Z
-  updated_at: 2025-11-14 21:58:23.659317000 Z
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.577248000 Z
 participating_dojo1_team_dist_20_kinteki:
   id: 13
+  created_at: 2025-11-16 20:03:36.773701000 Z
   display_name: Participating Dojo1 Team Dist 20 Kinteki
-  taikai_id: 7
   dojo_id: 1
-  created_at: 2025-11-14 21:58:23.855725000 Z
-  updated_at: 2025-11-14 21:58:23.855725000 Z
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:36.773701000 Z
 participating_dojo2_team_dist_20_kinteki:
   id: 14
+  created_at: 2025-11-16 20:03:36.968626000 Z
   display_name: Participating Dojo2 Team Dist 20 Kinteki
-  taikai_id: 7
   dojo_id: 2
-  created_at: 2025-11-14 21:58:24.044715000 Z
-  updated_at: 2025-11-14 21:58:24.044715000 Z
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:36.968626000 Z
 participating_dojo1_matches_local_4_kinteki:
   id: 15
+  created_at: 2025-11-16 20:03:37.222642000 Z
   display_name: Participating Dojo1 Matches Local 4 Kinteki
-  taikai_id: 8
   dojo_id: 1
-  created_at: 2025-11-14 21:58:24.302040000 Z
-  updated_at: 2025-11-14 21:58:24.302040000 Z
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.222642000 Z
 participating_dojo1_2in1_local_12_kinteki:
   id: 16
+  created_at: 2025-11-16 20:03:37.545938000 Z
   display_name: Participating Dojo1 2in1 Local 12 Kinteki
-  taikai_id: 9
   dojo_id: 1
-  created_at: 2025-11-14 21:58:24.626824000 Z
-  updated_at: 2025-11-14 21:58:24.626824000 Z
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.545938000 Z
 participating_dojo1_individual_local_12_kinteki:
   id: 17
+  created_at: 2025-11-16 20:03:37.838151000 Z
   display_name: Participating Dojo1 Individual Local 12 Kinteki
-  taikai_id: 10
   dojo_id: 1
-  created_at: 2025-11-14 21:58:24.890802000 Z
-  updated_at: 2025-11-14 21:58:24.890802000 Z
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:37.838151000 Z
 participating_dojo1_team_local_12_kinteki:
   id: 18
+  created_at: 2025-11-16 20:03:38.058418000 Z
   display_name: Participating Dojo1 Team Local 12 Kinteki
-  taikai_id: 11
   dojo_id: 1
-  created_at: 2025-11-14 21:58:25.092604000 Z
-  updated_at: 2025-11-14 21:58:25.092604000 Z
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.058418000 Z
 participating_dojo1_2in1_local_20_kinteki:
   id: 19
+  created_at: 2025-11-16 20:03:38.316660000 Z
   display_name: Participating Dojo1 2in1 Local 20 Kinteki
-  taikai_id: 12
   dojo_id: 1
-  created_at: 2025-11-14 21:58:25.348061000 Z
-  updated_at: 2025-11-14 21:58:25.348061000 Z
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.316660000 Z
 participating_dojo1_individual_local_20_kinteki:
   id: 20
+  created_at: 2025-11-16 20:03:38.571070000 Z
   display_name: Participating Dojo1 Individual Local 20 Kinteki
-  taikai_id: 13
   dojo_id: 1
-  created_at: 2025-11-14 21:58:25.614601000 Z
-  updated_at: 2025-11-14 21:58:25.614601000 Z
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.571070000 Z
 participating_dojo1_team_local_20_kinteki:
   id: 21
+  created_at: 2025-11-16 20:03:38.768990000 Z
   display_name: Participating Dojo1 Team Local 20 Kinteki
-  taikai_id: 14
   dojo_id: 1
-  created_at: 2025-11-14 21:58:25.814710000 Z
-  updated_at: 2025-11-14 21:58:25.814710000 Z
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.768990000 Z
 participating_dojo1_matches_dist_4_enteki:
   id: 22
+  created_at: 2025-11-16 20:03:39.022469000 Z
   display_name: Participating Dojo1 Matches Dist 4 Enteki
-  taikai_id: 15
   dojo_id: 1
-  created_at: 2025-11-14 21:58:26.071081000 Z
-  updated_at: 2025-11-14 21:58:26.071081000 Z
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.022469000 Z
 participating_dojo2_matches_dist_4_enteki:
   id: 23
+  created_at: 2025-11-16 20:03:39.217160000 Z
   display_name: Participating Dojo2 Matches Dist 4 Enteki
-  taikai_id: 15
   dojo_id: 2
-  created_at: 2025-11-14 21:58:26.260322000 Z
-  updated_at: 2025-11-14 21:58:26.260322000 Z
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.217160000 Z
 participating_dojo1_2in1_dist_12_enteki:
   id: 24
+  created_at: 2025-11-16 20:03:39.539837000 Z
   display_name: Participating Dojo1 2in1 Dist 12 Enteki
-  taikai_id: 16
   dojo_id: 1
-  created_at: 2025-11-14 21:58:26.579327000 Z
-  updated_at: 2025-11-14 21:58:26.579327000 Z
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:39.539837000 Z
 participating_dojo2_2in1_dist_12_enteki:
   id: 25
+  created_at: 2025-11-16 20:03:39.733290000 Z
   display_name: Participating Dojo2 2in1 Dist 12 Enteki
-  taikai_id: 16
   dojo_id: 2
-  created_at: 2025-11-14 21:58:26.770794000 Z
-  updated_at: 2025-11-14 21:58:26.770794000 Z
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:39.733290000 Z
 participating_dojo1_individual_dist_12_enteki:
   id: 26
+  created_at: 2025-11-16 20:03:40.069143000 Z
   display_name: Participating Dojo1 Individual Dist 12 Enteki
-  taikai_id: 17
   dojo_id: 1
-  created_at: 2025-11-14 21:58:27.021301000 Z
-  updated_at: 2025-11-14 21:58:27.021301000 Z
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.069143000 Z
 participating_dojo2_individual_dist_12_enteki:
   id: 27
+  created_at: 2025-11-16 20:03:40.204908000 Z
   display_name: Participating Dojo2 Individual Dist 12 Enteki
-  taikai_id: 17
   dojo_id: 2
-  created_at: 2025-11-14 21:58:27.155124000 Z
-  updated_at: 2025-11-14 21:58:27.155124000 Z
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.204908000 Z
 participating_dojo1_team_dist_12_enteki:
   id: 28
+  created_at: 2025-11-16 20:03:40.400955000 Z
   display_name: Participating Dojo1 Team Dist 12 Enteki
-  taikai_id: 18
   dojo_id: 1
-  created_at: 2025-11-14 21:58:27.350453000 Z
-  updated_at: 2025-11-14 21:58:27.350453000 Z
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.400955000 Z
 participating_dojo2_team_dist_12_enteki:
   id: 29
+  created_at: 2025-11-16 20:03:40.597216000 Z
   display_name: Participating Dojo2 Team Dist 12 Enteki
-  taikai_id: 18
   dojo_id: 2
-  created_at: 2025-11-14 21:58:27.540932000 Z
-  updated_at: 2025-11-14 21:58:27.540932000 Z
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.597216000 Z
 participating_dojo1_2in1_dist_20_enteki:
   id: 30
+  created_at: 2025-11-16 20:03:40.908594000 Z
   display_name: Participating Dojo1 2in1 Dist 20 Enteki
-  taikai_id: 19
   dojo_id: 1
-  created_at: 2025-11-14 21:58:27.788110000 Z
-  updated_at: 2025-11-14 21:58:27.788110000 Z
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:40.908594000 Z
 participating_dojo2_2in1_dist_20_enteki:
   id: 31
+  created_at: 2025-11-16 20:03:41.101326000 Z
   display_name: Participating Dojo2 2in1 Dist 20 Enteki
-  taikai_id: 19
   dojo_id: 2
-  created_at: 2025-11-14 21:58:27.979358000 Z
-  updated_at: 2025-11-14 21:58:27.979358000 Z
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:41.101326000 Z
 participating_dojo1_individual_dist_20_enteki:
   id: 32
+  created_at: 2025-11-16 20:03:41.361909000 Z
   display_name: Participating Dojo1 Individual Dist 20 Enteki
-  taikai_id: 20
   dojo_id: 1
-  created_at: 2025-11-14 21:58:28.234495000 Z
-  updated_at: 2025-11-14 21:58:28.234495000 Z
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.361909000 Z
 participating_dojo2_individual_dist_20_enteki:
   id: 33
+  created_at: 2025-11-16 20:03:41.500245000 Z
   display_name: Participating Dojo2 Individual Dist 20 Enteki
-  taikai_id: 20
   dojo_id: 2
-  created_at: 2025-11-14 21:58:28.369931000 Z
-  updated_at: 2025-11-14 21:58:28.369931000 Z
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.500245000 Z
 participating_dojo1_team_dist_20_enteki:
   id: 34
+  created_at: 2025-11-16 20:03:41.705049000 Z
   display_name: Participating Dojo1 Team Dist 20 Enteki
-  taikai_id: 21
   dojo_id: 1
-  created_at: 2025-11-14 21:58:28.628119000 Z
-  updated_at: 2025-11-14 21:58:28.628119000 Z
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:41.705049000 Z
 participating_dojo2_team_dist_20_enteki:
   id: 35
+  created_at: 2025-11-16 20:03:41.897444000 Z
   display_name: Participating Dojo2 Team Dist 20 Enteki
-  taikai_id: 21
   dojo_id: 2
-  created_at: 2025-11-14 21:58:28.823647000 Z
-  updated_at: 2025-11-14 21:58:28.823647000 Z
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:41.897444000 Z
 participating_dojo1_matches_local_4_enteki:
   id: 36
+  created_at: 2025-11-16 20:03:42.153967000 Z
   display_name: Participating Dojo1 Matches Local 4 Enteki
-  taikai_id: 22
   dojo_id: 1
-  created_at: 2025-11-14 21:58:29.076471000 Z
-  updated_at: 2025-11-14 21:58:29.076471000 Z
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.153967000 Z
 participating_dojo1_2in1_local_12_enteki:
   id: 37
+  created_at: 2025-11-16 20:03:42.491879000 Z
   display_name: Participating Dojo1 2in1 Local 12 Enteki
-  taikai_id: 23
   dojo_id: 1
-  created_at: 2025-11-14 21:58:29.395246000 Z
-  updated_at: 2025-11-14 21:58:29.395246000 Z
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.491879000 Z
 participating_dojo1_individual_local_12_enteki:
   id: 38
+  created_at: 2025-11-16 20:03:42.808825000 Z
   display_name: Participating Dojo1 Individual Local 12 Enteki
-  taikai_id: 24
   dojo_id: 1
-  created_at: 2025-11-14 21:58:29.644754000 Z
-  updated_at: 2025-11-14 21:58:29.644754000 Z
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:42.808825000 Z
 participating_dojo1_team_local_12_enteki:
   id: 39
+  created_at: 2025-11-16 20:03:43.157309000 Z
   display_name: Participating Dojo1 Team Local 12 Enteki
-  taikai_id: 25
   dojo_id: 1
-  created_at: 2025-11-14 21:58:29.841293000 Z
-  updated_at: 2025-11-14 21:58:29.841293000 Z
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.157309000 Z
 participating_dojo1_2in1_local_20_enteki:
   id: 40
+  created_at: 2025-11-16 20:03:43.439516000 Z
   display_name: Participating Dojo1 2in1 Local 20 Enteki
-  taikai_id: 26
   dojo_id: 1
-  created_at: 2025-11-14 21:58:30.094593000 Z
-  updated_at: 2025-11-14 21:58:30.094593000 Z
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.439516000 Z
 participating_dojo1_individual_local_20_enteki:
   id: 41
+  created_at: 2025-11-16 20:03:43.702539000 Z
   display_name: Participating Dojo1 Individual Local 20 Enteki
-  taikai_id: 27
   dojo_id: 1
-  created_at: 2025-11-14 21:58:30.344348000 Z
-  updated_at: 2025-11-14 21:58:30.344348000 Z
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.702539000 Z
 participating_dojo1_team_local_20_enteki:
   id: 42
+  created_at: 2025-11-16 20:03:43.901955000 Z
   display_name: Participating Dojo1 Team Local 20 Enteki
-  taikai_id: 28
   dojo_id: 1
-  created_at: 2025-11-14 21:58:30.540725000 Z
-  updated_at: 2025-11-14 21:58:30.540725000 Z
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:43.901955000 Z

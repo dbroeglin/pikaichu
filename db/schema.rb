@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
+ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_enum :result_status, [
+    "hit",
+    "miss",
+    "unknown",
+  ], force: :cascade
+
+  create_enum :taikai_form, [
+    "individual",
+    "team",
+    "2in1",
+    "matches",
+  ], force: :cascade
+
+  create_enum :taikai_scoring, [
+    "kinteki",
+    "enteki",
+  ], force: :cascade
 
   create_enum :result_status, [
     "hit",
@@ -33,20 +51,20 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   ], force: :cascade
 
   create_table "audits", force: :cascade do |t|
-    t.integer "auditable_id"
-    t.string "auditable_type"
+    t.string "action"
     t.integer "associated_id"
     t.string "associated_type"
+    t.integer "auditable_id"
+    t.string "auditable_type"
+    t.jsonb "audited_changes"
+    t.string "comment"
+    t.datetime "created_at"
+    t.string "remote_address"
+    t.string "request_uuid"
     t.integer "user_id"
     t.string "user_type"
     t.string "username"
-    t.string "action"
-    t.jsonb "audited_changes"
     t.integer "version", default: 0
-    t.string "comment"
-    t.string "remote_address"
-    t.string "request_uuid"
-    t.datetime "created_at"
     t.index ["associated_type", "associated_id"], name: "associated_index"
     t.index ["auditable_type", "auditable_id", "version"], name: "auditable_index"
     t.index ["created_at"], name: "index_audits_on_created_at"
@@ -55,55 +73,55 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   end
 
   create_table "dojos", force: :cascade do |t|
-    t.string "shortname"
-    t.string "name"
     t.string "city"
     t.string "country_code"
     t.datetime "created_at", null: false
+    t.string "name"
+    t.string "shortname"
     t.datetime "updated_at", null: false
     t.index ["shortname"], name: "by_shortname", unique: true
   end
 
   create_table "kyudojins", force: :cascade do |t|
-    t.string "lastname"
-    t.string "firstname"
-    t.string "license_id"
-    t.string "federation_country_code"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "federation_club"
+    t.string "federation_country_code"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "license_id"
+    t.datetime "updated_at", null: false
     t.index ["firstname", "lastname"], name: "by_firstname_lastname"
     t.index ["lastname", "firstname"], name: "by_lastname_firstname"
     t.index ["license_id"], name: "by_license_id", unique: true
   end
 
   create_table "matches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "index", limit: 2, null: false
+    t.integer "level", limit: 2, null: false
     t.bigint "taikai_id", null: false
     t.bigint "team1_id"
     t.bigint "team2_id"
-    t.integer "level", limit: 2, null: false
-    t.integer "index", limit: 2, null: false
-    t.integer "winner", limit: 2
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "winner", limit: 2
     t.index ["taikai_id"], name: "index_matches_on_taikai_id"
     t.index ["team1_id"], name: "index_matches_on_team1_id"
     t.index ["team2_id"], name: "index_matches_on_team2_id"
   end
 
   create_table "participants", force: :cascade do |t|
-    t.integer "index"
+    t.string "club", default: "", null: false
+    t.datetime "created_at", null: false
     t.string "firstname"
+    t.integer "index"
+    t.integer "index_in_team"
+    t.integer "intermediate_rank"
+    t.bigint "kyudojin_id"
     t.string "lastname"
     t.bigint "participating_dojo_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "team_id"
-    t.integer "index_in_team"
-    t.bigint "kyudojin_id"
-    t.string "club", default: "", null: false
     t.integer "rank"
-    t.integer "intermediate_rank"
+    t.bigint "team_id"
+    t.datetime "updated_at", null: false
     t.index ["kyudojin_id"], name: "index_participants_on_kyudojin_id"
     t.index ["participating_dojo_id", "index"], name: "participants_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "kyudojin_id"], name: "by_participants_participating_dojo_kyudojin", unique: true
@@ -113,10 +131,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   end
 
   create_table "participating_dojos", force: :cascade do |t|
-    t.string "display_name"
-    t.bigint "taikai_id", null: false
-    t.bigint "dojo_id", null: false
     t.datetime "created_at", null: false
+    t.string "display_name"
+    t.bigint "dojo_id", null: false
+    t.bigint "taikai_id", null: false
     t.datetime "updated_at", null: false
     t.index ["dojo_id"], name: "index_participating_dojos_on_dojo_id"
     t.index ["taikai_id", "dojo_id"], name: "by_taikai_dojo", unique: true
@@ -124,41 +142,41 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.integer "round"
-    t.integer "index"
-    t.enum "status", enum_type: "result_status"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "final", default: false, null: false
+    t.integer "index"
     t.bigint "match_id"
-    t.integer "value"
-    t.bigint "score_id", null: false
     t.boolean "overriden", default: false
+    t.integer "round"
+    t.bigint "score_id", null: false
+    t.enum "status", enum_type: "result_status"
+    t.datetime "updated_at", null: false
+    t.integer "value"
     t.index ["match_id"], name: "index_results_on_match_id"
     t.index ["score_id"], name: "index_results_on_score_id"
   end
 
   create_table "scoreboards", force: :cascade do |t|
     t.string "api_key"
+    t.datetime "created_at", null: false
+    t.integer "delay", default: 15, null: false
     t.integer "nb_participants"
     t.bigint "participating_dojo_id"
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "delay", default: 15, null: false
     t.index ["api_key"], name: "index_scoreboards_on_api_key", unique: true
     t.index ["participating_dojo_id"], name: "index_scoreboards_on_participating_dojo_id"
   end
 
   create_table "scores", force: :cascade do |t|
-    t.bigint "participant_id"
-    t.bigint "team_id"
-    t.bigint "match_id"
-    t.integer "hits", default: 0
-    t.integer "value", default: 0
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "hits", default: 0
     t.integer "intermediate_hits", default: 0
     t.integer "intermediate_value", default: 0
+    t.bigint "match_id"
+    t.bigint "participant_id"
+    t.bigint "team_id"
+    t.datetime "updated_at", null: false
+    t.integer "value", default: 0
     t.index ["match_id"], name: "index_scores_on_match_id"
     t.index ["participant_id", "match_id"], name: "by_participant_id", unique: true
     t.index ["participant_id"], name: "index_scores_on_participant_id"
@@ -166,35 +184,24 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
     t.index ["team_id"], name: "index_scores_on_team_id"
   end
 
-  create_table "shadans", force: :cascade do |t|
-    t.integer "index", null: false
-    t.integer "round", null: false
-    t.boolean "finished", default: false, null: false
-    t.bigint "participating_dojo_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["participating_dojo_id", "index", "round"], name: "index_shadans_on_participating_dojo_id_and_index_and_round", unique: true
-    t.index ["participating_dojo_id"], name: "index_shadans_on_participating_dojo_id"
-  end
-
   create_table "staff_roles", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.json "label", default: {}, null: false
     t.json "description", default: {}, null: false
+    t.json "label", default: {}, null: false
+    t.datetime "updated_at", null: false
     t.index ["code"], name: "by_staff_roles_code", unique: true
   end
 
   create_table "staffs", force: :cascade do |t|
+    t.datetime "created_at", null: false
     t.string "firstname"
     t.string "lastname"
-    t.bigint "taikai_id", null: false
-    t.bigint "role_id", null: false
-    t.bigint "user_id"
     t.bigint "participating_dojo_id"
-    t.datetime "created_at", null: false
+    t.bigint "role_id", null: false
+    t.bigint "taikai_id", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["participating_dojo_id"], name: "index_staffs_on_participating_dojo_id"
     t.index ["role_id"], name: "index_staffs_on_role_id"
     t.index ["taikai_id"], name: "index_staffs_on_taikai_id"
@@ -202,94 +209,94 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   end
 
   create_table "tachis", force: :cascade do |t|
-    t.integer "index", null: false
-    t.integer "round", null: false
-    t.boolean "finished", default: false, null: false
-    t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean "finished", default: false, null: false
+    t.integer "index", null: false
     t.bigint "match_id"
+    t.bigint "participating_dojo_id", null: false
+    t.integer "round", null: false
+    t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_tachis_on_match_id"
     t.index ["participating_dojo_id", "index", "round"], name: "index_tachis_on_participating_dojo_id_and_index_and_round", unique: true
     t.index ["participating_dojo_id"], name: "index_tachis_on_participating_dojo_id"
   end
 
   create_table "taikai_events", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at"
+    t.jsonb "data"
+    t.text "message"
     t.bigint "taikai_id", null: false
     t.bigint "user_id", null: false
-    t.string "category"
-    t.text "message"
-    t.jsonb "data"
-    t.datetime "created_at"
     t.index ["taikai_id"], name: "index_taikai_events_on_taikai_id"
     t.index ["user_id"], name: "index_taikai_events_on_user_id"
   end
 
   create_table "taikai_transitions", force: :cascade do |t|
-    t.string "to_state", null: false
+    t.datetime "created_at", null: false
     t.json "metadata", default: {}
+    t.boolean "most_recent", null: false
     t.integer "sort_key", null: false
     t.integer "taikai_id", null: false
-    t.boolean "most_recent", null: false
-    t.datetime "created_at", null: false
+    t.string "to_state", null: false
     t.datetime "updated_at", null: false
     t.index ["taikai_id", "most_recent"], name: "index_taikai_transitions_parent_most_recent", unique: true, where: "most_recent"
     t.index ["taikai_id", "sort_key"], name: "index_taikai_transitions_parent_sort", unique: true
   end
 
   create_table "taikais", force: :cascade do |t|
-    t.string "shortname"
-    t.string "name"
-    t.text "description"
-    t.date "start_date"
-    t.date "end_date"
-    t.boolean "distributed", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "num_targets", limit: 2, default: 6, null: false
-    t.integer "total_num_arrows", limit: 2, default: 12, null: false
-    t.integer "tachi_size", limit: 2, default: 3, null: false
-    t.enum "form", enum_type: "taikai_form"
-    t.enum "scoring", default: "kinteki", enum_type: "taikai_scoring"
     t.string "category"
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.boolean "distributed", default: true, null: false
+    t.date "end_date"
+    t.enum "form", enum_type: "taikai_form"
+    t.string "name"
+    t.integer "num_targets", limit: 2, default: 6, null: false
+    t.enum "scoring", default: "kinteki", enum_type: "taikai_scoring"
+    t.string "shortname"
+    t.date "start_date"
+    t.integer "tachi_size", limit: 2, default: 3, null: false
+    t.integer "total_num_arrows", limit: 2, default: 12, null: false
+    t.datetime "updated_at", null: false
     t.index ["form"], name: "taikais_by_form"
     t.index ["scoring"], name: "taikais_by_scoring"
     t.index ["shortname"], name: "by_taikais_shortname", unique: true
   end
 
   create_table "teams", force: :cascade do |t|
-    t.integer "index"
-    t.string "shortname", null: false
-    t.bigint "participating_dojo_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "mixed", default: false, null: false
-    t.integer "rank"
+    t.integer "index"
     t.integer "intermediate_rank"
+    t.boolean "mixed", default: false, null: false
+    t.bigint "participating_dojo_id", null: false
+    t.integer "rank"
+    t.string "shortname", null: false
+    t.datetime "updated_at", null: false
     t.index ["participating_dojo_id", "index"], name: "teams_by_participating_dojo_index", unique: true
     t.index ["participating_dojo_id", "shortname"], name: "by_teams_shortname", unique: true
     t.index ["participating_dojo_id"], name: "index_teams_on_participating_dojo_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
+    t.boolean "admin", default: false, null: false
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "confirmation_token"
     t.datetime "confirmed_at", precision: nil
-    t.datetime "confirmation_sent_at", precision: nil
-    t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
-    t.datetime "locked_at", precision: nil
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.integer "failed_attempts", default: 0, null: false
     t.string "firstname"
     t.string "lastname"
-    t.boolean "admin", default: false, null: false
     t.string "locale", default: "fr"
+    t.datetime "locked_at", precision: nil
+    t.datetime "remember_created_at", precision: nil
+    t.datetime "reset_password_sent_at", precision: nil
+    t.string "reset_password_token"
+    t.string "unconfirmed_email"
+    t.string "unlock_token"
+    t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -300,19 +307,24 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_30_211922) do
   add_foreign_key "matches", "teams", column: "team1_id"
   add_foreign_key "matches", "teams", column: "team2_id"
   add_foreign_key "participants", "kyudojins"
+  add_foreign_key "participants", "participating_dojos"
   add_foreign_key "participants", "teams"
   add_foreign_key "participating_dojos", "dojos"
+  add_foreign_key "participating_dojos", "taikais"
   add_foreign_key "results", "matches"
   add_foreign_key "results", "scores"
+  add_foreign_key "scoreboards", "participating_dojos"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"
-  add_foreign_key "shadans", "participating_dojos"
+  add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
   add_foreign_key "staffs", "users"
   add_foreign_key "tachis", "matches"
+  add_foreign_key "tachis", "participating_dojos"
   add_foreign_key "taikai_events", "taikais"
   add_foreign_key "taikai_events", "users"
   add_foreign_key "taikai_transitions", "taikais"
+  add_foreign_key "teams", "participating_dojos"
 end

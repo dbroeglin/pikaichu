@@ -1,1201 +1,1201 @@
 ---
 teams_001:
   id: 1
+  created_at: 2025-11-16 20:03:34.163001000 Z
   index:
-  shortname: Team 1
-  participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.299587000 Z
-  updated_at: 2025-11-14 21:58:21.299587000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 1
+  rank:
+  shortname: Team 1
+  updated_at: 2025-11-16 20:03:34.163001000 Z
 teams_002:
   id: 2
+  created_at: 2025-11-16 20:03:34.238052000 Z
   index:
-  shortname: Team 2
-  participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.371755000 Z
-  updated_at: 2025-11-14 21:58:21.371755000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 1
+  rank:
+  shortname: Team 2
+  updated_at: 2025-11-16 20:03:34.238052000 Z
 teams_003:
   id: 3
+  created_at: 2025-11-16 20:03:34.300293000 Z
   index:
-  shortname: Team 3
-  participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.416450000 Z
-  updated_at: 2025-11-14 21:58:21.416450000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 1
+  rank:
+  shortname: Team 3
+  updated_at: 2025-11-16 20:03:34.300293000 Z
 teams_004:
   id: 4
+  created_at: 2025-11-16 20:03:34.343569000 Z
   index:
-  shortname: Team 4
-  participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.462285000 Z
-  updated_at: 2025-11-14 21:58:21.462285000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 1
+  rank:
+  shortname: Team 4
+  updated_at: 2025-11-16 20:03:34.343569000 Z
 teams_005:
   id: 5
+  created_at: 2025-11-16 20:03:34.411479000 Z
   index:
-  shortname: Team 5
-  participating_dojo_id: 2
-  created_at: 2025-11-14 21:58:21.523232000 Z
-  updated_at: 2025-11-14 21:58:21.523232000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 2
+  rank:
+  shortname: Team 5
+  updated_at: 2025-11-16 20:03:34.411479000 Z
 teams_006:
   id: 6
+  created_at: 2025-11-16 20:03:34.460442000 Z
   index:
-  shortname: Team 6
-  participating_dojo_id: 2
-  created_at: 2025-11-14 21:58:21.569148000 Z
-  updated_at: 2025-11-14 21:58:21.569148000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 2
+  rank:
+  shortname: Team 6
+  updated_at: 2025-11-16 20:03:34.460442000 Z
 teams_007:
   id: 7
+  created_at: 2025-11-16 20:03:34.506916000 Z
   index:
-  shortname: Team 7
-  participating_dojo_id: 2
-  created_at: 2025-11-14 21:58:21.617051000 Z
-  updated_at: 2025-11-14 21:58:21.617051000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 2
+  rank:
+  shortname: Team 7
+  updated_at: 2025-11-16 20:03:34.506916000 Z
 teams_008:
   id: 8
+  created_at: 2025-11-16 20:03:34.557865000 Z
   index:
-  shortname: Team 8
-  participating_dojo_id: 2
-  created_at: 2025-11-14 21:58:21.664336000 Z
-  updated_at: 2025-11-14 21:58:21.664336000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 2
+  rank:
+  shortname: Team 8
+  updated_at: 2025-11-16 20:03:34.557865000 Z
 teams_009:
   id: 9
+  created_at: 2025-11-16 20:03:34.771053000 Z
   index:
-  shortname: Team 9
-  participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:21.877254000 Z
-  updated_at: 2025-11-14 21:58:21.877254000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 3
+  rank:
+  shortname: Team 9
+  updated_at: 2025-11-16 20:03:34.771053000 Z
 teams_010:
   id: 10
+  created_at: 2025-11-16 20:03:34.816058000 Z
   index:
-  shortname: Team 10
-  participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:21.924653000 Z
-  updated_at: 2025-11-14 21:58:21.924653000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 3
+  rank:
+  shortname: Team 10
+  updated_at: 2025-11-16 20:03:34.816058000 Z
 teams_011:
   id: 11
+  created_at: 2025-11-16 20:03:34.860831000 Z
   index:
-  shortname: Team 11
-  participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:21.969347000 Z
-  updated_at: 2025-11-14 21:58:21.969347000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 3
+  rank:
+  shortname: Team 11
+  updated_at: 2025-11-16 20:03:34.860831000 Z
 teams_012:
   id: 12
+  created_at: 2025-11-16 20:03:34.907399000 Z
   index:
-  shortname: Team 12
-  participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:22.014311000 Z
-  updated_at: 2025-11-14 21:58:22.014311000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 3
+  rank:
+  shortname: Team 12
+  updated_at: 2025-11-16 20:03:34.907399000 Z
 teams_013:
   id: 13
+  created_at: 2025-11-16 20:03:34.964673000 Z
   index:
-  shortname: Team 13
-  participating_dojo_id: 4
-  created_at: 2025-11-14 21:58:22.071359000 Z
-  updated_at: 2025-11-14 21:58:22.071359000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 4
+  rank:
+  shortname: Team 13
+  updated_at: 2025-11-16 20:03:34.964673000 Z
 teams_014:
   id: 14
+  created_at: 2025-11-16 20:03:35.010031000 Z
   index:
-  shortname: Team 14
-  participating_dojo_id: 4
-  created_at: 2025-11-14 21:58:22.116963000 Z
-  updated_at: 2025-11-14 21:58:22.116963000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 4
+  rank:
+  shortname: Team 14
+  updated_at: 2025-11-16 20:03:35.010031000 Z
 teams_015:
   id: 15
+  created_at: 2025-11-16 20:03:35.052544000 Z
   index:
-  shortname: Team 15
-  participating_dojo_id: 4
-  created_at: 2025-11-14 21:58:22.164171000 Z
-  updated_at: 2025-11-14 21:58:22.164171000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 4
+  rank:
+  shortname: Team 15
+  updated_at: 2025-11-16 20:03:35.052544000 Z
 teams_016:
   id: 16
+  created_at: 2025-11-16 20:03:35.102095000 Z
   index:
-  shortname: Team 16
-  participating_dojo_id: 4
-  created_at: 2025-11-14 21:58:22.210302000 Z
-  updated_at: 2025-11-14 21:58:22.210302000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 4
+  rank:
+  shortname: Team 16
+  updated_at: 2025-11-16 20:03:35.102095000 Z
 teams_017:
   id: 17
+  created_at: 2025-11-16 20:03:35.550508000 Z
   index:
-  shortname: Team 17
-  participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:22.658012000 Z
-  updated_at: 2025-11-14 21:58:22.658012000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 7
+  rank:
+  shortname: Team 17
+  updated_at: 2025-11-16 20:03:35.550508000 Z
 teams_018:
   id: 18
+  created_at: 2025-11-16 20:03:35.598175000 Z
   index:
-  shortname: Team 18
-  participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:22.702809000 Z
-  updated_at: 2025-11-14 21:58:22.702809000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 7
+  rank:
+  shortname: Team 18
+  updated_at: 2025-11-16 20:03:35.598175000 Z
 teams_019:
   id: 19
+  created_at: 2025-11-16 20:03:35.643140000 Z
   index:
-  shortname: Team 19
-  participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:22.747943000 Z
-  updated_at: 2025-11-14 21:58:22.747943000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 7
+  rank:
+  shortname: Team 19
+  updated_at: 2025-11-16 20:03:35.643140000 Z
 teams_020:
   id: 20
+  created_at: 2025-11-16 20:03:35.687325000 Z
   index:
-  shortname: Team 20
-  participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:22.794350000 Z
-  updated_at: 2025-11-14 21:58:22.794350000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 7
+  rank:
+  shortname: Team 20
+  updated_at: 2025-11-16 20:03:35.687325000 Z
 teams_021:
   id: 21
+  created_at: 2025-11-16 20:03:35.744797000 Z
   index:
-  shortname: Team 21
-  participating_dojo_id: 8
-  created_at: 2025-11-14 21:58:22.849553000 Z
-  updated_at: 2025-11-14 21:58:22.849553000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 8
+  rank:
+  shortname: Team 21
+  updated_at: 2025-11-16 20:03:35.744797000 Z
 teams_022:
   id: 22
+  created_at: 2025-11-16 20:03:35.791449000 Z
   index:
-  shortname: Team 22
-  participating_dojo_id: 8
-  created_at: 2025-11-14 21:58:22.894777000 Z
-  updated_at: 2025-11-14 21:58:22.894777000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 8
+  rank:
+  shortname: Team 22
+  updated_at: 2025-11-16 20:03:35.791449000 Z
 teams_023:
   id: 23
+  created_at: 2025-11-16 20:03:35.837869000 Z
   index:
-  shortname: Team 23
-  participating_dojo_id: 8
-  created_at: 2025-11-14 21:58:22.936895000 Z
-  updated_at: 2025-11-14 21:58:22.936895000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 8
+  rank:
+  shortname: Team 23
+  updated_at: 2025-11-16 20:03:35.837869000 Z
 teams_024:
   id: 24
+  created_at: 2025-11-16 20:03:35.883312000 Z
   index:
-  shortname: Team 24
-  participating_dojo_id: 8
-  created_at: 2025-11-14 21:58:22.983979000 Z
-  updated_at: 2025-11-14 21:58:22.983979000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 8
+  rank:
+  shortname: Team 24
+  updated_at: 2025-11-16 20:03:35.883312000 Z
 teams_025:
   id: 25
+  created_at: 2025-11-16 20:03:36.001015000 Z
   index:
-  shortname: Team 25
-  participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.098619000 Z
-  updated_at: 2025-11-14 21:58:23.098619000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 9
+  rank:
+  shortname: Team 25
+  updated_at: 2025-11-16 20:03:36.001015000 Z
 teams_026:
   id: 26
+  created_at: 2025-11-16 20:03:36.045342000 Z
   index:
-  shortname: Team 26
-  participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.144026000 Z
-  updated_at: 2025-11-14 21:58:23.144026000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 9
+  rank:
+  shortname: Team 26
+  updated_at: 2025-11-16 20:03:36.045342000 Z
 teams_027:
   id: 27
+  created_at: 2025-11-16 20:03:36.091821000 Z
   index:
-  shortname: Team 27
-  participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.188068000 Z
-  updated_at: 2025-11-14 21:58:23.188068000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 9
+  rank:
+  shortname: Team 27
+  updated_at: 2025-11-16 20:03:36.091821000 Z
 teams_028:
   id: 28
+  created_at: 2025-11-16 20:03:36.138793000 Z
   index:
-  shortname: Team 28
-  participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.233414000 Z
-  updated_at: 2025-11-14 21:58:23.233414000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 9
+  rank:
+  shortname: Team 28
+  updated_at: 2025-11-16 20:03:36.138793000 Z
 teams_029:
   id: 29
+  created_at: 2025-11-16 20:03:36.193171000 Z
   index:
-  shortname: Team 29
-  participating_dojo_id: 10
-  created_at: 2025-11-14 21:58:23.286870000 Z
-  updated_at: 2025-11-14 21:58:23.286870000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 10
+  rank:
+  shortname: Team 29
+  updated_at: 2025-11-16 20:03:36.193171000 Z
 teams_030:
   id: 30
+  created_at: 2025-11-16 20:03:36.244190000 Z
   index:
-  shortname: Team 30
-  participating_dojo_id: 10
-  created_at: 2025-11-14 21:58:23.332263000 Z
-  updated_at: 2025-11-14 21:58:23.332263000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 10
+  rank:
+  shortname: Team 30
+  updated_at: 2025-11-16 20:03:36.244190000 Z
 teams_031:
   id: 31
+  created_at: 2025-11-16 20:03:36.291314000 Z
   index:
-  shortname: Team 31
-  participating_dojo_id: 10
-  created_at: 2025-11-14 21:58:23.377964000 Z
-  updated_at: 2025-11-14 21:58:23.377964000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 10
+  rank:
+  shortname: Team 31
+  updated_at: 2025-11-16 20:03:36.291314000 Z
 teams_032:
   id: 32
+  created_at: 2025-11-16 20:03:36.336456000 Z
   index:
-  shortname: Team 32
-  participating_dojo_id: 10
-  created_at: 2025-11-14 21:58:23.424204000 Z
-  updated_at: 2025-11-14 21:58:23.424204000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 10
+  rank:
+  shortname: Team 32
+  updated_at: 2025-11-16 20:03:36.336456000 Z
 teams_033:
   id: 33
+  created_at: 2025-11-16 20:03:36.785425000 Z
   index:
-  shortname: Team 33
-  participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:23.866749000 Z
-  updated_at: 2025-11-14 21:58:23.866749000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 13
+  rank:
+  shortname: Team 33
+  updated_at: 2025-11-16 20:03:36.785425000 Z
 teams_034:
   id: 34
+  created_at: 2025-11-16 20:03:36.827453000 Z
   index:
-  shortname: Team 34
-  participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:23.912845000 Z
-  updated_at: 2025-11-14 21:58:23.912845000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 13
+  rank:
+  shortname: Team 34
+  updated_at: 2025-11-16 20:03:36.827453000 Z
 teams_035:
   id: 35
+  created_at: 2025-11-16 20:03:36.874313000 Z
   index:
-  shortname: Team 35
-  participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:23.958183000 Z
-  updated_at: 2025-11-14 21:58:23.958183000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 13
+  rank:
+  shortname: Team 35
+  updated_at: 2025-11-16 20:03:36.874313000 Z
 teams_036:
   id: 36
+  created_at: 2025-11-16 20:03:36.921402000 Z
   index:
-  shortname: Team 36
-  participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:23.999871000 Z
-  updated_at: 2025-11-14 21:58:23.999871000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 13
+  rank:
+  shortname: Team 36
+  updated_at: 2025-11-16 20:03:36.921402000 Z
 teams_037:
   id: 37
+  created_at: 2025-11-16 20:03:36.978767000 Z
   index:
-  shortname: Team 37
-  participating_dojo_id: 14
-  created_at: 2025-11-14 21:58:24.054707000 Z
-  updated_at: 2025-11-14 21:58:24.054707000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 14
+  rank:
+  shortname: Team 37
+  updated_at: 2025-11-16 20:03:36.978767000 Z
 teams_038:
   id: 38
+  created_at: 2025-11-16 20:03:37.024404000 Z
   index:
-  shortname: Team 38
-  participating_dojo_id: 14
-  created_at: 2025-11-14 21:58:24.101805000 Z
-  updated_at: 2025-11-14 21:58:24.101805000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 14
+  rank:
+  shortname: Team 38
+  updated_at: 2025-11-16 20:03:37.024404000 Z
 teams_039:
   id: 39
+  created_at: 2025-11-16 20:03:37.070392000 Z
   index:
-  shortname: Team 39
-  participating_dojo_id: 14
-  created_at: 2025-11-14 21:58:24.146129000 Z
-  updated_at: 2025-11-14 21:58:24.146129000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 14
+  rank:
+  shortname: Team 39
+  updated_at: 2025-11-16 20:03:37.070392000 Z
 teams_040:
   id: 40
+  created_at: 2025-11-16 20:03:37.116620000 Z
   index:
-  shortname: Team 40
-  participating_dojo_id: 14
-  created_at: 2025-11-14 21:58:24.193020000 Z
-  updated_at: 2025-11-14 21:58:24.193020000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 14
+  rank:
+  shortname: Team 40
+  updated_at: 2025-11-16 20:03:37.116620000 Z
 teams_041:
   id: 41
+  created_at: 2025-11-16 20:03:37.233778000 Z
   index:
-  shortname: Team 41
-  participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.314412000 Z
-  updated_at: 2025-11-14 21:58:24.314412000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 15
+  rank:
+  shortname: Team 41
+  updated_at: 2025-11-16 20:03:37.233778000 Z
 teams_042:
   id: 42
+  created_at: 2025-11-16 20:03:37.281062000 Z
   index:
-  shortname: Team 42
-  participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.357008000 Z
-  updated_at: 2025-11-14 21:58:24.357008000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 15
+  rank:
+  shortname: Team 42
+  updated_at: 2025-11-16 20:03:37.281062000 Z
 teams_043:
   id: 43
+  created_at: 2025-11-16 20:03:37.325135000 Z
   index:
-  shortname: Team 43
-  participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.404498000 Z
-  updated_at: 2025-11-14 21:58:24.404498000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 15
+  rank:
+  shortname: Team 43
+  updated_at: 2025-11-16 20:03:37.325135000 Z
 teams_044:
   id: 44
+  created_at: 2025-11-16 20:03:37.372618000 Z
   index:
-  shortname: Team 44
-  participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.451550000 Z
-  updated_at: 2025-11-14 21:58:24.451550000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 15
+  rank:
+  shortname: Team 44
+  updated_at: 2025-11-16 20:03:37.372618000 Z
 teams_045:
   id: 45
+  created_at: 2025-11-16 20:03:37.557159000 Z
   index:
-  shortname: Team 45
-  participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.637943000 Z
-  updated_at: 2025-11-14 21:58:24.637943000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 16
+  rank:
+  shortname: Team 45
+  updated_at: 2025-11-16 20:03:37.557159000 Z
 teams_046:
   id: 46
+  created_at: 2025-11-16 20:03:37.603666000 Z
   index:
-  shortname: Team 46
-  participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.684882000 Z
-  updated_at: 2025-11-14 21:58:24.684882000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 16
+  rank:
+  shortname: Team 46
+  updated_at: 2025-11-16 20:03:37.603666000 Z
 teams_047:
   id: 47
+  created_at: 2025-11-16 20:03:37.646016000 Z
   index:
-  shortname: Team 47
-  participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.729191000 Z
-  updated_at: 2025-11-14 21:58:24.729191000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 16
+  rank:
+  shortname: Team 47
+  updated_at: 2025-11-16 20:03:37.646016000 Z
 teams_048:
   id: 48
+  created_at: 2025-11-16 20:03:37.694321000 Z
   index:
-  shortname: Team 48
-  participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.778112000 Z
-  updated_at: 2025-11-14 21:58:24.778112000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 16
+  rank:
+  shortname: Team 48
+  updated_at: 2025-11-16 20:03:37.694321000 Z
 teams_049:
   id: 49
+  created_at: 2025-11-16 20:03:38.069384000 Z
   index:
-  shortname: Team 49
-  participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.102691000 Z
-  updated_at: 2025-11-14 21:58:25.102691000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 18
+  rank:
+  shortname: Team 49
+  updated_at: 2025-11-16 20:03:38.069384000 Z
 teams_050:
   id: 50
+  created_at: 2025-11-16 20:03:38.116776000 Z
   index:
-  shortname: Team 50
-  participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.149790000 Z
-  updated_at: 2025-11-14 21:58:25.149790000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 18
+  rank:
+  shortname: Team 50
+  updated_at: 2025-11-16 20:03:38.116776000 Z
 teams_051:
   id: 51
+  created_at: 2025-11-16 20:03:38.161555000 Z
   index:
-  shortname: Team 51
-  participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.195588000 Z
-  updated_at: 2025-11-14 21:58:25.195588000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 18
+  rank:
+  shortname: Team 51
+  updated_at: 2025-11-16 20:03:38.161555000 Z
 teams_052:
   id: 52
+  created_at: 2025-11-16 20:03:38.206394000 Z
   index:
-  shortname: Team 52
-  participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.241582000 Z
-  updated_at: 2025-11-14 21:58:25.241582000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 18
+  rank:
+  shortname: Team 52
+  updated_at: 2025-11-16 20:03:38.206394000 Z
 teams_053:
   id: 53
+  created_at: 2025-11-16 20:03:38.326657000 Z
   index:
-  shortname: Team 53
-  participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.359164000 Z
-  updated_at: 2025-11-14 21:58:25.359164000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 19
+  rank:
+  shortname: Team 53
+  updated_at: 2025-11-16 20:03:38.326657000 Z
 teams_054:
   id: 54
+  created_at: 2025-11-16 20:03:38.370842000 Z
   index:
-  shortname: Team 54
-  participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.407335000 Z
-  updated_at: 2025-11-14 21:58:25.407335000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 19
+  rank:
+  shortname: Team 54
+  updated_at: 2025-11-16 20:03:38.370842000 Z
 teams_055:
   id: 55
+  created_at: 2025-11-16 20:03:38.417313000 Z
   index:
-  shortname: Team 55
-  participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.452851000 Z
-  updated_at: 2025-11-14 21:58:25.452851000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 19
+  rank:
+  shortname: Team 55
+  updated_at: 2025-11-16 20:03:38.417313000 Z
 teams_056:
   id: 56
+  created_at: 2025-11-16 20:03:38.462076000 Z
   index:
-  shortname: Team 56
-  participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.502158000 Z
-  updated_at: 2025-11-14 21:58:25.502158000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 19
+  rank:
+  shortname: Team 56
+  updated_at: 2025-11-16 20:03:38.462076000 Z
 teams_057:
   id: 57
+  created_at: 2025-11-16 20:03:38.779510000 Z
   index:
-  shortname: Team 57
-  participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:25.824735000 Z
-  updated_at: 2025-11-14 21:58:25.824735000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 21
+  rank:
+  shortname: Team 57
+  updated_at: 2025-11-16 20:03:38.779510000 Z
 teams_058:
   id: 58
+  created_at: 2025-11-16 20:03:38.824688000 Z
   index:
-  shortname: Team 58
-  participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:25.872193000 Z
-  updated_at: 2025-11-14 21:58:25.872193000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 21
+  rank:
+  shortname: Team 58
+  updated_at: 2025-11-16 20:03:38.824688000 Z
 teams_059:
   id: 59
+  created_at: 2025-11-16 20:03:38.869395000 Z
   index:
-  shortname: Team 59
-  participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:25.918791000 Z
-  updated_at: 2025-11-14 21:58:25.918791000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 21
+  rank:
+  shortname: Team 59
+  updated_at: 2025-11-16 20:03:38.869395000 Z
 teams_060:
   id: 60
+  created_at: 2025-11-16 20:03:38.916452000 Z
   index:
-  shortname: Team 60
-  participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:25.964901000 Z
-  updated_at: 2025-11-14 21:58:25.964901000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 21
+  rank:
+  shortname: Team 60
+  updated_at: 2025-11-16 20:03:38.916452000 Z
 teams_061:
   id: 61
+  created_at: 2025-11-16 20:03:39.035025000 Z
   index:
-  shortname: Team 61
-  participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.081498000 Z
-  updated_at: 2025-11-14 21:58:26.081498000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 22
+  rank:
+  shortname: Team 61
+  updated_at: 2025-11-16 20:03:39.035025000 Z
 teams_062:
   id: 62
+  created_at: 2025-11-16 20:03:39.081401000 Z
   index:
-  shortname: Team 62
-  participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.129572000 Z
-  updated_at: 2025-11-14 21:58:26.129572000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 22
+  rank:
+  shortname: Team 62
+  updated_at: 2025-11-16 20:03:39.081401000 Z
 teams_063:
   id: 63
+  created_at: 2025-11-16 20:03:39.129088000 Z
   index:
-  shortname: Team 63
-  participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.173326000 Z
-  updated_at: 2025-11-14 21:58:26.173326000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 22
+  rank:
+  shortname: Team 63
+  updated_at: 2025-11-16 20:03:39.129088000 Z
 teams_064:
   id: 64
+  created_at: 2025-11-16 20:03:39.172335000 Z
   index:
-  shortname: Team 64
-  participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.217463000 Z
-  updated_at: 2025-11-14 21:58:26.217463000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 22
+  rank:
+  shortname: Team 64
+  updated_at: 2025-11-16 20:03:39.172335000 Z
 teams_065:
   id: 65
+  created_at: 2025-11-16 20:03:39.228113000 Z
   index:
-  shortname: Team 65
-  participating_dojo_id: 23
-  created_at: 2025-11-14 21:58:26.271495000 Z
-  updated_at: 2025-11-14 21:58:26.271495000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 23
+  rank:
+  shortname: Team 65
+  updated_at: 2025-11-16 20:03:39.228113000 Z
 teams_066:
   id: 66
+  created_at: 2025-11-16 20:03:39.273907000 Z
   index:
-  shortname: Team 66
-  participating_dojo_id: 23
-  created_at: 2025-11-14 21:58:26.317055000 Z
-  updated_at: 2025-11-14 21:58:26.317055000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 23
+  rank:
+  shortname: Team 66
+  updated_at: 2025-11-16 20:03:39.273907000 Z
 teams_067:
   id: 67
+  created_at: 2025-11-16 20:03:39.319236000 Z
   index:
-  shortname: Team 67
-  participating_dojo_id: 23
-  created_at: 2025-11-14 21:58:26.362672000 Z
-  updated_at: 2025-11-14 21:58:26.362672000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 23
+  rank:
+  shortname: Team 67
+  updated_at: 2025-11-16 20:03:39.319236000 Z
 teams_068:
   id: 68
+  created_at: 2025-11-16 20:03:39.364577000 Z
   index:
-  shortname: Team 68
-  participating_dojo_id: 23
-  created_at: 2025-11-14 21:58:26.408431000 Z
-  updated_at: 2025-11-14 21:58:26.408431000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 23
+  rank:
+  shortname: Team 68
+  updated_at: 2025-11-16 20:03:39.364577000 Z
 teams_069:
   id: 69
+  created_at: 2025-11-16 20:03:39.550919000 Z
   index:
-  shortname: Team 69
-  participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.590555000 Z
-  updated_at: 2025-11-14 21:58:26.590555000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 24
+  rank:
+  shortname: Team 69
+  updated_at: 2025-11-16 20:03:39.550919000 Z
 teams_070:
   id: 70
+  created_at: 2025-11-16 20:03:39.597428000 Z
   index:
-  shortname: Team 70
-  participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.636912000 Z
-  updated_at: 2025-11-14 21:58:26.636912000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 24
+  rank:
+  shortname: Team 70
+  updated_at: 2025-11-16 20:03:39.597428000 Z
 teams_071:
   id: 71
+  created_at: 2025-11-16 20:03:39.641482000 Z
   index:
-  shortname: Team 71
-  participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.683264000 Z
-  updated_at: 2025-11-14 21:58:26.683264000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 24
+  rank:
+  shortname: Team 71
+  updated_at: 2025-11-16 20:03:39.641482000 Z
 teams_072:
   id: 72
+  created_at: 2025-11-16 20:03:39.687727000 Z
   index:
-  shortname: Team 72
-  participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.726234000 Z
-  updated_at: 2025-11-14 21:58:26.726234000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 24
+  rank:
+  shortname: Team 72
+  updated_at: 2025-11-16 20:03:39.687727000 Z
 teams_073:
   id: 73
+  created_at: 2025-11-16 20:03:39.744531000 Z
   index:
-  shortname: Team 73
-  participating_dojo_id: 25
-  created_at: 2025-11-14 21:58:26.781771000 Z
-  updated_at: 2025-11-14 21:58:26.781771000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 25
+  rank:
+  shortname: Team 73
+  updated_at: 2025-11-16 20:03:39.744531000 Z
 teams_074:
   id: 74
+  created_at: 2025-11-16 20:03:39.791433000 Z
   index:
-  shortname: Team 74
-  participating_dojo_id: 25
-  created_at: 2025-11-14 21:58:26.827699000 Z
-  updated_at: 2025-11-14 21:58:26.827699000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 25
+  rank:
+  shortname: Team 74
+  updated_at: 2025-11-16 20:03:39.791433000 Z
 teams_075:
   id: 75
+  created_at: 2025-11-16 20:03:39.835983000 Z
   index:
-  shortname: Team 75
-  participating_dojo_id: 25
-  created_at: 2025-11-14 21:58:26.873856000 Z
-  updated_at: 2025-11-14 21:58:26.873856000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 25
+  rank:
+  shortname: Team 75
+  updated_at: 2025-11-16 20:03:39.835983000 Z
 teams_076:
   id: 76
+  created_at: 2025-11-16 20:03:39.882985000 Z
   index:
-  shortname: Team 76
-  participating_dojo_id: 25
-  created_at: 2025-11-14 21:58:26.915332000 Z
-  updated_at: 2025-11-14 21:58:26.915332000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 25
+  rank:
+  shortname: Team 76
+  updated_at: 2025-11-16 20:03:39.882985000 Z
 teams_077:
   id: 77
+  created_at: 2025-11-16 20:03:40.412176000 Z
   index:
-  shortname: Team 77
-  participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.361178000 Z
-  updated_at: 2025-11-14 21:58:27.361178000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 28
+  rank:
+  shortname: Team 77
+  updated_at: 2025-11-16 20:03:40.412176000 Z
 teams_078:
   id: 78
+  created_at: 2025-11-16 20:03:40.458065000 Z
   index:
-  shortname: Team 78
-  participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.406571000 Z
-  updated_at: 2025-11-14 21:58:27.406571000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 28
+  rank:
+  shortname: Team 78
+  updated_at: 2025-11-16 20:03:40.458065000 Z
 teams_079:
   id: 79
+  created_at: 2025-11-16 20:03:40.507228000 Z
   index:
-  shortname: Team 79
-  participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.451064000 Z
-  updated_at: 2025-11-14 21:58:27.451064000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 28
+  rank:
+  shortname: Team 79
+  updated_at: 2025-11-16 20:03:40.507228000 Z
 teams_080:
   id: 80
+  created_at: 2025-11-16 20:03:40.551192000 Z
   index:
-  shortname: Team 80
-  participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.497524000 Z
-  updated_at: 2025-11-14 21:58:27.497524000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 28
+  rank:
+  shortname: Team 80
+  updated_at: 2025-11-16 20:03:40.551192000 Z
 teams_081:
   id: 81
+  created_at: 2025-11-16 20:03:40.608671000 Z
   index:
-  shortname: Team 81
-  participating_dojo_id: 29
-  created_at: 2025-11-14 21:58:27.551083000 Z
-  updated_at: 2025-11-14 21:58:27.551083000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 29
+  rank:
+  shortname: Team 81
+  updated_at: 2025-11-16 20:03:40.608671000 Z
 teams_082:
   id: 82
+  created_at: 2025-11-16 20:03:40.655853000 Z
   index:
-  shortname: Team 82
-  participating_dojo_id: 29
-  created_at: 2025-11-14 21:58:27.594441000 Z
-  updated_at: 2025-11-14 21:58:27.594441000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 29
+  rank:
+  shortname: Team 82
+  updated_at: 2025-11-16 20:03:40.655853000 Z
 teams_083:
   id: 83
+  created_at: 2025-11-16 20:03:40.736979000 Z
   index:
-  shortname: Team 83
-  participating_dojo_id: 29
-  created_at: 2025-11-14 21:58:27.640541000 Z
-  updated_at: 2025-11-14 21:58:27.640541000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 29
+  rank:
+  shortname: Team 83
+  updated_at: 2025-11-16 20:03:40.736979000 Z
 teams_084:
   id: 84
+  created_at: 2025-11-16 20:03:40.803299000 Z
   index:
-  shortname: Team 84
-  participating_dojo_id: 29
-  created_at: 2025-11-14 21:58:27.686002000 Z
-  updated_at: 2025-11-14 21:58:27.686002000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 29
+  rank:
+  shortname: Team 84
+  updated_at: 2025-11-16 20:03:40.803299000 Z
 teams_085:
   id: 85
+  created_at: 2025-11-16 20:03:40.918834000 Z
   index:
-  shortname: Team 85
-  participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:27.800531000 Z
-  updated_at: 2025-11-14 21:58:27.800531000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 30
+  rank:
+  shortname: Team 85
+  updated_at: 2025-11-16 20:03:40.918834000 Z
 teams_086:
   id: 86
+  created_at: 2025-11-16 20:03:40.966545000 Z
   index:
-  shortname: Team 86
-  participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:27.845283000 Z
-  updated_at: 2025-11-14 21:58:27.845283000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 30
+  rank:
+  shortname: Team 86
+  updated_at: 2025-11-16 20:03:40.966545000 Z
 teams_087:
   id: 87
+  created_at: 2025-11-16 20:03:41.012674000 Z
   index:
-  shortname: Team 87
-  participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:27.890961000 Z
-  updated_at: 2025-11-14 21:58:27.890961000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 30
+  rank:
+  shortname: Team 87
+  updated_at: 2025-11-16 20:03:41.012674000 Z
 teams_088:
   id: 88
+  created_at: 2025-11-16 20:03:41.058434000 Z
   index:
-  shortname: Team 88
-  participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:27.935956000 Z
-  updated_at: 2025-11-14 21:58:27.935956000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 30
+  rank:
+  shortname: Team 88
+  updated_at: 2025-11-16 20:03:41.058434000 Z
 teams_089:
   id: 89
+  created_at: 2025-11-16 20:03:41.112525000 Z
   index:
-  shortname: Team 89
-  participating_dojo_id: 31
-  created_at: 2025-11-14 21:58:27.990691000 Z
-  updated_at: 2025-11-14 21:58:27.990691000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 31
+  rank:
+  shortname: Team 89
+  updated_at: 2025-11-16 20:03:41.112525000 Z
 teams_090:
   id: 90
+  created_at: 2025-11-16 20:03:41.161564000 Z
   index:
-  shortname: Team 90
-  participating_dojo_id: 31
-  created_at: 2025-11-14 21:58:28.035995000 Z
-  updated_at: 2025-11-14 21:58:28.035995000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 31
+  rank:
+  shortname: Team 90
+  updated_at: 2025-11-16 20:03:41.161564000 Z
 teams_091:
   id: 91
+  created_at: 2025-11-16 20:03:41.208233000 Z
   index:
-  shortname: Team 91
-  participating_dojo_id: 31
-  created_at: 2025-11-14 21:58:28.080292000 Z
-  updated_at: 2025-11-14 21:58:28.080292000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 31
+  rank:
+  shortname: Team 91
+  updated_at: 2025-11-16 20:03:41.208233000 Z
 teams_092:
   id: 92
+  created_at: 2025-11-16 20:03:41.251907000 Z
   index:
-  shortname: Team 92
-  participating_dojo_id: 31
-  created_at: 2025-11-14 21:58:28.125012000 Z
-  updated_at: 2025-11-14 21:58:28.125012000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 31
+  rank:
+  shortname: Team 92
+  updated_at: 2025-11-16 20:03:41.251907000 Z
 teams_093:
   id: 93
+  created_at: 2025-11-16 20:03:41.715698000 Z
   index:
-  shortname: Team 93
-  participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:28.639646000 Z
-  updated_at: 2025-11-14 21:58:28.639646000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 34
+  rank:
+  shortname: Team 93
+  updated_at: 2025-11-16 20:03:41.715698000 Z
 teams_094:
   id: 94
+  created_at: 2025-11-16 20:03:41.761429000 Z
   index:
-  shortname: Team 94
-  participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:28.686913000 Z
-  updated_at: 2025-11-14 21:58:28.686913000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 34
+  rank:
+  shortname: Team 94
+  updated_at: 2025-11-16 20:03:41.761429000 Z
 teams_095:
   id: 95
+  created_at: 2025-11-16 20:03:41.809475000 Z
   index:
-  shortname: Team 95
-  participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:28.730247000 Z
-  updated_at: 2025-11-14 21:58:28.730247000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 34
+  rank:
+  shortname: Team 95
+  updated_at: 2025-11-16 20:03:41.809475000 Z
 teams_096:
   id: 96
+  created_at: 2025-11-16 20:03:41.854528000 Z
   index:
-  shortname: Team 96
-  participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:28.778398000 Z
-  updated_at: 2025-11-14 21:58:28.778398000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 34
+  rank:
+  shortname: Team 96
+  updated_at: 2025-11-16 20:03:41.854528000 Z
 teams_097:
   id: 97
+  created_at: 2025-11-16 20:03:41.907722000 Z
   index:
-  shortname: Team 97
-  participating_dojo_id: 35
-  created_at: 2025-11-14 21:58:28.835192000 Z
-  updated_at: 2025-11-14 21:58:28.835192000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 35
+  rank:
+  shortname: Team 97
+  updated_at: 2025-11-16 20:03:41.907722000 Z
 teams_098:
   id: 98
+  created_at: 2025-11-16 20:03:41.955720000 Z
   index:
-  shortname: Team 98
-  participating_dojo_id: 35
-  created_at: 2025-11-14 21:58:28.880494000 Z
-  updated_at: 2025-11-14 21:58:28.880494000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 35
+  rank:
+  shortname: Team 98
+  updated_at: 2025-11-16 20:03:41.955720000 Z
 teams_099:
   id: 99
+  created_at: 2025-11-16 20:03:42.001581000 Z
   index:
-  shortname: Team 99
-  participating_dojo_id: 35
-  created_at: 2025-11-14 21:58:28.925631000 Z
-  updated_at: 2025-11-14 21:58:28.925631000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 35
+  rank:
+  shortname: Team 99
+  updated_at: 2025-11-16 20:03:42.001581000 Z
 teams_100:
   id: 100
+  created_at: 2025-11-16 20:03:42.046296000 Z
   index:
-  shortname: Team 100
-  participating_dojo_id: 35
-  created_at: 2025-11-14 21:58:28.971257000 Z
-  updated_at: 2025-11-14 21:58:28.971257000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 35
+  rank:
+  shortname: Team 100
+  updated_at: 2025-11-16 20:03:42.046296000 Z
 teams_101:
   id: 101
+  created_at: 2025-11-16 20:03:42.164699000 Z
   index:
-  shortname: Team 101
-  participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.086468000 Z
-  updated_at: 2025-11-14 21:58:29.086468000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 36
+  rank:
+  shortname: Team 101
+  updated_at: 2025-11-16 20:03:42.164699000 Z
 teams_102:
   id: 102
+  created_at: 2025-11-16 20:03:42.208906000 Z
   index:
-  shortname: Team 102
-  participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.132093000 Z
-  updated_at: 2025-11-14 21:58:29.132093000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 36
+  rank:
+  shortname: Team 102
+  updated_at: 2025-11-16 20:03:42.208906000 Z
 teams_103:
   id: 103
+  created_at: 2025-11-16 20:03:42.255355000 Z
   index:
-  shortname: Team 103
-  participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.178440000 Z
-  updated_at: 2025-11-14 21:58:29.178440000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 36
+  rank:
+  shortname: Team 103
+  updated_at: 2025-11-16 20:03:42.255355000 Z
 teams_104:
   id: 104
+  created_at: 2025-11-16 20:03:42.301251000 Z
   index:
-  shortname: Team 104
-  participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.225170000 Z
-  updated_at: 2025-11-14 21:58:29.225170000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 36
+  rank:
+  shortname: Team 104
+  updated_at: 2025-11-16 20:03:42.301251000 Z
 teams_105:
   id: 105
+  created_at: 2025-11-16 20:03:42.503427000 Z
   index:
-  shortname: Team 105
-  participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.406817000 Z
-  updated_at: 2025-11-14 21:58:29.406817000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 37
+  rank:
+  shortname: Team 105
+  updated_at: 2025-11-16 20:03:42.503427000 Z
 teams_106:
   id: 106
+  created_at: 2025-11-16 20:03:42.551838000 Z
   index:
-  shortname: Team 106
-  participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.448654000 Z
-  updated_at: 2025-11-14 21:58:29.448654000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 37
+  rank:
+  shortname: Team 106
+  updated_at: 2025-11-16 20:03:42.551838000 Z
 teams_107:
   id: 107
+  created_at: 2025-11-16 20:03:42.605221000 Z
   index:
-  shortname: Team 107
-  participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.495208000 Z
-  updated_at: 2025-11-14 21:58:29.495208000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 37
+  rank:
+  shortname: Team 107
+  updated_at: 2025-11-16 20:03:42.605221000 Z
 teams_108:
   id: 108
+  created_at: 2025-11-16 20:03:42.658817000 Z
   index:
-  shortname: Team 108
-  participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.541520000 Z
-  updated_at: 2025-11-14 21:58:29.541520000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 37
+  rank:
+  shortname: Team 108
+  updated_at: 2025-11-16 20:03:42.658817000 Z
 teams_109:
   id: 109
+  created_at: 2025-11-16 20:03:43.169664000 Z
   index:
-  shortname: Team 109
-  participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:29.852240000 Z
-  updated_at: 2025-11-14 21:58:29.852240000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 39
+  rank:
+  shortname: Team 109
+  updated_at: 2025-11-16 20:03:43.169664000 Z
 teams_110:
   id: 110
+  created_at: 2025-11-16 20:03:43.223854000 Z
   index:
-  shortname: Team 110
-  participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:29.898805000 Z
-  updated_at: 2025-11-14 21:58:29.898805000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 39
+  rank:
+  shortname: Team 110
+  updated_at: 2025-11-16 20:03:43.223854000 Z
 teams_111:
   id: 111
+  created_at: 2025-11-16 20:03:43.273868000 Z
   index:
-  shortname: Team 111
-  participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:29.944377000 Z
-  updated_at: 2025-11-14 21:58:29.944377000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 39
+  rank:
+  shortname: Team 111
+  updated_at: 2025-11-16 20:03:43.273868000 Z
 teams_112:
   id: 112
+  created_at: 2025-11-16 20:03:43.325041000 Z
   index:
-  shortname: Team 112
-  participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:29.986990000 Z
-  updated_at: 2025-11-14 21:58:29.986990000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 39
+  rank:
+  shortname: Team 112
+  updated_at: 2025-11-16 20:03:43.325041000 Z
 teams_113:
   id: 113
+  created_at: 2025-11-16 20:03:43.449807000 Z
   index:
-  shortname: Team 113
-  participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.105257000 Z
-  updated_at: 2025-11-14 21:58:30.105257000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 40
+  rank:
+  shortname: Team 113
+  updated_at: 2025-11-16 20:03:43.449807000 Z
 teams_114:
   id: 114
+  created_at: 2025-11-16 20:03:43.498025000 Z
   index:
-  shortname: Team 114
-  participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.149651000 Z
-  updated_at: 2025-11-14 21:58:30.149651000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 40
+  rank:
+  shortname: Team 114
+  updated_at: 2025-11-16 20:03:43.498025000 Z
 teams_115:
   id: 115
+  created_at: 2025-11-16 20:03:43.545424000 Z
   index:
-  shortname: Team 115
-  participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.196100000 Z
-  updated_at: 2025-11-14 21:58:30.196100000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 40
+  rank:
+  shortname: Team 115
+  updated_at: 2025-11-16 20:03:43.545424000 Z
 teams_116:
   id: 116
+  created_at: 2025-11-16 20:03:43.593458000 Z
   index:
-  shortname: Team 116
-  participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.242113000 Z
-  updated_at: 2025-11-14 21:58:30.242113000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 40
+  rank:
+  shortname: Team 116
+  updated_at: 2025-11-16 20:03:43.593458000 Z
 teams_117:
   id: 117
+  created_at: 2025-11-16 20:03:43.915017000 Z
   index:
-  shortname: Team 117
-  participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.551612000 Z
-  updated_at: 2025-11-14 21:58:30.551612000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 42
+  rank:
+  shortname: Team 117
+  updated_at: 2025-11-16 20:03:43.915017000 Z
 teams_118:
   id: 118
+  created_at: 2025-11-16 20:03:43.998167000 Z
   index:
-  shortname: Team 118
-  participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.597832000 Z
-  updated_at: 2025-11-14 21:58:30.597832000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 42
+  rank:
+  shortname: Team 118
+  updated_at: 2025-11-16 20:03:43.998167000 Z
 teams_119:
   id: 119
+  created_at: 2025-11-16 20:03:44.069240000 Z
   index:
-  shortname: Team 119
-  participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.646199000 Z
-  updated_at: 2025-11-14 21:58:30.646199000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 42
+  rank:
+  shortname: Team 119
+  updated_at: 2025-11-16 20:03:44.069240000 Z
 teams_120:
   id: 120
+  created_at: 2025-11-16 20:03:44.119955000 Z
   index:
-  shortname: Team 120
-  participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.690442000 Z
-  updated_at: 2025-11-14 21:58:30.690442000 Z
-  mixed: false
-  rank:
   intermediate_rank:
+  mixed: false
+  participating_dojo_id: 42
+  rank:
+  shortname: Team 120
+  updated_at: 2025-11-16 20:03:44.119955000 Z

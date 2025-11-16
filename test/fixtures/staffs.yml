@@ -1,1401 +1,1401 @@
 ---
 staffs_001:
   id: 1
+  created_at: 2025-11-16 20:03:34.095346000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 1
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:21.245313000 Z
-  updated_at: 2025-11-14 21:58:21.245313000 Z
+  role_id: 1
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.095346000 Z
+  user_id: 2
 staffs_002:
   id: 2
+  created_at: 2025-11-16 20:03:34.605259000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 1
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:21.711175000 Z
-  updated_at: 2025-11-14 21:58:21.711175000 Z
+  role_id: 3
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.605259000 Z
+  user_id: 6
 staffs_003:
   id: 3
+  created_at: 2025-11-16 20:03:34.618146000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 1
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.724200000 Z
-  updated_at: 2025-11-14 21:58:21.724200000 Z
+  role_id: 2
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.618146000 Z
+  user_id: 3
 staffs_004:
   id: 4
+  created_at: 2025-11-16 20:03:34.628314000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 1
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.733874000 Z
-  updated_at: 2025-11-14 21:58:21.733874000 Z
+  role_id: 5
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.628314000 Z
+  user_id: 5
 staffs_005:
   id: 5
+  created_at: 2025-11-16 20:03:34.636904000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 1
-  role_id: 7
-  user_id:
   participating_dojo_id: 1
-  created_at: 2025-11-14 21:58:21.743404000 Z
-  updated_at: 2025-11-14 21:58:21.743404000 Z
+  role_id: 7
+  taikai_id: 1
+  updated_at: 2025-11-16 20:03:34.636904000 Z
+  user_id:
 staffs_006:
   id: 6
+  created_at: 2025-11-16 20:03:34.751211000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 2
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:21.853353000 Z
-  updated_at: 2025-11-14 21:58:21.853353000 Z
+  role_id: 1
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:34.751211000 Z
+  user_id: 2
 staffs_007:
   id: 7
+  created_at: 2025-11-16 20:03:35.149878000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 2
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:22.258053000 Z
-  updated_at: 2025-11-14 21:58:22.258053000 Z
+  role_id: 3
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:35.149878000 Z
+  user_id: 6
 staffs_008:
   id: 8
+  created_at: 2025-11-16 20:03:35.161231000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 2
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:22.270372000 Z
-  updated_at: 2025-11-14 21:58:22.270372000 Z
+  role_id: 2
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:35.161231000 Z
+  user_id: 3
 staffs_009:
   id: 9
+  created_at: 2025-11-16 20:03:35.172539000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 2
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:22.279801000 Z
-  updated_at: 2025-11-14 21:58:22.279801000 Z
+  role_id: 5
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:35.172539000 Z
+  user_id: 5
 staffs_010:
   id: 10
+  created_at: 2025-11-16 20:03:35.180873000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 2
-  role_id: 7
-  user_id:
   participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:22.289552000 Z
-  updated_at: 2025-11-14 21:58:22.289552000 Z
+  role_id: 7
+  taikai_id: 2
+  updated_at: 2025-11-16 20:03:35.180873000 Z
+  user_id:
 staffs_011:
   id: 11
+  created_at: 2025-11-16 20:03:35.199531000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 3
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:22.309286000 Z
-  updated_at: 2025-11-14 21:58:22.309286000 Z
+  role_id: 1
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.199531000 Z
+  user_id: 2
 staffs_012:
   id: 12
+  created_at: 2025-11-16 20:03:35.481986000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 3
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:22.586529000 Z
-  updated_at: 2025-11-14 21:58:22.586529000 Z
+  role_id: 3
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.481986000 Z
+  user_id: 6
 staffs_013:
   id: 13
+  created_at: 2025-11-16 20:03:35.494322000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 3
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 5
-  created_at: 2025-11-14 21:58:22.599717000 Z
-  updated_at: 2025-11-14 21:58:22.599717000 Z
+  role_id: 2
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.494322000 Z
+  user_id: 3
 staffs_014:
   id: 14
+  created_at: 2025-11-16 20:03:35.503889000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 3
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 5
-  created_at: 2025-11-14 21:58:22.610373000 Z
-  updated_at: 2025-11-14 21:58:22.610373000 Z
+  role_id: 5
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.503889000 Z
+  user_id: 5
 staffs_015:
   id: 15
+  created_at: 2025-11-16 20:03:35.512190000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 3
-  role_id: 7
-  user_id:
   participating_dojo_id: 5
-  created_at: 2025-11-14 21:58:22.619057000 Z
-  updated_at: 2025-11-14 21:58:22.619057000 Z
+  role_id: 7
+  taikai_id: 3
+  updated_at: 2025-11-16 20:03:35.512190000 Z
+  user_id:
 staffs_016:
   id: 16
+  created_at: 2025-11-16 20:03:35.530706000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 4
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:22.639733000 Z
-  updated_at: 2025-11-14 21:58:22.639733000 Z
+  role_id: 1
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.530706000 Z
+  user_id: 2
 staffs_017:
   id: 17
+  created_at: 2025-11-16 20:03:35.930416000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 4
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.029819000 Z
-  updated_at: 2025-11-14 21:58:23.029819000 Z
+  role_id: 3
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.930416000 Z
+  user_id: 6
 staffs_018:
   id: 18
+  created_at: 2025-11-16 20:03:35.942859000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 4
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:23.042812000 Z
-  updated_at: 2025-11-14 21:58:23.042812000 Z
+  role_id: 2
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.942859000 Z
+  user_id: 3
 staffs_019:
   id: 19
+  created_at: 2025-11-16 20:03:35.954170000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 4
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:23.052655000 Z
-  updated_at: 2025-11-14 21:58:23.052655000 Z
+  role_id: 5
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.954170000 Z
+  user_id: 5
 staffs_020:
   id: 20
+  created_at: 2025-11-16 20:03:35.963029000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 4
-  role_id: 7
-  user_id:
   participating_dojo_id: 7
-  created_at: 2025-11-14 21:58:23.061498000 Z
-  updated_at: 2025-11-14 21:58:23.061498000 Z
+  role_id: 7
+  taikai_id: 4
+  updated_at: 2025-11-16 20:03:35.963029000 Z
+  user_id:
 staffs_021:
   id: 21
+  created_at: 2025-11-16 20:03:35.983579000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 5
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.081323000 Z
-  updated_at: 2025-11-14 21:58:23.081323000 Z
+  role_id: 1
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:35.983579000 Z
+  user_id: 2
 staffs_022:
   id: 22
+  created_at: 2025-11-16 20:03:36.383275000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 5
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.467821000 Z
-  updated_at: 2025-11-14 21:58:23.467821000 Z
+  role_id: 3
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:36.383275000 Z
+  user_id: 6
 staffs_023:
   id: 23
+  created_at: 2025-11-16 20:03:36.395230000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 5
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.479716000 Z
-  updated_at: 2025-11-14 21:58:23.479716000 Z
+  role_id: 2
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:36.395230000 Z
+  user_id: 3
 staffs_024:
   id: 24
+  created_at: 2025-11-16 20:03:36.405887000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 5
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.491317000 Z
-  updated_at: 2025-11-14 21:58:23.491317000 Z
+  role_id: 5
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:36.405887000 Z
+  user_id: 5
 staffs_025:
   id: 25
+  created_at: 2025-11-16 20:03:36.415366000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 5
-  role_id: 7
-  user_id:
   participating_dojo_id: 9
-  created_at: 2025-11-14 21:58:23.501037000 Z
-  updated_at: 2025-11-14 21:58:23.501037000 Z
+  role_id: 7
+  taikai_id: 5
+  updated_at: 2025-11-16 20:03:36.415366000 Z
+  user_id:
 staffs_026:
   id: 26
+  created_at: 2025-11-16 20:03:36.436036000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 6
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.521817000 Z
-  updated_at: 2025-11-14 21:58:23.521817000 Z
+  role_id: 1
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.436036000 Z
+  user_id: 2
 staffs_027:
   id: 27
+  created_at: 2025-11-16 20:03:36.712424000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 6
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.798134000 Z
-  updated_at: 2025-11-14 21:58:23.798134000 Z
+  role_id: 3
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.712424000 Z
+  user_id: 6
 staffs_028:
   id: 28
+  created_at: 2025-11-16 20:03:36.725725000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 6
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 11
-  created_at: 2025-11-14 21:58:23.808971000 Z
-  updated_at: 2025-11-14 21:58:23.808971000 Z
+  role_id: 2
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.725725000 Z
+  user_id: 3
 staffs_029:
   id: 29
+  created_at: 2025-11-16 20:03:36.735667000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 6
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 11
-  created_at: 2025-11-14 21:58:23.818363000 Z
-  updated_at: 2025-11-14 21:58:23.818363000 Z
+  role_id: 5
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.735667000 Z
+  user_id: 5
 staffs_030:
   id: 30
+  created_at: 2025-11-16 20:03:36.745502000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 6
-  role_id: 7
-  user_id:
   participating_dojo_id: 11
-  created_at: 2025-11-14 21:58:23.826590000 Z
-  updated_at: 2025-11-14 21:58:23.826590000 Z
+  role_id: 7
+  taikai_id: 6
+  updated_at: 2025-11-16 20:03:36.745502000 Z
+  user_id:
 staffs_031:
   id: 31
+  created_at: 2025-11-16 20:03:36.765589000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 7
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:23.848389000 Z
-  updated_at: 2025-11-14 21:58:23.848389000 Z
+  role_id: 1
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:36.765589000 Z
+  user_id: 2
 staffs_032:
   id: 32
+  created_at: 2025-11-16 20:03:37.160156000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 7
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.239871000 Z
-  updated_at: 2025-11-14 21:58:24.239871000 Z
+  role_id: 3
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:37.160156000 Z
+  user_id: 6
 staffs_033:
   id: 33
+  created_at: 2025-11-16 20:03:37.173632000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 7
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:24.252003000 Z
-  updated_at: 2025-11-14 21:58:24.252003000 Z
+  role_id: 2
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:37.173632000 Z
+  user_id: 3
 staffs_034:
   id: 34
+  created_at: 2025-11-16 20:03:37.184273000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 7
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:24.262072000 Z
-  updated_at: 2025-11-14 21:58:24.262072000 Z
+  role_id: 5
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:37.184273000 Z
+  user_id: 5
 staffs_035:
   id: 35
+  created_at: 2025-11-16 20:03:37.193709000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 7
-  role_id: 7
-  user_id:
   participating_dojo_id: 13
-  created_at: 2025-11-14 21:58:24.272017000 Z
-  updated_at: 2025-11-14 21:58:24.272017000 Z
+  role_id: 7
+  taikai_id: 7
+  updated_at: 2025-11-16 20:03:37.193709000 Z
+  user_id:
 staffs_036:
   id: 36
+  created_at: 2025-11-16 20:03:37.214347000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 8
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.294545000 Z
-  updated_at: 2025-11-14 21:58:24.294545000 Z
+  role_id: 1
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.214347000 Z
+  user_id: 2
 staffs_037:
   id: 37
+  created_at: 2025-11-16 20:03:37.419652000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 8
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.499860000 Z
-  updated_at: 2025-11-14 21:58:24.499860000 Z
+  role_id: 3
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.419652000 Z
+  user_id: 6
 staffs_038:
   id: 38
+  created_at: 2025-11-16 20:03:37.430955000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 8
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.511296000 Z
-  updated_at: 2025-11-14 21:58:24.511296000 Z
+  role_id: 2
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.430955000 Z
+  user_id: 3
 staffs_039:
   id: 39
+  created_at: 2025-11-16 20:03:37.442107000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 8
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.520970000 Z
-  updated_at: 2025-11-14 21:58:24.520970000 Z
+  role_id: 5
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.442107000 Z
+  user_id: 5
 staffs_040:
   id: 40
+  created_at: 2025-11-16 20:03:37.450263000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 8
-  role_id: 7
-  user_id:
   participating_dojo_id: 15
-  created_at: 2025-11-14 21:58:24.529857000 Z
-  updated_at: 2025-11-14 21:58:24.529857000 Z
+  role_id: 7
+  taikai_id: 8
+  updated_at: 2025-11-16 20:03:37.450263000 Z
+  user_id:
 staffs_041:
   id: 41
+  created_at: 2025-11-16 20:03:37.538643000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 9
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.618300000 Z
-  updated_at: 2025-11-14 21:58:24.618300000 Z
+  role_id: 1
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.538643000 Z
+  user_id: 2
 staffs_042:
   id: 42
+  created_at: 2025-11-16 20:03:37.741333000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 9
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.827966000 Z
-  updated_at: 2025-11-14 21:58:24.827966000 Z
+  role_id: 3
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.741333000 Z
+  user_id: 6
 staffs_043:
   id: 43
+  created_at: 2025-11-16 20:03:37.753710000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 9
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.840617000 Z
-  updated_at: 2025-11-14 21:58:24.840617000 Z
+  role_id: 2
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.753710000 Z
+  user_id: 3
 staffs_044:
   id: 44
+  created_at: 2025-11-16 20:03:37.770426000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 9
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.851731000 Z
-  updated_at: 2025-11-14 21:58:24.851731000 Z
+  role_id: 5
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.770426000 Z
+  user_id: 5
 staffs_045:
   id: 45
+  created_at: 2025-11-16 20:03:37.787299000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 9
-  role_id: 7
-  user_id:
   participating_dojo_id: 16
-  created_at: 2025-11-14 21:58:24.861096000 Z
-  updated_at: 2025-11-14 21:58:24.861096000 Z
+  role_id: 7
+  taikai_id: 9
+  updated_at: 2025-11-16 20:03:37.787299000 Z
+  user_id:
 staffs_046:
   id: 46
+  created_at: 2025-11-16 20:03:37.826540000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 10
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:24.883239000 Z
-  updated_at: 2025-11-14 21:58:24.883239000 Z
+  role_id: 1
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:37.826540000 Z
+  user_id: 2
 staffs_047:
   id: 47
+  created_at: 2025-11-16 20:03:37.999402000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 10
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.033184000 Z
-  updated_at: 2025-11-14 21:58:25.033184000 Z
+  role_id: 3
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:37.999402000 Z
+  user_id: 6
 staffs_048:
   id: 48
+  created_at: 2025-11-16 20:03:38.010373000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 10
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 17
-  created_at: 2025-11-14 21:58:25.044359000 Z
-  updated_at: 2025-11-14 21:58:25.044359000 Z
+  role_id: 2
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:38.010373000 Z
+  user_id: 3
 staffs_049:
   id: 49
+  created_at: 2025-11-16 20:03:38.019813000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 10
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 17
-  created_at: 2025-11-14 21:58:25.055994000 Z
-  updated_at: 2025-11-14 21:58:25.055994000 Z
+  role_id: 5
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:38.019813000 Z
+  user_id: 5
 staffs_050:
   id: 50
+  created_at: 2025-11-16 20:03:38.028094000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 10
-  role_id: 7
-  user_id:
   participating_dojo_id: 17
-  created_at: 2025-11-14 21:58:25.065341000 Z
-  updated_at: 2025-11-14 21:58:25.065341000 Z
+  role_id: 7
+  taikai_id: 10
+  updated_at: 2025-11-16 20:03:38.028094000 Z
+  user_id:
 staffs_051:
   id: 51
+  created_at: 2025-11-16 20:03:38.050030000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 11
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.085320000 Z
-  updated_at: 2025-11-14 21:58:25.085320000 Z
+  role_id: 1
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.050030000 Z
+  user_id: 2
 staffs_052:
   id: 52
+  created_at: 2025-11-16 20:03:38.256730000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 11
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.284812000 Z
-  updated_at: 2025-11-14 21:58:25.284812000 Z
+  role_id: 3
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.256730000 Z
+  user_id: 6
 staffs_053:
   id: 53
+  created_at: 2025-11-16 20:03:38.269327000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 11
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.298700000 Z
-  updated_at: 2025-11-14 21:58:25.298700000 Z
+  role_id: 2
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.269327000 Z
+  user_id: 3
 staffs_054:
   id: 54
+  created_at: 2025-11-16 20:03:38.279573000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 11
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.308662000 Z
-  updated_at: 2025-11-14 21:58:25.308662000 Z
+  role_id: 5
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.279573000 Z
+  user_id: 5
 staffs_055:
   id: 55
+  created_at: 2025-11-16 20:03:38.287956000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 11
-  role_id: 7
-  user_id:
   participating_dojo_id: 18
-  created_at: 2025-11-14 21:58:25.318644000 Z
-  updated_at: 2025-11-14 21:58:25.318644000 Z
+  role_id: 7
+  taikai_id: 11
+  updated_at: 2025-11-16 20:03:38.287956000 Z
+  user_id:
 staffs_056:
   id: 56
+  created_at: 2025-11-16 20:03:38.307669000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 12
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.339338000 Z
-  updated_at: 2025-11-14 21:58:25.339338000 Z
+  role_id: 1
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.307669000 Z
+  user_id: 2
 staffs_057:
   id: 57
+  created_at: 2025-11-16 20:03:38.509851000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 12
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.550669000 Z
-  updated_at: 2025-11-14 21:58:25.550669000 Z
+  role_id: 3
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.509851000 Z
+  user_id: 6
 staffs_058:
   id: 58
+  created_at: 2025-11-16 20:03:38.520738000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 12
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.563740000 Z
-  updated_at: 2025-11-14 21:58:25.563740000 Z
+  role_id: 2
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.520738000 Z
+  user_id: 3
 staffs_059:
   id: 59
+  created_at: 2025-11-16 20:03:38.530503000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 12
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.575392000 Z
-  updated_at: 2025-11-14 21:58:25.575392000 Z
+  role_id: 5
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.530503000 Z
+  user_id: 5
 staffs_060:
   id: 60
+  created_at: 2025-11-16 20:03:38.541315000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 12
-  role_id: 7
-  user_id:
   participating_dojo_id: 19
-  created_at: 2025-11-14 21:58:25.585084000 Z
-  updated_at: 2025-11-14 21:58:25.585084000 Z
+  role_id: 7
+  taikai_id: 12
+  updated_at: 2025-11-16 20:03:38.541315000 Z
+  user_id:
 staffs_061:
   id: 61
+  created_at: 2025-11-16 20:03:38.562645000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 13
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.605128000 Z
-  updated_at: 2025-11-14 21:58:25.605128000 Z
+  role_id: 1
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.562645000 Z
+  user_id: 2
 staffs_062:
   id: 62
+  created_at: 2025-11-16 20:03:38.708807000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 13
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.754023000 Z
-  updated_at: 2025-11-14 21:58:25.754023000 Z
+  role_id: 3
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.708807000 Z
+  user_id: 6
 staffs_063:
   id: 63
+  created_at: 2025-11-16 20:03:38.720881000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 13
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 20
-  created_at: 2025-11-14 21:58:25.766367000 Z
-  updated_at: 2025-11-14 21:58:25.766367000 Z
+  role_id: 2
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.720881000 Z
+  user_id: 3
 staffs_064:
   id: 64
+  created_at: 2025-11-16 20:03:38.731445000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 13
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 20
-  created_at: 2025-11-14 21:58:25.776751000 Z
-  updated_at: 2025-11-14 21:58:25.776751000 Z
+  role_id: 5
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.731445000 Z
+  user_id: 5
 staffs_065:
   id: 65
+  created_at: 2025-11-16 20:03:38.739818000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 13
-  role_id: 7
-  user_id:
   participating_dojo_id: 20
-  created_at: 2025-11-14 21:58:25.786419000 Z
-  updated_at: 2025-11-14 21:58:25.786419000 Z
+  role_id: 7
+  taikai_id: 13
+  updated_at: 2025-11-16 20:03:38.739818000 Z
+  user_id:
 staffs_066:
   id: 66
+  created_at: 2025-11-16 20:03:38.760999000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 14
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:25.807362000 Z
-  updated_at: 2025-11-14 21:58:25.807362000 Z
+  role_id: 1
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.760999000 Z
+  user_id: 2
 staffs_067:
   id: 67
+  created_at: 2025-11-16 20:03:38.967094000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 14
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:26.010282000 Z
-  updated_at: 2025-11-14 21:58:26.010282000 Z
+  role_id: 3
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.967094000 Z
+  user_id: 6
 staffs_068:
   id: 68
+  created_at: 2025-11-16 20:03:38.977998000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 14
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:26.021492000 Z
-  updated_at: 2025-11-14 21:58:26.021492000 Z
+  role_id: 2
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.977998000 Z
+  user_id: 3
 staffs_069:
   id: 69
+  created_at: 2025-11-16 20:03:38.987539000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 14
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:26.031006000 Z
-  updated_at: 2025-11-14 21:58:26.031006000 Z
+  role_id: 5
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.987539000 Z
+  user_id: 5
 staffs_070:
   id: 70
+  created_at: 2025-11-16 20:03:38.995790000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 14
-  role_id: 7
-  user_id:
   participating_dojo_id: 21
-  created_at: 2025-11-14 21:58:26.041987000 Z
-  updated_at: 2025-11-14 21:58:26.041987000 Z
+  role_id: 7
+  taikai_id: 14
+  updated_at: 2025-11-16 20:03:38.995790000 Z
+  user_id:
 staffs_071:
   id: 71
+  created_at: 2025-11-16 20:03:39.015235000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 15
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:26.062323000 Z
-  updated_at: 2025-11-14 21:58:26.062323000 Z
+  role_id: 1
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.015235000 Z
+  user_id: 2
 staffs_072:
   id: 72
+  created_at: 2025-11-16 20:03:39.414629000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 15
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:26.456526000 Z
-  updated_at: 2025-11-14 21:58:26.456526000 Z
+  role_id: 3
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.414629000 Z
+  user_id: 6
 staffs_073:
   id: 73
+  created_at: 2025-11-16 20:03:39.426701000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 15
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.467518000 Z
-  updated_at: 2025-11-14 21:58:26.467518000 Z
+  role_id: 2
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.426701000 Z
+  user_id: 3
 staffs_074:
   id: 74
+  created_at: 2025-11-16 20:03:39.436746000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 15
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.477997000 Z
-  updated_at: 2025-11-14 21:58:26.477997000 Z
+  role_id: 5
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.436746000 Z
+  user_id: 5
 staffs_075:
   id: 75
+  created_at: 2025-11-16 20:03:39.445265000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 15
-  role_id: 7
-  user_id:
   participating_dojo_id: 22
-  created_at: 2025-11-14 21:58:26.487115000 Z
-  updated_at: 2025-11-14 21:58:26.487115000 Z
+  role_id: 7
+  taikai_id: 15
+  updated_at: 2025-11-16 20:03:39.445265000 Z
+  user_id:
 staffs_076:
   id: 76
+  created_at: 2025-11-16 20:03:39.532553000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 16
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:26.571068000 Z
-  updated_at: 2025-11-14 21:58:26.571068000 Z
+  role_id: 1
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:39.532553000 Z
+  user_id: 2
 staffs_077:
   id: 77
+  created_at: 2025-11-16 20:03:39.930780000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 16
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:26.962603000 Z
-  updated_at: 2025-11-14 21:58:26.962603000 Z
+  role_id: 3
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:39.930780000 Z
+  user_id: 6
 staffs_078:
   id: 78
+  created_at: 2025-11-16 20:03:40.024120000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 16
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.974673000 Z
-  updated_at: 2025-11-14 21:58:26.974673000 Z
+  role_id: 2
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:40.024120000 Z
+  user_id: 3
 staffs_079:
   id: 79
+  created_at: 2025-11-16 20:03:40.033919000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 16
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.984994000 Z
-  updated_at: 2025-11-14 21:58:26.984994000 Z
+  role_id: 5
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:40.033919000 Z
+  user_id: 5
 staffs_080:
   id: 80
+  created_at: 2025-11-16 20:03:40.042293000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 16
-  role_id: 7
-  user_id:
   participating_dojo_id: 24
-  created_at: 2025-11-14 21:58:26.993390000 Z
-  updated_at: 2025-11-14 21:58:26.993390000 Z
+  role_id: 7
+  taikai_id: 16
+  updated_at: 2025-11-16 20:03:40.042293000 Z
+  user_id:
 staffs_081:
   id: 81
+  created_at: 2025-11-16 20:03:40.061715000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 17
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:27.013679000 Z
-  updated_at: 2025-11-14 21:58:27.013679000 Z
+  role_id: 1
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.061715000 Z
+  user_id: 2
 staffs_082:
   id: 82
+  created_at: 2025-11-16 20:03:40.343156000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 17
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:27.289781000 Z
-  updated_at: 2025-11-14 21:58:27.289781000 Z
+  role_id: 3
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.343156000 Z
+  user_id: 6
 staffs_083:
   id: 83
+  created_at: 2025-11-16 20:03:40.355230000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 17
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 26
-  created_at: 2025-11-14 21:58:27.303469000 Z
-  updated_at: 2025-11-14 21:58:27.303469000 Z
+  role_id: 2
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.355230000 Z
+  user_id: 3
 staffs_084:
   id: 84
+  created_at: 2025-11-16 20:03:40.364674000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 17
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 26
-  created_at: 2025-11-14 21:58:27.312919000 Z
-  updated_at: 2025-11-14 21:58:27.312919000 Z
+  role_id: 5
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.364674000 Z
+  user_id: 5
 staffs_085:
   id: 85
+  created_at: 2025-11-16 20:03:40.373026000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 17
-  role_id: 7
-  user_id:
   participating_dojo_id: 26
-  created_at: 2025-11-14 21:58:27.322351000 Z
-  updated_at: 2025-11-14 21:58:27.322351000 Z
+  role_id: 7
+  taikai_id: 17
+  updated_at: 2025-11-16 20:03:40.373026000 Z
+  user_id:
 staffs_086:
   id: 86
+  created_at: 2025-11-16 20:03:40.391542000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 18
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:27.343003000 Z
-  updated_at: 2025-11-14 21:58:27.343003000 Z
+  role_id: 1
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.391542000 Z
+  user_id: 2
 staffs_087:
   id: 87
+  created_at: 2025-11-16 20:03:40.850708000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 18
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:27.732850000 Z
-  updated_at: 2025-11-14 21:58:27.732850000 Z
+  role_id: 3
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.850708000 Z
+  user_id: 6
 staffs_088:
   id: 88
+  created_at: 2025-11-16 20:03:40.862441000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 18
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.744044000 Z
-  updated_at: 2025-11-14 21:58:27.744044000 Z
+  role_id: 2
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.862441000 Z
+  user_id: 3
 staffs_089:
   id: 89
+  created_at: 2025-11-16 20:03:40.872263000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 18
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.753368000 Z
-  updated_at: 2025-11-14 21:58:27.753368000 Z
+  role_id: 5
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.872263000 Z
+  user_id: 5
 staffs_090:
   id: 90
+  created_at: 2025-11-16 20:03:40.882571000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 18
-  role_id: 7
-  user_id:
   participating_dojo_id: 28
-  created_at: 2025-11-14 21:58:27.761566000 Z
-  updated_at: 2025-11-14 21:58:27.761566000 Z
+  role_id: 7
+  taikai_id: 18
+  updated_at: 2025-11-16 20:03:40.882571000 Z
+  user_id:
 staffs_091:
   id: 91
+  created_at: 2025-11-16 20:03:40.901260000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 19
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:27.779926000 Z
-  updated_at: 2025-11-14 21:58:27.779926000 Z
+  role_id: 1
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:40.901260000 Z
+  user_id: 2
 staffs_092:
   id: 92
+  created_at: 2025-11-16 20:03:41.302129000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 19
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:28.172708000 Z
-  updated_at: 2025-11-14 21:58:28.172708000 Z
+  role_id: 3
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:41.302129000 Z
+  user_id: 6
 staffs_093:
   id: 93
+  created_at: 2025-11-16 20:03:41.314338000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 19
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:28.185380000 Z
-  updated_at: 2025-11-14 21:58:28.185380000 Z
+  role_id: 2
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:41.314338000 Z
+  user_id: 3
 staffs_094:
   id: 94
+  created_at: 2025-11-16 20:03:41.325044000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 19
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:28.195139000 Z
-  updated_at: 2025-11-14 21:58:28.195139000 Z
+  role_id: 5
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:41.325044000 Z
+  user_id: 5
 staffs_095:
   id: 95
+  created_at: 2025-11-16 20:03:41.333777000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 19
-  role_id: 7
-  user_id:
   participating_dojo_id: 30
-  created_at: 2025-11-14 21:58:28.204834000 Z
-  updated_at: 2025-11-14 21:58:28.204834000 Z
+  role_id: 7
+  taikai_id: 19
+  updated_at: 2025-11-16 20:03:41.333777000 Z
+  user_id:
 staffs_096:
   id: 96
+  created_at: 2025-11-16 20:03:41.354127000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 20
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:28.226156000 Z
-  updated_at: 2025-11-14 21:58:28.226156000 Z
+  role_id: 1
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.354127000 Z
+  user_id: 2
 staffs_097:
   id: 97
+  created_at: 2025-11-16 20:03:41.642744000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 20
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:28.566109000 Z
-  updated_at: 2025-11-14 21:58:28.566109000 Z
+  role_id: 3
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.642744000 Z
+  user_id: 6
 staffs_098:
   id: 98
+  created_at: 2025-11-16 20:03:41.655441000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 20
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 32
-  created_at: 2025-11-14 21:58:28.579565000 Z
-  updated_at: 2025-11-14 21:58:28.579565000 Z
+  role_id: 2
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.655441000 Z
+  user_id: 3
 staffs_099:
   id: 99
+  created_at: 2025-11-16 20:03:41.665983000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 20
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 32
-  created_at: 2025-11-14 21:58:28.590768000 Z
-  updated_at: 2025-11-14 21:58:28.590768000 Z
+  role_id: 5
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.665983000 Z
+  user_id: 5
 staffs_100:
   id: 100
+  created_at: 2025-11-16 20:03:41.675543000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 20
-  role_id: 7
-  user_id:
   participating_dojo_id: 32
-  created_at: 2025-11-14 21:58:28.599225000 Z
-  updated_at: 2025-11-14 21:58:28.599225000 Z
+  role_id: 7
+  taikai_id: 20
+  updated_at: 2025-11-16 20:03:41.675543000 Z
+  user_id:
 staffs_101:
   id: 101
+  created_at: 2025-11-16 20:03:41.695633000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 21
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:28.620665000 Z
-  updated_at: 2025-11-14 21:58:28.620665000 Z
+  role_id: 1
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:41.695633000 Z
+  user_id: 2
 staffs_102:
   id: 102
+  created_at: 2025-11-16 20:03:42.093112000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 21
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.017016000 Z
-  updated_at: 2025-11-14 21:58:29.017016000 Z
+  role_id: 3
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:42.093112000 Z
+  user_id: 6
 staffs_103:
   id: 103
+  created_at: 2025-11-16 20:03:42.105360000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 21
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:29.028592000 Z
-  updated_at: 2025-11-14 21:58:29.028592000 Z
+  role_id: 2
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:42.105360000 Z
+  user_id: 3
 staffs_104:
   id: 104
+  created_at: 2025-11-16 20:03:42.116125000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 21
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:29.041121000 Z
-  updated_at: 2025-11-14 21:58:29.041121000 Z
+  role_id: 5
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:42.116125000 Z
+  user_id: 5
 staffs_105:
   id: 105
+  created_at: 2025-11-16 20:03:42.124589000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 21
-  role_id: 7
-  user_id:
   participating_dojo_id: 34
-  created_at: 2025-11-14 21:58:29.050011000 Z
-  updated_at: 2025-11-14 21:58:29.050011000 Z
+  role_id: 7
+  taikai_id: 21
+  updated_at: 2025-11-16 20:03:42.124589000 Z
+  user_id:
 staffs_106:
   id: 106
+  created_at: 2025-11-16 20:03:42.145729000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 22
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.069246000 Z
-  updated_at: 2025-11-14 21:58:29.069246000 Z
+  role_id: 1
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.145729000 Z
+  user_id: 2
 staffs_107:
   id: 107
+  created_at: 2025-11-16 20:03:42.349550000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 22
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.268717000 Z
-  updated_at: 2025-11-14 21:58:29.268717000 Z
+  role_id: 3
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.349550000 Z
+  user_id: 6
 staffs_108:
   id: 108
+  created_at: 2025-11-16 20:03:42.360431000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 22
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.279740000 Z
-  updated_at: 2025-11-14 21:58:29.279740000 Z
+  role_id: 2
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.360431000 Z
+  user_id: 3
 staffs_109:
   id: 109
+  created_at: 2025-11-16 20:03:42.370258000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 22
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.291519000 Z
-  updated_at: 2025-11-14 21:58:29.291519000 Z
+  role_id: 5
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.370258000 Z
+  user_id: 5
 staffs_110:
   id: 110
+  created_at: 2025-11-16 20:03:42.380706000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 22
-  role_id: 7
-  user_id:
   participating_dojo_id: 36
-  created_at: 2025-11-14 21:58:29.300784000 Z
-  updated_at: 2025-11-14 21:58:29.300784000 Z
+  role_id: 7
+  taikai_id: 22
+  updated_at: 2025-11-16 20:03:42.380706000 Z
+  user_id:
 staffs_111:
   id: 111
+  created_at: 2025-11-16 20:03:42.484042000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 23
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.387907000 Z
-  updated_at: 2025-11-14 21:58:29.387907000 Z
+  role_id: 1
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.484042000 Z
+  user_id: 2
 staffs_112:
   id: 112
+  created_at: 2025-11-16 20:03:42.709559000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 23
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.588210000 Z
-  updated_at: 2025-11-14 21:58:29.588210000 Z
+  role_id: 3
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.709559000 Z
+  user_id: 6
 staffs_113:
   id: 113
+  created_at: 2025-11-16 20:03:42.731322000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 23
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.598945000 Z
-  updated_at: 2025-11-14 21:58:29.598945000 Z
+  role_id: 2
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.731322000 Z
+  user_id: 3
 staffs_114:
   id: 114
+  created_at: 2025-11-16 20:03:42.752137000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 23
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.608097000 Z
-  updated_at: 2025-11-14 21:58:29.608097000 Z
+  role_id: 5
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.752137000 Z
+  user_id: 5
 staffs_115:
   id: 115
+  created_at: 2025-11-16 20:03:42.766984000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 23
-  role_id: 7
-  user_id:
   participating_dojo_id: 37
-  created_at: 2025-11-14 21:58:29.616395000 Z
-  updated_at: 2025-11-14 21:58:29.616395000 Z
+  role_id: 7
+  taikai_id: 23
+  updated_at: 2025-11-16 20:03:42.766984000 Z
+  user_id:
 staffs_116:
   id: 116
+  created_at: 2025-11-16 20:03:42.798434000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 24
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.635236000 Z
-  updated_at: 2025-11-14 21:58:29.635236000 Z
+  role_id: 1
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:42.798434000 Z
+  user_id: 2
 staffs_117:
   id: 117
+  created_at: 2025-11-16 20:03:43.078302000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 24
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.783191000 Z
-  updated_at: 2025-11-14 21:58:29.783191000 Z
+  role_id: 3
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:43.078302000 Z
+  user_id: 6
 staffs_118:
   id: 118
+  created_at: 2025-11-16 20:03:43.096524000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 24
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 38
-  created_at: 2025-11-14 21:58:29.793968000 Z
-  updated_at: 2025-11-14 21:58:29.793968000 Z
+  role_id: 2
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:43.096524000 Z
+  user_id: 3
 staffs_119:
   id: 119
+  created_at: 2025-11-16 20:03:43.108818000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 24
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 38
-  created_at: 2025-11-14 21:58:29.803263000 Z
-  updated_at: 2025-11-14 21:58:29.803263000 Z
+  role_id: 5
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:43.108818000 Z
+  user_id: 5
 staffs_120:
   id: 120
+  created_at: 2025-11-16 20:03:43.122312000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 24
-  role_id: 7
-  user_id:
   participating_dojo_id: 38
-  created_at: 2025-11-14 21:58:29.811626000 Z
-  updated_at: 2025-11-14 21:58:29.811626000 Z
+  role_id: 7
+  taikai_id: 24
+  updated_at: 2025-11-16 20:03:43.122312000 Z
+  user_id:
 staffs_121:
   id: 121
+  created_at: 2025-11-16 20:03:43.147586000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 25
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:29.833953000 Z
-  updated_at: 2025-11-14 21:58:29.833953000 Z
+  role_id: 1
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.147586000 Z
+  user_id: 2
 staffs_122:
   id: 122
+  created_at: 2025-11-16 20:03:43.375163000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 25
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.035247000 Z
-  updated_at: 2025-11-14 21:58:30.035247000 Z
+  role_id: 3
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.375163000 Z
+  user_id: 6
 staffs_123:
   id: 123
+  created_at: 2025-11-16 20:03:43.387369000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 25
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:30.047124000 Z
-  updated_at: 2025-11-14 21:58:30.047124000 Z
+  role_id: 2
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.387369000 Z
+  user_id: 3
 staffs_124:
   id: 124
+  created_at: 2025-11-16 20:03:43.398554000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 25
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:30.057566000 Z
-  updated_at: 2025-11-14 21:58:30.057566000 Z
+  role_id: 5
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.398554000 Z
+  user_id: 5
 staffs_125:
   id: 125
+  created_at: 2025-11-16 20:03:43.407919000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 25
-  role_id: 7
-  user_id:
   participating_dojo_id: 39
-  created_at: 2025-11-14 21:58:30.066201000 Z
-  updated_at: 2025-11-14 21:58:30.066201000 Z
+  role_id: 7
+  taikai_id: 25
+  updated_at: 2025-11-16 20:03:43.407919000 Z
+  user_id:
 staffs_126:
   id: 126
+  created_at: 2025-11-16 20:03:43.431463000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 26
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.087317000 Z
-  updated_at: 2025-11-14 21:58:30.087317000 Z
+  role_id: 1
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.431463000 Z
+  user_id: 2
 staffs_127:
   id: 127
+  created_at: 2025-11-16 20:03:43.638011000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 26
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.288102000 Z
-  updated_at: 2025-11-14 21:58:30.288102000 Z
+  role_id: 3
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.638011000 Z
+  user_id: 6
 staffs_128:
   id: 128
+  created_at: 2025-11-16 20:03:43.651578000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 26
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.300486000 Z
-  updated_at: 2025-11-14 21:58:30.300486000 Z
+  role_id: 2
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.651578000 Z
+  user_id: 3
 staffs_129:
   id: 129
+  created_at: 2025-11-16 20:03:43.662922000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 26
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.309855000 Z
-  updated_at: 2025-11-14 21:58:30.309855000 Z
+  role_id: 5
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.662922000 Z
+  user_id: 5
 staffs_130:
   id: 130
+  created_at: 2025-11-16 20:03:43.672506000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 26
-  role_id: 7
-  user_id:
   participating_dojo_id: 40
-  created_at: 2025-11-14 21:58:30.318095000 Z
-  updated_at: 2025-11-14 21:58:30.318095000 Z
+  role_id: 7
+  taikai_id: 26
+  updated_at: 2025-11-16 20:03:43.672506000 Z
+  user_id:
 staffs_131:
   id: 131
+  created_at: 2025-11-16 20:03:43.694036000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 27
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.337076000 Z
-  updated_at: 2025-11-14 21:58:30.337076000 Z
+  role_id: 1
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.694036000 Z
+  user_id: 2
 staffs_132:
   id: 132
+  created_at: 2025-11-16 20:03:43.840837000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 27
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.483606000 Z
-  updated_at: 2025-11-14 21:58:30.483606000 Z
+  role_id: 3
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.840837000 Z
+  user_id: 6
 staffs_133:
   id: 133
+  created_at: 2025-11-16 20:03:43.853331000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 27
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 41
-  created_at: 2025-11-14 21:58:30.494402000 Z
-  updated_at: 2025-11-14 21:58:30.494402000 Z
+  role_id: 2
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.853331000 Z
+  user_id: 3
 staffs_134:
   id: 134
+  created_at: 2025-11-16 20:03:43.863873000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 27
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 41
-  created_at: 2025-11-14 21:58:30.503893000 Z
-  updated_at: 2025-11-14 21:58:30.503893000 Z
+  role_id: 5
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.863873000 Z
+  user_id: 5
 staffs_135:
   id: 135
+  created_at: 2025-11-16 20:03:43.874487000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 27
-  role_id: 7
-  user_id:
   participating_dojo_id: 41
-  created_at: 2025-11-14 21:58:30.512189000 Z
-  updated_at: 2025-11-14 21:58:30.512189000 Z
+  role_id: 7
+  taikai_id: 27
+  updated_at: 2025-11-16 20:03:43.874487000 Z
+  user_id:
 staffs_136:
   id: 136
+  created_at: 2025-11-16 20:03:43.894485000 Z
   firstname: Marc
   lastname: O'Polo
-  taikai_id: 28
-  role_id: 1
-  user_id: 2
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.531092000 Z
-  updated_at: 2025-11-14 21:58:30.531092000 Z
+  role_id: 1
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:43.894485000 Z
+  user_id: 2
 staffs_137:
   id: 137
+  created_at: 2025-11-16 20:03:44.166380000 Z
   firstname: Vince
   lastname: Santo
-  taikai_id: 28
-  role_id: 3
-  user_id: 6
   participating_dojo_id:
-  created_at: 2025-11-14 21:58:30.736171000 Z
-  updated_at: 2025-11-14 21:58:30.736171000 Z
+  role_id: 3
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:44.166380000 Z
+  user_id: 6
 staffs_138:
   id: 138
+  created_at: 2025-11-16 20:03:44.177401000 Z
   firstname: Alain
   lastname: Terieur
-  taikai_id: 28
-  role_id: 2
-  user_id: 3
   participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.748981000 Z
-  updated_at: 2025-11-14 21:58:30.748981000 Z
+  role_id: 2
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:44.177401000 Z
+  user_id: 3
 staffs_139:
   id: 139
+  created_at: 2025-11-16 20:03:44.186894000 Z
   firstname: Pat
   lastname: Ronat
-  taikai_id: 28
-  role_id: 5
-  user_id: 5
   participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.758518000 Z
-  updated_at: 2025-11-14 21:58:30.758518000 Z
+  role_id: 5
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:44.186894000 Z
+  user_id: 5
 staffs_140:
   id: 140
+  created_at: 2025-11-16 20:03:44.195303000 Z
   firstname: Larry
   lastname: Golade
-  taikai_id: 28
-  role_id: 7
-  user_id:
   participating_dojo_id: 42
-  created_at: 2025-11-14 21:58:30.768017000 Z
-  updated_at: 2025-11-14 21:58:30.768017000 Z
+  role_id: 7
+  taikai_id: 28
+  updated_at: 2025-11-16 20:03:44.195303000 Z
+  user_id:

@@ -1,33 +1,33 @@
 ---
 dojo_fr:
   id: 1
-  shortname: club-1
-  name: dojo_fr
   city: Montpelier
   country_code: FR
-  created_at: 2025-11-14 21:58:20.849497000 Z
-  updated_at: 2025-11-14 21:58:20.849497000 Z
+  created_at: 2025-11-16 20:03:33.627285000 Z
+  name: dojo_fr
+  shortname: club-1
+  updated_at: 2025-11-16 20:03:33.627285000 Z
 dojo_hk:
   id: 2
-  shortname: club-2
-  name: dojo_hk
   city: Hong-Kong
   country_code: HK
-  created_at: 2025-11-14 21:58:20.858099000 Z
-  updated_at: 2025-11-14 21:58:20.858099000 Z
+  created_at: 2025-11-16 20:03:33.635677000 Z
+  name: dojo_hk
+  shortname: club-2
+  updated_at: 2025-11-16 20:03:33.635677000 Z
 dojo_jp:
   id: 3
-  shortname: club-3
-  name: dojo_jp
   city: Kyoto
   country_code: JP
-  created_at: 2025-11-14 21:58:20.865175000 Z
-  updated_at: 2025-11-14 21:58:20.865175000 Z
+  created_at: 2025-11-16 20:03:33.643232000 Z
+  name: dojo_jp
+  shortname: club-3
+  updated_at: 2025-11-16 20:03:33.643232000 Z
 dojo_to_delete:
   id: 4
-  shortname: club-4
-  name: Dojo To Delete
   city: Kyoto
   country_code: JP
-  created_at: 2025-11-14 21:58:20.872327000 Z
-  updated_at: 2025-11-14 21:58:20.872327000 Z
+  created_at: 2025-11-16 20:03:33.650821000 Z
+  name: Dojo To Delete
+  shortname: club-4
+  updated_at: 2025-11-16 20:03:33.650821000 Z

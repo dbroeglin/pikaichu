@@ -2,8 +2,8 @@
 scoreboards_001:
   id: 1
   api_key: dummy
+  created_at: 2025-11-16 20:03:44.219383000 Z
+  delay: 15
   nb_participants: 9
   participating_dojo_id: 3
-  created_at: 2025-11-14 21:58:30.793380000 Z
-  updated_at: 2025-11-14 21:58:30.793380000 Z
-  delay: 15
+  updated_at: 2025-11-16 20:03:44.219383000 Z

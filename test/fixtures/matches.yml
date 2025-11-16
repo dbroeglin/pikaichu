@@ -1,321 +1,321 @@
 ---
 matches_001:
   id: 1
+  created_at: 2025-11-16 20:03:34.669703000 Z
+  index: 1
+  level: 3
   taikai_id: 1
   team1_id: 1
   team2_id: 2
-  level: 3
-  index: 1
+  updated_at: 2025-11-16 20:03:34.669703000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.779725000 Z
-  updated_at: 2025-11-14 21:58:21.779725000 Z
 matches_002:
   id: 2
+  created_at: 2025-11-16 20:03:34.679846000 Z
+  index: 2
+  level: 3
   taikai_id: 1
   team1_id: 3
   team2_id: 4
-  level: 3
-  index: 2
+  updated_at: 2025-11-16 20:03:34.679846000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.789225000 Z
-  updated_at: 2025-11-14 21:58:21.789225000 Z
 matches_003:
   id: 3
+  created_at: 2025-11-16 20:03:34.687974000 Z
+  index: 3
+  level: 3
   taikai_id: 1
   team1_id: 5
   team2_id: 6
-  level: 3
-  index: 3
+  updated_at: 2025-11-16 20:03:34.687974000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.797439000 Z
-  updated_at: 2025-11-14 21:58:21.797439000 Z
 matches_004:
   id: 4
+  created_at: 2025-11-16 20:03:34.696048000 Z
+  index: 4
+  level: 3
   taikai_id: 1
   team1_id: 7
   team2_id: 8
-  level: 3
-  index: 4
+  updated_at: 2025-11-16 20:03:34.696048000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.804995000 Z
-  updated_at: 2025-11-14 21:58:21.804995000 Z
 matches_005:
   id: 5
+  created_at: 2025-11-16 20:03:34.703878000 Z
+  index: 1
+  level: 2
   taikai_id: 1
   team1_id:
   team2_id:
-  level: 2
-  index: 1
+  updated_at: 2025-11-16 20:03:34.703878000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.814106000 Z
-  updated_at: 2025-11-14 21:58:21.814106000 Z
 matches_006:
   id: 6
+  created_at: 2025-11-16 20:03:34.711401000 Z
+  index: 2
+  level: 2
   taikai_id: 1
   team1_id:
   team2_id:
-  level: 2
-  index: 2
+  updated_at: 2025-11-16 20:03:34.711401000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.821445000 Z
-  updated_at: 2025-11-14 21:58:21.821445000 Z
 matches_007:
   id: 7
+  created_at: 2025-11-16 20:03:34.718798000 Z
+  index: 1
+  level: 1
   taikai_id: 1
   team1_id:
   team2_id:
-  level: 1
-  index: 1
+  updated_at: 2025-11-16 20:03:34.718798000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.828644000 Z
-  updated_at: 2025-11-14 21:58:21.828644000 Z
 matches_008:
   id: 8
+  created_at: 2025-11-16 20:03:34.726073000 Z
+  index: 2
+  level: 1
   taikai_id: 1
   team1_id:
   team2_id:
-  level: 1
-  index: 2
+  updated_at: 2025-11-16 20:03:34.726073000 Z
   winner:
-  created_at: 2025-11-14 21:58:21.835864000 Z
-  updated_at: 2025-11-14 21:58:21.835864000 Z
 matches_009:
   id: 9
+  created_at: 2025-11-16 20:03:37.461564000 Z
+  index: 1
+  level: 3
   taikai_id: 8
   team1_id: 41
   team2_id: 42
-  level: 3
-  index: 1
+  updated_at: 2025-11-16 20:03:37.461564000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.540705000 Z
-  updated_at: 2025-11-14 21:58:24.540705000 Z
 matches_010:
   id: 10
+  created_at: 2025-11-16 20:03:37.469306000 Z
+  index: 2
+  level: 3
   taikai_id: 8
   team1_id: 43
   team2_id: 44
-  level: 3
-  index: 2
+  updated_at: 2025-11-16 20:03:37.469306000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.548339000 Z
-  updated_at: 2025-11-14 21:58:24.548339000 Z
 matches_011:
   id: 11
+  created_at: 2025-11-16 20:03:37.477211000 Z
+  index: 3
+  level: 3
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 3
-  index: 3
+  updated_at: 2025-11-16 20:03:37.477211000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.555927000 Z
-  updated_at: 2025-11-14 21:58:24.555927000 Z
 matches_012:
   id: 12
+  created_at: 2025-11-16 20:03:37.484819000 Z
+  index: 4
+  level: 3
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 3
-  index: 4
+  updated_at: 2025-11-16 20:03:37.484819000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.565971000 Z
-  updated_at: 2025-11-14 21:58:24.565971000 Z
 matches_013:
   id: 13
+  created_at: 2025-11-16 20:03:37.492480000 Z
+  index: 1
+  level: 2
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 2
-  index: 1
+  updated_at: 2025-11-16 20:03:37.492480000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.573452000 Z
-  updated_at: 2025-11-14 21:58:24.573452000 Z
 matches_014:
   id: 14
+  created_at: 2025-11-16 20:03:37.502943000 Z
+  index: 2
+  level: 2
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 2
-  index: 2
+  updated_at: 2025-11-16 20:03:37.502943000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.582672000 Z
-  updated_at: 2025-11-14 21:58:24.582672000 Z
 matches_015:
   id: 15
+  created_at: 2025-11-16 20:03:37.511403000 Z
+  index: 1
+  level: 1
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 1
-  index: 1
+  updated_at: 2025-11-16 20:03:37.511403000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.590189000 Z
-  updated_at: 2025-11-14 21:58:24.590189000 Z
 matches_016:
   id: 16
+  created_at: 2025-11-16 20:03:37.518584000 Z
+  index: 2
+  level: 1
   taikai_id: 8
   team1_id:
   team2_id:
-  level: 1
-  index: 2
+  updated_at: 2025-11-16 20:03:37.518584000 Z
   winner:
-  created_at: 2025-11-14 21:58:24.598833000 Z
-  updated_at: 2025-11-14 21:58:24.598833000 Z
 matches_017:
   id: 17
+  created_at: 2025-11-16 20:03:39.459006000 Z
+  index: 1
+  level: 3
   taikai_id: 15
   team1_id: 61
   team2_id: 62
-  level: 3
-  index: 1
+  updated_at: 2025-11-16 20:03:39.459006000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.498289000 Z
-  updated_at: 2025-11-14 21:58:26.498289000 Z
 matches_018:
   id: 18
+  created_at: 2025-11-16 20:03:39.466558000 Z
+  index: 2
+  level: 3
   taikai_id: 15
   team1_id: 63
   team2_id: 64
-  level: 3
-  index: 2
+  updated_at: 2025-11-16 20:03:39.466558000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.506018000 Z
-  updated_at: 2025-11-14 21:58:26.506018000 Z
 matches_019:
   id: 19
+  created_at: 2025-11-16 20:03:39.473987000 Z
+  index: 3
+  level: 3
   taikai_id: 15
   team1_id: 65
   team2_id: 66
-  level: 3
-  index: 3
+  updated_at: 2025-11-16 20:03:39.473987000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.514769000 Z
-  updated_at: 2025-11-14 21:58:26.514769000 Z
 matches_020:
   id: 20
+  created_at: 2025-11-16 20:03:39.481373000 Z
+  index: 4
+  level: 3
   taikai_id: 15
   team1_id: 67
   team2_id: 68
-  level: 3
-  index: 4
+  updated_at: 2025-11-16 20:03:39.481373000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.522077000 Z
-  updated_at: 2025-11-14 21:58:26.522077000 Z
 matches_021:
   id: 21
+  created_at: 2025-11-16 20:03:39.488762000 Z
+  index: 1
+  level: 2
   taikai_id: 15
   team1_id:
   team2_id:
-  level: 2
-  index: 1
+  updated_at: 2025-11-16 20:03:39.488762000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.529224000 Z
-  updated_at: 2025-11-14 21:58:26.529224000 Z
 matches_022:
   id: 22
+  created_at: 2025-11-16 20:03:39.496145000 Z
+  index: 2
+  level: 2
   taikai_id: 15
   team1_id:
   team2_id:
-  level: 2
-  index: 2
+  updated_at: 2025-11-16 20:03:39.496145000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.536413000 Z
-  updated_at: 2025-11-14 21:58:26.536413000 Z
 matches_023:
   id: 23
+  created_at: 2025-11-16 20:03:39.503428000 Z
+  index: 1
+  level: 1
   taikai_id: 15
   team1_id:
   team2_id:
-  level: 1
-  index: 1
+  updated_at: 2025-11-16 20:03:39.503428000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.543644000 Z
-  updated_at: 2025-11-14 21:58:26.543644000 Z
 matches_024:
   id: 24
+  created_at: 2025-11-16 20:03:39.512896000 Z
+  index: 2
+  level: 1
   taikai_id: 15
   team1_id:
   team2_id:
-  level: 1
-  index: 2
+  updated_at: 2025-11-16 20:03:39.512896000 Z
   winner:
-  created_at: 2025-11-14 21:58:26.550870000 Z
-  updated_at: 2025-11-14 21:58:26.550870000 Z
 matches_025:
   id: 25
+  created_at: 2025-11-16 20:03:42.392678000 Z
+  index: 1
+  level: 3
   taikai_id: 22
   team1_id: 101
   team2_id: 102
-  level: 3
-  index: 1
+  updated_at: 2025-11-16 20:03:42.392678000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.312585000 Z
-  updated_at: 2025-11-14 21:58:29.312585000 Z
 matches_026:
   id: 26
+  created_at: 2025-11-16 20:03:42.402360000 Z
+  index: 2
+  level: 3
   taikai_id: 22
   team1_id: 103
   team2_id: 104
-  level: 3
-  index: 2
+  updated_at: 2025-11-16 20:03:42.402360000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.320051000 Z
-  updated_at: 2025-11-14 21:58:29.320051000 Z
 matches_027:
   id: 27
+  created_at: 2025-11-16 20:03:42.411783000 Z
+  index: 3
+  level: 3
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 3
-  index: 3
+  updated_at: 2025-11-16 20:03:42.411783000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.327326000 Z
-  updated_at: 2025-11-14 21:58:29.327326000 Z
 matches_028:
   id: 28
+  created_at: 2025-11-16 20:03:42.423702000 Z
+  index: 4
+  level: 3
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 3
-  index: 4
+  updated_at: 2025-11-16 20:03:42.423702000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.335560000 Z
-  updated_at: 2025-11-14 21:58:29.335560000 Z
 matches_029:
   id: 29
+  created_at: 2025-11-16 20:03:42.433832000 Z
+  index: 1
+  level: 2
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 2
-  index: 1
+  updated_at: 2025-11-16 20:03:42.433832000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.343494000 Z
-  updated_at: 2025-11-14 21:58:29.343494000 Z
 matches_030:
   id: 30
+  created_at: 2025-11-16 20:03:42.442566000 Z
+  index: 2
+  level: 2
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 2
-  index: 2
+  updated_at: 2025-11-16 20:03:42.442566000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.352051000 Z
-  updated_at: 2025-11-14 21:58:29.352051000 Z
 matches_031:
   id: 31
+  created_at: 2025-11-16 20:03:42.452085000 Z
+  index: 1
+  level: 1
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 1
-  index: 1
+  updated_at: 2025-11-16 20:03:42.452085000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.359373000 Z
-  updated_at: 2025-11-14 21:58:29.359373000 Z
 matches_032:
   id: 32
+  created_at: 2025-11-16 20:03:42.461897000 Z
+  index: 2
+  level: 1
   taikai_id: 22
   team1_id:
   team2_id:
-  level: 1
-  index: 2
+  updated_at: 2025-11-16 20:03:42.461897000 Z
   winner:
-  created_at: 2025-11-14 21:58:29.368327000 Z
-  updated_at: 2025-11-14 21:58:29.368327000 Z
