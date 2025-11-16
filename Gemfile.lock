@@ -212,9 +212,9 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.12.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
+    jbuilder (2.14.1)
+      actionview (>= 7.0.0)
+      activesupport (>= 7.0.0)
     json (2.16.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -296,7 +296,7 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (6.4.3)
+    puma (7.1.0)
       nio4r (~> 2.0)
     pundit (2.3.2)
       activesupport (>= 3.0.0)
@@ -471,9 +471,9 @@ DEPENDENCIES
   mobility (~> 1.2.5)
   pg (~> 1.1)
   propshaft
-  puma (~> 6.4)
+  puma (>= 5.0)
   pundit
-  rails (~> 8.1.0)
+  rails (~> 8.1.1)
   roo (~> 2.8.0)
   rubocop
   rubocop-capybara
@@ -483,7 +483,7 @@ DEPENDENCIES
   stimulus-rails
   tabulo
   terminal-table
-  turbo-rails (~> 1.1.1)
+  turbo-rails
   tzinfo-data
   web-console
 
@@ -491,4 +491,4 @@ RUBY VERSION
    ruby 3.4.7p58
 
 BUNDLED WITH
-   2.4.2
+   2.7.2
