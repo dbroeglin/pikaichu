@@ -8,7 +8,7 @@
 | `dojo_admin`          | Dojo Administrator  | Administrateur de club |
 | `chairman`            | Chairman            | Directeur du tournoi   |
 | `marking_referee`     | Marking Referee     | Enregistreur           |
-| `shajo_referee`       | Shajo Referee       | Juge de shajo          |
+| `shajo_referee`       | Shajo Referee       | Juge de Shajo          |
 | `yatori`              | Yatori              | Yatori                 |
 | `target_referee`      | Target Referee      | Juge de Cible          |
 | `operations_chairman` | Operations Chairman | Responsable Logistique |

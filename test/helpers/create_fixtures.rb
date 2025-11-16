@@ -116,7 +116,7 @@ class CreateFixtures
     staff_roles['shajo_referee'] = create(
       :staff_role,
       code: :shajo_referee,
-      label_fr: 'Juge de shajo',
+      label_fr: 'Juge de Shajo',
       label_en: 'Shajo Referee'
     )
     staff_roles['yatori'] = create(

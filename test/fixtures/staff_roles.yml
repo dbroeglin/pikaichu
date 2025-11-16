@@ -51,7 +51,7 @@ shajo_referee:
     fr: Description de shajo_referee
     en: Description of shajo_referee
   label: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
-    fr: Juge de shajo
+    fr: Juge de Shajo
     en: Shajo Referee
   updated_at: 2025-11-16 20:03:33.583547000 Z
 yatori:
