@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { Sortable } from "sortablejs"
+import Sortable from "sortablejs"
 
 // Connects to data-controller="drag"
 export default class extends Controller {

@@ -6,13 +6,20 @@
   <div class="level-left">
     <% results.each do |result| %>
       <% if result.status %>
-        <%= link_to result.final? ? "#" : rotate_marking_path(@taikai, participant, result, status: result.status, match_id: match&.id),
-                    class: "#{verifying ? 'button' : 'button'} is-small is-light#{result.final? ? "" : " is-link"}",
-                    style: "#{result.final? ? 'padding-left: 3pt; padding-right: 3pt; margin-right: 1pt' : ''}",
-                    data: { turbo_method: 'patch' },
-                    title: Result.human_enum_value(:status, result.status) do %>
-          <%= full_icon_from(result) %>
-        <% end  %>
+        <% if result.final? %>
+          <span class="button is-small is-light" 
+                style="padding-left: 3pt; padding-right: 3pt; margin-right: 1pt"
+                title="<%= Result.human_enum_value(:status, result.status) %>">
+            <%= full_icon_from(result) %>
+          </span>
+        <% else %>
+          <%= button_to rotate_marking_path(@taikai, participant, result, status: result.status, match_id: match&.id),
+                        method: :patch,
+                        class: "button is-small is-light is-link",
+                        title: Result.human_enum_value(:status, result.status) do %>
+            <%= full_icon_from(result) %>
+          <% end %>
+        <% end %>
       <% else %>
         <span class="icon is-small" title="Not yet defined">&nbsp;</span>
       <% end %>
@@ -21,10 +28,10 @@
   </div>
   <% if verifying %>
     <div class="level-right">
-      <%= link_to finalize_round_marking_path(@taikai, participant, round: results.first.round, match_id: match&.id),
-                  class: "button is-small has-background-info ml-2",
-                  data: { turbo_method: 'patch' },
-                  title: t('.finalize_round', index: results.first.round) do %>
+      <%= button_to finalize_round_marking_path(@taikai, participant, round: results.first.round, match_id: match&.id),
+                    method: :patch,
+                    class: "button is-small has-background-info ml-2",
+                    title: t('.finalize_round', index: results.first.round) do %>
         <span class="icon is-small">
           <i class="fas fa-check"></i>
         </span>

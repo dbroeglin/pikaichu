@@ -46,6 +46,10 @@ class MarkingController < ApplicationController
     begin
       @result = @participant.add_result(@match&.id, params[:status], params[:value])
       @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
+      respond_to do |format|
+        format.html { redirect_to action: :show, id: @taikai.id }
+        format.turbo_stream
+      end
     rescue Score::PreviousRoundNotValidatedError => e
       respond_to do |format|
         format.html { redirect_to action: :show, id: @taikai.id }
@@ -78,6 +82,7 @@ class MarkingController < ApplicationController
 
     @result.save!
     respond_to do |format|
+      format.html { redirect_to action: :show, id: @taikai.id }
       format.turbo_stream do
         @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
         render action: :update
@@ -92,6 +97,7 @@ class MarkingController < ApplicationController
 
     @participant.finalize_round(params[:round], params[:match_id])
     respond_to do |format|
+      format.html { redirect_to action: :show, id: @taikai.id }
       format.turbo_stream do
         @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]
         render action: :update
