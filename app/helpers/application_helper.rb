@@ -292,13 +292,12 @@ module ApplicationHelper
     &block
   )
     options = options.reverse_merge(builder: BulmaFormBuilder)
-    form_with(
-      model: model,
-      scope: scope,
-      url: url,
-      format: format,
-      **options,
-      &block
-    )
+    
+    form_options = { format: format, **options }
+    form_options[:model] = model if model
+    form_options[:scope] = scope if scope
+    form_options[:url] = url if url
+    
+    form_with(**form_options, &block)
   end
 end

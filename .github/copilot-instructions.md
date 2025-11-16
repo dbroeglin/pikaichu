@@ -809,6 +809,8 @@ rubocop -a  # Auto-fix
 - **Descriptive test names:** `test "should prevent changes when taikai is done"`
 - **Factory usage over fixtures** (except complex scenarios)
 
+**Important**: When asked to fix a bug, always write or update tests to cover the issue first.
+
 ---
 
 ## Performance Considerations

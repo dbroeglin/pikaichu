@@ -172,4 +172,11 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     assert @controller.instance_variable_get(:@team).errors.of_kind? :shortname, :taken
     assert_equal "Une équipe avec le nom '#{@team_a.shortname}' existe déjà.", flash[:alert]
   end
+
+  test "edit page renders team creation form" do
+    get teaming_edit_taikai_participating_dojo_path @taikai, @participating_dojo
+    assert_response :success
+    assert_select 'form[action=?]', teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo)
+    assert_select 'input[name=?]', 'team[shortname]'
+  end
 end

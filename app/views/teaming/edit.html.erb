@@ -6,7 +6,7 @@
       </p>
     </div>
     <div class="level-item">
-      <%= bulma_form_with url: teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo) do |f| %>
+      <%= bulma_form_with model: @team, url: teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo) do |f| %>
         <div class="field has-addons">
           <p class="control">
             <%= f.text_field :shortname, class: "input", placeholder: t('.placeholders.team_shortname') %>
