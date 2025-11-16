@@ -12,16 +12,19 @@ class Taikais2in1Test < ApplicationSystemTestCase
     sign_in_as users(:jean_bon)
     go_to_taikai :'2in1_dist_12_kinteki'
 
-    click_on "Modifier"
-    assert_selector "p.card-header-title", text: "Modification du Taikai"
+    click_link "Modifier"
+    wait_for_turbo
+    
+    assert_selector "p.card-header-title", text: "Modification du Taikai", wait: 5
 
-    find("p.card-header-title", text: "Clubs hôtes")
-      .ancestor("div.card")
-      .find("td", text: "Participating Dojo1 2in1 Dist 12 Kinteki")
-      .ancestor("tr")
-      .click_on "Modifier"
+    within find("div.card", text: "Clubs hôtes") do
+      within find("tr", text: "Participating Dojo1 2in1 Dist 12 Kinteki") do
+        click_link "Modifier"
+      end
+    end
+    wait_for_turbo
 
-    assert_selector "p.card-header-title", text: "Modifier un club hôte"
+    assert_selector "p.card-header-title", text: "Modifier un club hôte", wait: 5
     assert_selector "p.card-header-title", text: "Importer la liste des participant"
   end
 end

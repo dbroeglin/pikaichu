@@ -14,16 +14,24 @@ class MarkingTest < ApplicationSystemTestCase
       transition_taikai_to(taikai, :marking)
       go_to_taikais
 
-      find("td", exact_text: taikai.name).ancestor("tr").click_on("Feuille de marque")
-
-      if taikai.form_matches?
-        assert_selector "h1.title", text: "Tableau des matchs"
-      else
-        assert_selector "h1.title", text: "Feuille de marque"
+      # Click and wait for navigation
+      within find("tr", text: taikai.name) do
+        click_link "Feuille de marque"
       end
-      assert_selector "h1.title", text: taikai.shortname
+      
+      # Wait for Turbo navigation to complete
+      wait_for_turbo
 
-      click_on "Retour au Taikai"
+      # The title includes the shortname, so just check for the combined text
+      if taikai.form_matches?
+        assert_selector "h1.title", text: "Tableau des matchs", wait: 5
+      else
+        assert_selector "h1.title", text: "Feuille de marque", wait: 5
+      end
+      assert_selector "h1.title", text: taikai.shortname, wait: 5
+
+      click_link "Retour au Taikai"
+      wait_for_turbo
 
       assert_taikai_title taikai.name
     end

@@ -9,9 +9,10 @@ class TaikaisTest < ApplicationSystemTestCase
   end
 
   test 'visiting taikais' do
-    click_on 'Gérer les Taikai'
+    click_link 'Gérer les Taikai'
+    wait_for_turbo
 
-    assert_selector 'h1.title', text: 'Liste des Taikai'
+    assert_selector 'h1.title', text: 'Liste des Taikai', wait: 5
   end
 
   test 'visiting individual_12' do
@@ -21,7 +22,8 @@ class TaikaisTest < ApplicationSystemTestCase
 
     assert_selector 'h1.title', text: 'Liste des Taikai'
 
-    click_on taikai.shortname.titleize
+    click_link taikai.shortname.titleize
+    wait_for_turbo
 
     assert_taikai_title taikai.name
   end
@@ -32,9 +34,10 @@ class TaikaisTest < ApplicationSystemTestCase
 
       go_to_taikais
 
-      click_on 'Ajouter'
+      click_link 'Ajouter'
+      wait_for_turbo
 
-      assert_selector 'p.title', text: 'Ajouter un Taikai'
+      assert_selector 'p.title', text: 'Ajouter un Taikai', wait: 5
 
       form_label = {
         individual: 'Individuel',
@@ -46,22 +49,27 @@ class TaikaisTest < ApplicationSystemTestCase
 
       fill_in_taikai shortname, form_label, distributed, total_num_arrows, scoring_label
       uncheck 'À distance' unless distributed
-      click_on 'Sauvegarder'
+      
+      click_button 'Sauvegarder'
+      wait_for_turbo
 
-      assert_selector 'h1.title', text: 'Liste des Taikai'
+      assert_selector 'h1.title', text: 'Liste des Taikai', wait: 5
 
       go_to_taikais # Display all taikais on one page
-      assert_selector 'td a', text: shortname.titleize
+      assert_selector 'td a', text: shortname.titleize, wait: 5
 
-      click_on shortname.titleize
+      click_link shortname.titleize
+      wait_for_turbo
 
-      assert_selector 'p.subtitle.is-5 b', text: shortname
+      assert_selector 'p.subtitle.is-5 b', text: shortname, wait: 5
       assert_selector 'p.subtitle.is-5', text: form_label
       assert_selector 'p.subtitle.is-5', text: (distributed ? 'À distance' : 'Local')
       assert_selector 'p.subtitle.is-5', text: "#{total_num_arrows} flèches"
       assert_selector 'p.subtitle.is-5', text: scoring_label
 
-      find('td', text: 'Administrateur').assert_sibling('td', text: 'Jean Bon')
+      within find('td', text: 'Administrateur') do
+        assert_sibling 'td', text: 'Jean Bon'
+      end
     end
   end
 
@@ -79,5 +87,11 @@ class TaikaisTest < ApplicationSystemTestCase
     fill_in 'Nb total de flèches', with: total_num_arrows
 
     check 'À distance' if distributed
+  end
+  
+  # Helper method for finding sibling elements
+  def assert_sibling(selector, text:)
+    parent = page.find(:xpath, '..')
+    assert parent.has_selector?(selector, text: text), "Expected to find sibling #{selector} with text '#{text}'"
   end
 end

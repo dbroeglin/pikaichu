@@ -8,20 +8,7 @@ class TaikaisExportTest < ApplicationSystemTestCase
 
   setup do
     sign_in_as users(:jean_bon)
-
-    ### Allow file downloads in Google Chrome when headless!!!
-    ### https://bugs.chromium.org/p/chromium/issues/detail?id=696481#c89
-    bridge = Capybara.current_session.driver.browser.send(:bridge)
-
-    path = '/session/:session_id/chromium/send_command'
-    path[':session_id'] = bridge.session_id
-
-    bridge.http.call(:post, path,
-                     cmd: 'Page.setDownloadBehavior',
-                     params: {
-                       behavior: 'allow',
-                       downloadPath: DownloadHelpers::PATH
-                     })
+    clear_downloads
   end
 
   teardown do
@@ -57,14 +44,43 @@ class TaikaisExportTest < ApplicationSystemTestCase
       taikai.transition_to! :done
       go_to_taikais
 
-      find("a", exact_text: taikai.name).ancestor("tr").click_on("Export Excel")
-
-      assert_match(%r{.*/Taikai - #{taikai.shortname}\.xlsx$}, last_download)
+      within find("tr", text: taikai.name) do
+        click_link "Export Excel"
+      end
+      
+      # Wait for download to complete
+      begin
+        download_file = wait_for_download(taikai.shortname)
+        assert_match(%r{.*/Taikai - #{taikai.shortname}\.xlsx$}, download_file)
+      rescue Timeout::Error
+        # If download fails, check if we got redirected to an error page
+        assert false, "Download did not complete. Current downloads: #{downloads.inspect}"
+      end
     end
   end
 
-  teardown do
-    # Hack to avoid starting tests with a session from previous tests
-    visit destroy_user_session_url
+  private
+
+  def wait_for_download(taikai_shortname, timeout: 15)
+    Timeout.timeout(timeout) do
+      loop do
+        sleep 0.5
+        
+        # Check if .crdownload file exists (Chrome downloading)
+        next if downloads.any? { |f| f.end_with?('.crdownload') }
+        
+        # Look for the expected file
+        matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?('.xlsx') }
+        return matching_download if matching_download
+        
+        # If we have downloads but none match, might be an error
+        if downloads.any? && !downloads.any? { |f| f.end_with?('.crdownload') }
+          # Give it one more second in case file is being written
+          sleep 1
+          matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?('.xlsx') }
+          return matching_download if matching_download
+        end
+      end
+    end
   end
 end

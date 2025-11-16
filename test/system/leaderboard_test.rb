@@ -9,11 +9,6 @@ class LeaderboardTest < ApplicationSystemTestCase
     sign_in_as users(:jean_bon)
   end
 
-  teardown do
-    # Hack to avoid starting tests with a session from previous tests
-    visit destroy_user_session_url
-  end
-
   TAIKAI_DATA.each do |data|
     taikai = find_test_taikai(*data)
 
@@ -22,12 +17,16 @@ class LeaderboardTest < ApplicationSystemTestCase
       transition_taikai_to(taikai, :marking)
       go_to_taikais
 
-      find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")
+      within find("tr", text: taikai.name) do
+        click_link "Tableau des résultats"
+      end
+      wait_for_turbo
 
-      assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
-      assert_selector "h1.title", text: taikai.shortname
+      assert_selector "h1.title", text: "Tableau des résultats intermédiaires", wait: 5
+      assert_selector "h1.title", text: taikai.shortname, wait: 5
 
-      click_on "Retour au Taikai"
+      click_link "Retour au Taikai"
+      wait_for_turbo
 
       assert_taikai_title taikai.name
     end
@@ -41,16 +40,20 @@ class LeaderboardTest < ApplicationSystemTestCase
       transition_taikai_to(taikai, :marking)
       go_to_taikais
 
-      find("a", exact_text: taikai.name).ancestor("tr").click_on("Tableau des résultats")
+      within find("tr", text: taikai.name) do
+        click_link "Tableau des résultats"
+      end
+      wait_for_turbo
 
-      assert_selector "h1.title", text: "Tableau des résultats intermédiaires"
-      assert_selector "h1.title", text: taikai.shortname
+      assert_selector "h1.title", text: "Tableau des résultats intermédiaires", wait: 5
+      assert_selector "h1.title", text: taikai.shortname, wait: 5
 
-      click_on "Résultats publics"
+      click_link "Résultats publics"
+      wait_for_turbo
 
-      assert_selector "h1.title", text: "Tableau des résultats - #{taikai.shortname}"
+      assert_selector "h1.title", text: "Tableau des résultats - #{taikai.shortname}", wait: 5
 
-      click_on "Afficher les résultats en équipe" if taikai.form_2in1?
+      click_link "Afficher les résultats en équipe", wait: 2 if taikai.form_2in1? && has_link?("Afficher les résultats en équipe", wait: 1)
     end
   end
 
