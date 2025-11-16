@@ -9,10 +9,11 @@
 
   <div class="level-item has-text-right">
     <% if previous_state && policy(taikai).transition_to?%>
-        <%= link_to transition_to_taikai_path(taikai, state: previous_state),
-                    data: { turbo_method: :post, turbo_confirm: t('confirm_previous_state_html') },
-                    class: "button is-light #{!taikai.allowed_transitions.index(previous_state) ? "is-danger" : "is-link"}",
-                    title: t("activerecord.states.taikai.#{previous_state}") do %>
+        <%= button_to transition_to_taikai_path(taikai, state: previous_state),
+                      method: :post,
+                      data: { turbo_confirm: t('confirm_previous_state_html') },
+                      class: "button is-light #{!taikai.allowed_transitions.index(previous_state) ? "is-danger" : "is-link"}",
+                      title: t("activerecord.states.taikai.#{previous_state}") do %>
           <span class="icon is-small"><i class="fas fa-angles-left" aria-hidden="true"></i></span>
           <span><%= t '.previous_state' %></span>
         <% end %>
@@ -36,13 +37,14 @@
 
   <div class="level-item has-text-left">
     <% if next_state && policy(taikai).transition_to? %>
-        <%= link_to transition_to_taikai_path(taikai, state: next_state),
-                    data: { turbo_method: :post, turbo_confirm: t('confirm_next_state_html') },
-                    class: "button is-light #{!taikai.allowed_transitions.index(next_state) ? "is-danger" : "is-link"}",
-                    title: t("activerecord.states.taikai.#{next_state}") do %>
+        <%= button_to transition_to_taikai_path(taikai, state: next_state),
+                      method: :post,
+                      data: { turbo_confirm: t('confirm_next_state_html') },
+                      class: "button is-light #{!taikai.allowed_transitions.index(next_state) ? "is-danger" : "is-link"}",
+                      title: t("activerecord.states.taikai.#{next_state}") do %>
           <span><%= t '.next_state' %></span>
           <span class="icon is-small"><i class="fas fa-angles-right" aria-hidden="true"></i></span>
-        <% end  %>
+        <% end %>
     <% end %>
   </div>
 </nav>
