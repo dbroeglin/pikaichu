@@ -28,6 +28,37 @@ class TaikaisTest < ApplicationSystemTestCase
     assert_taikai_title taikai.name
   end
 
+  test 'taikai state navigation uses POST buttons' do
+    taikai = taikais(:individual_dist_12_kinteki)
+
+    go_to_taikais
+
+    click_link taikai.shortname.titleize
+    wait_for_turbo
+
+    next_state_path = transition_to_taikai_path(taikai, state: :registration)
+    next_state_form = find("form[action='#{next_state_path}']")
+    assert_equal 'post', next_state_form[:method]
+
+    accept_confirm do
+      next_state_form.find('button').click
+    end
+    wait_for_turbo
+
+    assert taikai.reload.in_state?(:registration)
+
+    previous_state_path = transition_to_taikai_path(taikai, state: :new)
+    previous_state_form = find("form[action='#{previous_state_path}']")
+    assert_equal 'post', previous_state_form[:method]
+
+    accept_confirm do
+      previous_state_form.find('button').click
+    end
+    wait_for_turbo
+
+    assert taikai.reload.in_state?(:new)
+  end
+
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
     test "creating a #{form} #{distributed ? :distributed : :local} #{total_num_arrows} arrows #{scoring} taikai" do
       shortname = "new-#{taikai_shortname form, distributed, total_num_arrows, scoring}"

@@ -1,6 +1,6 @@
 // Entry point for the application
 import "@hotwired/turbo-rails"
-import "controllers"
+import "./controllers"
 
 // Bulma navbar burger functionality
 document.addEventListener('DOMContentLoaded', function () {

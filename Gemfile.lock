@@ -213,10 +213,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.8, >= 1.8.1)
       terminal-table (>= 1.5.1)
-    importmap-rails (2.2.2)
-      actionpack (>= 6.0.0)
-      activesupport (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.8.1)
     irb (1.15.3)
       pp (>= 0.6.0)
@@ -225,6 +221,8 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
+    jsbundling-rails (1.3.0)
+      railties (>= 6.0.0)
     json (2.16.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -258,7 +256,6 @@ GEM
     matrix (0.4.3)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.26.1)
     mobility (1.2.9)
       i18n (>= 0.6.10, < 2)
@@ -277,9 +274,6 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.18.10)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
@@ -452,10 +446,10 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  ruby
   x86_64-darwin-20
   x86_64-darwin-21
   x86_64-darwin-22
+  x86_64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -485,8 +479,8 @@ DEPENDENCIES
   guard-minitest
   guard-rails
   i18n-tasks (~> 1.0.14)
-  importmap-rails
   jbuilder
+  jsbundling-rails
   kaminari
   mobility (~> 1.2.5)
   pg (~> 1.1)
