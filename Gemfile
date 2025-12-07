@@ -72,9 +72,9 @@ gem 'caxlsx_rails'
 
 gem 'audited'
 
-gem 'mobility', '~> 1.2.5'
+gem 'mobility', '~> 1.3'
 
-gem "roo", "~> 2.8.0"
+gem "roo", "~> 3.0"
 
 gem 'acts_as_list'
 
@@ -121,7 +121,7 @@ group :development do
   gem 'guard-minitest'
   gem 'guard-rails'
 
-  gem 'i18n-tasks', '~> 1.0.14'
+  gem 'i18n-tasks', '~> 1.1'
   gem 'terminal-table'
 end
 

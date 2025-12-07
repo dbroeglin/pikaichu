@@ -14,7 +14,7 @@
   <div id="navbarBasic" class="navbar-menu">
     <div class="navbar-start">
       <%= link_to taikais_path, class: "navbar-item #{controller_name == "taikais" ? "is-active" : "" }" do %>
-        <span class="icon is-medium mr-2">大会</span>
+        <span class="icon is-medium mr-2" style="white-space:nowrap">大会</span>
         <span><%= Taikai.model_name.human count: 2 %></span>
       <% end %>
       <%= link_to dojos_path, class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>

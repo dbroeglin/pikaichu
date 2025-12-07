@@ -1,7 +1,6 @@
 // @charset "utf-8";
 
 // Import a Google Font
-// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Set your brand colors
 // $purple: #8A4D76;
@@ -38,12 +37,32 @@ $beige-light: #D0D1CD;
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
 
-$info: #3478b1;
+// Bulma 1.0 color overrides - restoring Bulma 0.9.3 defaults
+$primary: hsl(171, 100%, 41%);  // turquoise #00d1b2
+$link: hsl(229, 53%, 53%);      // blue #485fc7
+$info: hsl(207, 55%, 45%);      // custom #3478b1 
+$success: hsl(153, 53%, 53%);   // green #48c78e
+$warning: hsl(44, 100%, 77%);   // yellow #ffe08a
+$danger: hsl(348, 86%, 61%);    // red #f14668
 $card-header-background-color: #EFF5FA;
-
 $table-striped-row-even-background-color: hsl(0, 0%, 94%);
 
-@import 'bulma/bulma';
-@import 'bulma-divider/dist/css/bulma-divider';
-@import 'bulma-timeline/dist/css/bulma-timeline';
+@use "bulma/sass" with (
+  $primary: hsl(171, 100%, 41%),
+  $link: hsl(229, 53%, 53%),
+  $info: hsl(207, 55%, 45%),
+  $success: hsl(153, 53%, 53%),
+  $warning: hsl(44, 100%, 77%),
+  $danger: hsl(348, 86%, 61%),
+  $card-header-background-color: #EFF5FA,
+  $table-striped-row-even-background-color: hsl(0, 0%, 94%)
+);
+
+// Re-export commonly used variables for custom styles
+$size-medium: 1.25rem; // $size-5
+$size-6: 1rem;
+$grey-light: hsl(221, 14%, 71%);
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
 @import 'custom.bulma';
