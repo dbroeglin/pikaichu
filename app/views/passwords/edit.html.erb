@@ -1,0 +1,45 @@
+<div class="columns is-centered">
+  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+    <div class="box">
+      <h1 class="title has-text-centered"><%= t("passwords.edit.title") %></h1>
+
+      <%= form_with model: @user, url: password_path(params[:token]), method: :patch, scope: :user, class: "mt-5" do |form| %>
+        <div class="field">
+          <%= form.label :password, t("passwords.edit.password_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.password_field :password, 
+                                    autofocus: true,
+                                    autocomplete: "new-password",
+                                    required: true,
+                                    minlength: 8,
+                                    class: "input" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+          <p class="help"><%= t("passwords.edit.password_help") %></p>
+        </div>
+
+        <div class="field">
+          <%= form.label :password_confirmation, t("passwords.edit.password_confirmation_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.password_field :password_confirmation, 
+                                    autocomplete: "new-password",
+                                    required: true,
+                                    minlength: 8,
+                                    class: "input" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= form.submit t("passwords.edit.submit"), class: "button is-primary is-fullwidth" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

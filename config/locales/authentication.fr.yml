@@ -1,0 +1,38 @@
+fr:
+  sessions:
+    signed_in: "Connexion réussie."
+    signed_out: "Déconnexion réussie."
+    invalid_credentials: "Email ou mot de passe invalide."
+    new:
+      title: "Connexion"
+      email_label: "Email"
+      password_label: "Mot de passe"
+      submit: "Se connecter"
+      forgot_password: "Mot de passe oublié ?"
+  
+  passwords:
+    reset_email_sent: "Si cette adresse email existe dans notre système, nous avons envoyé un lien de réinitialisation."
+    password_updated: "Votre mot de passe a été réinitialisé avec succès. Veuillez vous connecter."
+    invalid_token: "Lien de réinitialisation invalide ou expiré."
+    new:
+      title: "Réinitialiser le mot de passe"
+      instructions: "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+      email_label: "Email"
+      submit: "Envoyer le lien"
+      back_to_login: "Retour à la connexion"
+    edit:
+      title: "Nouveau mot de passe"
+      password_label: "Nouveau mot de passe"
+      password_help: "Minimum 8 caractères"
+      password_confirmation_label: "Confirmer le mot de passe"
+      submit: "Réinitialiser le mot de passe"
+  
+  passwords_mailer:
+    reset:
+      subject: "Instructions de réinitialisation du mot de passe"
+      greeting: "Bonjour %{name},"
+      body: "Quelqu'un a demandé une réinitialisation de mot de passe pour votre compte. Cliquez sur le bouton ci-dessous pour choisir un nouveau mot de passe :"
+      button: "Réinitialiser mon mot de passe"
+      expiration: "Ce lien expirera dans 15 minutes."
+      ignore: "Si vous n'avez pas fait cette demande, veuillez ignorer cet email. Votre mot de passe ne changera pas tant que vous n'accéderez pas au lien ci-dessus."
+      manual_link: "Si le bouton ne fonctionne pas, copiez et collez cette URL dans votre navigateur :"
