@@ -27,7 +27,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant4.id,
       team_id: @team_b.id,
-      index: 1,
+      index: 1
     }
     assert_response :success
 
@@ -53,7 +53,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant1.id,
       team_id: @team_b.id,
-      index: 1,
+      index: 1
     }
     assert_response :success
 
@@ -70,14 +70,14 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant4.id,
       team_id: @team_b.id,
-      index: 1,
+      index: 1
     }
     assert_response :success
 
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant4.id,
       team_id: @team_a.id,
-      index: 2,
+      index: 2
     }
     assert_response :success
 
@@ -95,7 +95,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant2.id,
       team_id: @team_a.id,
-      index: 1,
+      index: 1
     }
     assert_response :success
 
@@ -111,7 +111,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant1.id,
       team_id: @team_a.id,
-      index: 2,
+      index: 2
     }
     assert_response :success
 
@@ -127,7 +127,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     patch teaming_move_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
       participant_id: @participant3.id,
       team_id: @team_a.id,
-      index: 1,
+      index: 1
     }
     assert_response :success
 
@@ -140,7 +140,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "add a team" do
-    assert_difference '@participating_dojo.teams.count', 1 do
+    assert_difference "@participating_dojo.teams.count", 1 do
       post teaming_create_team_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
         shortname: "New Team"
       }
@@ -152,7 +152,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "cannot add a team with empty name" do
-    assert_no_difference '@participating_dojo.teams.count' do
+    assert_no_difference "@participating_dojo.teams.count" do
       post teaming_create_team_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
         shortname: ""
       }
@@ -163,7 +163,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "cannot add team with same name" do
-    assert_no_difference '@participating_dojo.teams.count' do
+    assert_no_difference "@participating_dojo.teams.count" do
       post teaming_create_team_taikai_participating_dojo_path @taikai, @participating_dojo, params: {
         shortname: @team_a.shortname
       }
@@ -176,7 +176,7 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
   test "edit page renders team creation form" do
     get teaming_edit_taikai_participating_dojo_path @taikai, @participating_dojo
     assert_response :success
-    assert_select 'form[action=?]', teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo)
-    assert_select 'input[name=?]', 'team[shortname]'
+    assert_select "form[action=?]", teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo)
+    assert_select "input[name=?]", "team[shortname]"
   end
 end

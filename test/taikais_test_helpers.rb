@@ -1,17 +1,17 @@
 module TaikaisTestHelpers
   TAIKAI_DATA = %I[individual team 2in1].map do |form|
-    [false, true].map do |distributed|
-      [12, 20].map do |total_num_arrows|
-        [:enteki, :kinteki].map do |scoring|
-          [form, distributed, total_num_arrows, scoring]
+    [ false, true ].map do |distributed|
+      [ 12, 20 ].map do |total_num_arrows|
+        [ :enteki, :kinteki ].map do |scoring|
+          [ form, distributed, total_num_arrows, scoring ]
         end
       end
     end
   end.concat(%I[matches].map do |form|
-    [false, true].map do |distributed|
-      [4].map do |total_num_arrows|
-        [:enteki, :kinteki].map do |scoring|
-          [form, distributed, total_num_arrows, scoring]
+    [ false, true ].map do |distributed|
+      [ 4 ].map do |total_num_arrows|
+        [ :enteki, :kinteki ].map do |scoring|
+          [ form, distributed, total_num_arrows, scoring ]
         end
       end
     end
@@ -20,7 +20,7 @@ module TaikaisTestHelpers
   def go_to_taikais
     visit taikais_url(per: 50)
 
-    assert_selector 'h1.title', text: 'Liste des Taikai'
+    assert_selector "h1.title", text: "Liste des Taikai"
   end
 
   def go_to_taikai(label)
@@ -30,7 +30,7 @@ module TaikaisTestHelpers
 
     click_on taikai.name
 
-    assert_selector 'p.subtitle.is-5 b', text: taikai.shortname
+    assert_selector "p.subtitle.is-5 b", text: taikai.shortname
     assert_taikai_title taikai.name
   end
 
@@ -45,14 +45,14 @@ module TaikaisTestHelpers
   end
 
   def assert_taikai_title(name)
-    assert_selector 'p.title.is-4', text: name
+    assert_selector "p.title.is-4", text: name
   end
 
   def generate_taikai_results(taikai)
-    scope = Result.joins(score: { participant: :taikai }).where('taikais.id = ?', taikai.id)
-    if taikai.scoring == 'kinteki'
+    scope = Result.joins(score: { participant: :taikai }).where("taikais.id = ?", taikai.id)
+    if taikai.scoring == "kinteki"
       scope.update_all(status: :hit, final: true)
-    elsif taikai.scoring == 'enteki'
+    elsif taikai.scoring == "enteki"
       scope.update_all(status: :hit, value: 3, final: true)
     end
   end

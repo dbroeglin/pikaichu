@@ -1,5 +1,5 @@
 class StaffsController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   before_action :set_taikai
 
@@ -15,7 +15,7 @@ class StaffsController < ApplicationController
     @staff = @taikai.staffs.build(staff_params)
 
     if @staff.save
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+      redirect_to controller: "taikais", action: "edit", id: @taikai
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class StaffsController < ApplicationController
     @staff = @taikai.staffs.find(params[:id])
 
     if @staff.update(staff_params)
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+      redirect_to controller: "taikais", action: "edit", id: @taikai
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,8 +34,8 @@ class StaffsController < ApplicationController
   def destroy
     @staff = @taikai.staffs.find(params[:id])
 
-    flash[:alert] = @staff.errors.full_messages.join(', ') unless @staff.destroy
-    redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: :see_other
+    flash[:alert] = @staff.errors.full_messages.join(", ") unless @staff.destroy
+    redirect_to controller: "taikais", action: "edit", id: @taikai, status: :see_other
   end
 
   private

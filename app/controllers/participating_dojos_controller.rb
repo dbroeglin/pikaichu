@@ -1,5 +1,5 @@
 class ParticipatingDojosController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   before_action :set_taikai
 
@@ -20,7 +20,7 @@ class ParticipatingDojosController < ApplicationController
 
     @participating_dojo.display_name = @dojo.shortname if @participating_dojo.display_name.blank?
     if @participating_dojo.save
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+      redirect_to controller: "taikais", action: "edit", id: @taikai
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class ParticipatingDojosController < ApplicationController
     @participating_dojo.display_name = @dojo.shortname if @participating_dojo.display_name.blank?
 
     if @participating_dojo.save
-      redirect_to controller: 'taikais', action: 'edit', id: @taikai
+      redirect_to controller: "taikais", action: "edit", id: @taikai
     else
       render :edit, status: :unprocessable_entity
     end
@@ -50,7 +50,7 @@ class ParticipatingDojosController < ApplicationController
     elsif !@participating_dojo.destroy
       flash[:alert] = "Unable to remove participating dojo #{@participating_dojo.display_name}"
     end
-    redirect_to controller: 'taikais', action: 'edit', id: @taikai, status: :see_other
+    redirect_to controller: "taikais", action: "edit", id: @taikai, status: :see_other
   end
 
   def draw

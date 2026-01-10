@@ -7,14 +7,14 @@ class Match < ApplicationRecord
   has_many :results, dependent: nil
 
   def team(index)
-    raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
+    raise ArgumentError, "index must be 1 or 2" unless [ 1, 2 ].include? index
     return team1 if index == 1
 
     team2
   end
 
   def set_team(index, team)
-    raise ArgumentError, "index must be 1 or 2" unless [1, 2].include? index
+    raise ArgumentError, "index must be 1 or 2" unless [ 1, 2 ].include? index
 
     if index == 1
       self.team1 = team
@@ -45,9 +45,9 @@ class Match < ApplicationRecord
 
   def ordered_teams
     if winner? 1
-      [team1, team2]
+      [ team1, team2 ]
     else
-      [team2, team1]
+      [ team2, team1 ]
     end
   end
 
@@ -97,7 +97,7 @@ class Match < ApplicationRecord
   end
 
   def defined_results?
-    results.where('status IS NOT NULL').any?
+    results.where("status IS NOT NULL").any?
   end
 
   def to_ascii
@@ -105,7 +105,7 @@ class Match < ApplicationRecord
       "Match #{level}.#{index} (#{team1&.shortname} vs #{team2&.shortname}) [#{id}]",
       ("  Winner: #{winner} - #{team(winner)&.shortname}" if winner),
       (team1&.to_ascii(id) || "").gsub(/^/, "  "),
-      (team2&.to_ascii(id) || "").gsub(/^/, "  "),
+      (team2&.to_ascii(id) || "").gsub(/^/, "  ")
     ].flatten.compact.join("\n")
   end
 

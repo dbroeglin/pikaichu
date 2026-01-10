@@ -14,13 +14,13 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should post create' do
-    assert_difference '@taikai.participating_dojos.count' do
+  test "should post create" do
+    assert_difference "@taikai.participating_dojos.count" do
       post taikai_participating_dojos_url @taikai, params: {
         participating_dojo: {
           taikai_id: @taikai.id,
           dojo_id: dojos(:dojo_jp).id,
-          display_name: "Customized dojo name",
+          display_name: "Customized dojo name"
         }
       }
     end

@@ -1,7 +1,7 @@
 # rubocop:disable Lint/BinaryOperatorWithIdenticalOperands
 
-require 'test_helper'
-require 'taikais_test_helpers'
+require "test_helper"
+require "taikais_test_helpers"
 
 class ScoreTest < ActiveSupport::TestCase
   include TaikaisTestHelpers
@@ -34,7 +34,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "first_empty in next round" do
-    @score.results.round(1).update_all(status: 'hit')
+    @score.results.round(1).update_all(status: "hit")
     @score.results.reload
 
     result = @score.results.first_empty
@@ -44,7 +44,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "first_empty returns nil when none" do
-    @score.results.update_all(status: 'miss')
+    @score.results.update_all(status: "miss")
     @score.results.reload
 
     result = @score.results.first_empty
@@ -58,7 +58,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "previous_round_finalized? is false for 2.1 if 1.x are not finalized" do
-    @score.results.round(1).update_all(status: 'miss')
+    @score.results.round(1).update_all(status: "miss")
     @score.results.reload
 
     result = @score.results.first_empty
@@ -66,7 +66,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "finalized?" do
-    @score.results.update_all(status: 'miss')
+    @score.results.update_all(status: "miss")
     @score.results.reload
     assert_not @score.finalized?
 
@@ -76,7 +76,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "previous_round_finalized? is true for 2.1 if 1.x are finalized" do
-    @score.results.round(1).update_all(status: 'miss', final: true)
+    @score.results.round(1).update_all(status: "miss", final: true)
     @score.results.reload
 
     result = @score.results.first_empty
@@ -84,7 +84,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "update works for 2.1 if 1.x are finalized" do
-    @score.results.round(1).each { |result| result.update!(status: 'hit', final: true) }
+    @score.results.round(1).each { |result| result.update!(status: "hit", final: true) }
     assert_score 0, 4, 0, 4, @score
 
     @score.add_result :hit
@@ -92,7 +92,7 @@ class ScoreTest < ActiveSupport::TestCase
   end
 
   test "update fails for 2.1 if 1.x are not finalized" do
-    @score.results.round(1).each { |result| result.update!(status: 'hit', final: false) }
+    @score.results.round(1).each { |result| result.update!(status: "hit", final: false) }
     assert_score 0, 0, 0, 4, @score
 
     assert_raises Score::PreviousRoundNotValidatedError do

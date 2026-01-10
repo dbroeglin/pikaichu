@@ -21,12 +21,12 @@ class Leaderboard
       end
     end
 
-    [@participants_by_score, @score_by_participating_dojo]
+    [ @participants_by_score, @score_by_participating_dojo ]
   end
 
   def compute_team_leaderboard
     @taikai = Taikai
-              .includes(participating_dojos: { teams: [{ participants: { scores: :results } }] })
+              .includes(participating_dojos: { teams: [ { participants: { scores: :results } } ] })
               .find(@taikai_id)
 
     unless @taikai.form_team? || @taikai.form_2in1?
@@ -43,12 +43,12 @@ class Leaderboard
           participating_dojo.teams.ranked(@validated)
       end
     end
-    [@teams_by_score, @score_by_participating_dojo]
+    [ @teams_by_score, @score_by_participating_dojo ]
   end
 
   def compute_matches_leaderboard
     @taikai = Taikai
-              .includes(participating_dojos: { teams: [{ participants: { scores: :results } }] })
+              .includes(participating_dojos: { teams: [ { participants: { scores: :results } } ] })
               .find(@taikai_id)
 
     raise "compute_matches_leaderboard works only 'matches' taikais" unless @taikai.form_matches?
@@ -57,17 +57,16 @@ class Leaderboard
     @teams_by_score = Match
                       .where(taikai: @taikai, level: 1)
                       .order(index: :asc)
-                      .map { |match| match.ordered_teams.compact.map { |team| [team, match] } }
-                      .flatten(1)
+                      .flat_map { |match| match.ordered_teams.compact.map { |team| [ team, match ] } }
                       .compact
                       .map do |team, match|
-                        [team, match, team.score(match.id).score_value]
+                        [ team, match, team.score(match.id).score_value ]
                       end
     @matches = @taikai.matches
                       .group_by(&:level)
                       .each { |_, matches| matches.sort_by!(&:index) }
 
-    [@teams_by_score, @matches]
+    [ @teams_by_score, @matches ]
   end
 
   def compute_intermediate_ranks

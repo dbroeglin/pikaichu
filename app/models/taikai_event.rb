@@ -17,15 +17,15 @@ class TaikaiEvent < ApplicationRecord
         round: result.round,
         index: result.index,
         status: result.status,
-        previous_status: previous_status,
-      },
+        previous_status: previous_status
+      }
     }
 
     if taikai.scoring_enteki?
       data[:result][:value] = result.value
       data[:result][:previous_value] = previous_value
       message = I18n.t(
-        'templates.taikai_event.rectification.enteki',
+        "templates.taikai_event.rectification.enteki",
         user: user.display_name, taikai: taikai.name,
         round: result.round,
         index: result.index,
@@ -37,7 +37,7 @@ class TaikaiEvent < ApplicationRecord
       )
     else
       message = I18n.t(
-        'templates.taikai_event.rectification.kinteki',
+        "templates.taikai_event.rectification.kinteki",
         user: user.display_name, taikai: taikai.name,
         round: result.round,
         index: result.index,
@@ -63,7 +63,7 @@ class TaikaiEvent < ApplicationRecord
       taikai: taikai.name,
       from: from,
       to: to,
-      scope: [:templates, :taikai_event]
+      scope: [ :templates, :taikai_event ]
     )
     data = {
       taikai: {
@@ -95,7 +95,7 @@ class TaikaiEvent < ApplicationRecord
       "#{rankable.class.name.downcase}": rankable.display_name,
       intermediate_rank: rankable.intermediate_rank,
       rank: rankable.rank,
-      scope: [:templates, :taikai_event]
+      scope: [ :templates, :taikai_event ]
     )
     data = {
       taikai: {
@@ -111,7 +111,7 @@ class TaikaiEvent < ApplicationRecord
         display_name: rankable.display_name
       },
       intermediate_rank: rankable.intermediate_rank,
-      rank: rankable.rank,
+      rank: rankable.rank
     }
 
     TaikaiEvent.create!(

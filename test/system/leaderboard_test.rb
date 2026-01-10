@@ -1,5 +1,5 @@
-require 'application_system_test_case'
-require 'taikais_test_helpers'
+require "application_system_test_case"
+require "taikais_test_helpers"
 
 class LeaderboardTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
@@ -32,7 +32,7 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-  TAIKAI_DATA.reject { |data| data[0] == 'match' }.each do |data|
+  TAIKAI_DATA.reject { |data| data[0] == "match" }.each do |data|
     taikai = find_test_taikai(*data)
 
     test "visiting #{taikai.shortname} public leaderboard" do
@@ -57,7 +57,7 @@ class LeaderboardTest < ApplicationSystemTestCase
     end
   end
 
-  TAIKAI_DATA.select { |data| data[0] == 'match' }.each do |data|
+  TAIKAI_DATA.select { |data| data[0] == "match" }.each do |data|
     taikai = find_test_taikai(*data)
 
     test "visiting #{taikai.shortname} public leaderboard" do

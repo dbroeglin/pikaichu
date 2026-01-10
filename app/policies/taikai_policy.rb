@@ -1,8 +1,8 @@
 class TaikaiPolicy < ApplicationPolicy
   attr_reader :user, :taikai
 
-  ADMIN_ROLES = [:taikai_admin].freeze
-  MARKING_ROLES = ADMIN_ROLES + [:marking_referee, :target_referee, :dojo_admin].freeze
+  ADMIN_ROLES = [ :taikai_admin ].freeze
+  MARKING_ROLES = ADMIN_ROLES + [ :marking_referee, :target_referee, :dojo_admin ].freeze
 
   def initialize(user, taikai)
     super

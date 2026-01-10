@@ -11,9 +11,9 @@ class TieBreakController < ApplicationController
     params[:rank].each do |id, rank|
       @rankable = if params[:individual] == "true"
                     @taikai.participants.find(id)
-                  else
+      else
                     @taikai.teams.find(id)
-                  end
+      end
 
       next unless @rankable.rank != rank.to_i
 

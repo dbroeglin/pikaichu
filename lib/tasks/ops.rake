@@ -22,7 +22,7 @@ namespace :ops do
       desc "Backup production database"
       task production: :environment do
         my_ip = my_ip()
-        rg_name = 'rg-pikaichu-production-002'
+        rg_name = "rg-pikaichu-production-002"
         server_name = `az postgres flexible-server list --resource-group #{rg_name} --query '[0].name' --output tsv`.strip
 
         raise "Unable to get server name from Azure" if server_name.empty?

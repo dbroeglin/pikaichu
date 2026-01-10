@@ -15,12 +15,12 @@ class Participant < ApplicationRecord
   validates :kyudojin,
             uniqueness: {
               scope: :participating_dojo,
-              allow_blank: true,
+              allow_blank: true
             }
   validates :index,
             uniqueness: {
               scope: :participating_dojo,
-              allow_blank: true,
+              allow_blank: true
             }
 
   def display_name
@@ -49,7 +49,7 @@ class Participant < ApplicationRecord
 
   def defined_results?(match_id = nil)
     score = score(match_id)
-    score && score.results.where('status IS NOT NULL').any?
+    score && score.results.where("status IS NOT NULL").any?
   end
 
   def build_empty_score_and_results(match_id = nil)

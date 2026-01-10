@@ -1,5 +1,5 @@
-require 'application_system_test_case'
-require 'taikais_test_helpers'
+require "application_system_test_case"
+require "taikais_test_helpers"
 
 class MarkingTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
@@ -18,7 +18,7 @@ class MarkingTest < ApplicationSystemTestCase
       within find("tr", text: taikai.name) do
         click_link "Feuille de marque"
       end
-      
+
       # Wait for Turbo navigation to complete
       wait_for_turbo
 

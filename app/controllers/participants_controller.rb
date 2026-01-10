@@ -1,5 +1,5 @@
 class ParticipantsController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   before_action :set_taikai
   before_action :set_participating_dojo
@@ -76,21 +76,21 @@ class ParticipantsController < ApplicationController
       CSV.parse(
         csv_data,
         headers: true,
-        col_sep: ',',
+        col_sep: ",",
         skip_lines: /Kyudo - Interface de gestion/
       ) do |row|
         attrs = {
-          federation_country_code: 'FR',
-          federation_club: row['Club'],
-          firstname: I18n.transliterate(row['Prénom']).upcase.tr('-', ' '),
-          lastname: I18n.transliterate(row['Nom']).upcase.tr('-', ' '),
+          federation_country_code: "FR",
+          federation_club: row["Club"],
+          firstname: I18n.transliterate(row["Prénom"]).upcase.tr("-", " "),
+          lastname: I18n.transliterate(row["Nom"]).upcase.tr("-", " ")
         }
         kyudojin = Kyudojin.find_by(**attrs)
 
         @participant = @participating_dojo.participants.build(
-          firstname: row['Prénom'],
-          lastname: row['Nom'],
-          club: row['Club']
+          firstname: row["Prénom"],
+          lastname: row["Nom"],
+          club: row["Club"]
         )
         if kyudojin
           @participant.kyudojin = kyudojin
@@ -100,8 +100,8 @@ class ParticipantsController < ApplicationController
 
         alerts << "#{row['Prénom']} #{row['Nom']}" unless @participant.save
       end
-      flash[:notice] = t :import_notices, names: notices.join(', '), count: notices.size if notices.any?
-      flash[:alert] = t :import_alerts, names: alerts.join(', '), count: alerts.size if alerts.any?
+      flash[:notice] = t :import_notices, names: notices.join(", "), count: notices.size if notices.any?
+      flash[:alert] = t :import_alerts, names: alerts.join(", "), count: alerts.size if alerts.any?
     else
       flash[:alert] = t :file_missing
     end

@@ -13,12 +13,12 @@ class MarkingController < ApplicationController
                                     .includes({
                                                 participants: { scores: :results }
                                               },
-                                              teams: [participants: { scores: :results }])
+                                              teams: [ participants: { scores: :results } ])
     elsif policy(@taikai).marking_show?
       @participating_dojos =
         @taikai.participating_dojos
-               .includes({ participants: { scores: :results } }, teams: [participants: { scores: :results }])
-               .joins(staffs: [:role])
+               .includes({ participants: { scores: :results } }, teams: [ participants: { scores: :results } ])
+               .joins(staffs: [ :role ])
                .where(
                  'staffs.user_id': current_user,
                  'role.code': TaikaiPolicy::MARKING_ROLES

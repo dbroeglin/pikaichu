@@ -24,7 +24,7 @@ class MatchesController < ApplicationController
       @match.select_winner(@match.winner) if changed_winner
     end
 
-    redirect_to action: 'index'
+    redirect_to action: "index"
   rescue ActiveRecord::RecordInvalid
     @teams = @taikai
              .participating_dojos.map(&:teams).flatten
@@ -37,7 +37,7 @@ class MatchesController < ApplicationController
 
     @match.select_winner(@match.score(1).score_value > @match.score(2).score_value ? 1 : 2)
 
-    redirect_to action: 'index', status: :see_other
+    redirect_to action: "index", status: :see_other
   end
 
   private

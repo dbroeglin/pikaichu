@@ -1,5 +1,5 @@
 require "test_helper"
-require 'taikais_test_helpers'
+require "taikais_test_helpers"
 
 class TaikaiTest < ActiveSupport::TestCase
   include TaikaisTestHelpers
@@ -27,14 +27,14 @@ class TaikaiTest < ActiveSupport::TestCase
   end
 
   [
-    [:kinteki, :individual, 6],
-    [:kinteki, :team,       6],
-    [:kinteki, :'2in1',     6],
-    [:kinteki, :individual, 13],
-    [:kinteki, :team,       13],
-    [:kinteki, :'2in1',     13],
-    [:kinteki, :matches,    12],
-    [:enteki,  :matches,    12],
+    [ :kinteki, :individual, 6 ],
+    [ :kinteki, :team,       6 ],
+    [ :kinteki, :'2in1',     6 ],
+    [ :kinteki, :individual, 13 ],
+    [ :kinteki, :team,       13 ],
+    [ :kinteki, :'2in1',     13 ],
+    [ :kinteki, :matches,    12 ],
+    [ :enteki,  :matches,    12 ]
   ].each do |scoring, form, total_num_arrows|
     test "#{scoring} #{form} #{total_num_arrows} does not validate" do
       @taikai.scoring = scoring

@@ -1,4 +1,4 @@
-require 'capitalize_names'
+require "capitalize_names"
 
 wb = xlsx_package.workbook
 
@@ -12,23 +12,23 @@ end
 
 header_row_style = wb.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   b: true,
   sz: 12
 )
 
 data_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :left },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 wb.add_worksheet(name: "Kinteki Classement Indiv") do |sheet|
   sheet.add_row [
-    t('.rank'),
-    t('.display_name'),
-    t('.club'),
-    t('.total'),
+    t(".rank"),
+    t(".display_name"),
+    t(".club"),
+    t(".total")
   ], style: header_row_style
 
   @kinteki_individual.each do |hash|
@@ -43,10 +43,10 @@ end
 
 wb.add_worksheet(name: "Enteki Classement Indiv") do |sheet|
   sheet.add_row [
-    t('.rank'),
-    t('.display_name'),
-    t('.club'),
-    t('.total'),
+    t(".rank"),
+    t(".display_name"),
+    t(".club"),
+    t(".total")
   ], style: header_row_style
 
   @enteki_individual.each do |hash|
@@ -61,12 +61,12 @@ end
 
 wb.add_worksheet(name: "Kinteki Résultats") do |sheet|
   sheet.add_row [
-    t('.taikai_name'),
-    t('.category'),
-    t('.display_name'),
-    t('.club'),
-    t('.total'),
-    t('.rank'),
+    t(".taikai_name"),
+    t(".category"),
+    t(".display_name"),
+    t(".club"),
+    t(".total"),
+    t(".rank")
   ], style: header_row_style
 
   @kinteki_participants.each_with_index do |pair, index|
@@ -78,7 +78,7 @@ wb.add_worksheet(name: "Kinteki Résultats") do |sheet|
       display_name(participant),
       participant.club,
       score.hits,
-      participant.rank,
+      participant.rank
     ], style: data_cell_style
     sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end
@@ -87,12 +87,12 @@ end
 
 wb.add_worksheet(name: "Enteki Résultats") do |sheet|
   sheet.add_row [
-    t('.taikai_name'),
-    t('.category'),
-    t('.display_name'),
-    t('.club'),
-    t('.total'),
-    t('.rank'),
+    t(".taikai_name"),
+    t(".category"),
+    t(".display_name"),
+    t(".club"),
+    t(".total"),
+    t(".rank")
   ], style: header_row_style
 
   @enteki_participants.each_with_index do |pair, index|
@@ -104,7 +104,7 @@ wb.add_worksheet(name: "Enteki Résultats") do |sheet|
       display_name(participant),
       participant.club,
       score.value,
-      participant.rank,
+      participant.rank
     ], style: data_cell_style
 
     sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
@@ -114,7 +114,7 @@ end
 
 wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
   sheet.add_row [
-    t('.taikai_name'),
+    t(".taikai_name"),
     "Scoring",
     "Forme",
     Taikai.human_attribute_name(:category),
@@ -129,7 +129,7 @@ wb.add_worksheet(name: "DEBUG - Taikais") do |sheet|
       taikai.form,
       taikai.category || "",
       taikai.participants.count,
-      taikai.participants.map(&:club).uniq.size,
+      taikai.participants.map(&:club).uniq.size
     ], style: data_cell_style
     sheet.add_hyperlink location: taikai_uri(taikai.id), ref: "A#{index + 2}"
   end

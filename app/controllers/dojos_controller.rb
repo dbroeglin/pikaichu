@@ -17,7 +17,7 @@ class DojosController < ApplicationController
     @dojo = Dojo.new(dojo_params)
 
     if @dojo.save
-      redirect_to action: 'index'
+      redirect_to action: "index"
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class DojosController < ApplicationController
     @dojo = Dojo.find(params[:id])
 
     if @dojo.update(dojo_params)
-      redirect_to action: 'index'
+      redirect_to action: "index"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class DojosController < ApplicationController
       # TODO: I18n
       flash[:alert] = "Unable to remove dojo '#{@dojo.shortname}', it probably still has an associated Taikai"
     end
-    redirect_to action: 'index', status: :see_other
+    redirect_to action: "index", status: :see_other
   end
 
   private

@@ -4,60 +4,60 @@ module AxlsxExportHelpers
   def taikai_form_icon(taikai)
     title = Taikai.human_enum_value :form, taikai.form
     icon = case taikai.form
-           when 'individual'
+    when "individual"
              "fas fa-user"
-           when 'team'
+    when "team"
              "fas fa-users"
-           when '2in1'
+    when "2in1"
              "fas fa-code-branch"
-           when 'matches'
+    when "matches"
              "fas fa-users"
-           else
+    else
              raise "Unknown Taikai Form: '#{taikai.form}'"
-           end
+    end
     %(<span class="icon is-small" title="#{title}"><i class="#{icon}"></i></span>).html_safe
   end
 
   def result_mark(result)
     if result.final?
       result.value || case result.status
-                      when 'hit'
-                        'O'
-                      when 'miss'
-                        'X'
+                      when "hit"
+                        "O"
+                      when "miss"
+                        "X"
                       else
-                        ''
+                        ""
                       end
     else
-      ''
+      ""
     end
   end
 
   def export_summary_sheet(xlsx_package)
-    xlsx_package.workbook.add_worksheet(name: t('.summary')) do |sheet|
+    xlsx_package.workbook.add_worksheet(name: t(".summary")) do |sheet|
       sheet.column_widths 20, 60
       sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
-      sheet.add_row [t('.infos'), ""], style: [@header_row_style, @header_row_style], height: 30
-      sheet.merge_cells('A1:B1')
+      sheet.add_row [ t(".infos"), "" ], style: [ @header_row_style, @header_row_style ], height: 30
+      sheet.merge_cells("A1:B1")
 
-      sheet.add_row [Taikai.human_attribute_name(:shortname), @taikai.shortname],
-                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:name), @taikai.name],
-                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:start_date), @taikai.start_date],
-                    style: [@info_label_cell_style, @date_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:end_date), @taikai.end_date],
-                    style: [@info_label_cell_style, @date_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:description), @taikai.description],
-                    style: [@info_label_cell_style, @description_style], height: 60
+      sheet.add_row [ Taikai.human_attribute_name(:shortname), @taikai.shortname ],
+                    style: [ @info_label_cell_style, @info_data_cell_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:name), @taikai.name ],
+                    style: [ @info_label_cell_style, @info_data_cell_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:start_date), @taikai.start_date ],
+                    style: [ @info_label_cell_style, @date_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:end_date), @taikai.end_date ],
+                    style: [ @info_label_cell_style, @date_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:description), @taikai.description ],
+                    style: [ @info_label_cell_style, @description_style ], height: 60
       sheet.add_row [
-        t('.type'),
+        t(".type"),
         "#{@taikai.human_form} - #{@taikai.human_scoring}#{" (#{t('.distributed')})" if @taikai.distributed?}"
-      ], style: [@info_label_cell_style, @info_data_cell_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:total_num_arrows), @taikai.total_num_arrows],
-                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
-      sheet.add_row [Taikai.human_attribute_name(:tachi_size), @taikai.tachi_size],
-                    style: [@info_label_cell_style, @info_data_cell_style], height: 20
+      ], style: [ @info_label_cell_style, @info_data_cell_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:total_num_arrows), @taikai.total_num_arrows ],
+                    style: [ @info_label_cell_style, @info_data_cell_style ], height: 20
+      sheet.add_row [ Taikai.human_attribute_name(:tachi_size), @taikai.tachi_size ],
+                    style: [ @info_label_cell_style, @info_data_cell_style ], height: 20
 
       sheet.add_row []
       sheet.add_row []
@@ -65,9 +65,9 @@ module AxlsxExportHelpers
 
       # line 10
 
-      sheet.add_row [ParticipatingDojo.model_name.human(count: 2), " "],
-                    style: [@header_row_style, @header_row_style], height: 30
-      sheet.merge_cells('A13:B13')
+      sheet.add_row [ ParticipatingDojo.model_name.human(count: 2), " " ],
+                    style: [ @header_row_style, @header_row_style ], height: 30
+      sheet.merge_cells("A13:B13")
 
       @taikai.participating_dojos.each do |participating_dojo|
         dojo = participating_dojo.dojo
@@ -75,20 +75,20 @@ module AxlsxExportHelpers
           participating_dojo.display_name,
           "#{dojo.shortname} (#{dojo.name})#{dojo.city.blank? ? '' : ", #{dojo.city}"}, #{dojo.country_name}"
         ],
-                      style: [@info_label_cell_style, @description_style], height: 20
+                      style: [ @info_label_cell_style, @description_style ], height: 20
       end
     end
   end
 
   def export_staff_sheet(xlsx_package)
-    xlsx_package.workbook.add_worksheet(name: t('.staff.title')) do |sheet|
+    xlsx_package.workbook.add_worksheet(name: t(".staff.title")) do |sheet|
       sheet.column_widths 23, 20, 20, 17
 
       sheet.add_row [
-        t('.staff.lastname'),
-        t('.staff.firstname'),
-        t('.staff.role'),
-        t('.staff.participating_dojo'),
+        t(".staff.lastname"),
+        t(".staff.firstname"),
+        t(".staff.role"),
+        t(".staff.participating_dojo")
       ], style: @header_row_style
 
       @taikai.staffs.each do |staff|
@@ -103,7 +103,7 @@ module AxlsxExportHelpers
           end
         ]
 
-        sheet.add_row row, style: [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style]
+        sheet.add_row row, style: [ @table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style ]
       end
       sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :portrait
     end
@@ -111,14 +111,14 @@ module AxlsxExportHelpers
 
   def export_participants_sheet(xlsx_package)
     if @taikai.form_individual?
-      xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
+      xlsx_package.workbook.add_worksheet(name: t(".participants.title")) do |sheet|
         sheet.column_widths 20, 4, 40, 12
 
         sheet.add_row [
-          t('.participants.participating_dojo'),
-          t('.participants.index'),
-          t('.participants.display_name'),
-          t('.participants.club'),
+          t(".participants.participating_dojo"),
+          t(".participants.index"),
+          t(".participants.display_name"),
+          t(".participants.club")
         ], style: @header_row_style
 
         dojo_start_line = 2
@@ -130,10 +130,10 @@ module AxlsxExportHelpers
               "#{participating_dojo.display_name} (#{participating_dojo.dojo.shortname})",
               participant.index,
               participant.display_name,
-              participant.club,
+              participant.club
             ]
 
-            sheet.add_row row, style: [@table_cell_style] * row.size
+            sheet.add_row row, style: [ @table_cell_style ] * row.size
           end
           line = dojo_start_line + participating_dojo.participants.size - 1
           sheet.merge_cells("A#{dojo_start_line}:A#{line}")
@@ -143,15 +143,15 @@ module AxlsxExportHelpers
       end
     else
       # Team Taikai Participants
-      xlsx_package.workbook.add_worksheet(name: t('.participants.title')) do |sheet|
+      xlsx_package.workbook.add_worksheet(name: t(".participants.title")) do |sheet|
         sheet.column_widths 20, 4, 20, 40, 12
 
         sheet.add_row [
-          t('.participants.participating_dojo'),
-          t('.participants.index'),
-          t('.participants.team'),
-          t('.participants.display_name'),
-          t('.participants.club'),
+          t(".participants.participating_dojo"),
+          t(".participants.index"),
+          t(".participants.team"),
+          t(".participants.display_name"),
+          t(".participants.club")
         ], style: @header_row_style
 
         dojo_start_line = 2
@@ -166,10 +166,10 @@ module AxlsxExportHelpers
                 team.index,
                 team.shortname,
                 participant.display_name,
-                participant.club,
+                participant.club
               ]
 
-              sheet.add_row row, style: [@table_cell_style] * row.size
+              sheet.add_row row, style: [ @table_cell_style ] * row.size
 
               next unless participant_index.zero?
 
@@ -191,21 +191,21 @@ module AxlsxExportHelpers
 
   def export_results_sheets(xlsx_package)
     case @taikai.form
-    when 'individual'
+    when "individual"
       export_individual_results xlsx_package
-    when 'team'
+    when "team"
       export_team_results xlsx_package
-    when '2in1'
+    when "2in1"
       export_individual_results xlsx_package
       export_team_results xlsx_package
-    when 'matches'
+    when "matches"
       export_matches_results xlsx_package
     end
   end
 
   def export_individual_results(xlsx_package)
-    xlsx_package.workbook.add_worksheet(name: t('.results.title.individual')) do |sheet|
-      sheet.column_widths(*([5, 5, 20, 25] + [4] * @taikai.total_num_arrows + [8]))
+    xlsx_package.workbook.add_worksheet(name: t(".results.title.individual")) do |sheet|
+      sheet.column_widths(*([ 5, 5, 20, 25 ] + [ 4 ] * @taikai.total_num_arrows + [ 8 ]))
 
       @current_row = 1
       export_individual_results_table sheet
@@ -218,7 +218,7 @@ module AxlsxExportHelpers
 
           sheet.add_row
 
-          export_individual_results_table sheet, [participating_dojo]
+          export_individual_results_table sheet, [ participating_dojo ]
         end
       end
 
@@ -228,29 +228,29 @@ module AxlsxExportHelpers
 
   def export_individual_results_table(sheet, participating_dojos = nil)
     participating_dojos = @taikai.participating_dojos if participating_dojos.nil?
-    row_styles = [@table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style] +
-                 [@result_cell_style] * @taikai.total_num_arrows +
-                 [@total_cell_style, @result_cell_style]
+    row_styles = [ @table_cell_style, @table_cell_style, @table_cell_style, @table_cell_style ] +
+                 [ @result_cell_style ] * @taikai.total_num_arrows +
+                 [ @total_cell_style, @result_cell_style ]
 
-    col_styles = [@vert_header_row_style] +
-                 [@header_row_style] * (3 + @taikai.total_num_arrows) +
-                 [@vert_header_row_style]
+    col_styles = [ @vert_header_row_style ] +
+                 [ @header_row_style ] * (3 + @taikai.total_num_arrows) +
+                 [ @vert_header_row_style ]
     sheet.add_row [
-      t('.results.rank'),
-      t('.results.index'),
-      @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
-      t('.results.display_name')
+      t(".results.rank"),
+      t(".results.index"),
+      @taikai.distributed? ? t(".results.participating_dojo") : t(".results.club"),
+      t(".results.display_name")
     ] + (
       (1..(@taikai.num_rounds)).map do |index|
-        [t('.results.round', count: index), '', '', '']
+        [ t(".results.round", count: index), "", "", "" ]
       end
     ).flatten + [
-      t('.results.score'),
+      t(".results.score")
     ],
                   style: col_styles,
                   height: 50
 
-    columns = ('E'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
+    columns = ("E".."Z").to_a + ("A".."Z").map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
       sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
     end
@@ -260,7 +260,7 @@ module AxlsxExportHelpers
     participants = participating_dojos
                    .map(&:participants)
                    .flatten
-                   .sort_by { |participant| [participant.rank, participant.index || 0] }
+                   .sort_by { |participant| [ participant.rank, participant.index || 0 ] }
 
     current_rank = rank = 1
     exaequo_start_line = @current_row + 1
@@ -282,10 +282,10 @@ module AxlsxExportHelpers
         current_rank,
         participant.index,
         @taikai.distributed? ? participant.participating_dojo.display_name : participant.club,
-        participant.display_name,
+        participant.display_name
       ] + (participant.score.results.map do |result|
         result_mark(result)
-      end + [display_score_axlsx(participant.score, @taikai.scoring_enteki?)])
+      end + [ display_score_axlsx(participant.score, @taikai.scoring_enteki?) ])
     end
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
     sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
@@ -296,10 +296,10 @@ module AxlsxExportHelpers
   end
 
   def export_team_results(xlsx_package)
-    xlsx_package.workbook.add_worksheet(name: t('.results.title.team')) do |sheet|
+    xlsx_package.workbook.add_worksheet(name: t(".results.title.team")) do |sheet|
       @current_row = 1
 
-      sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
+      sheet.column_widths(*([ 4, 3, 15, 15, 25 ] + [ 4 ] * @taikai.total_num_arrows + [ 4, 4 ]))
 
       export_team_results_table sheet, @taikai.participating_dojos
 
@@ -311,7 +311,7 @@ module AxlsxExportHelpers
 
           sheet.add_row
 
-          export_team_results_table sheet, [participating_dojo]
+          export_team_results_table sheet, [ participating_dojo ]
         end
       end
 
@@ -320,28 +320,28 @@ module AxlsxExportHelpers
   end
 
   def export_team_results_table(sheet, participating_dojos = nil)
-    row_styles = [@total_cell_style] +
-                 [@table_cell_style] * 4 +
-                 [@result_cell_style] * @taikai.total_num_arrows +
-                 [@total_cell_style, @total_cell_style]
+    row_styles = [ @total_cell_style ] +
+                 [ @table_cell_style ] * 4 +
+                 [ @result_cell_style ] * @taikai.total_num_arrows +
+                 [ @total_cell_style, @total_cell_style ]
 
     sheet.add_row [
-      t('.results.rank'),
-      t('.results.index'),
-      t('.results.team'),
-      @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
-      t('.results.display_name'),
+      t(".results.rank"),
+      t(".results.index"),
+      t(".results.team"),
+      @taikai.distributed? ? t(".results.participating_dojo") : t(".results.club"),
+      t(".results.display_name")
     ] + (
       (1..(@taikai.num_rounds)).map do |index|
-        [t('.results.round', count: index), '', '', '']
+        [ t(".results.round", count: index), "", "", "" ]
       end
     ).flatten + [
-      t('.results.score'),
-      t('.results.team_score'),
-    ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
-              [@vert_header_row_style, @vert_header_row_style], height: 50
+      t(".results.score"),
+      t(".results.team_score")
+    ], style: [ @vert_header_row_style ] + [ @header_row_style ] * (4 + @taikai.total_num_arrows) +
+              [ @vert_header_row_style, @vert_header_row_style ], height: 50
 
-    columns = ('F'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
+    columns = ("F".."Z").to_a + ("A".."Z").map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
       sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
     end
@@ -351,12 +351,12 @@ module AxlsxExportHelpers
     teams = participating_dojos
             .map(&:teams)
             .flatten
-            .sort_by { |participant| [participant.rank, participant.index || 0] }
+            .sort_by { |participant| [ participant.rank, participant.index || 0 ] }
 
     current_rank = rank = 1
     team_start_line = exaequo_start_line = @current_row + 1
     previous_rank = teams.first&.rank
-    rows = teams.map do |team|
+    rows = teams.flat_map do |team|
       next if team.participants.empty?
 
       # merge team cells
@@ -388,17 +388,17 @@ module AxlsxExportHelpers
           team.index,
           team.shortname,
           @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
-          participant.display_name,
+          participant.display_name
         ] + (
           participant.score.results.map do |result|
             result_mark(result)
           end + [
             display_score_axlsx(participant.score, @taikai.scoring_enteki?),
-            display_score_axlsx(participant.team.score, @taikai.scoring_enteki?),
+            display_score_axlsx(participant.team.score, @taikai.scoring_enteki?)
           ]
         )
       end
-    end.flatten(1).compact
+    end.compact
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
     sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
     # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
@@ -412,13 +412,13 @@ module AxlsxExportHelpers
   end
 
   def export_matches_results(xlsx_package)
-    xlsx_package.workbook.add_worksheet(name: t('.results.title.matches')) do |sheet|
+    xlsx_package.workbook.add_worksheet(name: t(".results.title.matches")) do |sheet|
       @current_row = 1
 
-      sheet.column_widths(*([4, 3, 15, 15, 25] + [4] * @taikai.total_num_arrows + [4, 4]))
+      sheet.column_widths(*([ 4, 3, 15, 15, 25 ] + [ 4 ] * @taikai.total_num_arrows + [ 4, 4 ]))
 
-      # TODO: should we fix this and display results? 
-      #export_matches_results_table sheet, @taikai.participating_dojos
+      # TODO: should we fix this and display results?
+      # export_matches_results_table sheet, @taikai.participating_dojos
 
       # if @taikai.distributed?
       #   @taikai.participating_dojos.each do |participating_dojo|
@@ -437,28 +437,28 @@ module AxlsxExportHelpers
   end
 
   def export_matches_results_table(sheet, _participating_dojos = nil)
-    row_styles = [@total_cell_style] +
-                 [@table_cell_style] * 4 +
-                 [@result_cell_style] * @taikai.total_num_arrows +
-                 [@total_cell_style, @total_cell_style]
+    row_styles = [ @total_cell_style ] +
+                 [ @table_cell_style ] * 4 +
+                 [ @result_cell_style ] * @taikai.total_num_arrows +
+                 [ @total_cell_style, @total_cell_style ]
 
     sheet.add_row [
-      t('.results.rank'),
-      t('.results.index'),
-      t('.results.team'),
-      @taikai.distributed? ? t('.results.participating_dojo') : t('.results.club'),
-      t('.results.display_name'),
+      t(".results.rank"),
+      t(".results.index"),
+      t(".results.team"),
+      @taikai.distributed? ? t(".results.participating_dojo") : t(".results.club"),
+      t(".results.display_name")
     ] + (
       (1..(@taikai.num_rounds)).map do |index|
-        [t('.results.round', count: index), '', '', '']
+        [ t(".results.round", count: index), "", "", "" ]
       end
     ).flatten + [
-      t('.results.score'),
-      t('.results.team_score'),
-    ], style: [@vert_header_row_style] + [@header_row_style] * (4 + @taikai.total_num_arrows) +
-              [@vert_header_row_style, @vert_header_row_style], height: 50
+      t(".results.score"),
+      t(".results.team_score")
+    ], style: [ @vert_header_row_style ] + [ @header_row_style ] * (4 + @taikai.total_num_arrows) +
+              [ @vert_header_row_style, @vert_header_row_style ], height: 50
 
-    columns = ('F'..'Z').to_a + ('A'..'Z').map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
+    columns = ("F".."Z").to_a + ("A".."Z").map { |c| "A#{c}" } # TODO: this does not work for more than ~40 arrows!!!
     @taikai.num_rounds.times do |index|
       sheet.merge_cells("#{columns[4 * index]}#{@current_row}:#{columns[4 * index + 3]}#{@current_row}")
     end
@@ -469,7 +469,7 @@ module AxlsxExportHelpers
     current_rank = rank = 1
     team_start_line = exaequo_start_line = @current_row + 1
     previous_rank = teams_by_score&.first&.first&.rank
-    rows = teams_by_score.map do |team, match, _score|
+    rows = teams_by_score.flat_map do |team, match, _score|
       next if team.participants.empty?
 
       # merge team cells
@@ -501,18 +501,18 @@ module AxlsxExportHelpers
           team.index,
           team.shortname,
           @taikai.distributed? ? team.participating_dojo.display_name : participant.club,
-          participant.display_name,
+          participant.display_name
         ] + (
           # TODO: make less brittle, should work here as we are not displaying matches
           participant.score(match.id).results.map do |result|
             result_mark(result)
           end + [
             display_score_axlsx(participant.score(match.id).score_value, @taikai.scoring_enteki?),
-            display_score_axlsx(participant.team.score(match.id).score_value, @taikai.scoring_enteki?),
+            display_score_axlsx(participant.team.score(match.id).score_value, @taikai.scoring_enteki?)
           ]
         )
       end
-    end.flatten(1).compact
+    end.compact
     sheet.merge_cells("A#{exaequo_start_line}:A#{@current_row}")
     sheet.merge_cells("#{last_column}#{exaequo_start_line}:#{last_column}#{@current_row}")
     # logger.info("MERGE A#{exaequo_start_line}:A#{@current_row}")
@@ -528,14 +528,14 @@ module AxlsxExportHelpers
   def export_journal_sheet(xlsx_package)
     return unless @taikai.events.any?
 
-    xlsx_package.workbook.add_worksheet(name: t('.journal.title')) do |sheet|
+    xlsx_package.workbook.add_worksheet(name: t(".journal.title")) do |sheet|
       sheet.column_widths 30, 25, 40, 20
 
       sheet.add_row [
-        t('.journal.time'),
-        t('.journal.user'),
-        t('.journal.message'),
-        t('.journal.category'),
+        t(".journal.time"),
+        t(".journal.user"),
+        t(".journal.message"),
+        t(".journal.category")
       ], style: @header_row_style
 
       @taikai.events.each do |event|
@@ -543,8 +543,8 @@ module AxlsxExportHelpers
           I18n.l(event.created_at),
           event.user&.display_name,
           event.message,
-          TaikaiEvent.human_enum_value(:category, event.category),
-        ], style: [@table_cell_style, @table_cell_style, @wrapped_table_cell_style, @table_cell_style]
+          TaikaiEvent.human_enum_value(:category, event.category)
+        ], style: [ @table_cell_style, @table_cell_style, @wrapped_table_cell_style, @table_cell_style ]
       end
 
       sheet.page_setup.set paper_width: "210mm", paper_size: 10, paper_height: "297mm", orientation: :landscape

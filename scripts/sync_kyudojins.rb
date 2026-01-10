@@ -30,8 +30,8 @@ kyudojins = body['licencies'].map do |licencie|
 puts "Number of kyudojins to update: #{kyudojins.size}"
 result = Kyudojin.upsert_all(
   kyudojins,
-  unique_by: [:license_id],
-  update_only: [:firstname, :lastname, :federation_club, :federation_country_code],
+  unique_by: [ :license_id ],
+  update_only: [ :firstname, :lastname, :federation_club, :federation_country_code ],
   record_timestamps: true
 )
 

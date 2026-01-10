@@ -1,7 +1,7 @@
 class ScoreboardController < ApplicationController
-  layout 'public'
+  layout "public"
 
-  skip_before_action :authenticate_user!, :only => [:show]
+  skip_before_action :authenticate_user!, only: [ :show ]
 
   def show
     @scoreboard = Scoreboard.find_by!(api_key: params[:api_key])
@@ -12,9 +12,9 @@ class ScoreboardController < ApplicationController
 
     @display_tachi = if @previous_tachi && @previous_tachi.updated_at > @scoreboard.delay.seconds.ago
                        @previous_tachi
-                     else
+    else
                        @current_tachi
-                     end
+    end
 
     respond_to do |format|
       format.html do
@@ -36,7 +36,7 @@ class ScoreboardController < ApplicationController
         num_rounds: @taikai.num_rounds,
         scoring: @taikai.scoring,
         total_num_arrows: @taikai.total_num_arrows
-      },
+      }
     }
     if tachi
       data.merge!(
@@ -44,7 +44,7 @@ class ScoreboardController < ApplicationController
           index: tachi.index,
           round: tachi.round,
           participating_dojo: {
-            name: @scoreboard.participating_dojo.display_name,
+            name: @scoreboard.participating_dojo.display_name
           },
           participants: tachi.participants.map do |participant|
             score = participant.score(tachi.match_id)

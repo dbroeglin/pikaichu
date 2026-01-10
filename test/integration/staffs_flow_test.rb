@@ -10,12 +10,12 @@ class StaffsFlowTest < ActionDispatch::IntegrationTest
     @taikai.transition_to! :registration
   end
 
-  test 'should get new' do
+  test "should get new" do
     # catches Statesman guard issue
     get new_taikai_staff_url @taikai
 
     assert_response :success
 
-    assert_select 'p.title', 'Ajouter un staff'
+    assert_select "p.title", "Ajouter un staff"
   end
 end

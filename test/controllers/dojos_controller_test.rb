@@ -16,8 +16,8 @@ class DojosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should post create' do
-    assert_difference 'Dojo.count' do
+  test "should post create" do
+    assert_difference "Dojo.count" do
       post dojos_url params: {
         dojo: {
           shortname: "new-dojo",

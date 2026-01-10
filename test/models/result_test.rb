@@ -3,8 +3,8 @@ require "test_helper"
 class ResultTest < ActiveSupport::TestCase
   setup do
     # TODO: we should test for teams also (teams scores are shared)
-    @kinteki_participant = taikais('individual_dist_12_kinteki').participants.first
-    @enteki_participant  = taikais('individual_dist_12_enteki').participants.first
+    @kinteki_participant = taikais("individual_dist_12_kinteki").participants.first
+    @enteki_participant  = taikais("individual_dist_12_enteki").participants.first
     @kinteki_score = Score.new(participant: @kinteki_participant)
     @enteki_score = Score.new(participant: @enteki_participant)
 
@@ -13,18 +13,18 @@ class ResultTest < ActiveSupport::TestCase
   end
 
   test "value can be empty for kinteki" do
-    assert @kinteki_result.valid?, 'should validate'
+    assert @kinteki_result.valid?, "should validate"
   end
 
   test "value cannot be empty for enteki" do
-    assert @enteki_result.invalid?, 'should not validate'
+    assert @enteki_result.invalid?, "should not validate"
     assert @enteki_result.errors.added? :value, :blank
   end
 
   test "marked must be true when value is set for enteki" do
     @enteki_result.assign_attributes(value: 0)
 
-    assert @enteki_result.valid?, 'should validate'
+    assert @enteki_result.valid?, "should validate"
   end
 
   Result::ENTEKI_VALUES.each do |value|
@@ -32,7 +32,7 @@ class ResultTest < ActiveSupport::TestCase
       @enteki_result.assign_attributes(value: value)
 
       assert value.zero? && @enteki_result.status_miss? || !value.zero? && @enteki_result.status_hit?
-      assert @enteki_result.valid?, 'should validate'
+      assert @enteki_result.valid?, "should validate"
     end
   end
 
@@ -40,7 +40,7 @@ class ResultTest < ActiveSupport::TestCase
     test "#{value} is not a valid enteki value" do
       @enteki_result.assign_attributes(value: value)
 
-      assert @enteki_result.invalid?, 'should not validate'
+      assert @enteki_result.invalid?, "should not validate"
       assert @enteki_result.errors.added? :value, :inclusion, value: value
     end
   end
@@ -70,31 +70,31 @@ class ResultTest < ActiveSupport::TestCase
     result.rotate_value
 
     assert_equal 0, result.value
-    assert_equal 'miss', result.status
+    assert_equal "miss", result.status
   end
 
   test "rotate status hit to miss when partial round" do
-    assert_equal 'miss', Result.new(status: 'hit').rotate_status(false).status
+    assert_equal "miss", Result.new(status: "hit").rotate_status(false).status
   end
 
   test "rotate status miss to unknown when partial round" do
-    assert_equal 'unknown', Result.new(status: 'miss').rotate_status(false).status
+    assert_equal "unknown", Result.new(status: "miss").rotate_status(false).status
   end
 
   test "rotate status unknown to hit when partial round" do
-    assert_equal 'hit', Result.new(status: 'unknown').rotate_status(false).status
+    assert_equal "hit", Result.new(status: "unknown").rotate_status(false).status
   end
 
   test "rotate status hit to miss when full round" do
-    assert_equal 'miss', Result.new(status: 'hit').rotate_status(true).status
+    assert_equal "miss", Result.new(status: "hit").rotate_status(true).status
   end
 
   test "rotate status miss to hit when full round" do
-    assert_equal 'hit', Result.new(status: 'miss').rotate_status(true).status
+    assert_equal "hit", Result.new(status: "miss").rotate_status(true).status
   end
 
   test "rotate status unknown to hit when full round" do
-    assert_equal 'hit', Result.new(status: 'unknown').rotate_status(true).status
+    assert_equal "hit", Result.new(status: "unknown").rotate_status(true).status
   end
 
   test "kinteki finalized records cannot bet changed" do
@@ -120,7 +120,7 @@ class ResultTest < ActiveSupport::TestCase
 
     assert_equal true, @kinteki_result.final
     assert_equal true, @kinteki_result.overriden
-    assert_equal 'miss', @kinteki_result.status
+    assert_equal "miss", @kinteki_result.status
   end
 
   test "enteki finalized records can be overriden" do
@@ -131,7 +131,7 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal true, @enteki_result.final
     assert_equal true, @enteki_result.overriden
     assert_equal 0, @enteki_result.value
-    assert_equal 'miss', @enteki_result.status
+    assert_equal "miss", @enteki_result.status
   end
 
   test "kinteki finalized records can be overriden but are not if no change" do
@@ -139,7 +139,7 @@ class ResultTest < ActiveSupport::TestCase
     assert_equal false, @kinteki_result.override_status(:hit)
     assert_equal false, @enteki_result.save
 
-    assert_equal false, @kinteki_result.override_status('hit')
+    assert_equal false, @kinteki_result.override_status("hit")
     assert_equal false, @enteki_result.save
   end
 

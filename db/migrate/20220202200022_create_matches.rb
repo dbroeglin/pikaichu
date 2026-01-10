@@ -14,8 +14,8 @@ class CreateMatches < ActiveRecord::Migration[7.0]
     add_belongs_to :results, :match, foreign_key: true, null: true
     add_enum_value :taikai_form, "matches"
 
-    remove_index :results, [:participant_id, :round, :index], unique: true, name: "by_participant_round_index"
-    add_index :results, [:participant_id, :round, :index, :match_id],
+    remove_index :results, [ :participant_id, :round, :index ], unique: true, name: "by_participant_round_index"
+    add_index :results, [ :participant_id, :round, :index, :match_id ],
               unique: true, name: "by_participant_round_index_match_id"
   end
 end

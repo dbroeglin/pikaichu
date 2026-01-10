@@ -11,6 +11,6 @@ class CreateResults < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :results, [:participant_id, :round, :index], unique: true, name: "by_participant_round_index"
+    add_index :results, [ :participant_id, :round, :index ], unique: true, name: "by_participant_round_index"
   end
 end
