@@ -284,7 +284,7 @@ class Taikai < ApplicationRecord
   end
 
   def state_machine
-    @state_machine ||= TaikaiStateMachine.new(self, transition_class: TaikaiTransition)
+    TaikaiStateMachine.new(self, transition_class: TaikaiTransition)
   end
 
   def number_of_dojos
