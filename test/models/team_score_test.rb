@@ -15,10 +15,10 @@ class TeamScoreTest < ActiveSupport::TestCase
     # puts @team1.to_ascii
 
     @team1.participants.each do |participant|
-      participant.add_result(nil, 'hit', 3)
-      participant.add_result(nil, 'hit', 5)
-      participant.add_result(nil, 'hit', 7)
-      participant.add_result(nil, 'hit', 10)
+      participant.add_result(nil, "hit", 3)
+      participant.add_result(nil, "hit", 5)
+      participant.add_result(nil, "hit", 7)
+      participant.add_result(nil, "hit", 10)
     end
 
     # puts @team1.to_ascii
@@ -34,10 +34,10 @@ class TeamScoreTest < ActiveSupport::TestCase
 
     (2..3).each do |index|
       @team1.participants.each do |participant|
-        participant.add_result(nil, 'hit', 3)
-        participant.add_result(nil, 'hit', 5)
-        participant.add_result(nil, 'hit', 7)
-        participant.add_result(nil, 'hit', 10)
+        participant.add_result(nil, "hit", 3)
+        participant.add_result(nil, "hit", 5)
+        participant.add_result(nil, "hit", 7)
+        participant.add_result(nil, "hit", 10)
         participant.finalize_round(index, nil)
       end
     end

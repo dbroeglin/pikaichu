@@ -1,5 +1,5 @@
 require "test_helper"
-require 'taikais_test_helpers'
+require "taikais_test_helpers"
 
 class TachiTest < ActiveSupport::TestCase
   include TaikaisTestHelpers
@@ -12,7 +12,7 @@ class TachiTest < ActiveSupport::TestCase
   end
 
   test "tachi for matches taikai" do
-    @taikai = taikais('matches_dist_4_kinteki')
+    @taikai = taikais("matches_dist_4_kinteki")
     @taikai.current_user = users(:jean_bon)
     transition_taikai_to(@taikai, :marking)
     @taikai.participating_dojos.each do |participating_dojo|
@@ -25,7 +25,7 @@ class TachiTest < ActiveSupport::TestCase
   end
 
   test "tachi is finished when match is decided" do
-    @taikai = taikais('matches_dist_4_kinteki')
+    @taikai = taikais("matches_dist_4_kinteki")
     @taikai.current_user = users(:jean_bon)
     transition_taikai_to(@taikai, :marking)
     participating_dojo = @taikai.participating_dojos.first
@@ -95,7 +95,7 @@ class TachiTest < ActiveSupport::TestCase
       tachi.participants.first(@taikai.num_targets).each do |participant|
         score = participant.scores.first
         score.results.where(final: false).first(@taikai.num_arrows).each do |result|
-          result.update!(status: 'hit', value: 3)
+          result.update!(status: "hit", value: 3)
         end
         score.finalize_round(tachi.round)
       end
@@ -113,7 +113,7 @@ class TachiTest < ActiveSupport::TestCase
       tachi.participants.first(@taikai.num_targets).each do |participant|
         score = participant.scores.first
         score.results.where(final: false).first(@taikai.num_arrows).each do |result|
-          result.update!(status: 'hit', value: 3)
+          result.update!(status: "hit", value: 3)
         end
         score.finalize_round(tachi.round)
       end
@@ -129,7 +129,7 @@ class TachiTest < ActiveSupport::TestCase
     participating_dojo.teams.map(&:participants).flatten.first(@taikai.num_targets).each do |participant|
       score = participant.scores.first
       score.results.first(@taikai.num_arrows).each do |result|
-        result.update!(status: 'hit', value: 3)
+        result.update!(status: "hit", value: 3)
       end
       score.finalize_round(1)
     end

@@ -1,6 +1,6 @@
 # spec/support/create_fixtures.rb
 
-require 'factory_bot_rails'
+require "factory_bot_rails"
 
 class CreateFixtures
   include FactoryBot::Syntax::Methods
@@ -13,13 +13,13 @@ class CreateFixtures
     @fixed_time = Time.utc(2023, 3, 14, 9, 2, 6)
 
     fbuilder.name_model_with(User) do |record|
-      ActiveSupport::Inflector.parameterize("#{record['firstname']}.#{record['lastname']}", separator: '_')
+      ActiveSupport::Inflector.parameterize("#{record['firstname']}.#{record['lastname']}", separator: "_")
     end
     fbuilder.name_model_with(StaffRole) do |record|
-      record['code']
+      record["code"]
     end
     fbuilder.name_model_with(ParticipatingDojo) do |record|
-      ActiveSupport::Inflector.parameterize(record['display_name'], separator: '_')
+      ActiveSupport::Inflector.parameterize(record["display_name"], separator: "_")
     end
   end
 
@@ -36,7 +36,7 @@ class CreateFixtures
   private
 
   def reset_pk_sequences
-    puts 'Resetting Primary Key sequences'
+    puts "Resetting Primary Key sequences"
     ActiveRecord::Base.connection.tables.each do |t|
       ActiveRecord::Base.connection.reset_pk_sequence!(t)
     end
@@ -44,109 +44,109 @@ class CreateFixtures
 
   def create_dojos
     create :dojo,
-           name: 'dojo_fr',
-           city: 'Montpelier',
-           country_code: 'FR'
+           name: "dojo_fr",
+           city: "Montpelier",
+           country_code: "FR"
     create :dojo,
-           name: 'dojo_hk',
-           city: 'Hong-Kong',
-           country_code: 'HK'
+           name: "dojo_hk",
+           city: "Hong-Kong",
+           country_code: "HK"
     create :dojo,
-           name: 'dojo_jp',
-           city: 'Kyoto',
-           country_code: 'JP'
+           name: "dojo_jp",
+           city: "Kyoto",
+           country_code: "JP"
     create :dojo,
-           name: 'Dojo To Delete',
-           city: 'Kyoto',
-           country_code: 'JP'
+           name: "Dojo To Delete",
+           city: "Kyoto",
+           country_code: "JP"
   end
 
   def create_users
     models[:users] = {}.with_indifferent_access
 
     # Jean is the administrator of the application. He has full access to all the data and users.
-    models[:users]['jean_bon'] = create(:user, firstname: 'Jean', lastname: 'Bon', admin: true)
+    models[:users]["jean_bon"] = create(:user, firstname: "Jean", lastname: "Bon", admin: true)
 
     # Marc is a Taikai admin. He knows the application well and understands Taikai organization and rules.
-    models[:users]['marc_o_polo'] = create(:user, firstname: 'Marc', lastname: "O'Polo")
+    models[:users]["marc_o_polo"] = create(:user, firstname: "Marc", lastname: "O'Polo")
 
     # Alain is a participating dojo administrator
-    models[:users]['alain_terieur'] = create(:user, firstname: 'Alain', lastname: 'Terieur')
+    models[:users]["alain_terieur"] = create(:user, firstname: "Alain", lastname: "Terieur")
 
     # Alex is a Taikai participant she accesses the application to visualize her results.
-    models[:users]['alex_terieur'] = create(:user, firstname: 'Alex', lastname: 'Terieur')
+    models[:users]["alex_terieur"] = create(:user, firstname: "Alex", lastname: "Terieur")
 
     # Pat is a federation official, her role is to validate (homologates) Taikais and results.
-    models[:users]['pat_ronat'] = create(:user, firstname: 'Pat', lastname: 'Ronat')
+    models[:users]["pat_ronat"] = create(:user, firstname: "Pat", lastname: "Ronat")
 
     # Vince is a Taikai chairman. He does not know the application as well as Marc but can use it.
-    models[:users]['vince_santo'] = create(:user, firstname: 'Vince', lastname: 'Santo')
+    models[:users]["vince_santo"] = create(:user, firstname: "Vince", lastname: "Santo")
 
     # Marie is a Kyudo fan, she follows Taikais and the championship. She might be a participant at times.
-    models[:users]['marie_tournelle'] = create(:user, firstname: 'Marie', lastname: 'Tournelle')
+    models[:users]["marie_tournelle"] = create(:user, firstname: "Marie", lastname: "Tournelle")
   end
 
   def create_staff_roles
     staff_roles = models[:staff_roles] = {}.with_indifferent_access
 
-    staff_roles['taikai_admin'] = create(
+    staff_roles["taikai_admin"] = create(
       :staff_role,
       code: :taikai_admin,
-      label_fr: 'Administrateur',
-      label_en: 'Administrator'
+      label_fr: "Administrateur",
+      label_en: "Administrator"
     )
-    staff_roles['dojo_admin'] = create(
+    staff_roles["dojo_admin"] = create(
       :staff_role,
       code: :dojo_admin,
-      label_fr: 'Administrateur de club',
-      label_en: 'Dojo Administrator'
+      label_fr: "Administrateur de club",
+      label_en: "Dojo Administrator"
     )
-    staff_roles['chairman'] = create(
+    staff_roles["chairman"] = create(
       :staff_role,
       code: :chairman,
-      label_fr: 'Directeur du tournoi',
-      label_en: 'Chairman'
+      label_fr: "Directeur du tournoi",
+      label_en: "Chairman"
     )
-    staff_roles['marking_referee'] = create(
+    staff_roles["marking_referee"] = create(
       :staff_role,
       code: :marking_referee,
-      label_fr: 'Enregistreur',
-      label_en: 'Marking Referee'
+      label_fr: "Enregistreur",
+      label_en: "Marking Referee"
     )
-    staff_roles['shajo_referee'] = create(
+    staff_roles["shajo_referee"] = create(
       :staff_role,
       code: :shajo_referee,
-      label_fr: 'Juge de Shajo',
-      label_en: 'Shajo Referee'
+      label_fr: "Juge de Shajo",
+      label_en: "Shajo Referee"
     )
-    staff_roles['yatori'] = create(
+    staff_roles["yatori"] = create(
       :staff_role,
       code: :yatori,
-      label_fr: 'Yatori',
-      label_en: 'Yatori'
+      label_fr: "Yatori",
+      label_en: "Yatori"
     )
-    staff_roles['target_referee'] = create(
+    staff_roles["target_referee"] = create(
       :staff_role,
       code: :target_referee,
-      label_fr: 'Juge de Cible',
-      label_en: 'Target Referee'
+      label_fr: "Juge de Cible",
+      label_en: "Target Referee"
     )
-    staff_roles['operations_chairman'] = create(
+    staff_roles["operations_chairman"] = create(
       :staff_role,
       code: :operations_chairman,
-      label_fr: 'Responsable Logistique',
-      label_en: 'Operations Chairman'
+      label_fr: "Responsable Logistique",
+      label_en: "Operations Chairman"
     )
   end
 
   def create_taikais
     taikais = models[:taikais] = {}.with_indifferent_access
     %w[kinteki enteki].each do |scoring|
-      [true, false].each do |distributed|
-        fixture_name = ['matches', distributed ? "dist" : "local", 4, scoring].join '_'
+      [ true, false ].each do |distributed|
+        fixture_name = [ "matches", distributed ? "dist" : "local", 4, scoring ].join "_"
         taikais[fixture_name] = create :taikai_with_participating_dojo,
-                                       user: models[:users]['marc_o_polo'],
-                                       form: 'matches',
+                                       user: models[:users]["marc_o_polo"],
+                                       form: "matches",
                                        distributed: distributed,
                                        total_num_arrows: 4,
                                        scoring: scoring do |taikai|
@@ -160,27 +160,27 @@ class CreateFixtures
           taikai.matches.create!(index: 2, level: 1)
         end
 
-        [12, 20].each do |total_num_arrows|
-          fixture_name = ['2in1', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+        [ 12, 20 ].each do |total_num_arrows|
+          fixture_name = [ "2in1", distributed ? "dist" : "local", total_num_arrows, scoring ].join "_"
           taikais[fixture_name] = create :taikai_with_participating_dojo,
-                                         form: '2in1',
-                                         user: models[:users]['marc_o_polo'],
+                                         form: "2in1",
+                                         user: models[:users]["marc_o_polo"],
                                          distributed: distributed,
                                          total_num_arrows: total_num_arrows,
                                          scoring: scoring
 
-          fixture_name = ['individual', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+          fixture_name = [ "individual", distributed ? "dist" : "local", total_num_arrows, scoring ].join "_"
           taikais[fixture_name] = create :taikai_with_participating_dojo,
-                                         form: 'individual',
-                                         user: models[:users]['marc_o_polo'],
+                                         form: "individual",
+                                         user: models[:users]["marc_o_polo"],
                                          distributed: distributed,
                                          total_num_arrows: total_num_arrows,
                                          scoring: scoring
 
-          fixture_name = ['team', distributed ? "dist" : "local", total_num_arrows, scoring].join '_'
+          fixture_name = [ "team", distributed ? "dist" : "local", total_num_arrows, scoring ].join "_"
           taikais[fixture_name] = create :taikai_with_participating_dojo,
-                                         form: 'team',
-                                         user: models[:users]['marc_o_polo'],
+                                         form: "team",
+                                         user: models[:users]["marc_o_polo"],
                                          distributed: distributed,
                                          total_num_arrows: total_num_arrows,
                                          scoring: scoring
@@ -190,8 +190,8 @@ class CreateFixtures
   end
 
   def create_scoreboards
-    create :scoreboard, api_key: 'dummy',
-                        participating_dojo: models[:taikais]['2in1_dist_12_kinteki'].participating_dojos.first
+    create :scoreboard, api_key: "dummy",
+                        participating_dojo: models[:taikais]["2in1_dist_12_kinteki"].participating_dojos.first
   end
 
   # other creation and helper methods to abstract common logic, e.g.

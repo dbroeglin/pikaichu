@@ -6,7 +6,7 @@ module ValidateChangeBasedOnState
     validate :no_change_if_taikai_is_marking, on: :update
 
     def no_change_if_taikai_is_done
-      return unless changed? && self.taikai.in_state?('done')
+      return unless changed? && self.taikai.in_state?("done")
 
       errors.add(:base, :no_change_if_taikai_is_done)
     end
@@ -16,10 +16,10 @@ module ValidateChangeBasedOnState
       when Participant, ParticipatingDojo, Taikai, Team
         if changed? &&
            # Rank changes for Participant and Teams are allowed due to tie-breaks
-           !changes.keys.one? { |k| k == 'rank' } &&
+           !changes.keys.one? { |k| k == "rank" } &&
 
            # We do not check in 'done' because it is immutable at that point
-           !self.taikai.in_state?('new', 'registration', 'done')
+           !self.taikai.in_state?("new", "registration", "done")
 
           errors.add(:base, :no_change_if_taikai_is_marking)
         end

@@ -1,5 +1,5 @@
-require 'application_system_test_case'
-require 'taikais_test_helpers'
+require "application_system_test_case"
+require "taikais_test_helpers"
 
 class Taikais2in1Test < ApplicationSystemTestCase
   include TaikaisTestHelpers
@@ -14,7 +14,7 @@ class Taikais2in1Test < ApplicationSystemTestCase
 
     click_link "Modifier"
     wait_for_turbo
-    
+
     assert_selector "p.card-header-title", text: "Modification du Taikai", wait: 5
 
     within find("div.card", text: "Clubs hôtes") do

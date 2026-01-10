@@ -33,19 +33,19 @@ class ParticipatingDojo < ApplicationRecord
       return false
     end
     case taikai.form
-    when 'individual'
+    when "individual"
       participants.update_all(index: nil)
       participants.shuffle.each_with_index do |participant, index|
         participant.update!(index: index + 1)
       end
-    when 'team'
+    when "team"
       teams.update_all(index: nil)
       teams.shuffle.each_with_index do |team, index|
         team.update!(index: index + 1)
       end
       teams.reload
       set_participant_index_from_teams
-    when '2in1'
+    when "2in1"
       if participants.unteamed.any?
         errors.add(:base, :unteamed)
         return false
@@ -70,11 +70,11 @@ class ParticipatingDojo < ApplicationRecord
 
   def drawn?
     case taikai.form
-    when 'individual'
+    when "individual"
       participants.all? { |participant| participant.index.present? }
-    when 'team', '2in1'
+    when "team", "2in1"
       teams.all? { |team| team.index.present? }
-    when 'matches'
+    when "matches"
       true # For matches we do not need to draw, returning true
     end
   end
@@ -98,13 +98,13 @@ class ParticipatingDojo < ApplicationRecord
 
   def create_tachis
     case taikai.form
-    when 'individual', 'team', '2in1'
+    when "individual", "team", "2in1"
       taikai.num_rounds.times do |round|
         tachi_groups.each_with_index do |_, index|
           Tachi.create!(participating_dojo: self, round: round + 1, index: index + 1)
         end
       end
-    when 'matches'
+    when "matches"
       nb = taikai.matches.where("level IN(3, 2)").each_with_index do |match, index|
         Tachi.create!(participating_dojo: self, round: 1, index: index + 1, match: match)
       end.size
@@ -140,7 +140,7 @@ class ParticipatingDojo < ApplicationRecord
     [
       "Participating Dojo #{display_name} (#{id})",
       "  Participants: #{participants.count}",
-      "  Teams: #{teams.count}",
+      "  Teams: #{teams.count}"
     ].flatten.join "\n"
   end
 

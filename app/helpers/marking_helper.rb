@@ -9,14 +9,14 @@ module MarkingHelper
   end
 
   def icon_from(result, final = false)
-    return '' if result.nil? || final && !result.final?
+    return "" if result.nil? || final && !result.final?
 
     if result.value.nil?
       case result.status
-      when 'hit' then '<i class="far fa-circle"></i>'
-      when 'miss' then '<i class="fas fa-times"></i>'
-      when 'unknown' then '<i class="fas fa-question"></i>'
-      else ''
+      when "hit" then '<i class="far fa-circle"></i>'
+      when "miss" then '<i class="fas fa-times"></i>'
+      when "unknown" then '<i class="fas fa-question"></i>'
+      else ""
       end
     else
       "<span class='is-size-6'>#{result.value}</span>"
@@ -53,7 +53,7 @@ module MarkingHelper
   end
 
   def display_round_tally(participant, results)
-    hits = results.map(&:status).tally['hit'] || 0
+    hits = results.map(&:status).tally["hit"] || 0
     if participant.taikai.scoring_enteki?
       "#{results.map(&:value).compact.sum}&nbsp;/&nbsp;#{hits}".html_safe
     else

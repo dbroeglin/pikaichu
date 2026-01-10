@@ -56,7 +56,7 @@ class Score < ApplicationRecord
     end
 
     def hash
-      [hits, value || 0].hash
+      [ hits, value || 0 ].hash
     end
 
     def <=>(other)
@@ -84,7 +84,7 @@ class Score < ApplicationRecord
   def add_result(status, value = nil)
     result = results.first_empty
     raise UnableToFindUndefinedResultsError unless result
-    raise PreviousRoundNotValidatedError, [1, result.round - 1].min unless previous_round_finalized?(result)
+    raise PreviousRoundNotValidatedError, [ 1, result.round - 1 ].min unless previous_round_finalized?(result)
 
     result.update!(status: status, value: value)
 
@@ -186,7 +186,7 @@ class Score < ApplicationRecord
             round: round_index,
             index: index,
             created_at: now,
-            updated_at: now,
+            updated_at: now
           }
         end
       end.flatten

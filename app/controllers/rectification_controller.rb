@@ -1,5 +1,5 @@
 class RectificationController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   def index
     @taikai = authorize Taikai.find(params[:taikai_id]), :rectification_update?
@@ -23,9 +23,9 @@ class RectificationController < ApplicationController
 
     changed = if @taikai.scoring_enteki?
                 @result.override_value(params[:result][:value])
-              else
+    else
                 @result.override_status(params[:result][:status])
-              end
+    end
 
     ok = true
     if changed
@@ -42,8 +42,8 @@ class RectificationController < ApplicationController
     end
 
     if ok
-      redirect_to show_marking_path(@taikai.id), 
-        notice: t('result_rectified', index: @result.index, round: @result.round, participant: @result.score.participant.display_name, result: @result.to_s)
+      redirect_to show_marking_path(@taikai.id),
+        notice: t("result_rectified", index: @result.index, round: @result.round, participant: @result.score.participant.display_name, result: @result.to_s)
     else
       render :edit, status: :unprocessable_entity
     end

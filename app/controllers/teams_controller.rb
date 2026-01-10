@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   before_action :set_taikai
   before_action :set_participating_dojo
@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
     @team = @participating_dojo.teams.find(params[:id])
 
     if @team.update(team_params)
-      redirect_to controller: 'participating_dojos', action: 'edit', taikai_id: @taikai, id: @participating_dojo
+      redirect_to controller: "participating_dojos", action: "edit", taikai_id: @taikai, id: @participating_dojo
     else
       render :edit, status: :unprocessable_entity
     end

@@ -1,4 +1,4 @@
-require 'application_system_test_case'
+require "application_system_test_case"
 
 class DojosTest < ApplicationSystemTestCase
   test "visiting the dojos" do

@@ -12,13 +12,13 @@ class CreateScores < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :scores, [:team_id, :match_id], unique: true, name: "by_team_id_match_id"
-    add_index :scores, [:participant_id, :match_id], unique: true, name: "by_participant_id"
+    add_index :scores, [ :team_id, :match_id ], unique: true, name: "by_team_id_match_id"
+    add_index :scores, [ :participant_id, :match_id ], unique: true, name: "by_participant_id"
 
     add_reference :results, :score, null: true, foreign_key: true
 
     Result.all.where(round_type: :normal)
-          .group_by { |result| [result.participant_id, result.match_id] }
+          .group_by { |result| [ result.participant_id, result.match_id ] }
           .each do |key, group|
       participant_id, match_id = key
       score = Participant.find(participant_id).score(true, match_id)

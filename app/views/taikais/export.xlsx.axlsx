@@ -1,61 +1,61 @@
 @header_row_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   b: true, sz: 14
 )
 
 @vert_header_row_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center, wrap_text: true, textRotation: 90 },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   b: true, sz: 14
 )
 
 @info_data_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :left },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 @info_label_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :top, horizontal: :left },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12, b: true
 )
 
 @description_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :top, horizontal: :left, wrap_text: true },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 @date_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :left },
-  border: { style: :thin, color: 'FF000000' },
-  format_code: 'dd.mm.yyyy',
+  border: { style: :thin, color: "FF000000" },
+  format_code: "dd.mm.yyyy",
   sz: 12
 )
 
 @table_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :left },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 @wrapped_table_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :left, wrap_text: true },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 @result_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12
 )
 
 @total_cell_style = xlsx_package.workbook.styles.add_style(
   alignment: { vertical: :center, horizontal: :center },
-  border: { style: :thin, color: 'FF000000' },
+  border: { style: :thin, color: "FF000000" },
   sz: 12, b: true
 )
 

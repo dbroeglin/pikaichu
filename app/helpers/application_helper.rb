@@ -14,7 +14,7 @@ module ApplicationHelper
     # Generates a label
     def label(method, options = {})
       options = {} if options.nil?
-      options[:class] = [options[:class], 'label'].join ' '
+      options[:class] = [ options[:class], "label" ].join " "
       if options[:label]
         super method, options[:label], options
       else
@@ -23,7 +23,7 @@ module ApplicationHelper
     end
 
     def errors
-      return '' if object.errors.empty?
+      return "" if object.errors.empty?
 
       if object.errors[:base].present?
         base_html = <<-HTML
@@ -50,10 +50,10 @@ module ApplicationHelper
         safe_join [
           label(method, options[:label]),
           (
-            tag.div class: 'select' do
+            tag.div class: "select" do
               block.call
             end
-          ),
+          )
         ]
       end
     end
@@ -61,7 +61,7 @@ module ApplicationHelper
     def enum_input(method, options = {})
       field_div(method, options) do
         collection = @object.class.send(method.to_s.pluralize).map do |key, _|
-          [key, @object.class.human_enum_value(method, key)]
+          [ key, @object.class.human_enum_value(method, key) ]
         end
         value_method = options[:value_method] || :first
         text_method = options[:text_method] || :last
@@ -69,7 +69,7 @@ module ApplicationHelper
         safe_join [
           label(method, options[:label]),
           (
-            tag.div class: 'select' do
+            tag.div class: "select" do
               collection_select(
                 method,
                 collection,
@@ -79,13 +79,13 @@ module ApplicationHelper
                 merge_input_options(
                   {
                     class:
-                      "select #{'is-invalid' if error?(method)}",
+                      "select #{'is-invalid' if error?(method)}"
                   },
                   options[:input_html],
                 ),
               )
             end
-          ),
+          )
         ]
       end
     end
@@ -97,19 +97,19 @@ module ApplicationHelper
             label(method, options[:label]) unless options[:label] == false
           ),
           (
-            tag.div class: 'control' do
+            tag.div class: "control" do
               string_control(
                 method,
                 merge_input_options(
                   {
                     class:
-                      "input #{'is-danger' if error?(method)}",
+                      "input #{'is-danger' if error?(method)}"
                   },
                   options[:input_html],
                 ),
               )
             end
-          ),
+          )
         ]
       end
     end
@@ -131,7 +131,7 @@ module ApplicationHelper
           merge_input_options(
             {
               class:
-                "#{'select' unless multiple} #{'is-invalid' if error?(method)}",
+                "#{'select' unless multiple} #{'is-invalid' if error?(method)}"
             },
             options[:input_html],
           ),
@@ -146,11 +146,11 @@ module ApplicationHelper
             check_box(
               method,
               merge_input_options(
-                { class: 'checkbox' },
+                { class: "checkbox" },
                 options[:input_html],
               ),
             ),
-            " #{object.class.human_attribute_name(method).html_safe}",
+            " #{object.class.human_attribute_name(method).html_safe}"
           ]
         end
       end
@@ -167,11 +167,11 @@ module ApplicationHelper
             merge_input_options(
               {
                 class:
-                  "textarea #{'is-invalid' if error?(method)}",
+                  "textarea #{'is-invalid' if error?(method)}"
               },
               options[:input_html],
             ),
-          ),
+          )
         ]
       end
     end
@@ -241,12 +241,12 @@ module ApplicationHelper
     end
 
     def field_div(method, options = {}, &block)
-      tag.div class: 'field' do
+      tag.div class: "field" do
         safe_join [
           block.call,
           # hint_text(options[:hint]),
           error_text(method),
-          options[:help] ? tag.div(options[:help], class: 'help') : nil
+          options[:help] ? tag.div(options[:help], class: "help") : nil
         ].compact
       end
     end
@@ -260,7 +260,7 @@ module ApplicationHelper
       @object
         .errors
         .where(method)
-        .map { |error| tag.div error.full_message, class: 'help is-danger' }
+        .map { |error| tag.div error.full_message, class: "help is-danger" }
     end
 
     def error?(method)
@@ -292,12 +292,12 @@ module ApplicationHelper
     &block
   )
     options = options.reverse_merge(builder: BulmaFormBuilder)
-    
+
     form_options = { format: format, **options }
     form_options[:model] = model if model
     form_options[:scope] = scope if scope
     form_options[:url] = url if url
-    
+
     form_with(**form_options, &block)
   end
 end

@@ -15,13 +15,13 @@ class Team < ApplicationRecord
             presence: true,
             uniqueness: {
               scope: :participating_dojo,
-              case_sensitive: false,
+              case_sensitive: false
             }
 
   validates :index,
             uniqueness: {
               scope: :participating_dojo,
-              allow_blank: true,
+              allow_blank: true
             }
 
   def display_name
@@ -41,7 +41,7 @@ class Team < ApplicationRecord
   def to_ascii(match_id = nil)
     [
       "#{index} - #{shortname}: #{score(match_id)&.to_ascii}",
-      participants.map { |participant| "  #{participant.to_ascii(match_id)}" },
+      participants.map { |participant| "  #{participant.to_ascii(match_id)}" }
     ].flatten.join("\n")
   end
 end

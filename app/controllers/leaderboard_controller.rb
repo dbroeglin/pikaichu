@@ -1,7 +1,7 @@
 class LeaderboardController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
-  skip_before_action :authenticate_user!, :only => [:public]
+  skip_before_action :authenticate_user!, only: [ :public ]
 
   def show
     @taikai = Taikai.find(params[:id])
@@ -45,6 +45,6 @@ class LeaderboardController < ApplicationController
       raise "Unknown taikai form: #{@taikai.form}"
     end
 
-    render layout: 'public'
+    render layout: "public"
   end
 end

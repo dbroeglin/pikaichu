@@ -1,5 +1,5 @@
 class TeamingController < ApplicationController
-  layout 'taikai'
+  layout "taikai"
 
   before_action :set_taikai
   before_action :set_participating_dojo
@@ -16,9 +16,9 @@ class TeamingController < ApplicationController
     @team.save
 
     if @team.errors.of_kind? :shortname, :taken
-      flash[:alert] = t 'teaming.edit.taken_team_shortname', shortname: params[:shortname]
+      flash[:alert] = t "teaming.edit.taken_team_shortname", shortname: params[:shortname]
     elsif @team.errors.of_kind? :shortname, :blank
-      flash[:alert] = t 'teaming.edit.empty_team_shortname'
+      flash[:alert] = t "teaming.edit.empty_team_shortname"
     end
 
     # Always redirect to edit
@@ -61,7 +61,7 @@ class TeamingController < ApplicationController
 
   def form_randomly
     if params[:prefix].blank?
-      flash[:alert] = t 'teaming.edit.empty_team_prefix', shortname: params[:shortname]
+      flash[:alert] = t "teaming.edit.empty_team_prefix", shortname: params[:shortname]
     else
       unteamed_participants = @participating_dojo.participants.unteamed.shuffle
       groups = unteamed_participants.in_groups_of @participating_dojo.taikai.tachi_size

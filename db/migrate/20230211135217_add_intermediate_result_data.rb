@@ -17,7 +17,7 @@ class AddIntermediateResultData < ActiveRecord::Migration[7.0]
       end
     end
 
-    Taikai.where(form: ['matches']).each do |taikai|
+    Taikai.where(form: [ 'matches' ]).each do |taikai|
       Rails.logger.info "Matches migration #{taikai.shortname}..."
       taikai.matches.each do |match|
         if match.team1 && match.score(1).nil?

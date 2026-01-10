@@ -13,16 +13,16 @@ class Taikai < ApplicationRecord
   CATEGORY_VALUES = %w[A B C D].freeze
 
   enum :form, {
-    individual: 'individual',
-    team: 'team',
-    '2in1': '2in1',
-    matches: 'matches',
+    individual: "individual",
+    team: "team",
+    '2in1': "2in1",
+    matches: "matches"
   }, prefix: :form
   human_enum :form
 
   enum :scoring, {
-    kinteki: 'kinteki',
-    enteki: 'enteki',
+    kinteki: "kinteki",
+    enteki: "enteki"
   }, prefix: :scoring
   human_enum :scoring
 
@@ -63,7 +63,7 @@ class Taikai < ApplicationRecord
            through: :participating_dojos
   has_many :events,
            -> { order created_at: :asc },
-           class_name: 'TaikaiEvent',
+           class_name: "TaikaiEvent",
            inverse_of: :taikai,
            dependent: :destroy
 
@@ -81,24 +81,24 @@ class Taikai < ApplicationRecord
   validates :total_num_arrows, presence: true
   validates :total_num_arrows,
             inclusion: {
-              in: [8, 12, 20]
+              in: [ 8, 12, 20 ]
             },
             if: -> { scoring_kinteki? && !form_matches? }
   validates :total_num_arrows,
             inclusion: {
-              in: [4]
+              in: [ 4 ]
             },
             if: :form_matches?
 
   validates :tachi_size,
             presence: true,
             inclusion: {
-              in: [3, 5]
+              in: [ 3, 5 ]
             }
   validates :num_targets,
             presence: true,
             inclusion: {
-              in: [3, 6, 5, 9, 10]
+              in: [ 3, 6, 5, 9, 10 ]
             }
   validate :number_of_dojos
 
@@ -175,7 +175,7 @@ class Taikai < ApplicationRecord
       tachi_size: taikai.tachi_size,
       distributed: taikai.distributed,
       category: taikai.category,
-      form: 'matches',
+      form: "matches",
       scoring: taikai.scoring,
       current_user: current_user,
     )
@@ -254,7 +254,7 @@ class Taikai < ApplicationRecord
     case num_teams
     when 8
       # re-order according to tournament guide version of Nov. 2021
-      [teams[0], teams[7], teams[4], teams[3], teams[2], teams[5], teams[6], teams[1]]
+      [ teams[0], teams[7], teams[4], teams[3], teams[2], teams[5], teams[6], teams[1] ]
         .in_groups_of(2)
         .each_with_index do |(team1, team2), index|
           taikai.matches.create!(
@@ -268,7 +268,7 @@ class Taikai < ApplicationRecord
       taikai.matches.create!(index: 2, level: 2)
     when 4
       # assign according to tournament guide version of Nov. 2021
-      [teams[0], teams[3], teams[2], teams[1]]
+      [ teams[0], teams[3], teams[2], teams[1] ]
         .in_groups_of(2)
         .each_with_index do |(team1, team2), index|
           taikai.matches.create!(
@@ -308,7 +308,7 @@ class Taikai < ApplicationRecord
       "Taikai #{shortname} (#id)",
       participating_dojos.map { |participating_dojo| participating_dojo.to_ascii.gsub(/^/, "  ") },
       "Staff:",
-      staffs.map { |staff| staff.to_ascii.gsub(/^/, "  ") },
+      staffs.map { |staff| staff.to_ascii.gsub(/^/, "  ") }
     ].flatten.join "\n"
   end
 

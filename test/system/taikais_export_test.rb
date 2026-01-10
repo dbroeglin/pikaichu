@@ -1,5 +1,5 @@
-require 'application_system_test_case'
-require 'taikais_test_helpers'
+require "application_system_test_case"
+require "taikais_test_helpers"
 
 class TaikaisExportTest < ApplicationSystemTestCase
   include TaikaisTestHelpers
@@ -21,11 +21,11 @@ class TaikaisExportTest < ApplicationSystemTestCase
     next unless taikai.form_matches?
 
     # TODO: refactor test data generation
-    taikai_admin = StaffRole.find_by!(code: 'taikai_admin')
+    taikai_admin = StaffRole.find_by!(code: "taikai_admin")
     roles = [
-      StaffRole.find_by!(code: 'chairman'),
-      StaffRole.find_by!(code: 'shajo_referee'),
-      StaffRole.find_by!(code: 'target_referee'),
+      StaffRole.find_by!(code: "chairman"),
+      StaffRole.find_by!(code: "shajo_referee"),
+      StaffRole.find_by!(code: "target_referee")
     ]
 
     test "Exporting #{taikai.shortname} XLSX" do
@@ -47,7 +47,7 @@ class TaikaisExportTest < ApplicationSystemTestCase
       within find("tr", text: taikai.name) do
         click_link "Export Excel"
       end
-      
+
       # Wait for download to complete
       begin
         download_file = wait_for_download(taikai.shortname)
@@ -65,19 +65,19 @@ class TaikaisExportTest < ApplicationSystemTestCase
     Timeout.timeout(timeout) do
       loop do
         sleep 0.5
-        
+
         # Check if .crdownload file exists (Chrome downloading)
-        next if downloads.any? { |f| f.end_with?('.crdownload') }
-        
+        next if downloads.any? { |f| f.end_with?(".crdownload") }
+
         # Look for the expected file
-        matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?('.xlsx') }
+        matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?(".xlsx") }
         return matching_download if matching_download
-        
+
         # If we have downloads but none match, might be an error
-        if downloads.any? && !downloads.any? { |f| f.end_with?('.crdownload') }
+        if downloads.any? && !downloads.any? { |f| f.end_with?(".crdownload") }
           # Give it one more second in case file is being written
           sleep 1
-          matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?('.xlsx') }
+          matching_download = downloads.find { |f| f.include?(taikai_shortname) && f.end_with?(".xlsx") }
           return matching_download if matching_download
         end
       end

@@ -21,19 +21,19 @@ class ChampionshipController < ApplicationController
                                        .includes(participating_dojo: :taikai)
                                        .where("participating_dojos.taikai_id IN (?)", @kinteki_taikais.pluck(:id))
                                        .map do |participant|
-      [participant, participant.score.first(12).score_value]
+      [ participant, participant.score.first(12).score_value ]
     end
     @enteki_participants = Participant.joins(:participating_dojo)
                                       .includes(participating_dojo: :taikai)
                                       .where("participating_dojos.taikai_id IN (?)", @enteki_taikais.pluck(:id))
                                       .map do |participant|
-      [participant, participant.score.first(12).score_value]
+      [ participant, participant.score.first(12).score_value ]
     end
 
     @kinteki_individual = rank @kinteki_participants
     @enteki_individual = rank @enteki_participants
 
-    render xlsx: 'export', filename: "Championat #{params[:year]} au #{Time.zone.today.to_fs(:iso8601)}.xlsx"
+    render xlsx: "export", filename: "Championat #{params[:year]} au #{Time.zone.today.to_fs(:iso8601)}.xlsx"
   end
 
   private

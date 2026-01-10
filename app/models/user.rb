@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :firstname, :lastname, presence: true
   validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }, presence: true
 
-  self.non_audited_columns = [:encrypted_password]
+  self.non_audited_columns = [ :encrypted_password ]
 
   scope :confirmed, -> { where.not("confirmed_at IS NULL") }
   scope :containing, ->(query) { confirmed.where <<~SQL, "%#{query}%", "%#{query}%", "%#{query}%" }

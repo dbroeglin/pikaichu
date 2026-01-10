@@ -1,5 +1,5 @@
 # spec/support/fixture_builder.rb
-require_relative 'create_fixtures'
+require_relative "create_fixtures"
 
 FixtureBuilder.configure do |fbuilder|
   # rebuild fixtures automatically when these files change:

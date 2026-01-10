@@ -1,5 +1,5 @@
 require "test_helper"
-require 'taikais_test_helpers'
+require "taikais_test_helpers"
 
 class MarkingControllerTest < ActionDispatch::IntegrationTest
   include TaikaisTestHelpers
@@ -58,10 +58,10 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
 
   test "should update first result" do
     transition_taikai_to(@taikai, :marking)
-    post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream
+    post update_marking_url @taikai, @participant, params: { status: "hit" }, format: :turbo_stream
     assert_response :success
 
-    assert_equal 'hit', @participant.score.results.find_by!(round: 1, index: 1).status
+    assert_equal "hit", @participant.score.results.find_by!(round: 1, index: 1).status
     @participant.score.results.where("round <> 1 AND index <> 1").each do |result|
       assert_nil result.status
     end
@@ -71,13 +71,13 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     transition_taikai_to(@taikai, :marking)
 
     5.times do
-      post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream
+      post update_marking_url @taikai, @participant, params: { status: "hit" }, format: :turbo_stream
       assert_response :success
       assert_match dom_id(@participant), @response.body
     end
 
     @participant.score.results.where("round = 1").each do |result|
-      assert_equal 'hit', result.status
+      assert_equal "hit", result.status
     end
     @participant.score.results.where("round <> 1").each do |result|
       assert_nil result.status
@@ -88,25 +88,25 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     transition_taikai_to(@taikai, :marking)
 
     result = @participant.score.results.find_by!(round: 1, index: 1)
-    result.update!(status: 'hit')
+    result.update!(status: "hit")
     patch rotate_marking_url @taikai, @participant, result.id, params: { round: 1 }, format: :turbo_stream
     assert_response :success
-    assert_equal 'miss', @participant.score.results.find_by!(round: 1, index: 1).status
+    assert_equal "miss", @participant.score.results.find_by!(round: 1, index: 1).status
   end
 
   test "should finalize first round" do
     transition_taikai_to(@taikai, :marking)
 
     4.times do
-      post update_marking_url @taikai, @participant, params: { status: 'hit' }, format: :turbo_stream
+      post update_marking_url @taikai, @participant, params: { status: "hit" }, format: :turbo_stream
       assert_response :success
       assert_match dom_id(@participant), @response.body
     end
 
-    patch finalize_round_marking_url @taikai, @participant, params: { round: '1' }, format: :turbo_stream
+    patch finalize_round_marking_url @taikai, @participant, params: { round: "1" }, format: :turbo_stream
 
     @participant.score.results.where("round = 1").each do |result|
-      assert_equal 'hit', result.status
+      assert_equal "hit", result.status
       assert_equal true, result.final
     end
     @participant.score.results.where("round <> 1").each do |result|

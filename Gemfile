@@ -23,6 +23,12 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+# Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
+gem "kamal", require: false
+
+# Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster]
+gem "thruster", require: false
+
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
@@ -62,35 +68,35 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'devise', github: 'heartcombo/devise', branch: 'main'
+gem "devise", github: "heartcombo/devise", branch: "main"
 
 gem "pundit"
 
 # TODO: PG enums are supported in Rails 7.
 # Warning: did not work because of add_enum_value
-gem 'activerecord-postgres_enum', "~> 2.0"
+gem "activerecord-postgres_enum", "~> 2.0"
 
-gem 'country_select'
+gem "country_select"
 
-gem 'caxlsx'
+gem "caxlsx"
 
-gem 'caxlsx_rails'
+gem "caxlsx_rails"
 
-gem 'audited'
+gem "audited"
 
-gem 'mobility', '~> 1.3'
+gem "mobility", "~> 1.3"
 
 gem "roo", "~> 3.0"
 
-gem 'acts_as_list'
+gem "acts_as_list"
 
-gem 'tabulo'
+gem "tabulo"
 
-gem 'statesman', '~> 10.0.0'
+gem "statesman", "~> 10.0.0"
 
-gem 'kaminari'
+gem "kaminari"
 
-gem 'capitalize-names'
+gem "capitalize-names"
 
 gem "faraday", "~> 2.9"
 
@@ -99,12 +105,12 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows]
 
   gem "factory_bot_rails"
-  gem 'faker'
-  gem 'fixture_builder'
+  gem "faker"
+  gem "fixture_builder"
 
-  gem 'foreman' # used to run bin/dev
+  gem "foreman" # used to run bin/dev
 
-  gem "azd", "~> 0.9", :group => :development
+  gem "azd", "~> 0.9", group: :development
 
   # Pin minitest to 5.x until Rails 8.1 supports Minitest 6.0 API changes
   gem "minitest", "~> 5.20"
@@ -120,23 +126,21 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'brakeman', require: false
-  gem 'bundler-audit', require: false
-  gem 'rubocop', require: false
-  gem 'rubocop-capybara', require: false
-  gem 'rubocop-rails', require: false
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
+  gem "rubocop-rails-omakase", require: false
 
-  gem 'guard'
-  gem 'guard-minitest'
-  gem 'guard-rails'
+  gem "guard"
+  gem "guard-minitest"
+  gem "guard-rails"
 
-  gem 'i18n-tasks', '~> 1.1'
-  gem 'terminal-table'
+  gem "i18n-tasks", "~> 1.1"
+  gem "terminal-table"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'apparition'
+  gem "apparition"
   gem "capybara"
   gem "selenium-webdriver"
 end

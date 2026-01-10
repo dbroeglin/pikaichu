@@ -13,8 +13,8 @@ class StaffTest < ActiveSupport::TestCase
   test "should validate additional taikai admin" do
     assert_equal 1, @taikai.staffs.with_role(:taikai_admin).count
     assert_not_equal false, @taikai.staffs.create(
-      firstname: 'Alex',
-      lastname: 'Terieur',
+      firstname: "Alex",
+      lastname: "Terieur",
       role: staff_roles(:taikai_admin),
     )
   end

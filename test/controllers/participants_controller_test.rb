@@ -13,8 +13,8 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should post create' do
-    assert_difference '@participating_dojo.participants.count' do
+  test "should post create" do
+    assert_difference "@participating_dojo.participants.count" do
       post taikai_participating_dojo_participants_url @taikai, @participating_dojo, params: {
         participant: {
           firstname: "Dan",
