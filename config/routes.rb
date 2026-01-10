@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  # Rails 8 Authentication (running in parallel with Devise)
+  resource :session, only: [ :new, :create, :destroy ]
+  resources :passwords, only: [ :new, :create, :edit, :update ], param: :token
+
   get  "/taikais/:id/marking",                          to: "marking#show",                as: :show_marking
   post "/taikais/:id/marking/:participant_id/update",   to: "marking#update",              as: :update_marking
   patch "/taikais/:id/marking/:participant_id/result/:result_id",

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_10_212202) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -184,6 +184,15 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
     t.index ["team_id"], name: "index_scores_on_team_id"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "ip_address"
+    t.datetime "updated_at", null: false
+    t.string "user_agent"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
   create_table "staff_roles", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
@@ -285,12 +294,14 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
     t.datetime "confirmed_at", precision: nil
     t.datetime "created_at", null: false
     t.string "email", default: "", null: false
+    t.string "email_address"
     t.string "encrypted_password", default: "", null: false
     t.integer "failed_attempts", default: 0, null: false
     t.string "firstname"
     t.string "lastname"
     t.string "locale", default: "fr"
     t.datetime "locked_at", precision: nil
+    t.string "password_digest"
     t.datetime "remember_created_at", precision: nil
     t.datetime "reset_password_sent_at", precision: nil
     t.string "reset_password_token"
@@ -299,6 +310,7 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
@@ -317,6 +329,7 @@ ActiveRecord::Schema[8.1].define(version: 2024_11_30_211922) do
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "participants"
   add_foreign_key "scores", "teams"
+  add_foreign_key "sessions", "users"
   add_foreign_key "staffs", "participating_dojos"
   add_foreign_key "staffs", "staff_roles", column: "role_id"
   add_foreign_key "staffs", "taikais"
