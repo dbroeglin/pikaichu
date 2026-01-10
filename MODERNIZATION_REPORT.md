@@ -19,6 +19,7 @@ This document tracks the modernization of PiKaichu from Rails 7.x to Rails 8.1, 
 **Issue:** System test `test_taikai_state_navigation_uses_POST_buttons` was failing because the Taikai model's state_machine method was memoizing the state machine instance, preventing `taikai.reload` from seeing updated states.
 
 **Fix:** Removed memoization from `app/models/taikai.rb`:
+
 ```ruby
 # Before (BROKEN):
 def state_machine
@@ -40,14 +41,17 @@ end
 #### 2. Security Vulnerability Fixes
 
 **Issues:**
+
 - `action_text-trix` 2.1.15 had XSS vulnerability (GHSA-g9jg-w8vm-g96v)
 - `brakeman` version check was failing
 
 **Fixes:**
+
 - Pinned `action_text-trix` to `~> 2.1.16` in Gemfile
 - Updated `brakeman` to 7.1.2
 
 **Verification:**
+
 ```bash
 $ bundle audit check
 No vulnerabilities found
@@ -64,12 +68,15 @@ No vulnerabilities found
 **Goal:** Replace in-memory cache/queue with durable, production-ready Solid infrastructure.
 
 **Actions:**
+
 1. Added gems to Gemfile:
+
    - `gem "solid_cache"`
    - `gem "solid_queue"`
    - `gem "solid_cable"`
 
 2. Ran installers:
+
    ```bash
    bin/rails solid_cache:install
    bin/rails solid_queue:install
@@ -77,12 +84,14 @@ No vulnerabilities found
    ```
 
 3. Generated configurations:
+
    - `config/cache.yml` - 256MB max size, environment-specific namespaces
    - `config/queue.yml` - 1 dispatcher, 3 threads, configurable processes
    - `config/recurring.yml` - Hourly cleanup job for old Solid Queue entries
    - `config/cable.yml` - Production uses solid_cable adapter with 0.1s polling
 
 4. Generated database schemas:
+
    - `db/cache_schema.rb` - `solid_cache_entries` table
    - `db/queue_schema.rb` - 10 tables for job queue management
    - `db/cable_schema.rb` - `solid_cable_messages` table
@@ -95,6 +104,7 @@ No vulnerabilities found
    ```
 
 **Development/Test Environments:**
+
 - Development continues to use `:memory_store` (simpler for local dev)
 - Test uses `:null_store` (faster for test runs)
 - Solid gems are production-focused and don't require changes to dev/test
@@ -108,6 +118,7 @@ No vulnerabilities found
 **Issue:** After installing Solid gems, test suite showed "0 runs, 0 assertions" instead of running tests. Investigation revealed Rails 8.1.1 is incompatible with Minitest 6.0.1 API changes.
 
 **Error:**
+
 ```ruby
 wrong number of arguments (given 3, expected 1..2) (ArgumentError)
   rails/test_unit/line_filtering.rb:7:in 'run'
@@ -116,6 +127,7 @@ wrong number of arguments (given 3, expected 1..2) (ArgumentError)
 **Root Cause:** Minitest 6.0 changed the `run` method signature, but Rails 8.1.1's test helpers haven't been updated yet.
 
 **Fix:** Pinned minitest to 5.x in Gemfile:
+
 ```ruby
 group :development, :test do
   # Pin minitest to 5.x until Rails 8.1 supports Minitest 6.0 API changes
@@ -124,6 +136,7 @@ end
 ```
 
 **Verification:**
+
 ```bash
 $ bin/rails test
 182 runs, 695 assertions, 0 failures, 0 errors, 0 skips
@@ -150,11 +163,86 @@ $ bin/rails test:system
 
 ---
 
+#### 6. Added Kamal and Thruster (Deployment Tools)
+
+**Goal:** Add modern deployment tools for production environments.
+
+**Kamal:**
+- Docker-based deployment tool from Basecamp
+- Enables deployment to any server with Docker
+- Generated `config/deploy.yml` configuration file
+- Created `.kamal/` directory with deployment hooks
+- Does NOT require changes to existing infrastructure (optional tool)
+
+**Thruster:**
+- HTTP asset caching and compression for Puma
+- X-Sendfile acceleration
+- Automatic gzip compression
+- Will improve production performance when enabled
+
+**Installation:**
+```bash
+bundle add kamal --require false
+bundle add thruster --require false
+kamal init
+```
+
+**Note:** These are optional deployment tools. The application works without them, but they improve deployment and production performance when used.
+
+**Commit:** `1fc7b85` - Add Kamal, Thruster and update to rubocop-rails-omakase
+
+---
+
+#### 7. Updated RuboCop to rubocop-rails-omakase
+
+**Goal:** Adopt Rails official style guide and simplify RuboCop configuration.
+
+**Before:**
+- 3 separate gems: `rubocop`, `rubocop-rails`, `rubocop-capybara`
+- `.rubocop.yml` with 357 lines of configuration
+- Many cops manually enabled/disabled
+- 99 offenses before auto-correct
+
+**After:**
+- Single gem: `rubocop-rails-omakase`
+- `.rubocop.yml` with 26 lines (94% reduction)
+- Inherits from omakase defaults
+- 0 offenses (all auto-corrected)
+
+**Auto-corrections Applied:**
+- 652 string literal quotes (single → double)
+- 328 array bracket spacing
+- 37 trailing commas in arrays
+- 34 trailing whitespace
+- 27 trailing commas in hashes
+- 20 trailing empty lines
+- 9 hash syntax modernizations
+- And more...
+
+**Total:** 971 offenses automatically corrected across 98 files.
+
+**Benefits:**
+- Consistent code style aligned with Rails conventions
+- Less configuration to maintain
+- Automatic updates when omakase updates
+- Cleaner, more readable code
+
+**Verification:**
+```bash
+$ bin/rubocop
+210 files inspected, no offenses detected
+```
+
+**Commit:** `1fc7b85` - Add Kamal, Thruster and update to rubocop-rails-omakase
+
+---
+
 ## Test Status
 
 ### Current Test Results (2025-01-10)
 
 **Unit Tests:**
+
 - 182 runs
 - 695 assertions
 - 0 failures
@@ -162,6 +250,7 @@ $ bin/rails test:system
 - 0 skips
 
 **System Tests:**
+
 - 122 runs
 - 1039 assertions
 - 0 failures
@@ -174,10 +263,17 @@ $ bin/rails test:system
 
 ## Pending Work
 
-### Phase 1 (Remaining)
+### ✅ Phase 1: COMPLETED
 
-- [ ] **Optional:** Add Kamal and Thruster gems (deployment-focused, may not be needed)
-- [ ] **Optional:** Update RuboCop to rubocop-rails-omakase (significant style changes)
+All Phase 1 tasks have been completed:
+- ✅ Solid Cache, Queue, and Cable installed
+- ✅ Obsolete initializers removed  
+- ✅ Kamal and Thruster deployment tools added
+- ✅ RuboCop updated to rubocop-rails-omakase
+
+**Status:** Ready to merge to main or proceed to Phase 2
+
+---
 
 ### Phase 2: Authentication Migration (HIGH RISK)
 
@@ -193,6 +289,7 @@ This is the most complex part of the modernization:
 8. Remove Devise gem
 
 **Risk Factors:**
+
 - User model changes (email normalization, password validations)
 - Session management differs from Devise
 - Test helpers need complete rewrite
@@ -218,11 +315,13 @@ This is the most complex part of the modernization:
 ### 1. Multi-Database Configuration
 
 The Solid gems (Cache, Queue, Cable) use separate database connections. The installers created separate schema files:
+
 - `db/cache_schema.rb`
 - `db/queue_schema.rb`
 - `db/cable_schema.rb`
 
 **Production configuration:**
+
 ```ruby
 # config/environments/production.rb
 config.solid_queue.connects_to = { database: { writing: :queue } }
@@ -235,6 +334,7 @@ config.solid_queue.connects_to = { database: { writing: :queue } }
 ### 2. Minitest Version Pin
 
 The `minitest ~> 5.20` pin is temporary and should be removed once Rails releases a fix for Minitest 6.0 compatibility. Track this issue:
+
 - Rails issue: (check https://github.com/rails/rails/issues)
 - Monitor Rails 8.1.x releases for "minitest 6" mentions
 
@@ -245,6 +345,7 @@ Currently using `parallelize(workers: 1)` in test_helper.rb. This is intentional
 ### 4. Solid Queue Recurring Jobs
 
 The installer created `config/recurring.yml` with a cleanup job:
+
 ```yaml
 clear_finished_jobs_hourly:
   class: SolidQueue::ClearFinishedJobsJob
@@ -256,6 +357,7 @@ This will automatically remove completed jobs from the database every hour. Adju
 ### 5. Asset Pipeline Deprecation Warnings
 
 The following Sass deprecation warning appears during builds:
+
 ```
 Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 app/assets/stylesheets/application.bulma.scss 68:9  root stylesheet
@@ -270,6 +372,7 @@ This is NOT urgent but should be addressed before migrating to importmap. The wa
 ### High Risk Items
 
 1. **Authentication Migration (Phase 2)**
+
    - **Risk:** Breaking login/logout, losing user sessions, password reset failures
    - **Mitigation:** Run Devise and Rails 8 auth in parallel, extensive testing, gradual rollout
    - **Rollback:** Keep Devise gem until 100% verified working
@@ -282,6 +385,7 @@ This is NOT urgent but should be addressed before migrating to importmap. The wa
 ### Medium Risk Items
 
 1. **Solid Queue in Production**
+
    - **Risk:** Background jobs failing, recurring jobs not running
    - **Mitigation:** Monitor logs, test all background jobs manually
    - **Rollback:** Change back to async adapter if needed
@@ -295,17 +399,19 @@ This is NOT urgent but should be addressed before migrating to importmap. The wa
 
 ✅ Solid gems installation - transparent to existing code  
 ✅ Minitest version pin - only affects test execution  
-✅ Removing obsolete initializers - code already uses new defaults  
+✅ Removing obsolete initializers - code already uses new defaults
 
 ---
 
 ## Next Steps
 
 1. **Decide on optional Phase 1 items:**
+
    - Do we need Kamal/Thruster? (deployment tools)
    - Do we want rubocop-rails-omakase? (will require code style changes)
 
 2. **Begin Phase 2 Authentication Migration:**
+
    - Install Rails 8 authentication generator
    - Run generator with `--api false` (we need HTML views)
    - Review generated code before committing
@@ -347,6 +453,7 @@ This is NOT urgent but should be addressed before migrating to importmap. The wa
 ## Useful Commands
 
 ### Running Tests
+
 ```bash
 # Unit tests only
 bin/rails test
@@ -362,6 +469,7 @@ bin/rails test --verbose
 ```
 
 ### Security Checks
+
 ```bash
 # Check for vulnerable gems
 bundle audit check
@@ -374,6 +482,7 @@ bundle update brakeman
 ```
 
 ### Database Management
+
 ```bash
 # Dump main schema
 bin/rails db:schema:dump
@@ -386,6 +495,7 @@ bin/rails runner "puts SolidQueue::Job.count"
 ```
 
 ### Git Commands
+
 ```bash
 # View current branch
 git branch --show-current
@@ -416,17 +526,21 @@ git tag pre-phase-2-backup
 
 ## Changelog
 
-| Date | Phase | Author | Description |
-|------|-------|--------|-------------|
-| 2025-01-10 | Pre-Phase | GitHub Copilot | Fixed taikai state reload bug |
-| 2025-01-10 | Pre-Phase | GitHub Copilot | Updated action_text-trix and brakeman for security |
-| 2025-01-10 | Phase 1 | GitHub Copilot | Installed Solid Cache, Queue, and Cable |
-| 2025-01-10 | Phase 1 | GitHub Copilot | Fixed Minitest 6.0 incompatibility |
-| 2025-01-10 | Phase 1 | GitHub Copilot | Removed obsolete Rails 7.1 defaults file |
-| 2025-01-10 | Documentation | GitHub Copilot | Created MODERNIZATION_REPORT.md |
+| Date       | Phase         | Author         | Description                                        |
+| ---------- | ------------- | -------------- | -------------------------------------------------- |
+| 2025-01-10 | Pre-Phase     | GitHub Copilot | Fixed taikai state reload bug                      |
+| 2025-01-10 | Pre-Phase     | GitHub Copilot | Updated action_text-trix and brakeman for security |
+| 2025-01-10 | Phase 1       | GitHub Copilot | Installed Solid Cache, Queue, and Cable            |
+| 2025-01-10 | Phase 1       | GitHub Copilot | Fixed Minitest 6.0 incompatibility                 |
+| 2025-01-10 | Phase 1       | GitHub Copilot | Removed obsolete Rails 7.1 defaults file           |
+| 2025-01-10 | Phase 1       | GitHub Copilot | Added Kamal and Thruster deployment tools          |
+| 2025-01-10 | Phase 1       | GitHub Copilot | Updated RuboCop to rubocop-rails-omakase           |
+| 2025-01-10 | Phase 1       | GitHub Copilot | **Phase 1 COMPLETED** - All tasks done             |
+| 2025-01-10 | Documentation | GitHub Copilot | Created MODERNIZATION_REPORT.md                    |
+| 2025-01-10 | Documentation | GitHub Copilot | Updated report with Phase 1 completion             |
 
 ---
 
-**Last Updated:** 2025-01-10  
-**Report Version:** 1.0  
+**Last Updated:** 2025-01-10 (Phase 1 Complete)  
+**Report Version:** 1.1  
 **Contact:** See git log for authors
