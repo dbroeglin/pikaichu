@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules && cp node_modules/bulma-divider/dist/css/bulma-divider.min.css node_modules/bulma-timeline/dist/css/bulma-timeline.min.css app/assets/builds/ && sass ./app/assets/stylesheets/fontawesome.scss ./app/assets/builds/fontawesome.css --no-source-map --load-path=node_modules && sed -i.bak 's|url(\"../webfonts/|url(\"../fonts/|g' app/assets/builds/fontawesome.css && rm -f app/assets/builds/fontawesome.css.bak",
+    "build:css": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "build:css:watch": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules --watch"
   }
 }

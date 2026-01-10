@@ -19,6 +19,10 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+gem "solid_cache"
+gem "solid_queue"
+gem "solid_cable"
+
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
@@ -101,6 +105,9 @@ group :development, :test do
   gem 'foreman' # used to run bin/dev
 
   gem "azd", "~> 0.9", :group => :development
+
+  # Pin minitest to 5.x until Rails 8.1 supports Minitest 6.0 API changes
+  gem "minitest", "~> 5.20"
 end
 
 group :development do
