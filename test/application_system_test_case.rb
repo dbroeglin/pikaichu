@@ -74,6 +74,13 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
     click_button "Se connecter"
 
+    # Debug: Print what we see on the page
+    if ENV["DEBUG_TESTS"]
+      puts "=== Page content after login ==="
+      puts page.html
+      puts "=== End page content ==="
+    end
+
     # Wait for successful login - Turbo navigation
     assert_selector "p.title", text: "Taikai", wait: 5
     assert_selector "p.title", text: "Clubs"

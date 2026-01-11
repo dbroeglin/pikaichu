@@ -16,12 +16,15 @@ class User < ApplicationRecord
 
   scope :confirmed, -> { where.not("confirmed_at IS NULL") }
   scope :containing, ->(query) { confirmed.where <<~SQL, "%#{query}%", "%#{query}%", "%#{query}%" }
-    email ILIKE ? OR firstname ILIKE ? OR lastname ILIKE ?
+    email_address ILIKE ? OR firstname ILIKE ? OR lastname ILIKE ?
   SQL
 
   def display_name
     "#{firstname} #{lastname}"
   end
+
+  # Alias for backward compatibility with fixtures and tests
+  alias_attribute :email, :email_address
 
   # Generate signed password reset token (Rails 8 style)
   def generate_password_reset_token
