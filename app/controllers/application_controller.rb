@@ -1,25 +1,15 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
-  # Rails 8 authentication (running in parallel with Devise)
-  # include Authentication  # Uncomment to switch from Devise to Rails 8 auth
-
-  before_action :authenticate_user!  # Devise authentication (will be removed later)
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  include Authentication
+  
+  before_action :require_authentication
   around_action :switch_locale
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [ :firstname, :lastname, :email, :locale ])
-    devise_parameter_sanitizer.permit(:account_update, keys: [ :firstname, :lastname, :email, :locale ])
-  end
-
   def user_not_authorized(_)
-    # Here I've got the exception with :policy, :record and :query,
-    # also I can access :current_user so I could go for a condition,
-    # but that would include duplicated code from  ItemPolicy#show?.
     flash[:alert] = I18n.t("pundit.not_authorized", default: "You are not authorized to perform this action.")
     redirect_to root_path, method: :get
   end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  # Rails 8 Authentication (running in parallel with Devise)
+  # Rails 8 Authentication
   resource :session, only: [ :new, :create, :destroy ]
   resources :passwords, only: [ :new, :create, :edit, :update ], param: :token
 

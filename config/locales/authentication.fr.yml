@@ -1,4 +1,7 @@
 fr:
+  authentication:
+    unconfirmed: "Vous devez confirmer votre adresse email avant de continuer."
+  
   sessions:
     signed_in: "Connexion réussie."
     signed_out: "Déconnexion réussie."

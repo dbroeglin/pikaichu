@@ -1,25 +1,18 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable
   audited
 
-  # Rails 8 authentication (running in parallel with Devise)
-  has_secure_password validations: false  # Disable validations to avoid conflicts with Devise
+  # Rails 8 authentication
+  has_secure_password
   has_many :sessions, dependent: :destroy
 
-  # Normalize email_address before save (Rails 8 convention)
+  # Normalize email_address before save
   normalizes :email_address, with: ->(email) { email.strip.downcase }
 
   validates :firstname, :lastname, presence: true
   validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }, presence: true
-  
-  # Rails 8 email validation (only if email_address is present)
-  validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }, if: :email_address?
+  validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  self.non_audited_columns = [ :encrypted_password, :password_digest ]
+  self.non_audited_columns = [ :password_digest ]
 
   scope :confirmed, -> { where.not("confirmed_at IS NULL") }
   scope :containing, ->(query) { confirmed.where <<~SQL, "%#{query}%", "%#{query}%", "%#{query}%" }

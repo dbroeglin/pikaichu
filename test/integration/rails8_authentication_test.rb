@@ -1,13 +1,13 @@
 require "test_helper"
 
 class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
+  include Rails8AuthTestHelper
+  
   setup do
     @user = users(:jean_bon)
-    # Ensure user has Rails 8 auth credentials
-    @user.update_columns(
-      email_address: @user.email.downcase,
-      password_digest: BCrypt::Password.create("password123")
-    )
+    @password = "password123"
+    # Use test helper to set up Rails 8 authentication
+    setup_rails8_auth_for(@user, @password)
     @user.update_column(:confirmed_at, Time.current) # Ensure user is confirmed
   end
 
@@ -22,7 +22,7 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
   test "can sign in with valid credentials" do
     post session_path, params: {
       email_address: @user.email_address,
-      password: "password123"
+      password: @password
     }
     
     assert_response :redirect
@@ -45,7 +45,7 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
   test "cannot sign in with non-existent email" do
     post session_path, params: {
       email_address: "nonexistent@example.com",
-      password: "password123"
+      password: @password
     }
     
     assert_response :unprocessable_entity
@@ -56,18 +56,18 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     
     post session_path, params: {
       email_address: @user.email_address,
-      password: "password123"
+      password: @password
     }
     
     assert_response :redirect
-    assert_equal I18n.t("devise.failure.unconfirmed"), flash[:alert]
+    assert_equal I18n.t("authentication.unconfirmed"), flash[:alert]
   end
 
   test "can sign out" do
     # Sign in first
     post session_path, params: {
       email_address: @user.email_address,
-      password: "password123"
+      password: @password
     }
     assert_response :redirect
     
@@ -105,10 +105,11 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     assert_select "h1.title", text: I18n.t("passwords.edit.title")
     
     # Submit new password
+    new_password = "newpassword123"
     patch password_path(token), params: {
       user: {
-        password: "newpassword123",
-        password_confirmation: "newpassword123"
+        password: new_password,
+        password_confirmation: new_password
       }
     }
     
@@ -118,7 +119,7 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     
     # Verify can sign in with new password
     @user.reload
-    assert @user.authenticate("newpassword123")
+    assert @user.authenticate(new_password)
   end
 
   test "cannot reset password with invalid token" do
@@ -131,7 +132,7 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     assert_difference "Session.count", 1 do
       post session_path, params: {
         email_address: @user.email_address,
-        password: "password123"
+        password: @password
       }
     end
     
@@ -144,7 +145,7 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     # Sign in
     post session_path, params: {
       email_address: @user.email_address,
-      password: "password123"
+      password: @password
     }
     
     session_count = Session.count

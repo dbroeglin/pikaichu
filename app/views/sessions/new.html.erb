@@ -3,7 +3,7 @@
     <div class="box">
       <h1 class="title has-text-centered"><%= t("sessions.new.title") %></h1>
 
-      <%= form_with url: session_path, scope: :session, class: "mt-5" do |form| %>
+      <%= form_with url: session_path, class: "mt-5" do |form| %>
         <div class="field">
           <%= form.label :email_address, t("sessions.new.email_label"), class: "label" %>
           <div class="control has-icons-left">

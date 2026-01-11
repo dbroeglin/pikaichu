@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         start_new_session_for(user)
         redirect_to after_authentication_url, notice: t("sessions.signed_in")
       else
-        redirect_to new_session_path, alert: t("devise.failure.unconfirmed")
+        redirect_to new_session_path, alert: t("authentication.unconfirmed")
       end
     else
       flash.now[:alert] = t("sessions.invalid_credentials")

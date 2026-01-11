@@ -26,7 +26,7 @@
     </div>
 
     <div class="navbar-end">
-      <% if user_signed_in? %>
+      <% if authenticated? %>
         <%= link_to '/docs/guide.pdf', target: '_blank', class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
           <span class="icon is-medium">
             <i class="fas fa-compass"></i>
@@ -42,36 +42,21 @@
       <% end %>
         <div class="navbar-item">
         <div class="buttons">
-          <% if (!user_signed_in?) %>
-            <%= link_to new_user_session_path, class: "button is-normal" do %>
+          <% if !authenticated? %>
+            <%= link_to new_session_path, class: "button is-normal" do %>
               <span class="icon is-medium">
                 <i class="fas fa-sign-in-alt"></i>
               </span>
-              <span><%= t 'devise.sessions.new.sign_in' %></span>
-            <% end %>
-            <%= link_to new_user_registration_path, class: "button" do %>
-              <span class="icon is-medium">
-                <i class="fas fa-user-plus"></i>
-              </span>
-              <span><%= t 'devise.registrations.new.sign_up' %></span>
+              <span><%= t 'sessions.new.title' %></span>
             <% end %>
           <% else %>
-
-
-            <%= link_to edit_user_registration_path,
-              class: "button is-info" do %>
-              <span class="icon is-medium">
-                <i class="fas fa-cog"></i>
-              </span>
-              <span><%= t 'devise.registrations.edit.my_account' %></span>
-            <% end %>
-            <%= link_to destroy_user_session_path,
+            <%= link_to session_path,
               class: "button",
               data: { turbo_method: :delete } do %>
               <span class="icon is-medium">
                 <i class="fas fa-power-off"></i>
               </span>
-              <span><%= t 'devise.sessions.sign_out' %></span>
+              <span><%= t 'sessions.signed_out' %></span>
             <% end %>
           <% end %>
         </div>

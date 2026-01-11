@@ -19,47 +19,16 @@ module ActiveSupport
 end
 
 module SignInHelper
-  # Devise-based sign in (legacy)
-  def sign_in_as_devise(user)
-    user = users(user)
-    throw "Sign-in helper needs a user" if user.nil?
-
-    post user_session_path(user: { email: user.email, password: "password" })
-
-    assert_response :redirect
-    follow_redirect!
-    assert_response :success
-
-    assert_select "p.title", text: "Taikai"
-    assert_select "p.title", text: "Clubs"
-
-    user
-  end
-
   # Rails 8 authentication-based sign in
-  def sign_in_as_rails8(user)
-    user = users(user)
+  def sign_in_as(user)
+    user = users(user) unless user.is_a?(User)
     throw "Sign-in helper needs a user" if user.nil?
 
-    # Ensure user has password_digest set
-    unless user.password_digest.present?
-      user.password = "password"
-      user.password_confirmation = "password"
-      user.save!(validate: false)
-    end
-
-    post session_path, params: { email_address: user.email_address, password: "password" }
-
-    assert_response :redirect
-    follow_redirect!
-    assert_response :success
+    # Ensure user has Rails 8 auth credentials
+    setup_rails8_auth_for(user)
+    create_session_for(user)
 
     user
-  end
-
-  # Default sign in method (uses Devise for now, will switch to Rails 8 later)
-  def sign_in_as(user)
-    sign_in_as_devise(user)
   end
 end
 
@@ -74,7 +43,7 @@ module ActionDispatch
   class IntegrationTest
     include AuthorizationHelpers
     include SignInHelper
-    include Devise::Test::IntegrationHelpers
+    include Rails8AuthTestHelper
   end
 end
 
