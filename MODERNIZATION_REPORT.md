@@ -168,6 +168,7 @@ $ bin/rails test:system
 **Goal:** Add modern deployment tools for production environments.
 
 **Kamal:**
+
 - Docker-based deployment tool from Basecamp
 - Enables deployment to any server with Docker
 - Generated `config/deploy.yml` configuration file
@@ -175,12 +176,14 @@ $ bin/rails test:system
 - Does NOT require changes to existing infrastructure (optional tool)
 
 **Thruster:**
+
 - HTTP asset caching and compression for Puma
 - X-Sendfile acceleration
 - Automatic gzip compression
 - Will improve production performance when enabled
 
 **Installation:**
+
 ```bash
 bundle add kamal --require false
 bundle add thruster --require false
@@ -198,18 +201,21 @@ kamal init
 **Goal:** Adopt Rails official style guide and simplify RuboCop configuration.
 
 **Before:**
+
 - 3 separate gems: `rubocop`, `rubocop-rails`, `rubocop-capybara`
 - `.rubocop.yml` with 357 lines of configuration
 - Many cops manually enabled/disabled
 - 99 offenses before auto-correct
 
 **After:**
+
 - Single gem: `rubocop-rails-omakase`
 - `.rubocop.yml` with 26 lines (94% reduction)
 - Inherits from omakase defaults
 - 0 offenses (all auto-corrected)
 
 **Auto-corrections Applied:**
+
 - 652 string literal quotes (single → double)
 - 328 array bracket spacing
 - 37 trailing commas in arrays
@@ -222,12 +228,14 @@ kamal init
 **Total:** 971 offenses automatically corrected across 98 files.
 
 **Benefits:**
+
 - Consistent code style aligned with Rails conventions
 - Less configuration to maintain
 - Automatic updates when omakase updates
 - Cleaner, more readable code
 
 **Verification:**
+
 ```bash
 $ bin/rubocop
 210 files inspected, no offenses detected
@@ -266,8 +274,9 @@ $ bin/rubocop
 ### ✅ Phase 1: COMPLETED
 
 All Phase 1 tasks have been completed:
+
 - ✅ Solid Cache, Queue, and Cable installed
-- ✅ Obsolete initializers removed  
+- ✅ Obsolete initializers removed
 - ✅ Kamal and Thruster deployment tools added
 - ✅ RuboCop updated to rubocop-rails-omakase
 
@@ -278,6 +287,7 @@ All Phase 1 tasks have been completed:
 ### ✅ Phase 2: COMPLETED
 
 All Phase 2 tasks have been completed:
+
 - ✅ Completely removed Devise gem
 - ✅ Created Rails 8 native authentication system
 - ✅ Updated all controllers to use Authentication concern
@@ -290,13 +300,15 @@ All Phase 2 tasks have been completed:
 **Status:** Ready to merge to main
 
 **Commit Summary:**
+
 - `cdd77a8` - Complete Devise removal and Rails 8 authentication migration
-- `ddd4f90` - Fix authentication test helpers for controller and integration tests  
+- `ddd4f90` - Fix authentication test helpers for controller and integration tests
 - `5bc292e` - Fix all remaining test failures after Devise removal
 
 **Key Changes:**
 
 1. **Removed Devise completely:**
+
    - Deleted gem from Gemfile
    - Deleted config/initializers/devise.rb
    - Deleted app/views/devise/ directory
@@ -304,6 +316,7 @@ All Phase 2 tasks have been completed:
    - Removed devise routes and modules from User model
 
 2. **Implemented Rails 8 Authentication:**
+
    - Created app/models/session.rb with user_id, ip_address, user_agent
    - Created app/controllers/concerns/authentication.rb with session management
    - Created app/controllers/sessions_controller.rb (login/logout)
@@ -318,8 +331,9 @@ All Phase 2 tasks have been completed:
    - Fixed 54 failures + 30 errors → all tests passing
 
 **Test Results After Phase 2:**
+
 - 193 runs
-- 721 assertions  
+- 721 assertions
 - 0 failures ✅
 - 0 errors ✅
 - 0 skips
