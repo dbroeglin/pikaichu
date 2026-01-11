@@ -3,19 +3,13 @@
   "private": "true",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.20",
     "bulma": "^1.0.4",
     "bulma-divider": "^0.2.0",
     "bulma-timeline": "^3.0.5",
-    "esbuild": "^0.27.1",
-    "sass": "^1.94.2",
-    "sortablejs": "^1.15.6",
-    "stimulus-autocomplete": "^3.1.0"
+    "sass": "^1.94.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules && cp node_modules/bulma-divider/dist/css/bulma-divider.min.css node_modules/bulma-timeline/dist/css/bulma-timeline.min.css app/assets/stylesheets/fontawesome.css app/assets/builds/",
     "build:css:watch": "sass ./app/assets/stylesheets/application.bulma.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules --watch"
   }
 }

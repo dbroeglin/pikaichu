@@ -65,14 +65,14 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     # If already logged in, log out first
     if has_selector?("a", text: "Déconnexion", wait: 1)
       click_link "Déconnexion"
-      assert_selector "button", text: "Connexion"
+      assert_selector "button", text: "Se connecter"
     end
 
     # Perform login
     fill_in "Email", with: user.email
     fill_in "Mot de passe", with: "password"
 
-    click_button "Connexion"
+    click_button "Se connecter"
 
     # Wait for successful login - Turbo navigation
     assert_selector "p.title", text: "Taikai", wait: 5
