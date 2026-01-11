@@ -58,11 +58,11 @@ $table-striped-row-even-background-color: hsl(0, 0%, 94%);
   $table-striped-row-even-background-color: hsl(0, 0%, 94%)
 );
 
+@use "custom.bulma" as *;
+
 // Re-export commonly used variables for custom styles
 $size-medium: 1.25rem; // $size-5
 $size-6: 1rem;
 $grey-light: hsl(221, 14%, 71%);
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-
-@import 'custom.bulma';

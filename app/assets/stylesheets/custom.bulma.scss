@@ -24,9 +24,9 @@ form .dropdown {
 }
 
 .team-title {
-  font-size: $size-medium;
-  border-bottom: 1px solid $grey-light;
-  margin-bottom: $size-6;
+  font-size: var(--size-medium, 1.25rem);
+  border-bottom: 1px solid var(--grey-light, hsl(221, 14%, 71%));
+  margin-bottom: var(--size-6, 1rem);
 }
 
 .inactiveLink {

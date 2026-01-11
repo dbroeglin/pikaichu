@@ -292,17 +292,20 @@ All Phase 3 tasks have been completed:
 **Key Changes:**
 
 1. **Installed importmap-rails:**
+
    - Added `importmap-rails` gem to Gemfile
    - Ran `bin/rails importmap:install` to generate config/importmap.rb
    - Removed `jsbundling-rails` gem
 
 2. **Vendored JavaScript Dependencies:**
+
    - Copied Turbo and Stimulus from node_modules to vendor/javascript/
    - Vendored SortableJS and stimulus-autocomplete
    - Created stimulus-loading.js stub for compatibility
    - All dependencies now served directly by Rails asset pipeline
 
 3. **Updated Importmap Configuration:**
+
    ```ruby
    pin "application", preload: true
    pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
@@ -314,17 +317,20 @@ All Phase 3 tasks have been completed:
    ```
 
 4. **Updated JavaScript Files:**
+
    - Modified app/javascript/application.js to use importmap imports
    - Changed DOMContentLoaded to turbo:load for better Turbo compatibility
    - Updated controllers/index.js to manually register all Stimulus controllers
    - All controller files already used correct ES6 import syntax
 
 5. **Updated Views:**
+
    - Changed `<%= javascript_include_tag "application" %>` to `<%= javascript_importmap_tags %>`
    - Layout now uses Rails 8 native JavaScript loading
 
 6. **Cleaned Up Build Process:**
-   - Removed JS dependencies from package.json (esbuild, @hotwired/*, sortablejs, stimulus-autocomplete)
+
+   - Removed JS dependencies from package.json (esbuild, @hotwired/\*, sortablejs, stimulus-autocomplete)
    - Kept CSS dependencies (Bulma, Sass, FontAwesome)
    - Updated package.json build:css script to not build FontAwesome (already exists as CSS)
    - Removed `js: yarn build --watch` from Procfile.dev
@@ -365,6 +371,7 @@ All Phase 3 tasks have been completed:
 ### Issue: System Tests Failing After Phase 2 & 3
 
 After completing Phase 2 (authentication migration) and Phase 3 (importmap migration), all 122 system tests were failing with the error:
+
 ```
 expected to find css "p.title" but there were no matches
 ```
@@ -372,11 +379,13 @@ expected to find css "p.title" but there were no matches
 ### Root Cause Analysis
 
 The authentication migration in Phase 2 added new columns (`email_address`, `password_digest`) but didn't:
+
 1. Copy data from old Devise columns (`email`, `encrypted_password`)
 2. Remove old columns
 3. Update fixtures to use new column names
 
 This caused:
+
 - User fixtures loaded with `email` and `encrypted_password` columns
 - New columns `email_address` and `password_digest` remained empty
 - Authentication failed because password_digest was nil
@@ -385,6 +394,7 @@ This caused:
 ### Fixes Applied
 
 **1. Created Data Migration (`20260111104153_migrate_user_authentication_columns.rb`):**
+
 ```ruby
 # Copies data from old Devise columns to new Rails 8 columns
 - email → email_address
@@ -392,21 +402,25 @@ This caused:
 ```
 
 **2. Removed Old Devise Columns (`20260111110544_remove_devise_columns_from_users.rb`):**
+
 - Removed `email`, `encrypted_password` columns
 - Removed `reset_password_token`, `reset_password_sent_at`, `remember_created_at`
 - Removed lockable columns: `failed_attempts`, `unlock_token`, `locked_at`
 - Removed corresponding database indexes
 
 **3. Updated Test Fixtures (`test/fixtures/users.yml`):**
+
 - Changed all `email:` to `email_address:`
 - Changed all `encrypted_password:` to `password_digest:`
 - Removed obsolete Devise columns from fixtures
 
 **4. Updated User Model:**
+
 - Added `alias_attribute :email, :email_address` for backward compatibility
 - Fixed `containing` scope to use `email_address` instead of `email`
 
 **5. Fixed System Test Helper:**
+
 - Updated button text from "Connexion" to "Se connecter" (correct French translation)
 
 ### Test Results After Fixes
@@ -640,34 +654,34 @@ git tag pre-phase-2-backup
 
 ## Changelog
 
-| Date       | Phase         | Author         | Description                                        |
-| ---------- | ------------- | -------------- | -------------------------------------------------- |
-| 2025-01-10 | Pre-Phase     | GitHub Copilot | Fixed taikai state reload bug                      |
-| 2025-01-10 | Pre-Phase     | GitHub Copilot | Updated action_text-trix and brakeman for security |
-| 2025-01-10 | Phase 1       | GitHub Copilot | Installed Solid Cache, Queue, and Cable            |
-| 2025-01-10 | Phase 1       | GitHub Copilot | Fixed Minitest 6.0 incompatibility                 |
-| 2025-01-10 | Phase 1       | GitHub Copilot | Removed obsolete Rails 7.1 defaults file           |
-| 2025-01-10 | Phase 1       | GitHub Copilot | Added Kamal and Thruster deployment tools          |
-| 2025-01-10 | Phase 1       | GitHub Copilot | Updated RuboCop to rubocop-rails-omakase           |
-| 2025-01-10 | Phase 1       | GitHub Copilot | **Phase 1 COMPLETED** - All tasks done             |
-| 2025-01-10 | Documentation | GitHub Copilot | Created MODERNIZATION_REPORT.md                    |
-| 2025-01-10 | Documentation | GitHub Copilot | Updated report with Phase 1 completion             |
-| 2025-01-11 | Phase 2       | GitHub Copilot | Created Rails 8 authentication infrastructure      |
-| 2025-01-11 | Phase 2       | GitHub Copilot | Completely removed Devise gem and all files        |
-| 2025-01-11 | Phase 2       | GitHub Copilot | Fixed authentication test helpers                  |
-| 2025-01-11 | Phase 2       | GitHub Copilot | Fixed all test failures (193 tests, 0 failures)    |
-| 2025-01-11 | Phase 2       | GitHub Copilot | **Phase 2 COMPLETED** - Ready for merge            |
-| 2025-01-11 | Phase 3       | GitHub Copilot | Installed importmap-rails gem                      |
-| 2025-01-11 | Phase 3       | GitHub Copilot | Vendored JavaScript dependencies                   |
-| 2025-01-11 | Phase 3       | GitHub Copilot | Updated application.js and controllers for importmap |
-| 2025-01-11 | Phase 3       | GitHub Copilot | Removed jsbundling-rails and cleaned up package.json |
-| 2025-01-11 | Phase 3       | GitHub Copilot | Fixed system test button text issue                |
-| 2025-01-11 | Phase 3       | GitHub Copilot | **Phase 3 COMPLETED** - All unit tests passing     |
-| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Fixed system tests - migrated fixtures to Rails 8 |
-| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Created data migration for authentication columns |
-| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Removed old Devise columns from database           |
-| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Updated fixtures and User model for compatibility  |
-| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | **ALL TESTS PASSING** - 193 unit + 122 system tests |
+| Date       | Phase           | Author         | Description                                          |
+| ---------- | --------------- | -------------- | ---------------------------------------------------- |
+| 2025-01-10 | Pre-Phase       | GitHub Copilot | Fixed taikai state reload bug                        |
+| 2025-01-10 | Pre-Phase       | GitHub Copilot | Updated action_text-trix and brakeman for security   |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Installed Solid Cache, Queue, and Cable              |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Fixed Minitest 6.0 incompatibility                   |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Removed obsolete Rails 7.1 defaults file             |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Added Kamal and Thruster deployment tools            |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Updated RuboCop to rubocop-rails-omakase             |
+| 2025-01-10 | Phase 1         | GitHub Copilot | **Phase 1 COMPLETED** - All tasks done               |
+| 2025-01-10 | Documentation   | GitHub Copilot | Created MODERNIZATION_REPORT.md                      |
+| 2025-01-10 | Documentation   | GitHub Copilot | Updated report with Phase 1 completion               |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Created Rails 8 authentication infrastructure        |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Completely removed Devise gem and all files          |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Fixed authentication test helpers                    |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Fixed all test failures (193 tests, 0 failures)      |
+| 2025-01-11 | Phase 2         | GitHub Copilot | **Phase 2 COMPLETED** - Ready for merge              |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Installed importmap-rails gem                        |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Vendored JavaScript dependencies                     |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Updated application.js and controllers for importmap |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Removed jsbundling-rails and cleaned up package.json |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Fixed system test button text issue                  |
+| 2025-01-11 | Phase 3         | GitHub Copilot | **Phase 3 COMPLETED** - All unit tests passing       |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Fixed system tests - migrated fixtures to Rails 8    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Created data migration for authentication columns    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Removed old Devise columns from database             |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Updated fixtures and User model for compatibility    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | **ALL TESTS PASSING** - 193 unit + 122 system tests  |
 
 ---
 
