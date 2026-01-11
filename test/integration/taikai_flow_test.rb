@@ -12,7 +12,7 @@ class TaikaiFlowTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_response :success
-    assert_select "p.card-header-title", "Connexion"
+    assert_select "h1.title", "Connexion"
   end
 
   test "taikai list" do

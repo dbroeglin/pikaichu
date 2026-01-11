@@ -4,15 +4,15 @@ module Rails8AuthTestHelper
   # This ensures the user has both email_address and password_digest set
   def setup_rails8_auth_for(user, password = "password")
     user = users(user) if user.is_a?(Symbol)
-    
+
     # Set email_address if not already set
     user.update_column(:email_address, user.email.downcase) unless user.email_address.present?
-    
+
     # Set password using has_secure_password
     user.password = password
     user.password_confirmation = password
     user.save!(validate: false)
-    
+
     user
   end
 
@@ -24,15 +24,15 @@ module Rails8AuthTestHelper
       ip_address: "127.0.0.1",
       user_agent: "Test Suite"
     )
-    
+
     # Set Current.session (works for all test types)
     Current.session = session
-    
+
     # Also set cookie for integration tests
     if respond_to?(:cookies) && cookies.respond_to?(:signed)
       cookies.signed[:session_id] = session.id
     end
-    
+
     session
   end
 

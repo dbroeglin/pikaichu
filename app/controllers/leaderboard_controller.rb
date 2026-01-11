@@ -1,7 +1,7 @@
 class LeaderboardController < ApplicationController
   layout "taikai"
 
-  skip_before_action :authenticate_user!, only: [ :public ]
+  allow_unauthenticated_access only: [ :public ]
 
   def show
     @taikai = Taikai.find(params[:id])

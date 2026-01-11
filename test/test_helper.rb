@@ -26,11 +26,22 @@ module SignInHelper
 
     # Ensure user has Rails 8 auth credentials
     setup_rails8_auth_for(user)
-    create_session_for(user)
+
+    # For integration tests, use actual login
+    if self.is_a?(ActionDispatch::IntegrationTest)
+      post session_path, params: {
+        email_address: user.email_address,
+        password: "password"
+      }
+      follow_redirect! if response.redirect?
+    else
+      # For controller tests, set Current.session
+      create_session_for(user)
+    end
 
     user
   end
-  
+
   # Alias for backward compatibility with controller tests
   alias_method :sign_in, :sign_in_as
 end
@@ -38,19 +49,28 @@ end
 # Stub authentication for controller tests
 module ControllerAuthenticationStub
   def require_authentication
-    Current.session || redirect_to(new_session_path)
+    resume_session || request_authentication
   end
-  
+
   def resume_session
     Current.session
   end
-  
+
   def authenticated?
     Current.session.present?
   end
-  
+
   def current_user
     Current.user
+  end
+
+  def request_authentication
+    session[:return_to_after_authenticating] = request.url
+    redirect_to new_session_path
+  end
+
+  def find_session_by_cookie
+    nil # Controller tests use Current.session directly
   end
 end
 
@@ -73,7 +93,7 @@ module ActionController
   class TestCase
     include Rails8AuthTestHelper
     include SignInHelper
-    
+
     # Prepend our stub to override authentication methods
     def setup
       super

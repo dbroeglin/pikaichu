@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
   include Authentication
-  
+
   before_action :require_authentication
   around_action :switch_locale
 

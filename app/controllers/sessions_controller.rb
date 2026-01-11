@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
   allow_unauthenticated_access only: [ :new, :create ]
-  
+
   def new
   end
 
   def create
     user = User.find_by(email_address: params[:email_address])
-    
+
     if user&.authenticate(params[:password])
       if user.confirmed_at.present?
         start_new_session_for(user)

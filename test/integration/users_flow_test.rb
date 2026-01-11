@@ -12,13 +12,13 @@ class UsersFlowTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_response :success
-    assert_select "p.card-header-title", "Connexion"
+    assert_select "h1.title", "Connexion"
   end
 
   test "disconnect" do
     sign_in_as(:jean_bon)
 
-    delete destroy_user_session_path
+    delete session_path
     assert_response :redirect
   end
 

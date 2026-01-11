@@ -1,7 +1,7 @@
 class ScoreboardController < ApplicationController
   layout "public"
 
-  skip_before_action :authenticate_user!, only: [ :show ]
+  allow_unauthenticated_access only: [ :show ]
 
   def show
     @scoreboard = Scoreboard.find_by!(api_key: params[:api_key])
