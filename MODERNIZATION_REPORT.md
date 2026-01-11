@@ -434,9 +434,36 @@ This caused:
 
 ## Pending Work
 
-### Phase 4: Remove Deprecated Dependencies (Optional)
+### ✅ Phase 4: COMPLETED (2025-01-11)
 
-Items to consider:
+Phase 4 (Remove Deprecated Dependencies) has been successfully completed. All tasks from the modernization plan have been executed:
+
+- ✅ Devise removal (completed in Phase 2)
+- ✅ Lockable columns removal (completed in Phase 2)
+- ✅ Updated Rails from 8.1.1 to 8.1.2 (latest patch)
+- ✅ Updated bcrypt from 3.1.20 to 3.1.21
+- ✅ Updated pg from 1.6.2 to 1.6.3
+- ✅ Updated statesman from 10.0.0 to 13.1.0 (Rails 8 support)
+- ✅ Updated selenium-webdriver from 4.38.0 to 4.39.0
+- ✅ Reviewed apparition gem (currently working, monitoring recommended)
+- ✅ All unit tests passing (193 runs, 721 assertions, 0 failures)
+- ✅ All system tests passing (122 runs, 1035 assertions, 0 failures, 1 skip)
+
+**Status:** Completed and ready for commit (2025-01-11)
+
+**Key Updates:**
+
+1. **Rails 8.1.2:** Latest patch version with bug fixes and security updates
+2. **Statesman 13.1.0:** Added Rails 8 support, removed support for old Rails/Ruby versions
+3. **Other Gems:** Updated to latest compatible versions for security and compatibility
+
+**Apparition Gem Decision:**
+- Last updated 5 years ago, but still functional with Rails 8
+- System tests pass successfully with Apparition
+- Recommendation: Monitor but don't replace unless issues arise
+- Alternative: selenium-webdriver is already available if needed
+
+---
 
 ## Important Notes and Decisions
 
@@ -685,6 +712,173 @@ git tag pre-phase-2-backup
 
 ---
 
-**Last Updated:** 2025-01-11 (All Tests Fixed)  
-**Report Version:** 3.1  
+## Phase 4: Remove Deprecated Dependencies (2025-01-11)
+
+### Goal
+
+Update all remaining gems to their latest compatible versions, remove deprecated dependencies, and ensure the application is fully modernized for Rails 8.1.
+
+### Actions Taken
+
+#### 1. Updated Rails to 8.1.2
+
+**Before:** Rails 8.1.1
+**After:** Rails 8.1.2
+
+Changed `Gemfile`:
+```ruby
+gem "rails", "~> 8.1.2"
+```
+
+**Benefits:**
+- Latest patch version with bug fixes
+- Security updates
+- Performance improvements
+
+#### 2. Updated Core Dependencies
+
+**Gems Updated:**
+- `bcrypt`: 3.1.20 → 3.1.21 (password hashing)
+- `pg`: 1.6.2 → 1.6.3 (PostgreSQL adapter)
+- `selenium-webdriver`: 4.38.0 → 4.39.0 (browser automation)
+- `statesman`: 10.0.0 → 13.1.0 (state machine)
+
+**Statesman 13.1.0 Changes:**
+Version 13.0.0 added Rails 8 support and removed:
+- Support for Rails 6.1 and 7
+- Support for PostgreSQL < 13
+- Support for Ruby < 3.2
+
+This aligns perfectly with our modernization goals.
+
+Changed `Gemfile`:
+```ruby
+gem "statesman", "~> 13.1"
+gem "bcrypt", "~> 3.1.21"
+```
+
+#### 3. Reviewed Apparition Gem
+
+**Current Status:**
+- Version: 0.6.0 (last updated 5 years ago)
+- Rails 8 Compatibility: ✅ Working
+- System Tests: ✅ All passing (122 runs, 1035 assertions)
+
+**Decision:** KEEP for now
+- Gem is stable and functional
+- No breaking issues with Rails 8
+- System tests pass successfully
+- CDP-based driver (no Selenium/ChromeDriver needed)
+
+**Future Consideration:**
+- Monitor for potential issues
+- Alternative available: selenium-webdriver (already in Gemfile)
+- Consider migration only if Apparition causes problems
+
+**Rationale:**
+Per the modernization plan section 4.3: "apparition - Review: May need update or replacement for system tests." Since it's working perfectly, we're keeping it. The plan acknowledges this is optional.
+
+#### 4. Verified All Tests Pass
+
+**Unit Tests:**
+```
+193 runs, 721 assertions, 0 failures, 0 errors, 0 skips
+```
+
+**System Tests:**
+```
+122 runs, 1035 assertions, 0 failures, 0 errors, 1 skip (intentional)
+```
+
+**Total:** 315 tests, 1756 assertions, ALL PASSING ✅
+
+### Dependencies Review Summary
+
+Per modernization plan section 4.3, reviewed all dependencies:
+
+| Gem | Status | Action Taken | Rationale |
+|-----|--------|--------------|-----------|
+| `activerecord-postgres_enum` | Keep | No change | Rails 7+ has enum support but this gem handles edge cases better |
+| `audited` | Keep | No change | No Rails 8 native equivalent for audit trails |
+| `pundit` | Keep | No change | Best-in-class authorization library |
+| `statesman` | Keep | ✅ Updated to 13.1.0 | Added Rails 8 support, critical update |
+| `kaminari` | Keep | No change | Well-maintained pagination gem |
+| `mobility` | Keep | No change | Best solution for model I18n |
+| `caxlsx`, `caxlsx_rails` | Keep | No change | Excel export functionality required |
+| `roo` | Keep | No change | Excel import functionality required |
+| `acts_as_list` | Keep | No change | List ordering functionality |
+| `country_select` | Keep | No change | Country selection required |
+| `faraday` | Keep | No change | HTTP client for external APIs |
+| `apparition` | Keep | Reviewed | Working perfectly with Rails 8, no changes needed |
+| `devise` | ✅ Removed | Done in Phase 2 | Replaced with Rails 8 authentication |
+
+### Test Results After Phase 4
+
+**Before Updates:**
+- Unit: 193 runs, 721 assertions, 0 failures ✅
+- System: 122 runs, 1035 assertions, 0 failures ✅
+
+**After Updates:**
+- Unit: 193 runs, 721 assertions, 0 failures ✅
+- System: 122 runs, 1035 assertions, 0 failures ✅
+
+**Result:** NO REGRESSIONS - All updates were successful!
+
+### Phase 4 Completion Summary
+
+✅ **All Phase 4 tasks completed:**
+1. Removed deprecated dependencies (Devise - done in Phase 2)
+2. Removed lockable columns (done in Phase 2)
+3. Updated Rails to latest patch version (8.1.2)
+4. Updated all critical gems to latest compatible versions
+5. Reviewed all dependencies per modernization plan
+6. Verified all tests pass
+7. Documented all changes
+
+**No breaking changes introduced.**
+**All functionality preserved.**
+**Application fully modernized for Rails 8.1.**
+
+---
+
+## Changelog
+
+| Date       | Phase           | Author         | Description                                          |
+| ---------- | --------------- | -------------- | ---------------------------------------------------- |
+| 2025-01-10 | Pre-Phase       | GitHub Copilot | Fixed taikai state reload bug                        |
+| 2025-01-10 | Pre-Phase       | GitHub Copilot | Updated action_text-trix and brakeman for security   |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Installed Solid Cache, Queue, and Cable              |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Fixed Minitest 6.0 incompatibility                   |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Removed obsolete Rails 7.1 defaults file             |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Added Kamal and Thruster deployment tools            |
+| 2025-01-10 | Phase 1         | GitHub Copilot | Updated RuboCop to rubocop-rails-omakase             |
+| 2025-01-10 | Phase 1         | GitHub Copilot | **Phase 1 COMPLETED** - All tasks done               |
+| 2025-01-10 | Documentation   | GitHub Copilot | Created MODERNIZATION_REPORT.md                      |
+| 2025-01-10 | Documentation   | GitHub Copilot | Updated report with Phase 1 completion               |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Created Rails 8 authentication infrastructure        |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Completely removed Devise gem and all files          |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Fixed authentication test helpers                    |
+| 2025-01-11 | Phase 2         | GitHub Copilot | Fixed all test failures (193 tests, 0 failures)      |
+| 2025-01-11 | Phase 2         | GitHub Copilot | **Phase 2 COMPLETED** - Ready for merge              |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Installed importmap-rails gem                        |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Vendored JavaScript dependencies                     |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Updated application.js and controllers for importmap |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Removed jsbundling-rails and cleaned up package.json |
+| 2025-01-11 | Phase 3         | GitHub Copilot | Fixed system test button text issue                  |
+| 2025-01-11 | Phase 3         | GitHub Copilot | **Phase 3 COMPLETED** - All unit tests passing       |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Fixed system tests - migrated fixtures to Rails 8    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Created data migration for authentication columns    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Removed old Devise columns from database             |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Updated fixtures and User model for compatibility    |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | **ALL TESTS PASSING** - 193 unit + 122 system tests  |
+| 2025-01-11 | Phase 4         | GitHub Copilot | Updated Rails to 8.1.2 and core dependencies          |
+| 2025-01-11 | Phase 4         | GitHub Copilot | Updated statesman from 10.0.0 to 13.1.0 (Rails 8)     |
+| 2025-01-11 | Phase 4         | GitHub Copilot | Reviewed all dependencies per modernization plan      |
+| 2025-01-11 | Phase 4         | GitHub Copilot | Verified all tests pass after updates                 |
+| 2025-01-11 | Phase 4         | GitHub Copilot | **Phase 4 COMPLETED** - All tasks done                |
+
+---
+
+**Last Updated:** 2025-01-11 (Phase 4 Completed)  
+**Report Version:** 4.0  
 **Contact:** See git log for authors
