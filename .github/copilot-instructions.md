@@ -2,16 +2,17 @@
 
 ## Project Overview
 
-Pikaichu is a comprehensive Ruby on Rails 7.2 application for managing Kyudo (Japanese archery) tournaments. It supports multiple tournament formats, complex scoring systems, role-based access control, and full bilingual support (EN/FR).
+Pikaichu is a comprehensive Ruby on Rails 8.1 application for managing Kyudo (Japanese archery) tournaments. It supports multiple tournament formats, complex scoring systems, role-based access control, and full bilingual support (EN/FR).
 
 **Tech Stack:**
-- **Backend:** Ruby 3.3.5, Rails 7.2.2, PostgreSQL with custom enums
-- **Frontend:** Hotwire (Turbo + Stimulus), Bulma CSS framework, esbuild for JS bundling
-- **Authentication:** Devise
+- **Backend:** Ruby 3.4.7, Rails 8.1.2, PostgreSQL with custom enums
+- **Frontend:** Hotwire (Turbo + Stimulus), Bulma CSS framework, importmap-rails (no Node.js bundler)
+- **Authentication:** Rails 8 built-in authentication (has_secure_password + Sessions)
 - **Authorization:** Pundit (role-based)
-- **State Management:** Statesman gem for tournament workflow
+- **State Management:** Statesman 13.1 gem for tournament workflow
 - **I18n:** Mobility gem for model translations
-- **Testing:** Minitest with Apparition (headless Chrome), Factory Bot, Fixture Builder
+- **Infrastructure:** Solid Queue (jobs), Solid Cache, Solid Cable (websockets)
+- **Testing:** Minitest 5.x with Apparition (headless Chrome), Factory Bot, Fixture Builder
 - **Deployment:** Docker containerized, Azure Container Apps with Bicep templates
 
 ---
@@ -873,11 +874,15 @@ end
 - Cannot modify participants during marking
 - Cannot update finalized results
 
-### Devise Security
+### Rails 8 Authentication Security
 
-- Password encryption via bcrypt
-- Session timeout configured
-- Remember me functionality
+- Password encryption via bcrypt (`has_secure_password`)
+- Session-based authentication with signed permanent cookies
+- Rate limiting on login (10 attempts/3 min) and password reset (5 requests/10 min)
+- Password reset via signed tokens (no database tokens)
+- Email confirmation required
+- Data normalization (email/name fields)
+- Explicit password validation (8-72 characters)
 
 ### Audit Trail
 

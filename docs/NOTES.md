@@ -62,9 +62,9 @@ Generate results for an Enteki Taikai:
         r.save!
       }
 
-Reset all passwords:
+Reset all passwords (Rails 8 authentication with has_secure_password):
 
-    User.all.each { |u| u.update(encrypted_password: User.new.send(:password_digest, 'password')) }
+    User.all.each { |u| u.update(password: 'password', password_confirmation: 'password') }
 
 Rebuild fixtures:
 

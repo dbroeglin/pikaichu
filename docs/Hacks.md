@@ -26,8 +26,12 @@ end
 
 # Reseting all users' passwords
 
-/!\ This will reset ALL passwords!!!
+⚠️ **WARNING:** This will reset ALL passwords!!!
 
+**Rails 8 Authentication (has_secure_password):**
 ```ruby
-User.all.each { |u| u.update(encrypted_password: User.new.send(:password_digest, 'password')) }
+User.all.each { |u| u.update(password: 'password', password_confirmation: 'password') }
 ```
+
+**Note:** After Rails 8 migration, we use `has_secure_password` instead of Devise.
+The `password_digest` field stores bcrypt hashes, compatible with the old Devise `encrypted_password` hashes.

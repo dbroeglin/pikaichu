@@ -70,8 +70,8 @@ gem "bootsnap", require: false
 
 gem "pundit"
 
-# TODO: PG enums are supported in Rails 7.
-# Warning: did not work because of add_enum_value
+# Rails 8 note: PG enums are natively supported but this gem handles edge cases
+# like add_enum_value which still requires special handling in migrations
 gem "activerecord-postgres_enum", "~> 2.0"
 
 gem "country_select"
