@@ -360,6 +360,64 @@ All Phase 3 tasks have been completed:
 
 ---
 
+## System Test Fixes (2025-01-11)
+
+### Issue: System Tests Failing After Phase 2 & 3
+
+After completing Phase 2 (authentication migration) and Phase 3 (importmap migration), all 122 system tests were failing with the error:
+```
+expected to find css "p.title" but there were no matches
+```
+
+### Root Cause Analysis
+
+The authentication migration in Phase 2 added new columns (`email_address`, `password_digest`) but didn't:
+1. Copy data from old Devise columns (`email`, `encrypted_password`)
+2. Remove old columns
+3. Update fixtures to use new column names
+
+This caused:
+- User fixtures loaded with `email` and `encrypted_password` columns
+- New columns `email_address` and `password_digest` remained empty
+- Authentication failed because password_digest was nil
+- System tests couldn't log in
+
+### Fixes Applied
+
+**1. Created Data Migration (`20260111104153_migrate_user_authentication_columns.rb`):**
+```ruby
+# Copies data from old Devise columns to new Rails 8 columns
+- email → email_address
+- encrypted_password → password_digest
+```
+
+**2. Removed Old Devise Columns (`20260111110544_remove_devise_columns_from_users.rb`):**
+- Removed `email`, `encrypted_password` columns
+- Removed `reset_password_token`, `reset_password_sent_at`, `remember_created_at`
+- Removed lockable columns: `failed_attempts`, `unlock_token`, `locked_at`
+- Removed corresponding database indexes
+
+**3. Updated Test Fixtures (`test/fixtures/users.yml`):**
+- Changed all `email:` to `email_address:`
+- Changed all `encrypted_password:` to `password_digest:`
+- Removed obsolete Devise columns from fixtures
+
+**4. Updated User Model:**
+- Added `alias_attribute :email, :email_address` for backward compatibility
+- Fixed `containing` scope to use `email_address` instead of `email`
+
+**5. Fixed System Test Helper:**
+- Updated button text from "Connexion" to "Se connecter" (correct French translation)
+
+### Test Results After Fixes
+
+✅ **Unit Tests:** 193 runs, 721 assertions, 0 failures, 0 errors, 0 skips  
+✅ **System Tests:** 122 runs, 1035 assertions, 0 failures, 0 errors, 1 skip (intentional)
+
+**Total:** 315 tests, 1756 assertions, ALL PASSING
+
+---
+
 ## Pending Work
 
 ### Phase 4: Remove Deprecated Dependencies (Optional)
@@ -605,9 +663,14 @@ git tag pre-phase-2-backup
 | 2025-01-11 | Phase 3       | GitHub Copilot | Removed jsbundling-rails and cleaned up package.json |
 | 2025-01-11 | Phase 3       | GitHub Copilot | Fixed system test button text issue                |
 | 2025-01-11 | Phase 3       | GitHub Copilot | **Phase 3 COMPLETED** - All unit tests passing     |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Fixed system tests - migrated fixtures to Rails 8 |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Created data migration for authentication columns |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Removed old Devise columns from database           |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | Updated fixtures and User model for compatibility  |
+| 2025-01-11 | Phase 2+3 Fixes | GitHub Copilot | **ALL TESTS PASSING** - 193 unit + 122 system tests |
 
 ---
 
-**Last Updated:** 2025-01-11 (Phase 3 Complete)  
-**Report Version:** 3.0  
+**Last Updated:** 2025-01-11 (All Tests Fixed)  
+**Report Version:** 3.1  
 **Contact:** See git log for authors
