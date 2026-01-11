@@ -17,13 +17,22 @@ module Rails8AuthTestHelper
   end
 
   # Create a session for a user (simulates login)
+  # Works for both integration tests (uses cookies) and controller tests (uses Current)
   def create_session_for(user)
     user = users(user) if user.is_a?(Symbol)
     session = user.sessions.create!(
       ip_address: "127.0.0.1",
       user_agent: "Test Suite"
     )
-    cookies.signed[:session_id] = session.id
+    
+    # Set Current.session (works for all test types)
+    Current.session = session
+    
+    # Also set cookie for integration tests
+    if respond_to?(:cookies) && cookies.respond_to?(:signed)
+      cookies.signed[:session_id] = session.id
+    end
+    
     session
   end
 

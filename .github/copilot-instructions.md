@@ -810,6 +810,7 @@ rubocop -a  # Auto-fix
 - **Factory usage over fixtures** (except complex scenarios)
 
 **Important**: When asked to fix a bug, always write or update tests to cover the issue first.
+**Important**: Ensure you run and fix the tests before committing changes.
 
 ---
 
