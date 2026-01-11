@@ -13,11 +13,11 @@
 
   <div id="navbarBasic" class="navbar-menu">
     <div class="navbar-start">
-      <%= link_to taikais_path, class: "navbar-item #{controller_name == "taikais" ? "is-active" : "" }" do %>
+      <%= link_to taikais_path, class: "navbar-item" do %>
         <span class="icon is-medium mr-2" style="white-space:nowrap">大会</span>
         <span><%= Taikai.model_name.human count: 2 %></span>
       <% end %>
-      <%= link_to dojos_path, class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
+      <%= link_to dojos_path, class: "navbar-item" do %>
         <span class="icon is-medium">
           <span class="icon level is-medium mr-2" style="white-space:nowrap">道場</span><%# TODO: fix style %>
         </span>
@@ -27,13 +27,13 @@
 
     <div class="navbar-end">
       <% if authenticated? %>
-        <%= link_to '/docs/guide.pdf', target: '_blank', class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
+        <%= link_to '/docs/guide.pdf', target: '_blank', class: "navbar-item" do %>
           <span class="icon is-medium">
             <i class="fas fa-compass"></i>
           </span>
           <span><%= t '.guide' %></span>
         <% end %>
-        <%= link_to '/docs/tutorial.pdf', target: '_blank', class: "navbar-item #{controller_name == "dojos" ? "is-active" : "" }" do %>
+        <%= link_to '/docs/tutorial.pdf', target: '_blank', class: "navbar-item" do %>
           <span class="icon is-medium">
             <i class="fas fa-circle-question"></i>
           </span>
