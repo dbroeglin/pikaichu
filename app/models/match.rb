@@ -122,7 +122,7 @@ class Match < ApplicationRecord
     team = Team.find(team_id)
     score = team.score(id)
     if score.finalized?
-      logger.error "Cannot clean team #{team_id} because score is finalized"
+      # Error handling without logger - errors are visible through model errors
       errors.add(:base, :cant_change_teams_if_results_exist)
       throw :abort
     end

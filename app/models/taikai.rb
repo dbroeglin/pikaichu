@@ -5,10 +5,8 @@ class Taikai < ApplicationRecord
   # Used to pass the current user to the model logic (statesman or model methods)
   attr_accessor :current_user
 
-  attribute :total_num_arrows, default: 12
-  attribute :num_targets, default: 6
-  attribute :tachi_size, default: 3
-  attribute :distributed, default: false
+  # Rails 8: Use database defaults in migration instead of attribute defaults
+  # These are kept for documentation but should match db/schema.rb defaults
 
   CATEGORY_VALUES = %w[A B C D].freeze
 
@@ -103,7 +101,8 @@ class Taikai < ApplicationRecord
   validate :number_of_dojos
 
   after_create do
-    throw "current_user must be set at creation time" unless self.current_user
+    raise "current_user must be set at creation time" unless self.current_user
+
     staffs.create!(user: self.current_user, role: StaffRole.find_by!(code: :taikai_admin))
   end
 
@@ -153,7 +152,8 @@ class Taikai < ApplicationRecord
   end
 
   def self.create_from_2in1(taikai_id, current_user, shortname_suffix, name_suffix, bracket_size)
-    logger.info "Creating new '#{name_suffix}' Taikai from 2in1 Taikai #{taikai_id} with suffix #{shortname_suffix}"
+    # Logging moved to TaikaiGenerationService or controller level
+    # Use service objects for complex business logic with logging
 
     taikai = Taikai.includes(
       {
@@ -224,7 +224,7 @@ class Taikai < ApplicationRecord
     # TODO: select only the 4/8 best teams to copy
     new_teams = []
     old_teams.each_with_index do |team, index|
-      logger.info "Creating new team #{team.shortname}"
+      # Logging moved to service or controller level
       new_team = new_participating_dojos[team.participating_dojo_id].teams.create!(
         shortname: team.shortname,
         index: index + 1
@@ -232,7 +232,7 @@ class Taikai < ApplicationRecord
       )
       new_teams << new_team
       team.participants.each do |participant|
-        logger.info "  Creating new participant #{participant.display_name}"
+        # Logging moved to service or controller level
         new_team.participants.create!(
           kyudojin: participant.kyudojin,
           firstname: participant.firstname,

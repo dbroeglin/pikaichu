@@ -3,6 +3,11 @@ class Dojo < ApplicationRecord
 
   has_many :participating_dojos, dependent: :restrict_with_error
 
+  # Rails 8: Normalize fields before save
+  normalizes :shortname, with: ->(value) { value.strip.downcase }
+  normalizes :name, with: ->(value) { value.strip }
+  normalizes :country_code, with: ->(value) { value.strip.upcase }
+
   validates :shortname, presence: true, length: { minimum: 3, maximum: 32 }
   validates :name, presence: true
   validates :country_code, presence: true

@@ -6,6 +6,7 @@ fr:
     signed_in: "Connexion réussie."
     signed_out: "Déconnexion réussie."
     invalid_credentials: "Email ou mot de passe invalide."
+    rate_limit_exceeded: "Trop de tentatives de connexion. Veuillez réessayer dans quelques minutes."
     new:
       title: "Connexion"
       email_label: "Email"
@@ -17,6 +18,7 @@ fr:
     reset_email_sent: "Si cette adresse email existe dans notre système, nous avons envoyé un lien de réinitialisation."
     password_updated: "Votre mot de passe a été réinitialisé avec succès. Veuillez vous connecter."
     invalid_token: "Lien de réinitialisation invalide ou expiré."
+    rate_limit_exceeded: "Trop de demandes de réinitialisation. Veuillez réessayer dans quelques minutes."
     new:
       title: "Réinitialiser le mot de passe"
       instructions: "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe."

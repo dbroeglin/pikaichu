@@ -5,12 +5,14 @@ class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
 
-  # Normalize email_address before save
+  # Rails 8: Normalize fields before save
   normalizes :email_address, with: ->(email) { email.strip.downcase }
+  normalizes :firstname, :lastname, with: ->(name) { name.strip.titlecase }
 
   validates :firstname, :lastname, presence: true
   validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }, presence: true
   validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, length: { minimum: 8, maximum: 72 }, allow_nil: true
 
   self.non_audited_columns = [ :password_digest ]
 

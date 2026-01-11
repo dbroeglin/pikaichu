@@ -6,6 +6,7 @@ en:
     signed_in: "Signed in successfully."
     signed_out: "Signed out successfully."
     invalid_credentials: "Invalid email or password."
+    rate_limit_exceeded: "Too many login attempts. Please try again in a few minutes."
     new:
       title: "Sign In"
       email_label: "Email"
@@ -17,6 +18,7 @@ en:
     reset_email_sent: "If that email address is in our system, we've sent a password reset link."
     password_updated: "Your password has been reset successfully. Please sign in."
     invalid_token: "Invalid or expired password reset link."
+    rate_limit_exceeded: "Too many password reset requests. Please try again in a few minutes."
     new:
       title: "Reset Password"
       instructions: "Enter your email address and we'll send you a link to reset your password."

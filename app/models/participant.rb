@@ -54,7 +54,7 @@ class Participant < ApplicationRecord
 
   def build_empty_score_and_results(match_id = nil)
     if defined_results?(match_id)
-      throw "Defined result(s) already exist(s) for #{id} (#{display_name})" # TODO
+      raise "Defined result(s) already exist(s) for #{id} (#{display_name})"
     end
 
     score = scores.create!(participant_id: id, match_id: match_id)

@@ -1,6 +1,11 @@
 class PasswordsController < ApplicationController
   allow_unauthenticated_access
 
+  # Rails 8: Rate limit password reset requests to prevent abuse
+  rate_limit to: 5, within: 10.minutes, only: :create, with: -> {
+    redirect_to new_password_path, alert: I18n.t("passwords.rate_limit_exceeded")
+  }
+
   before_action :set_user_by_token, only: [ :edit, :update ]
 
   def new
