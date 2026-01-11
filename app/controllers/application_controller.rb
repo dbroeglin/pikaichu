@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
+  # Rails 8 authentication (running in parallel with Devise)
+  # include Authentication  # Uncomment to switch from Devise to Rails 8 auth
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!  # Devise authentication (will be removed later)
   before_action :configure_permitted_parameters, if: :devise_controller?
   around_action :switch_locale
 

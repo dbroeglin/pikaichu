@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 require "taikais_test_helpers"
+require_relative "helpers/rails8_auth_test_helper"
 
 Faker::Config.random = Random.new(42)
 
@@ -18,7 +19,8 @@ module ActiveSupport
 end
 
 module SignInHelper
-  def sign_in_as(user)
+  # Devise-based sign in (legacy)
+  def sign_in_as_devise(user)
     user = users(user)
     throw "Sign-in helper needs a user" if user.nil?
 
@@ -32,6 +34,32 @@ module SignInHelper
     assert_select "p.title", text: "Clubs"
 
     user
+  end
+
+  # Rails 8 authentication-based sign in
+  def sign_in_as_rails8(user)
+    user = users(user)
+    throw "Sign-in helper needs a user" if user.nil?
+
+    # Ensure user has password_digest set
+    unless user.password_digest.present?
+      user.password = "password"
+      user.password_confirmation = "password"
+      user.save!(validate: false)
+    end
+
+    post session_path, params: { email_address: user.email_address, password: "password" }
+
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+
+    user
+  end
+
+  # Default sign in method (uses Devise for now, will switch to Rails 8 later)
+  def sign_in_as(user)
+    sign_in_as_devise(user)
   end
 end
 
