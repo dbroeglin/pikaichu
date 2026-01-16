@@ -1,0 +1,45 @@
+/* Bulma 1.0 color customizations via CSS variables */
+/* Restoring Bulma 0.9.3 default colors */
+
+:root {
+  /* Primary: turquoise #00d1b2 = hsl(171, 100%, 41%) */
+  --bulma-primary-h: 171deg;
+  --bulma-primary-s: 100%;
+  --bulma-primary-l: 41%;
+  
+  /* Link: blue #485fc7 = hsl(229, 53%, 53%) */
+  --bulma-link-h: 229deg;
+  --bulma-link-s: 53%;
+  --bulma-link-l: 53%;
+  
+  /* Info: custom #3478b1 = hsl(207, 55%, 45%) */
+  --bulma-info-h: 207deg;
+  --bulma-info-s: 55%;
+  --bulma-info-l: 45%;
+  
+  /* Success: green #48c78e = hsl(153, 53%, 53%) */
+  --bulma-success-h: 153deg;
+  --bulma-success-s: 53%;
+  --bulma-success-l: 53%;
+  
+  /* Warning: yellow #ffe08a = hsl(44, 100%, 77%) */
+  --bulma-warning-h: 44deg;
+  --bulma-warning-s: 100%;
+  --bulma-warning-l: 77%;
+  
+  /* Danger: red #f14668 = hsl(348, 86%, 61%) */
+  --bulma-danger-h: 348deg;
+  --bulma-danger-s: 86%;
+  --bulma-danger-l: 61%;
+  
+  /* Card header background */
+  --bulma-card-header-background-color: #EFF5FA;
+  
+  /* Table striped rows */
+  --bulma-table-striped-row-even-background-color: hsl(0, 0%, 94%);
+  
+  /* Font families (from custom.bulma.scss) */
+  --bulma-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bulma-family-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bulma-family-code: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}

@@ -1,0 +1,40 @@
+/* Custom application styles */
+
+.table.is-bordered th.first, 
+.table.is-bordered td.first {
+  border-top-style: double;
+  border-top-width: 3pt;
+}
+
+form .dropdown {
+  width: 100%;
+}
+
+form .dropdown .dropdown-trigger {
+  width: 100%;
+}
+
+form .dropdown .button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.team-title {
+  font-size: var(--bulma-size-medium, 1.25rem);
+  border-bottom: 1px solid var(--bulma-grey-light, hsl(221, 14%, 71%));
+  margin-bottom: var(--bulma-size-6, 1rem);
+}
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}
+
+turbo-frame {
+  display: block;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  padding: 0.1em 1em;
+  margin: 1em 0;
+}

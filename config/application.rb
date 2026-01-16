@@ -23,5 +23,8 @@ module PiKaichu
     #
     config.time_zone = "Europe/Paris"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Add vendor/stylesheets to asset load paths
+    config.assets.paths << Rails.root.join("vendor", "stylesheets")
   end
 end
