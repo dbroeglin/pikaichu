@@ -14,6 +14,8 @@ fr:
       password_label: "Mot de passe"
       submit: "Se connecter"
       forgot_password: "Mot de passe oublié ?"
+      no_account: "Vous n'avez pas de compte ?"
+      sign_up_link: "S'inscrire"
   
   passwords:
     reset_email_sent: "Si cette adresse email existe dans notre système, nous avons envoyé un lien de réinitialisation."
@@ -42,3 +44,22 @@ fr:
       expiration: "Ce lien expirera dans 15 minutes."
       ignore: "Si vous n'avez pas fait cette demande, veuillez ignorer cet email. Votre mot de passe ne changera pas tant que vous n'accéderez pas au lien ci-dessus."
       manual_link: "Si le bouton ne fonctionne pas, copiez et collez cette URL dans votre navigateur :"
+  
+  registrations:
+    account_created: "Bienvenue ! Votre compte a été créé avec succès."
+    rate_limit_exceeded: "Trop de tentatives d'inscription. Veuillez réessayer dans quelques minutes."
+    new:
+      title: "Créer un compte"
+      subtitle: "Rejoignez-nous pour gérer des tournois de Kyudo"
+      firstname_label: "Prénom"
+      lastname_label: "Nom"
+      email_label: "Email"
+      locale_label: "Langue préférée"
+      locale_en: "Anglais"
+      locale_fr: "Français"
+      password_label: "Mot de passe"
+      password_help: "Minimum 8 caractères"
+      password_confirmation_label: "Confirmer le mot de passe"
+      submit: "Créer le compte"
+      already_have_account: "Vous avez déjà un compte ?"
+      sign_in_link: "Se connecter"

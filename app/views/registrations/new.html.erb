@@ -1,0 +1,113 @@
+<div class="columns is-centered">
+  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+    <div class="box">
+      <h1 class="title has-text-centered"><%= t("registrations.new.title") %></h1>
+      <p class="subtitle is-size-7 has-text-centered"><%= t("registrations.new.subtitle") %></p>
+
+      <%= form_with model: @user, url: registrations_path, class: "mt-5" do |form| %>
+        <% if @user.errors.any? %>
+          <div class="notification is-danger is-light">
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :firstname, t("registrations.new.firstname_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.text_field :firstname, 
+                                autofocus: true, 
+                                autocomplete: "given-name",
+                                required: true,
+                                class: "input #{'is-danger' if @user.errors[:firstname].any?}" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :lastname, t("registrations.new.lastname_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.text_field :lastname, 
+                                autocomplete: "family-name",
+                                required: true,
+                                class: "input #{'is-danger' if @user.errors[:lastname].any?}" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :email_address, t("registrations.new.email_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.email_field :email_address, 
+                                autocomplete: "email",
+                                required: true,
+                                class: "input #{'is-danger' if @user.errors[:email_address].any?}" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :locale, t("registrations.new.locale_label"), class: "label" %>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <%= form.select :locale, 
+                             options_for_select([
+                               [t("registrations.new.locale_en"), "en"],
+                               [t("registrations.new.locale_fr"), "fr"]
+                             ], @user.locale || I18n.locale.to_s),
+                             {},
+                             { required: true } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :password, t("registrations.new.password_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.password_field :password, 
+                                    autocomplete: "new-password",
+                                    required: true,
+                                    class: "input #{'is-danger' if @user.errors[:password].any?}" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+          <p class="help"><%= t("registrations.new.password_help") %></p>
+        </div>
+
+        <div class="field">
+          <%= form.label :password_confirmation, t("registrations.new.password_confirmation_label"), class: "label" %>
+          <div class="control has-icons-left">
+            <%= form.password_field :password_confirmation, 
+                                    autocomplete: "new-password",
+                                    required: true,
+                                    class: "input #{'is-danger' if @user.errors[:password_confirmation].any?}" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= form.submit t("registrations.new.submit"), class: "button is-primary is-fullwidth" %>
+          </div>
+        </div>
+
+        <div class="has-text-centered mt-4">
+          <%= t("registrations.new.already_have_account") %>
+          <%= link_to t("registrations.new.sign_in_link"), new_session_path, class: "is-size-7" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

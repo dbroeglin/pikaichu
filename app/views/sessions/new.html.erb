@@ -40,6 +40,11 @@
         <div class="has-text-centered mt-4">
           <%= link_to t("sessions.new.forgot_password"), new_password_path, class: "is-size-7" %>
         </div>
+        
+        <div class="has-text-centered mt-3">
+          <%= t("sessions.new.no_account") %>
+          <%= link_to t("sessions.new.sign_up_link"), new_registration_path, class: "is-size-7" %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # Rails 8 Authentication
   resource :session, only: [ :new, :create, :destroy ]
   resources :passwords, only: [ :new, :create, :edit, :update ], param: :token
+  resources :registrations, only: [ :new, :create ]
 
   get  "/taikais/:id/marking",                          to: "marking#show",                as: :show_marking
   post "/taikais/:id/marking/:participant_id/update",   to: "marking#update",              as: :update_marking

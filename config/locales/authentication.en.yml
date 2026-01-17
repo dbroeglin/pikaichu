@@ -14,6 +14,8 @@ en:
       password_label: "Password"
       submit: "Sign In"
       forgot_password: "Forgot your password?"
+      no_account: "Don't have an account?"
+      sign_up_link: "Sign Up"
   
   passwords:
     reset_email_sent: "If that email address is in our system, we've sent a password reset link."
@@ -42,3 +44,22 @@ en:
       expiration: "This link will expire in 15 minutes."
       ignore: "If you didn't request this, please ignore this email. Your password won't change until you access the link above."
       manual_link: "If the button doesn't work, copy and paste this URL into your browser:"
+  
+  registrations:
+    account_created: "Welcome! Your account has been created successfully."
+    rate_limit_exceeded: "Too many registration attempts. Please try again in a few minutes."
+    new:
+      title: "Create Account"
+      subtitle: "Join us to manage Kyudo tournaments"
+      firstname_label: "First Name"
+      lastname_label: "Last Name"
+      email_label: "Email"
+      locale_label: "Preferred Language"
+      locale_en: "English"
+      locale_fr: "French"
+      password_label: "Password"
+      password_help: "Minimum 8 characters"
+      password_confirmation_label: "Confirm Password"
+      submit: "Create Account"
+      already_have_account: "Already have an account?"
+      sign_in_link: "Sign In"
