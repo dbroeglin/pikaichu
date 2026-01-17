@@ -3,6 +3,7 @@ en:
     unconfirmed: "You have to confirm your email address before continuing."
   
   sessions:
+    sign_out: "Sign Out"
     signed_in: "Signed in successfully."
     signed_out: "Signed out successfully."
     invalid_credentials: "Invalid email or password."

@@ -3,6 +3,7 @@ fr:
     unconfirmed: "Vous devez confirmer votre adresse email avant de continuer."
   
   sessions:
+    sign_out: "Déconnexion"
     signed_in: "Connexion réussie."
     signed_out: "Déconnexion réussie."
     invalid_credentials: "Email ou mot de passe invalide."
