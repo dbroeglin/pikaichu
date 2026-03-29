@@ -8,7 +8,7 @@ ruby "3.4.7"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
 
-gem "action_text-trix", "~> 2.1.16"
+gem "action_text-trix", "~> 2.1.18"
 
 # Modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
