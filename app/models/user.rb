@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   audited
+  generates_token_for :password_reset, expires_in: 15.minutes do
+    password_salt&.last(10)
+  end
 
   # Rails 8 authentication
   has_secure_password
@@ -30,11 +33,11 @@ class User < ApplicationRecord
 
   # Generate signed password reset token (Rails 8 style)
   def generate_password_reset_token
-    signed_id expires_in: 15.minutes, purpose: :password_reset
+    generate_token_for(:password_reset)
   end
 
   # Find user by password reset token
   def self.find_by_password_reset_token!(token)
-    find_signed!(token, purpose: :password_reset)
+    find_by_token_for!(:password_reset, token)
   end
 end

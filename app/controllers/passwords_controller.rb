@@ -24,6 +24,7 @@ class PasswordsController < ApplicationController
 
   def update
     if @user.update(password_params)
+      @user.sessions.destroy_all
       redirect_to new_session_path, notice: t("passwords.password_updated")
     else
       render :edit, status: :unprocessable_entity

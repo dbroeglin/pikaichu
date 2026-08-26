@@ -1,4 +1,6 @@
 class MarkingController < ApplicationController
+  after_action :verify_authorized
+
   before_action do
     @page_title = "Marking"
   end
@@ -8,24 +10,11 @@ class MarkingController < ApplicationController
 
     @match = nil
 
-    if policy(@taikai).admin?
-      @participating_dojos = @taikai.participating_dojos
-                                    .includes({
-                                                participants: { scores: :results }
-                                              },
-                                              teams: [ participants: { scores: :results } ])
-    elsif policy(@taikai).marking_show?
-      @participating_dojos =
-        @taikai.participating_dojos
-               .includes({ participants: { scores: :results } }, teams: [ participants: { scores: :results } ])
-               .joins(staffs: [ :role ])
-               .where(
-                 'staffs.user_id': current_user,
-                 'role.code': TaikaiPolicy::MARKING_ROLES
-               )
-    else
-      raise Pundit::NotAuthorizedError, "not allowed to show marking board for  #{@taikai.inspect}"
-    end
+    @participating_dojos =
+      marking_participating_dojos.includes(
+        { participants: { scores: :results } },
+        teams: [ participants: { scores: :results } ]
+      )
   end
 
   def show_match
@@ -40,12 +29,11 @@ class MarkingController < ApplicationController
     authorize(@taikai, :marking_update?)
 
     @participating_dojos = @taikai.participating_dojos
-    @participant = @taikai.participants.find(params[:participant_id])
-    @match = Match.find_by(id: params[:match_id])
+    set_marking_records
 
     begin
       @result = @participant.add_result(@match&.id, params[:status], params[:value])
-      @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
+      @results = @score.results.round @result.round
       respond_to do |format|
         format.html { redirect_to action: :show, id: @taikai.id }
         format.turbo_stream
@@ -55,7 +43,7 @@ class MarkingController < ApplicationController
         format.html { redirect_to action: :show, id: @taikai.id }
         format.turbo_stream do
           logger.warn "Participant #{@participant.id}'s previous round has not been validated yet"
-          @results = @participant.score(@match&.id).results.where(round: e.previous_round)
+          @results = @score.results.where(round: e.previous_round)
         end
       end
     rescue Score::UnableToFindUndefinedResultsError
@@ -66,16 +54,13 @@ class MarkingController < ApplicationController
 
   def rotate
     @taikai = Taikai.find(params[:id])
-    @participant = @taikai.participants.find(params[:participant_id])
-    @result = @participant.scores.find_by(match_id: params[:match_id]).results.find(params[:result_id])
-    @match = Match.find_by(id: params[:match_id])
+    authorize(@taikai, :marking_update?)
+    set_marking_records
+    @result = @score.results.find(params[:result_id])
 
     if @taikai.scoring_kinteki?
       @result
-        .rotate_status(@participant.scores.find_by(match_id: @match&.id)
-        .results
-        .round(@result.round)
-        .count(&:marked?) == 4)
+        .rotate_status(@score.results.round(@result.round).count(&:marked?) == 4)
     else
       @result.rotate_value
     end
@@ -84,7 +69,7 @@ class MarkingController < ApplicationController
     respond_to do |format|
       format.html { redirect_to action: :show, id: @taikai.id }
       format.turbo_stream do
-        @results = @participant.scores.find_by(match_id: @match&.id).results.round @result.round
+        @results = @score.results.round @result.round
         render action: :update
       end
     end
@@ -92,14 +77,14 @@ class MarkingController < ApplicationController
 
   def finalize
     @taikai = Taikai.find(params[:id])
-    @participant = @taikai.participants.find(params[:participant_id])
-    @match = Match.find_by(id: params[:match_id])
+    authorize(@taikai, :marking_update?)
+    set_marking_records
 
-    @participant.finalize_round(params[:round], params[:match_id])
+    @participant.finalize_round(params[:round], @match&.id)
     respond_to do |format|
       format.html { redirect_to action: :show, id: @taikai.id }
       format.turbo_stream do
-        @results = @participant.scores.find_by(match_id: params[:match_id]).results.round params[:round]
+        @results = @score.results.round params[:round]
         render action: :update
       end
     end
@@ -109,5 +94,31 @@ class MarkingController < ApplicationController
 
   def taikai_params
     params.require(:taikai).permit(:participant_id, :status)
+  end
+
+  def marking_participating_dojos
+    scope = @taikai.participating_dojos
+    return scope if policy(@taikai).admin?
+
+    scope
+      .joins(staffs: :role)
+      .where(
+        'staffs.user_id': current_user.id,
+        'role.code': TaikaiPolicy::MARKING_ROLES
+      )
+      .distinct
+  end
+
+  def set_marking_records
+    @participant =
+      @taikai
+      .participants
+      .where(
+        participating_dojo_id:
+          marking_participating_dojos.reorder(nil).select(:id)
+      )
+      .find(params[:participant_id])
+    @match = @taikai.matches.find(params[:match_id]) if params[:match_id].present?
+    @score = @participant.scores.find_by!(match_id: @match&.id)
   end
 end

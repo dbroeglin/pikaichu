@@ -122,6 +122,26 @@ class Rails8AuthenticationTest < ActionDispatch::IntegrationTest
     assert @user.authenticate(new_password)
   end
 
+  test "password reset invalidates the token and all existing sessions" do
+    token = @user.generate_password_reset_token
+    2.times do
+      @user.sessions.create!(user_agent: "test", ip_address: "127.0.0.1")
+    end
+
+    assert_difference -> { @user.sessions.count }, -2 do
+      patch password_path(token), params: {
+        user: {
+          password: "newpassword123",
+          password_confirmation: "newpassword123"
+        }
+      }
+    end
+
+    get edit_password_path(token)
+    assert_redirected_to new_password_path
+    assert_equal I18n.t("passwords.invalid_token"), flash[:alert]
+  end
+
   test "cannot reset password with invalid token" do
     get edit_password_path("invalid_token")
     assert_response :redirect

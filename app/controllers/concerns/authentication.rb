@@ -53,7 +53,8 @@ module Authentication
         cookies.signed.permanent[:session_id] = {
           value: session.id,
           httponly: true,
-          same_site: :lax
+          same_site: :lax,
+          secure: Rails.env.production?
         }
       end
     end

@@ -94,6 +94,19 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
     assert_equal "miss", @participant.score.results.find_by!(round: 1, index: 1).status
   end
 
+  test "should not allow an unaffiliated user to rotate a result" do
+    transition_taikai_to(@taikai, :marking)
+    result = @participant.score.results.find_by!(round: 1, index: 1)
+    result.update!(status: "hit")
+    sign_in users(:marie_tournelle)
+
+    patch rotate_marking_url(@taikai, @participant, result.id, format: :turbo_stream),
+          params: { round: 1 }
+
+    assert_unauthorized
+    assert_equal "hit", result.reload.status
+  end
+
   test "should finalize first round" do
     transition_taikai_to(@taikai, :marking)
 
@@ -113,5 +126,30 @@ class MarkingControllerTest < ActionDispatch::IntegrationTest
       assert_nil result.status
       assert_equal false, result.final
     end
+  end
+
+  test "should not allow an unaffiliated user to finalize a round" do
+    transition_taikai_to(@taikai, :marking)
+    results = @participant.score.results.where(round: 1)
+    results.update_all(status: "hit")
+    sign_in users(:marie_tournelle)
+
+    patch finalize_round_marking_url(@taikai, @participant, format: :turbo_stream),
+          params: { round: "1" }
+
+    assert_unauthorized
+    assert results.reload.none?(&:final)
+  end
+
+  test "should not allow a dojo administrator to mark another dojo" do
+    transition_taikai_to(@taikai, :marking)
+    other_participant = @taikai.participating_dojos.second.participants.first
+    sign_in users(:alain_terieur)
+
+    post update_marking_url(@taikai, other_participant, format: :turbo_stream),
+         params: { status: "hit" }
+
+    assert_response :not_found
+    assert other_participant.score.results.none?(&:marked?)
   end
 end

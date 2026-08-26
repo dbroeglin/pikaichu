@@ -30,6 +30,23 @@ class DojosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to dojos_url
   end
 
+  test "should not allow a regular user to create a dojo" do
+    sign_in users(:marie_tournelle)
+
+    assert_no_difference "Dojo.count" do
+      post dojos_url, params: {
+        dojo: {
+          shortname: "unauthorized-dojo",
+          name: "Unauthorized Dojo",
+          city: "Paris",
+          country_code: "FR"
+        }
+      }
+    end
+
+    assert_unauthorized
+  end
+
   test "should get edit" do
     get edit_dojo_url @dojo
     assert_response :success

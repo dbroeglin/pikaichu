@@ -2,8 +2,10 @@ class ParticipatingDojosController < ApplicationController
   layout "taikai"
 
   before_action :set_taikai
+  after_action :verify_authorized
 
   def new
+    authorize @taikai, :update?
     @participating_dojo = @taikai.participating_dojos.build
   end
 
@@ -15,6 +17,7 @@ class ParticipatingDojosController < ApplicationController
   end
 
   def create
+    authorize @taikai, :update?
     @participating_dojo = @taikai.participating_dojos.build(participating_dojo_params)
     @dojo = Dojo.find(params[:participating_dojo][:dojo_id])
 
@@ -41,7 +44,7 @@ class ParticipatingDojosController < ApplicationController
   end
 
   def destroy
-    @participating_dojo = @taikai.participating_dojos.find(params[:id])
+    @participating_dojo = authorize @taikai.participating_dojos.find(params[:id]), :destroy?
 
     if @participating_dojo.staffs.any?
       flash[:alert] =
@@ -69,14 +72,9 @@ class ParticipatingDojosController < ApplicationController
 
   def participating_dojo_params
     params.require(:participating_dojo).permit(
-      :taikai_id,
       :dojo_id,
       :display_name
     )
-  end
-
-  def dojo_params
-    params.require(:dojo).permit(:name)
   end
 
   def set_taikai

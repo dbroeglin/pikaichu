@@ -27,6 +27,20 @@ class StaffsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_taikai_url @taikai
   end
 
+  test "should not allow an unaffiliated user to assign tournament administrator" do
+    sign_in users(:marie_tournelle)
+
+    assert_no_difference "@taikai.staffs.count" do
+      post taikai_staffs_url @taikai, params: { staff: {
+        taikai_id: @taikai.id,
+        user_id: users(:marie_tournelle).id,
+        role_id: staff_roles(:taikai_admin).id
+      } }
+    end
+
+    assert_unauthorized
+  end
+
   test "should get edit" do
     get edit_taikai_staff_url @taikai, @test_staff
     assert_response :success

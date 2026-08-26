@@ -3,6 +3,8 @@ class TeamsController < ApplicationController
 
   before_action :set_taikai
   before_action :set_participating_dojo
+  before_action :authorize_participating_dojo
+  after_action :verify_authorized
 
   def new
     @team = @participating_dojo.teams.build
@@ -61,5 +63,9 @@ class TeamsController < ApplicationController
 
   def set_participating_dojo
     @participating_dojo = @taikai.participating_dojos.find(params[:participating_dojo_id])
+  end
+
+  def authorize_participating_dojo
+    authorize @participating_dojo, :update?
   end
 end

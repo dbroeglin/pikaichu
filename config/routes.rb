@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
     resources :participating_dojos do
       member do
-        get "draw"
+        patch "draw"
 
         get "teaming/edit"
         post "teaming/create_team"

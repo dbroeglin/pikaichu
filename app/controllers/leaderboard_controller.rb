@@ -4,7 +4,7 @@ class LeaderboardController < ApplicationController
   allow_unauthenticated_access only: [ :public ]
 
   def show
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id]), :leaderboard_show?
 
     leaderboard = Leaderboard.new(taikai_id: @taikai.id, validated: false)
     if @taikai.form_individual? || @taikai.form_2in1?
@@ -19,14 +19,14 @@ class LeaderboardController < ApplicationController
   end
 
   def show_2in1
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id]), :leaderboard_show?
     leaderboard = Leaderboard.new(taikai_id: @taikai.id, validated: false)
 
     @teams_by_score, @score_by_participating_dojo = leaderboard.compute_team_leaderboard
   end
 
   def public
-    @taikai = Taikai.find(params[:id])
+    @taikai = authorize Taikai.find(params[:id]), :leaderboard_show?
     leaderboard = Leaderboard.new(taikai_id: @taikai.id, validated: true)
 
     if @taikai.form_2in1?

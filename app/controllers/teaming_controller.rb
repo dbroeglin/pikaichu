@@ -3,6 +3,8 @@ class TeamingController < ApplicationController
 
   before_action :set_taikai
   before_action :set_participating_dojo
+  before_action :authorize_participating_dojo
+  after_action :verify_authorized
 
   def edit
     @teams = @participating_dojo.teams.includes(:participants).order("teams.shortname ASC")
@@ -91,5 +93,9 @@ class TeamingController < ApplicationController
 
   def set_participating_dojo
     @participating_dojo = @taikai.participating_dojos.find(params[:id])
+  end
+
+  def authorize_participating_dojo
+    authorize @participating_dojo, :update?
   end
 end
