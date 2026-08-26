@@ -1,19 +1,24 @@
 class DojosController < ApplicationController
+  after_action :verify_authorized
+
   def index
+    authorize Dojo
     @dojos = Dojo.all.order(shortname: :asc).page params[:page]
   end
 
   def new
+    authorize Dojo
     @dojo = Dojo.new
     @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
   def edit
-    @dojo = Dojo.find(params[:id])
+    @dojo = authorize Dojo.find(params[:id])
     @countries = ISO3166::Country.pluck(:alpha2, :iso_short_name)
   end
 
   def create
+    authorize Dojo
     @dojo = Dojo.new(dojo_params)
 
     if @dojo.save
@@ -24,7 +29,7 @@ class DojosController < ApplicationController
   end
 
   def update
-    @dojo = Dojo.find(params[:id])
+    @dojo = authorize Dojo.find(params[:id])
 
     if @dojo.update(dojo_params)
       redirect_to action: "index"
@@ -34,7 +39,7 @@ class DojosController < ApplicationController
   end
 
   def destroy
-    @dojo = Dojo.find(params[:id])
+    @dojo = authorize Dojo.find(params[:id])
 
     unless @dojo.destroy
       # TODO: I18n

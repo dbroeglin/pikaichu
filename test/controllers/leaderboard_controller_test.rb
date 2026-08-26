@@ -11,6 +11,23 @@ class LeaderboardControllerTest < ActionDispatch::IntegrationTest
     @taikai.current_user = users(:jean_bon)
   end
 
+  test "should not show leaderboards before marking starts" do
+    get leaderboard_taikai_url @taikai
+    assert_unauthorized
+
+    get leaderboard_public_taikai_url @taikai
+    assert_unauthorized
+  end
+
+  test "public leaderboard remains available without authentication once marking starts" do
+    transition_taikai_to(@taikai, :marking)
+    delete session_url
+
+    get leaderboard_public_taikai_url @taikai
+
+    assert_response :success
+  end
+
   TAIKAI_DATA.each do |form, distributed, total_num_arrows, scoring|
     dist = distributed ? :distributed : :local
     test "#{form} #{dist} #{total_num_arrows} #{scoring} should get show" do

@@ -2,6 +2,8 @@ class StaffsController < ApplicationController
   layout "taikai"
 
   before_action :set_taikai
+  before_action :authorize_taikai
+  after_action :verify_authorized
 
   def new
     @staff = @taikai.staffs.build
@@ -44,16 +46,25 @@ class StaffsController < ApplicationController
     params
       .require(:staff)
       .permit(
-        :taikai_id,
         :user_id,
         :role_id,
         :firstname,
         :lastname,
         :participating_dojo_id,
       )
+      .tap do |permitted|
+        next if permitted[:participating_dojo_id].blank?
+
+        permitted[:participating_dojo_id] =
+          @taikai.participating_dojos.find(permitted[:participating_dojo_id]).id
+      end
   end
 
   def set_taikai
     @taikai = Taikai.find(params[:taikai_id])
+  end
+
+  def authorize_taikai
+    authorize @taikai, :update?
   end
 end

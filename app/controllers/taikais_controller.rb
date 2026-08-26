@@ -28,7 +28,9 @@ class TaikaisController < ApplicationController
   end
 
   def edit
-    @taikai = Taikai.includes([ participating_dojos: :dojo ], { staffs: [ :role, :user ] }).find(params[:id])
+    @taikai = authorize Taikai
+                        .includes([ participating_dojos: :dojo ], { staffs: [ :role, :user ] })
+                        .find(params[:id])
   end
 
   def create
@@ -76,17 +78,28 @@ class TaikaisController < ApplicationController
 
   def export
     @taikai =
-      Taikai
-      .includes({ participating_dojos: [ { teams: { participants: { scores: :results } } },
-                                        { participants: { scores: :results } } ] }, :staffs)
-      .find(params[:id])
+      authorize(
+        Taikai
+          .includes({ participating_dojos: [ { teams: { participants: { scores: :results } } },
+                                            { participants: { scores: :results } } ] }, :staffs)
+          .find(params[:id]),
+        :export?
+      )
 
     render xlsx: "export", filename: "Taikai - #{@taikai.shortname}.xlsx"
   end
 
   def generate
+    source_taikai = authorize Taikai.find(params[:id]), :update?
+
     ActiveRecord::Base.transaction do
-      @taikai = Taikai.create_from_2in1(params[:id], current_user, "part2", "partie 2", params[:bracket_size].to_i)
+      @taikai = Taikai.create_from_2in1(
+        source_taikai.id,
+        current_user,
+        "part2",
+        "partie 2",
+        params[:bracket_size].to_i
+      )
     end
 
     if @taikai.errors.empty?

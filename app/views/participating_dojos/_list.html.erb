@@ -29,7 +29,7 @@
       <td class="has-text-right">
         <%= link_to draw_taikai_participating_dojo_path(taikai, participating_dojo),
                     class: "button is-small has-background-light",
-                    data: { turbo_method: 'get', turbo_confirm: t('confirm_draw_html') },
+                    data: { turbo_method: 'patch', turbo_confirm: t('confirm_draw_html') },
                     title: t('taikais.draw') do %>
           <span class="icon is-small">
             <i class="fas fa-dice"></i>

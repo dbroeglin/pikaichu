@@ -1,5 +1,7 @@
 class MatchesController < ApplicationController
   before_action :set_taikai
+  before_action :authorize_taikai
+  after_action :verify_authorized
 
   def index
     @matches = @taikai.matches
@@ -15,7 +17,7 @@ class MatchesController < ApplicationController
   end
 
   def update
-    @match = Match.find(params[:id])
+    @match = @taikai.matches.find(params[:id])
 
     Taikai.transaction do
       @match.assign_attributes(match_params)
@@ -43,16 +45,19 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params
-      .require(:match)
-      .permit(
-        :winner,
-        :team1_id,
-        :team2_id,
-      )
+    permitted = params.require(:match).permit(:winner, :team1_id, :team2_id)
+    [ :team1_id, :team2_id ].each do |team_id|
+      @taikai.teams.find(permitted[team_id]) if permitted[team_id].present?
+    end
+    permitted
   end
 
   def set_taikai
     @taikai = Taikai.find(params[:taikai_id])
+  end
+
+  def authorize_taikai
+    query = action_name == "index" ? :marking_show? : :update?
+    authorize @taikai, query
   end
 end

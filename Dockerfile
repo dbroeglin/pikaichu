@@ -19,7 +19,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev curl
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev libyaml-dev curl
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -29,6 +29,7 @@ RUN bundle install && \
 
 # Copy application code
 COPY . .
+RUN sed -i 's/\r$//' bin/* && chmod +x bin/*
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/

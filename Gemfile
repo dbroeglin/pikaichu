@@ -6,9 +6,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.4.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1.2"
+gem "rails", ">= 8.1.3.1", "< 8.2"
 
-gem "action_text-trix", "~> 2.1.16"
+gem "action_text-trix", "~> 2.1.18"
 
 # Modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
@@ -17,7 +17,7 @@ gem "propshaft"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 7.2", ">= 7.2.1"
 
 gem "solid_cache"
 gem "solid_queue"
@@ -51,7 +51,7 @@ gem "csv"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt", "~> 3.1.21"
+gem "bcrypt", "~> 3.1", ">= 3.1.22"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
@@ -93,7 +93,7 @@ gem "kaminari"
 
 gem "capitalize-names"
 
-gem "faraday", "~> 2.9"
+gem "faraday", "~> 2.14", ">= 2.14.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

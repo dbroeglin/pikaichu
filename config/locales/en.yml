@@ -42,6 +42,7 @@ en:
         my_account: My Account
   draw_ok: The draw was carried out.
   file_missing: No file was imported.
+  invalid_file: Select an XLSX file smaller than 10 MB.
   result_rectified: "Result of shot %{index} in series %{round} by %{participant} has been corrected to %{result}."
   import_alerts:
     one: "Unable to import %{names}."

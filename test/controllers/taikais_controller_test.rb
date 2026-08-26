@@ -56,6 +56,14 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not get edit for a tournament he does not administer" do
+    sign_in users(:alex_terieur)
+
+    get edit_taikai_url @other_taikai
+
+    assert_unauthorized
+  end
+
   test "should patch update" do
     patch taikai_url @individual12, params: { taikai: @attributes }
     assert_redirected_to taikais_url
@@ -77,6 +85,23 @@ class TaikaisControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:alex_terieur)
 
     delete taikai_url @other_taikai
+
+    assert_unauthorized
+  end
+
+  test "should not export a tournament before results are available" do
+    get taikai_export_taikai_url @individual12
+
+    assert_unauthorized
+  end
+
+  test "should not generate a bracket from a tournament he does not administer" do
+    source = taikais(:'2in1_dist_12_kinteki')
+    sign_in users(:alex_terieur)
+
+    assert_no_difference "Taikai.count" do
+      post generate_taikai_url(source), params: { bracket_size: 4 }
+    end
 
     assert_unauthorized
   end

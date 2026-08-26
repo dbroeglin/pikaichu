@@ -179,4 +179,19 @@ class TeamingControllerTest < ActionDispatch::IntegrationTest
     assert_select "form[action=?]", teaming_create_team_taikai_participating_dojo_path(@taikai, @participating_dojo)
     assert_select "input[name=?]", "team[shortname]"
   end
+
+  test "does not allow an unaffiliated user to move a participant" do
+    original_team = @participant1.team
+    sign_in users(:marie_tournelle)
+
+    patch teaming_move_taikai_participating_dojo_path(@taikai, @participating_dojo),
+          params: {
+            participant_id: @participant1.id,
+            team_id: @team_b.id,
+            index: 1
+          }
+
+    assert_unauthorized
+    assert_equal original_team, @participant1.reload.team
+  end
 end

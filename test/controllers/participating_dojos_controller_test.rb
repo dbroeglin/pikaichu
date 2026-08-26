@@ -1,6 +1,8 @@
 require "test_helper"
 
 class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
+  include FactoryBot::Syntax::Methods
+
   setup do
     sign_in users(:jean_bon)
     @taikai = taikais(:individual_dist_12_kinteki)
@@ -25,6 +27,21 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
       }
     end
     assert_redirected_to edit_taikai_url @taikai
+  end
+
+  test "should not allow an unaffiliated user to create a participating dojo" do
+    sign_in users(:marie_tournelle)
+
+    assert_no_difference "@taikai.participating_dojos.count" do
+      post taikai_participating_dojos_url @taikai, params: {
+        participating_dojo: {
+          dojo_id: dojos(:dojo_jp).id,
+          display_name: "Unauthorized dojo"
+        }
+      }
+    end
+
+    assert_unauthorized
   end
 
   test "should get edit" do
@@ -52,8 +69,56 @@ class ParticipatingDojosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_taikai_url @taikai
   end
 
+  test "should ignore attempts to move a participating dojo to another tournament" do
+    target_taikai = create(
+      :taikai,
+      user: users(:marie_tournelle),
+      shortname: "authorization-target",
+      name: "Authorization Target"
+    )
+    sign_in users(:alain_terieur)
+
+    patch taikai_participating_dojo_url(@taikai, @participating_dojo),
+          params: {
+            participating_dojo: {
+              taikai_id: target_taikai.id,
+              dojo_id: @participating_dojo.dojo_id,
+              display_name: @participating_dojo.display_name
+            }
+          }
+
+    assert_redirected_to edit_taikai_url @taikai
+    assert_equal @taikai, @participating_dojo.reload.taikai
+  end
+
   test "should get destroy" do
     delete taikai_participating_dojo_url @taikai, @participating_dojo
     assert_redirected_to edit_taikai_url @taikai
+  end
+
+  test "should not allow an unaffiliated user to destroy a participating dojo" do
+    sign_in users(:marie_tournelle)
+
+    delete taikai_participating_dojo_url @taikai, @participating_dojo
+
+    assert_unauthorized
+    assert @participating_dojo.reload.persisted?
+  end
+
+  test "draw route does not accept get requests" do
+    path = draw_taikai_participating_dojo_path(@taikai, @participating_dojo)
+
+    assert_raises ActionController::RoutingError do
+      Rails.application.routes.recognize_path(path, method: :get)
+    end
+    assert_recognizes(
+      {
+        controller: "participating_dojos",
+        action: "draw",
+        taikai_id: @taikai.id.to_s,
+        id: @participating_dojo.id.to_s
+      },
+      { path: path, method: :patch }
+    )
   end
 end
