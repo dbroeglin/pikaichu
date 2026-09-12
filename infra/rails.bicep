@@ -46,6 +46,10 @@ module app 'core/host/container-app-upsert.bicep' = {
         value: 'production'
       }
       {
+        name: 'SOLID_QUEUE_IN_PUMA'
+        value: 'true'
+      }
+      {
         name: 'DATABASE_URL'
         secretRef: 'database-url'
       }
@@ -91,5 +95,4 @@ output SERVICE_RAILS_IDENTITY_PRINCIPAL_ID string = webIdentity.name
 output SERVICE_RAILS_NAME string = app.outputs.name
 output SERVICE_RAILS_URI string = app.outputs.uri
 output SERVICE_RAILS_IMAGE_NAME string = app.outputs.imageName
-
 

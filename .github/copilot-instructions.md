@@ -5,7 +5,7 @@
 Pikaichu is a comprehensive Ruby on Rails 8.1 application for managing Kyudo (Japanese archery) tournaments. It supports multiple tournament formats, complex scoring systems, role-based access control, and full bilingual support (EN/FR).
 
 **Tech Stack:**
-- **Backend:** Ruby 3.4.7, Rails 8.1.2, PostgreSQL with custom enums
+- **Backend:** Ruby 3.4.7, Rails 8.1.3.1, PostgreSQL with custom enums
 - **Frontend:** Hotwire (Turbo + Stimulus), Bulma CSS framework, importmap-rails (no Node.js bundler)
 - **Authentication:** Rails 8 built-in authentication (has_secure_password + Sessions)
 - **Authorization:** Pundit (role-based)

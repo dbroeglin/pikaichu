@@ -29,6 +29,11 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     options.add_argument("--disable-backgrounding-occluded-windows")
     options.add_argument("--disable-renderer-backgrounding")
 
+    # Chrome password prompts can intercept input in subsequent tests.
+    options.add_preference("credentials_enable_service", false)
+    options.add_preference("profile.password_manager_enabled", false)
+    options.add_preference("profile.password_manager_leak_detection", false)
+
     # Download preferences
     options.add_preference(:download, {
       prompt_for_download: false,
@@ -42,6 +47,9 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   Capybara.register_driver :chrome do |app|
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument("--window-size=1400,1400")
+    options.add_preference("credentials_enable_service", false)
+    options.add_preference("profile.password_manager_enabled", false)
+    options.add_preference("profile.password_manager_leak_detection", false)
     options.add_preference(:download, {
       prompt_for_download: false,
       default_directory: DownloadHelpers::PATH.to_s
