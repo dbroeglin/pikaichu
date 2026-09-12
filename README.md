@@ -1,12 +1,12 @@
 # PiKaichu - Kyudo Tournament Management System
 
-A comprehensive Ruby on Rails 8.2 application for managing Kyudo (Japanese archery) tournaments with support for multiple tournament formats, complex scoring systems, and role-based access control.
+A comprehensive Ruby on Rails 8.1 application for managing Kyudo (Japanese archery) tournaments with support for multiple tournament formats, complex scoring systems, and role-based access control.
 
 ## Tech Stack
 
 **Core:**
 - **Ruby:** 3.4.7
-- **Rails:** 8.1.2 (fully modernized to Rails 8 patterns)
+- **Rails:** 8.1.3.1 (fully modernized to Rails 8 patterns)
 - **Database:** PostgreSQL with custom enums
 - **Authentication:** Rails 8 built-in authentication (has_secure_password + Sessions)
 - **Authorization:** Pundit (role-based)
@@ -66,19 +66,24 @@ The application will be available at http://localhost:3000
 
 ```bash
 # Unit and integration tests
+RAILS_ENV=test bin/rails db:prepare db:fixtures:load
 bin/rails test
 
 # System tests (headless Chrome)
+RAILS_ENV=test bin/rails db:fixtures:load
 bin/rails test:system
 
 # Watch mode (auto-run tests on file changes)
 guard
 ```
 
-**Current Test Status:**
-- ✅ 193 unit tests, 721 assertions
-- ✅ 122 system tests, 1035 assertions
-- ✅ All passing
+Use a dedicated test database; set `DATABASE_URL` when running in an isolated worktree.
+Fixture loading replaces database contents. Preload fixtures before each suite because
+some tests discover tournament cases from database records when their files are loaded.
+System tests use Selenium with headless Chrome, which must be installed.
+
+CI runs both suites, RuboCop, Bundler Audit, and Brakeman. Test failures and lint/security
+findings block their respective jobs; coverage reporting is not configured.
 
 ## Development
 
@@ -97,7 +102,24 @@ Modern Rails 8 authentication:
 
 ### Background Jobs
 
-Solid Queue handles all background jobs:
+Production uses the primary PostgreSQL database for Solid Queue, Solid Cache, and
+Solid Cable, matching the Azure deployment's single `DATABASE_URL`. Their tables
+are installed by the normal application migrations:
+
+```bash
+RAILS_ENV=production bin/rails db:prepare
+RAILS_ENV=production bin/jobs
+```
+
+The Docker entrypoint prepares the database before starting the web server.
+Run `bin/jobs` as a separate worker, or set `SOLID_QUEUE_IN_PUMA=true` to use the
+existing Puma worker integration, which the Azure template enables. No separate
+cache, queue, or cable databases are required; these services share the primary
+Active Record connection pool.
+The Solid migration only adds tables; it does not modify tournament data. Retain
+these tables when rolling back an application image so queued work is not lost.
+
+Solid Queue handles background jobs:
 ```ruby
 # Queue a job
 MyJob.perform_later(arg1, arg2)

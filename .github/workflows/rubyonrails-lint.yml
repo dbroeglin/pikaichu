@@ -15,20 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
 
       - name: Setup Ruby and install gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      # Add or Replace any other security checks here
       - name: Run security checks
         run: |
-          gem install bundler-audit
-          bundle audit update
-          bundle audit check
-          bin/brakeman -q -w2
-      # Add or Replace any other Linters here
+          bin/bundler-audit check --update
+          bin/brakeman --quiet --no-pager --exit-on-warn --exit-on-error
+
       - name: Run linters
-        run: |
-          bin/rails rubocop
+        run: bin/rubocop

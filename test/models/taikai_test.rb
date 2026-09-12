@@ -77,6 +77,22 @@ class TaikaiTest < ActiveSupport::TestCase
     end
   end
 
+  test "changes retain their audited values and acting user" do
+    user = users(:jean_bon)
+    previous_shortname = @taikai.shortname
+
+    Audited.audit_class.as_user(user) do
+      assert_difference -> { @taikai.audits.count }, 1 do
+        @taikai.update!(shortname: "audited-taikai")
+      end
+    end
+
+    audit = @taikai.audits.last
+    assert_equal user, audit.user
+    assert_equal "update", audit.action
+    assert_equal [ previous_shortname, "audited-taikai" ], audit.audited_changes["shortname"]
+  end
+
   test "cannot create part two without enough teams" do
     @taikai = taikais(:'2in1_dist_12_kinteki')
     @taikai.current_user = users(:jean_bon)
