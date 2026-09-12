@@ -165,6 +165,8 @@ en:
           attributes:
             base:
               not_finalized: All results must be finalized before creating the team tournament.
+              not_enough_teams: There are not enough teams to create a matches tournament of %{bracket_size} teams.
+              not_enough_non_mixed_teams_html: There are not enough <b>non-mixed</b> teams to create a matches tournament of %{bracket_size} teams.
             total_num_arrows:
               inclusion: must be 8, 12, or 20 for kinteki, 4 for matches, and any for enteki.
             tachi_size:
