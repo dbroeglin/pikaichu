@@ -1,23 +1,25 @@
 # Run using bin/ci
 
 CI.run do
-  step "Setup", "bin/setup --skip-server"
+  step "Setup: Disposable test database", "bin/rails", "ci:prepare"
+  database_ready = success?
 
   step "Style: Ruby", "bin/rubocop"
 
-  step "Security: Gem audit", "bin/bundler-audit"
-  step "Security: Importmap vulnerability audit", "bin/importmap audit"
-  step "Security: Brakeman code analysis", "bin/brakeman --quiet --no-pager --exit-on-warn --exit-on-error"
+  step "Security: Gem audit", "bin/bundler-audit", "check", "--update"
+  step "Security: Importmap vulnerability audit", "bin/ci-importmap"
+  step "Security: Brakeman code analysis", "bin/brakeman", "--quiet", "--no-pager", "--exit-on-warn", "--exit-on-error"
 
-  step "Tests: Rails", "bin/rails test"
-  step "Tests: System", "bin/rails test:system"
-  step "Tests: Seeds", "env RAILS_ENV=test bin/rails db:seed:replant"
+  step "Translations: Missing keys", "bundle", "exec", "i18n-tasks", "missing"
+  step "Translations: Interpolation consistency", "bundle", "exec", "i18n-tasks", "check-consistent-interpolations"
 
-  # Optional: set a green GitHub commit status to unblock PR merge.
-  # Requires the `gh` CLI and `gh extension install basecamp/gh-signoff`.
-  # if success?
-  #   step "Signoff: All systems go. Ready for merge and deploy.", "gh signoff"
-  # else
-  #   failure "Signoff: CI failed. Do not merge or deploy.", "Fix the issues and try again."
-  # end
+  step "Build: Production assets", { "RAILS_ENV" => "production", "SECRET_KEY_BASE_DUMMY" => "1" }, "bin/rails", "ci:assets"
+
+  if database_ready
+    step "Tests: Rails", "bin/rails", "test"
+    step "Tests: System", "bin/rails", "test:system"
+    step "Tests: Seeds", "bin/rails", "db:seed:replant"
+  else
+    failure "Skipping database-dependent tests and seeds because database preparation failed."
+  end
 end

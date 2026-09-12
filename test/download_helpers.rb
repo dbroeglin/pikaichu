@@ -1,6 +1,6 @@
 module DownloadHelpers
   TIMEOUT = 15
-  PATH = Rails.root.join("tmp/downloads")
+  PATH = ENV["CI_RUN_DIRECTORY"] ? Pathname.new(ENV.fetch("CI_RUN_DIRECTORY")).join("downloads") : Rails.root.join("tmp/downloads")
 
   def downloads
     Dir[PATH.join("*")]

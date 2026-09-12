@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require_relative "../config/boot"
+require_relative "../script/ci/importmap_audit"
+
+Dir.chdir(File.expand_path("..", __dir__)) do
+  begin
+    packages = LocalCI::ImportmapAudit.new.check!
+    puts "Auditing #{packages.length} versioned JavaScript dependencies."
+  rescue LocalCI::Error => error
+    abort error.message
+  end
+
+  $stdout.flush
+  exec "bin/importmap", "audit"
+end

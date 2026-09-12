@@ -65,6 +65,9 @@ The application will be available at http://localhost:3000
 ## Running Tests
 
 ```bash
+# Full local CI (see prerequisites and isolation below)
+bin/ci
+
 # Unit and integration tests
 RAILS_ENV=test bin/rails db:prepare db:fixtures:load
 bin/rails test
@@ -84,6 +87,93 @@ System tests use Selenium with headless Chrome, which must be installed.
 
 CI runs both suites, RuboCop, Bundler Audit, and Brakeman. Test failures and lint/security
 findings block their respective jobs; coverage reporting is not configured.
+
+### Local CI
+
+`bin/ci` runs the checks in `config/ci.rb`: Ruby linting, an updated gem
+vulnerability audit, a version-coverage check and vulnerability audit for
+JavaScript dependencies, production asset precompilation, EN/FR missing-key and
+interpolation checks, Rails tests, headless browser tests, and a seed-data smoke
+check. Any failed check produces a nonzero exit status. Independent checks
+continue after failures; database-dependent tests and seeds are skipped if
+database creation or preparation fails.
+
+The pipeline uses Rails' standard `CI.run`, `step`, and `success?` DSL. The
+`ci:prepare` and `ci:assets` Rails tasks handle database preparation and asset
+compilation. CLI-only helpers live in `script/ci`, outside application autoload
+paths. The database helper records successful creation in the run directory so
+the outer `bin/ci` wrapper can clean up even when a subsequent Rails task fails.
+
+Before running it:
+
+- Select Ruby from `.ruby-version` and run `bundle install`, including development
+  and test groups. CI loads Bundler before it starts; it does not install gems or
+  change the lockfile.
+- Start PostgreSQL 14+ with a role that can connect to the `postgres` maintenance
+  database and create/drop databases. Local connection defaults work, or use
+  `PGHOST`, `PGPORT`, `PGUSER`, and `PGPASSWORD` for a dedicated CI PostgreSQL
+  instance. Do not point these variables at a production server.
+- Install Chrome/Chromium and make a compatible ChromeDriver available to
+  Selenium. Selenium Manager may download a driver when one is not available.
+  CI always uses headless mode, even if `CHROME_DEBUG=true`.
+- Allow network access to the Ruby advisory database and npm registry. Audit
+  refresh/network failures fail CI rather than silently using a stale result.
+  The current asset smoke check uses Propshaft and vendored assets; it does not
+  require Node.js or Yarn.
+
+Unset both `DATABASE_URL` and `PRIMARY_DATABASE_URL`, and either unset `RAILS_ENV`
+or set it to `test`. CI rejects inherited database URLs and non-test environments
+before allocating resources. It also verifies that Rails resolves exactly one
+test database matching the disposable database before creating or preparing it:
+
+```bash
+env -u DATABASE_URL -u PRIMARY_DATABASE_URL -u RAILS_ENV bin/ci
+
+# Example: a local PostgreSQL instance exposed over TCP
+env -u DATABASE_URL -u PRIMARY_DATABASE_URL -u RAILS_ENV PGHOST=localhost PGPORT=5432 PGUSER=postgres bin/ci
+```
+
+Each invocation creates a uniquely named `pikaichu_ci_<random-id>` database,
+prepares it in the test environment, and drops only that database on exit,
+including failed runs and normal interrupts. Creation failures never trigger a
+drop of an existing database. CI does not invoke `bin/setup`, migrate development
+data, clear existing logs, or write precompiled assets to `public/assets`.
+CI sets `PARALLEL_WORKERS=1`, overriding inherited worker counts so Rails cannot
+create additional worker databases. The previous value is restored on exit.
+
+The printed `tmp/ci/<database-name>/` directory retains the run's test log,
+screenshots, downloads, test storage, and production asset output for diagnosis.
+A force kill or database outage can prevent cleanup; in that case, inspect and remove only
+the exact CI database named in that run's output. Never remove databases by a
+broad name pattern. Cleanup failures are errors, not successful CI results.
+
+Third-party JavaScript pins must carry the exact npm version in importmap's
+supported comment format, for example `# @1.2.3`. Verify that version against the
+vendored source when updating a dependency. `bin/ci-importmap` rejects an empty
+audit inventory, unversioned dependencies, missing assets, and unpinned vendored
+JavaScript before invoking `bin/importmap audit`. Application-owned JavaScript
+belongs under `app/javascript`, not in the third-party vendor inventory.
+
+The `ci:assets` task runs production precompilation with a dummy secret key and
+the run's isolated asset directory. This is a build smoke check, not a
+replacement for a deployment test.
+Translation checks do not rewrite locale files or enforce unused-key or
+formatting policies. The i18n-tasks configuration discovers all EN/FR locale
+files, including authentication, defaults, model/view translations, and
+Kaminari. To run just these checks:
+
+```bash
+bundle exec i18n-tasks missing
+bundle exec i18n-tasks check-consistent-interpolations
+```
+
+The checks are strict from the start; existing findings are not allowlisted.
+In particular, the current missing-key report includes XLSX helper relative-key
+resolution and external Kaminari locale reports that need reconciliation, as
+well as missing English tournament-validation translations.
+
+GitHub Actions workflows are currently separate and are not changed by this
+local CI setup; a local pass is not a claim of hosted-workflow parity.
 
 ## Development
 
