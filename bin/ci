@@ -1,6 +1,14 @@
 #!/usr/bin/env ruby
 require_relative "../config/boot"
 require "active_support/continuous_integration"
+require_relative "../script/ci/workspace"
 
 CI = ActiveSupport::ContinuousIntegration
-require_relative "../config/ci.rb"
+
+Dir.chdir(File.expand_path("..", __dir__)) do
+  begin
+    LocalCI::Workspace.open { require_relative "../config/ci.rb" }
+  rescue LocalCI::Error => error
+    abort error.message
+  end
+end

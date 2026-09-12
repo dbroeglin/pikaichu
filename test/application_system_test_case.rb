@@ -10,6 +10,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   # Configure Capybara for Hotwire/Turbo compatibility
   Capybara.default_max_wait_time = 5
   Capybara.enable_aria_label = true
+  Capybara.save_path = File.join(ENV.fetch("CI_RUN_DIRECTORY"), "screenshots") if ENV["CI_RUN_DIRECTORY"]
 
   # Register headless Chrome driver with proper configuration
   Capybara.register_driver :headless_chrome do |app|

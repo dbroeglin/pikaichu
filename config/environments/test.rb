@@ -15,6 +15,11 @@ Rails.application.configure do
   # loading is working properly before deploying your code.
   config.eager_load = ENV["CI"].present?
 
+  if ENV["CI_RUN_DIRECTORY"]
+    config.paths["log"] = File.join(ENV.fetch("CI_RUN_DIRECTORY"), "test.log")
+    config.active_record.dump_schema_after_migration = false
+  end
+
   # Configure public file server for tests with cache-control for performance.
   config.public_file_server.headers = { "cache-control" => "public, max-age=3600" }
 
