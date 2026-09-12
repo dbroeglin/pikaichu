@@ -135,7 +135,12 @@ search:
 #   #   Keep in mind the context of all the strings for a more accurate translation.
 
 ## Do not consider these keys missing:
-# ignore_missing:
+ignore_missing:
+  # `AxlsxExportHelpers` methods are called from `taikais/export.xlsx.axlsx`, so their relative `t(".key")`
+  # calls actually resolve against that view's `taikais.export.*` translations (already defined). i18n-tasks'
+  # static scanner does not follow that dynamic virtual_path and instead guesses keys scoped to the helper
+  # module/method names, which never exist and are false positives.
+  - 'axlsx_export_helpers.*'
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
 
